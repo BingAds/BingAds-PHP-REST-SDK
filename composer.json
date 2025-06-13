@@ -2,13 +2,13 @@
     "name": "microsoft/msads",
     "description": "This project provides the PHP client library for the REST-based Microsoft Ads API.",
     "keywords": ["php", "bing ads", "bingads", "microsoft advertising", "microsoft ads", "ads", "msads", "sdk", "rest", "api"],
-    "homepage": "https://github.com/BingAds/BingAds-PHP-SDK/tree/msads",
+    "homepage": "https://github.com/BingAds/BingAds-PHP-REST-SDK",
     "license": "Apache-2.0",
     "type": "library",
     "authors": [
         {
             "name": "Microsoft Advertising",
-            "homepage": "https://github.com/BingAds/BingAds-PHP-SDK/commits/msads/"
+            "homepage": "https://github.com/BingAds/BingAds-PHP-REST-SDK/graphs/contributors"
         }
     ],
     "require": {
