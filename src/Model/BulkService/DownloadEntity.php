@@ -405,6 +405,12 @@ class DownloadEntity
 
     public const CAMPAIGN_ACCOUNT_PLACEMENT_INCLUSION_LIST_ASSOCIATION = 'CampaignAccountPlacementInclusionListAssociation';
 
+    public const TOPIC = 'Topic';
+
+    public const CONTENT_PLACEMENT = 'ContentPlacement';
+
+    public const BRAND_KIT = 'BrandKit';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -664,7 +670,10 @@ class DownloadEntity
             self::CAMPAIGN_ACCOUNT_PLACEMENT_EXCLUSION_LIST_ASSOCIATION,
             self::ACCOUNT_PLACEMENT_INCLUSION_LIST,
             self::ACCOUNT_PLACEMENT_INCLUSION_LIST_ITEM,
-            self::CAMPAIGN_ACCOUNT_PLACEMENT_INCLUSION_LIST_ASSOCIATION
+            self::CAMPAIGN_ACCOUNT_PLACEMENT_INCLUSION_LIST_ASSOCIATION,
+            self::TOPIC,
+            self::CONTENT_PLACEMENT,
+            self::BRAND_KIT
         ];
     }
 }

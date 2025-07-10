@@ -273,6 +273,14 @@ class CampaignPerformanceReportColumn
 
     public const NEW_CUSTOMER_RETURN_ON_AD_SPEND = 'NewCustomerReturnOnAdSpend';
 
+    public const CONVERSION_DELAY = 'ConversionDelay';
+
+    public const UNKNOWN_CUSTOMER_CONVERSIONS = 'UnknownCustomerConversions';
+
+    public const UNKNOWN_CUSTOMER_REVENUE = 'UnknownCustomerRevenue';
+
+    public const NEW_CUSTOMER_COUNT = 'NewCustomerCount';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -466,7 +474,11 @@ class CampaignPerformanceReportColumn
             self::NEW_CUSTOMER_REVENUE,
             self::NEW_CUSTOMER_CONVERSION_RATE,
             self::NEW_CUSTOMER_CPA,
-            self::NEW_CUSTOMER_RETURN_ON_AD_SPEND
+            self::NEW_CUSTOMER_RETURN_ON_AD_SPEND,
+            self::CONVERSION_DELAY,
+            self::UNKNOWN_CUSTOMER_CONVERSIONS,
+            self::UNKNOWN_CUSTOMER_REVENUE,
+            self::NEW_CUSTOMER_COUNT
         ];
     }
 }

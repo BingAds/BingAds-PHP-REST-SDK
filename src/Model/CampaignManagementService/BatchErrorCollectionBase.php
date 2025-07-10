@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class BatchErrorCollectionBase implements ModelInterface, ArrayAccess, \JsonSerializable
+class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 

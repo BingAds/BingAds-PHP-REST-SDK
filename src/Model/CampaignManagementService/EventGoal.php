@@ -55,7 +55,8 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'ViewThroughConversionWindowInMinutes' => 'int',
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'bool'
+        'IsEnhancedConversionsEnabled' => 'bool',
+        'IsAutoGoal' => 'bool'
     ];
 
     /**
@@ -88,7 +89,8 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'ViewThroughConversionWindowInMinutes' => 'int32',
         'GoalCategory' => null,
         'AttributionModelType' => null,
-        'IsEnhancedConversionsEnabled' => null
+        'IsEnhancedConversionsEnabled' => null,
+        'IsAutoGoal' => null
     ];
 
     /**
@@ -119,7 +121,8 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'ViewThroughConversionWindowInMinutes' => true,
         'GoalCategory' => false,
         'AttributionModelType' => false,
-        'IsEnhancedConversionsEnabled' => true
+        'IsEnhancedConversionsEnabled' => true,
+        'IsAutoGoal' => true
     ];
 
     /**
@@ -230,7 +233,8 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'ViewThroughConversionWindowInMinutes' => 'ViewThroughConversionWindowInMinutes',
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled'
+        'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
+        'IsAutoGoal' => 'IsAutoGoal'
     ];
 
     /**
@@ -261,7 +265,8 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'ViewThroughConversionWindowInMinutes' => 'setViewThroughConversionWindowInMinutes',
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled'
+        'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
+        'IsAutoGoal' => 'setIsAutoGoal'
     ];
 
     /**
@@ -292,7 +297,8 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'ViewThroughConversionWindowInMinutes' => 'getViewThroughConversionWindowInMinutes',
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled'
+        'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
+        'IsAutoGoal' => 'getIsAutoGoal'
     ];
 
     /**
@@ -375,6 +381,7 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         $this->setIfExists('GoalCategory', $data ?? [], null);
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
+        $this->setIfExists('IsAutoGoal', $data ?? [], null);
     }
 
     /**
@@ -1256,6 +1263,43 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['IsEnhancedConversionsEnabled'] = $IsEnhancedConversionsEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsAutoGoal
+     *
+     * @return bool|null
+     */
+    public function getIsAutoGoal()
+    {
+        if (!isset($this->container['IsAutoGoal']) || is_null($this->container['IsAutoGoal'])) {
+            return null;
+        }
+        return $this->container['IsAutoGoal'];
+    }
+
+    /**
+     * Sets IsAutoGoal
+     *
+     * @param bool|null $IsAutoGoal IsAutoGoal
+     *
+     * @return self
+     */
+    public function setIsAutoGoal($IsAutoGoal)
+    {
+        if (is_null($IsAutoGoal)) {
+            array_push($this->openAPINullablesSetToNull, 'IsAutoGoal');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsAutoGoal', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsAutoGoal'] = $IsAutoGoal;
 
         return $this;
     }

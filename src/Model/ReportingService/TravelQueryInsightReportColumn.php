@@ -1,33 +1,63 @@
 <?php
 /**
- * AdSubType
- * CampaignManagementService
+ * TravelQueryInsightReportColumn
+ * ReportingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\ReportingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\ReportingService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class AdSubType
+class TravelQueryInsightReportColumn
 {
     /**
      * Possible values of this enum
      */
-    public const VIDEO = 'Video';
+    public const SEARCH_QUERY = 'SearchQuery';
 
-    public const DISPLAY = 'Display';
+    public const COUNTRY = 'Country';
 
-    public const HTML5 = 'HTML5';
+    public const REGION = 'Region';
+
+    public const METRO_AREA = 'MetroArea';
+
+    public const CITY = 'City';
+
+    public const POSTAL_CODE = 'PostalCode';
+
+    public const L1_VERTICAL = 'L1Vertical';
+
+    public const L2_VERTICAL = 'L2Vertical';
+
+    public const L3_VERTICAL = 'L3Vertical';
+
+    public const POS_COUNTRY = 'POSCountry';
+
+    public const POS_REGION = 'POSRegion';
+
+    public const POS_CITY = 'POSCity';
+
+    public const BRAND_IMPRESSIONS = 'BrandImpressions';
+
+    public const BRAND_CLICKS = 'BrandClicks';
+
+    public const BRAND_SPEND = 'BrandSpend';
+
+    public const MSA_IMPRESSIONS = 'MSAImpressions';
+
+    public const MSA_CLICKS = 'MSAClicks';
+
+    public const MSA_SPEND = 'MSASpend';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
-    private static bool $isFlags = true;
+    private static bool $isFlags = false;
     private $value;
 
     /**
@@ -92,9 +122,24 @@ class AdSubType
     public static function getAllowableEnumValues(): array
     {
         return [
-            self::VIDEO,
-            self::DISPLAY,
-            self::HTML5
+            self::SEARCH_QUERY,
+            self::COUNTRY,
+            self::REGION,
+            self::METRO_AREA,
+            self::CITY,
+            self::POSTAL_CODE,
+            self::L1_VERTICAL,
+            self::L2_VERTICAL,
+            self::L3_VERTICAL,
+            self::POS_COUNTRY,
+            self::POS_REGION,
+            self::POS_CITY,
+            self::BRAND_IMPRESSIONS,
+            self::BRAND_CLICKS,
+            self::BRAND_SPEND,
+            self::MSA_IMPRESSIONS,
+            self::MSA_CLICKS,
+            self::MSA_SPEND
         ];
     }
 }

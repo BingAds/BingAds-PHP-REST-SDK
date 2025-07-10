@@ -83,6 +83,8 @@ class CampaignAdditionalField
 
     public const LIFETIME_BUDGET_FIELDS = 'LifetimeBudgetFields';
 
+    public const MAX_CONVERSION_VALUE_WITH_MAX_CPC = 'MaxConversionValueWithMaxCpc';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -181,7 +183,8 @@ class CampaignAdditionalField
             self::THIRD_PARTY_MEASUREMENT_SETTING,
             self::MANUAL_CPC,
             self::NEW_CUSTOMER_ACQUISITION_GOAL_SETTING,
-            self::LIFETIME_BUDGET_FIELDS
+            self::LIFETIME_BUDGET_FIELDS,
+            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC
         ];
     }
 }

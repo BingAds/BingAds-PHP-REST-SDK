@@ -27,6 +27,8 @@ class AudienceAdditionalField
 
     public const IMPRESSION_BASED_REMARKETING_LIST = 'ImpressionBasedRemarketingList';
 
+    public const CAMPAIGN_IDS_AD_GROUP_IDS = 'CampaignIdsAdGroupIds';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -97,7 +99,8 @@ class AudienceAdditionalField
             self::NONE,
             self::NORMAL_FORM,
             self::NUMBER_RULE_ITEM,
-            self::IMPRESSION_BASED_REMARKETING_LIST
+            self::IMPRESSION_BASED_REMARKETING_LIST,
+            self::CAMPAIGN_IDS_AD_GROUP_IDS
         ];
     }
 }

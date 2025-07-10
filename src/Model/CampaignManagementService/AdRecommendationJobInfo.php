@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * AdRecommendationJobInfo
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'AdRecommendationJobInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'JobId' => 'string',
+        'JobStatus' => 'string',
+        'ErrorCode' => 'string',
+        'ErrorMessage' => 'string'
     ];
 
     /**
@@ -45,8 +47,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'JobId' => 'int64',
+        'JobStatus' => null,
+        'ErrorCode' => null,
+        'ErrorMessage' => null
     ];
 
     /**
@@ -55,8 +59,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'JobId' => false,
+        'JobStatus' => true,
+        'ErrorCode' => true,
+        'ErrorMessage' => true
     ];
 
     /**
@@ -145,8 +151,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'JobId' => 'JobId',
+        'JobStatus' => 'JobStatus',
+        'ErrorCode' => 'ErrorCode',
+        'ErrorMessage' => 'ErrorMessage'
     ];
 
     /**
@@ -155,8 +163,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'JobId' => 'setJobId',
+        'JobStatus' => 'setJobStatus',
+        'ErrorCode' => 'setErrorCode',
+        'ErrorMessage' => 'setErrorMessage'
     ];
 
     /**
@@ -165,8 +175,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'JobId' => 'getJobId',
+        'JobStatus' => 'getJobStatus',
+        'ErrorCode' => 'getErrorCode',
+        'ErrorMessage' => 'getErrorMessage'
     ];
 
     /**
@@ -226,8 +238,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('JobId', $data ?? [], null);
+        $this->setIfExists('JobStatus', $data ?? [], null);
+        $this->setIfExists('ErrorCode', $data ?? [], null);
+        $this->setIfExists('ErrorMessage', $data ?? [], null);
     }
 
     /**
@@ -273,67 +287,142 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets JobId
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getJobId()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['JobId']) || is_null($this->container['JobId'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['JobId'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets JobId
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $JobId JobId
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setJobId($JobId)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($JobId)) {
+            throw new \InvalidArgumentException('non-nullable JobId cannot be null');
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['JobId'] = $JobId;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets JobStatus
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return string|null
      */
-    public function getReturnAdditionalFields()
+    public function getJobStatus()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['JobStatus']) || is_null($this->container['JobStatus'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['JobStatus'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets JobStatus
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param string|null $JobStatus JobStatus
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setJobStatus($JobStatus)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($JobStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'JobStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('JobStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        $this->container['JobStatus'] = $JobStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets ErrorCode
+     *
+     * @return string|null
+     */
+    public function getErrorCode()
+    {
+        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
+            return null;
         }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        return $this->container['ErrorCode'];
+    }
+
+    /**
+     * Sets ErrorCode
+     *
+     * @param string|null $ErrorCode ErrorCode
+     *
+     * @return self
+     */
+    public function setErrorCode($ErrorCode)
+    {
+        if (is_null($ErrorCode)) {
+            array_push($this->openAPINullablesSetToNull, 'ErrorCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ErrorCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ErrorCode'] = $ErrorCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets ErrorMessage
+     *
+     * @return string|null
+     */
+    public function getErrorMessage()
+    {
+        if (!isset($this->container['ErrorMessage']) || is_null($this->container['ErrorMessage'])) {
+            return null;
+        }
+        return $this->container['ErrorMessage'];
+    }
+
+    /**
+     * Sets ErrorMessage
+     *
+     * @param string|null $ErrorMessage ErrorMessage
+     *
+     * @return self
+     */
+    public function setErrorMessage($ErrorMessage)
+    {
+        if (is_null($ErrorMessage)) {
+            array_push($this->openAPINullablesSetToNull, 'ErrorMessage');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ErrorMessage', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ErrorMessage'] = $ErrorMessage;
 
         return $this;
     }

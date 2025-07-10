@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * GetDiagnosticsResponse
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'GetDiagnosticsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'DiagnosticTileData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticTileData',
+        'DiagnosticCategoryData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCategoryData[]',
+        'DiagnosticCardData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCardData[]',
+        'DiagnosticErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckError[]'
     ];
 
     /**
@@ -45,8 +47,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'DiagnosticTileData' => null,
+        'DiagnosticCategoryData' => null,
+        'DiagnosticCardData' => null,
+        'DiagnosticErrors' => null
     ];
 
     /**
@@ -55,8 +59,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'DiagnosticTileData' => true,
+        'DiagnosticCategoryData' => true,
+        'DiagnosticCardData' => true,
+        'DiagnosticErrors' => true
     ];
 
     /**
@@ -145,8 +151,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'DiagnosticTileData' => 'DiagnosticTileData',
+        'DiagnosticCategoryData' => 'DiagnosticCategoryData',
+        'DiagnosticCardData' => 'DiagnosticCardData',
+        'DiagnosticErrors' => 'DiagnosticErrors'
     ];
 
     /**
@@ -155,8 +163,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'DiagnosticTileData' => 'setDiagnosticTileData',
+        'DiagnosticCategoryData' => 'setDiagnosticCategoryData',
+        'DiagnosticCardData' => 'setDiagnosticCardData',
+        'DiagnosticErrors' => 'setDiagnosticErrors'
     ];
 
     /**
@@ -165,8 +175,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'DiagnosticTileData' => 'getDiagnosticTileData',
+        'DiagnosticCategoryData' => 'getDiagnosticCategoryData',
+        'DiagnosticCardData' => 'getDiagnosticCardData',
+        'DiagnosticErrors' => 'getDiagnosticErrors'
     ];
 
     /**
@@ -226,8 +238,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('DiagnosticTileData', $data ?? [], null);
+        $this->setIfExists('DiagnosticCategoryData', $data ?? [], null);
+        $this->setIfExists('DiagnosticCardData', $data ?? [], null);
+        $this->setIfExists('DiagnosticErrors', $data ?? [], null);
     }
 
     /**
@@ -273,67 +287,149 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets DiagnosticTileData
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticTileData|null
      */
-    public function getAdGroupId()
+    public function getDiagnosticTileData()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['DiagnosticTileData']) || is_null($this->container['DiagnosticTileData'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['DiagnosticTileData'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets DiagnosticTileData
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticTileData|null $DiagnosticTileData DiagnosticTileData
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setDiagnosticTileData($DiagnosticTileData)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($DiagnosticTileData)) {
+            array_push($this->openAPINullablesSetToNull, 'DiagnosticTileData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DiagnosticTileData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['DiagnosticTileData'] = $DiagnosticTileData;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets DiagnosticCategoryData
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCategoryData[]|null
      */
-    public function getReturnAdditionalFields()
+    public function getDiagnosticCategoryData()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['DiagnosticCategoryData']) || is_null($this->container['DiagnosticCategoryData'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['DiagnosticCategoryData'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets DiagnosticCategoryData
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCategoryData[]|null $DiagnosticCategoryData DiagnosticCategoryData
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setDiagnosticCategoryData($DiagnosticCategoryData)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($DiagnosticCategoryData)) {
+            array_push($this->openAPINullablesSetToNull, 'DiagnosticCategoryData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DiagnosticCategoryData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        $this->container['DiagnosticCategoryData'] = $DiagnosticCategoryData;
+
+        return $this;
+    }
+
+    /**
+     * Gets DiagnosticCardData
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCardData[]|null
+     */
+    public function getDiagnosticCardData()
+    {
+        if (!isset($this->container['DiagnosticCardData']) || is_null($this->container['DiagnosticCardData'])) {
+            return null;
         }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        return $this->container['DiagnosticCardData'];
+    }
+
+    /**
+     * Sets DiagnosticCardData
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCardData[]|null $DiagnosticCardData DiagnosticCardData
+     *
+     * @return self
+     */
+    public function setDiagnosticCardData($DiagnosticCardData)
+    {
+        if (is_null($DiagnosticCardData)) {
+            array_push($this->openAPINullablesSetToNull, 'DiagnosticCardData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DiagnosticCardData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DiagnosticCardData'] = $DiagnosticCardData;
+
+        return $this;
+    }
+
+    /**
+     * Gets DiagnosticErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckError[]|null
+     */
+    public function getDiagnosticErrors()
+    {
+        if (!isset($this->container['DiagnosticErrors']) || is_null($this->container['DiagnosticErrors'])) {
+            return null;
+        }
+        return $this->container['DiagnosticErrors'];
+    }
+
+    /**
+     * Sets DiagnosticErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckError[]|null $DiagnosticErrors DiagnosticErrors
+     *
+     * @return self
+     */
+    public function setDiagnosticErrors($DiagnosticErrors)
+    {
+        if (is_null($DiagnosticErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'DiagnosticErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DiagnosticErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DiagnosticErrors'] = $DiagnosticErrors;
 
         return $this;
     }

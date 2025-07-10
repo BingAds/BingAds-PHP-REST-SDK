@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * DiagnosticCategoryData
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DiagnosticCategoryData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'DiagnosticCategoryData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'CategoryKey' => 'string',
+        'CategoryDisplayName' => 'string',
+        'CategorySeverity' => 'string',
+        'CategoryStatus' => 'string',
+        'Description' => 'string',
+        'ActionLinks' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]'
     ];
 
     /**
@@ -45,8 +49,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'CategoryKey' => null,
+        'CategoryDisplayName' => null,
+        'CategorySeverity' => null,
+        'CategoryStatus' => null,
+        'Description' => null,
+        'ActionLinks' => null
     ];
 
     /**
@@ -55,8 +63,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'CategoryKey' => true,
+        'CategoryDisplayName' => true,
+        'CategorySeverity' => true,
+        'CategoryStatus' => true,
+        'Description' => true,
+        'ActionLinks' => true
     ];
 
     /**
@@ -145,8 +157,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'CategoryKey' => 'CategoryKey',
+        'CategoryDisplayName' => 'CategoryDisplayName',
+        'CategorySeverity' => 'CategorySeverity',
+        'CategoryStatus' => 'CategoryStatus',
+        'Description' => 'Description',
+        'ActionLinks' => 'ActionLinks'
     ];
 
     /**
@@ -155,8 +171,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'CategoryKey' => 'setCategoryKey',
+        'CategoryDisplayName' => 'setCategoryDisplayName',
+        'CategorySeverity' => 'setCategorySeverity',
+        'CategoryStatus' => 'setCategoryStatus',
+        'Description' => 'setDescription',
+        'ActionLinks' => 'setActionLinks'
     ];
 
     /**
@@ -165,8 +185,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'CategoryKey' => 'getCategoryKey',
+        'CategoryDisplayName' => 'getCategoryDisplayName',
+        'CategorySeverity' => 'getCategorySeverity',
+        'CategoryStatus' => 'getCategoryStatus',
+        'Description' => 'getDescription',
+        'ActionLinks' => 'getActionLinks'
     ];
 
     /**
@@ -226,8 +250,12 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('CategoryKey', $data ?? [], null);
+        $this->setIfExists('CategoryDisplayName', $data ?? [], null);
+        $this->setIfExists('CategorySeverity', $data ?? [], null);
+        $this->setIfExists('CategoryStatus', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('ActionLinks', $data ?? [], null);
     }
 
     /**
@@ -273,67 +301,223 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets CategoryKey
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getCategoryKey()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['CategoryKey']) || is_null($this->container['CategoryKey'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['CategoryKey'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets CategoryKey
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $CategoryKey CategoryKey
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setCategoryKey($CategoryKey)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($CategoryKey)) {
+            array_push($this->openAPINullablesSetToNull, 'CategoryKey');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategoryKey', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['CategoryKey'] = $CategoryKey;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets CategoryDisplayName
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return string|null
      */
-    public function getReturnAdditionalFields()
+    public function getCategoryDisplayName()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['CategoryDisplayName']) || is_null($this->container['CategoryDisplayName'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['CategoryDisplayName'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets CategoryDisplayName
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param string|null $CategoryDisplayName CategoryDisplayName
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setCategoryDisplayName($CategoryDisplayName)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($CategoryDisplayName)) {
+            array_push($this->openAPINullablesSetToNull, 'CategoryDisplayName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategoryDisplayName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        $this->container['CategoryDisplayName'] = $CategoryDisplayName;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategorySeverity
+     *
+     * @return string|null
+     */
+    public function getCategorySeverity()
+    {
+        if (!isset($this->container['CategorySeverity']) || is_null($this->container['CategorySeverity'])) {
+            return null;
         }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        return $this->container['CategorySeverity'];
+    }
+
+    /**
+     * Sets CategorySeverity
+     *
+     * @param string|null $CategorySeverity CategorySeverity
+     *
+     * @return self
+     */
+    public function setCategorySeverity($CategorySeverity)
+    {
+        if (is_null($CategorySeverity)) {
+            array_push($this->openAPINullablesSetToNull, 'CategorySeverity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategorySeverity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CategorySeverity'] = $CategorySeverity;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategoryStatus
+     *
+     * @return string|null
+     */
+    public function getCategoryStatus()
+    {
+        if (!isset($this->container['CategoryStatus']) || is_null($this->container['CategoryStatus'])) {
+            return null;
+        }
+        return $this->container['CategoryStatus'];
+    }
+
+    /**
+     * Sets CategoryStatus
+     *
+     * @param string|null $CategoryStatus CategoryStatus
+     *
+     * @return self
+     */
+    public function setCategoryStatus($CategoryStatus)
+    {
+        if (is_null($CategoryStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'CategoryStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategoryStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CategoryStatus'] = $CategoryStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
+        }
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets ActionLinks
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]|null
+     */
+    public function getActionLinks()
+    {
+        if (!isset($this->container['ActionLinks']) || is_null($this->container['ActionLinks'])) {
+            return null;
+        }
+        return $this->container['ActionLinks'];
+    }
+
+    /**
+     * Sets ActionLinks
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]|null $ActionLinks ActionLinks
+     *
+     * @return self
+     */
+    public function setActionLinks($ActionLinks)
+    {
+        if (is_null($ActionLinks)) {
+            array_push($this->openAPINullablesSetToNull, 'ActionLinks');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ActionLinks', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ActionLinks'] = $ActionLinks;
 
         return $this;
     }

@@ -35,7 +35,10 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPITypes = [
         'Width' => 'int',
         'Height' => 'int',
-        'ItemId' => 'string'
+        'ItemId' => 'string',
+        'CroppedImageUrl' => 'string',
+        'VideoClipUrl' => 'string',
+        'IsVideoFeasible' => 'bool'
     ];
 
     /**
@@ -48,7 +51,10 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPIFormats = [
         'Width' => 'int32',
         'Height' => 'int32',
-        'ItemId' => null
+        'ItemId' => null,
+        'CroppedImageUrl' => null,
+        'VideoClipUrl' => null,
+        'IsVideoFeasible' => null
     ];
 
     /**
@@ -59,7 +65,10 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPINullables = [
         'Width' => false,
         'Height' => false,
-        'ItemId' => true
+        'ItemId' => true,
+        'CroppedImageUrl' => true,
+        'VideoClipUrl' => true,
+        'IsVideoFeasible' => false
     ];
 
     /**
@@ -150,7 +159,10 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
     protected static array $attributeMap = [
         'Width' => 'width',
         'Height' => 'height',
-        'ItemId' => 'itemId'
+        'ItemId' => 'itemId',
+        'CroppedImageUrl' => 'croppedImageUrl',
+        'VideoClipUrl' => 'videoClipUrl',
+        'IsVideoFeasible' => 'isVideoFeasible'
     ];
 
     /**
@@ -161,7 +173,10 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
     protected static array $setters = [
         'Width' => 'setWidth',
         'Height' => 'setHeight',
-        'ItemId' => 'setItemId'
+        'ItemId' => 'setItemId',
+        'CroppedImageUrl' => 'setCroppedImageUrl',
+        'VideoClipUrl' => 'setVideoClipUrl',
+        'IsVideoFeasible' => 'setIsVideoFeasible'
     ];
 
     /**
@@ -172,7 +187,10 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
     protected static array $getters = [
         'Width' => 'getWidth',
         'Height' => 'getHeight',
-        'ItemId' => 'getItemId'
+        'ItemId' => 'getItemId',
+        'CroppedImageUrl' => 'getCroppedImageUrl',
+        'VideoClipUrl' => 'getVideoClipUrl',
+        'IsVideoFeasible' => 'getIsVideoFeasible'
     ];
 
     /**
@@ -235,6 +253,9 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('Width', $data ?? [], null);
         $this->setIfExists('Height', $data ?? [], null);
         $this->setIfExists('ItemId', $data ?? [], null);
+        $this->setIfExists('CroppedImageUrl', $data ?? [], null);
+        $this->setIfExists('VideoClipUrl', $data ?? [], null);
+        $this->setIfExists('IsVideoFeasible', $data ?? [], null);
     }
 
     /**
@@ -372,6 +393,110 @@ class VideoRecommendationImageData implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['ItemId'] = $ItemId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CroppedImageUrl
+     *
+     * @return string|null
+     */
+    public function getCroppedImageUrl()
+    {
+        if (!isset($this->container['CroppedImageUrl']) || is_null($this->container['CroppedImageUrl'])) {
+            return null;
+        }
+        return $this->container['CroppedImageUrl'];
+    }
+
+    /**
+     * Sets CroppedImageUrl
+     *
+     * @param string|null $CroppedImageUrl CroppedImageUrl
+     *
+     * @return self
+     */
+    public function setCroppedImageUrl($CroppedImageUrl)
+    {
+        if (is_null($CroppedImageUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'CroppedImageUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CroppedImageUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CroppedImageUrl'] = $CroppedImageUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoClipUrl
+     *
+     * @return string|null
+     */
+    public function getVideoClipUrl()
+    {
+        if (!isset($this->container['VideoClipUrl']) || is_null($this->container['VideoClipUrl'])) {
+            return null;
+        }
+        return $this->container['VideoClipUrl'];
+    }
+
+    /**
+     * Sets VideoClipUrl
+     *
+     * @param string|null $VideoClipUrl VideoClipUrl
+     *
+     * @return self
+     */
+    public function setVideoClipUrl($VideoClipUrl)
+    {
+        if (is_null($VideoClipUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'VideoClipUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('VideoClipUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['VideoClipUrl'] = $VideoClipUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsVideoFeasible
+     *
+     * @return bool|null
+     */
+    public function getIsVideoFeasible()
+    {
+        if (!isset($this->container['IsVideoFeasible']) || is_null($this->container['IsVideoFeasible'])) {
+            return null;
+        }
+        return $this->container['IsVideoFeasible'];
+    }
+
+    /**
+     * Sets IsVideoFeasible
+     *
+     * @param bool|null $IsVideoFeasible IsVideoFeasible
+     *
+     * @return self
+     */
+    public function setIsVideoFeasible($IsVideoFeasible)
+    {
+        if (is_null($IsVideoFeasible)) {
+            throw new \InvalidArgumentException('non-nullable IsVideoFeasible cannot be null');
+        }
+        $this->container['IsVideoFeasible'] = $IsVideoFeasible;
 
         return $this;
     }

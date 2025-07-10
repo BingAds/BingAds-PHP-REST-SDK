@@ -36,6 +36,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType',
         'CampaignId' => 'string',
         'AdGroupId' => 'string',
+        'CampaignIds' => 'string[]',
+        'AdGroupIds' => 'string[]',
         'Id' => 'string',
         'Name' => 'string',
         'Description' => 'string',
@@ -61,6 +63,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         'EntityType' => null,
         'CampaignId' => 'int64',
         'AdGroupId' => 'int64',
+        'CampaignIds' => 'int64',
+        'AdGroupIds' => 'int64',
         'Id' => 'int64',
         'Name' => null,
         'Description' => null,
@@ -84,6 +88,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         'EntityType' => false,
         'CampaignId' => true,
         'AdGroupId' => true,
+        'CampaignIds' => true,
+        'AdGroupIds' => true,
         'Id' => true,
         'Name' => true,
         'Description' => true,
@@ -187,6 +193,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         'EntityType' => 'EntityType',
         'CampaignId' => 'CampaignId',
         'AdGroupId' => 'AdGroupId',
+        'CampaignIds' => 'CampaignIds',
+        'AdGroupIds' => 'AdGroupIds',
         'Id' => 'Id',
         'Name' => 'Name',
         'Description' => 'Description',
@@ -210,6 +218,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         'EntityType' => 'setEntityType',
         'CampaignId' => 'setCampaignId',
         'AdGroupId' => 'setAdGroupId',
+        'CampaignIds' => 'setCampaignIds',
+        'AdGroupIds' => 'setAdGroupIds',
         'Id' => 'setId',
         'Name' => 'setName',
         'Description' => 'setDescription',
@@ -233,6 +243,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         'EntityType' => 'getEntityType',
         'CampaignId' => 'getCampaignId',
         'AdGroupId' => 'getAdGroupId',
+        'CampaignIds' => 'getCampaignIds',
+        'AdGroupIds' => 'getAdGroupIds',
         'Id' => 'getId',
         'Name' => 'getName',
         'Description' => 'getDescription',
@@ -307,6 +319,8 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
         $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
+        $this->setIfExists('CampaignIds', $data ?? [], null);
+        $this->setIfExists('AdGroupIds', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
@@ -469,6 +483,80 @@ class ImpressionBasedRemarketingList extends Audience implements ModelInterface,
             }
         }
         $this->container['AdGroupId'] = $AdGroupId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignIds
+     *
+     * @return string[]|null
+     */
+    public function getCampaignIds()
+    {
+        if (!isset($this->container['CampaignIds']) || is_null($this->container['CampaignIds'])) {
+            return null;
+        }
+        return $this->container['CampaignIds'];
+    }
+
+    /**
+     * Sets CampaignIds
+     *
+     * @param string[]|null $CampaignIds CampaignIds
+     *
+     * @return self
+     */
+    public function setCampaignIds($CampaignIds)
+    {
+        if (is_null($CampaignIds)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignIds'] = $CampaignIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdGroupIds
+     *
+     * @return string[]|null
+     */
+    public function getAdGroupIds()
+    {
+        if (!isset($this->container['AdGroupIds']) || is_null($this->container['AdGroupIds'])) {
+            return null;
+        }
+        return $this->container['AdGroupIds'];
+    }
+
+    /**
+     * Sets AdGroupIds
+     *
+     * @param string[]|null $AdGroupIds AdGroupIds
+     *
+     * @return self
+     */
+    public function setAdGroupIds($AdGroupIds)
+    {
+        if (is_null($AdGroupIds)) {
+            array_push($this->openAPINullablesSetToNull, 'AdGroupIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdGroupIds'] = $AdGroupIds;
 
         return $this;
     }

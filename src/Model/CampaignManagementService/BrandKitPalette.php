@@ -34,7 +34,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Colors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]',
-        'ColorType' => 'string'
+        'ColorType' => 'string',
+        'Name' => 'string'
     ];
 
     /**
@@ -46,7 +47,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Colors' => null,
-        'ColorType' => null
+        'ColorType' => null,
+        'Name' => null
     ];
 
     /**
@@ -56,7 +58,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Colors' => true,
-        'ColorType' => true
+        'ColorType' => true,
+        'Name' => true
     ];
 
     /**
@@ -146,7 +149,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Colors' => 'Colors',
-        'ColorType' => 'ColorType'
+        'ColorType' => 'ColorType',
+        'Name' => 'Name'
     ];
 
     /**
@@ -156,7 +160,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Colors' => 'setColors',
-        'ColorType' => 'setColorType'
+        'ColorType' => 'setColorType',
+        'Name' => 'setName'
     ];
 
     /**
@@ -166,7 +171,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Colors' => 'getColors',
-        'ColorType' => 'getColorType'
+        'ColorType' => 'getColorType',
+        'Name' => 'getName'
     ];
 
     /**
@@ -228,6 +234,7 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('Colors', $data ?? [], null);
         $this->setIfExists('ColorType', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
     }
 
     /**
@@ -342,6 +349,43 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ColorType'] = $ColorType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
 
         return $this;
     }

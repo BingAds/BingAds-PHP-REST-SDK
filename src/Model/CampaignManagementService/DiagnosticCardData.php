@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * DiagnosticCardData
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DiagnosticCardData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'DiagnosticCardData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'Metadata' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckMetadata',
+        'CheckpointsData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckData[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'Metadata' => null,
+        'CheckpointsData' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'Metadata' => true,
+        'CheckpointsData' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'Metadata' => 'Metadata',
+        'CheckpointsData' => 'CheckpointsData'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'Metadata' => 'setMetadata',
+        'CheckpointsData' => 'setCheckpointsData'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'Metadata' => 'getMetadata',
+        'CheckpointsData' => 'getCheckpointsData'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('Metadata', $data ?? [], null);
+        $this->setIfExists('CheckpointsData', $data ?? [], null);
     }
 
     /**
@@ -273,67 +273,75 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets Metadata
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckMetadata|null
      */
-    public function getAdGroupId()
+    public function getMetadata()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['Metadata']) || is_null($this->container['Metadata'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['Metadata'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets Metadata
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckMetadata|null $Metadata Metadata
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setMetadata($Metadata)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($Metadata)) {
+            array_push($this->openAPINullablesSetToNull, 'Metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['Metadata'] = $Metadata;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets CheckpointsData
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckData[]|null
      */
-    public function getReturnAdditionalFields()
+    public function getCheckpointsData()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['CheckpointsData']) || is_null($this->container['CheckpointsData'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['CheckpointsData'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets CheckpointsData
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckData[]|null $CheckpointsData CheckpointsData
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setCheckpointsData($CheckpointsData)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($CheckpointsData)) {
+            array_push($this->openAPINullablesSetToNull, 'CheckpointsData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CheckpointsData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        $this->container['CheckpointsData'] = $CheckpointsData;
 
         return $this;
     }

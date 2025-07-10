@@ -148,6 +148,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'bool',
         'UpdateAdUrls' => 'bool',
         'UpdateSitelinkUrls' => 'bool',
+        'UpdateAssetAutomationCampaignSetting' => 'bool',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Type' => 'string'
     ];
@@ -265,6 +266,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => null,
         'UpdateAdUrls' => null,
         'UpdateSitelinkUrls' => null,
+        'UpdateAssetAutomationCampaignSetting' => null,
         'ForwardCompatibilityMap' => null,
         'Type' => null
     ];
@@ -380,6 +382,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => true,
         'UpdateAdUrls' => true,
         'UpdateSitelinkUrls' => true,
+        'UpdateAssetAutomationCampaignSetting' => true,
         'ForwardCompatibilityMap' => true,
         'Type' => true
     ];
@@ -575,6 +578,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'RenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'UpdateAdUrls',
         'UpdateSitelinkUrls' => 'UpdateSitelinkUrls',
+        'UpdateAssetAutomationCampaignSetting' => 'UpdateAssetAutomationCampaignSetting',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Type' => 'Type'
     ];
@@ -690,6 +694,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'setRenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'setUpdateAdUrls',
         'UpdateSitelinkUrls' => 'setUpdateSitelinkUrls',
+        'UpdateAssetAutomationCampaignSetting' => 'setUpdateAssetAutomationCampaignSetting',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Type' => 'setType'
     ];
@@ -805,6 +810,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'getRenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'getUpdateAdUrls',
         'UpdateSitelinkUrls' => 'getUpdateSitelinkUrls',
+        'UpdateAssetAutomationCampaignSetting' => 'getUpdateAssetAutomationCampaignSetting',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Type' => 'getType'
     ];
@@ -971,6 +977,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('RenameCampaignNameWithSuffix', $data ?? [], null);
         $this->setIfExists('UpdateAdUrls', $data ?? [], null);
         $this->setIfExists('UpdateSitelinkUrls', $data ?? [], null);
+        $this->setIfExists('UpdateAssetAutomationCampaignSetting', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'FileImportOption');
 
@@ -4901,6 +4908,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UpdateSitelinkUrls'] = $UpdateSitelinkUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets UpdateAssetAutomationCampaignSetting
+     *
+     * @return bool|null
+     */
+    public function getUpdateAssetAutomationCampaignSetting()
+    {
+        if (!isset($this->container['UpdateAssetAutomationCampaignSetting']) || is_null($this->container['UpdateAssetAutomationCampaignSetting'])) {
+            return null;
+        }
+        return $this->container['UpdateAssetAutomationCampaignSetting'];
+    }
+
+    /**
+     * Sets UpdateAssetAutomationCampaignSetting
+     *
+     * @param bool|null $UpdateAssetAutomationCampaignSetting UpdateAssetAutomationCampaignSetting
+     *
+     * @return self
+     */
+    public function setUpdateAssetAutomationCampaignSetting($UpdateAssetAutomationCampaignSetting)
+    {
+        if (is_null($UpdateAssetAutomationCampaignSetting)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateAssetAutomationCampaignSetting');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateAssetAutomationCampaignSetting', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateAssetAutomationCampaignSetting'] = $UpdateAssetAutomationCampaignSetting;
 
         return $this;
     }

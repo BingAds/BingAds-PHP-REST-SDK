@@ -33,8 +33,7 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AccountId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField'
+        'AccountId' => 'string'
     ];
 
     /**
@@ -45,8 +44,7 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AccountId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'AccountId' => 'int64'
     ];
 
     /**
@@ -55,8 +53,7 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AccountId' => false,
-        'ReturnAdditionalFields' => false
+        'AccountId' => false
     ];
 
     /**
@@ -145,8 +142,7 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AccountId' => 'AccountId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'AccountId' => 'AccountId'
     ];
 
     /**
@@ -155,8 +151,7 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
-        'AccountId' => 'setAccountId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'AccountId' => 'setAccountId'
     ];
 
     /**
@@ -165,8 +160,7 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
-        'AccountId' => 'getAccountId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'AccountId' => 'getAccountId'
     ];
 
     /**
@@ -227,7 +221,6 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -298,42 +291,6 @@ class GetBrandKitsByAccountIdRequest implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable AccountId cannot be null');
         }
         $this->container['AccountId'] = $AccountId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

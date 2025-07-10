@@ -47,6 +47,7 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'ProfileCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileCriterion',
         'RadiusCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\RadiusCriterion',
         'StoreCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\StoreCriterion',
+        'TopicCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\TopicCriterion',
         'Webpage' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\Webpage',
     ];
 
@@ -106,7 +107,9 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'DealId' => 'string',
         'GenreId' => 'string',
         'PlacementId' => 'string',
-        'PlacementName' => 'string'
+        'PlacementName' => 'string',
+        'TopicId' => 'string',
+        'TopicName' => 'string'
     ];
 
     /**
@@ -160,7 +163,9 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'DealId' => 'int64',
         'GenreId' => 'int64',
         'PlacementId' => 'int64',
-        'PlacementName' => null
+        'PlacementName' => null,
+        'TopicId' => 'int64',
+        'TopicName' => null
     ];
 
     /**
@@ -212,7 +217,9 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'DealId' => false,
         'GenreId' => false,
         'PlacementId' => false,
-        'PlacementName' => true
+        'PlacementName' => true,
+        'TopicId' => false,
+        'TopicName' => true
     ];
 
     /**
@@ -344,7 +351,9 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'DealId' => 'DealId',
         'GenreId' => 'GenreId',
         'PlacementId' => 'PlacementId',
-        'PlacementName' => 'PlacementName'
+        'PlacementName' => 'PlacementName',
+        'TopicId' => 'TopicId',
+        'TopicName' => 'TopicName'
     ];
 
     /**
@@ -396,7 +405,9 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'DealId' => 'setDealId',
         'GenreId' => 'setGenreId',
         'PlacementId' => 'setPlacementId',
-        'PlacementName' => 'setPlacementName'
+        'PlacementName' => 'setPlacementName',
+        'TopicId' => 'setTopicId',
+        'TopicName' => 'setTopicName'
     ];
 
     /**
@@ -448,7 +459,9 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'DealId' => 'getDealId',
         'GenreId' => 'getGenreId',
         'PlacementId' => 'getPlacementId',
-        'PlacementName' => 'getPlacementName'
+        'PlacementName' => 'getPlacementName',
+        'TopicId' => 'getTopicId',
+        'TopicName' => 'getTopicName'
     ];
 
     /**
@@ -511,7 +524,7 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ParentCriterionId', $data ?? [], null);
         $this->setIfExists('Condition', $data ?? [], null);
         $this->setIfExists('PartitionType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'PlacementCriterion');
+        $this->setIfExists('Type', $data ?? [], 'TopicCriterion');
         $this->setIfExists('Listing', $data ?? [], null);
         $this->setIfExists('ListingType', $data ?? [], null);
         $this->setIfExists('MinDays', $data ?? [], null);
@@ -552,6 +565,8 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('GenreId', $data ?? [], null);
         $this->setIfExists('PlacementId', $data ?? [], null);
         $this->setIfExists('PlacementName', $data ?? [], null);
+        $this->setIfExists('TopicId', $data ?? [], null);
+        $this->setIfExists('TopicName', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -2182,6 +2197,73 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['PlacementName'] = $PlacementName;
+
+        return $this;
+    }
+
+    /**
+     * Gets TopicId
+     *
+     * @return string|null
+     */
+    public function getTopicId()
+    {
+        if (!isset($this->container['TopicId']) || is_null($this->container['TopicId'])) {
+            return null;
+        }
+        return $this->container['TopicId'];
+    }
+
+    /**
+     * Sets TopicId
+     *
+     * @param string|null $TopicId TopicId
+     *
+     * @return self
+     */
+    public function setTopicId($TopicId)
+    {
+        if (is_null($TopicId)) {
+            throw new \InvalidArgumentException('non-nullable TopicId cannot be null');
+        }
+        $this->container['TopicId'] = $TopicId;
+
+        return $this;
+    }
+
+    /**
+     * Gets TopicName
+     *
+     * @return string|null
+     */
+    public function getTopicName()
+    {
+        if (!isset($this->container['TopicName']) || is_null($this->container['TopicName'])) {
+            return null;
+        }
+        return $this->container['TopicName'];
+    }
+
+    /**
+     * Sets TopicName
+     *
+     * @param string|null $TopicName TopicName
+     *
+     * @return self
+     */
+    public function setTopicName($TopicName)
+    {
+        if (is_null($TopicName)) {
+            array_push($this->openAPINullablesSetToNull, 'TopicName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TopicName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TopicName'] = $TopicName;
 
         return $this;
     }

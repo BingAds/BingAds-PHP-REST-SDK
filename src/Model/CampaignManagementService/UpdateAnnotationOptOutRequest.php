@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * UpdateAnnotationOptOutRequest
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateAnnotationOptOutRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'UpdateAnnotationOptOutRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'Justification' => 'string',
+        'AnnotationOptOuts' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AnnotationOptOut[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'Justification' => null,
+        'AnnotationOptOuts' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'Justification' => true,
+        'AnnotationOptOuts' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'Justification' => 'Justification',
+        'AnnotationOptOuts' => 'AnnotationOptOuts'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'Justification' => 'setJustification',
+        'AnnotationOptOuts' => 'setAnnotationOptOuts'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'Justification' => 'getJustification',
+        'AnnotationOptOuts' => 'getAnnotationOptOuts'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('Justification', $data ?? [], null);
+        $this->setIfExists('AnnotationOptOuts', $data ?? [], null);
     }
 
     /**
@@ -273,67 +273,75 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets Justification
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getJustification()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['Justification']) || is_null($this->container['Justification'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['Justification'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets Justification
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $Justification Justification
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setJustification($Justification)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($Justification)) {
+            array_push($this->openAPINullablesSetToNull, 'Justification');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Justification', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['Justification'] = $Justification;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets AnnotationOptOuts
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AnnotationOptOut[]|null
      */
-    public function getReturnAdditionalFields()
+    public function getAnnotationOptOuts()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['AnnotationOptOuts']) || is_null($this->container['AnnotationOptOuts'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['AnnotationOptOuts'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets AnnotationOptOuts
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AnnotationOptOut[]|null $AnnotationOptOuts AnnotationOptOuts
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setAnnotationOptOuts($AnnotationOptOuts)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($AnnotationOptOuts)) {
+            array_push($this->openAPINullablesSetToNull, 'AnnotationOptOuts');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AnnotationOptOuts', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        $this->container['AnnotationOptOuts'] = $AnnotationOptOuts;
 
         return $this;
     }

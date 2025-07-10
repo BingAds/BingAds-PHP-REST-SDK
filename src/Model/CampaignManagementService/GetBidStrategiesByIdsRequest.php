@@ -33,7 +33,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'BidStrategyIds' => 'string[]'
+        'BidStrategyIds' => 'string[]',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField'
     ];
 
     /**
@@ -44,7 +45,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'BidStrategyIds' => 'int64'
+        'BidStrategyIds' => 'int64',
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -53,7 +55,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'BidStrategyIds' => true
+        'BidStrategyIds' => true,
+        'ReturnAdditionalFields' => false
     ];
 
     /**
@@ -142,7 +145,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
-        'BidStrategyIds' => 'BidStrategyIds'
+        'BidStrategyIds' => 'BidStrategyIds',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -151,7 +155,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
-        'BidStrategyIds' => 'setBidStrategyIds'
+        'BidStrategyIds' => 'setBidStrategyIds',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -160,7 +165,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
-        'BidStrategyIds' => 'getBidStrategyIds'
+        'BidStrategyIds' => 'getBidStrategyIds',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -221,6 +227,7 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
     public function __construct(?array $data = null)
     {
         $this->setIfExists('BidStrategyIds', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -298,6 +305,42 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['BidStrategyIds'] = $BidStrategyIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        }
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

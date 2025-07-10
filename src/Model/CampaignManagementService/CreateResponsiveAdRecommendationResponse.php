@@ -36,7 +36,8 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         'ResponsiveAd' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ResponsiveAd',
         'ImageSuggestions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageSuggestion[]',
         'VideoSuggestions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoSuggestion[]',
-        'PromptBrandWarning' => 'string'
+        'PromptBrandWarning' => 'string',
+        'JobInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationJobInfo'
     ];
 
     /**
@@ -50,7 +51,8 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         'ResponsiveAd' => null,
         'ImageSuggestions' => null,
         'VideoSuggestions' => null,
-        'PromptBrandWarning' => null
+        'PromptBrandWarning' => null,
+        'JobInfo' => null
     ];
 
     /**
@@ -62,7 +64,8 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         'ResponsiveAd' => true,
         'ImageSuggestions' => true,
         'VideoSuggestions' => true,
-        'PromptBrandWarning' => true
+        'PromptBrandWarning' => true,
+        'JobInfo' => true
     ];
 
     /**
@@ -154,7 +157,8 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         'ResponsiveAd' => 'ResponsiveAd',
         'ImageSuggestions' => 'ImageSuggestions',
         'VideoSuggestions' => 'VideoSuggestions',
-        'PromptBrandWarning' => 'PromptBrandWarning'
+        'PromptBrandWarning' => 'PromptBrandWarning',
+        'JobInfo' => 'JobInfo'
     ];
 
     /**
@@ -166,7 +170,8 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         'ResponsiveAd' => 'setResponsiveAd',
         'ImageSuggestions' => 'setImageSuggestions',
         'VideoSuggestions' => 'setVideoSuggestions',
-        'PromptBrandWarning' => 'setPromptBrandWarning'
+        'PromptBrandWarning' => 'setPromptBrandWarning',
+        'JobInfo' => 'setJobInfo'
     ];
 
     /**
@@ -178,7 +183,8 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         'ResponsiveAd' => 'getResponsiveAd',
         'ImageSuggestions' => 'getImageSuggestions',
         'VideoSuggestions' => 'getVideoSuggestions',
-        'PromptBrandWarning' => 'getPromptBrandWarning'
+        'PromptBrandWarning' => 'getPromptBrandWarning',
+        'JobInfo' => 'getJobInfo'
     ];
 
     /**
@@ -242,6 +248,7 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
         $this->setIfExists('ImageSuggestions', $data ?? [], null);
         $this->setIfExists('VideoSuggestions', $data ?? [], null);
         $this->setIfExists('PromptBrandWarning', $data ?? [], null);
+        $this->setIfExists('JobInfo', $data ?? [], null);
     }
 
     /**
@@ -430,6 +437,43 @@ class CreateResponsiveAdRecommendationResponse implements ModelInterface, ArrayA
             }
         }
         $this->container['PromptBrandWarning'] = $PromptBrandWarning;
+
+        return $this;
+    }
+
+    /**
+     * Gets JobInfo
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationJobInfo|null
+     */
+    public function getJobInfo()
+    {
+        if (!isset($this->container['JobInfo']) || is_null($this->container['JobInfo'])) {
+            return null;
+        }
+        return $this->container['JobInfo'];
+    }
+
+    /**
+     * Sets JobInfo
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationJobInfo|null $JobInfo JobInfo
+     *
+     * @return self
+     */
+    public function setJobInfo($JobInfo)
+    {
+        if (is_null($JobInfo)) {
+            array_push($this->openAPINullablesSetToNull, 'JobInfo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('JobInfo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['JobInfo'] = $JobInfo;
 
         return $this;
     }

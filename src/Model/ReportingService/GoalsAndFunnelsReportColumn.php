@@ -79,6 +79,8 @@ class GoalsAndFunnelsReportColumn
 
     public const ASSET_GROUP_STATUS = 'AssetGroupStatus';
 
+    public const CONVERSION_DELAY = 'ConversionDelay';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -175,7 +177,8 @@ class GoalsAndFunnelsReportColumn
             self::CAMPAIGN_TYPE,
             self::ASSET_GROUP_ID,
             self::ASSET_GROUP_NAME,
-            self::ASSET_GROUP_STATUS
+            self::ASSET_GROUP_STATUS,
+            self::CONVERSION_DELAY
         ];
     }
 }

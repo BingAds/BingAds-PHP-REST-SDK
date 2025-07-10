@@ -33,6 +33,8 @@ class ConversionGoalAdditionalField
 
     public const IS_ENHANCED_CONVERSIONS_ENABLED = 'IsEnhancedConversionsEnabled';
 
+    public const IS_AUTO_GOAL = 'IsAutoGoal';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -106,7 +108,8 @@ class ConversionGoalAdditionalField
             self::GOAL_CATEGORY,
             self::INACTIVE_DUE_TO_TAG_UNAVAILABLE,
             self::ATTRIBUTION_MODEL_TYPE,
-            self::IS_ENHANCED_CONVERSIONS_ENABLED
+            self::IS_ENHANCED_CONVERSIONS_ENABLED,
+            self::IS_AUTO_GOAL
         ];
     }
 }

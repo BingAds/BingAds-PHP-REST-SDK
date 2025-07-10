@@ -65,6 +65,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
+        'IsAutoGoal' => 'bool',
         'MinimumDurationInSeconds' => 'int',
         'MinimumPagesViewed' => 'int',
         'CategoryExpression' => 'string',
@@ -105,6 +106,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
+        'IsAutoGoal' => null,
         'MinimumDurationInSeconds' => 'int32',
         'MinimumPagesViewed' => 'int32',
         'CategoryExpression' => null,
@@ -143,6 +145,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
+        'IsAutoGoal' => true,
         'MinimumDurationInSeconds' => true,
         'MinimumPagesViewed' => true,
         'CategoryExpression' => true,
@@ -261,6 +264,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
+        'IsAutoGoal' => 'IsAutoGoal',
         'MinimumDurationInSeconds' => 'MinimumDurationInSeconds',
         'MinimumPagesViewed' => 'MinimumPagesViewed',
         'CategoryExpression' => 'CategoryExpression',
@@ -299,6 +303,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
+        'IsAutoGoal' => 'setIsAutoGoal',
         'MinimumDurationInSeconds' => 'setMinimumDurationInSeconds',
         'MinimumPagesViewed' => 'setMinimumPagesViewed',
         'CategoryExpression' => 'setCategoryExpression',
@@ -337,6 +342,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
+        'IsAutoGoal' => 'getIsAutoGoal',
         'MinimumDurationInSeconds' => 'getMinimumDurationInSeconds',
         'MinimumPagesViewed' => 'getMinimumPagesViewed',
         'CategoryExpression' => 'getCategoryExpression',
@@ -426,6 +432,7 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('GoalCategory', $data ?? [], null);
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
+        $this->setIfExists('IsAutoGoal', $data ?? [], null);
         $this->setIfExists('MinimumDurationInSeconds', $data ?? [], null);
         $this->setIfExists('MinimumPagesViewed', $data ?? [], null);
         $this->setIfExists('CategoryExpression', $data ?? [], null);
@@ -1104,6 +1111,43 @@ class ConversionGoal implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['IsEnhancedConversionsEnabled'] = $IsEnhancedConversionsEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsAutoGoal
+     *
+     * @return bool|null
+     */
+    public function getIsAutoGoal()
+    {
+        if (!isset($this->container['IsAutoGoal']) || is_null($this->container['IsAutoGoal'])) {
+            return null;
+        }
+        return $this->container['IsAutoGoal'];
+    }
+
+    /**
+     * Sets IsAutoGoal
+     *
+     * @param bool|null $IsAutoGoal IsAutoGoal
+     *
+     * @return self
+     */
+    public function setIsAutoGoal($IsAutoGoal)
+    {
+        if (is_null($IsAutoGoal)) {
+            array_push($this->openAPINullablesSetToNull, 'IsAutoGoal');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsAutoGoal', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsAutoGoal'] = $IsAutoGoal;
 
         return $this;
     }

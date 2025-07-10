@@ -1,6 +1,6 @@
 <?php
 /**
- * AdSubType
+ * PortfolioBidStrategyAdditionalField
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -14,16 +14,14 @@ namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class AdSubType
+class PortfolioBidStrategyAdditionalField
 {
     /**
      * Possible values of this enum
      */
-    public const VIDEO = 'Video';
+    public const NONE = 'None';
 
-    public const DISPLAY = 'Display';
-
-    public const HTML5 = 'HTML5';
+    public const MAX_CONVERSION_VALUE_WITH_MAX_CPC = 'MaxConversionValueWithMaxCpc';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -92,9 +90,8 @@ class AdSubType
     public static function getAllowableEnumValues(): array
     {
         return [
-            self::VIDEO,
-            self::DISPLAY,
-            self::HTML5
+            self::NONE,
+            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC
         ];
     }
 }

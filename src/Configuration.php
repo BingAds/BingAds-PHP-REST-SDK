@@ -114,7 +114,7 @@ class Configuration
      *
      * @var string
      */
-    protected string $userAgent = 'BingAdsSDKPHP.RestApi 13.0.24.1 ' . PHP_VERSION;
+    protected string $userAgent = 'BingAdsSDKPHP.RestApi 13.0.25 ' . PHP_VERSION;
 
     /**
      * Debug switch (default set to false)

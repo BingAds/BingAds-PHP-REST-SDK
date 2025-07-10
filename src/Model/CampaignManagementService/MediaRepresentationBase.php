@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class MediaRepresentationBase implements ModelInterface, ArrayAccess, \JsonSerializable
+class MediaRepresentationBase extends MediaRepresentation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 

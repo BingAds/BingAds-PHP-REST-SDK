@@ -35,7 +35,7 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPITypes = [
         'Typeface' => 'string',
         'Weight' => 'string',
-        'TextAssetType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FontTextAssetType'
+        'TextAssetType' => 'string'
     ];
 
     /**
@@ -59,7 +59,7 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'Typeface' => true,
         'Weight' => true,
-        'TextAssetType' => false
+        'TextAssetType' => true
     ];
 
     /**
@@ -356,15 +356,12 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets TextAssetType
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FontTextAssetType|mixed|null
+     * @return string|null
      */
     public function getTextAssetType()
     {
         if (!isset($this->container['TextAssetType']) || is_null($this->container['TextAssetType'])) {
             return null;
-        }
-        if ((is_object($this->container['TextAssetType']) || is_string($this->container['TextAssetType'])) && method_exists($this->container['TextAssetType'], 'getValue')) {
-            return $this->container['TextAssetType']->getValue();
         }
         return $this->container['TextAssetType'];
     }
@@ -372,17 +369,21 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets TextAssetType
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\FontTextAssetType|mixed|null $TextAssetType TextAssetType
+     * @param string|null $TextAssetType TextAssetType
      *
      * @return self
      */
     public function setTextAssetType($TextAssetType)
     {
         if (is_null($TextAssetType)) {
-            throw new \InvalidArgumentException('non-nullable TextAssetType cannot be null');
-        }
-        if (!$TextAssetType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FontTextAssetType) {
-            $TextAssetType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FontTextAssetType($TextAssetType);
+            array_push($this->openAPINullablesSetToNull, 'TextAssetType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextAssetType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['TextAssetType'] = $TextAssetType;
 
