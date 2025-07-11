@@ -43,6 +43,8 @@ class AdGroupAdditionalField
 
     public const USE_PREDICTIVE_TARGETING = 'UsePredictiveTargeting';
 
+    public const MAX_CONVERSION_VALUE_WITH_MAX_CPC = 'MaxConversionValueWithMaxCpc';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -121,7 +123,8 @@ class AdGroupAdditionalField
             self::MCPA_BID,
             self::USE_OPTIMIZED_TARGETING,
             self::FREQUENCY_CAP_SETTINGS,
-            self::USE_PREDICTIVE_TARGETING
+            self::USE_PREDICTIVE_TARGETING,
+            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC
         ];
     }
 }

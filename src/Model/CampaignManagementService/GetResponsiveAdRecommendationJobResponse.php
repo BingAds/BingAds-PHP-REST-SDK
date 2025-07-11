@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * GetResponsiveAdRecommendationJobResponse
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetResponsiveAdRecommendationJobResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'GetResponsiveAdRecommendationJobResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'ResponsiveAd' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ResponsiveAd',
+        'ImageSuggestions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageSuggestion[]',
+        'VideoSuggestions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoSuggestion[]',
+        'PromptBrandWarning' => 'string',
+        'JobInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationJobInfo'
     ];
 
     /**
@@ -45,8 +48,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'ResponsiveAd' => null,
+        'ImageSuggestions' => null,
+        'VideoSuggestions' => null,
+        'PromptBrandWarning' => null,
+        'JobInfo' => null
     ];
 
     /**
@@ -55,8 +61,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'ResponsiveAd' => true,
+        'ImageSuggestions' => true,
+        'VideoSuggestions' => true,
+        'PromptBrandWarning' => true,
+        'JobInfo' => true
     ];
 
     /**
@@ -145,8 +154,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'ResponsiveAd' => 'ResponsiveAd',
+        'ImageSuggestions' => 'ImageSuggestions',
+        'VideoSuggestions' => 'VideoSuggestions',
+        'PromptBrandWarning' => 'PromptBrandWarning',
+        'JobInfo' => 'JobInfo'
     ];
 
     /**
@@ -155,8 +167,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'ResponsiveAd' => 'setResponsiveAd',
+        'ImageSuggestions' => 'setImageSuggestions',
+        'VideoSuggestions' => 'setVideoSuggestions',
+        'PromptBrandWarning' => 'setPromptBrandWarning',
+        'JobInfo' => 'setJobInfo'
     ];
 
     /**
@@ -165,8 +180,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'ResponsiveAd' => 'getResponsiveAd',
+        'ImageSuggestions' => 'getImageSuggestions',
+        'VideoSuggestions' => 'getVideoSuggestions',
+        'PromptBrandWarning' => 'getPromptBrandWarning',
+        'JobInfo' => 'getJobInfo'
     ];
 
     /**
@@ -226,8 +244,11 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('ResponsiveAd', $data ?? [], null);
+        $this->setIfExists('ImageSuggestions', $data ?? [], null);
+        $this->setIfExists('VideoSuggestions', $data ?? [], null);
+        $this->setIfExists('PromptBrandWarning', $data ?? [], null);
+        $this->setIfExists('JobInfo', $data ?? [], null);
     }
 
     /**
@@ -273,67 +294,186 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets ResponsiveAd
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ResponsiveAd|null
      */
-    public function getAdGroupId()
+    public function getResponsiveAd()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['ResponsiveAd']) || is_null($this->container['ResponsiveAd'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['ResponsiveAd'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets ResponsiveAd
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ResponsiveAd|null $ResponsiveAd ResponsiveAd
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setResponsiveAd($ResponsiveAd)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($ResponsiveAd)) {
+            array_push($this->openAPINullablesSetToNull, 'ResponsiveAd');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ResponsiveAd', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['ResponsiveAd'] = $ResponsiveAd;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets ImageSuggestions
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageSuggestion[]|null
      */
-    public function getReturnAdditionalFields()
+    public function getImageSuggestions()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['ImageSuggestions']) || is_null($this->container['ImageSuggestions'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['ImageSuggestions'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets ImageSuggestions
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageSuggestion[]|null $ImageSuggestions ImageSuggestions
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setImageSuggestions($ImageSuggestions)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($ImageSuggestions)) {
+            array_push($this->openAPINullablesSetToNull, 'ImageSuggestions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImageSuggestions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        $this->container['ImageSuggestions'] = $ImageSuggestions;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoSuggestions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoSuggestion[]|null
+     */
+    public function getVideoSuggestions()
+    {
+        if (!isset($this->container['VideoSuggestions']) || is_null($this->container['VideoSuggestions'])) {
+            return null;
         }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        return $this->container['VideoSuggestions'];
+    }
+
+    /**
+     * Sets VideoSuggestions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoSuggestion[]|null $VideoSuggestions VideoSuggestions
+     *
+     * @return self
+     */
+    public function setVideoSuggestions($VideoSuggestions)
+    {
+        if (is_null($VideoSuggestions)) {
+            array_push($this->openAPINullablesSetToNull, 'VideoSuggestions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('VideoSuggestions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['VideoSuggestions'] = $VideoSuggestions;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromptBrandWarning
+     *
+     * @return string|null
+     */
+    public function getPromptBrandWarning()
+    {
+        if (!isset($this->container['PromptBrandWarning']) || is_null($this->container['PromptBrandWarning'])) {
+            return null;
+        }
+        return $this->container['PromptBrandWarning'];
+    }
+
+    /**
+     * Sets PromptBrandWarning
+     *
+     * @param string|null $PromptBrandWarning PromptBrandWarning
+     *
+     * @return self
+     */
+    public function setPromptBrandWarning($PromptBrandWarning)
+    {
+        if (is_null($PromptBrandWarning)) {
+            array_push($this->openAPINullablesSetToNull, 'PromptBrandWarning');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromptBrandWarning', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromptBrandWarning'] = $PromptBrandWarning;
+
+        return $this;
+    }
+
+    /**
+     * Gets JobInfo
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationJobInfo|null
+     */
+    public function getJobInfo()
+    {
+        if (!isset($this->container['JobInfo']) || is_null($this->container['JobInfo'])) {
+            return null;
+        }
+        return $this->container['JobInfo'];
+    }
+
+    /**
+     * Sets JobInfo
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationJobInfo|null $JobInfo JobInfo
+     *
+     * @return self
+     */
+    public function setJobInfo($JobInfo)
+    {
+        if (is_null($JobInfo)) {
+            array_push($this->openAPINullablesSetToNull, 'JobInfo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('JobInfo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['JobInfo'] = $JobInfo;
 
         return $this;
     }

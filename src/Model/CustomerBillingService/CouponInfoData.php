@@ -41,7 +41,15 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExpirationDate' => '\DateTime',
         'PercentOff' => 'float',
         'CouponValue' => 'float',
-        'UpfrontSpending' => 'float'
+        'UpfrontSpending' => 'float',
+        'ActiveDuration' => 'int',
+        'SpendToThreshold' => 'float',
+        'StartDate' => '\DateTime',
+        'EndDate' => '\DateTime',
+        'Balance' => 'float',
+        'CurrencyCode' => 'string',
+        'FeatureId' => 'int',
+        'CouponType' => 'int'
     ];
 
     /**
@@ -60,7 +68,15 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExpirationDate' => 'date-time',
         'PercentOff' => 'double',
         'CouponValue' => 'double',
-        'UpfrontSpending' => 'double'
+        'UpfrontSpending' => 'double',
+        'ActiveDuration' => 'int32',
+        'SpendToThreshold' => 'double',
+        'StartDate' => 'date-time',
+        'EndDate' => 'date-time',
+        'Balance' => 'double',
+        'CurrencyCode' => null,
+        'FeatureId' => 'int32',
+        'CouponType' => 'uint8'
     ];
 
     /**
@@ -77,7 +93,15 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExpirationDate' => true,
         'PercentOff' => true,
         'CouponValue' => true,
-        'UpfrontSpending' => true
+        'UpfrontSpending' => true,
+        'ActiveDuration' => true,
+        'SpendToThreshold' => true,
+        'StartDate' => true,
+        'EndDate' => true,
+        'Balance' => true,
+        'CurrencyCode' => true,
+        'FeatureId' => true,
+        'CouponType' => true
     ];
 
     /**
@@ -174,7 +198,15 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExpirationDate' => 'ExpirationDate',
         'PercentOff' => 'PercentOff',
         'CouponValue' => 'CouponValue',
-        'UpfrontSpending' => 'UpfrontSpending'
+        'UpfrontSpending' => 'UpfrontSpending',
+        'ActiveDuration' => 'ActiveDuration',
+        'SpendToThreshold' => 'SpendToThreshold',
+        'StartDate' => 'StartDate',
+        'EndDate' => 'EndDate',
+        'Balance' => 'Balance',
+        'CurrencyCode' => 'CurrencyCode',
+        'FeatureId' => 'FeatureId',
+        'CouponType' => 'CouponType'
     ];
 
     /**
@@ -191,7 +223,15 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExpirationDate' => 'setExpirationDate',
         'PercentOff' => 'setPercentOff',
         'CouponValue' => 'setCouponValue',
-        'UpfrontSpending' => 'setUpfrontSpending'
+        'UpfrontSpending' => 'setUpfrontSpending',
+        'ActiveDuration' => 'setActiveDuration',
+        'SpendToThreshold' => 'setSpendToThreshold',
+        'StartDate' => 'setStartDate',
+        'EndDate' => 'setEndDate',
+        'Balance' => 'setBalance',
+        'CurrencyCode' => 'setCurrencyCode',
+        'FeatureId' => 'setFeatureId',
+        'CouponType' => 'setCouponType'
     ];
 
     /**
@@ -208,7 +248,15 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExpirationDate' => 'getExpirationDate',
         'PercentOff' => 'getPercentOff',
         'CouponValue' => 'getCouponValue',
-        'UpfrontSpending' => 'getUpfrontSpending'
+        'UpfrontSpending' => 'getUpfrontSpending',
+        'ActiveDuration' => 'getActiveDuration',
+        'SpendToThreshold' => 'getSpendToThreshold',
+        'StartDate' => 'getStartDate',
+        'EndDate' => 'getEndDate',
+        'Balance' => 'getBalance',
+        'CurrencyCode' => 'getCurrencyCode',
+        'FeatureId' => 'getFeatureId',
+        'CouponType' => 'getCouponType'
     ];
 
     /**
@@ -277,6 +325,14 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('PercentOff', $data ?? [], null);
         $this->setIfExists('CouponValue', $data ?? [], null);
         $this->setIfExists('UpfrontSpending', $data ?? [], null);
+        $this->setIfExists('ActiveDuration', $data ?? [], null);
+        $this->setIfExists('SpendToThreshold', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('Balance', $data ?? [], null);
+        $this->setIfExists('CurrencyCode', $data ?? [], null);
+        $this->setIfExists('FeatureId', $data ?? [], null);
+        $this->setIfExists('CouponType', $data ?? [], null);
     }
 
     /**
@@ -643,6 +699,302 @@ class CouponInfoData implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UpfrontSpending'] = $UpfrontSpending;
+
+        return $this;
+    }
+
+    /**
+     * Gets ActiveDuration
+     *
+     * @return int|null
+     */
+    public function getActiveDuration()
+    {
+        if (!isset($this->container['ActiveDuration']) || is_null($this->container['ActiveDuration'])) {
+            return null;
+        }
+        return $this->container['ActiveDuration'];
+    }
+
+    /**
+     * Sets ActiveDuration
+     *
+     * @param int|null $ActiveDuration ActiveDuration
+     *
+     * @return self
+     */
+    public function setActiveDuration($ActiveDuration)
+    {
+        if (is_null($ActiveDuration)) {
+            array_push($this->openAPINullablesSetToNull, 'ActiveDuration');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ActiveDuration', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ActiveDuration'] = $ActiveDuration;
+
+        return $this;
+    }
+
+    /**
+     * Gets SpendToThreshold
+     *
+     * @return float|null
+     */
+    public function getSpendToThreshold()
+    {
+        if (!isset($this->container['SpendToThreshold']) || is_null($this->container['SpendToThreshold'])) {
+            return null;
+        }
+        return $this->container['SpendToThreshold'];
+    }
+
+    /**
+     * Sets SpendToThreshold
+     *
+     * @param float|null $SpendToThreshold SpendToThreshold
+     *
+     * @return self
+     */
+    public function setSpendToThreshold($SpendToThreshold)
+    {
+        if (is_null($SpendToThreshold)) {
+            array_push($this->openAPINullablesSetToNull, 'SpendToThreshold');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SpendToThreshold', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SpendToThreshold'] = $SpendToThreshold;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartDate
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \DateTime|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets EndDate
+     *
+     * @return \DateTime|null
+     */
+    public function getEndDate()
+    {
+        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
+            return null;
+        }
+        return $this->container['EndDate'];
+    }
+
+    /**
+     * Sets EndDate
+     *
+     * @param \DateTime|null $EndDate EndDate
+     *
+     * @return self
+     */
+    public function setEndDate($EndDate)
+    {
+        if (is_null($EndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets Balance
+     *
+     * @return float|null
+     */
+    public function getBalance()
+    {
+        if (!isset($this->container['Balance']) || is_null($this->container['Balance'])) {
+            return null;
+        }
+        return $this->container['Balance'];
+    }
+
+    /**
+     * Sets Balance
+     *
+     * @param float|null $Balance Balance
+     *
+     * @return self
+     */
+    public function setBalance($Balance)
+    {
+        if (is_null($Balance)) {
+            array_push($this->openAPINullablesSetToNull, 'Balance');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Balance', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Balance'] = $Balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets CurrencyCode
+     *
+     * @return string|null
+     */
+    public function getCurrencyCode()
+    {
+        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
+            return null;
+        }
+        return $this->container['CurrencyCode'];
+    }
+
+    /**
+     * Sets CurrencyCode
+     *
+     * @param string|null $CurrencyCode CurrencyCode
+     *
+     * @return self
+     */
+    public function setCurrencyCode($CurrencyCode)
+    {
+        if (is_null($CurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CurrencyCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CurrencyCode'] = $CurrencyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets FeatureId
+     *
+     * @return int|null
+     */
+    public function getFeatureId()
+    {
+        if (!isset($this->container['FeatureId']) || is_null($this->container['FeatureId'])) {
+            return null;
+        }
+        return $this->container['FeatureId'];
+    }
+
+    /**
+     * Sets FeatureId
+     *
+     * @param int|null $FeatureId FeatureId
+     *
+     * @return self
+     */
+    public function setFeatureId($FeatureId)
+    {
+        if (is_null($FeatureId)) {
+            array_push($this->openAPINullablesSetToNull, 'FeatureId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FeatureId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FeatureId'] = $FeatureId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CouponType
+     *
+     * @return int|null
+     */
+    public function getCouponType()
+    {
+        if (!isset($this->container['CouponType']) || is_null($this->container['CouponType'])) {
+            return null;
+        }
+        return $this->container['CouponType'];
+    }
+
+    /**
+     * Sets CouponType
+     *
+     * @param int|null $CouponType CouponType
+     *
+     * @return self
+     */
+    public function setCouponType($CouponType)
+    {
+        if (is_null($CouponType)) {
+            array_push($this->openAPINullablesSetToNull, 'CouponType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CouponType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CouponType'] = $CouponType;
 
         return $this;
     }

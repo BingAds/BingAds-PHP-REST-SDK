@@ -34,8 +34,7 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPITypes = [
         'AccountId' => 'string',
-        'BrandKitIds' => 'string[]',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField'
+        'BrandKitIds' => 'string[]'
     ];
 
     /**
@@ -47,8 +46,7 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPIFormats = [
         'AccountId' => 'int64',
-        'BrandKitIds' => 'int64',
-        'ReturnAdditionalFields' => null
+        'BrandKitIds' => 'int64'
     ];
 
     /**
@@ -58,8 +56,7 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'AccountId' => false,
-        'BrandKitIds' => true,
-        'ReturnAdditionalFields' => false
+        'BrandKitIds' => true
     ];
 
     /**
@@ -149,8 +146,7 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static array $attributeMap = [
         'AccountId' => 'AccountId',
-        'BrandKitIds' => 'BrandKitIds',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'BrandKitIds' => 'BrandKitIds'
     ];
 
     /**
@@ -160,8 +156,7 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static array $setters = [
         'AccountId' => 'setAccountId',
-        'BrandKitIds' => 'setBrandKitIds',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'BrandKitIds' => 'setBrandKitIds'
     ];
 
     /**
@@ -171,8 +166,7 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static array $getters = [
         'AccountId' => 'getAccountId',
-        'BrandKitIds' => 'getBrandKitIds',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'BrandKitIds' => 'getBrandKitIds'
     ];
 
     /**
@@ -234,7 +228,6 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('BrandKitIds', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -342,42 +335,6 @@ class GetBrandKitsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['BrandKitIds'] = $BrandKitIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

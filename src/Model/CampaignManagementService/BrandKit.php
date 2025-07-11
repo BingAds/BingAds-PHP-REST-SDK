@@ -40,7 +40,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'SquareLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
         'LandscapeLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
         'Palettes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitPalette[]',
-        'Fonts' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]'
+        'Fonts' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]',
+        'BrandVoice' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice'
     ];
 
     /**
@@ -58,7 +59,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'SquareLogos' => null,
         'LandscapeLogos' => null,
         'Palettes' => null,
-        'Fonts' => null
+        'Fonts' => null,
+        'BrandVoice' => null
     ];
 
     /**
@@ -74,7 +76,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'SquareLogos' => true,
         'LandscapeLogos' => true,
         'Palettes' => true,
-        'Fonts' => true
+        'Fonts' => true,
+        'BrandVoice' => true
     ];
 
     /**
@@ -170,7 +173,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'SquareLogos' => 'SquareLogos',
         'LandscapeLogos' => 'LandscapeLogos',
         'Palettes' => 'Palettes',
-        'Fonts' => 'Fonts'
+        'Fonts' => 'Fonts',
+        'BrandVoice' => 'BrandVoice'
     ];
 
     /**
@@ -186,7 +190,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'SquareLogos' => 'setSquareLogos',
         'LandscapeLogos' => 'setLandscapeLogos',
         'Palettes' => 'setPalettes',
-        'Fonts' => 'setFonts'
+        'Fonts' => 'setFonts',
+        'BrandVoice' => 'setBrandVoice'
     ];
 
     /**
@@ -202,7 +207,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'SquareLogos' => 'getSquareLogos',
         'LandscapeLogos' => 'getLandscapeLogos',
         'Palettes' => 'getPalettes',
-        'Fonts' => 'getFonts'
+        'Fonts' => 'getFonts',
+        'BrandVoice' => 'getBrandVoice'
     ];
 
     /**
@@ -270,6 +276,7 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('LandscapeLogos', $data ?? [], null);
         $this->setIfExists('Palettes', $data ?? [], null);
         $this->setIfExists('Fonts', $data ?? [], null);
+        $this->setIfExists('BrandVoice', $data ?? [], null);
     }
 
     /**
@@ -606,6 +613,43 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Fonts'] = $Fonts;
+
+        return $this;
+    }
+
+    /**
+     * Gets BrandVoice
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice|null
+     */
+    public function getBrandVoice()
+    {
+        if (!isset($this->container['BrandVoice']) || is_null($this->container['BrandVoice'])) {
+            return null;
+        }
+        return $this->container['BrandVoice'];
+    }
+
+    /**
+     * Sets BrandVoice
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice|null $BrandVoice BrandVoice
+     *
+     * @return self
+     */
+    public function setBrandVoice($BrandVoice)
+    {
+        if (is_null($BrandVoice)) {
+            array_push($this->openAPINullablesSetToNull, 'BrandVoice');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BrandVoice', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BrandVoice'] = $BrandVoice;
 
         return $this;
     }

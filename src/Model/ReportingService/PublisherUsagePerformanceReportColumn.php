@@ -131,6 +131,36 @@ class PublisherUsagePerformanceReportColumn
 
     public const ASSET_GROUP_STATUS = 'AssetGroupStatus';
 
+    public const APP_NAME = 'AppName';
+
+    public const APP_BUNDLE = 'AppBundle';
+
+    public const APP_STORE_URL = 'AppStoreUrl';
+
+    public const DOWNLOADS = 'Downloads';
+
+    public const POST_CLICK_DOWNLOAD_RATE = 'PostClickDownloadRate';
+
+    public const COST_PER_DOWNLOAD = 'CostPerDownload';
+
+    public const APP_INSTALLS = 'AppInstalls';
+
+    public const POST_CLICK_INSTALL_RATE = 'PostClickInstallRate';
+
+    public const CPI = 'CPI';
+
+    public const PURCHASES = 'Purchases';
+
+    public const POST_INSTALL_PURCHASE_RATE = 'PostInstallPurchaseRate';
+
+    public const CPP = 'CPP';
+
+    public const SUBSCRIPTIONS = 'Subscriptions';
+
+    public const POST_INSTALL_SUBSCRIPTION_RATE = 'PostInstallSubscriptionRate';
+
+    public const CPS = 'CPS';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -253,7 +283,22 @@ class PublisherUsagePerformanceReportColumn
             self::CAMPAIGN_TYPE,
             self::ASSET_GROUP_ID,
             self::ASSET_GROUP_NAME,
-            self::ASSET_GROUP_STATUS
+            self::ASSET_GROUP_STATUS,
+            self::APP_NAME,
+            self::APP_BUNDLE,
+            self::APP_STORE_URL,
+            self::DOWNLOADS,
+            self::POST_CLICK_DOWNLOAD_RATE,
+            self::COST_PER_DOWNLOAD,
+            self::APP_INSTALLS,
+            self::POST_CLICK_INSTALL_RATE,
+            self::CPI,
+            self::PURCHASES,
+            self::POST_INSTALL_PURCHASE_RATE,
+            self::CPP,
+            self::SUBSCRIPTIONS,
+            self::POST_INSTALL_SUBSCRIPTION_RATE,
+            self::CPS
         ];
     }
 }

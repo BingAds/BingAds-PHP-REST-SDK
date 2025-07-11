@@ -34,7 +34,8 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus'
+        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
     ];
 
     /**
@@ -46,7 +47,8 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'EditorialStatus' => null
+        'EditorialStatus' => null,
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -56,7 +58,8 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
       */
     protected static array $openAPINullables = [
         'AdGroupId' => false,
-        'EditorialStatus' => false
+        'EditorialStatus' => false,
+        'ReturnAdditionalFields' => false
     ];
 
     /**
@@ -146,7 +149,8 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'EditorialStatus' => 'EditorialStatus'
+        'EditorialStatus' => 'EditorialStatus',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -156,7 +160,8 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'EditorialStatus' => 'setEditorialStatus'
+        'EditorialStatus' => 'setEditorialStatus',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -166,7 +171,8 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'EditorialStatus' => 'getEditorialStatus'
+        'EditorialStatus' => 'getEditorialStatus',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -228,6 +234,7 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -334,6 +341,42 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
             $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus($EditorialStatus);
         }
         $this->container['EditorialStatus'] = $EditorialStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        }
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

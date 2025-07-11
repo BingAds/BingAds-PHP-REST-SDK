@@ -67,6 +67,8 @@ class ImportAdditionalField
 
     public const NEW_CAROUSEL_AD = 'NewCarouselAd';
 
+    public const UPDATE_ASSET_AUTOMATION_CAMPAIGN_SETTING = 'UpdateAssetAutomationCampaignSetting';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -157,7 +159,8 @@ class ImportAdditionalField
             self::UPDATE_CONVERSION_GOALS,
             self::NEW_BRAND_SUITABILITY,
             self::UPDATE_BRAND_SUITABILITY,
-            self::NEW_CAROUSEL_AD
+            self::NEW_CAROUSEL_AD,
+            self::UPDATE_ASSET_AUTOMATION_CAMPAIGN_SETTING
         ];
     }
 }

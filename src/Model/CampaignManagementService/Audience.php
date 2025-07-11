@@ -68,7 +68,9 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]',
         'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType',
         'CampaignId' => 'string',
-        'AdGroupId' => 'string'
+        'AdGroupId' => 'string',
+        'CampaignIds' => 'string[]',
+        'AdGroupIds' => 'string[]'
     ];
 
     /**
@@ -98,7 +100,9 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => null,
         'EntityType' => null,
         'CampaignId' => 'int64',
-        'AdGroupId' => 'int64'
+        'AdGroupId' => 'int64',
+        'CampaignIds' => 'int64',
+        'AdGroupIds' => 'int64'
     ];
 
     /**
@@ -126,7 +130,9 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => true,
         'EntityType' => false,
         'CampaignId' => true,
-        'AdGroupId' => true
+        'AdGroupId' => true,
+        'CampaignIds' => true,
+        'AdGroupIds' => true
     ];
 
     /**
@@ -234,7 +240,9 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => 'CombinationRules',
         'EntityType' => 'EntityType',
         'CampaignId' => 'CampaignId',
-        'AdGroupId' => 'AdGroupId'
+        'AdGroupId' => 'AdGroupId',
+        'CampaignIds' => 'CampaignIds',
+        'AdGroupIds' => 'AdGroupIds'
     ];
 
     /**
@@ -262,7 +270,9 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => 'setCombinationRules',
         'EntityType' => 'setEntityType',
         'CampaignId' => 'setCampaignId',
-        'AdGroupId' => 'setAdGroupId'
+        'AdGroupId' => 'setAdGroupId',
+        'CampaignIds' => 'setCampaignIds',
+        'AdGroupIds' => 'setAdGroupIds'
     ];
 
     /**
@@ -290,7 +300,9 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => 'getCombinationRules',
         'EntityType' => 'getEntityType',
         'CampaignId' => 'getCampaignId',
-        'AdGroupId' => 'getAdGroupId'
+        'AdGroupId' => 'getAdGroupId',
+        'CampaignIds' => 'getCampaignIds',
+        'AdGroupIds' => 'getAdGroupIds'
     ];
 
     /**
@@ -370,6 +382,8 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
+        $this->setIfExists('CampaignIds', $data ?? [], null);
+        $this->setIfExists('AdGroupIds', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -1143,6 +1157,80 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AdGroupId'] = $AdGroupId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignIds
+     *
+     * @return string[]|null
+     */
+    public function getCampaignIds()
+    {
+        if (!isset($this->container['CampaignIds']) || is_null($this->container['CampaignIds'])) {
+            return null;
+        }
+        return $this->container['CampaignIds'];
+    }
+
+    /**
+     * Sets CampaignIds
+     *
+     * @param string[]|null $CampaignIds CampaignIds
+     *
+     * @return self
+     */
+    public function setCampaignIds($CampaignIds)
+    {
+        if (is_null($CampaignIds)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignIds'] = $CampaignIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdGroupIds
+     *
+     * @return string[]|null
+     */
+    public function getAdGroupIds()
+    {
+        if (!isset($this->container['AdGroupIds']) || is_null($this->container['AdGroupIds'])) {
+            return null;
+        }
+        return $this->container['AdGroupIds'];
+    }
+
+    /**
+     * Sets AdGroupIds
+     *
+     * @param string[]|null $AdGroupIds AdGroupIds
+     *
+     * @return self
+     */
+    public function setAdGroupIds($AdGroupIds)
+    {
+        if (is_null($AdGroupIds)) {
+            array_push($this->openAPINullablesSetToNull, 'AdGroupIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdGroupIds'] = $AdGroupIds;
 
         return $this;
     }

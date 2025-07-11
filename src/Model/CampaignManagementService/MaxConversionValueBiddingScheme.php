@@ -34,6 +34,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
       */
     protected static array $openAPITypes = [
         'TargetRoas' => 'float',
+        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
         'Type' => 'string'
     ];
 
@@ -46,6 +47,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
       */
     protected static array $openAPIFormats = [
         'TargetRoas' => 'double',
+        'MaxCpc' => null,
         'Type' => null
     ];
 
@@ -56,6 +58,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
       */
     protected static array $openAPINullables = [
         'TargetRoas' => true,
+        'MaxCpc' => true,
         'Type' => true
     ];
 
@@ -146,6 +149,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
      */
     protected static array $attributeMap = [
         'TargetRoas' => 'TargetRoas',
+        'MaxCpc' => 'MaxCpc',
         'Type' => 'Type'
     ];
 
@@ -156,6 +160,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
      */
     protected static array $setters = [
         'TargetRoas' => 'setTargetRoas',
+        'MaxCpc' => 'setMaxCpc',
         'Type' => 'setType'
     ];
 
@@ -166,6 +171,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
      */
     protected static array $getters = [
         'TargetRoas' => 'getTargetRoas',
+        'MaxCpc' => 'getMaxCpc',
         'Type' => 'getType'
     ];
 
@@ -227,6 +233,7 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
     public function __construct(?array $data = null)
     {
         $this->setIfExists('TargetRoas', $data ?? [], null);
+        $this->setIfExists('MaxCpc', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'MaxConversionValueBiddingScheme');
     }
 
@@ -305,6 +312,43 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
             }
         }
         $this->container['TargetRoas'] = $TargetRoas;
+
+        return $this;
+    }
+
+    /**
+     * Gets MaxCpc
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
+     */
+    public function getMaxCpc()
+    {
+        if (!isset($this->container['MaxCpc']) || is_null($this->container['MaxCpc'])) {
+            return null;
+        }
+        return $this->container['MaxCpc'];
+    }
+
+    /**
+     * Sets MaxCpc
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null $MaxCpc MaxCpc
+     *
+     * @return self
+     */
+    public function setMaxCpc($MaxCpc)
+    {
+        if (is_null($MaxCpc)) {
+            array_push($this->openAPINullablesSetToNull, 'MaxCpc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MaxCpc', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MaxCpc'] = $MaxCpc;
 
         return $this;
     }

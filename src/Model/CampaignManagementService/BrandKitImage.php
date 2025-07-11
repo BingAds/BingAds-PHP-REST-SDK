@@ -33,13 +33,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'Url' => 'string',
-        'ThumbnailUrl' => 'string',
         'CropX' => 'int',
         'CropY' => 'int',
         'CropWidth' => 'int',
-        'CropHeight' => 'int'
+        'CropHeight' => 'int',
+        'Id' => 'string',
+        'Url' => 'string',
+        'ThumbnailUrl' => 'string'
     ];
 
     /**
@@ -50,13 +50,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
-        'Url' => null,
-        'ThumbnailUrl' => null,
         'CropX' => 'int32',
         'CropY' => 'int32',
         'CropWidth' => 'int32',
-        'CropHeight' => 'int32'
+        'CropHeight' => 'int32',
+        'Id' => 'int64',
+        'Url' => null,
+        'ThumbnailUrl' => null
     ];
 
     /**
@@ -65,13 +65,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => false,
-        'Url' => true,
-        'ThumbnailUrl' => true,
         'CropX' => true,
         'CropY' => true,
         'CropWidth' => true,
-        'CropHeight' => true
+        'CropHeight' => true,
+        'Id' => false,
+        'Url' => true,
+        'ThumbnailUrl' => true
     ];
 
     /**
@@ -160,13 +160,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'Url' => 'Url',
-        'ThumbnailUrl' => 'ThumbnailUrl',
         'CropX' => 'CropX',
         'CropY' => 'CropY',
         'CropWidth' => 'CropWidth',
-        'CropHeight' => 'CropHeight'
+        'CropHeight' => 'CropHeight',
+        'Id' => 'Id',
+        'Url' => 'Url',
+        'ThumbnailUrl' => 'ThumbnailUrl'
     ];
 
     /**
@@ -175,13 +175,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'Url' => 'setUrl',
-        'ThumbnailUrl' => 'setThumbnailUrl',
         'CropX' => 'setCropX',
         'CropY' => 'setCropY',
         'CropWidth' => 'setCropWidth',
-        'CropHeight' => 'setCropHeight'
+        'CropHeight' => 'setCropHeight',
+        'Id' => 'setId',
+        'Url' => 'setUrl',
+        'ThumbnailUrl' => 'setThumbnailUrl'
     ];
 
     /**
@@ -190,13 +190,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'Url' => 'getUrl',
-        'ThumbnailUrl' => 'getThumbnailUrl',
         'CropX' => 'getCropX',
         'CropY' => 'getCropY',
         'CropWidth' => 'getCropWidth',
-        'CropHeight' => 'getCropHeight'
+        'CropHeight' => 'getCropHeight',
+        'Id' => 'getId',
+        'Url' => 'getUrl',
+        'ThumbnailUrl' => 'getThumbnailUrl'
     ];
 
     /**
@@ -256,13 +256,13 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Url', $data ?? [], null);
-        $this->setIfExists('ThumbnailUrl', $data ?? [], null);
         $this->setIfExists('CropX', $data ?? [], null);
         $this->setIfExists('CropY', $data ?? [], null);
         $this->setIfExists('CropWidth', $data ?? [], null);
         $this->setIfExists('CropHeight', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Url', $data ?? [], null);
+        $this->setIfExists('ThumbnailUrl', $data ?? [], null);
     }
 
     /**
@@ -306,110 +306,6 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            throw new \InvalidArgumentException('non-nullable Id cannot be null');
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
-            return null;
-        }
-        return $this->container['Url'];
-    }
-
-    /**
-     * Sets Url
-     *
-     * @param string|null $Url Url
-     *
-     * @return self
-     */
-    public function setUrl($Url)
-    {
-        if (is_null($Url)) {
-            array_push($this->openAPINullablesSetToNull, 'Url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Url'] = $Url;
-
-        return $this;
-    }
-
-    /**
-     * Gets ThumbnailUrl
-     *
-     * @return string|null
-     */
-    public function getThumbnailUrl()
-    {
-        if (!isset($this->container['ThumbnailUrl']) || is_null($this->container['ThumbnailUrl'])) {
-            return null;
-        }
-        return $this->container['ThumbnailUrl'];
-    }
-
-    /**
-     * Sets ThumbnailUrl
-     *
-     * @param string|null $ThumbnailUrl ThumbnailUrl
-     *
-     * @return self
-     */
-    public function setThumbnailUrl($ThumbnailUrl)
-    {
-        if (is_null($ThumbnailUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'ThumbnailUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ThumbnailUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ThumbnailUrl'] = $ThumbnailUrl;
-
-        return $this;
-    }
 
     /**
      * Gets CropX
@@ -555,6 +451,110 @@ class BrandKitImage implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['CropHeight'] = $CropHeight;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            throw new \InvalidArgumentException('non-nullable Id cannot be null');
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
+            return null;
+        }
+        return $this->container['Url'];
+    }
+
+    /**
+     * Sets Url
+     *
+     * @param string|null $Url Url
+     *
+     * @return self
+     */
+    public function setUrl($Url)
+    {
+        if (is_null($Url)) {
+            array_push($this->openAPINullablesSetToNull, 'Url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Url'] = $Url;
+
+        return $this;
+    }
+
+    /**
+     * Gets ThumbnailUrl
+     *
+     * @return string|null
+     */
+    public function getThumbnailUrl()
+    {
+        if (!isset($this->container['ThumbnailUrl']) || is_null($this->container['ThumbnailUrl'])) {
+            return null;
+        }
+        return $this->container['ThumbnailUrl'];
+    }
+
+    /**
+     * Sets ThumbnailUrl
+     *
+     * @param string|null $ThumbnailUrl ThumbnailUrl
+     *
+     * @return self
+     */
+    public function setThumbnailUrl($ThumbnailUrl)
+    {
+        if (is_null($ThumbnailUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'ThumbnailUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ThumbnailUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ThumbnailUrl'] = $ThumbnailUrl;
 
         return $this;
     }

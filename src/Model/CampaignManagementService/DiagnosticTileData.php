@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * DiagnosticTileData
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class DiagnosticTileData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'DiagnosticTileData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'Title' => 'string',
+        'Headline' => 'string',
+        'Description' => 'string',
+        'ProgressPercent' => 'int'
     ];
 
     /**
@@ -45,8 +47,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'Title' => null,
+        'Headline' => null,
+        'Description' => null,
+        'ProgressPercent' => 'int32'
     ];
 
     /**
@@ -55,8 +59,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'Title' => true,
+        'Headline' => true,
+        'Description' => true,
+        'ProgressPercent' => false
     ];
 
     /**
@@ -145,8 +151,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'Title' => 'Title',
+        'Headline' => 'Headline',
+        'Description' => 'Description',
+        'ProgressPercent' => 'ProgressPercent'
     ];
 
     /**
@@ -155,8 +163,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'Title' => 'setTitle',
+        'Headline' => 'setHeadline',
+        'Description' => 'setDescription',
+        'ProgressPercent' => 'setProgressPercent'
     ];
 
     /**
@@ -165,8 +175,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'Title' => 'getTitle',
+        'Headline' => 'getHeadline',
+        'Description' => 'getDescription',
+        'ProgressPercent' => 'getProgressPercent'
     ];
 
     /**
@@ -226,8 +238,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('Title', $data ?? [], null);
+        $this->setIfExists('Headline', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('ProgressPercent', $data ?? [], null);
     }
 
     /**
@@ -273,67 +287,142 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets Title
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getTitle()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['Title'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets Title
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $Title Title
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setTitle($Title)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($Title)) {
+            array_push($this->openAPINullablesSetToNull, 'Title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['Title'] = $Title;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets Headline
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return string|null
      */
-    public function getReturnAdditionalFields()
+    public function getHeadline()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['Headline']) || is_null($this->container['Headline'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['Headline'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets Headline
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param string|null $Headline Headline
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setHeadline($Headline)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($Headline)) {
+            array_push($this->openAPINullablesSetToNull, 'Headline');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Headline', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        $this->container['Headline'] = $Headline;
+
+        return $this;
+    }
+
+    /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
         }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets ProgressPercent
+     *
+     * @return int|null
+     */
+    public function getProgressPercent()
+    {
+        if (!isset($this->container['ProgressPercent']) || is_null($this->container['ProgressPercent'])) {
+            return null;
+        }
+        return $this->container['ProgressPercent'];
+    }
+
+    /**
+     * Sets ProgressPercent
+     *
+     * @param int|null $ProgressPercent ProgressPercent
+     *
+     * @return self
+     */
+    public function setProgressPercent($ProgressPercent)
+    {
+        if (is_null($ProgressPercent)) {
+            throw new \InvalidArgumentException('non-nullable ProgressPercent cannot be null');
+        }
+        $this->container['ProgressPercent'] = $ProgressPercent;
 
         return $this;
     }

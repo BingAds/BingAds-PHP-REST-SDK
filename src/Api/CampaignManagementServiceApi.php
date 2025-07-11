@@ -139,6 +139,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'createAssetGroupRecommendation' => [
             'application/json',
         ],
+        'createBrandKitRecommendation' => [
+            'application/json',
+        ],
         'createResponsiveAdRecommendation' => [
             'application/json',
         ],
@@ -265,6 +268,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'getAdsByIds' => [
             'application/json',
         ],
+        'getAnnotationOptOut' => [
+            'application/json',
+        ],
         'getAssetGroupListingGroupsByIds' => [
             'application/json',
         ],
@@ -349,6 +355,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'getDataExclusionsByIds' => [
             'application/json',
         ],
+        'getDiagnostics' => [
+            'application/json',
+        ],
         'getEditorialReasonsByIds' => [
             'application/json',
         ],
@@ -419,6 +428,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'getProfileDataFileUrl' => [
+            'application/json',
+        ],
+        'getResponsiveAdRecommendationJob' => [
             'application/json',
         ],
         'getSeasonalityAdjustmentsByAccountId' => [
@@ -494,6 +506,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'updateAds' => [
+            'application/json',
+        ],
+        'updateAnnotationOptOut' => [
             'application/json',
         ],
         'updateAssetGroups' => [
@@ -8893,6 +8908,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForcreateAssetGroupRecommendation',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation createBrandKitRecommendation
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationRequest $CreateBrandKitRecommendationRequest CreateBrandKitRecommendationRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandKitRecommendation'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function createBrandKitRecommendation($CreateBrandKitRecommendationRequest, string $contentType = self::contentTypes['createBrandKitRecommendation'][0])
+    {
+        list($response) = $this->createBrandKitRecommendationWithHttpInfo($CreateBrandKitRecommendationRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createBrandKitRecommendationWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationRequest $CreateBrandKitRecommendationRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandKitRecommendation'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createBrandKitRecommendationWithHttpInfo($CreateBrandKitRecommendationRequest, string $contentType = self::contentTypes['createBrandKitRecommendation'][0])
+    {
+        $request = $this->createBrandKitRecommendationRequest($CreateBrandKitRecommendationRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createBrandKitRecommendationAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationRequest $CreateBrandKitRecommendationRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandKitRecommendation'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createBrandKitRecommendationAsync($CreateBrandKitRecommendationRequest, string $contentType = self::contentTypes['createBrandKitRecommendation'][0])
+    {
+        return $this->createBrandKitRecommendationAsyncWithHttpInfo($CreateBrandKitRecommendationRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createBrandKitRecommendationAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationRequest $CreateBrandKitRecommendationRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandKitRecommendation'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createBrandKitRecommendationAsyncWithHttpInfo($CreateBrandKitRecommendationRequest, string $contentType = self::contentTypes['createBrandKitRecommendation'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationResponse';
+        $request = $this->createBrandKitRecommendationRequest($CreateBrandKitRecommendationRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createBrandKitRecommendation'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\CreateBrandKitRecommendationRequest $CreateBrandKitRecommendationRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandKitRecommendation'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createBrandKitRecommendationRequest($CreateBrandKitRecommendationRequest, string $contentType = self::contentTypes['createBrandKitRecommendation'][0])
+    {
+
+        // verify the required parameter 'CreateBrandKitRecommendationRequest' is set
+        if ($CreateBrandKitRecommendationRequest === null || (is_array($CreateBrandKitRecommendationRequest) && count($CreateBrandKitRecommendationRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $CreateBrandKitRecommendationRequest when calling createBrandKitRecommendation'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/BrandKitRecommendation/Create';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $CreateBrandKitRecommendationRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForcreateBrandKitRecommendation',
             null,
             [],
             $queryParams
@@ -18098,6 +18332,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
     }
 
     /**
+     * Operation getAnnotationOptOut
+     *
+     * @param  object $Body Body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAnnotationOptOutResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getAnnotationOptOut($Body, string $contentType = self::contentTypes['getAnnotationOptOut'][0])
+    {
+        list($response) = $this->getAnnotationOptOutWithHttpInfo($Body, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAnnotationOptOutWithHttpInfo
+     *
+     * @param  object $Body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAnnotationOptOutResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAnnotationOptOutWithHttpInfo($Body, string $contentType = self::contentTypes['getAnnotationOptOut'][0])
+    {
+        $request = $this->getAnnotationOptOutRequest($Body, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAnnotationOptOutResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAnnotationOptOutResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAnnotationOptOutResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAnnotationOptOutAsync
+     *
+     * @param  object $Body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAnnotationOptOutAsync($Body, string $contentType = self::contentTypes['getAnnotationOptOut'][0])
+    {
+        return $this->getAnnotationOptOutAsyncWithHttpInfo($Body, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAnnotationOptOutAsyncWithHttpInfo
+     *
+     * @param  object $Body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAnnotationOptOutAsyncWithHttpInfo($Body, string $contentType = self::contentTypes['getAnnotationOptOut'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAnnotationOptOutResponse';
+        $request = $this->getAnnotationOptOutRequest($Body, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAnnotationOptOut'
+     *
+     * @param  object $Body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAnnotationOptOutRequest($Body, string $contentType = self::contentTypes['getAnnotationOptOut'][0])
+    {
+
+        // verify the required parameter 'Body' is set
+        if ($Body === null || (is_array($Body) && count($Body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $Body when calling getAnnotationOptOut'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/AnnotationOptOut/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $Body,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetAnnotationOptOut',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
      * Operation getAssetGroupListingGroupsByIds
      *
      * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetAssetGroupListingGroupsByIdsRequest $GetAssetGroupListingGroupsByIdsRequest GetAssetGroupListingGroupsByIdsRequest (required)
@@ -24230,6 +24683,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
     }
 
     /**
+     * Operation getDiagnostics
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsRequest $GetDiagnosticsRequest GetDiagnosticsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDiagnostics'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getDiagnostics($GetDiagnosticsRequest, string $contentType = self::contentTypes['getDiagnostics'][0])
+    {
+        list($response) = $this->getDiagnosticsWithHttpInfo($GetDiagnosticsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getDiagnosticsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsRequest $GetDiagnosticsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDiagnostics'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getDiagnosticsWithHttpInfo($GetDiagnosticsRequest, string $contentType = self::contentTypes['getDiagnostics'][0])
+    {
+        $request = $this->getDiagnosticsRequest($GetDiagnosticsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getDiagnosticsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsRequest $GetDiagnosticsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDiagnostics'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDiagnosticsAsync($GetDiagnosticsRequest, string $contentType = self::contentTypes['getDiagnostics'][0])
+    {
+        return $this->getDiagnosticsAsyncWithHttpInfo($GetDiagnosticsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getDiagnosticsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsRequest $GetDiagnosticsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDiagnostics'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDiagnosticsAsyncWithHttpInfo($GetDiagnosticsRequest, string $contentType = self::contentTypes['getDiagnostics'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsResponse';
+        $request = $this->getDiagnosticsRequest($GetDiagnosticsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getDiagnostics'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetDiagnosticsRequest $GetDiagnosticsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDiagnostics'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getDiagnosticsRequest($GetDiagnosticsRequest, string $contentType = self::contentTypes['getDiagnostics'][0])
+    {
+
+        // verify the required parameter 'GetDiagnosticsRequest' is set
+        if ($GetDiagnosticsRequest === null || (is_array($GetDiagnosticsRequest) && count($GetDiagnosticsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetDiagnosticsRequest when calling getDiagnostics'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/Diagnostics/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetDiagnosticsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetDiagnostics',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
      * Operation getEditorialReasonsByIds
      *
      * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetEditorialReasonsByIdsRequest $GetEditorialReasonsByIdsRequest GetEditorialReasonsByIdsRequest (required)
@@ -29479,6 +30151,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForgetProfileDataFileUrl',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation getResponsiveAdRecommendationJob
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobRequest $GetResponsiveAdRecommendationJobRequest GetResponsiveAdRecommendationJobRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResponsiveAdRecommendationJob'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getResponsiveAdRecommendationJob($GetResponsiveAdRecommendationJobRequest, string $contentType = self::contentTypes['getResponsiveAdRecommendationJob'][0])
+    {
+        list($response) = $this->getResponsiveAdRecommendationJobWithHttpInfo($GetResponsiveAdRecommendationJobRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getResponsiveAdRecommendationJobWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobRequest $GetResponsiveAdRecommendationJobRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResponsiveAdRecommendationJob'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getResponsiveAdRecommendationJobWithHttpInfo($GetResponsiveAdRecommendationJobRequest, string $contentType = self::contentTypes['getResponsiveAdRecommendationJob'][0])
+    {
+        $request = $this->getResponsiveAdRecommendationJobRequest($GetResponsiveAdRecommendationJobRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getResponsiveAdRecommendationJobAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobRequest $GetResponsiveAdRecommendationJobRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResponsiveAdRecommendationJob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResponsiveAdRecommendationJobAsync($GetResponsiveAdRecommendationJobRequest, string $contentType = self::contentTypes['getResponsiveAdRecommendationJob'][0])
+    {
+        return $this->getResponsiveAdRecommendationJobAsyncWithHttpInfo($GetResponsiveAdRecommendationJobRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getResponsiveAdRecommendationJobAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobRequest $GetResponsiveAdRecommendationJobRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResponsiveAdRecommendationJob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResponsiveAdRecommendationJobAsyncWithHttpInfo($GetResponsiveAdRecommendationJobRequest, string $contentType = self::contentTypes['getResponsiveAdRecommendationJob'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobResponse';
+        $request = $this->getResponsiveAdRecommendationJobRequest($GetResponsiveAdRecommendationJobRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getResponsiveAdRecommendationJob'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetResponsiveAdRecommendationJobRequest $GetResponsiveAdRecommendationJobRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResponsiveAdRecommendationJob'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getResponsiveAdRecommendationJobRequest($GetResponsiveAdRecommendationJobRequest, string $contentType = self::contentTypes['getResponsiveAdRecommendationJob'][0])
+    {
+
+        // verify the required parameter 'GetResponsiveAdRecommendationJobRequest' is set
+        if ($GetResponsiveAdRecommendationJobRequest === null || (is_array($GetResponsiveAdRecommendationJobRequest) && count($GetResponsiveAdRecommendationJobRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetResponsiveAdRecommendationJobRequest when calling getResponsiveAdRecommendationJob'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/ResponsiveAdRecommendationJob/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetResponsiveAdRecommendationJobRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetResponsiveAdRecommendationJob',
             null,
             [],
             $queryParams
@@ -34954,6 +35845,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForupdateAds',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation updateAnnotationOptOut
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateAnnotationOptOutRequest $UpdateAnnotationOptOutRequest UpdateAnnotationOptOutRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return object|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function updateAnnotationOptOut($UpdateAnnotationOptOutRequest, string $contentType = self::contentTypes['updateAnnotationOptOut'][0])
+    {
+        list($response) = $this->updateAnnotationOptOutWithHttpInfo($UpdateAnnotationOptOutRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateAnnotationOptOutWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateAnnotationOptOutRequest $UpdateAnnotationOptOutRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of object|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAnnotationOptOutWithHttpInfo($UpdateAnnotationOptOutRequest, string $contentType = self::contentTypes['updateAnnotationOptOut'][0])
+    {
+        $request = $this->updateAnnotationOptOutRequest($UpdateAnnotationOptOutRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, 'object');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = 'object';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateAnnotationOptOutAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateAnnotationOptOutRequest $UpdateAnnotationOptOutRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAnnotationOptOutAsync($UpdateAnnotationOptOutRequest, string $contentType = self::contentTypes['updateAnnotationOptOut'][0])
+    {
+        return $this->updateAnnotationOptOutAsyncWithHttpInfo($UpdateAnnotationOptOutRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateAnnotationOptOutAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateAnnotationOptOutRequest $UpdateAnnotationOptOutRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateAnnotationOptOutAsyncWithHttpInfo($UpdateAnnotationOptOutRequest, string $contentType = self::contentTypes['updateAnnotationOptOut'][0])
+    {
+        $returnType = 'object';
+        $request = $this->updateAnnotationOptOutRequest($UpdateAnnotationOptOutRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateAnnotationOptOut'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateAnnotationOptOutRequest $UpdateAnnotationOptOutRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAnnotationOptOut'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateAnnotationOptOutRequest($UpdateAnnotationOptOutRequest, string $contentType = self::contentTypes['updateAnnotationOptOut'][0])
+    {
+
+        // verify the required parameter 'UpdateAnnotationOptOutRequest' is set
+        if ($UpdateAnnotationOptOutRequest === null || (is_array($UpdateAnnotationOptOutRequest) && count($UpdateAnnotationOptOutRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $UpdateAnnotationOptOutRequest when calling updateAnnotationOptOut'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/AnnotationOptOut';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'PUT',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $UpdateAnnotationOptOutRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForupdateAnnotationOptOut',
             null,
             [],
             $queryParams

@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * AnnotationOptOut
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'AnnotationOptOut';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'CustomerId' => 'string',
+        'AccountId' => 'string',
+        'IsOptOut' => 'bool',
+        'AnnotationGroupId' => 'string'
     ];
 
     /**
@@ -45,8 +47,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'CustomerId' => 'int64',
+        'AccountId' => 'int64',
+        'IsOptOut' => null,
+        'AnnotationGroupId' => 'int64'
     ];
 
     /**
@@ -55,8 +59,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'CustomerId' => false,
+        'AccountId' => false,
+        'IsOptOut' => false,
+        'AnnotationGroupId' => false
     ];
 
     /**
@@ -145,8 +151,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'CustomerId' => 'CustomerId',
+        'AccountId' => 'AccountId',
+        'IsOptOut' => 'IsOptOut',
+        'AnnotationGroupId' => 'AnnotationGroupId'
     ];
 
     /**
@@ -155,8 +163,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'CustomerId' => 'setCustomerId',
+        'AccountId' => 'setAccountId',
+        'IsOptOut' => 'setIsOptOut',
+        'AnnotationGroupId' => 'setAnnotationGroupId'
     ];
 
     /**
@@ -165,8 +175,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'CustomerId' => 'getCustomerId',
+        'AccountId' => 'getAccountId',
+        'IsOptOut' => 'getIsOptOut',
+        'AnnotationGroupId' => 'getAnnotationGroupId'
     ];
 
     /**
@@ -226,8 +238,10 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('CustomerId', $data ?? [], null);
+        $this->setIfExists('AccountId', $data ?? [], null);
+        $this->setIfExists('IsOptOut', $data ?? [], null);
+        $this->setIfExists('AnnotationGroupId', $data ?? [], null);
     }
 
     /**
@@ -273,67 +287,121 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets CustomerId
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getCustomerId()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['CustomerId']) || is_null($this->container['CustomerId'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['CustomerId'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets CustomerId
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $CustomerId CustomerId
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setCustomerId($CustomerId)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($CustomerId)) {
+            throw new \InvalidArgumentException('non-nullable CustomerId cannot be null');
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['CustomerId'] = $CustomerId;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets AccountId
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return string|null
      */
-    public function getReturnAdditionalFields()
+    public function getAccountId()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['AccountId']) || is_null($this->container['AccountId'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['AccountId'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets AccountId
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param string|null $AccountId AccountId
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setAccountId($AccountId)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($AccountId)) {
+            throw new \InvalidArgumentException('non-nullable AccountId cannot be null');
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        $this->container['AccountId'] = $AccountId;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsOptOut
+     *
+     * @return bool|null
+     */
+    public function getIsOptOut()
+    {
+        if (!isset($this->container['IsOptOut']) || is_null($this->container['IsOptOut'])) {
+            return null;
         }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        return $this->container['IsOptOut'];
+    }
+
+    /**
+     * Sets IsOptOut
+     *
+     * @param bool|null $IsOptOut IsOptOut
+     *
+     * @return self
+     */
+    public function setIsOptOut($IsOptOut)
+    {
+        if (is_null($IsOptOut)) {
+            throw new \InvalidArgumentException('non-nullable IsOptOut cannot be null');
+        }
+        $this->container['IsOptOut'] = $IsOptOut;
+
+        return $this;
+    }
+
+    /**
+     * Gets AnnotationGroupId
+     *
+     * @return string|null
+     */
+    public function getAnnotationGroupId()
+    {
+        if (!isset($this->container['AnnotationGroupId']) || is_null($this->container['AnnotationGroupId'])) {
+            return null;
+        }
+        return $this->container['AnnotationGroupId'];
+    }
+
+    /**
+     * Sets AnnotationGroupId
+     *
+     * @param string|null $AnnotationGroupId AnnotationGroupId
+     *
+     * @return self
+     */
+    public function setAnnotationGroupId($AnnotationGroupId)
+    {
+        if (is_null($AnnotationGroupId)) {
+            throw new \InvalidArgumentException('non-nullable AnnotationGroupId cannot be null');
+        }
+        $this->container['AnnotationGroupId'] = $AnnotationGroupId;
 
         return $this;
     }

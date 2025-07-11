@@ -1,6 +1,6 @@
 <?php
 /**
- * GetKeywordsByAdGroupIdRequest
+ * CreateBrandKitRecommendationRequest
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateBrandKitRecommendationRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetKeywordsByAdGroupIdRequest';
+    protected static string $openAPIModelName = 'CreateBrandKitRecommendationRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'AccountId' => 'string',
+        'FinalUrl' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'AccountId' => 'int64',
+        'FinalUrl' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'AccountId' => false,
+        'FinalUrl' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'AccountId' => 'AccountId',
+        'FinalUrl' => 'FinalUrl'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'AccountId' => 'setAccountId',
+        'FinalUrl' => 'setFinalUrl'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'AccountId' => 'getAccountId',
+        'FinalUrl' => 'getFinalUrl'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('AccountId', $data ?? [], null);
+        $this->setIfExists('FinalUrl', $data ?? [], null);
     }
 
     /**
@@ -273,67 +273,68 @@ class GetKeywordsByAdGroupIdRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets AdGroupId
+     * Gets AccountId
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getAccountId()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['AccountId']) || is_null($this->container['AccountId'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['AccountId'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets AccountId
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $AccountId AccountId
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setAccountId($AccountId)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($AccountId)) {
+            throw new \InvalidArgumentException('non-nullable AccountId cannot be null');
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['AccountId'] = $AccountId;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets FinalUrl
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     * @return string|null
      */
-    public function getReturnAdditionalFields()
+    public function getFinalUrl()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['FinalUrl']) || is_null($this->container['FinalUrl'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['FinalUrl'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets FinalUrl
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param string|null $FinalUrl FinalUrl
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setFinalUrl($FinalUrl)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($FinalUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        $this->container['FinalUrl'] = $FinalUrl;
 
         return $this;
     }

@@ -102,11 +102,11 @@ class ReportingServiceApi extends AbstractServiceApi
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\PollGenerateReportResponse');
                 case 400:
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
                 case 401:
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
                 case 403:
-                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
-                case 500:
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
             }
 
@@ -144,6 +144,14 @@ class ReportingServiceApi extends AbstractServiceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -153,14 +161,6 @@ class ReportingServiceApi extends AbstractServiceApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault',
@@ -321,11 +321,11 @@ class ReportingServiceApi extends AbstractServiceApi
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\SubmitGenerateReportResponse');
                 case 400:
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
                 case 401:
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
                 case 403:
-                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
-                case 500:
                     return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault');
             }
 
@@ -363,6 +363,14 @@ class ReportingServiceApi extends AbstractServiceApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -372,14 +380,6 @@ class ReportingServiceApi extends AbstractServiceApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Microsoft\MsAds\Rest\Model\ReportingService\ApplicationFault',
