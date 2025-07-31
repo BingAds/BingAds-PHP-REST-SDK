@@ -1,29 +1,27 @@
 <?php
 /**
- * AdDistributionReportFilter
- * ReportingService
+ * UetTagAdditionalField
+ * CampaignManagementService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\ReportingService
+ * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\ReportingService;
+namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class AdDistributionReportFilter
+class UetTagAdditionalField
 {
     /**
      * Possible values of this enum
      */
-    public const SEARCH = 'Search';
+    public const NONE = 'None';
 
-    public const AUDIENCE = 'Audience';
-
-    public const CROSS_NETWORK = 'CrossNetwork';
+    public const INDUSTRY = 'Industry';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -92,9 +90,8 @@ class AdDistributionReportFilter
     public static function getAllowableEnumValues(): array
     {
         return [
-            self::SEARCH,
-            self::AUDIENCE,
-            self::CROSS_NETWORK
+            self::NONE,
+            self::INDUSTRY
         ];
     }
 }

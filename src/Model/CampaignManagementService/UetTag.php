@@ -39,7 +39,8 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingScript' => 'string',
         'TrackingNoScript' => 'string',
         'TrackingStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagTrackingStatus',
-        'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare'
+        'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
+        'Industry' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry'
     ];
 
     /**
@@ -56,7 +57,8 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingScript' => null,
         'TrackingNoScript' => null,
         'TrackingStatus' => null,
-        'CustomerShare' => null
+        'CustomerShare' => null,
+        'Industry' => null
     ];
 
     /**
@@ -71,7 +73,8 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingScript' => true,
         'TrackingNoScript' => true,
         'TrackingStatus' => false,
-        'CustomerShare' => true
+        'CustomerShare' => true,
+        'Industry' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingScript' => 'TrackingScript',
         'TrackingNoScript' => 'TrackingNoScript',
         'TrackingStatus' => 'TrackingStatus',
-        'CustomerShare' => 'CustomerShare'
+        'CustomerShare' => 'CustomerShare',
+        'Industry' => 'Industry'
     ];
 
     /**
@@ -181,7 +185,8 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingScript' => 'setTrackingScript',
         'TrackingNoScript' => 'setTrackingNoScript',
         'TrackingStatus' => 'setTrackingStatus',
-        'CustomerShare' => 'setCustomerShare'
+        'CustomerShare' => 'setCustomerShare',
+        'Industry' => 'setIndustry'
     ];
 
     /**
@@ -196,7 +201,8 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingScript' => 'getTrackingScript',
         'TrackingNoScript' => 'getTrackingNoScript',
         'TrackingStatus' => 'getTrackingStatus',
-        'CustomerShare' => 'getCustomerShare'
+        'CustomerShare' => 'getCustomerShare',
+        'Industry' => 'getIndustry'
     ];
 
     /**
@@ -263,6 +269,7 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('TrackingNoScript', $data ?? [], null);
         $this->setIfExists('TrackingStatus', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
+        $this->setIfExists('Industry', $data ?? [], null);
     }
 
     /**
@@ -561,6 +568,42 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['CustomerShare'] = $CustomerShare;
+
+        return $this;
+    }
+
+    /**
+     * Gets Industry
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry|mixed|null
+     */
+    public function getIndustry()
+    {
+        if (!isset($this->container['Industry']) || is_null($this->container['Industry'])) {
+            return null;
+        }
+        if ((is_object($this->container['Industry']) || is_string($this->container['Industry'])) && method_exists($this->container['Industry'], 'getValue')) {
+            return $this->container['Industry']->getValue();
+        }
+        return $this->container['Industry'];
+    }
+
+    /**
+     * Sets Industry
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry|mixed|null $Industry Industry
+     *
+     * @return self
+     */
+    public function setIndustry($Industry)
+    {
+        if (is_null($Industry)) {
+            throw new \InvalidArgumentException('non-nullable Industry cannot be null');
+        }
+        if (!$Industry instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry) {
+            $Industry = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry($Industry);
+        }
+        $this->container['Industry'] = $Industry;
 
         return $this;
     }
