@@ -33,7 +33,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TagIds' => 'string[]'
+        'TagIds' => 'string[]',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField'
     ];
 
     /**
@@ -44,7 +45,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TagIds' => 'int64'
+        'TagIds' => 'int64',
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -53,7 +55,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TagIds' => true
+        'TagIds' => true,
+        'ReturnAdditionalFields' => false
     ];
 
     /**
@@ -142,7 +145,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TagIds' => 'TagIds'
+        'TagIds' => 'TagIds',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -151,7 +155,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'TagIds' => 'setTagIds'
+        'TagIds' => 'setTagIds',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -160,7 +165,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'TagIds' => 'getTagIds'
+        'TagIds' => 'getTagIds',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -221,6 +227,7 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(?array $data = null)
     {
         $this->setIfExists('TagIds', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -298,6 +305,42 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['TagIds'] = $TagIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        }
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }
