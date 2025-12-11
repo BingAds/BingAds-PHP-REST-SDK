@@ -110,11 +110,11 @@ class Configuration
     ];
 
     /**
-     * User agent of the HTTP request, set to "BingAdsSDKPHP.RestApi 13.0.25.1" by default
+     * User agent of the HTTP request, set to "BingAdsSDKPHP.RestApi 13.0.26" by default
      *
      * @var string
      */
-    protected string $userAgent = 'BingAdsSDKPHP.RestApi 13.0.25 ' . PHP_VERSION;
+    protected string $userAgent = 'BingAdsSDKPHP.RestApi 13.0.26 ' . PHP_VERSION;
 
     /**
      * Debug switch (default set to false)
@@ -506,7 +506,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 1.0.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 13.0.25.1' . PHP_EOL;
+        $report .= '    SDK Package Version: 13.0.26' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

@@ -226,7 +226,7 @@ class ManualCpaBiddingScheme extends BiddingScheme implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'ManualCpaBiddingScheme');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ManualCpi', $data ?? [], null);
     }
 

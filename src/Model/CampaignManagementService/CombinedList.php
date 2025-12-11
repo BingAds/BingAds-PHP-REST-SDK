@@ -33,19 +33,19 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CombinationRules' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]',
         'Id' => 'string',
         'Name' => 'string',
         'Description' => 'string',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'ParentId' => 'string',
         'MembershipDuration' => 'int',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
         'SupportedCampaignTypes' => 'string[]',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'CombinationRules' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]'
     ];
 
     /**
@@ -56,7 +56,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CombinationRules' => null,
         'Id' => 'int64',
         'Name' => null,
         'Description' => null,
@@ -68,7 +67,8 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
         'AudienceNetworkSize' => 'int64',
         'SupportedCampaignTypes' => null,
         'CustomerShare' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'CombinationRules' => null
     ];
 
     /**
@@ -77,19 +77,19 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CombinationRules' => true,
         'Id' => true,
         'Name' => true,
         'Description' => true,
         'Scope' => false,
         'ParentId' => true,
         'MembershipDuration' => true,
-        'Type' => true,
+        'Type' => false,
         'SearchSize' => true,
         'AudienceNetworkSize' => true,
         'SupportedCampaignTypes' => true,
         'CustomerShare' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'CombinationRules' => true
     ];
 
     /**
@@ -178,7 +178,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CombinationRules' => 'CombinationRules',
         'Id' => 'Id',
         'Name' => 'Name',
         'Description' => 'Description',
@@ -190,7 +189,8 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
         'AudienceNetworkSize' => 'AudienceNetworkSize',
         'SupportedCampaignTypes' => 'SupportedCampaignTypes',
         'CustomerShare' => 'CustomerShare',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'CombinationRules' => 'CombinationRules'
     ];
 
     /**
@@ -199,7 +199,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'CombinationRules' => 'setCombinationRules',
         'Id' => 'setId',
         'Name' => 'setName',
         'Description' => 'setDescription',
@@ -211,7 +210,8 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
         'AudienceNetworkSize' => 'setAudienceNetworkSize',
         'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
         'CustomerShare' => 'setCustomerShare',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'CombinationRules' => 'setCombinationRules'
     ];
 
     /**
@@ -220,7 +220,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'CombinationRules' => 'getCombinationRules',
         'Id' => 'getId',
         'Name' => 'getName',
         'Description' => 'getDescription',
@@ -232,7 +231,8 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
         'AudienceNetworkSize' => 'getAudienceNetworkSize',
         'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
         'CustomerShare' => 'getCustomerShare',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'CombinationRules' => 'getCombinationRules'
     ];
 
     /**
@@ -292,19 +292,19 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CombinationRules', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CombinedList');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
         $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('CombinationRules', $data ?? [], null);
     }
 
     /**
@@ -348,43 +348,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets CombinationRules
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]|null
-     */
-    public function getCombinationRules()
-    {
-        if (!isset($this->container['CombinationRules']) || is_null($this->container['CombinationRules'])) {
-            return null;
-        }
-        return $this->container['CombinationRules'];
-    }
-
-    /**
-     * Sets CombinationRules
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]|null $CombinationRules CombinationRules
-     *
-     * @return self
-     */
-    public function setCombinationRules($CombinationRules)
-    {
-        if (is_null($CombinationRules)) {
-            array_push($this->openAPINullablesSetToNull, 'CombinationRules');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CombinationRules', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CombinationRules'] = $CombinationRules;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -610,12 +573,15 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -623,21 +589,17 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -825,6 +787,43 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets CombinationRules
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]|null
+     */
+    public function getCombinationRules()
+    {
+        if (!isset($this->container['CombinationRules']) || is_null($this->container['CombinationRules'])) {
+            return null;
+        }
+        return $this->container['CombinationRules'];
+    }
+
+    /**
+     * Sets CombinationRules
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]|null $CombinationRules CombinationRules
+     *
+     * @return self
+     */
+    public function setCombinationRules($CombinationRules)
+    {
+        if (is_null($CombinationRules)) {
+            array_push($this->openAPINullablesSetToNull, 'CombinationRules');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CombinationRules', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CombinationRules'] = $CombinationRules;
 
         return $this;
     }

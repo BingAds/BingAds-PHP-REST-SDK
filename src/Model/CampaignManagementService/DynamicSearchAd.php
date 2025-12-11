@@ -33,12 +33,8 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Text' => 'string',
-        'TextPart2' => 'string',
-        'Path1' => 'string',
-        'Path2' => 'string',
         'Id' => 'string',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'DevicePreference' => 'string',
@@ -49,7 +45,11 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         'FinalUrls' => 'string[]',
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Text' => 'string',
+        'TextPart2' => 'string',
+        'Path1' => 'string',
+        'Path2' => 'string'
     ];
 
     /**
@@ -60,10 +60,6 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Text' => null,
-        'TextPart2' => null,
-        'Path1' => null,
-        'Path2' => null,
         'Id' => 'int64',
         'Type' => null,
         'Status' => null,
@@ -76,7 +72,11 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         'FinalUrls' => null,
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'Text' => null,
+        'TextPart2' => null,
+        'Path1' => null,
+        'Path2' => null
     ];
 
     /**
@@ -85,12 +85,8 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Text' => true,
-        'TextPart2' => true,
-        'Path1' => true,
-        'Path2' => true,
         'Id' => true,
-        'Type' => true,
+        'Type' => false,
         'Status' => false,
         'EditorialStatus' => false,
         'DevicePreference' => true,
@@ -101,7 +97,11 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         'FinalUrls' => true,
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'Text' => true,
+        'TextPart2' => true,
+        'Path1' => true,
+        'Path2' => true
     ];
 
     /**
@@ -190,10 +190,6 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Text' => 'Text',
-        'TextPart2' => 'TextPart2',
-        'Path1' => 'Path1',
-        'Path2' => 'Path2',
         'Id' => 'Id',
         'Type' => 'Type',
         'Status' => 'Status',
@@ -206,7 +202,11 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         'FinalUrls' => 'FinalUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Text' => 'Text',
+        'TextPart2' => 'TextPart2',
+        'Path1' => 'Path1',
+        'Path2' => 'Path2'
     ];
 
     /**
@@ -215,10 +215,6 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'Text' => 'setText',
-        'TextPart2' => 'setTextPart2',
-        'Path1' => 'setPath1',
-        'Path2' => 'setPath2',
         'Id' => 'setId',
         'Type' => 'setType',
         'Status' => 'setStatus',
@@ -231,7 +227,11 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         'FinalUrls' => 'setFinalUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Text' => 'setText',
+        'TextPart2' => 'setTextPart2',
+        'Path1' => 'setPath1',
+        'Path2' => 'setPath2'
     ];
 
     /**
@@ -240,10 +240,6 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'Text' => 'getText',
-        'TextPart2' => 'getTextPart2',
-        'Path1' => 'getPath1',
-        'Path2' => 'getPath2',
         'Id' => 'getId',
         'Type' => 'getType',
         'Status' => 'getStatus',
@@ -256,7 +252,11 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         'FinalUrls' => 'getFinalUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Text' => 'getText',
+        'TextPart2' => 'getTextPart2',
+        'Path1' => 'getPath1',
+        'Path2' => 'getPath2'
     ];
 
     /**
@@ -316,12 +316,8 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('TextPart2', $data ?? [], null);
-        $this->setIfExists('Path1', $data ?? [], null);
-        $this->setIfExists('Path2', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DynamicSearch');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
@@ -333,6 +329,10 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('TextPart2', $data ?? [], null);
+        $this->setIfExists('Path1', $data ?? [], null);
+        $this->setIfExists('Path2', $data ?? [], null);
     }
 
     /**
@@ -378,154 +378,6 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
-     * Gets TextPart2
-     *
-     * @return string|null
-     */
-    public function getTextPart2()
-    {
-        if (!isset($this->container['TextPart2']) || is_null($this->container['TextPart2'])) {
-            return null;
-        }
-        return $this->container['TextPart2'];
-    }
-
-    /**
-     * Sets TextPart2
-     *
-     * @param string|null $TextPart2 TextPart2
-     *
-     * @return self
-     */
-    public function setTextPart2($TextPart2)
-    {
-        if (is_null($TextPart2)) {
-            array_push($this->openAPINullablesSetToNull, 'TextPart2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TextPart2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TextPart2'] = $TextPart2;
-
-        return $this;
-    }
-
-    /**
-     * Gets Path1
-     *
-     * @return string|null
-     */
-    public function getPath1()
-    {
-        if (!isset($this->container['Path1']) || is_null($this->container['Path1'])) {
-            return null;
-        }
-        return $this->container['Path1'];
-    }
-
-    /**
-     * Sets Path1
-     *
-     * @param string|null $Path1 Path1
-     *
-     * @return self
-     */
-    public function setPath1($Path1)
-    {
-        if (is_null($Path1)) {
-            array_push($this->openAPINullablesSetToNull, 'Path1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Path1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Path1'] = $Path1;
-
-        return $this;
-    }
-
-    /**
-     * Gets Path2
-     *
-     * @return string|null
-     */
-    public function getPath2()
-    {
-        if (!isset($this->container['Path2']) || is_null($this->container['Path2'])) {
-            return null;
-        }
-        return $this->container['Path2'];
-    }
-
-    /**
-     * Sets Path2
-     *
-     * @param string|null $Path2 Path2
-     *
-     * @return self
-     */
-    public function setPath2($Path2)
-    {
-        if (is_null($Path2)) {
-            array_push($this->openAPINullablesSetToNull, 'Path2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Path2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Path2'] = $Path2;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -565,12 +417,15 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -578,21 +433,17 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1000,6 +851,154 @@ class DynamicSearchAd extends Ad implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextPart2
+     *
+     * @return string|null
+     */
+    public function getTextPart2()
+    {
+        if (!isset($this->container['TextPart2']) || is_null($this->container['TextPart2'])) {
+            return null;
+        }
+        return $this->container['TextPart2'];
+    }
+
+    /**
+     * Sets TextPart2
+     *
+     * @param string|null $TextPart2 TextPart2
+     *
+     * @return self
+     */
+    public function setTextPart2($TextPart2)
+    {
+        if (is_null($TextPart2)) {
+            array_push($this->openAPINullablesSetToNull, 'TextPart2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextPart2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TextPart2'] = $TextPart2;
+
+        return $this;
+    }
+
+    /**
+     * Gets Path1
+     *
+     * @return string|null
+     */
+    public function getPath1()
+    {
+        if (!isset($this->container['Path1']) || is_null($this->container['Path1'])) {
+            return null;
+        }
+        return $this->container['Path1'];
+    }
+
+    /**
+     * Sets Path1
+     *
+     * @param string|null $Path1 Path1
+     *
+     * @return self
+     */
+    public function setPath1($Path1)
+    {
+        if (is_null($Path1)) {
+            array_push($this->openAPINullablesSetToNull, 'Path1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Path1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Path1'] = $Path1;
+
+        return $this;
+    }
+
+    /**
+     * Gets Path2
+     *
+     * @return string|null
+     */
+    public function getPath2()
+    {
+        if (!isset($this->container['Path2']) || is_null($this->container['Path2'])) {
+            return null;
+        }
+        return $this->container['Path2'];
+    }
+
+    /**
+     * Sets Path2
+     *
+     * @param string|null $Path2 Path2
+     *
+     * @return self
+     */
+    public function setPath2($Path2)
+    {
+        if (is_null($Path2)) {
+            array_push($this->openAPINullablesSetToNull, 'Path2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Path2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Path2'] = $Path2;
 
         return $this;
     }

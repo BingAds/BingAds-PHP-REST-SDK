@@ -310,7 +310,7 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'CustomEvents');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('NormalForm', $data ?? [], null);
         $this->setIfExists('AnotherRuleItemGroups', $data ?? [], null);

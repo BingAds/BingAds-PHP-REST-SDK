@@ -226,7 +226,7 @@ class CostPerSaleBiddingScheme extends BiddingScheme implements ModelInterface, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'CostPerSale');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('TargetCostPerSale', $data ?? [], null);
     }
 

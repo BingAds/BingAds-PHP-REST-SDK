@@ -281,6 +281,8 @@ class CampaignPerformanceReportColumn
 
     public const NEW_CUSTOMER_COUNT = 'NewCustomerCount';
 
+    public const NEW_CUSTOMER_SPEND = 'NewCustomerSpend';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -478,7 +480,8 @@ class CampaignPerformanceReportColumn
             self::CONVERSION_DELAY,
             self::UNKNOWN_CUSTOMER_CONVERSIONS,
             self::UNKNOWN_CUSTOMER_REVENUE,
-            self::NEW_CUSTOMER_COUNT
+            self::NEW_CUSTOMER_COUNT,
+            self::NEW_CUSTOMER_SPEND
         ];
     }
 }

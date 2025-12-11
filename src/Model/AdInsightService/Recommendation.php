@@ -18,17 +18,7 @@ use Microsoft\MsAds\Rest\ModelInterface;
 
 class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = 'Type';
-
-    /**
-     * Associative array for mapping discriminator values to model class names
-     *
-     * @var string[]
-     */
-    public const MAPPINGS = [
-        'Recommendation' => 'Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationBase',
-        'ResponsiveSearchAdsRecommendation' => 'Microsoft\MsAds\Rest\Model\AdInsightService\ResponsiveSearchAdsRecommendation',
-    ];
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -43,7 +33,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SuggestedAd' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd',
         'AccountId' => 'string',
         'CampaignId' => 'string',
         'AdGroupId' => 'string',
@@ -69,7 +58,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SuggestedAd' => null,
         'AccountId' => 'int64',
         'CampaignId' => 'int64',
         'AdGroupId' => 'int64',
@@ -93,7 +81,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SuggestedAd' => true,
         'AccountId' => false,
         'CampaignId' => true,
         'AdGroupId' => true,
@@ -197,7 +184,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SuggestedAd' => 'SuggestedAd',
         'AccountId' => 'AccountId',
         'CampaignId' => 'CampaignId',
         'AdGroupId' => 'AdGroupId',
@@ -221,7 +207,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'SuggestedAd' => 'setSuggestedAd',
         'AccountId' => 'setAccountId',
         'CampaignId' => 'setCampaignId',
         'AdGroupId' => 'setAdGroupId',
@@ -245,7 +230,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'SuggestedAd' => 'getSuggestedAd',
         'AccountId' => 'getAccountId',
         'CampaignId' => 'getCampaignId',
         'AdGroupId' => 'getAdGroupId',
@@ -320,7 +304,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SuggestedAd', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
@@ -335,10 +318,7 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('EstimatedIncreaseInImpressions', $data ?? [], null);
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Recommendation');
-
-        // Initialize discriminator property with the model name.
-        $this->container['Type'] = static::$openAPIModelName;
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -382,43 +362,6 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SuggestedAd
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null
-     */
-    public function getSuggestedAd()
-    {
-        if (!isset($this->container['SuggestedAd']) || is_null($this->container['SuggestedAd'])) {
-            return null;
-        }
-        return $this->container['SuggestedAd'];
-    }
-
-    /**
-     * Sets SuggestedAd
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null $SuggestedAd SuggestedAd
-     *
-     * @return self
-     */
-    public function setSuggestedAd($SuggestedAd)
-    {
-        if (is_null($SuggestedAd)) {
-            array_push($this->openAPINullablesSetToNull, 'SuggestedAd');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SuggestedAd', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SuggestedAd'] = $SuggestedAd;
-
-        return $this;
-    }
 
     /**
      * Gets AccountId

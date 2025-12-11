@@ -87,6 +87,14 @@ class ProfessionalDemographicsAudienceReportColumn
 
     public const VIEW_THROUGH_REVENUE = 'ViewThroughRevenue';
 
+    public const CAMPAIGN_TYPE = 'CampaignType';
+
+    public const ASSET_GROUP_ID = 'AssetGroupId';
+
+    public const ASSET_GROUP_NAME = 'AssetGroupName';
+
+    public const ASSET_GROUP_STATUS = 'AssetGroupStatus';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -187,7 +195,11 @@ class ProfessionalDemographicsAudienceReportColumn
             self::CONVERSIONS_QUALIFIED,
             self::ALL_CONVERSIONS_QUALIFIED,
             self::VIEW_THROUGH_CONVERSIONS_QUALIFIED,
-            self::VIEW_THROUGH_REVENUE
+            self::VIEW_THROUGH_REVENUE,
+            self::CAMPAIGN_TYPE,
+            self::ASSET_GROUP_ID,
+            self::ASSET_GROUP_NAME,
+            self::ASSET_GROUP_STATUS
         ];
     }
 }

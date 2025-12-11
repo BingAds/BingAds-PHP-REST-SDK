@@ -33,9 +33,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'BrandId' => 'string',
         'Type' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'BrandId' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'BrandId' => 'int64',
         'Type' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'BrandId' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'BrandId' => false,
         'Type' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'BrandId' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'BrandId' => 'BrandId',
         'Type' => 'Type',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'BrandId' => 'BrandId'
     ];
 
     /**
@@ -159,9 +159,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'BrandId' => 'setBrandId',
         'Type' => 'setType',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'BrandId' => 'setBrandId'
     ];
 
     /**
@@ -170,9 +170,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'BrandId' => 'getBrandId',
         'Type' => 'getType',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'BrandId' => 'getBrandId'
     ];
 
     /**
@@ -232,9 +232,9 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('BrandId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BrandItem');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('BrandId', $data ?? [], null);
     }
 
     /**
@@ -278,36 +278,6 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets BrandId
-     *
-     * @return string|null
-     */
-    public function getBrandId()
-    {
-        if (!isset($this->container['BrandId']) || is_null($this->container['BrandId'])) {
-            return null;
-        }
-        return $this->container['BrandId'];
-    }
-
-    /**
-     * Sets BrandId
-     *
-     * @param string|null $BrandId BrandId
-     *
-     * @return self
-     */
-    public function setBrandId($BrandId)
-    {
-        if (is_null($BrandId)) {
-            throw new \InvalidArgumentException('non-nullable BrandId cannot be null');
-        }
-        $this->container['BrandId'] = $BrandId;
-
-        return $this;
-    }
 
     /**
      * Gets Type
@@ -379,6 +349,36 @@ class BrandItem extends SharedListItem implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets BrandId
+     *
+     * @return string|null
+     */
+    public function getBrandId()
+    {
+        if (!isset($this->container['BrandId']) || is_null($this->container['BrandId'])) {
+            return null;
+        }
+        return $this->container['BrandId'];
+    }
+
+    /**
+     * Sets BrandId
+     *
+     * @param string|null $BrandId BrandId
+     *
+     * @return self
+     */
+    public function setBrandId($BrandId)
+    {
+        if (is_null($BrandId)) {
+            throw new \InvalidArgumentException('non-nullable BrandId cannot be null');
+        }
+        $this->container['BrandId'] = $BrandId;
 
         return $this;
     }

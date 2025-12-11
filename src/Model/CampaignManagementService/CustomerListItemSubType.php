@@ -23,6 +23,8 @@ class CustomerListItemSubType
 
     public const CRM = 'CRM';
 
+    public const PHONE = 'Phone';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -91,7 +93,8 @@ class CustomerListItemSubType
     {
         return [
             self::EMAIL,
-            self::CRM
+            self::CRM,
+            self::PHONE
         ];
     }
 }

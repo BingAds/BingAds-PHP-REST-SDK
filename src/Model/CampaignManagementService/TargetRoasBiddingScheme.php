@@ -33,9 +33,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
-        'TargetRoas' => 'float',
-        'Type' => 'string'
+        'TargetRoas' => 'float'
     ];
 
     /**
@@ -46,9 +46,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'MaxCpc' => null,
-        'TargetRoas' => 'double',
-        'Type' => null
+        'TargetRoas' => 'double'
     ];
 
     /**
@@ -57,9 +57,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'MaxCpc' => true,
-        'TargetRoas' => true,
-        'Type' => true
+        'TargetRoas' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'MaxCpc' => 'MaxCpc',
-        'TargetRoas' => 'TargetRoas',
-        'Type' => 'Type'
+        'TargetRoas' => 'TargetRoas'
     ];
 
     /**
@@ -159,9 +159,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'MaxCpc' => 'setMaxCpc',
-        'TargetRoas' => 'setTargetRoas',
-        'Type' => 'setType'
+        'TargetRoas' => 'setTargetRoas'
     ];
 
     /**
@@ -170,9 +170,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'MaxCpc' => 'getMaxCpc',
-        'TargetRoas' => 'getTargetRoas',
-        'Type' => 'getType'
+        'TargetRoas' => 'getTargetRoas'
     ];
 
     /**
@@ -232,9 +232,9 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('MaxCpc', $data ?? [], null);
         $this->setIfExists('TargetRoas', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'TargetRoasBiddingScheme');
     }
 
     /**
@@ -278,6 +278,43 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets MaxCpc
@@ -349,43 +386,6 @@ class TargetRoasBiddingScheme extends BiddingScheme implements ModelInterface, A
             }
         }
         $this->container['TargetRoas'] = $TargetRoas;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

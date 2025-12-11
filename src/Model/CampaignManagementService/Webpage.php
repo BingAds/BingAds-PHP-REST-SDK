@@ -33,8 +33,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Parameter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter',
-        'Type' => 'string'
+        'Type' => 'string',
+        'Parameter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter'
     ];
 
     /**
@@ -45,8 +45,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Parameter' => null,
-        'Type' => null
+        'Type' => null,
+        'Parameter' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Parameter' => true,
-        'Type' => true
+        'Type' => true,
+        'Parameter' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Parameter' => 'Parameter',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Parameter' => 'Parameter'
     ];
 
     /**
@@ -155,8 +155,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $setters = [
-        'Parameter' => 'setParameter',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Parameter' => 'setParameter'
     ];
 
     /**
@@ -165,8 +165,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $getters = [
-        'Parameter' => 'getParameter',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Parameter' => 'getParameter'
     ];
 
     /**
@@ -226,8 +226,8 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Parameter', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Webpage');
     }
 
     /**
@@ -273,43 +273,6 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets Parameter
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter|null
-     */
-    public function getParameter()
-    {
-        if (!isset($this->container['Parameter']) || is_null($this->container['Parameter'])) {
-            return null;
-        }
-        return $this->container['Parameter'];
-    }
-
-    /**
-     * Sets Parameter
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter|null $Parameter Parameter
-     *
-     * @return self
-     */
-    public function setParameter($Parameter)
-    {
-        if (is_null($Parameter)) {
-            array_push($this->openAPINullablesSetToNull, 'Parameter');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Parameter', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Parameter'] = $Parameter;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class Webpage extends Criterion implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Parameter
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter|null
+     */
+    public function getParameter()
+    {
+        if (!isset($this->container['Parameter']) || is_null($this->container['Parameter'])) {
+            return null;
+        }
+        return $this->container['Parameter'];
+    }
+
+    /**
+     * Sets Parameter
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter|null $Parameter Parameter
+     *
+     * @return self
+     */
+    public function setParameter($Parameter)
+    {
+        if (is_null($Parameter)) {
+            array_push($this->openAPINullablesSetToNull, 'Parameter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Parameter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Parameter'] = $Parameter;
 
         return $this;
     }

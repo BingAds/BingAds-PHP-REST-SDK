@@ -57,6 +57,8 @@ class AssetGroupPerformanceReportColumn
 
     public const CAMPAIGN_TYPE = 'CampaignType';
 
+    public const COST_PER_CONVERSION = 'CostPerConversion';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -142,7 +144,8 @@ class AssetGroupPerformanceReportColumn
             self::CONVERSIONS,
             self::REVENUE,
             self::RETURN_ON_AD_SPEND,
-            self::CAMPAIGN_TYPE
+            self::CAMPAIGN_TYPE,
+            self::COST_PER_CONVERSION
         ];
     }
 }

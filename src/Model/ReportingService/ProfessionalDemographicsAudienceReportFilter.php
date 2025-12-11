@@ -37,7 +37,8 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter',
         'AccountStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter',
         'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
-        'AdGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter'
+        'AdGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter',
+        'AssetGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter'
     ];
 
     /**
@@ -52,7 +53,8 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         'Language' => null,
         'AccountStatus' => null,
         'CampaignStatus' => null,
-        'AdGroupStatus' => null
+        'AdGroupStatus' => null,
+        'AssetGroupStatus' => null
     ];
 
     /**
@@ -65,7 +67,8 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         'Language' => false,
         'AccountStatus' => false,
         'CampaignStatus' => false,
-        'AdGroupStatus' => false
+        'AdGroupStatus' => false,
+        'AssetGroupStatus' => false
     ];
 
     /**
@@ -158,7 +161,8 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         'Language' => 'Language',
         'AccountStatus' => 'AccountStatus',
         'CampaignStatus' => 'CampaignStatus',
-        'AdGroupStatus' => 'AdGroupStatus'
+        'AdGroupStatus' => 'AdGroupStatus',
+        'AssetGroupStatus' => 'AssetGroupStatus'
     ];
 
     /**
@@ -171,7 +175,8 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         'Language' => 'setLanguage',
         'AccountStatus' => 'setAccountStatus',
         'CampaignStatus' => 'setCampaignStatus',
-        'AdGroupStatus' => 'setAdGroupStatus'
+        'AdGroupStatus' => 'setAdGroupStatus',
+        'AssetGroupStatus' => 'setAssetGroupStatus'
     ];
 
     /**
@@ -184,7 +189,8 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         'Language' => 'getLanguage',
         'AccountStatus' => 'getAccountStatus',
         'CampaignStatus' => 'getCampaignStatus',
-        'AdGroupStatus' => 'getAdGroupStatus'
+        'AdGroupStatus' => 'getAdGroupStatus',
+        'AssetGroupStatus' => 'getAssetGroupStatus'
     ];
 
     /**
@@ -249,6 +255,7 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
         $this->setIfExists('AccountStatus', $data ?? [], null);
         $this->setIfExists('CampaignStatus', $data ?? [], null);
         $this->setIfExists('AdGroupStatus', $data ?? [], null);
+        $this->setIfExists('AssetGroupStatus', $data ?? [], null);
     }
 
     /**
@@ -469,6 +476,42 @@ class ProfessionalDemographicsAudienceReportFilter implements ModelInterface, Ar
             $AdGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter($AdGroupStatus);
         }
         $this->container['AdGroupStatus'] = $AdGroupStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null
+     */
+    public function getAssetGroupStatus()
+    {
+        if (!isset($this->container['AssetGroupStatus']) || is_null($this->container['AssetGroupStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AssetGroupStatus']) || is_string($this->container['AssetGroupStatus'])) && method_exists($this->container['AssetGroupStatus'], 'getValue')) {
+            return $this->container['AssetGroupStatus']->getValue();
+        }
+        return $this->container['AssetGroupStatus'];
+    }
+
+    /**
+     * Sets AssetGroupStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null $AssetGroupStatus AssetGroupStatus
+     *
+     * @return self
+     */
+    public function setAssetGroupStatus($AssetGroupStatus)
+    {
+        if (is_null($AssetGroupStatus)) {
+            throw new \InvalidArgumentException('non-nullable AssetGroupStatus cannot be null');
+        }
+        if (!$AssetGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter) {
+            $AssetGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter($AssetGroupStatus);
+        }
+        $this->container['AssetGroupStatus'] = $AssetGroupStatus;
 
         return $this;
     }

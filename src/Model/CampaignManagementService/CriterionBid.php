@@ -44,8 +44,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Amount' => 'float',
         'Type' => 'string',
+        'Amount' => 'float',
         'Multiplier' => 'float',
         'RateAmount' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount'
     ];
@@ -58,8 +58,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Amount' => 'double',
         'Type' => null,
+        'Amount' => 'double',
         'Multiplier' => 'double',
         'RateAmount' => null
     ];
@@ -70,8 +70,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Amount' => false,
         'Type' => true,
+        'Amount' => false,
         'Multiplier' => false,
         'RateAmount' => true
     ];
@@ -162,8 +162,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Amount' => 'Amount',
         'Type' => 'Type',
+        'Amount' => 'Amount',
         'Multiplier' => 'Multiplier',
         'RateAmount' => 'RateAmount'
     ];
@@ -174,8 +174,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Amount' => 'setAmount',
         'Type' => 'setType',
+        'Amount' => 'setAmount',
         'Multiplier' => 'setMultiplier',
         'RateAmount' => 'setRateAmount'
     ];
@@ -186,8 +186,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Amount' => 'getAmount',
         'Type' => 'getType',
+        'Amount' => 'getAmount',
         'Multiplier' => 'getMultiplier',
         'RateAmount' => 'getRateAmount'
     ];
@@ -249,8 +249,8 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Amount', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'RateBid');
         $this->setIfExists('Multiplier', $data ?? [], null);
         $this->setIfExists('RateAmount', $data ?? [], null);
 
@@ -301,36 +301,6 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Amount
-     *
-     * @return float|null
-     */
-    public function getAmount()
-    {
-        if (!isset($this->container['Amount']) || is_null($this->container['Amount'])) {
-            return null;
-        }
-        return $this->container['Amount'];
-    }
-
-    /**
-     * Sets Amount
-     *
-     * @param float|null $Amount Amount
-     *
-     * @return self
-     */
-    public function setAmount($Amount)
-    {
-        if (is_null($Amount)) {
-            throw new \InvalidArgumentException('non-nullable Amount cannot be null');
-        }
-        $this->container['Amount'] = $Amount;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -363,6 +333,36 @@ class CriterionBid implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Amount
+     *
+     * @return float|null
+     */
+    public function getAmount()
+    {
+        if (!isset($this->container['Amount']) || is_null($this->container['Amount'])) {
+            return null;
+        }
+        return $this->container['Amount'];
+    }
+
+    /**
+     * Sets Amount
+     *
+     * @param float|null $Amount Amount
+     *
+     * @return self
+     */
+    public function setAmount($Amount)
+    {
+        if (is_null($Amount)) {
+            throw new \InvalidArgumentException('non-nullable Amount cannot be null');
+        }
+        $this->container['Amount'] = $Amount;
 
         return $this;
     }

@@ -33,9 +33,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'AutomatedCallToActionOptOut' => 'bool',
-        'CallToActionOptOut' => 'bool',
-        'Type' => 'string'
+        'CallToActionOptOut' => 'bool'
     ];
 
     /**
@@ -46,9 +46,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'AutomatedCallToActionOptOut' => null,
-        'CallToActionOptOut' => null,
-        'Type' => null
+        'CallToActionOptOut' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'AutomatedCallToActionOptOut' => true,
-        'CallToActionOptOut' => true,
-        'Type' => true
+        'CallToActionOptOut' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'AutomatedCallToActionOptOut' => 'AutomatedCallToActionOptOut',
-        'CallToActionOptOut' => 'CallToActionOptOut',
-        'Type' => 'Type'
+        'CallToActionOptOut' => 'CallToActionOptOut'
     ];
 
     /**
@@ -159,9 +159,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'AutomatedCallToActionOptOut' => 'setAutomatedCallToActionOptOut',
-        'CallToActionOptOut' => 'setCallToActionOptOut',
-        'Type' => 'setType'
+        'CallToActionOptOut' => 'setCallToActionOptOut'
     ];
 
     /**
@@ -170,9 +170,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'AutomatedCallToActionOptOut' => 'getAutomatedCallToActionOptOut',
-        'CallToActionOptOut' => 'getCallToActionOptOut',
-        'Type' => 'getType'
+        'CallToActionOptOut' => 'getCallToActionOptOut'
     ];
 
     /**
@@ -232,9 +232,9 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AutomatedCallToActionOptOut', $data ?? [], null);
         $this->setIfExists('CallToActionOptOut', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CallToActionSetting');
     }
 
     /**
@@ -278,6 +278,43 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets AutomatedCallToActionOptOut
@@ -349,43 +386,6 @@ class CallToActionSetting extends Setting implements ModelInterface, ArrayAccess
             }
         }
         $this->container['CallToActionOptOut'] = $CallToActionOptOut;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

@@ -33,10 +33,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
-        'Aggregation' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation',
-        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn[]',
-        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope',
         'ReportName' => 'string',
         'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
         'ReturnOnlyCompleteData' => 'bool',
@@ -44,6 +40,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         'ExcludeReportFooter' => 'bool',
         'ExcludeColumnHeaders' => 'bool',
         'FormatVersion' => 'string',
+        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
+        'Aggregation' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation',
+        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn[]',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope',
         'Type' => 'string'
     ];
 
@@ -55,10 +55,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Time' => null,
-        'Aggregation' => null,
-        'Columns' => null,
-        'Scope' => null,
         'ReportName' => null,
         'Format' => null,
         'ReturnOnlyCompleteData' => null,
@@ -66,6 +62,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         'ExcludeReportFooter' => null,
         'ExcludeColumnHeaders' => null,
         'FormatVersion' => null,
+        'Time' => null,
+        'Aggregation' => null,
+        'Columns' => null,
+        'Scope' => null,
         'Type' => null
     ];
 
@@ -75,10 +75,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Time' => true,
-        'Aggregation' => false,
-        'Columns' => true,
-        'Scope' => true,
         'ReportName' => true,
         'Format' => false,
         'ReturnOnlyCompleteData' => true,
@@ -86,6 +82,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         'ExcludeReportFooter' => true,
         'ExcludeColumnHeaders' => true,
         'FormatVersion' => true,
+        'Time' => true,
+        'Aggregation' => false,
+        'Columns' => true,
+        'Scope' => true,
         'Type' => true
     ];
 
@@ -175,10 +175,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Time' => 'Time',
-        'Aggregation' => 'Aggregation',
-        'Columns' => 'Columns',
-        'Scope' => 'Scope',
         'ReportName' => 'ReportName',
         'Format' => 'Format',
         'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
@@ -186,6 +182,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         'ExcludeReportFooter' => 'ExcludeReportFooter',
         'ExcludeColumnHeaders' => 'ExcludeColumnHeaders',
         'FormatVersion' => 'FormatVersion',
+        'Time' => 'Time',
+        'Aggregation' => 'Aggregation',
+        'Columns' => 'Columns',
+        'Scope' => 'Scope',
         'Type' => 'Type'
     ];
 
@@ -195,10 +195,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
      * @var string[]
      */
     protected static array $setters = [
-        'Time' => 'setTime',
-        'Aggregation' => 'setAggregation',
-        'Columns' => 'setColumns',
-        'Scope' => 'setScope',
         'ReportName' => 'setReportName',
         'Format' => 'setFormat',
         'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
@@ -206,6 +202,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         'ExcludeReportFooter' => 'setExcludeReportFooter',
         'ExcludeColumnHeaders' => 'setExcludeColumnHeaders',
         'FormatVersion' => 'setFormatVersion',
+        'Time' => 'setTime',
+        'Aggregation' => 'setAggregation',
+        'Columns' => 'setColumns',
+        'Scope' => 'setScope',
         'Type' => 'setType'
     ];
 
@@ -215,10 +215,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
      * @var string[]
      */
     protected static array $getters = [
-        'Time' => 'getTime',
-        'Aggregation' => 'getAggregation',
-        'Columns' => 'getColumns',
-        'Scope' => 'getScope',
         'ReportName' => 'getReportName',
         'Format' => 'getFormat',
         'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
@@ -226,6 +222,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         'ExcludeReportFooter' => 'getExcludeReportFooter',
         'ExcludeColumnHeaders' => 'getExcludeColumnHeaders',
         'FormatVersion' => 'getFormatVersion',
+        'Time' => 'getTime',
+        'Aggregation' => 'getAggregation',
+        'Columns' => 'getColumns',
+        'Scope' => 'getScope',
         'Type' => 'getType'
     ];
 
@@ -286,10 +286,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Time', $data ?? [], null);
-        $this->setIfExists('Aggregation', $data ?? [], null);
-        $this->setIfExists('Columns', $data ?? [], null);
-        $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('ReportName', $data ?? [], null);
         $this->setIfExists('Format', $data ?? [], null);
         $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
@@ -297,6 +293,10 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
         $this->setIfExists('ExcludeColumnHeaders', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
+        $this->setIfExists('Time', $data ?? [], null);
+        $this->setIfExists('Aggregation', $data ?? [], null);
+        $this->setIfExists('Columns', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AssetPerformanceReportRequest');
     }
 
@@ -341,172 +341,6 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Time
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null
-     */
-    public function getTime()
-    {
-        if (!isset($this->container['Time']) || is_null($this->container['Time'])) {
-            return null;
-        }
-        return $this->container['Time'];
-    }
-
-    /**
-     * Sets Time
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null $Time Time
-     *
-     * @return self
-     */
-    public function setTime($Time)
-    {
-        if (is_null($Time)) {
-            array_push($this->openAPINullablesSetToNull, 'Time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Time', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Time'] = $Time;
-
-        return $this;
-    }
-
-    /**
-     * Gets Aggregation
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation|mixed|null
-     */
-    public function getAggregation()
-    {
-        if (!isset($this->container['Aggregation']) || is_null($this->container['Aggregation'])) {
-            return null;
-        }
-        if ((is_object($this->container['Aggregation']) || is_string($this->container['Aggregation'])) && method_exists($this->container['Aggregation'], 'getValue')) {
-            return $this->container['Aggregation']->getValue();
-        }
-        return $this->container['Aggregation'];
-    }
-
-    /**
-     * Sets Aggregation
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation|mixed|null $Aggregation Aggregation
-     *
-     * @return self
-     */
-    public function setAggregation($Aggregation)
-    {
-        if (is_null($Aggregation)) {
-            throw new \InvalidArgumentException('non-nullable Aggregation cannot be null');
-        }
-        if (!$Aggregation instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation) {
-            $Aggregation = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation($Aggregation);
-        }
-        $this->container['Aggregation'] = $Aggregation;
-
-        return $this;
-    }
-
-    /**
-     * Gets Columns
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn[]|mixed|null
-     */
-    public function getColumns()
-    {
-        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
-            return null;
-        }
-        $values = [];
-        if (is_array($this->container['Columns'])) {
-            foreach ($this->container['Columns'] as $ColumnsItem) {
-                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
-                    $values[] = $ColumnsItem->getValue();
-                }
-            }
-        }
-        if (count($values) > 0) {
-            return $values;
-        }
-        return $this->container['Columns'];
-    }
-
-    /**
-     * Sets Columns
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn[]|mixed|null $Columns Columns
-     *
-     * @return self
-     */
-    public function setColumns($Columns)
-    {
-        if (is_null($Columns)) {
-            array_push($this->openAPINullablesSetToNull, 'Columns');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Columns', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        if (!is_array($Columns)) {
-            $Columns = [$Columns];
-        }
-        foreach ($Columns as $key => $ColumnsItem) {
-            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn) {
-                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn($ColumnsItem);
-            }
-        }
-        $this->container['Columns'] = $Columns;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            array_push($this->openAPINullablesSetToNull, 'Scope');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scope', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
 
     /**
      * Gets ReportName
@@ -762,6 +596,172 @@ class AssetPerformanceReportRequest extends ReportRequest implements ModelInterf
             }
         }
         $this->container['FormatVersion'] = $FormatVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets Time
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null
+     */
+    public function getTime()
+    {
+        if (!isset($this->container['Time']) || is_null($this->container['Time'])) {
+            return null;
+        }
+        return $this->container['Time'];
+    }
+
+    /**
+     * Sets Time
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null $Time Time
+     *
+     * @return self
+     */
+    public function setTime($Time)
+    {
+        if (is_null($Time)) {
+            array_push($this->openAPINullablesSetToNull, 'Time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Time'] = $Time;
+
+        return $this;
+    }
+
+    /**
+     * Gets Aggregation
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation|mixed|null
+     */
+    public function getAggregation()
+    {
+        if (!isset($this->container['Aggregation']) || is_null($this->container['Aggregation'])) {
+            return null;
+        }
+        if ((is_object($this->container['Aggregation']) || is_string($this->container['Aggregation'])) && method_exists($this->container['Aggregation'], 'getValue')) {
+            return $this->container['Aggregation']->getValue();
+        }
+        return $this->container['Aggregation'];
+    }
+
+    /**
+     * Sets Aggregation
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation|mixed|null $Aggregation Aggregation
+     *
+     * @return self
+     */
+    public function setAggregation($Aggregation)
+    {
+        if (is_null($Aggregation)) {
+            throw new \InvalidArgumentException('non-nullable Aggregation cannot be null');
+        }
+        if (!$Aggregation instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation) {
+            $Aggregation = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation($Aggregation);
+        }
+        $this->container['Aggregation'] = $Aggregation;
+
+        return $this;
+    }
+
+    /**
+     * Gets Columns
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn[]|mixed|null
+     */
+    public function getColumns()
+    {
+        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
+            return null;
+        }
+        $values = [];
+        if (is_array($this->container['Columns'])) {
+            foreach ($this->container['Columns'] as $ColumnsItem) {
+                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
+                    $values[] = $ColumnsItem->getValue();
+                }
+            }
+        }
+        if (count($values) > 0) {
+            return $values;
+        }
+        return $this->container['Columns'];
+    }
+
+    /**
+     * Sets Columns
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn[]|mixed|null $Columns Columns
+     *
+     * @return self
+     */
+    public function setColumns($Columns)
+    {
+        if (is_null($Columns)) {
+            array_push($this->openAPINullablesSetToNull, 'Columns');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Columns', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_array($Columns)) {
+            $Columns = [$Columns];
+        }
+        foreach ($Columns as $key => $ColumnsItem) {
+            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn) {
+                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportColumn($ColumnsItem);
+            }
+        }
+        $this->container['Columns'] = $Columns;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scope'] = $Scope;
 
         return $this;
     }

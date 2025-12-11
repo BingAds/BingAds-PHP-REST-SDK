@@ -33,11 +33,10 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'IsExternallyAttributed' => 'bool',
         'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -49,7 +48,8 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool'
+        'IsAutoGoal' => 'bool',
+        'IsExternallyAttributed' => 'bool'
     ];
 
     /**
@@ -60,7 +60,6 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'IsExternallyAttributed' => null,
         'Id' => 'int64',
         'Name' => null,
         'Status' => null,
@@ -76,7 +75,8 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null
+        'IsAutoGoal' => null,
+        'IsExternallyAttributed' => null
     ];
 
     /**
@@ -85,11 +85,10 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'IsExternallyAttributed' => true,
         'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => true,
+        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -101,7 +100,8 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true
+        'IsAutoGoal' => true,
+        'IsExternallyAttributed' => true
     ];
 
     /**
@@ -190,7 +190,6 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $attributeMap = [
-        'IsExternallyAttributed' => 'IsExternallyAttributed',
         'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
@@ -206,7 +205,8 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal'
+        'IsAutoGoal' => 'IsAutoGoal',
+        'IsExternallyAttributed' => 'IsExternallyAttributed'
     ];
 
     /**
@@ -215,7 +215,6 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $setters = [
-        'IsExternallyAttributed' => 'setIsExternallyAttributed',
         'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
@@ -231,7 +230,8 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal'
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'IsExternallyAttributed' => 'setIsExternallyAttributed'
     ];
 
     /**
@@ -240,7 +240,6 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $getters = [
-        'IsExternallyAttributed' => 'getIsExternallyAttributed',
         'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
@@ -256,7 +255,8 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal'
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'IsExternallyAttributed' => 'getIsExternallyAttributed'
     ];
 
     /**
@@ -316,11 +316,10 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('IsExternallyAttributed', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'OfflineConversion');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -333,6 +332,7 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('IsExternallyAttributed', $data ?? [], null);
     }
 
     /**
@@ -376,43 +376,6 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets IsExternallyAttributed
-     *
-     * @return bool|null
-     */
-    public function getIsExternallyAttributed()
-    {
-        if (!isset($this->container['IsExternallyAttributed']) || is_null($this->container['IsExternallyAttributed'])) {
-            return null;
-        }
-        return $this->container['IsExternallyAttributed'];
-    }
-
-    /**
-     * Sets IsExternallyAttributed
-     *
-     * @param bool|null $IsExternallyAttributed IsExternallyAttributed
-     *
-     * @return self
-     */
-    public function setIsExternallyAttributed($IsExternallyAttributed)
-    {
-        if (is_null($IsExternallyAttributed)) {
-            array_push($this->openAPINullablesSetToNull, 'IsExternallyAttributed');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsExternallyAttributed', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IsExternallyAttributed'] = $IsExternallyAttributed;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -527,12 +490,15 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -540,21 +506,17 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -996,6 +958,43 @@ class OfflineConversionGoal extends ConversionGoal implements ModelInterface, Ar
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsExternallyAttributed
+     *
+     * @return bool|null
+     */
+    public function getIsExternallyAttributed()
+    {
+        if (!isset($this->container['IsExternallyAttributed']) || is_null($this->container['IsExternallyAttributed'])) {
+            return null;
+        }
+        return $this->container['IsExternallyAttributed'];
+    }
+
+    /**
+     * Sets IsExternallyAttributed
+     *
+     * @param bool|null $IsExternallyAttributed IsExternallyAttributed
+     *
+     * @return self
+     */
+    public function setIsExternallyAttributed($IsExternallyAttributed)
+    {
+        if (is_null($IsExternallyAttributed)) {
+            array_push($this->openAPINullablesSetToNull, 'IsExternallyAttributed');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsExternallyAttributed', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsExternallyAttributed'] = $IsExternallyAttributed;
 
         return $this;
     }

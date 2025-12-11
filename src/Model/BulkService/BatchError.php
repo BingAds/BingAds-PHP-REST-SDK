@@ -43,19 +43,19 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Index' => 'int',
         'DisapprovedText' => 'string',
         'ReasonCode' => 'int',
         'Location' => 'string',
         'PublisherCountry' => 'string',
-        'Index' => 'int',
-        'Appealable' => 'bool',
         'FieldPath' => 'string',
         'ErrorCode' => 'string',
         'Message' => 'string',
         'Code' => 'int',
         'Details' => 'string',
         'Type' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]',
+        'Appealable' => 'bool'
     ];
 
     /**
@@ -66,19 +66,19 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Index' => 'int32',
         'DisapprovedText' => null,
         'ReasonCode' => 'int32',
         'Location' => null,
         'PublisherCountry' => null,
-        'Index' => 'int32',
-        'Appealable' => null,
         'FieldPath' => null,
         'ErrorCode' => null,
         'Message' => null,
         'Code' => 'int32',
         'Details' => null,
         'Type' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'Appealable' => null
     ];
 
     /**
@@ -87,19 +87,19 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Index' => false,
         'DisapprovedText' => true,
         'ReasonCode' => false,
         'Location' => true,
         'PublisherCountry' => true,
-        'Index' => false,
-        'Appealable' => true,
         'FieldPath' => true,
         'ErrorCode' => true,
         'Message' => true,
         'Code' => false,
         'Details' => true,
         'Type' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'Appealable' => true
     ];
 
     /**
@@ -188,19 +188,19 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Index' => 'Index',
         'DisapprovedText' => 'DisapprovedText',
         'ReasonCode' => 'ReasonCode',
         'Location' => 'Location',
         'PublisherCountry' => 'PublisherCountry',
-        'Index' => 'Index',
-        'Appealable' => 'Appealable',
         'FieldPath' => 'FieldPath',
         'ErrorCode' => 'ErrorCode',
         'Message' => 'Message',
         'Code' => 'Code',
         'Details' => 'Details',
         'Type' => 'Type',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Appealable' => 'Appealable'
     ];
 
     /**
@@ -209,19 +209,19 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Index' => 'setIndex',
         'DisapprovedText' => 'setDisapprovedText',
         'ReasonCode' => 'setReasonCode',
         'Location' => 'setLocation',
         'PublisherCountry' => 'setPublisherCountry',
-        'Index' => 'setIndex',
-        'Appealable' => 'setAppealable',
         'FieldPath' => 'setFieldPath',
         'ErrorCode' => 'setErrorCode',
         'Message' => 'setMessage',
         'Code' => 'setCode',
         'Details' => 'setDetails',
         'Type' => 'setType',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Appealable' => 'setAppealable'
     ];
 
     /**
@@ -230,19 +230,19 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Index' => 'getIndex',
         'DisapprovedText' => 'getDisapprovedText',
         'ReasonCode' => 'getReasonCode',
         'Location' => 'getLocation',
         'PublisherCountry' => 'getPublisherCountry',
-        'Index' => 'getIndex',
-        'Appealable' => 'getAppealable',
         'FieldPath' => 'getFieldPath',
         'ErrorCode' => 'getErrorCode',
         'Message' => 'getMessage',
         'Code' => 'getCode',
         'Details' => 'getDetails',
         'Type' => 'getType',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Appealable' => 'getAppealable'
     ];
 
     /**
@@ -302,12 +302,11 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Index', $data ?? [], null);
         $this->setIfExists('DisapprovedText', $data ?? [], null);
         $this->setIfExists('ReasonCode', $data ?? [], null);
         $this->setIfExists('Location', $data ?? [], null);
         $this->setIfExists('PublisherCountry', $data ?? [], null);
-        $this->setIfExists('Index', $data ?? [], null);
-        $this->setIfExists('Appealable', $data ?? [], null);
         $this->setIfExists('FieldPath', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('Message', $data ?? [], null);
@@ -315,6 +314,7 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Details', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'BatchError');
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Appealable', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -347,6 +347,9 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['Index'] === null) {
+            $invalidProperties[] = "'Index' can't be null";
+        }
         if ($this->container['DisapprovedText'] === null) {
             $invalidProperties[] = "'DisapprovedText' can't be null";
         }
@@ -358,9 +361,6 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['PublisherCountry'] === null) {
             $invalidProperties[] = "'PublisherCountry' can't be null";
-        }
-        if ($this->container['Index'] === null) {
-            $invalidProperties[] = "'Index' can't be null";
         }
         return $invalidProperties;
     }
@@ -376,6 +376,36 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Index
+     *
+     * @return int
+     */
+    public function getIndex()
+    {
+        if (!isset($this->container['Index']) || is_null($this->container['Index'])) {
+            return null;
+        }
+        return $this->container['Index'];
+    }
+
+    /**
+     * Sets Index
+     *
+     * @param int $Index Index
+     *
+     * @return self
+     */
+    public function setIndex($Index)
+    {
+        if (is_null($Index)) {
+            throw new \InvalidArgumentException('non-nullable Index cannot be null');
+        }
+        $this->container['Index'] = $Index;
+
+        return $this;
+    }
 
     /**
      * Gets DisapprovedText
@@ -514,73 +544,6 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['PublisherCountry'] = $PublisherCountry;
-
-        return $this;
-    }
-
-    /**
-     * Gets Index
-     *
-     * @return int
-     */
-    public function getIndex()
-    {
-        if (!isset($this->container['Index']) || is_null($this->container['Index'])) {
-            return null;
-        }
-        return $this->container['Index'];
-    }
-
-    /**
-     * Sets Index
-     *
-     * @param int $Index Index
-     *
-     * @return self
-     */
-    public function setIndex($Index)
-    {
-        if (is_null($Index)) {
-            throw new \InvalidArgumentException('non-nullable Index cannot be null');
-        }
-        $this->container['Index'] = $Index;
-
-        return $this;
-    }
-
-    /**
-     * Gets Appealable
-     *
-     * @return bool|null
-     */
-    public function getAppealable()
-    {
-        if (!isset($this->container['Appealable']) || is_null($this->container['Appealable'])) {
-            return null;
-        }
-        return $this->container['Appealable'];
-    }
-
-    /**
-     * Sets Appealable
-     *
-     * @param bool|null $Appealable Appealable
-     *
-     * @return self
-     */
-    public function setAppealable($Appealable)
-    {
-        if (is_null($Appealable)) {
-            array_push($this->openAPINullablesSetToNull, 'Appealable');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Appealable', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Appealable'] = $Appealable;
 
         return $this;
     }
@@ -833,6 +796,43 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Appealable
+     *
+     * @return bool|null
+     */
+    public function getAppealable()
+    {
+        if (!isset($this->container['Appealable']) || is_null($this->container['Appealable'])) {
+            return null;
+        }
+        return $this->container['Appealable'];
+    }
+
+    /**
+     * Sets Appealable
+     *
+     * @param bool|null $Appealable Appealable
+     *
+     * @return self
+     */
+    public function setAppealable($Appealable)
+    {
+        if (is_null($Appealable)) {
+            array_push($this->openAPINullablesSetToNull, 'Appealable');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Appealable', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Appealable'] = $Appealable;
 
         return $this;
     }

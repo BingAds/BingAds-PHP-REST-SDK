@@ -23,6 +23,8 @@ class AttributionModelType
 
     public const LAST_TOUCH = 'LastTouch';
 
+    public const DATA_DRIVEN = 'DataDriven';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -91,7 +93,8 @@ class AttributionModelType
     {
         return [
             self::LAST_CLICK,
-            self::LAST_TOUCH
+            self::LAST_TOUCH,
+            self::DATA_DRIVEN
         ];
     }
 }

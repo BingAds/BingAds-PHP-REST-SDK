@@ -33,13 +33,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'Priority' => 'int',
         'SalesCountryCode' => 'string',
         'StoreId' => 'string',
         'LocalInventoryAdsEnabled' => 'bool',
         'ShoppableAdsEnabled' => 'bool',
-        'FeedLabel' => 'string',
-        'Type' => 'string'
+        'FeedLabel' => 'string'
     ];
 
     /**
@@ -50,13 +50,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'Priority' => 'int32',
         'SalesCountryCode' => null,
         'StoreId' => 'int64',
         'LocalInventoryAdsEnabled' => null,
         'ShoppableAdsEnabled' => null,
-        'FeedLabel' => null,
-        'Type' => null
+        'FeedLabel' => null
     ];
 
     /**
@@ -65,13 +65,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'Priority' => true,
         'SalesCountryCode' => true,
         'StoreId' => true,
         'LocalInventoryAdsEnabled' => true,
         'ShoppableAdsEnabled' => true,
-        'FeedLabel' => true,
-        'Type' => true
+        'FeedLabel' => true
     ];
 
     /**
@@ -160,13 +160,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'Priority' => 'Priority',
         'SalesCountryCode' => 'SalesCountryCode',
         'StoreId' => 'StoreId',
         'LocalInventoryAdsEnabled' => 'LocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'ShoppableAdsEnabled',
-        'FeedLabel' => 'FeedLabel',
-        'Type' => 'Type'
+        'FeedLabel' => 'FeedLabel'
     ];
 
     /**
@@ -175,13 +175,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'Priority' => 'setPriority',
         'SalesCountryCode' => 'setSalesCountryCode',
         'StoreId' => 'setStoreId',
         'LocalInventoryAdsEnabled' => 'setLocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'setShoppableAdsEnabled',
-        'FeedLabel' => 'setFeedLabel',
-        'Type' => 'setType'
+        'FeedLabel' => 'setFeedLabel'
     ];
 
     /**
@@ -190,13 +190,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'Priority' => 'getPriority',
         'SalesCountryCode' => 'getSalesCountryCode',
         'StoreId' => 'getStoreId',
         'LocalInventoryAdsEnabled' => 'getLocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'getShoppableAdsEnabled',
-        'FeedLabel' => 'getFeedLabel',
-        'Type' => 'getType'
+        'FeedLabel' => 'getFeedLabel'
     ];
 
     /**
@@ -256,13 +256,13 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Priority', $data ?? [], null);
         $this->setIfExists('SalesCountryCode', $data ?? [], null);
         $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('LocalInventoryAdsEnabled', $data ?? [], null);
         $this->setIfExists('ShoppableAdsEnabled', $data ?? [], null);
         $this->setIfExists('FeedLabel', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ShoppingSetting');
     }
 
     /**
@@ -306,6 +306,43 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets Priority
@@ -525,43 +562,6 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['FeedLabel'] = $FeedLabel;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

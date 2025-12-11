@@ -33,9 +33,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope',
-        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
-        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]',
         'ReportName' => 'string',
         'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
         'ReturnOnlyCompleteData' => 'bool',
@@ -43,6 +40,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         'ExcludeReportFooter' => 'bool',
         'ExcludeColumnHeaders' => 'bool',
         'FormatVersion' => 'string',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope',
+        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
+        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]',
         'Type' => 'string'
     ];
 
@@ -54,9 +54,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Scope' => null,
-        'Time' => null,
-        'Columns' => null,
         'ReportName' => null,
         'Format' => null,
         'ReturnOnlyCompleteData' => null,
@@ -64,6 +61,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         'ExcludeReportFooter' => null,
         'ExcludeColumnHeaders' => null,
         'FormatVersion' => null,
+        'Scope' => null,
+        'Time' => null,
+        'Columns' => null,
         'Type' => null
     ];
 
@@ -73,9 +73,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Scope' => true,
-        'Time' => true,
-        'Columns' => true,
         'ReportName' => true,
         'Format' => false,
         'ReturnOnlyCompleteData' => true,
@@ -83,6 +80,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         'ExcludeReportFooter' => true,
         'ExcludeColumnHeaders' => true,
         'FormatVersion' => true,
+        'Scope' => true,
+        'Time' => true,
+        'Columns' => true,
         'Type' => true
     ];
 
@@ -172,9 +172,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Scope' => 'Scope',
-        'Time' => 'Time',
-        'Columns' => 'Columns',
         'ReportName' => 'ReportName',
         'Format' => 'Format',
         'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
@@ -182,6 +179,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         'ExcludeReportFooter' => 'ExcludeReportFooter',
         'ExcludeColumnHeaders' => 'ExcludeColumnHeaders',
         'FormatVersion' => 'FormatVersion',
+        'Scope' => 'Scope',
+        'Time' => 'Time',
+        'Columns' => 'Columns',
         'Type' => 'Type'
     ];
 
@@ -191,9 +191,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'Scope' => 'setScope',
-        'Time' => 'setTime',
-        'Columns' => 'setColumns',
         'ReportName' => 'setReportName',
         'Format' => 'setFormat',
         'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
@@ -201,6 +198,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         'ExcludeReportFooter' => 'setExcludeReportFooter',
         'ExcludeColumnHeaders' => 'setExcludeColumnHeaders',
         'FormatVersion' => 'setFormatVersion',
+        'Scope' => 'setScope',
+        'Time' => 'setTime',
+        'Columns' => 'setColumns',
         'Type' => 'setType'
     ];
 
@@ -210,9 +210,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'Scope' => 'getScope',
-        'Time' => 'getTime',
-        'Columns' => 'getColumns',
         'ReportName' => 'getReportName',
         'Format' => 'getFormat',
         'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
@@ -220,6 +217,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         'ExcludeReportFooter' => 'getExcludeReportFooter',
         'ExcludeColumnHeaders' => 'getExcludeColumnHeaders',
         'FormatVersion' => 'getFormatVersion',
+        'Scope' => 'getScope',
+        'Time' => 'getTime',
+        'Columns' => 'getColumns',
         'Type' => 'getType'
     ];
 
@@ -280,9 +280,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('Time', $data ?? [], null);
-        $this->setIfExists('Columns', $data ?? [], null);
         $this->setIfExists('ReportName', $data ?? [], null);
         $this->setIfExists('Format', $data ?? [], null);
         $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
@@ -290,6 +287,9 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
         $this->setIfExists('ExcludeColumnHeaders', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('Time', $data ?? [], null);
+        $this->setIfExists('Columns', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'BudgetSummaryReportRequest');
     }
 
@@ -334,136 +334,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            array_push($this->openAPINullablesSetToNull, 'Scope');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scope', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets Time
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null
-     */
-    public function getTime()
-    {
-        if (!isset($this->container['Time']) || is_null($this->container['Time'])) {
-            return null;
-        }
-        return $this->container['Time'];
-    }
-
-    /**
-     * Sets Time
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null $Time Time
-     *
-     * @return self
-     */
-    public function setTime($Time)
-    {
-        if (is_null($Time)) {
-            array_push($this->openAPINullablesSetToNull, 'Time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Time', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Time'] = $Time;
-
-        return $this;
-    }
-
-    /**
-     * Gets Columns
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null
-     */
-    public function getColumns()
-    {
-        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
-            return null;
-        }
-        $values = [];
-        if (is_array($this->container['Columns'])) {
-            foreach ($this->container['Columns'] as $ColumnsItem) {
-                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
-                    $values[] = $ColumnsItem->getValue();
-                }
-            }
-        }
-        if (count($values) > 0) {
-            return $values;
-        }
-        return $this->container['Columns'];
-    }
-
-    /**
-     * Sets Columns
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null $Columns Columns
-     *
-     * @return self
-     */
-    public function setColumns($Columns)
-    {
-        if (is_null($Columns)) {
-            array_push($this->openAPINullablesSetToNull, 'Columns');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Columns', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        if (!is_array($Columns)) {
-            $Columns = [$Columns];
-        }
-        foreach ($Columns as $key => $ColumnsItem) {
-            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn) {
-                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn($ColumnsItem);
-            }
-        }
-        $this->container['Columns'] = $Columns;
-
-        return $this;
-    }
 
     /**
      * Gets ReportName
@@ -719,6 +589,136 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
             }
         }
         $this->container['FormatVersion'] = $FormatVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets Time
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null
+     */
+    public function getTime()
+    {
+        if (!isset($this->container['Time']) || is_null($this->container['Time'])) {
+            return null;
+        }
+        return $this->container['Time'];
+    }
+
+    /**
+     * Sets Time
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null $Time Time
+     *
+     * @return self
+     */
+    public function setTime($Time)
+    {
+        if (is_null($Time)) {
+            array_push($this->openAPINullablesSetToNull, 'Time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Time'] = $Time;
+
+        return $this;
+    }
+
+    /**
+     * Gets Columns
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null
+     */
+    public function getColumns()
+    {
+        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
+            return null;
+        }
+        $values = [];
+        if (is_array($this->container['Columns'])) {
+            foreach ($this->container['Columns'] as $ColumnsItem) {
+                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
+                    $values[] = $ColumnsItem->getValue();
+                }
+            }
+        }
+        if (count($values) > 0) {
+            return $values;
+        }
+        return $this->container['Columns'];
+    }
+
+    /**
+     * Sets Columns
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null $Columns Columns
+     *
+     * @return self
+     */
+    public function setColumns($Columns)
+    {
+        if (is_null($Columns)) {
+            array_push($this->openAPINullablesSetToNull, 'Columns');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Columns', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_array($Columns)) {
+            $Columns = [$Columns];
+        }
+        foreach ($Columns as $key => $ColumnsItem) {
+            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn) {
+                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn($ColumnsItem);
+            }
+        }
+        $this->container['Columns'] = $Columns;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'GenderTypes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType[]',
-        'Type' => 'string'
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType',
+        'GenderTypes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'GenderTypes' => null,
-        'Type' => null
+        'Type' => null,
+        'GenderTypes' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'GenderTypes' => true,
-        'Type' => true
+        'Type' => false,
+        'GenderTypes' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'GenderTypes' => 'GenderTypes',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'GenderTypes' => 'GenderTypes'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
      * @var string[]
      */
     protected static array $setters = [
-        'GenderTypes' => 'setGenderTypes',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'GenderTypes' => 'setGenderTypes'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
      * @var string[]
      */
     protected static array $getters = [
-        'GenderTypes' => 'getGenderTypes',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'GenderTypes' => 'getGenderTypes'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('GenderTypes', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Gender');
     }
 
     /**
@@ -271,6 +271,42 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets GenderTypes
@@ -324,43 +360,6 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
             }
         }
         $this->container['GenderTypes'] = $GenderTypes;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

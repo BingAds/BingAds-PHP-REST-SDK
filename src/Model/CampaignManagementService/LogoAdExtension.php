@@ -33,16 +33,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'BusinessName' => 'string',
-        'BusinessLogo' => 'string',
-        'BusinessLogoUrl' => 'string',
-        'DomainName' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'BusinessName' => 'string',
+        'BusinessLogo' => 'string',
+        'BusinessLogoUrl' => 'string',
+        'DomainName' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -54,16 +54,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'BusinessName' => null,
-        'BusinessLogo' => 'int64',
-        'BusinessLogoUrl' => null,
-        'DomainName' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'BusinessName' => null,
+        'BusinessLogo' => 'int64',
+        'BusinessLogoUrl' => null,
+        'DomainName' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -73,16 +73,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'BusinessName' => true,
-        'BusinessLogo' => true,
-        'BusinessLogoUrl' => true,
-        'DomainName' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'BusinessName' => true,
+        'BusinessLogo' => true,
+        'BusinessLogoUrl' => true,
+        'DomainName' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -172,16 +172,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'BusinessName' => 'BusinessName',
-        'BusinessLogo' => 'BusinessLogo',
-        'BusinessLogoUrl' => 'BusinessLogoUrl',
-        'DomainName' => 'DomainName',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'BusinessName' => 'BusinessName',
+        'BusinessLogo' => 'BusinessLogo',
+        'BusinessLogoUrl' => 'BusinessLogoUrl',
+        'DomainName' => 'DomainName',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -191,16 +191,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'BusinessName' => 'setBusinessName',
-        'BusinessLogo' => 'setBusinessLogo',
-        'BusinessLogoUrl' => 'setBusinessLogoUrl',
-        'DomainName' => 'setDomainName',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'BusinessName' => 'setBusinessName',
+        'BusinessLogo' => 'setBusinessLogo',
+        'BusinessLogoUrl' => 'setBusinessLogoUrl',
+        'DomainName' => 'setDomainName',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -210,16 +210,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'BusinessName' => 'getBusinessName',
-        'BusinessLogo' => 'getBusinessLogo',
-        'BusinessLogoUrl' => 'getBusinessLogoUrl',
-        'DomainName' => 'getDomainName',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'BusinessName' => 'getBusinessName',
+        'BusinessLogo' => 'getBusinessLogo',
+        'BusinessLogoUrl' => 'getBusinessLogoUrl',
+        'DomainName' => 'getDomainName',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -280,16 +280,16 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('BusinessName', $data ?? [], null);
-        $this->setIfExists('BusinessLogo', $data ?? [], null);
-        $this->setIfExists('BusinessLogoUrl', $data ?? [], null);
-        $this->setIfExists('DomainName', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'LogoAdExtension');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
+        $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('BusinessLogo', $data ?? [], null);
+        $this->setIfExists('BusinessLogoUrl', $data ?? [], null);
+        $this->setIfExists('DomainName', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -334,154 +334,6 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets BusinessName
-     *
-     * @return string|null
-     */
-    public function getBusinessName()
-    {
-        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
-            return null;
-        }
-        return $this->container['BusinessName'];
-    }
-
-    /**
-     * Sets BusinessName
-     *
-     * @param string|null $BusinessName BusinessName
-     *
-     * @return self
-     */
-    public function setBusinessName($BusinessName)
-    {
-        if (is_null($BusinessName)) {
-            array_push($this->openAPINullablesSetToNull, 'BusinessName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BusinessName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BusinessName'] = $BusinessName;
-
-        return $this;
-    }
-
-    /**
-     * Gets BusinessLogo
-     *
-     * @return string|null
-     */
-    public function getBusinessLogo()
-    {
-        if (!isset($this->container['BusinessLogo']) || is_null($this->container['BusinessLogo'])) {
-            return null;
-        }
-        return $this->container['BusinessLogo'];
-    }
-
-    /**
-     * Sets BusinessLogo
-     *
-     * @param string|null $BusinessLogo BusinessLogo
-     *
-     * @return self
-     */
-    public function setBusinessLogo($BusinessLogo)
-    {
-        if (is_null($BusinessLogo)) {
-            array_push($this->openAPINullablesSetToNull, 'BusinessLogo');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BusinessLogo', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BusinessLogo'] = $BusinessLogo;
-
-        return $this;
-    }
-
-    /**
-     * Gets BusinessLogoUrl
-     *
-     * @return string|null
-     */
-    public function getBusinessLogoUrl()
-    {
-        if (!isset($this->container['BusinessLogoUrl']) || is_null($this->container['BusinessLogoUrl'])) {
-            return null;
-        }
-        return $this->container['BusinessLogoUrl'];
-    }
-
-    /**
-     * Sets BusinessLogoUrl
-     *
-     * @param string|null $BusinessLogoUrl BusinessLogoUrl
-     *
-     * @return self
-     */
-    public function setBusinessLogoUrl($BusinessLogoUrl)
-    {
-        if (is_null($BusinessLogoUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'BusinessLogoUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BusinessLogoUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BusinessLogoUrl'] = $BusinessLogoUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets DomainName
-     *
-     * @return string|null
-     */
-    public function getDomainName()
-    {
-        if (!isset($this->container['DomainName']) || is_null($this->container['DomainName'])) {
-            return null;
-        }
-        return $this->container['DomainName'];
-    }
-
-    /**
-     * Sets DomainName
-     *
-     * @param string|null $DomainName DomainName
-     *
-     * @return self
-     */
-    public function setDomainName($DomainName)
-    {
-        if (is_null($DomainName)) {
-            array_push($this->openAPINullablesSetToNull, 'DomainName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DomainName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DomainName'] = $DomainName;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -700,6 +552,154 @@ class LogoAdExtension extends AdExtension implements ModelInterface, ArrayAccess
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessName
+     *
+     * @return string|null
+     */
+    public function getBusinessName()
+    {
+        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+            return null;
+        }
+        return $this->container['BusinessName'];
+    }
+
+    /**
+     * Sets BusinessName
+     *
+     * @param string|null $BusinessName BusinessName
+     *
+     * @return self
+     */
+    public function setBusinessName($BusinessName)
+    {
+        if (is_null($BusinessName)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessName'] = $BusinessName;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessLogo
+     *
+     * @return string|null
+     */
+    public function getBusinessLogo()
+    {
+        if (!isset($this->container['BusinessLogo']) || is_null($this->container['BusinessLogo'])) {
+            return null;
+        }
+        return $this->container['BusinessLogo'];
+    }
+
+    /**
+     * Sets BusinessLogo
+     *
+     * @param string|null $BusinessLogo BusinessLogo
+     *
+     * @return self
+     */
+    public function setBusinessLogo($BusinessLogo)
+    {
+        if (is_null($BusinessLogo)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessLogo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessLogo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessLogo'] = $BusinessLogo;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessLogoUrl
+     *
+     * @return string|null
+     */
+    public function getBusinessLogoUrl()
+    {
+        if (!isset($this->container['BusinessLogoUrl']) || is_null($this->container['BusinessLogoUrl'])) {
+            return null;
+        }
+        return $this->container['BusinessLogoUrl'];
+    }
+
+    /**
+     * Sets BusinessLogoUrl
+     *
+     * @param string|null $BusinessLogoUrl BusinessLogoUrl
+     *
+     * @return self
+     */
+    public function setBusinessLogoUrl($BusinessLogoUrl)
+    {
+        if (is_null($BusinessLogoUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessLogoUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessLogoUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessLogoUrl'] = $BusinessLogoUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets DomainName
+     *
+     * @return string|null
+     */
+    public function getDomainName()
+    {
+        if (!isset($this->container['DomainName']) || is_null($this->container['DomainName'])) {
+            return null;
+        }
+        return $this->container['DomainName'];
+    }
+
+    /**
+     * Sets DomainName
+     *
+     * @param string|null $DomainName DomainName
+     *
+     * @return self
+     */
+    public function setDomainName($DomainName)
+    {
+        if (is_null($DomainName)) {
+            array_push($this->openAPINullablesSetToNull, 'DomainName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DomainName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DomainName'] = $DomainName;
 
         return $this;
     }

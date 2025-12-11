@@ -232,7 +232,7 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'PageVisitors');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('NormalForm', $data ?? [], null);
     }

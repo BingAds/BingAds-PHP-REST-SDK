@@ -33,8 +33,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CommissionRate' => 'float',
-        'Type' => 'string'
+        'Type' => 'string',
+        'CommissionRate' => 'float'
     ];
 
     /**
@@ -45,8 +45,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CommissionRate' => 'double',
-        'Type' => null
+        'Type' => null,
+        'CommissionRate' => 'double'
     ];
 
     /**
@@ -55,8 +55,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CommissionRate' => true,
-        'Type' => true
+        'Type' => true,
+        'CommissionRate' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CommissionRate' => 'CommissionRate',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'CommissionRate' => 'CommissionRate'
     ];
 
     /**
@@ -155,8 +155,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $setters = [
-        'CommissionRate' => 'setCommissionRate',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'CommissionRate' => 'setCommissionRate'
     ];
 
     /**
@@ -165,8 +165,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $getters = [
-        'CommissionRate' => 'getCommissionRate',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'CommissionRate' => 'getCommissionRate'
     ];
 
     /**
@@ -226,8 +226,8 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CommissionRate', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CommissionBiddingScheme');
     }
 
     /**
@@ -273,43 +273,6 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
 
 
     /**
-     * Gets CommissionRate
-     *
-     * @return float|null
-     */
-    public function getCommissionRate()
-    {
-        if (!isset($this->container['CommissionRate']) || is_null($this->container['CommissionRate'])) {
-            return null;
-        }
-        return $this->container['CommissionRate'];
-    }
-
-    /**
-     * Sets CommissionRate
-     *
-     * @param float|null $CommissionRate CommissionRate
-     *
-     * @return self
-     */
-    public function setCommissionRate($CommissionRate)
-    {
-        if (is_null($CommissionRate)) {
-            array_push($this->openAPINullablesSetToNull, 'CommissionRate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CommissionRate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CommissionRate'] = $CommissionRate;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class CommissionBiddingScheme extends BiddingScheme implements ModelInterface, A
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets CommissionRate
+     *
+     * @return float|null
+     */
+    public function getCommissionRate()
+    {
+        if (!isset($this->container['CommissionRate']) || is_null($this->container['CommissionRate'])) {
+            return null;
+        }
+        return $this->container['CommissionRate'];
+    }
+
+    /**
+     * Sets CommissionRate
+     *
+     * @param float|null $CommissionRate CommissionRate
+     *
+     * @return self
+     */
+    public function setCommissionRate($CommissionRate)
+    {
+        if (is_null($CommissionRate)) {
+            array_push($this->openAPINullablesSetToNull, 'CommissionRate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CommissionRate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CommissionRate'] = $CommissionRate;
 
         return $this;
     }

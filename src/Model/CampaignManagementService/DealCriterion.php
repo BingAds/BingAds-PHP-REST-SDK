@@ -33,8 +33,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'DealId' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'DealId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'DealId' => 'int64',
-        'Type' => null
+        'Type' => null,
+        'DealId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'DealId' => false,
-        'Type' => true
+        'Type' => true,
+        'DealId' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
-        'DealId' => 'DealId',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'DealId' => 'DealId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
-        'DealId' => 'setDealId',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'DealId' => 'setDealId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
-        'DealId' => 'getDealId',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'DealId' => 'getDealId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DealId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DealCriterion');
     }
 
     /**
@@ -273,36 +273,6 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets DealId
-     *
-     * @return string|null
-     */
-    public function getDealId()
-    {
-        if (!isset($this->container['DealId']) || is_null($this->container['DealId'])) {
-            return null;
-        }
-        return $this->container['DealId'];
-    }
-
-    /**
-     * Sets DealId
-     *
-     * @param string|null $DealId DealId
-     *
-     * @return self
-     */
-    public function setDealId($DealId)
-    {
-        if (is_null($DealId)) {
-            throw new \InvalidArgumentException('non-nullable DealId cannot be null');
-        }
-        $this->container['DealId'] = $DealId;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -335,6 +305,36 @@ class DealCriterion extends Criterion implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets DealId
+     *
+     * @return string|null
+     */
+    public function getDealId()
+    {
+        if (!isset($this->container['DealId']) || is_null($this->container['DealId'])) {
+            return null;
+        }
+        return $this->container['DealId'];
+    }
+
+    /**
+     * Sets DealId
+     *
+     * @param string|null $DealId DealId
+     *
+     * @return self
+     */
+    public function setDealId($DealId)
+    {
+        if (is_null($DealId)) {
+            throw new \InvalidArgumentException('non-nullable DealId cannot be null');
+        }
+        $this->container['DealId'] = $DealId;
 
         return $this;
     }

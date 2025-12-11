@@ -50,6 +50,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalUrls' => 'string[]',
         'AssetGroupSearchThemes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]',
         'FinalMobileUrls' => 'string[]',
+        'TrackingUrlTemplate' => 'string',
+        'FinalUrlSuffix' => 'string',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus',
         'AssetGroupUrlTargets' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
@@ -80,6 +83,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalUrls' => null,
         'AssetGroupSearchThemes' => null,
         'FinalMobileUrls' => null,
+        'TrackingUrlTemplate' => null,
+        'FinalUrlSuffix' => null,
+        'UrlCustomParameters' => null,
         'EditorialStatus' => null,
         'AssetGroupUrlTargets' => null,
         'ForwardCompatibilityMap' => null
@@ -108,6 +114,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalUrls' => true,
         'AssetGroupSearchThemes' => true,
         'FinalMobileUrls' => true,
+        'TrackingUrlTemplate' => true,
+        'FinalUrlSuffix' => true,
+        'UrlCustomParameters' => true,
         'EditorialStatus' => false,
         'AssetGroupUrlTargets' => true,
         'ForwardCompatibilityMap' => true
@@ -216,6 +225,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalUrls' => 'FinalUrls',
         'AssetGroupSearchThemes' => 'AssetGroupSearchThemes',
         'FinalMobileUrls' => 'FinalMobileUrls',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'UrlCustomParameters' => 'UrlCustomParameters',
         'EditorialStatus' => 'EditorialStatus',
         'AssetGroupUrlTargets' => 'AssetGroupUrlTargets',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
@@ -244,6 +256,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalUrls' => 'setFinalUrls',
         'AssetGroupSearchThemes' => 'setAssetGroupSearchThemes',
         'FinalMobileUrls' => 'setFinalMobileUrls',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'UrlCustomParameters' => 'setUrlCustomParameters',
         'EditorialStatus' => 'setEditorialStatus',
         'AssetGroupUrlTargets' => 'setAssetGroupUrlTargets',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
@@ -272,6 +287,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalUrls' => 'getFinalUrls',
         'AssetGroupSearchThemes' => 'getAssetGroupSearchThemes',
         'FinalMobileUrls' => 'getFinalMobileUrls',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'UrlCustomParameters' => 'getUrlCustomParameters',
         'EditorialStatus' => 'getEditorialStatus',
         'AssetGroupUrlTargets' => 'getAssetGroupUrlTargets',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
@@ -351,6 +369,9 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('FinalUrls', $data ?? [], null);
         $this->setIfExists('AssetGroupSearchThemes', $data ?? [], null);
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('AssetGroupUrlTargets', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
@@ -1021,6 +1042,117 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingUrlTemplate
+     *
+     * @return string|null
+     */
+    public function getTrackingUrlTemplate()
+    {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+            return null;
+        }
+        return $this->container['TrackingUrlTemplate'];
+    }
+
+    /**
+     * Sets TrackingUrlTemplate
+     *
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     *
+     * @return self
+     */
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    {
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlCustomParameters
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     */
+    public function getUrlCustomParameters()
+    {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+            return null;
+        }
+        return $this->container['UrlCustomParameters'];
+    }
+
+    /**
+     * Sets UrlCustomParameters
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     *
+     * @return self
+     */
+    public function setUrlCustomParameters($UrlCustomParameters)
+    {
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }

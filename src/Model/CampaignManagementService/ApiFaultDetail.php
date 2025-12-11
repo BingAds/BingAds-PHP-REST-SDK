@@ -33,9 +33,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'TrackingId' => 'string',
         'BatchErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
         'OperationErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
-        'TrackingId' => 'string',
         'Type' => 'string'
     ];
 
@@ -47,9 +47,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'TrackingId' => null,
         'BatchErrors' => null,
         'OperationErrors' => null,
-        'TrackingId' => null,
         'Type' => null
     ];
 
@@ -59,9 +59,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'TrackingId' => true,
         'BatchErrors' => true,
         'OperationErrors' => true,
-        'TrackingId' => true,
         'Type' => true
     ];
 
@@ -151,9 +151,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
+        'TrackingId' => 'TrackingId',
         'BatchErrors' => 'BatchErrors',
         'OperationErrors' => 'OperationErrors',
-        'TrackingId' => 'TrackingId',
         'Type' => 'Type'
     ];
 
@@ -163,9 +163,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
+        'TrackingId' => 'setTrackingId',
         'BatchErrors' => 'setBatchErrors',
         'OperationErrors' => 'setOperationErrors',
-        'TrackingId' => 'setTrackingId',
         'Type' => 'setType'
     ];
 
@@ -175,9 +175,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
+        'TrackingId' => 'getTrackingId',
         'BatchErrors' => 'getBatchErrors',
         'OperationErrors' => 'getOperationErrors',
-        'TrackingId' => 'getTrackingId',
         'Type' => 'getType'
     ];
 
@@ -238,9 +238,9 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
         $this->setIfExists('OperationErrors', $data ?? [], null);
-        $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'ApiFaultDetail');
     }
 
@@ -285,6 +285,43 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets TrackingId
+     *
+     * @return string|null
+     */
+    public function getTrackingId()
+    {
+        if (!isset($this->container['TrackingId']) || is_null($this->container['TrackingId'])) {
+            return null;
+        }
+        return $this->container['TrackingId'];
+    }
+
+    /**
+     * Sets TrackingId
+     *
+     * @param string|null $TrackingId TrackingId
+     *
+     * @return self
+     */
+    public function setTrackingId($TrackingId)
+    {
+        if (is_null($TrackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingId'] = $TrackingId;
+
+        return $this;
+    }
 
     /**
      * Gets BatchErrors
@@ -356,43 +393,6 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
             }
         }
         $this->container['OperationErrors'] = $OperationErrors;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrackingId
-     *
-     * @return string|null
-     */
-    public function getTrackingId()
-    {
-        if (!isset($this->container['TrackingId']) || is_null($this->container['TrackingId'])) {
-            return null;
-        }
-        return $this->container['TrackingId'];
-    }
-
-    /**
-     * Sets TrackingId
-     *
-     * @param string|null $TrackingId TrackingId
-     *
-     * @return self
-     */
-    public function setTrackingId($TrackingId)
-    {
-        if (is_null($TrackingId)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TrackingId'] = $TrackingId;
 
         return $this;
     }

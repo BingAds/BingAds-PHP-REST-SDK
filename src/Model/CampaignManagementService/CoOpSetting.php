@@ -33,10 +33,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'BidOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption',
         'BidBoostValue' => 'float',
-        'BidMaxValue' => 'float',
-        'Type' => 'string'
+        'BidMaxValue' => 'float'
     ];
 
     /**
@@ -47,10 +47,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'BidOption' => null,
         'BidBoostValue' => 'double',
-        'BidMaxValue' => 'double',
-        'Type' => null
+        'BidMaxValue' => 'double'
     ];
 
     /**
@@ -59,10 +59,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'BidOption' => false,
         'BidBoostValue' => true,
-        'BidMaxValue' => true,
-        'Type' => true
+        'BidMaxValue' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'BidOption' => 'BidOption',
         'BidBoostValue' => 'BidBoostValue',
-        'BidMaxValue' => 'BidMaxValue',
-        'Type' => 'Type'
+        'BidMaxValue' => 'BidMaxValue'
     ];
 
     /**
@@ -163,10 +163,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'BidOption' => 'setBidOption',
         'BidBoostValue' => 'setBidBoostValue',
-        'BidMaxValue' => 'setBidMaxValue',
-        'Type' => 'setType'
+        'BidMaxValue' => 'setBidMaxValue'
     ];
 
     /**
@@ -175,10 +175,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'BidOption' => 'getBidOption',
         'BidBoostValue' => 'getBidBoostValue',
-        'BidMaxValue' => 'getBidMaxValue',
-        'Type' => 'getType'
+        'BidMaxValue' => 'getBidMaxValue'
     ];
 
     /**
@@ -238,10 +238,10 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('BidOption', $data ?? [], null);
         $this->setIfExists('BidBoostValue', $data ?? [], null);
         $this->setIfExists('BidMaxValue', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CoOpSetting');
     }
 
     /**
@@ -285,6 +285,43 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets BidOption
@@ -392,43 +429,6 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['BidMaxValue'] = $BidMaxValue;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

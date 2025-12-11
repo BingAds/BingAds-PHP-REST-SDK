@@ -33,9 +33,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope',
-        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn[]',
-        'Filter' => '\Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportFilter',
         'ReportName' => 'string',
         'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
         'ReturnOnlyCompleteData' => 'bool',
@@ -43,6 +40,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         'ExcludeReportFooter' => 'bool',
         'ExcludeColumnHeaders' => 'bool',
         'FormatVersion' => 'string',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope',
+        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn[]',
+        'Filter' => '\Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportFilter',
         'Type' => 'string'
     ];
 
@@ -54,9 +54,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Scope' => null,
-        'Columns' => null,
-        'Filter' => null,
         'ReportName' => null,
         'Format' => null,
         'ReturnOnlyCompleteData' => null,
@@ -64,6 +61,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         'ExcludeReportFooter' => null,
         'ExcludeColumnHeaders' => null,
         'FormatVersion' => null,
+        'Scope' => null,
+        'Columns' => null,
+        'Filter' => null,
         'Type' => null
     ];
 
@@ -73,9 +73,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Scope' => true,
-        'Columns' => true,
-        'Filter' => true,
         'ReportName' => true,
         'Format' => false,
         'ReturnOnlyCompleteData' => true,
@@ -83,6 +80,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         'ExcludeReportFooter' => true,
         'ExcludeColumnHeaders' => true,
         'FormatVersion' => true,
+        'Scope' => true,
+        'Columns' => true,
+        'Filter' => true,
         'Type' => true
     ];
 
@@ -172,9 +172,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Scope' => 'Scope',
-        'Columns' => 'Columns',
-        'Filter' => 'Filter',
         'ReportName' => 'ReportName',
         'Format' => 'Format',
         'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
@@ -182,6 +179,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         'ExcludeReportFooter' => 'ExcludeReportFooter',
         'ExcludeColumnHeaders' => 'ExcludeColumnHeaders',
         'FormatVersion' => 'FormatVersion',
+        'Scope' => 'Scope',
+        'Columns' => 'Columns',
+        'Filter' => 'Filter',
         'Type' => 'Type'
     ];
 
@@ -191,9 +191,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
      * @var string[]
      */
     protected static array $setters = [
-        'Scope' => 'setScope',
-        'Columns' => 'setColumns',
-        'Filter' => 'setFilter',
         'ReportName' => 'setReportName',
         'Format' => 'setFormat',
         'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
@@ -201,6 +198,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         'ExcludeReportFooter' => 'setExcludeReportFooter',
         'ExcludeColumnHeaders' => 'setExcludeColumnHeaders',
         'FormatVersion' => 'setFormatVersion',
+        'Scope' => 'setScope',
+        'Columns' => 'setColumns',
+        'Filter' => 'setFilter',
         'Type' => 'setType'
     ];
 
@@ -210,9 +210,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
      * @var string[]
      */
     protected static array $getters = [
-        'Scope' => 'getScope',
-        'Columns' => 'getColumns',
-        'Filter' => 'getFilter',
         'ReportName' => 'getReportName',
         'Format' => 'getFormat',
         'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
@@ -220,6 +217,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         'ExcludeReportFooter' => 'getExcludeReportFooter',
         'ExcludeColumnHeaders' => 'getExcludeColumnHeaders',
         'FormatVersion' => 'getFormatVersion',
+        'Scope' => 'getScope',
+        'Columns' => 'getColumns',
+        'Filter' => 'getFilter',
         'Type' => 'getType'
     ];
 
@@ -280,9 +280,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('Columns', $data ?? [], null);
-        $this->setIfExists('Filter', $data ?? [], null);
         $this->setIfExists('ReportName', $data ?? [], null);
         $this->setIfExists('Format', $data ?? [], null);
         $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
@@ -290,6 +287,9 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
         $this->setIfExists('ExcludeColumnHeaders', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('Columns', $data ?? [], null);
+        $this->setIfExists('Filter', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'NegativeKeywordConflictReportRequest');
     }
 
@@ -334,136 +334,6 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            array_push($this->openAPINullablesSetToNull, 'Scope');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scope', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets Columns
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn[]|mixed|null
-     */
-    public function getColumns()
-    {
-        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
-            return null;
-        }
-        $values = [];
-        if (is_array($this->container['Columns'])) {
-            foreach ($this->container['Columns'] as $ColumnsItem) {
-                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
-                    $values[] = $ColumnsItem->getValue();
-                }
-            }
-        }
-        if (count($values) > 0) {
-            return $values;
-        }
-        return $this->container['Columns'];
-    }
-
-    /**
-     * Sets Columns
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn[]|mixed|null $Columns Columns
-     *
-     * @return self
-     */
-    public function setColumns($Columns)
-    {
-        if (is_null($Columns)) {
-            array_push($this->openAPINullablesSetToNull, 'Columns');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Columns', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        if (!is_array($Columns)) {
-            $Columns = [$Columns];
-        }
-        foreach ($Columns as $key => $ColumnsItem) {
-            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn) {
-                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn($ColumnsItem);
-            }
-        }
-        $this->container['Columns'] = $Columns;
-
-        return $this;
-    }
-
-    /**
-     * Gets Filter
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportFilter|null
-     */
-    public function getFilter()
-    {
-        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
-            return null;
-        }
-        return $this->container['Filter'];
-    }
-
-    /**
-     * Sets Filter
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportFilter|null $Filter Filter
-     *
-     * @return self
-     */
-    public function setFilter($Filter)
-    {
-        if (is_null($Filter)) {
-            array_push($this->openAPINullablesSetToNull, 'Filter');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Filter', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Filter'] = $Filter;
-
-        return $this;
-    }
 
     /**
      * Gets ReportName
@@ -719,6 +589,136 @@ class NegativeKeywordConflictReportRequest extends ReportRequest implements Mode
             }
         }
         $this->container['FormatVersion'] = $FormatVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets Columns
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn[]|mixed|null
+     */
+    public function getColumns()
+    {
+        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
+            return null;
+        }
+        $values = [];
+        if (is_array($this->container['Columns'])) {
+            foreach ($this->container['Columns'] as $ColumnsItem) {
+                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
+                    $values[] = $ColumnsItem->getValue();
+                }
+            }
+        }
+        if (count($values) > 0) {
+            return $values;
+        }
+        return $this->container['Columns'];
+    }
+
+    /**
+     * Sets Columns
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn[]|mixed|null $Columns Columns
+     *
+     * @return self
+     */
+    public function setColumns($Columns)
+    {
+        if (is_null($Columns)) {
+            array_push($this->openAPINullablesSetToNull, 'Columns');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Columns', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_array($Columns)) {
+            $Columns = [$Columns];
+        }
+        foreach ($Columns as $key => $ColumnsItem) {
+            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn) {
+                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportColumn($ColumnsItem);
+            }
+        }
+        $this->container['Columns'] = $Columns;
+
+        return $this;
+    }
+
+    /**
+     * Gets Filter
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportFilter|null
+     */
+    public function getFilter()
+    {
+        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
+            return null;
+        }
+        return $this->container['Filter'];
+    }
+
+    /**
+     * Sets Filter
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportFilter|null $Filter Filter
+     *
+     * @return self
+     */
+    public function setFilter($Filter)
+    {
+        if (is_null($Filter)) {
+            array_push($this->openAPINullablesSetToNull, 'Filter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Filter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Filter'] = $Filter;
 
         return $this;
     }

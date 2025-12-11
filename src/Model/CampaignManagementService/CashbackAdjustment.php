@@ -33,8 +33,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CashbackPercent' => 'float',
-        'Type' => 'string'
+        'Type' => 'string',
+        'CashbackPercent' => 'float'
     ];
 
     /**
@@ -45,8 +45,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CashbackPercent' => 'double',
-        'Type' => null
+        'Type' => null,
+        'CashbackPercent' => 'double'
     ];
 
     /**
@@ -55,8 +55,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CashbackPercent' => true,
-        'Type' => true
+        'Type' => true,
+        'CashbackPercent' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CashbackPercent' => 'CashbackPercent',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'CashbackPercent' => 'CashbackPercent'
     ];
 
     /**
@@ -155,8 +155,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $setters = [
-        'CashbackPercent' => 'setCashbackPercent',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'CashbackPercent' => 'setCashbackPercent'
     ];
 
     /**
@@ -165,8 +165,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $getters = [
-        'CashbackPercent' => 'getCashbackPercent',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'CashbackPercent' => 'getCashbackPercent'
     ];
 
     /**
@@ -226,8 +226,8 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CashbackPercent', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CashbackAdjustment');
     }
 
     /**
@@ -273,43 +273,6 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
 
 
     /**
-     * Gets CashbackPercent
-     *
-     * @return float|null
-     */
-    public function getCashbackPercent()
-    {
-        if (!isset($this->container['CashbackPercent']) || is_null($this->container['CashbackPercent'])) {
-            return null;
-        }
-        return $this->container['CashbackPercent'];
-    }
-
-    /**
-     * Sets CashbackPercent
-     *
-     * @param float|null $CashbackPercent CashbackPercent
-     *
-     * @return self
-     */
-    public function setCashbackPercent($CashbackPercent)
-    {
-        if (is_null($CashbackPercent)) {
-            array_push($this->openAPINullablesSetToNull, 'CashbackPercent');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CashbackPercent', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CashbackPercent'] = $CashbackPercent;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class CashbackAdjustment extends CriterionCashback implements ModelInterface, Ar
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets CashbackPercent
+     *
+     * @return float|null
+     */
+    public function getCashbackPercent()
+    {
+        if (!isset($this->container['CashbackPercent']) || is_null($this->container['CashbackPercent'])) {
+            return null;
+        }
+        return $this->container['CashbackPercent'];
+    }
+
+    /**
+     * Sets CashbackPercent
+     *
+     * @param float|null $CashbackPercent CashbackPercent
+     *
+     * @return self
+     */
+    public function setCashbackPercent($CashbackPercent)
+    {
+        if (is_null($CashbackPercent)) {
+            array_push($this->openAPINullablesSetToNull, 'CashbackPercent');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CashbackPercent', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CashbackPercent'] = $CashbackPercent;
 
         return $this;
     }

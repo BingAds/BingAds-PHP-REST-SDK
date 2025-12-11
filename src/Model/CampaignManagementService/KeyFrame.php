@@ -34,7 +34,8 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'TemplateId' => 'string',
-        'Url' => 'string'
+        'Url' => 'string',
+        'KeyframeTimestamp' => 'float'
     ];
 
     /**
@@ -46,7 +47,8 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'TemplateId' => null,
-        'Url' => null
+        'Url' => null,
+        'KeyframeTimestamp' => 'double'
     ];
 
     /**
@@ -56,7 +58,8 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'TemplateId' => true,
-        'Url' => true
+        'Url' => true,
+        'KeyframeTimestamp' => false
     ];
 
     /**
@@ -146,7 +149,8 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'TemplateId' => 'templateId',
-        'Url' => 'url'
+        'Url' => 'url',
+        'KeyframeTimestamp' => 'keyframeTimestamp'
     ];
 
     /**
@@ -156,7 +160,8 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'TemplateId' => 'setTemplateId',
-        'Url' => 'setUrl'
+        'Url' => 'setUrl',
+        'KeyframeTimestamp' => 'setKeyframeTimestamp'
     ];
 
     /**
@@ -166,7 +171,8 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'TemplateId' => 'getTemplateId',
-        'Url' => 'getUrl'
+        'Url' => 'getUrl',
+        'KeyframeTimestamp' => 'getKeyframeTimestamp'
     ];
 
     /**
@@ -228,6 +234,7 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('TemplateId', $data ?? [], null);
         $this->setIfExists('Url', $data ?? [], null);
+        $this->setIfExists('KeyframeTimestamp', $data ?? [], null);
     }
 
     /**
@@ -342,6 +349,36 @@ class KeyFrame implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Url'] = $Url;
+
+        return $this;
+    }
+
+    /**
+     * Gets KeyframeTimestamp
+     *
+     * @return float|null
+     */
+    public function getKeyframeTimestamp()
+    {
+        if (!isset($this->container['KeyframeTimestamp']) || is_null($this->container['KeyframeTimestamp'])) {
+            return null;
+        }
+        return $this->container['KeyframeTimestamp'];
+    }
+
+    /**
+     * Sets KeyframeTimestamp
+     *
+     * @param float|null $KeyframeTimestamp KeyframeTimestamp
+     *
+     * @return self
+     */
+    public function setKeyframeTimestamp($KeyframeTimestamp)
+    {
+        if (is_null($KeyframeTimestamp)) {
+            throw new \InvalidArgumentException('non-nullable KeyframeTimestamp cannot be null');
+        }
+        $this->container['KeyframeTimestamp'] = $KeyframeTimestamp;
 
         return $this;
     }

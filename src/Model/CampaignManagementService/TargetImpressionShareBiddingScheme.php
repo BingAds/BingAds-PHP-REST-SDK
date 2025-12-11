@@ -33,10 +33,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'TargetImpressionShare' => 'float',
         'TargetAdPosition' => 'string',
-        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
-        'Type' => 'string'
+        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid'
     ];
 
     /**
@@ -47,10 +47,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'TargetImpressionShare' => 'double',
         'TargetAdPosition' => null,
-        'MaxCpc' => null,
-        'Type' => null
+        'MaxCpc' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'TargetImpressionShare' => true,
         'TargetAdPosition' => true,
-        'MaxCpc' => true,
-        'Type' => true
+        'MaxCpc' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'TargetImpressionShare' => 'TargetImpressionShare',
         'TargetAdPosition' => 'TargetAdPosition',
-        'MaxCpc' => 'MaxCpc',
-        'Type' => 'Type'
+        'MaxCpc' => 'MaxCpc'
     ];
 
     /**
@@ -163,10 +163,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'TargetImpressionShare' => 'setTargetImpressionShare',
         'TargetAdPosition' => 'setTargetAdPosition',
-        'MaxCpc' => 'setMaxCpc',
-        'Type' => 'setType'
+        'MaxCpc' => 'setMaxCpc'
     ];
 
     /**
@@ -175,10 +175,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'TargetImpressionShare' => 'getTargetImpressionShare',
         'TargetAdPosition' => 'getTargetAdPosition',
-        'MaxCpc' => 'getMaxCpc',
-        'Type' => 'getType'
+        'MaxCpc' => 'getMaxCpc'
     ];
 
     /**
@@ -238,10 +238,10 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('TargetImpressionShare', $data ?? [], null);
         $this->setIfExists('TargetAdPosition', $data ?? [], null);
         $this->setIfExists('MaxCpc', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'TargetImpressionShareBiddingScheme');
     }
 
     /**
@@ -285,6 +285,43 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets TargetImpressionShare
@@ -393,43 +430,6 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
             }
         }
         $this->container['MaxCpc'] = $MaxCpc;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

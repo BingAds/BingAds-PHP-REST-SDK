@@ -33,8 +33,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CheckInDay' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Day',
-        'Type' => 'string'
+        'Type' => 'string',
+        'CheckInDay' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Day'
     ];
 
     /**
@@ -45,8 +45,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CheckInDay' => null,
-        'Type' => null
+        'Type' => null,
+        'CheckInDay' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CheckInDay' => false,
-        'Type' => true
+        'Type' => true,
+        'CheckInDay' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CheckInDay' => 'CheckInDay',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'CheckInDay' => 'CheckInDay'
     ];
 
     /**
@@ -155,8 +155,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
      * @var string[]
      */
     protected static array $setters = [
-        'CheckInDay' => 'setCheckInDay',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'CheckInDay' => 'setCheckInDay'
     ];
 
     /**
@@ -165,8 +165,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
      * @var string[]
      */
     protected static array $getters = [
-        'CheckInDay' => 'getCheckInDay',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'CheckInDay' => 'getCheckInDay'
     ];
 
     /**
@@ -226,8 +226,8 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CheckInDay', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'HotelCheckInDayCriterion');
     }
 
     /**
@@ -273,42 +273,6 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
 
 
     /**
-     * Gets CheckInDay
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day|mixed|null
-     */
-    public function getCheckInDay()
-    {
-        if (!isset($this->container['CheckInDay']) || is_null($this->container['CheckInDay'])) {
-            return null;
-        }
-        if ((is_object($this->container['CheckInDay']) || is_string($this->container['CheckInDay'])) && method_exists($this->container['CheckInDay'], 'getValue')) {
-            return $this->container['CheckInDay']->getValue();
-        }
-        return $this->container['CheckInDay'];
-    }
-
-    /**
-     * Sets CheckInDay
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day|mixed|null $CheckInDay CheckInDay
-     *
-     * @return self
-     */
-    public function setCheckInDay($CheckInDay)
-    {
-        if (is_null($CheckInDay)) {
-            throw new \InvalidArgumentException('non-nullable CheckInDay cannot be null');
-        }
-        if (!$CheckInDay instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
-            $CheckInDay = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($CheckInDay);
-        }
-        $this->container['CheckInDay'] = $CheckInDay;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -341,6 +305,42 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets CheckInDay
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day|mixed|null
+     */
+    public function getCheckInDay()
+    {
+        if (!isset($this->container['CheckInDay']) || is_null($this->container['CheckInDay'])) {
+            return null;
+        }
+        if ((is_object($this->container['CheckInDay']) || is_string($this->container['CheckInDay'])) && method_exists($this->container['CheckInDay'], 'getValue')) {
+            return $this->container['CheckInDay']->getValue();
+        }
+        return $this->container['CheckInDay'];
+    }
+
+    /**
+     * Sets CheckInDay
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day|mixed|null $CheckInDay CheckInDay
+     *
+     * @return self
+     */
+    public function setCheckInDay($CheckInDay)
+    {
+        if (is_null($CheckInDay)) {
+            throw new \InvalidArgumentException('non-nullable CheckInDay cannot be null');
+        }
+        if (!$CheckInDay instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
+            $CheckInDay = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($CheckInDay);
+        }
+        $this->container['CheckInDay'] = $CheckInDay;
 
         return $this;
     }

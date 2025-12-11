@@ -33,8 +33,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'StoreId' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'StoreId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'StoreId' => 'int64',
-        'Type' => null
+        'Type' => null,
+        'StoreId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'StoreId' => true,
-        'Type' => true
+        'Type' => true,
+        'StoreId' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'StoreId' => 'StoreId',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'StoreId' => 'StoreId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'StoreId' => 'setStoreId',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'StoreId' => 'setStoreId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'StoreId' => 'getStoreId',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'StoreId' => 'getStoreId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('StoreId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'StoreCriterion');
     }
 
     /**
@@ -273,43 +273,6 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets StoreId
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
-            return null;
-        }
-        return $this->container['StoreId'];
-    }
-
-    /**
-     * Sets StoreId
-     *
-     * @param string|null $StoreId StoreId
-     *
-     * @return self
-     */
-    public function setStoreId($StoreId)
-    {
-        if (is_null($StoreId)) {
-            array_push($this->openAPINullablesSetToNull, 'StoreId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StoreId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StoreId'] = $StoreId;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class StoreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets StoreId
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
+            return null;
+        }
+        return $this->container['StoreId'];
+    }
+
+    /**
+     * Sets StoreId
+     *
+     * @param string|null $StoreId StoreId
+     *
+     * @return self
+     */
+    public function setStoreId($StoreId)
+    {
+        if (is_null($StoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'StoreId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StoreId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StoreId'] = $StoreId;
 
         return $this;
     }

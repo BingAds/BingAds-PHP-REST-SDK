@@ -33,8 +33,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'HealthCheckEntities' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity[]',
-        'HealthCheckTypes' => 'string[]'
+        'Entities' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsEntity[]',
+        'Checks' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsFilter[]',
+        'Settings' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsSettings',
+        'CallerName' => 'string'
     ];
 
     /**
@@ -45,8 +47,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'HealthCheckEntities' => null,
-        'HealthCheckTypes' => null
+        'Entities' => null,
+        'Checks' => null,
+        'Settings' => null,
+        'CallerName' => null
     ];
 
     /**
@@ -55,8 +59,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'HealthCheckEntities' => true,
-        'HealthCheckTypes' => true
+        'Entities' => true,
+        'Checks' => true,
+        'Settings' => true,
+        'CallerName' => true
     ];
 
     /**
@@ -145,8 +151,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
-        'HealthCheckEntities' => 'HealthCheckEntities',
-        'HealthCheckTypes' => 'HealthCheckTypes'
+        'Entities' => 'Entities',
+        'Checks' => 'Checks',
+        'Settings' => 'Settings',
+        'CallerName' => 'CallerName'
     ];
 
     /**
@@ -155,8 +163,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
-        'HealthCheckEntities' => 'setHealthCheckEntities',
-        'HealthCheckTypes' => 'setHealthCheckTypes'
+        'Entities' => 'setEntities',
+        'Checks' => 'setChecks',
+        'Settings' => 'setSettings',
+        'CallerName' => 'setCallerName'
     ];
 
     /**
@@ -165,8 +175,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
-        'HealthCheckEntities' => 'getHealthCheckEntities',
-        'HealthCheckTypes' => 'getHealthCheckTypes'
+        'Entities' => 'getEntities',
+        'Checks' => 'getChecks',
+        'Settings' => 'getSettings',
+        'CallerName' => 'getCallerName'
     ];
 
     /**
@@ -226,8 +238,10 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('HealthCheckEntities', $data ?? [], null);
-        $this->setIfExists('HealthCheckTypes', $data ?? [], null);
+        $this->setIfExists('Entities', $data ?? [], null);
+        $this->setIfExists('Checks', $data ?? [], null);
+        $this->setIfExists('Settings', $data ?? [], null);
+        $this->setIfExists('CallerName', $data ?? [], null);
     }
 
     /**
@@ -273,75 +287,149 @@ class GetDiagnosticsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets HealthCheckEntities
+     * Gets Entities
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsEntity[]|null
      */
-    public function getHealthCheckEntities()
+    public function getEntities()
     {
-        if (!isset($this->container['HealthCheckEntities']) || is_null($this->container['HealthCheckEntities'])) {
+        if (!isset($this->container['Entities']) || is_null($this->container['Entities'])) {
             return null;
         }
-        return $this->container['HealthCheckEntities'];
+        return $this->container['Entities'];
     }
 
     /**
-     * Sets HealthCheckEntities
+     * Sets Entities
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity[]|null $HealthCheckEntities HealthCheckEntities
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsEntity[]|null $Entities Entities
      *
      * @return self
      */
-    public function setHealthCheckEntities($HealthCheckEntities)
+    public function setEntities($Entities)
     {
-        if (is_null($HealthCheckEntities)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckEntities');
+        if (is_null($Entities)) {
+            array_push($this->openAPINullablesSetToNull, 'Entities');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckEntities', $nullablesSetToNull);
+            $index = array_search('Entities', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['HealthCheckEntities'] = $HealthCheckEntities;
+        $this->container['Entities'] = $Entities;
 
         return $this;
     }
 
     /**
-     * Gets HealthCheckTypes
+     * Gets Checks
      *
-     * @return string[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsFilter[]|null
      */
-    public function getHealthCheckTypes()
+    public function getChecks()
     {
-        if (!isset($this->container['HealthCheckTypes']) || is_null($this->container['HealthCheckTypes'])) {
+        if (!isset($this->container['Checks']) || is_null($this->container['Checks'])) {
             return null;
         }
-        return $this->container['HealthCheckTypes'];
+        return $this->container['Checks'];
     }
 
     /**
-     * Sets HealthCheckTypes
+     * Sets Checks
      *
-     * @param string[]|null $HealthCheckTypes HealthCheckTypes
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsFilter[]|null $Checks Checks
      *
      * @return self
      */
-    public function setHealthCheckTypes($HealthCheckTypes)
+    public function setChecks($Checks)
     {
-        if (is_null($HealthCheckTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckTypes');
+        if (is_null($Checks)) {
+            array_push($this->openAPINullablesSetToNull, 'Checks');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckTypes', $nullablesSetToNull);
+            $index = array_search('Checks', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['HealthCheckTypes'] = $HealthCheckTypes;
+        $this->container['Checks'] = $Checks;
+
+        return $this;
+    }
+
+    /**
+     * Gets Settings
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsSettings|null
+     */
+    public function getSettings()
+    {
+        if (!isset($this->container['Settings']) || is_null($this->container['Settings'])) {
+            return null;
+        }
+        return $this->container['Settings'];
+    }
+
+    /**
+     * Sets Settings
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsSettings|null $Settings Settings
+     *
+     * @return self
+     */
+    public function setSettings($Settings)
+    {
+        if (is_null($Settings)) {
+            array_push($this->openAPINullablesSetToNull, 'Settings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Settings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Settings'] = $Settings;
+
+        return $this;
+    }
+
+    /**
+     * Gets CallerName
+     *
+     * @return string|null
+     */
+    public function getCallerName()
+    {
+        if (!isset($this->container['CallerName']) || is_null($this->container['CallerName'])) {
+            return null;
+        }
+        return $this->container['CallerName'];
+    }
+
+    /**
+     * Sets CallerName
+     *
+     * @param string|null $CallerName CallerName
+     *
+     * @return self
+     */
+    public function setCallerName($CallerName)
+    {
+        if (is_null($CallerName)) {
+            array_push($this->openAPINullablesSetToNull, 'CallerName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CallerName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CallerName'] = $CallerName;
 
         return $this;
     }

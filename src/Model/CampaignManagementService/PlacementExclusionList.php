@@ -253,7 +253,7 @@ class PlacementExclusionList extends SharedList implements ModelInterface, Array
         $this->setIfExists('ItemCount', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'PlacementExclusionList');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }

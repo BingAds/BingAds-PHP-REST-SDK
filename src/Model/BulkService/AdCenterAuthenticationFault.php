@@ -33,12 +33,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'TrackingId' => 'string',
         'ErrorCode' => '\Microsoft\MsAds\Rest\Model\BulkService\AuthenticationFaultCode',
         'ErrorMessage' => 'string',
         'MTServerName' => 'string',
         'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\BulkService\FaultSource',
         'ErrorSourceSystem' => 'string',
-        'TrackingId' => 'string',
         'Type' => 'string'
     ];
 
@@ -50,12 +50,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'TrackingId' => null,
         'ErrorCode' => null,
         'ErrorMessage' => null,
         'MTServerName' => null,
         'FaultingLayer' => null,
         'ErrorSourceSystem' => null,
-        'TrackingId' => null,
         'Type' => null
     ];
 
@@ -65,12 +65,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'TrackingId' => true,
         'ErrorCode' => false,
         'ErrorMessage' => true,
         'MTServerName' => true,
         'FaultingLayer' => false,
         'ErrorSourceSystem' => true,
-        'TrackingId' => true,
         'Type' => true
     ];
 
@@ -160,12 +160,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      * @var string[]
      */
     protected static array $attributeMap = [
+        'TrackingId' => 'TrackingId',
         'ErrorCode' => 'ErrorCode',
         'ErrorMessage' => 'ErrorMessage',
         'MTServerName' => 'MTServerName',
         'FaultingLayer' => 'FaultingLayer',
         'ErrorSourceSystem' => 'ErrorSourceSystem',
-        'TrackingId' => 'TrackingId',
         'Type' => 'Type'
     ];
 
@@ -175,12 +175,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      * @var string[]
      */
     protected static array $setters = [
+        'TrackingId' => 'setTrackingId',
         'ErrorCode' => 'setErrorCode',
         'ErrorMessage' => 'setErrorMessage',
         'MTServerName' => 'setMTServerName',
         'FaultingLayer' => 'setFaultingLayer',
         'ErrorSourceSystem' => 'setErrorSourceSystem',
-        'TrackingId' => 'setTrackingId',
         'Type' => 'setType'
     ];
 
@@ -190,12 +190,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      * @var string[]
      */
     protected static array $getters = [
+        'TrackingId' => 'getTrackingId',
         'ErrorCode' => 'getErrorCode',
         'ErrorMessage' => 'getErrorMessage',
         'MTServerName' => 'getMTServerName',
         'FaultingLayer' => 'getFaultingLayer',
         'ErrorSourceSystem' => 'getErrorSourceSystem',
-        'TrackingId' => 'getTrackingId',
         'Type' => 'getType'
     ];
 
@@ -256,12 +256,12 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('ErrorMessage', $data ?? [], null);
         $this->setIfExists('MTServerName', $data ?? [], null);
         $this->setIfExists('FaultingLayer', $data ?? [], null);
         $this->setIfExists('ErrorSourceSystem', $data ?? [], null);
-        $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AdCenterAuthenticationFault');
     }
 
@@ -306,6 +306,43 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets TrackingId
+     *
+     * @return string|null
+     */
+    public function getTrackingId()
+    {
+        if (!isset($this->container['TrackingId']) || is_null($this->container['TrackingId'])) {
+            return null;
+        }
+        return $this->container['TrackingId'];
+    }
+
+    /**
+     * Sets TrackingId
+     *
+     * @param string|null $TrackingId TrackingId
+     *
+     * @return self
+     */
+    public function setTrackingId($TrackingId)
+    {
+        if (is_null($TrackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingId'] = $TrackingId;
+
+        return $this;
+    }
 
     /**
      * Gets ErrorCode
@@ -486,43 +523,6 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
             }
         }
         $this->container['ErrorSourceSystem'] = $ErrorSourceSystem;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrackingId
-     *
-     * @return string|null
-     */
-    public function getTrackingId()
-    {
-        if (!isset($this->container['TrackingId']) || is_null($this->container['TrackingId'])) {
-            return null;
-        }
-        return $this->container['TrackingId'];
-    }
-
-    /**
-     * Sets TrackingId
-     *
-     * @param string|null $TrackingId TrackingId
-     *
-     * @return self
-     */
-    public function setTrackingId($TrackingId)
-    {
-        if (is_null($TrackingId)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TrackingId'] = $TrackingId;
 
         return $this;
     }

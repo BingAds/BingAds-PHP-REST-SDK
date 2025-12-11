@@ -76,6 +76,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'addExperiments' => [
             'application/json',
         ],
+        'addHTML5s' => [
+            'application/json',
+        ],
         'addImportJobs' => [
             'application/json',
         ],
@@ -197,6 +200,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'deleteExperiments' => [
+            'application/json',
+        ],
+        'deleteHTML5s' => [
             'application/json',
         ],
         'deleteImportJobs' => [
@@ -368,6 +374,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'getGeoLocationsFileUrl' => [
+            'application/json',
+        ],
+        'getHTML5sByIds' => [
             'application/json',
         ],
         'getHealthCheck' => [
@@ -4309,6 +4318,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForaddExperiments',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation addHTML5s
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sRequest $AddHTML5sRequest AddHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addHTML5s'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function addHTML5s($AddHTML5sRequest, string $contentType = self::contentTypes['addHTML5s'][0])
+    {
+        list($response) = $this->addHTML5sWithHttpInfo($AddHTML5sRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addHTML5sWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sRequest $AddHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addHTML5s'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addHTML5sWithHttpInfo($AddHTML5sRequest, string $contentType = self::contentTypes['addHTML5s'][0])
+    {
+        $request = $this->addHTML5sRequest($AddHTML5sRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addHTML5sAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sRequest $AddHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addHTML5s'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addHTML5sAsync($AddHTML5sRequest, string $contentType = self::contentTypes['addHTML5s'][0])
+    {
+        return $this->addHTML5sAsyncWithHttpInfo($AddHTML5sRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addHTML5sAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sRequest $AddHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addHTML5s'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addHTML5sAsyncWithHttpInfo($AddHTML5sRequest, string $contentType = self::contentTypes['addHTML5s'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sResponse';
+        $request = $this->addHTML5sRequest($AddHTML5sRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addHTML5s'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddHTML5sRequest $AddHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addHTML5s'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addHTML5sRequest($AddHTML5sRequest, string $contentType = self::contentTypes['addHTML5s'][0])
+    {
+
+        // verify the required parameter 'AddHTML5sRequest' is set
+        if ($AddHTML5sRequest === null || (is_array($AddHTML5sRequest) && count($AddHTML5sRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $AddHTML5sRequest when calling addHTML5s'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/HTML5s';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $AddHTML5sRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForaddHTML5s',
             null,
             [],
             $queryParams
@@ -13288,6 +13516,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsFordeleteExperiments',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation deleteHTML5s
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sRequest $DeleteHTML5sRequest DeleteHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteHTML5s'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function deleteHTML5s($DeleteHTML5sRequest, string $contentType = self::contentTypes['deleteHTML5s'][0])
+    {
+        list($response) = $this->deleteHTML5sWithHttpInfo($DeleteHTML5sRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deleteHTML5sWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sRequest $DeleteHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteHTML5s'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteHTML5sWithHttpInfo($DeleteHTML5sRequest, string $contentType = self::contentTypes['deleteHTML5s'][0])
+    {
+        $request = $this->deleteHTML5sRequest($DeleteHTML5sRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteHTML5sAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sRequest $DeleteHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteHTML5s'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteHTML5sAsync($DeleteHTML5sRequest, string $contentType = self::contentTypes['deleteHTML5s'][0])
+    {
+        return $this->deleteHTML5sAsyncWithHttpInfo($DeleteHTML5sRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteHTML5sAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sRequest $DeleteHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteHTML5s'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteHTML5sAsyncWithHttpInfo($DeleteHTML5sRequest, string $contentType = self::contentTypes['deleteHTML5s'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sResponse';
+        $request = $this->deleteHTML5sRequest($DeleteHTML5sRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteHTML5s'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteHTML5sRequest $DeleteHTML5sRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteHTML5s'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteHTML5sRequest($DeleteHTML5sRequest, string $contentType = self::contentTypes['deleteHTML5s'][0])
+    {
+
+        // verify the required parameter 'DeleteHTML5sRequest' is set
+        if ($DeleteHTML5sRequest === null || (is_array($DeleteHTML5sRequest) && count($DeleteHTML5sRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $DeleteHTML5sRequest when calling deleteHTML5s'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/HTML5s';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'DELETE',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $DeleteHTML5sRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsFordeleteHTML5s',
             null,
             [],
             $queryParams
@@ -25771,6 +26218,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForgetGeoLocationsFileUrl',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation getHTML5sByIds
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsRequest $GetHTML5sByIdsRequest GetHTML5sByIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHTML5sByIds'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getHTML5sByIds($GetHTML5sByIdsRequest, string $contentType = self::contentTypes['getHTML5sByIds'][0])
+    {
+        list($response) = $this->getHTML5sByIdsWithHttpInfo($GetHTML5sByIdsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getHTML5sByIdsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsRequest $GetHTML5sByIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHTML5sByIds'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getHTML5sByIdsWithHttpInfo($GetHTML5sByIdsRequest, string $contentType = self::contentTypes['getHTML5sByIds'][0])
+    {
+        $request = $this->getHTML5sByIdsRequest($GetHTML5sByIdsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getHTML5sByIdsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsRequest $GetHTML5sByIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHTML5sByIds'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getHTML5sByIdsAsync($GetHTML5sByIdsRequest, string $contentType = self::contentTypes['getHTML5sByIds'][0])
+    {
+        return $this->getHTML5sByIdsAsyncWithHttpInfo($GetHTML5sByIdsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getHTML5sByIdsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsRequest $GetHTML5sByIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHTML5sByIds'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getHTML5sByIdsAsyncWithHttpInfo($GetHTML5sByIdsRequest, string $contentType = self::contentTypes['getHTML5sByIds'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsResponse';
+        $request = $this->getHTML5sByIdsRequest($GetHTML5sByIdsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getHTML5sByIds'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetHTML5sByIdsRequest $GetHTML5sByIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHTML5sByIds'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getHTML5sByIdsRequest($GetHTML5sByIdsRequest, string $contentType = self::contentTypes['getHTML5sByIds'][0])
+    {
+
+        // verify the required parameter 'GetHTML5sByIdsRequest' is set
+        if ($GetHTML5sByIdsRequest === null || (is_array($GetHTML5sByIdsRequest) && count($GetHTML5sByIdsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetHTML5sByIdsRequest when calling getHTML5sByIds'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/HTML5s/QueryByIds';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetHTML5sByIdsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetHTML5sByIds',
             null,
             [],
             $queryParams

@@ -33,8 +33,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'IntentOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption',
-        'Type' => 'string'
+        'Type' => 'string',
+        'IntentOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption'
     ];
 
     /**
@@ -45,8 +45,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'IntentOption' => null,
-        'Type' => null
+        'Type' => null,
+        'IntentOption' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'IntentOption' => false,
-        'Type' => true
+        'Type' => true,
+        'IntentOption' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
      * @var string[]
      */
     protected static array $attributeMap = [
-        'IntentOption' => 'IntentOption',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'IntentOption' => 'IntentOption'
     ];
 
     /**
@@ -155,8 +155,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
      * @var string[]
      */
     protected static array $setters = [
-        'IntentOption' => 'setIntentOption',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'IntentOption' => 'setIntentOption'
     ];
 
     /**
@@ -165,8 +165,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
      * @var string[]
      */
     protected static array $getters = [
-        'IntentOption' => 'getIntentOption',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'IntentOption' => 'getIntentOption'
     ];
 
     /**
@@ -226,8 +226,8 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('IntentOption', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'LocationIntentCriterion');
     }
 
     /**
@@ -273,42 +273,6 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
 
 
     /**
-     * Gets IntentOption
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null
-     */
-    public function getIntentOption()
-    {
-        if (!isset($this->container['IntentOption']) || is_null($this->container['IntentOption'])) {
-            return null;
-        }
-        if ((is_object($this->container['IntentOption']) || is_string($this->container['IntentOption'])) && method_exists($this->container['IntentOption'], 'getValue')) {
-            return $this->container['IntentOption']->getValue();
-        }
-        return $this->container['IntentOption'];
-    }
-
-    /**
-     * Sets IntentOption
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null $IntentOption IntentOption
-     *
-     * @return self
-     */
-    public function setIntentOption($IntentOption)
-    {
-        if (is_null($IntentOption)) {
-            throw new \InvalidArgumentException('non-nullable IntentOption cannot be null');
-        }
-        if (!$IntentOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
-            $IntentOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($IntentOption);
-        }
-        $this->container['IntentOption'] = $IntentOption;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -341,6 +305,42 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets IntentOption
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null
+     */
+    public function getIntentOption()
+    {
+        if (!isset($this->container['IntentOption']) || is_null($this->container['IntentOption'])) {
+            return null;
+        }
+        if ((is_object($this->container['IntentOption']) || is_string($this->container['IntentOption'])) && method_exists($this->container['IntentOption'], 'getValue')) {
+            return $this->container['IntentOption']->getValue();
+        }
+        return $this->container['IntentOption'];
+    }
+
+    /**
+     * Sets IntentOption
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null $IntentOption IntentOption
+     *
+     * @return self
+     */
+    public function setIntentOption($IntentOption)
+    {
+        if (is_null($IntentOption)) {
+            throw new \InvalidArgumentException('non-nullable IntentOption cannot be null');
+        }
+        if (!$IntentOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
+            $IntentOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($IntentOption);
+        }
+        $this->container['IntentOption'] = $IntentOption;
 
         return $this;
     }

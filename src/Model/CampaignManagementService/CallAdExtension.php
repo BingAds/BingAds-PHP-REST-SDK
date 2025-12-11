@@ -33,17 +33,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PhoneNumber' => 'string',
-        'CountryCode' => 'string',
-        'IsCallOnly' => 'bool',
-        'IsCallTrackingEnabled' => 'bool',
-        'RequireTollFreeTrackingNumber' => 'bool',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'PhoneNumber' => 'string',
+        'CountryCode' => 'string',
+        'IsCallOnly' => 'bool',
+        'IsCallTrackingEnabled' => 'bool',
+        'RequireTollFreeTrackingNumber' => 'bool',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -55,17 +55,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PhoneNumber' => null,
-        'CountryCode' => null,
-        'IsCallOnly' => null,
-        'IsCallTrackingEnabled' => null,
-        'RequireTollFreeTrackingNumber' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'PhoneNumber' => null,
+        'CountryCode' => null,
+        'IsCallOnly' => null,
+        'IsCallTrackingEnabled' => null,
+        'RequireTollFreeTrackingNumber' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -75,17 +75,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PhoneNumber' => true,
-        'CountryCode' => true,
-        'IsCallOnly' => true,
-        'IsCallTrackingEnabled' => true,
-        'RequireTollFreeTrackingNumber' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'PhoneNumber' => true,
+        'CountryCode' => true,
+        'IsCallOnly' => true,
+        'IsCallTrackingEnabled' => true,
+        'RequireTollFreeTrackingNumber' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -175,17 +175,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PhoneNumber' => 'PhoneNumber',
-        'CountryCode' => 'CountryCode',
-        'IsCallOnly' => 'IsCallOnly',
-        'IsCallTrackingEnabled' => 'IsCallTrackingEnabled',
-        'RequireTollFreeTrackingNumber' => 'RequireTollFreeTrackingNumber',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'PhoneNumber' => 'PhoneNumber',
+        'CountryCode' => 'CountryCode',
+        'IsCallOnly' => 'IsCallOnly',
+        'IsCallTrackingEnabled' => 'IsCallTrackingEnabled',
+        'RequireTollFreeTrackingNumber' => 'RequireTollFreeTrackingNumber',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -195,17 +195,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'PhoneNumber' => 'setPhoneNumber',
-        'CountryCode' => 'setCountryCode',
-        'IsCallOnly' => 'setIsCallOnly',
-        'IsCallTrackingEnabled' => 'setIsCallTrackingEnabled',
-        'RequireTollFreeTrackingNumber' => 'setRequireTollFreeTrackingNumber',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'PhoneNumber' => 'setPhoneNumber',
+        'CountryCode' => 'setCountryCode',
+        'IsCallOnly' => 'setIsCallOnly',
+        'IsCallTrackingEnabled' => 'setIsCallTrackingEnabled',
+        'RequireTollFreeTrackingNumber' => 'setRequireTollFreeTrackingNumber',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -215,17 +215,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'PhoneNumber' => 'getPhoneNumber',
-        'CountryCode' => 'getCountryCode',
-        'IsCallOnly' => 'getIsCallOnly',
-        'IsCallTrackingEnabled' => 'getIsCallTrackingEnabled',
-        'RequireTollFreeTrackingNumber' => 'getRequireTollFreeTrackingNumber',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'PhoneNumber' => 'getPhoneNumber',
+        'CountryCode' => 'getCountryCode',
+        'IsCallOnly' => 'getIsCallOnly',
+        'IsCallTrackingEnabled' => 'getIsCallTrackingEnabled',
+        'RequireTollFreeTrackingNumber' => 'getRequireTollFreeTrackingNumber',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -286,17 +286,17 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('DevicePreference', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('Version', $data ?? [], null);
         $this->setIfExists('PhoneNumber', $data ?? [], null);
         $this->setIfExists('CountryCode', $data ?? [], null);
         $this->setIfExists('IsCallOnly', $data ?? [], null);
         $this->setIfExists('IsCallTrackingEnabled', $data ?? [], null);
         $this->setIfExists('RequireTollFreeTrackingNumber', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
-        $this->setIfExists('DevicePreference', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CallAdExtension');
-        $this->setIfExists('Version', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -341,191 +341,6 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets PhoneNumber
-     *
-     * @return string|null
-     */
-    public function getPhoneNumber()
-    {
-        if (!isset($this->container['PhoneNumber']) || is_null($this->container['PhoneNumber'])) {
-            return null;
-        }
-        return $this->container['PhoneNumber'];
-    }
-
-    /**
-     * Sets PhoneNumber
-     *
-     * @param string|null $PhoneNumber PhoneNumber
-     *
-     * @return self
-     */
-    public function setPhoneNumber($PhoneNumber)
-    {
-        if (is_null($PhoneNumber)) {
-            array_push($this->openAPINullablesSetToNull, 'PhoneNumber');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PhoneNumber', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PhoneNumber'] = $PhoneNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets CountryCode
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        if (!isset($this->container['CountryCode']) || is_null($this->container['CountryCode'])) {
-            return null;
-        }
-        return $this->container['CountryCode'];
-    }
-
-    /**
-     * Sets CountryCode
-     *
-     * @param string|null $CountryCode CountryCode
-     *
-     * @return self
-     */
-    public function setCountryCode($CountryCode)
-    {
-        if (is_null($CountryCode)) {
-            array_push($this->openAPINullablesSetToNull, 'CountryCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CountryCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CountryCode'] = $CountryCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets IsCallOnly
-     *
-     * @return bool|null
-     */
-    public function getIsCallOnly()
-    {
-        if (!isset($this->container['IsCallOnly']) || is_null($this->container['IsCallOnly'])) {
-            return null;
-        }
-        return $this->container['IsCallOnly'];
-    }
-
-    /**
-     * Sets IsCallOnly
-     *
-     * @param bool|null $IsCallOnly IsCallOnly
-     *
-     * @return self
-     */
-    public function setIsCallOnly($IsCallOnly)
-    {
-        if (is_null($IsCallOnly)) {
-            array_push($this->openAPINullablesSetToNull, 'IsCallOnly');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsCallOnly', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IsCallOnly'] = $IsCallOnly;
-
-        return $this;
-    }
-
-    /**
-     * Gets IsCallTrackingEnabled
-     *
-     * @return bool|null
-     */
-    public function getIsCallTrackingEnabled()
-    {
-        if (!isset($this->container['IsCallTrackingEnabled']) || is_null($this->container['IsCallTrackingEnabled'])) {
-            return null;
-        }
-        return $this->container['IsCallTrackingEnabled'];
-    }
-
-    /**
-     * Sets IsCallTrackingEnabled
-     *
-     * @param bool|null $IsCallTrackingEnabled IsCallTrackingEnabled
-     *
-     * @return self
-     */
-    public function setIsCallTrackingEnabled($IsCallTrackingEnabled)
-    {
-        if (is_null($IsCallTrackingEnabled)) {
-            array_push($this->openAPINullablesSetToNull, 'IsCallTrackingEnabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsCallTrackingEnabled', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IsCallTrackingEnabled'] = $IsCallTrackingEnabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets RequireTollFreeTrackingNumber
-     *
-     * @return bool|null
-     */
-    public function getRequireTollFreeTrackingNumber()
-    {
-        if (!isset($this->container['RequireTollFreeTrackingNumber']) || is_null($this->container['RequireTollFreeTrackingNumber'])) {
-            return null;
-        }
-        return $this->container['RequireTollFreeTrackingNumber'];
-    }
-
-    /**
-     * Sets RequireTollFreeTrackingNumber
-     *
-     * @param bool|null $RequireTollFreeTrackingNumber RequireTollFreeTrackingNumber
-     *
-     * @return self
-     */
-    public function setRequireTollFreeTrackingNumber($RequireTollFreeTrackingNumber)
-    {
-        if (is_null($RequireTollFreeTrackingNumber)) {
-            array_push($this->openAPINullablesSetToNull, 'RequireTollFreeTrackingNumber');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('RequireTollFreeTrackingNumber', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['RequireTollFreeTrackingNumber'] = $RequireTollFreeTrackingNumber;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -744,6 +559,191 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets PhoneNumber
+     *
+     * @return string|null
+     */
+    public function getPhoneNumber()
+    {
+        if (!isset($this->container['PhoneNumber']) || is_null($this->container['PhoneNumber'])) {
+            return null;
+        }
+        return $this->container['PhoneNumber'];
+    }
+
+    /**
+     * Sets PhoneNumber
+     *
+     * @param string|null $PhoneNumber PhoneNumber
+     *
+     * @return self
+     */
+    public function setPhoneNumber($PhoneNumber)
+    {
+        if (is_null($PhoneNumber)) {
+            array_push($this->openAPINullablesSetToNull, 'PhoneNumber');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PhoneNumber', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PhoneNumber'] = $PhoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets CountryCode
+     *
+     * @return string|null
+     */
+    public function getCountryCode()
+    {
+        if (!isset($this->container['CountryCode']) || is_null($this->container['CountryCode'])) {
+            return null;
+        }
+        return $this->container['CountryCode'];
+    }
+
+    /**
+     * Sets CountryCode
+     *
+     * @param string|null $CountryCode CountryCode
+     *
+     * @return self
+     */
+    public function setCountryCode($CountryCode)
+    {
+        if (is_null($CountryCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CountryCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CountryCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CountryCode'] = $CountryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsCallOnly
+     *
+     * @return bool|null
+     */
+    public function getIsCallOnly()
+    {
+        if (!isset($this->container['IsCallOnly']) || is_null($this->container['IsCallOnly'])) {
+            return null;
+        }
+        return $this->container['IsCallOnly'];
+    }
+
+    /**
+     * Sets IsCallOnly
+     *
+     * @param bool|null $IsCallOnly IsCallOnly
+     *
+     * @return self
+     */
+    public function setIsCallOnly($IsCallOnly)
+    {
+        if (is_null($IsCallOnly)) {
+            array_push($this->openAPINullablesSetToNull, 'IsCallOnly');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsCallOnly', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsCallOnly'] = $IsCallOnly;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsCallTrackingEnabled
+     *
+     * @return bool|null
+     */
+    public function getIsCallTrackingEnabled()
+    {
+        if (!isset($this->container['IsCallTrackingEnabled']) || is_null($this->container['IsCallTrackingEnabled'])) {
+            return null;
+        }
+        return $this->container['IsCallTrackingEnabled'];
+    }
+
+    /**
+     * Sets IsCallTrackingEnabled
+     *
+     * @param bool|null $IsCallTrackingEnabled IsCallTrackingEnabled
+     *
+     * @return self
+     */
+    public function setIsCallTrackingEnabled($IsCallTrackingEnabled)
+    {
+        if (is_null($IsCallTrackingEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'IsCallTrackingEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsCallTrackingEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsCallTrackingEnabled'] = $IsCallTrackingEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets RequireTollFreeTrackingNumber
+     *
+     * @return bool|null
+     */
+    public function getRequireTollFreeTrackingNumber()
+    {
+        if (!isset($this->container['RequireTollFreeTrackingNumber']) || is_null($this->container['RequireTollFreeTrackingNumber'])) {
+            return null;
+        }
+        return $this->container['RequireTollFreeTrackingNumber'];
+    }
+
+    /**
+     * Sets RequireTollFreeTrackingNumber
+     *
+     * @param bool|null $RequireTollFreeTrackingNumber RequireTollFreeTrackingNumber
+     *
+     * @return self
+     */
+    public function setRequireTollFreeTrackingNumber($RequireTollFreeTrackingNumber)
+    {
+        if (is_null($RequireTollFreeTrackingNumber)) {
+            array_push($this->openAPINullablesSetToNull, 'RequireTollFreeTrackingNumber');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('RequireTollFreeTrackingNumber', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['RequireTollFreeTrackingNumber'] = $RequireTollFreeTrackingNumber;
 
         return $this;
     }

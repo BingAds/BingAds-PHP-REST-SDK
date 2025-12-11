@@ -33,12 +33,10 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'UrlExpression' => 'string',
-        'UrlOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
         'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -50,7 +48,9 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool'
+        'IsAutoGoal' => 'bool',
+        'UrlExpression' => 'string',
+        'UrlOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator'
     ];
 
     /**
@@ -61,8 +61,6 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'UrlExpression' => null,
-        'UrlOperator' => null,
         'Id' => 'int64',
         'Name' => null,
         'Status' => null,
@@ -78,7 +76,9 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null
+        'IsAutoGoal' => null,
+        'UrlExpression' => null,
+        'UrlOperator' => null
     ];
 
     /**
@@ -87,12 +87,10 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'UrlExpression' => true,
-        'UrlOperator' => false,
         'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => true,
+        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -104,7 +102,9 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true
+        'IsAutoGoal' => true,
+        'UrlExpression' => true,
+        'UrlOperator' => false
     ];
 
     /**
@@ -193,8 +193,6 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
-        'UrlExpression' => 'UrlExpression',
-        'UrlOperator' => 'UrlOperator',
         'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
@@ -210,7 +208,9 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal'
+        'IsAutoGoal' => 'IsAutoGoal',
+        'UrlExpression' => 'UrlExpression',
+        'UrlOperator' => 'UrlOperator'
     ];
 
     /**
@@ -219,8 +219,6 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
-        'UrlExpression' => 'setUrlExpression',
-        'UrlOperator' => 'setUrlOperator',
         'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
@@ -236,7 +234,9 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal'
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'UrlExpression' => 'setUrlExpression',
+        'UrlOperator' => 'setUrlOperator'
     ];
 
     /**
@@ -245,8 +245,6 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
-        'UrlExpression' => 'getUrlExpression',
-        'UrlOperator' => 'getUrlOperator',
         'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
@@ -262,7 +260,9 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal'
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'UrlExpression' => 'getUrlExpression',
+        'UrlOperator' => 'getUrlOperator'
     ];
 
     /**
@@ -322,12 +322,10 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('UrlExpression', $data ?? [], null);
-        $this->setIfExists('UrlOperator', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Url');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -340,6 +338,8 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('UrlExpression', $data ?? [], null);
+        $this->setIfExists('UrlOperator', $data ?? [], null);
     }
 
     /**
@@ -383,79 +383,6 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets UrlExpression
-     *
-     * @return string|null
-     */
-    public function getUrlExpression()
-    {
-        if (!isset($this->container['UrlExpression']) || is_null($this->container['UrlExpression'])) {
-            return null;
-        }
-        return $this->container['UrlExpression'];
-    }
-
-    /**
-     * Sets UrlExpression
-     *
-     * @param string|null $UrlExpression UrlExpression
-     *
-     * @return self
-     */
-    public function setUrlExpression($UrlExpression)
-    {
-        if (is_null($UrlExpression)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlExpression');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlExpression', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UrlExpression'] = $UrlExpression;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
-     */
-    public function getUrlOperator()
-    {
-        if (!isset($this->container['UrlOperator']) || is_null($this->container['UrlOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['UrlOperator']) || is_string($this->container['UrlOperator'])) && method_exists($this->container['UrlOperator'], 'getValue')) {
-            return $this->container['UrlOperator']->getValue();
-        }
-        return $this->container['UrlOperator'];
-    }
-
-    /**
-     * Sets UrlOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $UrlOperator UrlOperator
-     *
-     * @return self
-     */
-    public function setUrlOperator($UrlOperator)
-    {
-        if (is_null($UrlOperator)) {
-            throw new \InvalidArgumentException('non-nullable UrlOperator cannot be null');
-        }
-        if (!$UrlOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
-            $UrlOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($UrlOperator);
-        }
-        $this->container['UrlOperator'] = $UrlOperator;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -570,12 +497,15 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -583,21 +513,17 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1039,6 +965,79 @@ class UrlGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \Js
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlExpression
+     *
+     * @return string|null
+     */
+    public function getUrlExpression()
+    {
+        if (!isset($this->container['UrlExpression']) || is_null($this->container['UrlExpression'])) {
+            return null;
+        }
+        return $this->container['UrlExpression'];
+    }
+
+    /**
+     * Sets UrlExpression
+     *
+     * @param string|null $UrlExpression UrlExpression
+     *
+     * @return self
+     */
+    public function setUrlExpression($UrlExpression)
+    {
+        if (is_null($UrlExpression)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlExpression');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UrlExpression', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UrlExpression'] = $UrlExpression;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
+     */
+    public function getUrlOperator()
+    {
+        if (!isset($this->container['UrlOperator']) || is_null($this->container['UrlOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['UrlOperator']) || is_string($this->container['UrlOperator'])) && method_exists($this->container['UrlOperator'], 'getValue')) {
+            return $this->container['UrlOperator']->getValue();
+        }
+        return $this->container['UrlOperator'];
+    }
+
+    /**
+     * Sets UrlOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $UrlOperator UrlOperator
+     *
+     * @return self
+     */
+    public function setUrlOperator($UrlOperator)
+    {
+        if (is_null($UrlOperator)) {
+            throw new \InvalidArgumentException('non-nullable UrlOperator cannot be null');
+        }
+        if (!$UrlOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+            $UrlOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($UrlOperator);
+        }
+        $this->container['UrlOperator'] = $UrlOperator;
 
         return $this;
     }

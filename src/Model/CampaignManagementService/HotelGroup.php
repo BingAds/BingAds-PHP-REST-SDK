@@ -33,10 +33,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'Listing' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListing',
         'ListingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType',
-        'ParentCriterionId' => 'string',
-        'Type' => 'string'
+        'ParentCriterionId' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'Listing' => null,
         'ListingType' => null,
-        'ParentCriterionId' => 'int64',
-        'Type' => null
+        'ParentCriterionId' => 'int64'
     ];
 
     /**
@@ -59,10 +59,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'Listing' => true,
         'ListingType' => false,
-        'ParentCriterionId' => true,
-        'Type' => true
+        'ParentCriterionId' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'Listing' => 'Listing',
         'ListingType' => 'ListingType',
-        'ParentCriterionId' => 'ParentCriterionId',
-        'Type' => 'Type'
+        'ParentCriterionId' => 'ParentCriterionId'
     ];
 
     /**
@@ -163,10 +163,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'Listing' => 'setListing',
         'ListingType' => 'setListingType',
-        'ParentCriterionId' => 'setParentCriterionId',
-        'Type' => 'setType'
+        'ParentCriterionId' => 'setParentCriterionId'
     ];
 
     /**
@@ -175,10 +175,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'Listing' => 'getListing',
         'ListingType' => 'getListingType',
-        'ParentCriterionId' => 'getParentCriterionId',
-        'Type' => 'getType'
+        'ParentCriterionId' => 'getParentCriterionId'
     ];
 
     /**
@@ -238,10 +238,10 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Listing', $data ?? [], null);
         $this->setIfExists('ListingType', $data ?? [], null);
         $this->setIfExists('ParentCriterionId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'HotelGroup');
     }
 
     /**
@@ -285,6 +285,43 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets Listing
@@ -392,43 +429,6 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['ParentCriterionId'] = $ParentCriterionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

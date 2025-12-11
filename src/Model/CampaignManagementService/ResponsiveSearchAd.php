@@ -33,13 +33,8 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Headlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'Descriptions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'Domain' => 'string',
-        'Path1' => 'string',
-        'Path2' => 'string',
         'Id' => 'string',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'DevicePreference' => 'string',
@@ -50,7 +45,12 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         'FinalUrls' => 'string[]',
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Headlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'Descriptions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'Domain' => 'string',
+        'Path1' => 'string',
+        'Path2' => 'string'
     ];
 
     /**
@@ -61,11 +61,6 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Headlines' => null,
-        'Descriptions' => null,
-        'Domain' => null,
-        'Path1' => null,
-        'Path2' => null,
         'Id' => 'int64',
         'Type' => null,
         'Status' => null,
@@ -78,7 +73,12 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         'FinalUrls' => null,
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'Headlines' => null,
+        'Descriptions' => null,
+        'Domain' => null,
+        'Path1' => null,
+        'Path2' => null
     ];
 
     /**
@@ -87,13 +87,8 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Headlines' => true,
-        'Descriptions' => true,
-        'Domain' => true,
-        'Path1' => true,
-        'Path2' => true,
         'Id' => true,
-        'Type' => true,
+        'Type' => false,
         'Status' => false,
         'EditorialStatus' => false,
         'DevicePreference' => true,
@@ -104,7 +99,12 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         'FinalUrls' => true,
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'Headlines' => true,
+        'Descriptions' => true,
+        'Domain' => true,
+        'Path1' => true,
+        'Path2' => true
     ];
 
     /**
@@ -193,11 +193,6 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Headlines' => 'Headlines',
-        'Descriptions' => 'Descriptions',
-        'Domain' => 'Domain',
-        'Path1' => 'Path1',
-        'Path2' => 'Path2',
         'Id' => 'Id',
         'Type' => 'Type',
         'Status' => 'Status',
@@ -210,7 +205,12 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         'FinalUrls' => 'FinalUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Headlines' => 'Headlines',
+        'Descriptions' => 'Descriptions',
+        'Domain' => 'Domain',
+        'Path1' => 'Path1',
+        'Path2' => 'Path2'
     ];
 
     /**
@@ -219,11 +219,6 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'Headlines' => 'setHeadlines',
-        'Descriptions' => 'setDescriptions',
-        'Domain' => 'setDomain',
-        'Path1' => 'setPath1',
-        'Path2' => 'setPath2',
         'Id' => 'setId',
         'Type' => 'setType',
         'Status' => 'setStatus',
@@ -236,7 +231,12 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         'FinalUrls' => 'setFinalUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Headlines' => 'setHeadlines',
+        'Descriptions' => 'setDescriptions',
+        'Domain' => 'setDomain',
+        'Path1' => 'setPath1',
+        'Path2' => 'setPath2'
     ];
 
     /**
@@ -245,11 +245,6 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'Headlines' => 'getHeadlines',
-        'Descriptions' => 'getDescriptions',
-        'Domain' => 'getDomain',
-        'Path1' => 'getPath1',
-        'Path2' => 'getPath2',
         'Id' => 'getId',
         'Type' => 'getType',
         'Status' => 'getStatus',
@@ -262,7 +257,12 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         'FinalUrls' => 'getFinalUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Headlines' => 'getHeadlines',
+        'Descriptions' => 'getDescriptions',
+        'Domain' => 'getDomain',
+        'Path1' => 'getPath1',
+        'Path2' => 'getPath2'
     ];
 
     /**
@@ -322,13 +322,8 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Headlines', $data ?? [], null);
-        $this->setIfExists('Descriptions', $data ?? [], null);
-        $this->setIfExists('Domain', $data ?? [], null);
-        $this->setIfExists('Path1', $data ?? [], null);
-        $this->setIfExists('Path2', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ResponsiveSearch');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
@@ -340,6 +335,11 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Headlines', $data ?? [], null);
+        $this->setIfExists('Descriptions', $data ?? [], null);
+        $this->setIfExists('Domain', $data ?? [], null);
+        $this->setIfExists('Path1', $data ?? [], null);
+        $this->setIfExists('Path2', $data ?? [], null);
     }
 
     /**
@@ -385,191 +385,6 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets Headlines
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getHeadlines()
-    {
-        if (!isset($this->container['Headlines']) || is_null($this->container['Headlines'])) {
-            return null;
-        }
-        return $this->container['Headlines'];
-    }
-
-    /**
-     * Sets Headlines
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Headlines Headlines
-     *
-     * @return self
-     */
-    public function setHeadlines($Headlines)
-    {
-        if (is_null($Headlines)) {
-            array_push($this->openAPINullablesSetToNull, 'Headlines');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Headlines', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Headlines'] = $Headlines;
-
-        return $this;
-    }
-
-    /**
-     * Gets Descriptions
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getDescriptions()
-    {
-        if (!isset($this->container['Descriptions']) || is_null($this->container['Descriptions'])) {
-            return null;
-        }
-        return $this->container['Descriptions'];
-    }
-
-    /**
-     * Sets Descriptions
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Descriptions Descriptions
-     *
-     * @return self
-     */
-    public function setDescriptions($Descriptions)
-    {
-        if (is_null($Descriptions)) {
-            array_push($this->openAPINullablesSetToNull, 'Descriptions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Descriptions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Descriptions'] = $Descriptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets Domain
-     *
-     * @return string|null
-     */
-    public function getDomain()
-    {
-        if (!isset($this->container['Domain']) || is_null($this->container['Domain'])) {
-            return null;
-        }
-        return $this->container['Domain'];
-    }
-
-    /**
-     * Sets Domain
-     *
-     * @param string|null $Domain Domain
-     *
-     * @return self
-     */
-    public function setDomain($Domain)
-    {
-        if (is_null($Domain)) {
-            array_push($this->openAPINullablesSetToNull, 'Domain');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Domain', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Domain'] = $Domain;
-
-        return $this;
-    }
-
-    /**
-     * Gets Path1
-     *
-     * @return string|null
-     */
-    public function getPath1()
-    {
-        if (!isset($this->container['Path1']) || is_null($this->container['Path1'])) {
-            return null;
-        }
-        return $this->container['Path1'];
-    }
-
-    /**
-     * Sets Path1
-     *
-     * @param string|null $Path1 Path1
-     *
-     * @return self
-     */
-    public function setPath1($Path1)
-    {
-        if (is_null($Path1)) {
-            array_push($this->openAPINullablesSetToNull, 'Path1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Path1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Path1'] = $Path1;
-
-        return $this;
-    }
-
-    /**
-     * Gets Path2
-     *
-     * @return string|null
-     */
-    public function getPath2()
-    {
-        if (!isset($this->container['Path2']) || is_null($this->container['Path2'])) {
-            return null;
-        }
-        return $this->container['Path2'];
-    }
-
-    /**
-     * Sets Path2
-     *
-     * @param string|null $Path2 Path2
-     *
-     * @return self
-     */
-    public function setPath2($Path2)
-    {
-        if (is_null($Path2)) {
-            array_push($this->openAPINullablesSetToNull, 'Path2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Path2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Path2'] = $Path2;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -609,12 +424,15 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -622,21 +440,17 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1044,6 +858,191 @@ class ResponsiveSearchAd extends Ad implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Headlines
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getHeadlines()
+    {
+        if (!isset($this->container['Headlines']) || is_null($this->container['Headlines'])) {
+            return null;
+        }
+        return $this->container['Headlines'];
+    }
+
+    /**
+     * Sets Headlines
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Headlines Headlines
+     *
+     * @return self
+     */
+    public function setHeadlines($Headlines)
+    {
+        if (is_null($Headlines)) {
+            array_push($this->openAPINullablesSetToNull, 'Headlines');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Headlines', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Headlines'] = $Headlines;
+
+        return $this;
+    }
+
+    /**
+     * Gets Descriptions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getDescriptions()
+    {
+        if (!isset($this->container['Descriptions']) || is_null($this->container['Descriptions'])) {
+            return null;
+        }
+        return $this->container['Descriptions'];
+    }
+
+    /**
+     * Sets Descriptions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Descriptions Descriptions
+     *
+     * @return self
+     */
+    public function setDescriptions($Descriptions)
+    {
+        if (is_null($Descriptions)) {
+            array_push($this->openAPINullablesSetToNull, 'Descriptions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Descriptions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Descriptions'] = $Descriptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets Domain
+     *
+     * @return string|null
+     */
+    public function getDomain()
+    {
+        if (!isset($this->container['Domain']) || is_null($this->container['Domain'])) {
+            return null;
+        }
+        return $this->container['Domain'];
+    }
+
+    /**
+     * Sets Domain
+     *
+     * @param string|null $Domain Domain
+     *
+     * @return self
+     */
+    public function setDomain($Domain)
+    {
+        if (is_null($Domain)) {
+            array_push($this->openAPINullablesSetToNull, 'Domain');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Domain', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Domain'] = $Domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets Path1
+     *
+     * @return string|null
+     */
+    public function getPath1()
+    {
+        if (!isset($this->container['Path1']) || is_null($this->container['Path1'])) {
+            return null;
+        }
+        return $this->container['Path1'];
+    }
+
+    /**
+     * Sets Path1
+     *
+     * @param string|null $Path1 Path1
+     *
+     * @return self
+     */
+    public function setPath1($Path1)
+    {
+        if (is_null($Path1)) {
+            array_push($this->openAPINullablesSetToNull, 'Path1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Path1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Path1'] = $Path1;
+
+        return $this;
+    }
+
+    /**
+     * Gets Path2
+     *
+     * @return string|null
+     */
+    public function getPath2()
+    {
+        if (!isset($this->container['Path2']) || is_null($this->container['Path2'])) {
+            return null;
+        }
+        return $this->container['Path2'];
+    }
+
+    /**
+     * Sets Path2
+     *
+     * @param string|null $Path2 Path2
+     *
+     * @return self
+     */
+    public function setPath2($Path2)
+    {
+        if (is_null($Path2)) {
+            array_push($this->openAPINullablesSetToNull, 'Path2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Path2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Path2'] = $Path2;
 
         return $this;
     }

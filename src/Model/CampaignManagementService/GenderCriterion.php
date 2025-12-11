@@ -33,8 +33,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'GenderType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType',
-        'Type' => 'string'
+        'Type' => 'string',
+        'GenderType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'GenderType' => null,
-        'Type' => null
+        'Type' => null,
+        'GenderType' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'GenderType' => false,
-        'Type' => true
+        'Type' => true,
+        'GenderType' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'GenderType' => 'GenderType',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'GenderType' => 'GenderType'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'GenderType' => 'setGenderType',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'GenderType' => 'setGenderType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'GenderType' => 'getGenderType',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'GenderType' => 'getGenderType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('GenderType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'GenderCriterion');
     }
 
     /**
@@ -273,42 +273,6 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets GenderType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType|mixed|null
-     */
-    public function getGenderType()
-    {
-        if (!isset($this->container['GenderType']) || is_null($this->container['GenderType'])) {
-            return null;
-        }
-        if ((is_object($this->container['GenderType']) || is_string($this->container['GenderType'])) && method_exists($this->container['GenderType'], 'getValue')) {
-            return $this->container['GenderType']->getValue();
-        }
-        return $this->container['GenderType'];
-    }
-
-    /**
-     * Sets GenderType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType|mixed|null $GenderType GenderType
-     *
-     * @return self
-     */
-    public function setGenderType($GenderType)
-    {
-        if (is_null($GenderType)) {
-            throw new \InvalidArgumentException('non-nullable GenderType cannot be null');
-        }
-        if (!$GenderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType) {
-            $GenderType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType($GenderType);
-        }
-        $this->container['GenderType'] = $GenderType;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -341,6 +305,42 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets GenderType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType|mixed|null
+     */
+    public function getGenderType()
+    {
+        if (!isset($this->container['GenderType']) || is_null($this->container['GenderType'])) {
+            return null;
+        }
+        if ((is_object($this->container['GenderType']) || is_string($this->container['GenderType'])) && method_exists($this->container['GenderType'], 'getValue')) {
+            return $this->container['GenderType']->getValue();
+        }
+        return $this->container['GenderType'];
+    }
+
+    /**
+     * Sets GenderType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType|mixed|null $GenderType GenderType
+     *
+     * @return self
+     */
+    public function setGenderType($GenderType)
+    {
+        if (is_null($GenderType)) {
+            throw new \InvalidArgumentException('non-nullable GenderType cannot be null');
+        }
+        if (!$GenderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType) {
+            $GenderType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType($GenderType);
+        }
+        $this->container['GenderType'] = $GenderType;
 
         return $this;
     }

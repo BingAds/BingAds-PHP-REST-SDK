@@ -33,16 +33,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'SourceUrl' => 'string',
-        'Filter' => 'string',
-        'Priority' => 'int',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'Name' => 'string',
+        'SourceUrl' => 'string',
+        'Filter' => 'string',
+        'Priority' => 'int',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -54,16 +54,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'SourceUrl' => null,
-        'Filter' => null,
-        'Priority' => 'int32',
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'Name' => null,
+        'SourceUrl' => null,
+        'Filter' => null,
+        'Priority' => 'int32',
         'ForwardCompatibilityMap' => null
     ];
 
@@ -73,16 +73,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'SourceUrl' => true,
-        'Filter' => true,
-        'Priority' => false,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'Name' => true,
+        'SourceUrl' => true,
+        'Filter' => true,
+        'Priority' => false,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -172,16 +172,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'SourceUrl' => 'SourceUrl',
-        'Filter' => 'Filter',
-        'Priority' => 'Priority',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'Name' => 'Name',
+        'SourceUrl' => 'SourceUrl',
+        'Filter' => 'Filter',
+        'Priority' => 'Priority',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -191,16 +191,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'SourceUrl' => 'setSourceUrl',
-        'Filter' => 'setFilter',
-        'Priority' => 'setPriority',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'Name' => 'setName',
+        'SourceUrl' => 'setSourceUrl',
+        'Filter' => 'setFilter',
+        'Priority' => 'setPriority',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -210,16 +210,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'SourceUrl' => 'getSourceUrl',
-        'Filter' => 'getFilter',
-        'Priority' => 'getPriority',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'Name' => 'getName',
+        'SourceUrl' => 'getSourceUrl',
+        'Filter' => 'getFilter',
+        'Priority' => 'getPriority',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -280,16 +280,16 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('SourceUrl', $data ?? [], null);
-        $this->setIfExists('Filter', $data ?? [], null);
-        $this->setIfExists('Priority', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'NewsAdExtension');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('SourceUrl', $data ?? [], null);
+        $this->setIfExists('Filter', $data ?? [], null);
+        $this->setIfExists('Priority', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -334,147 +334,6 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets SourceUrl
-     *
-     * @return string|null
-     */
-    public function getSourceUrl()
-    {
-        if (!isset($this->container['SourceUrl']) || is_null($this->container['SourceUrl'])) {
-            return null;
-        }
-        return $this->container['SourceUrl'];
-    }
-
-    /**
-     * Sets SourceUrl
-     *
-     * @param string|null $SourceUrl SourceUrl
-     *
-     * @return self
-     */
-    public function setSourceUrl($SourceUrl)
-    {
-        if (is_null($SourceUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'SourceUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SourceUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SourceUrl'] = $SourceUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets Filter
-     *
-     * @return string|null
-     */
-    public function getFilter()
-    {
-        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
-            return null;
-        }
-        return $this->container['Filter'];
-    }
-
-    /**
-     * Sets Filter
-     *
-     * @param string|null $Filter Filter
-     *
-     * @return self
-     */
-    public function setFilter($Filter)
-    {
-        if (is_null($Filter)) {
-            array_push($this->openAPINullablesSetToNull, 'Filter');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Filter', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Filter'] = $Filter;
-
-        return $this;
-    }
-
-    /**
-     * Gets Priority
-     *
-     * @return int|null
-     */
-    public function getPriority()
-    {
-        if (!isset($this->container['Priority']) || is_null($this->container['Priority'])) {
-            return null;
-        }
-        return $this->container['Priority'];
-    }
-
-    /**
-     * Sets Priority
-     *
-     * @param int|null $Priority Priority
-     *
-     * @return self
-     */
-    public function setPriority($Priority)
-    {
-        if (is_null($Priority)) {
-            throw new \InvalidArgumentException('non-nullable Priority cannot be null');
-        }
-        $this->container['Priority'] = $Priority;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -693,6 +552,147 @@ class NewsAdExtension extends AdExtension implements ModelInterface, ArrayAccess
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets SourceUrl
+     *
+     * @return string|null
+     */
+    public function getSourceUrl()
+    {
+        if (!isset($this->container['SourceUrl']) || is_null($this->container['SourceUrl'])) {
+            return null;
+        }
+        return $this->container['SourceUrl'];
+    }
+
+    /**
+     * Sets SourceUrl
+     *
+     * @param string|null $SourceUrl SourceUrl
+     *
+     * @return self
+     */
+    public function setSourceUrl($SourceUrl)
+    {
+        if (is_null($SourceUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'SourceUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SourceUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SourceUrl'] = $SourceUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Filter
+     *
+     * @return string|null
+     */
+    public function getFilter()
+    {
+        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
+            return null;
+        }
+        return $this->container['Filter'];
+    }
+
+    /**
+     * Sets Filter
+     *
+     * @param string|null $Filter Filter
+     *
+     * @return self
+     */
+    public function setFilter($Filter)
+    {
+        if (is_null($Filter)) {
+            array_push($this->openAPINullablesSetToNull, 'Filter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Filter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Filter'] = $Filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets Priority
+     *
+     * @return int|null
+     */
+    public function getPriority()
+    {
+        if (!isset($this->container['Priority']) || is_null($this->container['Priority'])) {
+            return null;
+        }
+        return $this->container['Priority'];
+    }
+
+    /**
+     * Sets Priority
+     *
+     * @param int|null $Priority Priority
+     *
+     * @return self
+     */
+    public function setPriority($Priority)
+    {
+        if (is_null($Priority)) {
+            throw new \InvalidArgumentException('non-nullable Priority cannot be null');
+        }
+        $this->container['Priority'] = $Priority;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Profiles' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileInfo[]',
-        'Type' => 'string'
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType',
+        'Profiles' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileInfo[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Profiles' => null,
-        'Type' => null
+        'Type' => null,
+        'Profiles' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Profiles' => true,
-        'Type' => true
+        'Type' => false,
+        'Profiles' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Profiles' => 'Profiles',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Profiles' => 'Profiles'
     ];
 
     /**
@@ -155,8 +155,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
      * @var string[]
      */
     protected static array $setters = [
-        'Profiles' => 'setProfiles',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Profiles' => 'setProfiles'
     ];
 
     /**
@@ -165,8 +165,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
      * @var string[]
      */
     protected static array $getters = [
-        'Profiles' => 'getProfiles',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Profiles' => 'getProfiles'
     ];
 
     /**
@@ -226,8 +226,8 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Profiles', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Profile');
     }
 
     /**
@@ -273,6 +273,42 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
 
 
     /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
      * Gets Profiles
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileInfo[]|null
@@ -305,43 +341,6 @@ class ProfileDimension extends AudienceGroupDimension implements ModelInterface,
             }
         }
         $this->container['Profiles'] = $Profiles;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

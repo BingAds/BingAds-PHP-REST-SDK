@@ -33,8 +33,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AgeRanges' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange[]',
-        'Type' => 'string'
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType',
+        'AgeRanges' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AgeRanges' => null,
-        'Type' => null
+        'Type' => null,
+        'AgeRanges' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AgeRanges' => true,
-        'Type' => true
+        'Type' => false,
+        'AgeRanges' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AgeRanges' => 'AgeRanges',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'AgeRanges' => 'AgeRanges'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
      * @var string[]
      */
     protected static array $setters = [
-        'AgeRanges' => 'setAgeRanges',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'AgeRanges' => 'setAgeRanges'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
      * @var string[]
      */
     protected static array $getters = [
-        'AgeRanges' => 'getAgeRanges',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'AgeRanges' => 'getAgeRanges'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AgeRanges', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Age');
     }
 
     /**
@@ -271,6 +271,42 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets AgeRanges
@@ -324,43 +360,6 @@ class AgeDimension extends AudienceGroupDimension implements ModelInterface, Arr
             }
         }
         $this->container['AgeRanges'] = $AgeRanges;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

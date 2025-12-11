@@ -18,17 +18,7 @@ use Microsoft\MsAds\Rest\ModelInterface;
 
 class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = 'Type';
-
-    /**
-     * Associative array for mapping discriminator values to model class names
-     *
-     * @var string[]
-     */
-    public const MAPPINGS = [
-        'RSARecommendationInfo' => 'Microsoft\MsAds\Rest\Model\AdInsightService\RSARecommendationInfo',
-        'RecommendationInfo' => 'Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationInfoBase',
-    ];
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -43,7 +33,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdId' => 'string',
         'RecommendationId' => 'string',
         'RecommendationHash' => 'string',
         'Type' => 'string'
@@ -57,7 +46,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdId' => 'int64',
         'RecommendationId' => null,
         'RecommendationHash' => null,
         'Type' => null
@@ -69,7 +57,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdId' => true,
         'RecommendationId' => true,
         'RecommendationHash' => true,
         'Type' => true
@@ -161,7 +148,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdId' => 'AdId',
         'RecommendationId' => 'RecommendationId',
         'RecommendationHash' => 'RecommendationHash',
         'Type' => 'Type'
@@ -173,7 +159,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $setters = [
-        'AdId' => 'setAdId',
         'RecommendationId' => 'setRecommendationId',
         'RecommendationHash' => 'setRecommendationHash',
         'Type' => 'setType'
@@ -185,7 +170,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $getters = [
-        'AdId' => 'getAdId',
         'RecommendationId' => 'getRecommendationId',
         'RecommendationHash' => 'getRecommendationHash',
         'Type' => 'getType'
@@ -248,13 +232,9 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdId', $data ?? [], null);
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'RecommendationInfo');
-
-        // Initialize discriminator property with the model name.
-        $this->container['Type'] = static::$openAPIModelName;
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -298,43 +278,6 @@ class RecommendationInfo implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets AdId
-     *
-     * @return string|null
-     */
-    public function getAdId()
-    {
-        if (!isset($this->container['AdId']) || is_null($this->container['AdId'])) {
-            return null;
-        }
-        return $this->container['AdId'];
-    }
-
-    /**
-     * Sets AdId
-     *
-     * @param string|null $AdId AdId
-     *
-     * @return self
-     */
-    public function setAdId($AdId)
-    {
-        if (is_null($AdId)) {
-            array_push($this->openAPINullablesSetToNull, 'AdId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AdId'] = $AdId;
-
-        return $this;
-    }
 
     /**
      * Gets RecommendationId

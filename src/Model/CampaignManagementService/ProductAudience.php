@@ -33,20 +33,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TagId' => 'string',
-        'ProductAudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType',
         'Id' => 'string',
         'Name' => 'string',
         'Description' => 'string',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'ParentId' => 'string',
         'MembershipDuration' => 'int',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
         'SupportedCampaignTypes' => 'string[]',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'TagId' => 'string',
+        'ProductAudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType'
     ];
 
     /**
@@ -57,8 +57,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TagId' => 'int64',
-        'ProductAudienceType' => null,
         'Id' => 'int64',
         'Name' => null,
         'Description' => null,
@@ -70,7 +68,9 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
         'AudienceNetworkSize' => 'int64',
         'SupportedCampaignTypes' => null,
         'CustomerShare' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'TagId' => 'int64',
+        'ProductAudienceType' => null
     ];
 
     /**
@@ -79,20 +79,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TagId' => true,
-        'ProductAudienceType' => false,
         'Id' => true,
         'Name' => true,
         'Description' => true,
         'Scope' => false,
         'ParentId' => true,
         'MembershipDuration' => true,
-        'Type' => true,
+        'Type' => false,
         'SearchSize' => true,
         'AudienceNetworkSize' => true,
         'SupportedCampaignTypes' => true,
         'CustomerShare' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'TagId' => true,
+        'ProductAudienceType' => false
     ];
 
     /**
@@ -181,8 +181,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TagId' => 'TagId',
-        'ProductAudienceType' => 'ProductAudienceType',
         'Id' => 'Id',
         'Name' => 'Name',
         'Description' => 'Description',
@@ -194,7 +192,9 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
         'AudienceNetworkSize' => 'AudienceNetworkSize',
         'SupportedCampaignTypes' => 'SupportedCampaignTypes',
         'CustomerShare' => 'CustomerShare',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'TagId' => 'TagId',
+        'ProductAudienceType' => 'ProductAudienceType'
     ];
 
     /**
@@ -203,8 +203,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'TagId' => 'setTagId',
-        'ProductAudienceType' => 'setProductAudienceType',
         'Id' => 'setId',
         'Name' => 'setName',
         'Description' => 'setDescription',
@@ -216,7 +214,9 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
         'AudienceNetworkSize' => 'setAudienceNetworkSize',
         'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
         'CustomerShare' => 'setCustomerShare',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'TagId' => 'setTagId',
+        'ProductAudienceType' => 'setProductAudienceType'
     ];
 
     /**
@@ -225,8 +225,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'TagId' => 'getTagId',
-        'ProductAudienceType' => 'getProductAudienceType',
         'Id' => 'getId',
         'Name' => 'getName',
         'Description' => 'getDescription',
@@ -238,7 +236,9 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
         'AudienceNetworkSize' => 'getAudienceNetworkSize',
         'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
         'CustomerShare' => 'getCustomerShare',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'TagId' => 'getTagId',
+        'ProductAudienceType' => 'getProductAudienceType'
     ];
 
     /**
@@ -298,20 +298,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TagId', $data ?? [], null);
-        $this->setIfExists('ProductAudienceType', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Product');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
         $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('TagId', $data ?? [], null);
+        $this->setIfExists('ProductAudienceType', $data ?? [], null);
     }
 
     /**
@@ -355,79 +355,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets TagId
-     *
-     * @return string|null
-     */
-    public function getTagId()
-    {
-        if (!isset($this->container['TagId']) || is_null($this->container['TagId'])) {
-            return null;
-        }
-        return $this->container['TagId'];
-    }
-
-    /**
-     * Sets TagId
-     *
-     * @param string|null $TagId TagId
-     *
-     * @return self
-     */
-    public function setTagId($TagId)
-    {
-        if (is_null($TagId)) {
-            array_push($this->openAPINullablesSetToNull, 'TagId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TagId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TagId'] = $TagId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ProductAudienceType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null
-     */
-    public function getProductAudienceType()
-    {
-        if (!isset($this->container['ProductAudienceType']) || is_null($this->container['ProductAudienceType'])) {
-            return null;
-        }
-        if ((is_object($this->container['ProductAudienceType']) || is_string($this->container['ProductAudienceType'])) && method_exists($this->container['ProductAudienceType'], 'getValue')) {
-            return $this->container['ProductAudienceType']->getValue();
-        }
-        return $this->container['ProductAudienceType'];
-    }
-
-    /**
-     * Sets ProductAudienceType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null $ProductAudienceType ProductAudienceType
-     *
-     * @return self
-     */
-    public function setProductAudienceType($ProductAudienceType)
-    {
-        if (is_null($ProductAudienceType)) {
-            throw new \InvalidArgumentException('non-nullable ProductAudienceType cannot be null');
-        }
-        if (!$ProductAudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType) {
-            $ProductAudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType($ProductAudienceType);
-        }
-        $this->container['ProductAudienceType'] = $ProductAudienceType;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -653,12 +580,15 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -666,21 +596,17 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -868,6 +794,79 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets TagId
+     *
+     * @return string|null
+     */
+    public function getTagId()
+    {
+        if (!isset($this->container['TagId']) || is_null($this->container['TagId'])) {
+            return null;
+        }
+        return $this->container['TagId'];
+    }
+
+    /**
+     * Sets TagId
+     *
+     * @param string|null $TagId TagId
+     *
+     * @return self
+     */
+    public function setTagId($TagId)
+    {
+        if (is_null($TagId)) {
+            array_push($this->openAPINullablesSetToNull, 'TagId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TagId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TagId'] = $TagId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ProductAudienceType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null
+     */
+    public function getProductAudienceType()
+    {
+        if (!isset($this->container['ProductAudienceType']) || is_null($this->container['ProductAudienceType'])) {
+            return null;
+        }
+        if ((is_object($this->container['ProductAudienceType']) || is_string($this->container['ProductAudienceType'])) && method_exists($this->container['ProductAudienceType'], 'getValue')) {
+            return $this->container['ProductAudienceType']->getValue();
+        }
+        return $this->container['ProductAudienceType'];
+    }
+
+    /**
+     * Sets ProductAudienceType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null $ProductAudienceType ProductAudienceType
+     *
+     * @return self
+     */
+    public function setProductAudienceType($ProductAudienceType)
+    {
+        if (is_null($ProductAudienceType)) {
+            throw new \InvalidArgumentException('non-nullable ProductAudienceType cannot be null');
+        }
+        if (!$ProductAudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType) {
+            $ProductAudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType($ProductAudienceType);
+        }
+        $this->container['ProductAudienceType'] = $ProductAudienceType;
 
         return $this;
     }

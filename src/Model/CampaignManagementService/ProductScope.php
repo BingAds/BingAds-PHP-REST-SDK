@@ -33,8 +33,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Conditions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]',
-        'Type' => 'string'
+        'Type' => 'string',
+        'Conditions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Conditions' => null,
-        'Type' => null
+        'Type' => null,
+        'Conditions' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Conditions' => true,
-        'Type' => true
+        'Type' => true,
+        'Conditions' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Conditions' => 'Conditions',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Conditions' => 'Conditions'
     ];
 
     /**
@@ -155,8 +155,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
-        'Conditions' => 'setConditions',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Conditions' => 'setConditions'
     ];
 
     /**
@@ -165,8 +165,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
-        'Conditions' => 'getConditions',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Conditions' => 'getConditions'
     ];
 
     /**
@@ -226,8 +226,8 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Conditions', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ProductScope');
     }
 
     /**
@@ -273,43 +273,6 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets Conditions
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]|null
-     */
-    public function getConditions()
-    {
-        if (!isset($this->container['Conditions']) || is_null($this->container['Conditions'])) {
-            return null;
-        }
-        return $this->container['Conditions'];
-    }
-
-    /**
-     * Sets Conditions
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]|null $Conditions Conditions
-     *
-     * @return self
-     */
-    public function setConditions($Conditions)
-    {
-        if (is_null($Conditions)) {
-            array_push($this->openAPINullablesSetToNull, 'Conditions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Conditions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Conditions'] = $Conditions;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class ProductScope extends Criterion implements ModelInterface, ArrayAccess, \Js
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Conditions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]|null
+     */
+    public function getConditions()
+    {
+        if (!isset($this->container['Conditions']) || is_null($this->container['Conditions'])) {
+            return null;
+        }
+        return $this->container['Conditions'];
+    }
+
+    /**
+     * Sets Conditions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]|null $Conditions Conditions
+     *
+     * @return self
+     */
+    public function setConditions($Conditions)
+    {
+        if (is_null($Conditions)) {
+            array_push($this->openAPINullablesSetToNull, 'Conditions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Conditions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Conditions'] = $Conditions;
 
         return $this;
     }

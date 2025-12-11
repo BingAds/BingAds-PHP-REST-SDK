@@ -248,7 +248,7 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'NegativeAdGroupCriterion');
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**

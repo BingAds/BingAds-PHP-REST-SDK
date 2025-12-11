@@ -220,7 +220,7 @@ class ManualCpvBiddingScheme extends BiddingScheme implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'ManualCpv');
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**

@@ -25,6 +25,12 @@ class AssetGroupAdditionalField
 
     public const ASSET_GROUP_URL_TARGETS = 'AssetGroupUrlTargets';
 
+    public const TRACKING_URL_TEMPLATE = 'TrackingUrlTemplate';
+
+    public const FINAL_URL_SUFFIX = 'FinalUrlSuffix';
+
+    public const URL_CUSTOM_PARAMETERS = 'UrlCustomParameters';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -94,7 +100,10 @@ class AssetGroupAdditionalField
         return [
             self::NONE,
             self::ASSET_GROUP_SEARCH_THEMES,
-            self::ASSET_GROUP_URL_TARGETS
+            self::ASSET_GROUP_URL_TARGETS,
+            self::TRACKING_URL_TEMPLATE,
+            self::FINAL_URL_SUFFIX,
+            self::URL_CUSTOM_PARAMETERS
         ];
     }
 }

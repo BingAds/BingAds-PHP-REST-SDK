@@ -43,6 +43,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Type' => 'string',
         'NewEntities' => 'bool',
         'NewPausedCampaignsAndChildEntities' => 'bool',
         'NewActiveCampaignsAndChildEntities' => 'bool',
@@ -64,6 +66,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewDeviceTargets' => 'bool',
         'NewDemographicTargets' => 'bool',
         'NewAudienceTargets' => 'bool',
+        'NewTopicTargets' => 'bool',
         'NewAppAdExtensions' => 'bool',
         'NewCallAdExtensions' => 'bool',
         'NewCalloutAdExtensions' => 'bool',
@@ -99,6 +102,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateDemographicTargets' => 'bool',
         'UpdateCampaignAdGroupLanguages' => 'bool',
         'UpdateAudienceTargets' => 'bool',
+        'UpdateTopicTargets' => 'bool',
         'UpdateAppAdExtensions' => 'bool',
         'UpdateCallAdExtensions' => 'bool',
         'UpdateCalloutAdExtensions' => 'bool',
@@ -120,6 +124,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'bool',
         'UpdateBrandSuitability' => 'bool',
         'UpdateAdCustomizerAttributes' => 'bool',
+        'EnableCopilot' => 'bool',
         'DeleteRemovedEntities' => 'bool',
         'RaiseBidsToMinimum' => 'bool',
         'RaiseCampaignBudgetsToMinimum' => 'bool',
@@ -148,9 +153,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'bool',
         'UpdateAdUrls' => 'bool',
         'UpdateSitelinkUrls' => 'bool',
-        'UpdateAssetAutomationCampaignSetting' => 'bool',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
-        'Type' => 'string'
+        'UpdateAssetAutomationCampaignSetting' => 'bool'
     ];
 
     /**
@@ -161,6 +164,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'ForwardCompatibilityMap' => null,
+        'Type' => null,
         'NewEntities' => null,
         'NewPausedCampaignsAndChildEntities' => null,
         'NewActiveCampaignsAndChildEntities' => null,
@@ -182,6 +187,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewDeviceTargets' => null,
         'NewDemographicTargets' => null,
         'NewAudienceTargets' => null,
+        'NewTopicTargets' => null,
         'NewAppAdExtensions' => null,
         'NewCallAdExtensions' => null,
         'NewCalloutAdExtensions' => null,
@@ -217,6 +223,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateDemographicTargets' => null,
         'UpdateCampaignAdGroupLanguages' => null,
         'UpdateAudienceTargets' => null,
+        'UpdateTopicTargets' => null,
         'UpdateAppAdExtensions' => null,
         'UpdateCallAdExtensions' => null,
         'UpdateCalloutAdExtensions' => null,
@@ -238,6 +245,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => null,
         'UpdateBrandSuitability' => null,
         'UpdateAdCustomizerAttributes' => null,
+        'EnableCopilot' => null,
         'DeleteRemovedEntities' => null,
         'RaiseBidsToMinimum' => null,
         'RaiseCampaignBudgetsToMinimum' => null,
@@ -266,9 +274,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => null,
         'UpdateAdUrls' => null,
         'UpdateSitelinkUrls' => null,
-        'UpdateAssetAutomationCampaignSetting' => null,
-        'ForwardCompatibilityMap' => null,
-        'Type' => null
+        'UpdateAssetAutomationCampaignSetting' => null
     ];
 
     /**
@@ -277,6 +283,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'ForwardCompatibilityMap' => true,
+        'Type' => true,
         'NewEntities' => true,
         'NewPausedCampaignsAndChildEntities' => true,
         'NewActiveCampaignsAndChildEntities' => true,
@@ -298,6 +306,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewDeviceTargets' => true,
         'NewDemographicTargets' => true,
         'NewAudienceTargets' => true,
+        'NewTopicTargets' => true,
         'NewAppAdExtensions' => true,
         'NewCallAdExtensions' => true,
         'NewCalloutAdExtensions' => true,
@@ -333,6 +342,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateDemographicTargets' => true,
         'UpdateCampaignAdGroupLanguages' => true,
         'UpdateAudienceTargets' => true,
+        'UpdateTopicTargets' => true,
         'UpdateAppAdExtensions' => true,
         'UpdateCallAdExtensions' => true,
         'UpdateCalloutAdExtensions' => true,
@@ -354,6 +364,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => true,
         'UpdateBrandSuitability' => true,
         'UpdateAdCustomizerAttributes' => true,
+        'EnableCopilot' => true,
         'DeleteRemovedEntities' => true,
         'RaiseBidsToMinimum' => true,
         'RaiseCampaignBudgetsToMinimum' => true,
@@ -382,9 +393,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => true,
         'UpdateAdUrls' => true,
         'UpdateSitelinkUrls' => true,
-        'UpdateAssetAutomationCampaignSetting' => true,
-        'ForwardCompatibilityMap' => true,
-        'Type' => true
+        'UpdateAssetAutomationCampaignSetting' => true
     ];
 
     /**
@@ -473,6 +482,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Type' => 'Type',
         'NewEntities' => 'NewEntities',
         'NewPausedCampaignsAndChildEntities' => 'NewPausedCampaignsAndChildEntities',
         'NewActiveCampaignsAndChildEntities' => 'NewActiveCampaignsAndChildEntities',
@@ -494,6 +505,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewDeviceTargets' => 'NewDeviceTargets',
         'NewDemographicTargets' => 'NewDemographicTargets',
         'NewAudienceTargets' => 'NewAudienceTargets',
+        'NewTopicTargets' => 'NewTopicTargets',
         'NewAppAdExtensions' => 'NewAppAdExtensions',
         'NewCallAdExtensions' => 'NewCallAdExtensions',
         'NewCalloutAdExtensions' => 'NewCalloutAdExtensions',
@@ -529,6 +541,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateDemographicTargets' => 'UpdateDemographicTargets',
         'UpdateCampaignAdGroupLanguages' => 'UpdateCampaignAdGroupLanguages',
         'UpdateAudienceTargets' => 'UpdateAudienceTargets',
+        'UpdateTopicTargets' => 'UpdateTopicTargets',
         'UpdateAppAdExtensions' => 'UpdateAppAdExtensions',
         'UpdateCallAdExtensions' => 'UpdateCallAdExtensions',
         'UpdateCalloutAdExtensions' => 'UpdateCalloutAdExtensions',
@@ -550,6 +563,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'UpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'UpdateBrandSuitability',
         'UpdateAdCustomizerAttributes' => 'UpdateAdCustomizerAttributes',
+        'EnableCopilot' => 'EnableCopilot',
         'DeleteRemovedEntities' => 'DeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'RaiseBidsToMinimum',
         'RaiseCampaignBudgetsToMinimum' => 'RaiseCampaignBudgetsToMinimum',
@@ -578,9 +592,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'RenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'UpdateAdUrls',
         'UpdateSitelinkUrls' => 'UpdateSitelinkUrls',
-        'UpdateAssetAutomationCampaignSetting' => 'UpdateAssetAutomationCampaignSetting',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'Type' => 'Type'
+        'UpdateAssetAutomationCampaignSetting' => 'UpdateAssetAutomationCampaignSetting'
     ];
 
     /**
@@ -589,6 +601,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Type' => 'setType',
         'NewEntities' => 'setNewEntities',
         'NewPausedCampaignsAndChildEntities' => 'setNewPausedCampaignsAndChildEntities',
         'NewActiveCampaignsAndChildEntities' => 'setNewActiveCampaignsAndChildEntities',
@@ -610,6 +624,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewDeviceTargets' => 'setNewDeviceTargets',
         'NewDemographicTargets' => 'setNewDemographicTargets',
         'NewAudienceTargets' => 'setNewAudienceTargets',
+        'NewTopicTargets' => 'setNewTopicTargets',
         'NewAppAdExtensions' => 'setNewAppAdExtensions',
         'NewCallAdExtensions' => 'setNewCallAdExtensions',
         'NewCalloutAdExtensions' => 'setNewCalloutAdExtensions',
@@ -645,6 +660,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateDemographicTargets' => 'setUpdateDemographicTargets',
         'UpdateCampaignAdGroupLanguages' => 'setUpdateCampaignAdGroupLanguages',
         'UpdateAudienceTargets' => 'setUpdateAudienceTargets',
+        'UpdateTopicTargets' => 'setUpdateTopicTargets',
         'UpdateAppAdExtensions' => 'setUpdateAppAdExtensions',
         'UpdateCallAdExtensions' => 'setUpdateCallAdExtensions',
         'UpdateCalloutAdExtensions' => 'setUpdateCalloutAdExtensions',
@@ -666,6 +682,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'setUpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'setUpdateBrandSuitability',
         'UpdateAdCustomizerAttributes' => 'setUpdateAdCustomizerAttributes',
+        'EnableCopilot' => 'setEnableCopilot',
         'DeleteRemovedEntities' => 'setDeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'setRaiseBidsToMinimum',
         'RaiseCampaignBudgetsToMinimum' => 'setRaiseCampaignBudgetsToMinimum',
@@ -694,9 +711,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'setRenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'setUpdateAdUrls',
         'UpdateSitelinkUrls' => 'setUpdateSitelinkUrls',
-        'UpdateAssetAutomationCampaignSetting' => 'setUpdateAssetAutomationCampaignSetting',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'Type' => 'setType'
+        'UpdateAssetAutomationCampaignSetting' => 'setUpdateAssetAutomationCampaignSetting'
     ];
 
     /**
@@ -705,6 +720,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Type' => 'getType',
         'NewEntities' => 'getNewEntities',
         'NewPausedCampaignsAndChildEntities' => 'getNewPausedCampaignsAndChildEntities',
         'NewActiveCampaignsAndChildEntities' => 'getNewActiveCampaignsAndChildEntities',
@@ -726,6 +743,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewDeviceTargets' => 'getNewDeviceTargets',
         'NewDemographicTargets' => 'getNewDemographicTargets',
         'NewAudienceTargets' => 'getNewAudienceTargets',
+        'NewTopicTargets' => 'getNewTopicTargets',
         'NewAppAdExtensions' => 'getNewAppAdExtensions',
         'NewCallAdExtensions' => 'getNewCallAdExtensions',
         'NewCalloutAdExtensions' => 'getNewCalloutAdExtensions',
@@ -761,6 +779,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateDemographicTargets' => 'getUpdateDemographicTargets',
         'UpdateCampaignAdGroupLanguages' => 'getUpdateCampaignAdGroupLanguages',
         'UpdateAudienceTargets' => 'getUpdateAudienceTargets',
+        'UpdateTopicTargets' => 'getUpdateTopicTargets',
         'UpdateAppAdExtensions' => 'getUpdateAppAdExtensions',
         'UpdateCallAdExtensions' => 'getUpdateCallAdExtensions',
         'UpdateCalloutAdExtensions' => 'getUpdateCalloutAdExtensions',
@@ -782,6 +801,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'getUpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'getUpdateBrandSuitability',
         'UpdateAdCustomizerAttributes' => 'getUpdateAdCustomizerAttributes',
+        'EnableCopilot' => 'getEnableCopilot',
         'DeleteRemovedEntities' => 'getDeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'getRaiseBidsToMinimum',
         'RaiseCampaignBudgetsToMinimum' => 'getRaiseCampaignBudgetsToMinimum',
@@ -810,9 +830,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'getRenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'getUpdateAdUrls',
         'UpdateSitelinkUrls' => 'getUpdateSitelinkUrls',
-        'UpdateAssetAutomationCampaignSetting' => 'getUpdateAssetAutomationCampaignSetting',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'Type' => 'getType'
+        'UpdateAssetAutomationCampaignSetting' => 'getUpdateAssetAutomationCampaignSetting'
     ];
 
     /**
@@ -872,6 +890,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('NewEntities', $data ?? [], null);
         $this->setIfExists('NewPausedCampaignsAndChildEntities', $data ?? [], null);
         $this->setIfExists('NewActiveCampaignsAndChildEntities', $data ?? [], null);
@@ -893,6 +913,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('NewDeviceTargets', $data ?? [], null);
         $this->setIfExists('NewDemographicTargets', $data ?? [], null);
         $this->setIfExists('NewAudienceTargets', $data ?? [], null);
+        $this->setIfExists('NewTopicTargets', $data ?? [], null);
         $this->setIfExists('NewAppAdExtensions', $data ?? [], null);
         $this->setIfExists('NewCallAdExtensions', $data ?? [], null);
         $this->setIfExists('NewCalloutAdExtensions', $data ?? [], null);
@@ -928,6 +949,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UpdateDemographicTargets', $data ?? [], null);
         $this->setIfExists('UpdateCampaignAdGroupLanguages', $data ?? [], null);
         $this->setIfExists('UpdateAudienceTargets', $data ?? [], null);
+        $this->setIfExists('UpdateTopicTargets', $data ?? [], null);
         $this->setIfExists('UpdateAppAdExtensions', $data ?? [], null);
         $this->setIfExists('UpdateCallAdExtensions', $data ?? [], null);
         $this->setIfExists('UpdateCalloutAdExtensions', $data ?? [], null);
@@ -949,6 +971,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UpdateAdCustomizerFeeds', $data ?? [], null);
         $this->setIfExists('UpdateBrandSuitability', $data ?? [], null);
         $this->setIfExists('UpdateAdCustomizerAttributes', $data ?? [], null);
+        $this->setIfExists('EnableCopilot', $data ?? [], null);
         $this->setIfExists('DeleteRemovedEntities', $data ?? [], null);
         $this->setIfExists('RaiseBidsToMinimum', $data ?? [], null);
         $this->setIfExists('RaiseCampaignBudgetsToMinimum', $data ?? [], null);
@@ -978,8 +1001,6 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UpdateAdUrls', $data ?? [], null);
         $this->setIfExists('UpdateSitelinkUrls', $data ?? [], null);
         $this->setIfExists('UpdateAssetAutomationCampaignSetting', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'FileImportOption');
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -1026,6 +1047,80 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets NewEntities
@@ -1800,6 +1895,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['NewAudienceTargets'] = $NewAudienceTargets;
+
+        return $this;
+    }
+
+    /**
+     * Gets NewTopicTargets
+     *
+     * @return bool|null
+     */
+    public function getNewTopicTargets()
+    {
+        if (!isset($this->container['NewTopicTargets']) || is_null($this->container['NewTopicTargets'])) {
+            return null;
+        }
+        return $this->container['NewTopicTargets'];
+    }
+
+    /**
+     * Sets NewTopicTargets
+     *
+     * @param bool|null $NewTopicTargets NewTopicTargets
+     *
+     * @return self
+     */
+    public function setNewTopicTargets($NewTopicTargets)
+    {
+        if (is_null($NewTopicTargets)) {
+            array_push($this->openAPINullablesSetToNull, 'NewTopicTargets');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NewTopicTargets', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NewTopicTargets'] = $NewTopicTargets;
 
         return $this;
     }
@@ -3100,6 +3232,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets UpdateTopicTargets
+     *
+     * @return bool|null
+     */
+    public function getUpdateTopicTargets()
+    {
+        if (!isset($this->container['UpdateTopicTargets']) || is_null($this->container['UpdateTopicTargets'])) {
+            return null;
+        }
+        return $this->container['UpdateTopicTargets'];
+    }
+
+    /**
+     * Sets UpdateTopicTargets
+     *
+     * @param bool|null $UpdateTopicTargets UpdateTopicTargets
+     *
+     * @return self
+     */
+    public function setUpdateTopicTargets($UpdateTopicTargets)
+    {
+        if (is_null($UpdateTopicTargets)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateTopicTargets');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateTopicTargets', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateTopicTargets'] = $UpdateTopicTargets;
+
+        return $this;
+    }
+
+    /**
      * Gets UpdateAppAdExtensions
      *
      * @return bool|null
@@ -3872,6 +4041,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UpdateAdCustomizerAttributes'] = $UpdateAdCustomizerAttributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets EnableCopilot
+     *
+     * @return bool|null
+     */
+    public function getEnableCopilot()
+    {
+        if (!isset($this->container['EnableCopilot']) || is_null($this->container['EnableCopilot'])) {
+            return null;
+        }
+        return $this->container['EnableCopilot'];
+    }
+
+    /**
+     * Sets EnableCopilot
+     *
+     * @param bool|null $EnableCopilot EnableCopilot
+     *
+     * @return self
+     */
+    public function setEnableCopilot($EnableCopilot)
+    {
+        if (is_null($EnableCopilot)) {
+            array_push($this->openAPINullablesSetToNull, 'EnableCopilot');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EnableCopilot', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EnableCopilot'] = $EnableCopilot;
 
         return $this;
     }
@@ -4945,80 +5151,6 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UpdateAssetAutomationCampaignSetting'] = $UpdateAssetAutomationCampaignSetting;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

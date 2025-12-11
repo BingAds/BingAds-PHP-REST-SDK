@@ -33,11 +33,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Data' => 'string',
         'Id' => 'string',
         'MediaType' => 'string',
         'Type' => 'string',
-        'Text' => 'string'
+        'Text' => 'string',
+        'Data' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Data' => null,
         'Id' => 'int64',
         'MediaType' => null,
         'Type' => null,
-        'Text' => null
+        'Text' => null,
+        'Data' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Data' => true,
         'Id' => true,
         'MediaType' => true,
         'Type' => true,
-        'Text' => true
+        'Text' => true,
+        'Data' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Data' => 'Data',
         'Id' => 'Id',
         'MediaType' => 'MediaType',
         'Type' => 'Type',
-        'Text' => 'Text'
+        'Text' => 'Text',
+        'Data' => 'Data'
     ];
 
     /**
@@ -167,11 +167,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'Data' => 'setData',
         'Id' => 'setId',
         'MediaType' => 'setMediaType',
         'Type' => 'setType',
-        'Text' => 'setText'
+        'Text' => 'setText',
+        'Data' => 'setData'
     ];
 
     /**
@@ -180,11 +180,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'Data' => 'getData',
         'Id' => 'getId',
         'MediaType' => 'getMediaType',
         'Type' => 'getType',
-        'Text' => 'getText'
+        'Text' => 'getText',
+        'Data' => 'getData'
     ];
 
     /**
@@ -244,11 +244,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Data', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('MediaType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Image');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('Data', $data ?? [], null);
     }
 
     /**
@@ -292,43 +292,6 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Data
-     *
-     * @return string|null
-     */
-    public function getData()
-    {
-        if (!isset($this->container['Data']) || is_null($this->container['Data'])) {
-            return null;
-        }
-        return $this->container['Data'];
-    }
-
-    /**
-     * Sets Data
-     *
-     * @param string|null $Data Data
-     *
-     * @return self
-     */
-    public function setData($Data)
-    {
-        if (is_null($Data)) {
-            array_push($this->openAPINullablesSetToNull, 'Data');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Data', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Data'] = $Data;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -474,6 +437,43 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets Data
+     *
+     * @return string|null
+     */
+    public function getData()
+    {
+        if (!isset($this->container['Data']) || is_null($this->container['Data'])) {
+            return null;
+        }
+        return $this->container['Data'];
+    }
+
+    /**
+     * Sets Data
+     *
+     * @param string|null $Data Data
+     *
+     * @return self
+     */
+    public function setData($Data)
+    {
+        if (is_null($Data)) {
+            array_push($this->openAPINullablesSetToNull, 'Data');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Data', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Data'] = $Data;
 
         return $this;
     }

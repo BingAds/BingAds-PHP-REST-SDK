@@ -33,11 +33,10 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MinimumDurationInSeconds' => 'int',
         'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -49,7 +48,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool'
+        'IsAutoGoal' => 'bool',
+        'MinimumDurationInSeconds' => 'int'
     ];
 
     /**
@@ -60,7 +60,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MinimumDurationInSeconds' => 'int32',
         'Id' => 'int64',
         'Name' => null,
         'Status' => null,
@@ -76,7 +75,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null
+        'IsAutoGoal' => null,
+        'MinimumDurationInSeconds' => 'int32'
     ];
 
     /**
@@ -85,11 +85,10 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MinimumDurationInSeconds' => true,
         'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => true,
+        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -101,7 +100,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true
+        'IsAutoGoal' => true,
+        'MinimumDurationInSeconds' => true
     ];
 
     /**
@@ -190,7 +190,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MinimumDurationInSeconds' => 'MinimumDurationInSeconds',
         'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
@@ -206,7 +205,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal'
+        'IsAutoGoal' => 'IsAutoGoal',
+        'MinimumDurationInSeconds' => 'MinimumDurationInSeconds'
     ];
 
     /**
@@ -215,7 +215,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'MinimumDurationInSeconds' => 'setMinimumDurationInSeconds',
         'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
@@ -231,7 +230,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal'
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'MinimumDurationInSeconds' => 'setMinimumDurationInSeconds'
     ];
 
     /**
@@ -240,7 +240,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'MinimumDurationInSeconds' => 'getMinimumDurationInSeconds',
         'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
@@ -256,7 +255,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal'
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'MinimumDurationInSeconds' => 'getMinimumDurationInSeconds'
     ];
 
     /**
@@ -316,11 +316,10 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MinimumDurationInSeconds', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Duration');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -333,6 +332,7 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('MinimumDurationInSeconds', $data ?? [], null);
     }
 
     /**
@@ -376,43 +376,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets MinimumDurationInSeconds
-     *
-     * @return int|null
-     */
-    public function getMinimumDurationInSeconds()
-    {
-        if (!isset($this->container['MinimumDurationInSeconds']) || is_null($this->container['MinimumDurationInSeconds'])) {
-            return null;
-        }
-        return $this->container['MinimumDurationInSeconds'];
-    }
-
-    /**
-     * Sets MinimumDurationInSeconds
-     *
-     * @param int|null $MinimumDurationInSeconds MinimumDurationInSeconds
-     *
-     * @return self
-     */
-    public function setMinimumDurationInSeconds($MinimumDurationInSeconds)
-    {
-        if (is_null($MinimumDurationInSeconds)) {
-            array_push($this->openAPINullablesSetToNull, 'MinimumDurationInSeconds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MinimumDurationInSeconds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MinimumDurationInSeconds'] = $MinimumDurationInSeconds;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -527,12 +490,15 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -540,21 +506,17 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -996,6 +958,43 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets MinimumDurationInSeconds
+     *
+     * @return int|null
+     */
+    public function getMinimumDurationInSeconds()
+    {
+        if (!isset($this->container['MinimumDurationInSeconds']) || is_null($this->container['MinimumDurationInSeconds'])) {
+            return null;
+        }
+        return $this->container['MinimumDurationInSeconds'];
+    }
+
+    /**
+     * Sets MinimumDurationInSeconds
+     *
+     * @param int|null $MinimumDurationInSeconds MinimumDurationInSeconds
+     *
+     * @return self
+     */
+    public function setMinimumDurationInSeconds($MinimumDurationInSeconds)
+    {
+        if (is_null($MinimumDurationInSeconds)) {
+            array_push($this->openAPINullablesSetToNull, 'MinimumDurationInSeconds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MinimumDurationInSeconds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MinimumDurationInSeconds'] = $MinimumDurationInSeconds;
 
         return $this;
     }

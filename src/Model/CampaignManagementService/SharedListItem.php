@@ -45,11 +45,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Id' => 'string',
         'Text' => 'string',
         'MatchType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType',
-        'Type' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Url' => 'string',
         'BrandId' => 'string'
     ];
@@ -62,11 +62,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
+        'ForwardCompatibilityMap' => null,
         'Id' => 'int64',
         'Text' => null,
         'MatchType' => null,
-        'Type' => null,
-        'ForwardCompatibilityMap' => null,
         'Url' => null,
         'BrandId' => 'int64'
     ];
@@ -77,11 +77,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
+        'ForwardCompatibilityMap' => true,
         'Id' => true,
         'Text' => true,
         'MatchType' => false,
-        'Type' => true,
-        'ForwardCompatibilityMap' => true,
         'Url' => true,
         'BrandId' => false
     ];
@@ -172,11 +172,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Id' => 'Id',
         'Text' => 'Text',
         'MatchType' => 'MatchType',
-        'Type' => 'Type',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Url' => 'Url',
         'BrandId' => 'BrandId'
     ];
@@ -187,11 +187,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Id' => 'setId',
         'Text' => 'setText',
         'MatchType' => 'setMatchType',
-        'Type' => 'setType',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Url' => 'setUrl',
         'BrandId' => 'setBrandId'
     ];
@@ -202,11 +202,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Id' => 'getId',
         'Text' => 'getText',
         'MatchType' => 'getMatchType',
-        'Type' => 'getType',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Url' => 'getUrl',
         'BrandId' => 'getBrandId'
     ];
@@ -268,11 +268,11 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('MatchType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Site');
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Url', $data ?? [], null);
         $this->setIfExists('BrandId', $data ?? [], null);
 
@@ -321,6 +321,80 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
 
     /**
      * Gets Id
@@ -428,80 +502,6 @@ class SharedListItem implements ModelInterface, ArrayAccess, \JsonSerializable
             $MatchType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType($MatchType);
         }
         $this->container['MatchType'] = $MatchType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }

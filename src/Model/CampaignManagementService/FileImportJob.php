@@ -33,8 +33,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'FileUrl' => 'string',
-        'FileSource' => 'string',
         'Name' => 'string',
         'Id' => 'string',
         'Type' => 'string',
@@ -46,7 +44,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         'LastRunTimeInUTC' => '\DateTime',
         'CreatedDateTimeInUTC' => '\DateTime',
         'ImportOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportOption',
-        'NotificationEmail' => 'string'
+        'NotificationEmail' => 'string',
+        'FileUrl' => 'string',
+        'FileSource' => 'string'
     ];
 
     /**
@@ -57,8 +57,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'FileUrl' => null,
-        'FileSource' => null,
         'Name' => null,
         'Id' => 'int64',
         'Type' => null,
@@ -70,7 +68,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         'LastRunTimeInUTC' => 'date-time',
         'CreatedDateTimeInUTC' => 'date-time',
         'ImportOption' => null,
-        'NotificationEmail' => null
+        'NotificationEmail' => null,
+        'FileUrl' => null,
+        'FileSource' => null
     ];
 
     /**
@@ -79,8 +79,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'FileUrl' => true,
-        'FileSource' => true,
         'Name' => true,
         'Id' => true,
         'Type' => true,
@@ -92,7 +90,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         'LastRunTimeInUTC' => true,
         'CreatedDateTimeInUTC' => true,
         'ImportOption' => true,
-        'NotificationEmail' => true
+        'NotificationEmail' => true,
+        'FileUrl' => true,
+        'FileSource' => true
     ];
 
     /**
@@ -181,8 +181,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
-        'FileUrl' => 'FileUrl',
-        'FileSource' => 'FileSource',
         'Name' => 'Name',
         'Id' => 'Id',
         'Type' => 'Type',
@@ -194,7 +192,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         'LastRunTimeInUTC' => 'LastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
         'ImportOption' => 'ImportOption',
-        'NotificationEmail' => 'NotificationEmail'
+        'NotificationEmail' => 'NotificationEmail',
+        'FileUrl' => 'FileUrl',
+        'FileSource' => 'FileSource'
     ];
 
     /**
@@ -203,8 +203,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
-        'FileUrl' => 'setFileUrl',
-        'FileSource' => 'setFileSource',
         'Name' => 'setName',
         'Id' => 'setId',
         'Type' => 'setType',
@@ -216,7 +214,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         'LastRunTimeInUTC' => 'setLastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
         'ImportOption' => 'setImportOption',
-        'NotificationEmail' => 'setNotificationEmail'
+        'NotificationEmail' => 'setNotificationEmail',
+        'FileUrl' => 'setFileUrl',
+        'FileSource' => 'setFileSource'
     ];
 
     /**
@@ -225,8 +225,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
-        'FileUrl' => 'getFileUrl',
-        'FileSource' => 'getFileSource',
         'Name' => 'getName',
         'Id' => 'getId',
         'Type' => 'getType',
@@ -238,7 +236,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         'LastRunTimeInUTC' => 'getLastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
         'ImportOption' => 'getImportOption',
-        'NotificationEmail' => 'getNotificationEmail'
+        'NotificationEmail' => 'getNotificationEmail',
+        'FileUrl' => 'getFileUrl',
+        'FileSource' => 'getFileSource'
     ];
 
     /**
@@ -298,11 +298,9 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('FileUrl', $data ?? [], null);
-        $this->setIfExists('FileSource', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'FileImportJob');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('NotificationType', $data ?? [], null);
         $this->setIfExists('CreatedByUserId', $data ?? [], null);
@@ -312,6 +310,8 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
         $this->setIfExists('ImportOption', $data ?? [], null);
         $this->setIfExists('NotificationEmail', $data ?? [], null);
+        $this->setIfExists('FileUrl', $data ?? [], null);
+        $this->setIfExists('FileSource', $data ?? [], null);
     }
 
     /**
@@ -355,80 +355,6 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets FileUrl
-     *
-     * @return string|null
-     */
-    public function getFileUrl()
-    {
-        if (!isset($this->container['FileUrl']) || is_null($this->container['FileUrl'])) {
-            return null;
-        }
-        return $this->container['FileUrl'];
-    }
-
-    /**
-     * Sets FileUrl
-     *
-     * @param string|null $FileUrl FileUrl
-     *
-     * @return self
-     */
-    public function setFileUrl($FileUrl)
-    {
-        if (is_null($FileUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'FileUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FileUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FileUrl'] = $FileUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets FileSource
-     *
-     * @return string|null
-     */
-    public function getFileSource()
-    {
-        if (!isset($this->container['FileSource']) || is_null($this->container['FileSource'])) {
-            return null;
-        }
-        return $this->container['FileSource'];
-    }
-
-    /**
-     * Sets FileSource
-     *
-     * @param string|null $FileSource FileSource
-     *
-     * @return self
-     */
-    public function setFileSource($FileSource)
-    {
-        if (is_null($FileSource)) {
-            array_push($this->openAPINullablesSetToNull, 'FileSource');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FileSource', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FileSource'] = $FileSource;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -870,6 +796,80 @@ class FileImportJob extends ImportJob implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['NotificationEmail'] = $NotificationEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets FileUrl
+     *
+     * @return string|null
+     */
+    public function getFileUrl()
+    {
+        if (!isset($this->container['FileUrl']) || is_null($this->container['FileUrl'])) {
+            return null;
+        }
+        return $this->container['FileUrl'];
+    }
+
+    /**
+     * Sets FileUrl
+     *
+     * @param string|null $FileUrl FileUrl
+     *
+     * @return self
+     */
+    public function setFileUrl($FileUrl)
+    {
+        if (is_null($FileUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'FileUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FileUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FileUrl'] = $FileUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets FileSource
+     *
+     * @return string|null
+     */
+    public function getFileSource()
+    {
+        if (!isset($this->container['FileSource']) || is_null($this->container['FileSource'])) {
+            return null;
+        }
+        return $this->container['FileSource'];
+    }
+
+    /**
+     * Sets FileSource
+     *
+     * @param string|null $FileSource FileSource
+     *
+     * @return self
+     */
+    public function setFileSource($FileSource)
+    {
+        if (is_null($FileSource)) {
+            array_push($this->openAPINullablesSetToNull, 'FileSource');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FileSource', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FileSource'] = $FileSource;
 
         return $this;
     }

@@ -33,13 +33,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope',
-        'Filter' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportFilter',
-        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
-        'Aggregation' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation',
-        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportColumn[]',
-        'Sort' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportSort[]',
-        'MaxRows' => 'int',
         'ReportName' => 'string',
         'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
         'ReturnOnlyCompleteData' => 'bool',
@@ -47,6 +40,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         'ExcludeReportFooter' => 'bool',
         'ExcludeColumnHeaders' => 'bool',
         'FormatVersion' => 'string',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughAdGroupReportScope',
+        'Filter' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportFilter',
+        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
+        'Aggregation' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation',
+        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportColumn[]',
+        'Sort' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportSort[]',
+        'MaxRows' => 'int',
         'Type' => 'string'
     ];
 
@@ -58,13 +58,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Scope' => null,
-        'Filter' => null,
-        'Time' => null,
-        'Aggregation' => null,
-        'Columns' => null,
-        'Sort' => null,
-        'MaxRows' => 'int32',
         'ReportName' => null,
         'Format' => null,
         'ReturnOnlyCompleteData' => null,
@@ -72,6 +65,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         'ExcludeReportFooter' => null,
         'ExcludeColumnHeaders' => null,
         'FormatVersion' => null,
+        'Scope' => null,
+        'Filter' => null,
+        'Time' => null,
+        'Aggregation' => null,
+        'Columns' => null,
+        'Sort' => null,
+        'MaxRows' => 'int32',
         'Type' => null
     ];
 
@@ -81,13 +81,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Scope' => true,
-        'Filter' => true,
-        'Time' => true,
-        'Aggregation' => false,
-        'Columns' => true,
-        'Sort' => true,
-        'MaxRows' => false,
         'ReportName' => true,
         'Format' => false,
         'ReturnOnlyCompleteData' => true,
@@ -95,6 +88,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         'ExcludeReportFooter' => true,
         'ExcludeColumnHeaders' => true,
         'FormatVersion' => true,
+        'Scope' => true,
+        'Filter' => true,
+        'Time' => true,
+        'Aggregation' => false,
+        'Columns' => true,
+        'Sort' => true,
+        'MaxRows' => false,
         'Type' => true
     ];
 
@@ -184,13 +184,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Scope' => 'Scope',
-        'Filter' => 'Filter',
-        'Time' => 'Time',
-        'Aggregation' => 'Aggregation',
-        'Columns' => 'Columns',
-        'Sort' => 'Sort',
-        'MaxRows' => 'MaxRows',
         'ReportName' => 'ReportName',
         'Format' => 'Format',
         'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
@@ -198,6 +191,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         'ExcludeReportFooter' => 'ExcludeReportFooter',
         'ExcludeColumnHeaders' => 'ExcludeColumnHeaders',
         'FormatVersion' => 'FormatVersion',
+        'Scope' => 'Scope',
+        'Filter' => 'Filter',
+        'Time' => 'Time',
+        'Aggregation' => 'Aggregation',
+        'Columns' => 'Columns',
+        'Sort' => 'Sort',
+        'MaxRows' => 'MaxRows',
         'Type' => 'Type'
     ];
 
@@ -207,13 +207,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
      * @var string[]
      */
     protected static array $setters = [
-        'Scope' => 'setScope',
-        'Filter' => 'setFilter',
-        'Time' => 'setTime',
-        'Aggregation' => 'setAggregation',
-        'Columns' => 'setColumns',
-        'Sort' => 'setSort',
-        'MaxRows' => 'setMaxRows',
         'ReportName' => 'setReportName',
         'Format' => 'setFormat',
         'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
@@ -221,6 +214,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         'ExcludeReportFooter' => 'setExcludeReportFooter',
         'ExcludeColumnHeaders' => 'setExcludeColumnHeaders',
         'FormatVersion' => 'setFormatVersion',
+        'Scope' => 'setScope',
+        'Filter' => 'setFilter',
+        'Time' => 'setTime',
+        'Aggregation' => 'setAggregation',
+        'Columns' => 'setColumns',
+        'Sort' => 'setSort',
+        'MaxRows' => 'setMaxRows',
         'Type' => 'setType'
     ];
 
@@ -230,13 +230,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
      * @var string[]
      */
     protected static array $getters = [
-        'Scope' => 'getScope',
-        'Filter' => 'getFilter',
-        'Time' => 'getTime',
-        'Aggregation' => 'getAggregation',
-        'Columns' => 'getColumns',
-        'Sort' => 'getSort',
-        'MaxRows' => 'getMaxRows',
         'ReportName' => 'getReportName',
         'Format' => 'getFormat',
         'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
@@ -244,6 +237,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         'ExcludeReportFooter' => 'getExcludeReportFooter',
         'ExcludeColumnHeaders' => 'getExcludeColumnHeaders',
         'FormatVersion' => 'getFormatVersion',
+        'Scope' => 'getScope',
+        'Filter' => 'getFilter',
+        'Time' => 'getTime',
+        'Aggregation' => 'getAggregation',
+        'Columns' => 'getColumns',
+        'Sort' => 'getSort',
+        'MaxRows' => 'getMaxRows',
         'Type' => 'getType'
     ];
 
@@ -304,13 +304,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('Filter', $data ?? [], null);
-        $this->setIfExists('Time', $data ?? [], null);
-        $this->setIfExists('Aggregation', $data ?? [], null);
-        $this->setIfExists('Columns', $data ?? [], null);
-        $this->setIfExists('Sort', $data ?? [], null);
-        $this->setIfExists('MaxRows', $data ?? [], null);
         $this->setIfExists('ReportName', $data ?? [], null);
         $this->setIfExists('Format', $data ?? [], null);
         $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
@@ -318,6 +311,13 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
         $this->setIfExists('ExcludeColumnHeaders', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('Filter', $data ?? [], null);
+        $this->setIfExists('Time', $data ?? [], null);
+        $this->setIfExists('Aggregation', $data ?? [], null);
+        $this->setIfExists('Columns', $data ?? [], null);
+        $this->setIfExists('Sort', $data ?? [], null);
+        $this->setIfExists('MaxRows', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'KeywordPerformanceReportRequest');
     }
 
@@ -362,6 +362,264 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ReportName
+     *
+     * @return string|null
+     */
+    public function getReportName()
+    {
+        if (!isset($this->container['ReportName']) || is_null($this->container['ReportName'])) {
+            return null;
+        }
+        return $this->container['ReportName'];
+    }
+
+    /**
+     * Sets ReportName
+     *
+     * @param string|null $ReportName ReportName
+     *
+     * @return self
+     */
+    public function setReportName($ReportName)
+    {
+        if (is_null($ReportName)) {
+            array_push($this->openAPINullablesSetToNull, 'ReportName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReportName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ReportName'] = $ReportName;
+
+        return $this;
+    }
+
+    /**
+     * Gets Format
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null
+     */
+    public function getFormat()
+    {
+        if (!isset($this->container['Format']) || is_null($this->container['Format'])) {
+            return null;
+        }
+        if ((is_object($this->container['Format']) || is_string($this->container['Format'])) && method_exists($this->container['Format'], 'getValue')) {
+            return $this->container['Format']->getValue();
+        }
+        return $this->container['Format'];
+    }
+
+    /**
+     * Sets Format
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null $Format Format
+     *
+     * @return self
+     */
+    public function setFormat($Format)
+    {
+        if (is_null($Format)) {
+            throw new \InvalidArgumentException('non-nullable Format cannot be null');
+        }
+        if (!$Format instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat) {
+            $Format = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat($Format);
+        }
+        $this->container['Format'] = $Format;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnOnlyCompleteData
+     *
+     * @return bool|null
+     */
+    public function getReturnOnlyCompleteData()
+    {
+        if (!isset($this->container['ReturnOnlyCompleteData']) || is_null($this->container['ReturnOnlyCompleteData'])) {
+            return null;
+        }
+        return $this->container['ReturnOnlyCompleteData'];
+    }
+
+    /**
+     * Sets ReturnOnlyCompleteData
+     *
+     * @param bool|null $ReturnOnlyCompleteData ReturnOnlyCompleteData
+     *
+     * @return self
+     */
+    public function setReturnOnlyCompleteData($ReturnOnlyCompleteData)
+    {
+        if (is_null($ReturnOnlyCompleteData)) {
+            array_push($this->openAPINullablesSetToNull, 'ReturnOnlyCompleteData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnOnlyCompleteData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ReturnOnlyCompleteData'] = $ReturnOnlyCompleteData;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExcludeReportHeader
+     *
+     * @return bool|null
+     */
+    public function getExcludeReportHeader()
+    {
+        if (!isset($this->container['ExcludeReportHeader']) || is_null($this->container['ExcludeReportHeader'])) {
+            return null;
+        }
+        return $this->container['ExcludeReportHeader'];
+    }
+
+    /**
+     * Sets ExcludeReportHeader
+     *
+     * @param bool|null $ExcludeReportHeader ExcludeReportHeader
+     *
+     * @return self
+     */
+    public function setExcludeReportHeader($ExcludeReportHeader)
+    {
+        if (is_null($ExcludeReportHeader)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeReportHeader');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExcludeReportHeader', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExcludeReportHeader'] = $ExcludeReportHeader;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExcludeReportFooter
+     *
+     * @return bool|null
+     */
+    public function getExcludeReportFooter()
+    {
+        if (!isset($this->container['ExcludeReportFooter']) || is_null($this->container['ExcludeReportFooter'])) {
+            return null;
+        }
+        return $this->container['ExcludeReportFooter'];
+    }
+
+    /**
+     * Sets ExcludeReportFooter
+     *
+     * @param bool|null $ExcludeReportFooter ExcludeReportFooter
+     *
+     * @return self
+     */
+    public function setExcludeReportFooter($ExcludeReportFooter)
+    {
+        if (is_null($ExcludeReportFooter)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeReportFooter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExcludeReportFooter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExcludeReportFooter'] = $ExcludeReportFooter;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExcludeColumnHeaders
+     *
+     * @return bool|null
+     */
+    public function getExcludeColumnHeaders()
+    {
+        if (!isset($this->container['ExcludeColumnHeaders']) || is_null($this->container['ExcludeColumnHeaders'])) {
+            return null;
+        }
+        return $this->container['ExcludeColumnHeaders'];
+    }
+
+    /**
+     * Sets ExcludeColumnHeaders
+     *
+     * @param bool|null $ExcludeColumnHeaders ExcludeColumnHeaders
+     *
+     * @return self
+     */
+    public function setExcludeColumnHeaders($ExcludeColumnHeaders)
+    {
+        if (is_null($ExcludeColumnHeaders)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeColumnHeaders');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExcludeColumnHeaders', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExcludeColumnHeaders'] = $ExcludeColumnHeaders;
+
+        return $this;
+    }
+
+    /**
+     * Gets FormatVersion
+     *
+     * @return string|null
+     */
+    public function getFormatVersion()
+    {
+        if (!isset($this->container['FormatVersion']) || is_null($this->container['FormatVersion'])) {
+            return null;
+        }
+        return $this->container['FormatVersion'];
+    }
+
+    /**
+     * Sets FormatVersion
+     *
+     * @param string|null $FormatVersion FormatVersion
+     *
+     * @return self
+     */
+    public function setFormatVersion($FormatVersion)
+    {
+        if (is_null($FormatVersion)) {
+            array_push($this->openAPINullablesSetToNull, 'FormatVersion');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FormatVersion', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FormatVersion'] = $FormatVersion;
+
+        return $this;
+    }
 
     /**
      * Gets Scope
@@ -629,264 +887,6 @@ class KeywordPerformanceReportRequest extends ReportRequest implements ModelInte
             throw new \InvalidArgumentException('non-nullable MaxRows cannot be null');
         }
         $this->container['MaxRows'] = $MaxRows;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReportName
-     *
-     * @return string|null
-     */
-    public function getReportName()
-    {
-        if (!isset($this->container['ReportName']) || is_null($this->container['ReportName'])) {
-            return null;
-        }
-        return $this->container['ReportName'];
-    }
-
-    /**
-     * Sets ReportName
-     *
-     * @param string|null $ReportName ReportName
-     *
-     * @return self
-     */
-    public function setReportName($ReportName)
-    {
-        if (is_null($ReportName)) {
-            array_push($this->openAPINullablesSetToNull, 'ReportName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReportName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ReportName'] = $ReportName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Format
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null
-     */
-    public function getFormat()
-    {
-        if (!isset($this->container['Format']) || is_null($this->container['Format'])) {
-            return null;
-        }
-        if ((is_object($this->container['Format']) || is_string($this->container['Format'])) && method_exists($this->container['Format'], 'getValue')) {
-            return $this->container['Format']->getValue();
-        }
-        return $this->container['Format'];
-    }
-
-    /**
-     * Sets Format
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null $Format Format
-     *
-     * @return self
-     */
-    public function setFormat($Format)
-    {
-        if (is_null($Format)) {
-            throw new \InvalidArgumentException('non-nullable Format cannot be null');
-        }
-        if (!$Format instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat) {
-            $Format = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat($Format);
-        }
-        $this->container['Format'] = $Format;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnOnlyCompleteData
-     *
-     * @return bool|null
-     */
-    public function getReturnOnlyCompleteData()
-    {
-        if (!isset($this->container['ReturnOnlyCompleteData']) || is_null($this->container['ReturnOnlyCompleteData'])) {
-            return null;
-        }
-        return $this->container['ReturnOnlyCompleteData'];
-    }
-
-    /**
-     * Sets ReturnOnlyCompleteData
-     *
-     * @param bool|null $ReturnOnlyCompleteData ReturnOnlyCompleteData
-     *
-     * @return self
-     */
-    public function setReturnOnlyCompleteData($ReturnOnlyCompleteData)
-    {
-        if (is_null($ReturnOnlyCompleteData)) {
-            array_push($this->openAPINullablesSetToNull, 'ReturnOnlyCompleteData');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReturnOnlyCompleteData', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ReturnOnlyCompleteData'] = $ReturnOnlyCompleteData;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExcludeReportHeader
-     *
-     * @return bool|null
-     */
-    public function getExcludeReportHeader()
-    {
-        if (!isset($this->container['ExcludeReportHeader']) || is_null($this->container['ExcludeReportHeader'])) {
-            return null;
-        }
-        return $this->container['ExcludeReportHeader'];
-    }
-
-    /**
-     * Sets ExcludeReportHeader
-     *
-     * @param bool|null $ExcludeReportHeader ExcludeReportHeader
-     *
-     * @return self
-     */
-    public function setExcludeReportHeader($ExcludeReportHeader)
-    {
-        if (is_null($ExcludeReportHeader)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeReportHeader');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeReportHeader', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExcludeReportHeader'] = $ExcludeReportHeader;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExcludeReportFooter
-     *
-     * @return bool|null
-     */
-    public function getExcludeReportFooter()
-    {
-        if (!isset($this->container['ExcludeReportFooter']) || is_null($this->container['ExcludeReportFooter'])) {
-            return null;
-        }
-        return $this->container['ExcludeReportFooter'];
-    }
-
-    /**
-     * Sets ExcludeReportFooter
-     *
-     * @param bool|null $ExcludeReportFooter ExcludeReportFooter
-     *
-     * @return self
-     */
-    public function setExcludeReportFooter($ExcludeReportFooter)
-    {
-        if (is_null($ExcludeReportFooter)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeReportFooter');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeReportFooter', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExcludeReportFooter'] = $ExcludeReportFooter;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExcludeColumnHeaders
-     *
-     * @return bool|null
-     */
-    public function getExcludeColumnHeaders()
-    {
-        if (!isset($this->container['ExcludeColumnHeaders']) || is_null($this->container['ExcludeColumnHeaders'])) {
-            return null;
-        }
-        return $this->container['ExcludeColumnHeaders'];
-    }
-
-    /**
-     * Sets ExcludeColumnHeaders
-     *
-     * @param bool|null $ExcludeColumnHeaders ExcludeColumnHeaders
-     *
-     * @return self
-     */
-    public function setExcludeColumnHeaders($ExcludeColumnHeaders)
-    {
-        if (is_null($ExcludeColumnHeaders)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeColumnHeaders');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeColumnHeaders', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExcludeColumnHeaders'] = $ExcludeColumnHeaders;
-
-        return $this;
-    }
-
-    /**
-     * Gets FormatVersion
-     *
-     * @return string|null
-     */
-    public function getFormatVersion()
-    {
-        if (!isset($this->container['FormatVersion']) || is_null($this->container['FormatVersion'])) {
-            return null;
-        }
-        return $this->container['FormatVersion'];
-    }
-
-    /**
-     * Sets FormatVersion
-     *
-     * @param string|null $FormatVersion FormatVersion
-     *
-     * @return self
-     */
-    public function setFormatVersion($FormatVersion)
-    {
-        if (is_null($FormatVersion)) {
-            array_push($this->openAPINullablesSetToNull, 'FormatVersion');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FormatVersion', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FormatVersion'] = $FormatVersion;
 
         return $this;
     }

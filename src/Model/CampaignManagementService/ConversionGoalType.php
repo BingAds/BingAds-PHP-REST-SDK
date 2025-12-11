@@ -35,6 +35,8 @@ class ConversionGoalType
 
     public const IN_STORE_TRANSACTION = 'InStoreTransaction';
 
+    public const APP_DOWNLOAD = 'AppDownload';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -109,7 +111,8 @@ class ConversionGoalType
             self::EVENT,
             self::APP_INSTALL,
             self::OFFLINE_CONVERSION,
-            self::IN_STORE_TRANSACTION
+            self::IN_STORE_TRANSACTION,
+            self::APP_DOWNLOAD
         ];
     }
 }

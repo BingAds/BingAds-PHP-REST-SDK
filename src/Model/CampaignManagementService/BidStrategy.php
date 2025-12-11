@@ -37,7 +37,10 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'string',
         'AssociatedCampaignType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
         'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
-        'AssociationCount' => 'int'
+        'AssociationCount' => 'int',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
+        'CurrencyCode' => 'string',
+        'ReportingTimeZone' => 'string'
     ];
 
     /**
@@ -52,7 +55,10 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => null,
         'AssociatedCampaignType' => null,
         'BiddingScheme' => null,
-        'AssociationCount' => 'int32'
+        'AssociationCount' => 'int32',
+        'Scope' => null,
+        'CurrencyCode' => null,
+        'ReportingTimeZone' => null
     ];
 
     /**
@@ -65,7 +71,10 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => true,
         'AssociatedCampaignType' => false,
         'BiddingScheme' => true,
-        'AssociationCount' => true
+        'AssociationCount' => true,
+        'Scope' => false,
+        'CurrencyCode' => true,
+        'ReportingTimeZone' => true
     ];
 
     /**
@@ -158,7 +167,10 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'Name',
         'AssociatedCampaignType' => 'AssociatedCampaignType',
         'BiddingScheme' => 'BiddingScheme',
-        'AssociationCount' => 'AssociationCount'
+        'AssociationCount' => 'AssociationCount',
+        'Scope' => 'Scope',
+        'CurrencyCode' => 'CurrencyCode',
+        'ReportingTimeZone' => 'ReportingTimeZone'
     ];
 
     /**
@@ -171,7 +183,10 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'setName',
         'AssociatedCampaignType' => 'setAssociatedCampaignType',
         'BiddingScheme' => 'setBiddingScheme',
-        'AssociationCount' => 'setAssociationCount'
+        'AssociationCount' => 'setAssociationCount',
+        'Scope' => 'setScope',
+        'CurrencyCode' => 'setCurrencyCode',
+        'ReportingTimeZone' => 'setReportingTimeZone'
     ];
 
     /**
@@ -184,7 +199,10 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'getName',
         'AssociatedCampaignType' => 'getAssociatedCampaignType',
         'BiddingScheme' => 'getBiddingScheme',
-        'AssociationCount' => 'getAssociationCount'
+        'AssociationCount' => 'getAssociationCount',
+        'Scope' => 'getScope',
+        'CurrencyCode' => 'getCurrencyCode',
+        'ReportingTimeZone' => 'getReportingTimeZone'
     ];
 
     /**
@@ -249,6 +267,9 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('AssociatedCampaignType', $data ?? [], null);
         $this->setIfExists('BiddingScheme', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('CurrencyCode', $data ?? [], null);
+        $this->setIfExists('ReportingTimeZone', $data ?? [], null);
     }
 
     /**
@@ -473,6 +494,116 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AssociationCount'] = $AssociationCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
+        }
+        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets CurrencyCode
+     *
+     * @return string|null
+     */
+    public function getCurrencyCode()
+    {
+        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
+            return null;
+        }
+        return $this->container['CurrencyCode'];
+    }
+
+    /**
+     * Sets CurrencyCode
+     *
+     * @param string|null $CurrencyCode CurrencyCode
+     *
+     * @return self
+     */
+    public function setCurrencyCode($CurrencyCode)
+    {
+        if (is_null($CurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CurrencyCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CurrencyCode'] = $CurrencyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReportingTimeZone
+     *
+     * @return string|null
+     */
+    public function getReportingTimeZone()
+    {
+        if (!isset($this->container['ReportingTimeZone']) || is_null($this->container['ReportingTimeZone'])) {
+            return null;
+        }
+        return $this->container['ReportingTimeZone'];
+    }
+
+    /**
+     * Sets ReportingTimeZone
+     *
+     * @param string|null $ReportingTimeZone ReportingTimeZone
+     *
+     * @return self
+     */
+    public function setReportingTimeZone($ReportingTimeZone)
+    {
+        if (is_null($ReportingTimeZone)) {
+            array_push($this->openAPINullablesSetToNull, 'ReportingTimeZone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReportingTimeZone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ReportingTimeZone'] = $ReportingTimeZone;
 
         return $this;
     }

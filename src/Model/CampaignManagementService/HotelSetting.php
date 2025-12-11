@@ -33,8 +33,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'HotelAdGroupType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType',
-        'Type' => 'string'
+        'Type' => 'string',
+        'HotelAdGroupType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'HotelAdGroupType' => null,
-        'Type' => null
+        'Type' => null,
+        'HotelAdGroupType' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'HotelAdGroupType' => false,
-        'Type' => true
+        'Type' => true,
+        'HotelAdGroupType' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
-        'HotelAdGroupType' => 'HotelAdGroupType',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'HotelAdGroupType' => 'HotelAdGroupType'
     ];
 
     /**
@@ -155,8 +155,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
-        'HotelAdGroupType' => 'setHotelAdGroupType',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'HotelAdGroupType' => 'setHotelAdGroupType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
-        'HotelAdGroupType' => 'getHotelAdGroupType',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'HotelAdGroupType' => 'getHotelAdGroupType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('HotelAdGroupType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'HotelSetting');
     }
 
     /**
@@ -273,42 +273,6 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets HotelAdGroupType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType|mixed|null
-     */
-    public function getHotelAdGroupType()
-    {
-        if (!isset($this->container['HotelAdGroupType']) || is_null($this->container['HotelAdGroupType'])) {
-            return null;
-        }
-        if ((is_object($this->container['HotelAdGroupType']) || is_string($this->container['HotelAdGroupType'])) && method_exists($this->container['HotelAdGroupType'], 'getValue')) {
-            return $this->container['HotelAdGroupType']->getValue();
-        }
-        return $this->container['HotelAdGroupType'];
-    }
-
-    /**
-     * Sets HotelAdGroupType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType|mixed|null $HotelAdGroupType HotelAdGroupType
-     *
-     * @return self
-     */
-    public function setHotelAdGroupType($HotelAdGroupType)
-    {
-        if (is_null($HotelAdGroupType)) {
-            throw new \InvalidArgumentException('non-nullable HotelAdGroupType cannot be null');
-        }
-        if (!$HotelAdGroupType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType) {
-            $HotelAdGroupType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType($HotelAdGroupType);
-        }
-        $this->container['HotelAdGroupType'] = $HotelAdGroupType;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -341,6 +305,42 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets HotelAdGroupType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType|mixed|null
+     */
+    public function getHotelAdGroupType()
+    {
+        if (!isset($this->container['HotelAdGroupType']) || is_null($this->container['HotelAdGroupType'])) {
+            return null;
+        }
+        if ((is_object($this->container['HotelAdGroupType']) || is_string($this->container['HotelAdGroupType'])) && method_exists($this->container['HotelAdGroupType'], 'getValue')) {
+            return $this->container['HotelAdGroupType']->getValue();
+        }
+        return $this->container['HotelAdGroupType'];
+    }
+
+    /**
+     * Sets HotelAdGroupType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType|mixed|null $HotelAdGroupType HotelAdGroupType
+     *
+     * @return self
+     */
+    public function setHotelAdGroupType($HotelAdGroupType)
+    {
+        if (is_null($HotelAdGroupType)) {
+            throw new \InvalidArgumentException('non-nullable HotelAdGroupType cannot be null');
+        }
+        if (!$HotelAdGroupType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType) {
+            $HotelAdGroupType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType($HotelAdGroupType);
+        }
+        $this->container['HotelAdGroupType'] = $HotelAdGroupType;
 
         return $this;
     }

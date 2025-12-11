@@ -33,8 +33,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Multiplier' => 'float',
-        'Type' => 'string'
+        'Type' => 'string',
+        'Multiplier' => 'float'
     ];
 
     /**
@@ -45,8 +45,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Multiplier' => 'double',
-        'Type' => null
+        'Type' => null,
+        'Multiplier' => 'double'
     ];
 
     /**
@@ -55,8 +55,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Multiplier' => false,
-        'Type' => true
+        'Type' => true,
+        'Multiplier' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Multiplier' => 'Multiplier',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Multiplier' => 'Multiplier'
     ];
 
     /**
@@ -155,8 +155,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
-        'Multiplier' => 'setMultiplier',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Multiplier' => 'setMultiplier'
     ];
 
     /**
@@ -165,8 +165,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
-        'Multiplier' => 'getMultiplier',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Multiplier' => 'getMultiplier'
     ];
 
     /**
@@ -226,8 +226,8 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Multiplier', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BidMultiplier');
     }
 
     /**
@@ -273,36 +273,6 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets Multiplier
-     *
-     * @return float|null
-     */
-    public function getMultiplier()
-    {
-        if (!isset($this->container['Multiplier']) || is_null($this->container['Multiplier'])) {
-            return null;
-        }
-        return $this->container['Multiplier'];
-    }
-
-    /**
-     * Sets Multiplier
-     *
-     * @param float|null $Multiplier Multiplier
-     *
-     * @return self
-     */
-    public function setMultiplier($Multiplier)
-    {
-        if (is_null($Multiplier)) {
-            throw new \InvalidArgumentException('non-nullable Multiplier cannot be null');
-        }
-        $this->container['Multiplier'] = $Multiplier;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -335,6 +305,36 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Multiplier
+     *
+     * @return float|null
+     */
+    public function getMultiplier()
+    {
+        if (!isset($this->container['Multiplier']) || is_null($this->container['Multiplier'])) {
+            return null;
+        }
+        return $this->container['Multiplier'];
+    }
+
+    /**
+     * Sets Multiplier
+     *
+     * @param float|null $Multiplier Multiplier
+     *
+     * @return self
+     */
+    public function setMultiplier($Multiplier)
+    {
+        if (is_null($Multiplier)) {
+            throw new \InvalidArgumentException('non-nullable Multiplier cannot be null');
+        }
+        $this->container['Multiplier'] = $Multiplier;
 
         return $this;
     }

@@ -253,7 +253,7 @@ class BrandList extends SharedList implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('ItemCount', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BrandList');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }

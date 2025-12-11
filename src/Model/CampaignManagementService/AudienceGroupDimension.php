@@ -45,8 +45,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType',
         'AgeRanges' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange[]',
-        'Type' => 'string',
         'GenderTypes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType[]',
         'Audiences' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceInfo[]',
         'Profiles' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileInfo[]'
@@ -60,8 +60,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AgeRanges' => null,
         'Type' => null,
+        'AgeRanges' => null,
         'GenderTypes' => null,
         'Audiences' => null,
         'Profiles' => null
@@ -73,8 +73,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => false,
         'AgeRanges' => true,
-        'Type' => true,
         'GenderTypes' => true,
         'Audiences' => true,
         'Profiles' => true
@@ -166,8 +166,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AgeRanges' => 'AgeRanges',
         'Type' => 'Type',
+        'AgeRanges' => 'AgeRanges',
         'GenderTypes' => 'GenderTypes',
         'Audiences' => 'Audiences',
         'Profiles' => 'Profiles'
@@ -179,8 +179,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'AgeRanges' => 'setAgeRanges',
         'Type' => 'setType',
+        'AgeRanges' => 'setAgeRanges',
         'GenderTypes' => 'setGenderTypes',
         'Audiences' => 'setAudiences',
         'Profiles' => 'setProfiles'
@@ -192,8 +192,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'AgeRanges' => 'getAgeRanges',
         'Type' => 'getType',
+        'AgeRanges' => 'getAgeRanges',
         'GenderTypes' => 'getGenderTypes',
         'Audiences' => 'getAudiences',
         'Profiles' => 'getProfiles'
@@ -256,8 +256,8 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AgeRanges', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Profile');
         $this->setIfExists('GenderTypes', $data ?? [], null);
         $this->setIfExists('Audiences', $data ?? [], null);
         $this->setIfExists('Profiles', $data ?? [], null);
@@ -307,6 +307,42 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets AgeRanges
@@ -360,43 +396,6 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['AgeRanges'] = $AgeRanges;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

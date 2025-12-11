@@ -33,8 +33,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'OperationErrors' => '\Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[]',
         'TrackingId' => 'string',
+        'OperationErrors' => '\Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[]',
         'Type' => 'string'
     ];
 
@@ -46,8 +46,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'OperationErrors' => null,
         'TrackingId' => null,
+        'OperationErrors' => null,
         'Type' => null
     ];
 
@@ -57,8 +57,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'OperationErrors' => true,
         'TrackingId' => true,
+        'OperationErrors' => true,
         'Type' => true
     ];
 
@@ -148,8 +148,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'OperationErrors' => 'OperationErrors',
         'TrackingId' => 'TrackingId',
+        'OperationErrors' => 'OperationErrors',
         'Type' => 'Type'
     ];
 
@@ -159,8 +159,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'OperationErrors' => 'setOperationErrors',
         'TrackingId' => 'setTrackingId',
+        'OperationErrors' => 'setOperationErrors',
         'Type' => 'setType'
     ];
 
@@ -170,8 +170,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'OperationErrors' => 'getOperationErrors',
         'TrackingId' => 'getTrackingId',
+        'OperationErrors' => 'getOperationErrors',
         'Type' => 'getType'
     ];
 
@@ -232,8 +232,8 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('TrackingId', $data ?? [], null);
+        $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'ApiFault');
     }
 
@@ -280,43 +280,6 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets OperationErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[]|null
-     */
-    public function getOperationErrors()
-    {
-        if (!isset($this->container['OperationErrors']) || is_null($this->container['OperationErrors'])) {
-            return null;
-        }
-        return $this->container['OperationErrors'];
-    }
-
-    /**
-     * Sets OperationErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[]|null $OperationErrors OperationErrors
-     *
-     * @return self
-     */
-    public function setOperationErrors($OperationErrors)
-    {
-        if (is_null($OperationErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'OperationErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('OperationErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['OperationErrors'] = $OperationErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets TrackingId
      *
      * @return string|null
@@ -349,6 +312,43 @@ class ApiFault extends ApplicationFault implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['TrackingId'] = $TrackingId;
+
+        return $this;
+    }
+
+    /**
+     * Gets OperationErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[]|null
+     */
+    public function getOperationErrors()
+    {
+        if (!isset($this->container['OperationErrors']) || is_null($this->container['OperationErrors'])) {
+            return null;
+        }
+        return $this->container['OperationErrors'];
+    }
+
+    /**
+     * Sets OperationErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[]|null $OperationErrors OperationErrors
+     *
+     * @return self
+     */
+    public function setOperationErrors($OperationErrors)
+    {
+        if (is_null($OperationErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'OperationErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('OperationErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['OperationErrors'] = $OperationErrors;
 
         return $this;
     }

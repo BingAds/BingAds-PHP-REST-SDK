@@ -33,8 +33,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'FeedId' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'FeedId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'FeedId' => 'int64',
-        'Type' => null
+        'Type' => null,
+        'FeedId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'FeedId' => true,
-        'Type' => true
+        'Type' => true,
+        'FeedId' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'FeedId' => 'FeedId',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'FeedId' => 'FeedId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
-        'FeedId' => 'setFeedId',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'FeedId' => 'setFeedId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
-        'FeedId' => 'getFeedId',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'FeedId' => 'getFeedId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('FeedId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DynamicFeedSetting');
     }
 
     /**
@@ -273,43 +273,6 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets FeedId
-     *
-     * @return string|null
-     */
-    public function getFeedId()
-    {
-        if (!isset($this->container['FeedId']) || is_null($this->container['FeedId'])) {
-            return null;
-        }
-        return $this->container['FeedId'];
-    }
-
-    /**
-     * Sets FeedId
-     *
-     * @param string|null $FeedId FeedId
-     *
-     * @return self
-     */
-    public function setFeedId($FeedId)
-    {
-        if (is_null($FeedId)) {
-            array_push($this->openAPINullablesSetToNull, 'FeedId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FeedId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FeedId'] = $FeedId;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class DynamicFeedSetting extends Setting implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets FeedId
+     *
+     * @return string|null
+     */
+    public function getFeedId()
+    {
+        if (!isset($this->container['FeedId']) || is_null($this->container['FeedId'])) {
+            return null;
+        }
+        return $this->container['FeedId'];
+    }
+
+    /**
+     * Sets FeedId
+     *
+     * @param string|null $FeedId FeedId
+     *
+     * @return self
+     */
+    public function setFeedId($FeedId)
+    {
+        if (is_null($FeedId)) {
+            array_push($this->openAPINullablesSetToNull, 'FeedId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FeedId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FeedId'] = $FeedId;
 
         return $this;
     }
