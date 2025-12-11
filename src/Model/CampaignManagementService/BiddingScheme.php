@@ -310,7 +310,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'CostPerSale');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('MaxCpc', $data ?? [], null);
         $this->setIfExists('TargetCpa', $data ?? [], null);
         $this->setIfExists('ManualCpc', $data ?? [], null);

@@ -33,8 +33,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'GenreId' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'GenreId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'GenreId' => 'int64',
-        'Type' => null
+        'Type' => null,
+        'GenreId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'GenreId' => false,
-        'Type' => true
+        'Type' => true,
+        'GenreId' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'GenreId' => 'GenreId',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'GenreId' => 'GenreId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'GenreId' => 'setGenreId',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'GenreId' => 'setGenreId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'GenreId' => 'getGenreId',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'GenreId' => 'getGenreId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('GenreId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'GenreCriterion');
     }
 
     /**
@@ -273,36 +273,6 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets GenreId
-     *
-     * @return string|null
-     */
-    public function getGenreId()
-    {
-        if (!isset($this->container['GenreId']) || is_null($this->container['GenreId'])) {
-            return null;
-        }
-        return $this->container['GenreId'];
-    }
-
-    /**
-     * Sets GenreId
-     *
-     * @param string|null $GenreId GenreId
-     *
-     * @return self
-     */
-    public function setGenreId($GenreId)
-    {
-        if (is_null($GenreId)) {
-            throw new \InvalidArgumentException('non-nullable GenreId cannot be null');
-        }
-        $this->container['GenreId'] = $GenreId;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -335,6 +305,36 @@ class GenreCriterion extends Criterion implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets GenreId
+     *
+     * @return string|null
+     */
+    public function getGenreId()
+    {
+        if (!isset($this->container['GenreId']) || is_null($this->container['GenreId'])) {
+            return null;
+        }
+        return $this->container['GenreId'];
+    }
+
+    /**
+     * Sets GenreId
+     *
+     * @param string|null $GenreId GenreId
+     *
+     * @return self
+     */
+    public function setGenreId($GenreId)
+    {
+        if (is_null($GenreId)) {
+            throw new \InvalidArgumentException('non-nullable GenreId cannot be null');
+        }
+        $this->container['GenreId'] = $GenreId;
 
         return $this;
     }

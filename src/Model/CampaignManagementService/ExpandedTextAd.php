@@ -33,16 +33,8 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TitlePart1' => 'string',
-        'TitlePart2' => 'string',
-        'Text' => 'string',
-        'Path1' => 'string',
-        'Path2' => 'string',
-        'Domain' => 'string',
-        'TitlePart3' => 'string',
-        'TextPart2' => 'string',
         'Id' => 'string',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'DevicePreference' => 'string',
@@ -53,7 +45,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         'FinalUrls' => 'string[]',
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'TitlePart1' => 'string',
+        'TitlePart2' => 'string',
+        'Text' => 'string',
+        'Path1' => 'string',
+        'Path2' => 'string',
+        'Domain' => 'string',
+        'TitlePart3' => 'string',
+        'TextPart2' => 'string'
     ];
 
     /**
@@ -64,14 +64,6 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TitlePart1' => null,
-        'TitlePart2' => null,
-        'Text' => null,
-        'Path1' => null,
-        'Path2' => null,
-        'Domain' => null,
-        'TitlePart3' => null,
-        'TextPart2' => null,
         'Id' => 'int64',
         'Type' => null,
         'Status' => null,
@@ -84,7 +76,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         'FinalUrls' => null,
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'TitlePart1' => null,
+        'TitlePart2' => null,
+        'Text' => null,
+        'Path1' => null,
+        'Path2' => null,
+        'Domain' => null,
+        'TitlePart3' => null,
+        'TextPart2' => null
     ];
 
     /**
@@ -93,16 +93,8 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TitlePart1' => true,
-        'TitlePart2' => true,
-        'Text' => true,
-        'Path1' => true,
-        'Path2' => true,
-        'Domain' => true,
-        'TitlePart3' => true,
-        'TextPart2' => true,
         'Id' => true,
-        'Type' => true,
+        'Type' => false,
         'Status' => false,
         'EditorialStatus' => false,
         'DevicePreference' => true,
@@ -113,7 +105,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         'FinalUrls' => true,
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'TitlePart1' => true,
+        'TitlePart2' => true,
+        'Text' => true,
+        'Path1' => true,
+        'Path2' => true,
+        'Domain' => true,
+        'TitlePart3' => true,
+        'TextPart2' => true
     ];
 
     /**
@@ -202,14 +202,6 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TitlePart1' => 'TitlePart1',
-        'TitlePart2' => 'TitlePart2',
-        'Text' => 'Text',
-        'Path1' => 'Path1',
-        'Path2' => 'Path2',
-        'Domain' => 'Domain',
-        'TitlePart3' => 'TitlePart3',
-        'TextPart2' => 'TextPart2',
         'Id' => 'Id',
         'Type' => 'Type',
         'Status' => 'Status',
@@ -222,7 +214,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         'FinalUrls' => 'FinalUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'TitlePart1' => 'TitlePart1',
+        'TitlePart2' => 'TitlePart2',
+        'Text' => 'Text',
+        'Path1' => 'Path1',
+        'Path2' => 'Path2',
+        'Domain' => 'Domain',
+        'TitlePart3' => 'TitlePart3',
+        'TextPart2' => 'TextPart2'
     ];
 
     /**
@@ -231,14 +231,6 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $setters = [
-        'TitlePart1' => 'setTitlePart1',
-        'TitlePart2' => 'setTitlePart2',
-        'Text' => 'setText',
-        'Path1' => 'setPath1',
-        'Path2' => 'setPath2',
-        'Domain' => 'setDomain',
-        'TitlePart3' => 'setTitlePart3',
-        'TextPart2' => 'setTextPart2',
         'Id' => 'setId',
         'Type' => 'setType',
         'Status' => 'setStatus',
@@ -251,7 +243,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         'FinalUrls' => 'setFinalUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'TitlePart1' => 'setTitlePart1',
+        'TitlePart2' => 'setTitlePart2',
+        'Text' => 'setText',
+        'Path1' => 'setPath1',
+        'Path2' => 'setPath2',
+        'Domain' => 'setDomain',
+        'TitlePart3' => 'setTitlePart3',
+        'TextPart2' => 'setTextPart2'
     ];
 
     /**
@@ -260,14 +260,6 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $getters = [
-        'TitlePart1' => 'getTitlePart1',
-        'TitlePart2' => 'getTitlePart2',
-        'Text' => 'getText',
-        'Path1' => 'getPath1',
-        'Path2' => 'getPath2',
-        'Domain' => 'getDomain',
-        'TitlePart3' => 'getTitlePart3',
-        'TextPart2' => 'getTextPart2',
         'Id' => 'getId',
         'Type' => 'getType',
         'Status' => 'getStatus',
@@ -280,7 +272,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         'FinalUrls' => 'getFinalUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'TitlePart1' => 'getTitlePart1',
+        'TitlePart2' => 'getTitlePart2',
+        'Text' => 'getText',
+        'Path1' => 'getPath1',
+        'Path2' => 'getPath2',
+        'Domain' => 'getDomain',
+        'TitlePart3' => 'getTitlePart3',
+        'TextPart2' => 'getTextPart2'
     ];
 
     /**
@@ -340,16 +340,8 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TitlePart1', $data ?? [], null);
-        $this->setIfExists('TitlePart2', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('Path1', $data ?? [], null);
-        $this->setIfExists('Path2', $data ?? [], null);
-        $this->setIfExists('Domain', $data ?? [], null);
-        $this->setIfExists('TitlePart3', $data ?? [], null);
-        $this->setIfExists('TextPart2', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ExpandedText');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
@@ -361,6 +353,14 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('TitlePart1', $data ?? [], null);
+        $this->setIfExists('TitlePart2', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('Path1', $data ?? [], null);
+        $this->setIfExists('Path2', $data ?? [], null);
+        $this->setIfExists('Domain', $data ?? [], null);
+        $this->setIfExists('TitlePart3', $data ?? [], null);
+        $this->setIfExists('TextPart2', $data ?? [], null);
     }
 
     /**
@@ -406,302 +406,6 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets TitlePart1
-     *
-     * @return string|null
-     */
-    public function getTitlePart1()
-    {
-        if (!isset($this->container['TitlePart1']) || is_null($this->container['TitlePart1'])) {
-            return null;
-        }
-        return $this->container['TitlePart1'];
-    }
-
-    /**
-     * Sets TitlePart1
-     *
-     * @param string|null $TitlePart1 TitlePart1
-     *
-     * @return self
-     */
-    public function setTitlePart1($TitlePart1)
-    {
-        if (is_null($TitlePart1)) {
-            array_push($this->openAPINullablesSetToNull, 'TitlePart1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TitlePart1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TitlePart1'] = $TitlePart1;
-
-        return $this;
-    }
-
-    /**
-     * Gets TitlePart2
-     *
-     * @return string|null
-     */
-    public function getTitlePart2()
-    {
-        if (!isset($this->container['TitlePart2']) || is_null($this->container['TitlePart2'])) {
-            return null;
-        }
-        return $this->container['TitlePart2'];
-    }
-
-    /**
-     * Sets TitlePart2
-     *
-     * @param string|null $TitlePart2 TitlePart2
-     *
-     * @return self
-     */
-    public function setTitlePart2($TitlePart2)
-    {
-        if (is_null($TitlePart2)) {
-            array_push($this->openAPINullablesSetToNull, 'TitlePart2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TitlePart2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TitlePart2'] = $TitlePart2;
-
-        return $this;
-    }
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
-     * Gets Path1
-     *
-     * @return string|null
-     */
-    public function getPath1()
-    {
-        if (!isset($this->container['Path1']) || is_null($this->container['Path1'])) {
-            return null;
-        }
-        return $this->container['Path1'];
-    }
-
-    /**
-     * Sets Path1
-     *
-     * @param string|null $Path1 Path1
-     *
-     * @return self
-     */
-    public function setPath1($Path1)
-    {
-        if (is_null($Path1)) {
-            array_push($this->openAPINullablesSetToNull, 'Path1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Path1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Path1'] = $Path1;
-
-        return $this;
-    }
-
-    /**
-     * Gets Path2
-     *
-     * @return string|null
-     */
-    public function getPath2()
-    {
-        if (!isset($this->container['Path2']) || is_null($this->container['Path2'])) {
-            return null;
-        }
-        return $this->container['Path2'];
-    }
-
-    /**
-     * Sets Path2
-     *
-     * @param string|null $Path2 Path2
-     *
-     * @return self
-     */
-    public function setPath2($Path2)
-    {
-        if (is_null($Path2)) {
-            array_push($this->openAPINullablesSetToNull, 'Path2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Path2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Path2'] = $Path2;
-
-        return $this;
-    }
-
-    /**
-     * Gets Domain
-     *
-     * @return string|null
-     */
-    public function getDomain()
-    {
-        if (!isset($this->container['Domain']) || is_null($this->container['Domain'])) {
-            return null;
-        }
-        return $this->container['Domain'];
-    }
-
-    /**
-     * Sets Domain
-     *
-     * @param string|null $Domain Domain
-     *
-     * @return self
-     */
-    public function setDomain($Domain)
-    {
-        if (is_null($Domain)) {
-            array_push($this->openAPINullablesSetToNull, 'Domain');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Domain', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Domain'] = $Domain;
-
-        return $this;
-    }
-
-    /**
-     * Gets TitlePart3
-     *
-     * @return string|null
-     */
-    public function getTitlePart3()
-    {
-        if (!isset($this->container['TitlePart3']) || is_null($this->container['TitlePart3'])) {
-            return null;
-        }
-        return $this->container['TitlePart3'];
-    }
-
-    /**
-     * Sets TitlePart3
-     *
-     * @param string|null $TitlePart3 TitlePart3
-     *
-     * @return self
-     */
-    public function setTitlePart3($TitlePart3)
-    {
-        if (is_null($TitlePart3)) {
-            array_push($this->openAPINullablesSetToNull, 'TitlePart3');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TitlePart3', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TitlePart3'] = $TitlePart3;
-
-        return $this;
-    }
-
-    /**
-     * Gets TextPart2
-     *
-     * @return string|null
-     */
-    public function getTextPart2()
-    {
-        if (!isset($this->container['TextPart2']) || is_null($this->container['TextPart2'])) {
-            return null;
-        }
-        return $this->container['TextPart2'];
-    }
-
-    /**
-     * Sets TextPart2
-     *
-     * @param string|null $TextPart2 TextPart2
-     *
-     * @return self
-     */
-    public function setTextPart2($TextPart2)
-    {
-        if (is_null($TextPart2)) {
-            array_push($this->openAPINullablesSetToNull, 'TextPart2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TextPart2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TextPart2'] = $TextPart2;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -741,12 +445,15 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -754,21 +461,17 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1176,6 +879,302 @@ class ExpandedTextAd extends Ad implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets TitlePart1
+     *
+     * @return string|null
+     */
+    public function getTitlePart1()
+    {
+        if (!isset($this->container['TitlePart1']) || is_null($this->container['TitlePart1'])) {
+            return null;
+        }
+        return $this->container['TitlePart1'];
+    }
+
+    /**
+     * Sets TitlePart1
+     *
+     * @param string|null $TitlePart1 TitlePart1
+     *
+     * @return self
+     */
+    public function setTitlePart1($TitlePart1)
+    {
+        if (is_null($TitlePart1)) {
+            array_push($this->openAPINullablesSetToNull, 'TitlePart1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TitlePart1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TitlePart1'] = $TitlePart1;
+
+        return $this;
+    }
+
+    /**
+     * Gets TitlePart2
+     *
+     * @return string|null
+     */
+    public function getTitlePart2()
+    {
+        if (!isset($this->container['TitlePart2']) || is_null($this->container['TitlePart2'])) {
+            return null;
+        }
+        return $this->container['TitlePart2'];
+    }
+
+    /**
+     * Sets TitlePart2
+     *
+     * @param string|null $TitlePart2 TitlePart2
+     *
+     * @return self
+     */
+    public function setTitlePart2($TitlePart2)
+    {
+        if (is_null($TitlePart2)) {
+            array_push($this->openAPINullablesSetToNull, 'TitlePart2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TitlePart2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TitlePart2'] = $TitlePart2;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets Path1
+     *
+     * @return string|null
+     */
+    public function getPath1()
+    {
+        if (!isset($this->container['Path1']) || is_null($this->container['Path1'])) {
+            return null;
+        }
+        return $this->container['Path1'];
+    }
+
+    /**
+     * Sets Path1
+     *
+     * @param string|null $Path1 Path1
+     *
+     * @return self
+     */
+    public function setPath1($Path1)
+    {
+        if (is_null($Path1)) {
+            array_push($this->openAPINullablesSetToNull, 'Path1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Path1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Path1'] = $Path1;
+
+        return $this;
+    }
+
+    /**
+     * Gets Path2
+     *
+     * @return string|null
+     */
+    public function getPath2()
+    {
+        if (!isset($this->container['Path2']) || is_null($this->container['Path2'])) {
+            return null;
+        }
+        return $this->container['Path2'];
+    }
+
+    /**
+     * Sets Path2
+     *
+     * @param string|null $Path2 Path2
+     *
+     * @return self
+     */
+    public function setPath2($Path2)
+    {
+        if (is_null($Path2)) {
+            array_push($this->openAPINullablesSetToNull, 'Path2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Path2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Path2'] = $Path2;
+
+        return $this;
+    }
+
+    /**
+     * Gets Domain
+     *
+     * @return string|null
+     */
+    public function getDomain()
+    {
+        if (!isset($this->container['Domain']) || is_null($this->container['Domain'])) {
+            return null;
+        }
+        return $this->container['Domain'];
+    }
+
+    /**
+     * Sets Domain
+     *
+     * @param string|null $Domain Domain
+     *
+     * @return self
+     */
+    public function setDomain($Domain)
+    {
+        if (is_null($Domain)) {
+            array_push($this->openAPINullablesSetToNull, 'Domain');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Domain', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Domain'] = $Domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets TitlePart3
+     *
+     * @return string|null
+     */
+    public function getTitlePart3()
+    {
+        if (!isset($this->container['TitlePart3']) || is_null($this->container['TitlePart3'])) {
+            return null;
+        }
+        return $this->container['TitlePart3'];
+    }
+
+    /**
+     * Sets TitlePart3
+     *
+     * @param string|null $TitlePart3 TitlePart3
+     *
+     * @return self
+     */
+    public function setTitlePart3($TitlePart3)
+    {
+        if (is_null($TitlePart3)) {
+            array_push($this->openAPINullablesSetToNull, 'TitlePart3');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TitlePart3', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TitlePart3'] = $TitlePart3;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextPart2
+     *
+     * @return string|null
+     */
+    public function getTextPart2()
+    {
+        if (!isset($this->container['TextPart2']) || is_null($this->container['TextPart2'])) {
+            return null;
+        }
+        return $this->container['TextPart2'];
+    }
+
+    /**
+     * Sets TextPart2
+     *
+     * @param string|null $TextPart2 TextPart2
+     *
+     * @return self
+     */
+    public function setTextPart2($TextPart2)
+    {
+        if (is_null($TextPart2)) {
+            array_push($this->openAPINullablesSetToNull, 'TextPart2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextPart2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TextPart2'] = $TextPart2;
 
         return $this;
     }

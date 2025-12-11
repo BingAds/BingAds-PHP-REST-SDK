@@ -33,8 +33,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MaxPercentCpc' => 'float',
-        'Type' => 'string'
+        'Type' => 'string',
+        'MaxPercentCpc' => 'float'
     ];
 
     /**
@@ -45,8 +45,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MaxPercentCpc' => 'double',
-        'Type' => null
+        'Type' => null,
+        'MaxPercentCpc' => 'double'
     ];
 
     /**
@@ -55,8 +55,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MaxPercentCpc' => true,
-        'Type' => true
+        'Type' => true,
+        'MaxPercentCpc' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MaxPercentCpc' => 'MaxPercentCpc',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'MaxPercentCpc' => 'MaxPercentCpc'
     ];
 
     /**
@@ -155,8 +155,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $setters = [
-        'MaxPercentCpc' => 'setMaxPercentCpc',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'MaxPercentCpc' => 'setMaxPercentCpc'
     ];
 
     /**
@@ -165,8 +165,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
      * @var string[]
      */
     protected static array $getters = [
-        'MaxPercentCpc' => 'getMaxPercentCpc',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'MaxPercentCpc' => 'getMaxPercentCpc'
     ];
 
     /**
@@ -226,8 +226,8 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('MaxPercentCpc', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'PercentCpcBiddingScheme');
     }
 
     /**
@@ -273,43 +273,6 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
 
 
     /**
-     * Gets MaxPercentCpc
-     *
-     * @return float|null
-     */
-    public function getMaxPercentCpc()
-    {
-        if (!isset($this->container['MaxPercentCpc']) || is_null($this->container['MaxPercentCpc'])) {
-            return null;
-        }
-        return $this->container['MaxPercentCpc'];
-    }
-
-    /**
-     * Sets MaxPercentCpc
-     *
-     * @param float|null $MaxPercentCpc MaxPercentCpc
-     *
-     * @return self
-     */
-    public function setMaxPercentCpc($MaxPercentCpc)
-    {
-        if (is_null($MaxPercentCpc)) {
-            array_push($this->openAPINullablesSetToNull, 'MaxPercentCpc');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MaxPercentCpc', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MaxPercentCpc'] = $MaxPercentCpc;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class PercentCpcBiddingScheme extends BiddingScheme implements ModelInterface, A
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets MaxPercentCpc
+     *
+     * @return float|null
+     */
+    public function getMaxPercentCpc()
+    {
+        if (!isset($this->container['MaxPercentCpc']) || is_null($this->container['MaxPercentCpc'])) {
+            return null;
+        }
+        return $this->container['MaxPercentCpc'];
+    }
+
+    /**
+     * Sets MaxPercentCpc
+     *
+     * @param float|null $MaxPercentCpc MaxPercentCpc
+     *
+     * @return self
+     */
+    public function setMaxPercentCpc($MaxPercentCpc)
+    {
+        if (is_null($MaxPercentCpc)) {
+            array_push($this->openAPINullablesSetToNull, 'MaxPercentCpc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MaxPercentCpc', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MaxPercentCpc'] = $MaxPercentCpc;
 
         return $this;
     }

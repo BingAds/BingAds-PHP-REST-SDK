@@ -33,9 +33,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'DeviceName' => 'string',
-        'OSName' => 'string',
-        'Type' => 'string'
+        'OSName' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'DeviceName' => null,
-        'OSName' => null,
-        'Type' => null
+        'OSName' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'DeviceName' => true,
-        'OSName' => true,
-        'Type' => true
+        'OSName' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'DeviceName' => 'DeviceName',
-        'OSName' => 'OSName',
-        'Type' => 'Type'
+        'OSName' => 'OSName'
     ];
 
     /**
@@ -159,9 +159,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'DeviceName' => 'setDeviceName',
-        'OSName' => 'setOSName',
-        'Type' => 'setType'
+        'OSName' => 'setOSName'
     ];
 
     /**
@@ -170,9 +170,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'DeviceName' => 'getDeviceName',
-        'OSName' => 'getOSName',
-        'Type' => 'getType'
+        'OSName' => 'getOSName'
     ];
 
     /**
@@ -232,9 +232,9 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DeviceName', $data ?? [], null);
         $this->setIfExists('OSName', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DeviceCriterion');
     }
 
     /**
@@ -278,6 +278,43 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets DeviceName
@@ -349,43 +386,6 @@ class DeviceCriterion extends Criterion implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['OSName'] = $OSName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

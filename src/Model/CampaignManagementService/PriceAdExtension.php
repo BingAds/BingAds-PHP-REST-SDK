@@ -33,18 +33,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PriceExtensionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType',
-        'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'Language' => 'string',
-        'TableRows' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'PriceExtensionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType',
+        'TrackingUrlTemplate' => 'string',
+        'FinalUrlSuffix' => 'string',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
+        'Language' => 'string',
+        'TableRows' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -56,18 +56,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PriceExtensionType' => null,
-        'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'UrlCustomParameters' => null,
-        'Language' => null,
-        'TableRows' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'PriceExtensionType' => null,
+        'TrackingUrlTemplate' => null,
+        'FinalUrlSuffix' => null,
+        'UrlCustomParameters' => null,
+        'Language' => null,
+        'TableRows' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -77,18 +77,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PriceExtensionType' => false,
-        'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'UrlCustomParameters' => true,
-        'Language' => true,
-        'TableRows' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'PriceExtensionType' => false,
+        'TrackingUrlTemplate' => true,
+        'FinalUrlSuffix' => true,
+        'UrlCustomParameters' => true,
+        'Language' => true,
+        'TableRows' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -178,18 +178,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PriceExtensionType' => 'PriceExtensionType',
-        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'UrlCustomParameters' => 'UrlCustomParameters',
-        'Language' => 'Language',
-        'TableRows' => 'TableRows',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'PriceExtensionType' => 'PriceExtensionType',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'UrlCustomParameters' => 'UrlCustomParameters',
+        'Language' => 'Language',
+        'TableRows' => 'TableRows',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -199,18 +199,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $setters = [
-        'PriceExtensionType' => 'setPriceExtensionType',
-        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
-        'Language' => 'setLanguage',
-        'TableRows' => 'setTableRows',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'PriceExtensionType' => 'setPriceExtensionType',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'UrlCustomParameters' => 'setUrlCustomParameters',
+        'Language' => 'setLanguage',
+        'TableRows' => 'setTableRows',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -220,18 +220,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $getters = [
-        'PriceExtensionType' => 'getPriceExtensionType',
-        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
-        'Language' => 'getLanguage',
-        'TableRows' => 'getTableRows',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'PriceExtensionType' => 'getPriceExtensionType',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'UrlCustomParameters' => 'getUrlCustomParameters',
+        'Language' => 'getLanguage',
+        'TableRows' => 'getTableRows',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -292,18 +292,18 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('DevicePreference', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('Version', $data ?? [], null);
         $this->setIfExists('PriceExtensionType', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
         $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
         $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('Language', $data ?? [], null);
         $this->setIfExists('TableRows', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
-        $this->setIfExists('DevicePreference', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'PriceAdExtension');
-        $this->setIfExists('Version', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -348,227 +348,6 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets PriceExtensionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType|mixed|null
-     */
-    public function getPriceExtensionType()
-    {
-        if (!isset($this->container['PriceExtensionType']) || is_null($this->container['PriceExtensionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['PriceExtensionType']) || is_string($this->container['PriceExtensionType'])) && method_exists($this->container['PriceExtensionType'], 'getValue')) {
-            return $this->container['PriceExtensionType']->getValue();
-        }
-        return $this->container['PriceExtensionType'];
-    }
-
-    /**
-     * Sets PriceExtensionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType|mixed|null $PriceExtensionType PriceExtensionType
-     *
-     * @return self
-     */
-    public function setPriceExtensionType($PriceExtensionType)
-    {
-        if (is_null($PriceExtensionType)) {
-            throw new \InvalidArgumentException('non-nullable PriceExtensionType cannot be null');
-        }
-        if (!$PriceExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType) {
-            $PriceExtensionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType($PriceExtensionType);
-        }
-        $this->container['PriceExtensionType'] = $PriceExtensionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrackingUrlTemplate
-     *
-     * @return string|null
-     */
-    public function getTrackingUrlTemplate()
-    {
-        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
-            return null;
-        }
-        return $this->container['TrackingUrlTemplate'];
-    }
-
-    /**
-     * Sets TrackingUrlTemplate
-     *
-     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
-     *
-     * @return self
-     */
-    public function setTrackingUrlTemplate($TrackingUrlTemplate)
-    {
-        if (is_null($TrackingUrlTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlCustomParameters
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
-     */
-    public function getUrlCustomParameters()
-    {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
-            return null;
-        }
-        return $this->container['UrlCustomParameters'];
-    }
-
-    /**
-     * Sets UrlCustomParameters
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
-     *
-     * @return self
-     */
-    public function setUrlCustomParameters($UrlCustomParameters)
-    {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets Language
-     *
-     * @return string|null
-     */
-    public function getLanguage()
-    {
-        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
-            return null;
-        }
-        return $this->container['Language'];
-    }
-
-    /**
-     * Sets Language
-     *
-     * @param string|null $Language Language
-     *
-     * @return self
-     */
-    public function setLanguage($Language)
-    {
-        if (is_null($Language)) {
-            array_push($this->openAPINullablesSetToNull, 'Language');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Language', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Language'] = $Language;
-
-        return $this;
-    }
-
-    /**
-     * Gets TableRows
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]|null
-     */
-    public function getTableRows()
-    {
-        if (!isset($this->container['TableRows']) || is_null($this->container['TableRows'])) {
-            return null;
-        }
-        return $this->container['TableRows'];
-    }
-
-    /**
-     * Sets TableRows
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]|null $TableRows TableRows
-     *
-     * @return self
-     */
-    public function setTableRows($TableRows)
-    {
-        if (is_null($TableRows)) {
-            array_push($this->openAPINullablesSetToNull, 'TableRows');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TableRows', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TableRows'] = $TableRows;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -787,6 +566,227 @@ class PriceAdExtension extends AdExtension implements ModelInterface, ArrayAcces
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriceExtensionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType|mixed|null
+     */
+    public function getPriceExtensionType()
+    {
+        if (!isset($this->container['PriceExtensionType']) || is_null($this->container['PriceExtensionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['PriceExtensionType']) || is_string($this->container['PriceExtensionType'])) && method_exists($this->container['PriceExtensionType'], 'getValue')) {
+            return $this->container['PriceExtensionType']->getValue();
+        }
+        return $this->container['PriceExtensionType'];
+    }
+
+    /**
+     * Sets PriceExtensionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType|mixed|null $PriceExtensionType PriceExtensionType
+     *
+     * @return self
+     */
+    public function setPriceExtensionType($PriceExtensionType)
+    {
+        if (is_null($PriceExtensionType)) {
+            throw new \InvalidArgumentException('non-nullable PriceExtensionType cannot be null');
+        }
+        if (!$PriceExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType) {
+            $PriceExtensionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType($PriceExtensionType);
+        }
+        $this->container['PriceExtensionType'] = $PriceExtensionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingUrlTemplate
+     *
+     * @return string|null
+     */
+    public function getTrackingUrlTemplate()
+    {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+            return null;
+        }
+        return $this->container['TrackingUrlTemplate'];
+    }
+
+    /**
+     * Sets TrackingUrlTemplate
+     *
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     *
+     * @return self
+     */
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    {
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlCustomParameters
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     */
+    public function getUrlCustomParameters()
+    {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+            return null;
+        }
+        return $this->container['UrlCustomParameters'];
+    }
+
+    /**
+     * Sets UrlCustomParameters
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     *
+     * @return self
+     */
+    public function setUrlCustomParameters($UrlCustomParameters)
+    {
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
+
+        return $this;
+    }
+
+    /**
+     * Gets Language
+     *
+     * @return string|null
+     */
+    public function getLanguage()
+    {
+        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
+            return null;
+        }
+        return $this->container['Language'];
+    }
+
+    /**
+     * Sets Language
+     *
+     * @param string|null $Language Language
+     *
+     * @return self
+     */
+    public function setLanguage($Language)
+    {
+        if (is_null($Language)) {
+            array_push($this->openAPINullablesSetToNull, 'Language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Language'] = $Language;
+
+        return $this;
+    }
+
+    /**
+     * Gets TableRows
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]|null
+     */
+    public function getTableRows()
+    {
+        if (!isset($this->container['TableRows']) || is_null($this->container['TableRows'])) {
+            return null;
+        }
+        return $this->container['TableRows'];
+    }
+
+    /**
+     * Sets TableRows
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]|null $TableRows TableRows
+     *
+     * @return self
+     */
+    public function setTableRows($TableRows)
+    {
+        if (is_null($TableRows)) {
+            array_push($this->openAPINullablesSetToNull, 'TableRows');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TableRows', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TableRows'] = $TableRows;
 
         return $this;
     }

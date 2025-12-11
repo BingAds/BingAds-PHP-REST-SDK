@@ -33,18 +33,10 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CategoryExpression' => 'string',
-        'CategoryOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
-        'ActionExpression' => 'string',
-        'ActionOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
-        'LabelExpression' => 'string',
-        'LabelOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
-        'Value' => 'float',
-        'ValueOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator',
         'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -56,7 +48,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool'
+        'IsAutoGoal' => 'bool',
+        'CategoryExpression' => 'string',
+        'CategoryOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
+        'ActionExpression' => 'string',
+        'ActionOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
+        'LabelExpression' => 'string',
+        'LabelOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
+        'Value' => 'float',
+        'ValueOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator'
     ];
 
     /**
@@ -67,14 +67,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CategoryExpression' => null,
-        'CategoryOperator' => null,
-        'ActionExpression' => null,
-        'ActionOperator' => null,
-        'LabelExpression' => null,
-        'LabelOperator' => null,
-        'Value' => 'double',
-        'ValueOperator' => null,
         'Id' => 'int64',
         'Name' => null,
         'Status' => null,
@@ -90,7 +82,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null
+        'IsAutoGoal' => null,
+        'CategoryExpression' => null,
+        'CategoryOperator' => null,
+        'ActionExpression' => null,
+        'ActionOperator' => null,
+        'LabelExpression' => null,
+        'LabelOperator' => null,
+        'Value' => 'double',
+        'ValueOperator' => null
     ];
 
     /**
@@ -99,18 +99,10 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CategoryExpression' => true,
-        'CategoryOperator' => false,
-        'ActionExpression' => true,
-        'ActionOperator' => false,
-        'LabelExpression' => true,
-        'LabelOperator' => false,
-        'Value' => true,
-        'ValueOperator' => false,
         'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => true,
+        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -122,7 +114,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true
+        'IsAutoGoal' => true,
+        'CategoryExpression' => true,
+        'CategoryOperator' => false,
+        'ActionExpression' => true,
+        'ActionOperator' => false,
+        'LabelExpression' => true,
+        'LabelOperator' => false,
+        'Value' => true,
+        'ValueOperator' => false
     ];
 
     /**
@@ -211,14 +211,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CategoryExpression' => 'CategoryExpression',
-        'CategoryOperator' => 'CategoryOperator',
-        'ActionExpression' => 'ActionExpression',
-        'ActionOperator' => 'ActionOperator',
-        'LabelExpression' => 'LabelExpression',
-        'LabelOperator' => 'LabelOperator',
-        'Value' => 'Value',
-        'ValueOperator' => 'ValueOperator',
         'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
@@ -234,7 +226,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal'
+        'IsAutoGoal' => 'IsAutoGoal',
+        'CategoryExpression' => 'CategoryExpression',
+        'CategoryOperator' => 'CategoryOperator',
+        'ActionExpression' => 'ActionExpression',
+        'ActionOperator' => 'ActionOperator',
+        'LabelExpression' => 'LabelExpression',
+        'LabelOperator' => 'LabelOperator',
+        'Value' => 'Value',
+        'ValueOperator' => 'ValueOperator'
     ];
 
     /**
@@ -243,14 +243,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'CategoryExpression' => 'setCategoryExpression',
-        'CategoryOperator' => 'setCategoryOperator',
-        'ActionExpression' => 'setActionExpression',
-        'ActionOperator' => 'setActionOperator',
-        'LabelExpression' => 'setLabelExpression',
-        'LabelOperator' => 'setLabelOperator',
-        'Value' => 'setValue',
-        'ValueOperator' => 'setValueOperator',
         'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
@@ -266,7 +258,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal'
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'CategoryExpression' => 'setCategoryExpression',
+        'CategoryOperator' => 'setCategoryOperator',
+        'ActionExpression' => 'setActionExpression',
+        'ActionOperator' => 'setActionOperator',
+        'LabelExpression' => 'setLabelExpression',
+        'LabelOperator' => 'setLabelOperator',
+        'Value' => 'setValue',
+        'ValueOperator' => 'setValueOperator'
     ];
 
     /**
@@ -275,14 +275,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'CategoryExpression' => 'getCategoryExpression',
-        'CategoryOperator' => 'getCategoryOperator',
-        'ActionExpression' => 'getActionExpression',
-        'ActionOperator' => 'getActionOperator',
-        'LabelExpression' => 'getLabelExpression',
-        'LabelOperator' => 'getLabelOperator',
-        'Value' => 'getValue',
-        'ValueOperator' => 'getValueOperator',
         'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
@@ -298,7 +290,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal'
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'CategoryExpression' => 'getCategoryExpression',
+        'CategoryOperator' => 'getCategoryOperator',
+        'ActionExpression' => 'getActionExpression',
+        'ActionOperator' => 'getActionOperator',
+        'LabelExpression' => 'getLabelExpression',
+        'LabelOperator' => 'getLabelOperator',
+        'Value' => 'getValue',
+        'ValueOperator' => 'getValueOperator'
     ];
 
     /**
@@ -358,18 +358,10 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CategoryExpression', $data ?? [], null);
-        $this->setIfExists('CategoryOperator', $data ?? [], null);
-        $this->setIfExists('ActionExpression', $data ?? [], null);
-        $this->setIfExists('ActionOperator', $data ?? [], null);
-        $this->setIfExists('LabelExpression', $data ?? [], null);
-        $this->setIfExists('LabelOperator', $data ?? [], null);
-        $this->setIfExists('Value', $data ?? [], null);
-        $this->setIfExists('ValueOperator', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Event');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -382,6 +374,14 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('CategoryExpression', $data ?? [], null);
+        $this->setIfExists('CategoryOperator', $data ?? [], null);
+        $this->setIfExists('ActionExpression', $data ?? [], null);
+        $this->setIfExists('ActionOperator', $data ?? [], null);
+        $this->setIfExists('LabelExpression', $data ?? [], null);
+        $this->setIfExists('LabelOperator', $data ?? [], null);
+        $this->setIfExists('Value', $data ?? [], null);
+        $this->setIfExists('ValueOperator', $data ?? [], null);
     }
 
     /**
@@ -425,298 +425,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets CategoryExpression
-     *
-     * @return string|null
-     */
-    public function getCategoryExpression()
-    {
-        if (!isset($this->container['CategoryExpression']) || is_null($this->container['CategoryExpression'])) {
-            return null;
-        }
-        return $this->container['CategoryExpression'];
-    }
-
-    /**
-     * Sets CategoryExpression
-     *
-     * @param string|null $CategoryExpression CategoryExpression
-     *
-     * @return self
-     */
-    public function setCategoryExpression($CategoryExpression)
-    {
-        if (is_null($CategoryExpression)) {
-            array_push($this->openAPINullablesSetToNull, 'CategoryExpression');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CategoryExpression', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CategoryExpression'] = $CategoryExpression;
-
-        return $this;
-    }
-
-    /**
-     * Gets CategoryOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
-     */
-    public function getCategoryOperator()
-    {
-        if (!isset($this->container['CategoryOperator']) || is_null($this->container['CategoryOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['CategoryOperator']) || is_string($this->container['CategoryOperator'])) && method_exists($this->container['CategoryOperator'], 'getValue')) {
-            return $this->container['CategoryOperator']->getValue();
-        }
-        return $this->container['CategoryOperator'];
-    }
-
-    /**
-     * Sets CategoryOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $CategoryOperator CategoryOperator
-     *
-     * @return self
-     */
-    public function setCategoryOperator($CategoryOperator)
-    {
-        if (is_null($CategoryOperator)) {
-            throw new \InvalidArgumentException('non-nullable CategoryOperator cannot be null');
-        }
-        if (!$CategoryOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
-            $CategoryOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($CategoryOperator);
-        }
-        $this->container['CategoryOperator'] = $CategoryOperator;
-
-        return $this;
-    }
-
-    /**
-     * Gets ActionExpression
-     *
-     * @return string|null
-     */
-    public function getActionExpression()
-    {
-        if (!isset($this->container['ActionExpression']) || is_null($this->container['ActionExpression'])) {
-            return null;
-        }
-        return $this->container['ActionExpression'];
-    }
-
-    /**
-     * Sets ActionExpression
-     *
-     * @param string|null $ActionExpression ActionExpression
-     *
-     * @return self
-     */
-    public function setActionExpression($ActionExpression)
-    {
-        if (is_null($ActionExpression)) {
-            array_push($this->openAPINullablesSetToNull, 'ActionExpression');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ActionExpression', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ActionExpression'] = $ActionExpression;
-
-        return $this;
-    }
-
-    /**
-     * Gets ActionOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
-     */
-    public function getActionOperator()
-    {
-        if (!isset($this->container['ActionOperator']) || is_null($this->container['ActionOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['ActionOperator']) || is_string($this->container['ActionOperator'])) && method_exists($this->container['ActionOperator'], 'getValue')) {
-            return $this->container['ActionOperator']->getValue();
-        }
-        return $this->container['ActionOperator'];
-    }
-
-    /**
-     * Sets ActionOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $ActionOperator ActionOperator
-     *
-     * @return self
-     */
-    public function setActionOperator($ActionOperator)
-    {
-        if (is_null($ActionOperator)) {
-            throw new \InvalidArgumentException('non-nullable ActionOperator cannot be null');
-        }
-        if (!$ActionOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
-            $ActionOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($ActionOperator);
-        }
-        $this->container['ActionOperator'] = $ActionOperator;
-
-        return $this;
-    }
-
-    /**
-     * Gets LabelExpression
-     *
-     * @return string|null
-     */
-    public function getLabelExpression()
-    {
-        if (!isset($this->container['LabelExpression']) || is_null($this->container['LabelExpression'])) {
-            return null;
-        }
-        return $this->container['LabelExpression'];
-    }
-
-    /**
-     * Sets LabelExpression
-     *
-     * @param string|null $LabelExpression LabelExpression
-     *
-     * @return self
-     */
-    public function setLabelExpression($LabelExpression)
-    {
-        if (is_null($LabelExpression)) {
-            array_push($this->openAPINullablesSetToNull, 'LabelExpression');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LabelExpression', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LabelExpression'] = $LabelExpression;
-
-        return $this;
-    }
-
-    /**
-     * Gets LabelOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
-     */
-    public function getLabelOperator()
-    {
-        if (!isset($this->container['LabelOperator']) || is_null($this->container['LabelOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['LabelOperator']) || is_string($this->container['LabelOperator'])) && method_exists($this->container['LabelOperator'], 'getValue')) {
-            return $this->container['LabelOperator']->getValue();
-        }
-        return $this->container['LabelOperator'];
-    }
-
-    /**
-     * Sets LabelOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $LabelOperator LabelOperator
-     *
-     * @return self
-     */
-    public function setLabelOperator($LabelOperator)
-    {
-        if (is_null($LabelOperator)) {
-            throw new \InvalidArgumentException('non-nullable LabelOperator cannot be null');
-        }
-        if (!$LabelOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
-            $LabelOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($LabelOperator);
-        }
-        $this->container['LabelOperator'] = $LabelOperator;
-
-        return $this;
-    }
-
-    /**
-     * Gets Value
-     *
-     * @return float|null
-     */
-    public function getValue()
-    {
-        if (!isset($this->container['Value']) || is_null($this->container['Value'])) {
-            return null;
-        }
-        return $this->container['Value'];
-    }
-
-    /**
-     * Sets Value
-     *
-     * @param float|null $Value Value
-     *
-     * @return self
-     */
-    public function setValue($Value)
-    {
-        if (is_null($Value)) {
-            array_push($this->openAPINullablesSetToNull, 'Value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Value', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Value'] = $Value;
-
-        return $this;
-    }
-
-    /**
-     * Gets ValueOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null
-     */
-    public function getValueOperator()
-    {
-        if (!isset($this->container['ValueOperator']) || is_null($this->container['ValueOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['ValueOperator']) || is_string($this->container['ValueOperator'])) && method_exists($this->container['ValueOperator'], 'getValue')) {
-            return $this->container['ValueOperator']->getValue();
-        }
-        return $this->container['ValueOperator'];
-    }
-
-    /**
-     * Sets ValueOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null $ValueOperator ValueOperator
-     *
-     * @return self
-     */
-    public function setValueOperator($ValueOperator)
-    {
-        if (is_null($ValueOperator)) {
-            throw new \InvalidArgumentException('non-nullable ValueOperator cannot be null');
-        }
-        if (!$ValueOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator) {
-            $ValueOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator($ValueOperator);
-        }
-        $this->container['ValueOperator'] = $ValueOperator;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -831,12 +539,15 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -844,21 +555,17 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1300,6 +1007,298 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategoryExpression
+     *
+     * @return string|null
+     */
+    public function getCategoryExpression()
+    {
+        if (!isset($this->container['CategoryExpression']) || is_null($this->container['CategoryExpression'])) {
+            return null;
+        }
+        return $this->container['CategoryExpression'];
+    }
+
+    /**
+     * Sets CategoryExpression
+     *
+     * @param string|null $CategoryExpression CategoryExpression
+     *
+     * @return self
+     */
+    public function setCategoryExpression($CategoryExpression)
+    {
+        if (is_null($CategoryExpression)) {
+            array_push($this->openAPINullablesSetToNull, 'CategoryExpression');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategoryExpression', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CategoryExpression'] = $CategoryExpression;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategoryOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
+     */
+    public function getCategoryOperator()
+    {
+        if (!isset($this->container['CategoryOperator']) || is_null($this->container['CategoryOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['CategoryOperator']) || is_string($this->container['CategoryOperator'])) && method_exists($this->container['CategoryOperator'], 'getValue')) {
+            return $this->container['CategoryOperator']->getValue();
+        }
+        return $this->container['CategoryOperator'];
+    }
+
+    /**
+     * Sets CategoryOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $CategoryOperator CategoryOperator
+     *
+     * @return self
+     */
+    public function setCategoryOperator($CategoryOperator)
+    {
+        if (is_null($CategoryOperator)) {
+            throw new \InvalidArgumentException('non-nullable CategoryOperator cannot be null');
+        }
+        if (!$CategoryOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+            $CategoryOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($CategoryOperator);
+        }
+        $this->container['CategoryOperator'] = $CategoryOperator;
+
+        return $this;
+    }
+
+    /**
+     * Gets ActionExpression
+     *
+     * @return string|null
+     */
+    public function getActionExpression()
+    {
+        if (!isset($this->container['ActionExpression']) || is_null($this->container['ActionExpression'])) {
+            return null;
+        }
+        return $this->container['ActionExpression'];
+    }
+
+    /**
+     * Sets ActionExpression
+     *
+     * @param string|null $ActionExpression ActionExpression
+     *
+     * @return self
+     */
+    public function setActionExpression($ActionExpression)
+    {
+        if (is_null($ActionExpression)) {
+            array_push($this->openAPINullablesSetToNull, 'ActionExpression');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ActionExpression', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ActionExpression'] = $ActionExpression;
+
+        return $this;
+    }
+
+    /**
+     * Gets ActionOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
+     */
+    public function getActionOperator()
+    {
+        if (!isset($this->container['ActionOperator']) || is_null($this->container['ActionOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['ActionOperator']) || is_string($this->container['ActionOperator'])) && method_exists($this->container['ActionOperator'], 'getValue')) {
+            return $this->container['ActionOperator']->getValue();
+        }
+        return $this->container['ActionOperator'];
+    }
+
+    /**
+     * Sets ActionOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $ActionOperator ActionOperator
+     *
+     * @return self
+     */
+    public function setActionOperator($ActionOperator)
+    {
+        if (is_null($ActionOperator)) {
+            throw new \InvalidArgumentException('non-nullable ActionOperator cannot be null');
+        }
+        if (!$ActionOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+            $ActionOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($ActionOperator);
+        }
+        $this->container['ActionOperator'] = $ActionOperator;
+
+        return $this;
+    }
+
+    /**
+     * Gets LabelExpression
+     *
+     * @return string|null
+     */
+    public function getLabelExpression()
+    {
+        if (!isset($this->container['LabelExpression']) || is_null($this->container['LabelExpression'])) {
+            return null;
+        }
+        return $this->container['LabelExpression'];
+    }
+
+    /**
+     * Sets LabelExpression
+     *
+     * @param string|null $LabelExpression LabelExpression
+     *
+     * @return self
+     */
+    public function setLabelExpression($LabelExpression)
+    {
+        if (is_null($LabelExpression)) {
+            array_push($this->openAPINullablesSetToNull, 'LabelExpression');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LabelExpression', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LabelExpression'] = $LabelExpression;
+
+        return $this;
+    }
+
+    /**
+     * Gets LabelOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
+     */
+    public function getLabelOperator()
+    {
+        if (!isset($this->container['LabelOperator']) || is_null($this->container['LabelOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['LabelOperator']) || is_string($this->container['LabelOperator'])) && method_exists($this->container['LabelOperator'], 'getValue')) {
+            return $this->container['LabelOperator']->getValue();
+        }
+        return $this->container['LabelOperator'];
+    }
+
+    /**
+     * Sets LabelOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $LabelOperator LabelOperator
+     *
+     * @return self
+     */
+    public function setLabelOperator($LabelOperator)
+    {
+        if (is_null($LabelOperator)) {
+            throw new \InvalidArgumentException('non-nullable LabelOperator cannot be null');
+        }
+        if (!$LabelOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+            $LabelOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($LabelOperator);
+        }
+        $this->container['LabelOperator'] = $LabelOperator;
+
+        return $this;
+    }
+
+    /**
+     * Gets Value
+     *
+     * @return float|null
+     */
+    public function getValue()
+    {
+        if (!isset($this->container['Value']) || is_null($this->container['Value'])) {
+            return null;
+        }
+        return $this->container['Value'];
+    }
+
+    /**
+     * Sets Value
+     *
+     * @param float|null $Value Value
+     *
+     * @return self
+     */
+    public function setValue($Value)
+    {
+        if (is_null($Value)) {
+            array_push($this->openAPINullablesSetToNull, 'Value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Value'] = $Value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ValueOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null
+     */
+    public function getValueOperator()
+    {
+        if (!isset($this->container['ValueOperator']) || is_null($this->container['ValueOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['ValueOperator']) || is_string($this->container['ValueOperator'])) && method_exists($this->container['ValueOperator'], 'getValue')) {
+            return $this->container['ValueOperator']->getValue();
+        }
+        return $this->container['ValueOperator'];
+    }
+
+    /**
+     * Sets ValueOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null $ValueOperator ValueOperator
+     *
+     * @return self
+     */
+    public function setValueOperator($ValueOperator)
+    {
+        if (is_null($ValueOperator)) {
+            throw new \InvalidArgumentException('non-nullable ValueOperator cannot be null');
+        }
+        if (!$ValueOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator) {
+            $ValueOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator($ValueOperator);
+        }
+        $this->container['ValueOperator'] = $ValueOperator;
 
         return $this;
     }

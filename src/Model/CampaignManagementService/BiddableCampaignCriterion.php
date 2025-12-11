@@ -33,14 +33,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
-        'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback',
         'Id' => 'string',
         'CampaignId' => 'string',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus',
-        'Type' => 'string'
+        'Type' => 'string',
+        'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
+        'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback'
     ];
 
     /**
@@ -51,14 +51,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CriterionBid' => null,
-        'CriterionCashback' => null,
         'Id' => 'int64',
         'CampaignId' => 'int64',
         'Criterion' => null,
         'ForwardCompatibilityMap' => null,
         'Status' => null,
-        'Type' => null
+        'Type' => null,
+        'CriterionBid' => null,
+        'CriterionCashback' => null
     ];
 
     /**
@@ -67,14 +67,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CriterionBid' => true,
-        'CriterionCashback' => true,
         'Id' => true,
         'CampaignId' => false,
         'Criterion' => true,
         'ForwardCompatibilityMap' => true,
         'Status' => false,
-        'Type' => true
+        'Type' => true,
+        'CriterionBid' => true,
+        'CriterionCashback' => true
     ];
 
     /**
@@ -163,14 +163,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CriterionBid' => 'CriterionBid',
-        'CriterionCashback' => 'CriterionCashback',
         'Id' => 'Id',
         'CampaignId' => 'CampaignId',
         'Criterion' => 'Criterion',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Status' => 'Status',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'CriterionBid' => 'CriterionBid',
+        'CriterionCashback' => 'CriterionCashback'
     ];
 
     /**
@@ -179,14 +179,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
      * @var string[]
      */
     protected static array $setters = [
-        'CriterionBid' => 'setCriterionBid',
-        'CriterionCashback' => 'setCriterionCashback',
         'Id' => 'setId',
         'CampaignId' => 'setCampaignId',
         'Criterion' => 'setCriterion',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Status' => 'setStatus',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'CriterionBid' => 'setCriterionBid',
+        'CriterionCashback' => 'setCriterionCashback'
     ];
 
     /**
@@ -195,14 +195,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
      * @var string[]
      */
     protected static array $getters = [
-        'CriterionBid' => 'getCriterionBid',
-        'CriterionCashback' => 'getCriterionCashback',
         'Id' => 'getId',
         'CampaignId' => 'getCampaignId',
         'Criterion' => 'getCriterion',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Status' => 'getStatus',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'CriterionBid' => 'getCriterionBid',
+        'CriterionCashback' => 'getCriterionCashback'
     ];
 
     /**
@@ -262,14 +262,14 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CriterionBid', $data ?? [], null);
-        $this->setIfExists('CriterionCashback', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BiddableCampaignCriterion');
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('CriterionBid', $data ?? [], null);
+        $this->setIfExists('CriterionCashback', $data ?? [], null);
     }
 
     /**
@@ -313,80 +313,6 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets CriterionBid
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid|null
-     */
-    public function getCriterionBid()
-    {
-        if (!isset($this->container['CriterionBid']) || is_null($this->container['CriterionBid'])) {
-            return null;
-        }
-        return $this->container['CriterionBid'];
-    }
-
-    /**
-     * Sets CriterionBid
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid|null $CriterionBid CriterionBid
-     *
-     * @return self
-     */
-    public function setCriterionBid($CriterionBid)
-    {
-        if (is_null($CriterionBid)) {
-            array_push($this->openAPINullablesSetToNull, 'CriterionBid');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CriterionBid', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CriterionBid'] = $CriterionBid;
-
-        return $this;
-    }
-
-    /**
-     * Gets CriterionCashback
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback|null
-     */
-    public function getCriterionCashback()
-    {
-        if (!isset($this->container['CriterionCashback']) || is_null($this->container['CriterionCashback'])) {
-            return null;
-        }
-        return $this->container['CriterionCashback'];
-    }
-
-    /**
-     * Sets CriterionCashback
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback|null $CriterionCashback CriterionCashback
-     *
-     * @return self
-     */
-    public function setCriterionCashback($CriterionCashback)
-    {
-        if (is_null($CriterionCashback)) {
-            array_push($this->openAPINullablesSetToNull, 'CriterionCashback');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CriterionCashback', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CriterionCashback'] = $CriterionCashback;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -598,6 +524,80 @@ class BiddableCampaignCriterion extends CampaignCriterion implements ModelInterf
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets CriterionBid
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid|null
+     */
+    public function getCriterionBid()
+    {
+        if (!isset($this->container['CriterionBid']) || is_null($this->container['CriterionBid'])) {
+            return null;
+        }
+        return $this->container['CriterionBid'];
+    }
+
+    /**
+     * Sets CriterionBid
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid|null $CriterionBid CriterionBid
+     *
+     * @return self
+     */
+    public function setCriterionBid($CriterionBid)
+    {
+        if (is_null($CriterionBid)) {
+            array_push($this->openAPINullablesSetToNull, 'CriterionBid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CriterionBid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CriterionBid'] = $CriterionBid;
+
+        return $this;
+    }
+
+    /**
+     * Gets CriterionCashback
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback|null
+     */
+    public function getCriterionCashback()
+    {
+        if (!isset($this->container['CriterionCashback']) || is_null($this->container['CriterionCashback'])) {
+            return null;
+        }
+        return $this->container['CriterionCashback'];
+    }
+
+    /**
+     * Sets CriterionCashback
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback|null $CriterionCashback CriterionCashback
+     *
+     * @return self
+     */
+    public function setCriterionCashback($CriterionCashback)
+    {
+        if (is_null($CriterionCashback)) {
+            array_push($this->openAPINullablesSetToNull, 'CriterionCashback');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CriterionCashback', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CriterionCashback'] = $CriterionCashback;
 
         return $this;
     }

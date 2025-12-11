@@ -33,12 +33,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'Day' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Day',
         'FromHour' => 'int',
         'FromMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute',
         'ToHour' => 'int',
-        'ToMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute',
-        'Type' => 'string'
+        'ToMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute'
     ];
 
     /**
@@ -49,12 +49,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'Day' => null,
         'FromHour' => 'int32',
         'FromMinute' => null,
         'ToHour' => 'int32',
-        'ToMinute' => null,
-        'Type' => null
+        'ToMinute' => null
     ];
 
     /**
@@ -63,12 +63,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'Day' => false,
         'FromHour' => true,
         'FromMinute' => false,
         'ToHour' => true,
-        'ToMinute' => false,
-        'Type' => true
+        'ToMinute' => false
     ];
 
     /**
@@ -157,12 +157,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'Day' => 'Day',
         'FromHour' => 'FromHour',
         'FromMinute' => 'FromMinute',
         'ToHour' => 'ToHour',
-        'ToMinute' => 'ToMinute',
-        'Type' => 'Type'
+        'ToMinute' => 'ToMinute'
     ];
 
     /**
@@ -171,12 +171,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'Day' => 'setDay',
         'FromHour' => 'setFromHour',
         'FromMinute' => 'setFromMinute',
         'ToHour' => 'setToHour',
-        'ToMinute' => 'setToMinute',
-        'Type' => 'setType'
+        'ToMinute' => 'setToMinute'
     ];
 
     /**
@@ -185,12 +185,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'Day' => 'getDay',
         'FromHour' => 'getFromHour',
         'FromMinute' => 'getFromMinute',
         'ToHour' => 'getToHour',
-        'ToMinute' => 'getToMinute',
-        'Type' => 'getType'
+        'ToMinute' => 'getToMinute'
     ];
 
     /**
@@ -250,12 +250,12 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Day', $data ?? [], null);
         $this->setIfExists('FromHour', $data ?? [], null);
         $this->setIfExists('FromMinute', $data ?? [], null);
         $this->setIfExists('ToHour', $data ?? [], null);
         $this->setIfExists('ToMinute', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DayTimeCriterion');
     }
 
     /**
@@ -299,6 +299,43 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets Day
@@ -478,43 +515,6 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
             $ToMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($ToMinute);
         }
         $this->container['ToMinute'] = $ToMinute;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

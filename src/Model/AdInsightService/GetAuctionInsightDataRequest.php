@@ -35,7 +35,7 @@ class GetAuctionInsightDataRequest implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPITypes = [
         'EntityType' => '\Microsoft\MsAds\Rest\Model\AdInsightService\EntityType',
         'EntityIds' => 'string[]',
-        'SearchParameters' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SearchParameter[]',
+        'SearchParameters' => 'object[]',
         'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\AdInsightService\AuctionInsightKpiAdditionalField'
     ];
 
@@ -362,7 +362,7 @@ class GetAuctionInsightDataRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets SearchParameters
      *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SearchParameter[]|null
+     * @return object[]|null
      */
     public function getSearchParameters()
     {
@@ -375,7 +375,7 @@ class GetAuctionInsightDataRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets SearchParameters
      *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SearchParameter[]|null $SearchParameters SearchParameters
+     * @param object[]|null $SearchParameters SearchParameters
      *
      * @return self
      */

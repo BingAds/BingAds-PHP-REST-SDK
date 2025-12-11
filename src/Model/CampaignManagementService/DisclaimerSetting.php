@@ -33,8 +33,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'DisclaimerAdsEnabled' => 'bool',
-        'Type' => 'string'
+        'Type' => 'string',
+        'DisclaimerAdsEnabled' => 'bool'
     ];
 
     /**
@@ -45,8 +45,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'DisclaimerAdsEnabled' => null,
-        'Type' => null
+        'Type' => null,
+        'DisclaimerAdsEnabled' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'DisclaimerAdsEnabled' => false,
-        'Type' => true
+        'Type' => true,
+        'DisclaimerAdsEnabled' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'DisclaimerAdsEnabled' => 'DisclaimerAdsEnabled',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'DisclaimerAdsEnabled' => 'DisclaimerAdsEnabled'
     ];
 
     /**
@@ -155,8 +155,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'DisclaimerAdsEnabled' => 'setDisclaimerAdsEnabled',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'DisclaimerAdsEnabled' => 'setDisclaimerAdsEnabled'
     ];
 
     /**
@@ -165,8 +165,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'DisclaimerAdsEnabled' => 'getDisclaimerAdsEnabled',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'DisclaimerAdsEnabled' => 'getDisclaimerAdsEnabled'
     ];
 
     /**
@@ -226,8 +226,8 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DisclaimerAdsEnabled', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DisclaimerSetting');
     }
 
     /**
@@ -273,36 +273,6 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets DisclaimerAdsEnabled
-     *
-     * @return bool|null
-     */
-    public function getDisclaimerAdsEnabled()
-    {
-        if (!isset($this->container['DisclaimerAdsEnabled']) || is_null($this->container['DisclaimerAdsEnabled'])) {
-            return null;
-        }
-        return $this->container['DisclaimerAdsEnabled'];
-    }
-
-    /**
-     * Sets DisclaimerAdsEnabled
-     *
-     * @param bool|null $DisclaimerAdsEnabled DisclaimerAdsEnabled
-     *
-     * @return self
-     */
-    public function setDisclaimerAdsEnabled($DisclaimerAdsEnabled)
-    {
-        if (is_null($DisclaimerAdsEnabled)) {
-            throw new \InvalidArgumentException('non-nullable DisclaimerAdsEnabled cannot be null');
-        }
-        $this->container['DisclaimerAdsEnabled'] = $DisclaimerAdsEnabled;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -335,6 +305,36 @@ class DisclaimerSetting extends Setting implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisclaimerAdsEnabled
+     *
+     * @return bool|null
+     */
+    public function getDisclaimerAdsEnabled()
+    {
+        if (!isset($this->container['DisclaimerAdsEnabled']) || is_null($this->container['DisclaimerAdsEnabled'])) {
+            return null;
+        }
+        return $this->container['DisclaimerAdsEnabled'];
+    }
+
+    /**
+     * Sets DisclaimerAdsEnabled
+     *
+     * @param bool|null $DisclaimerAdsEnabled DisclaimerAdsEnabled
+     *
+     * @return self
+     */
+    public function setDisclaimerAdsEnabled($DisclaimerAdsEnabled)
+    {
+        if (is_null($DisclaimerAdsEnabled)) {
+            throw new \InvalidArgumentException('non-nullable DisclaimerAdsEnabled cannot be null');
+        }
+        $this->container['DisclaimerAdsEnabled'] = $DisclaimerAdsEnabled;
 
         return $this;
     }

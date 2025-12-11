@@ -64,10 +64,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'ParentCriterionId' => 'string',
         'Condition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition',
         'PartitionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType',
-        'Type' => 'string',
         'Listing' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListing',
         'ListingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType',
         'MinDays' => 'int',
@@ -120,10 +120,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'ParentCriterionId' => 'int64',
         'Condition' => null,
         'PartitionType' => null,
-        'Type' => null,
         'Listing' => null,
         'ListingType' => null,
         'MinDays' => 'int32',
@@ -174,10 +174,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'ParentCriterionId' => true,
         'Condition' => true,
         'PartitionType' => false,
-        'Type' => true,
         'Listing' => true,
         'ListingType' => false,
         'MinDays' => true,
@@ -308,10 +308,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'ParentCriterionId' => 'ParentCriterionId',
         'Condition' => 'Condition',
         'PartitionType' => 'PartitionType',
-        'Type' => 'Type',
         'Listing' => 'Listing',
         'ListingType' => 'ListingType',
         'MinDays' => 'MinDays',
@@ -362,10 +362,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'ParentCriterionId' => 'setParentCriterionId',
         'Condition' => 'setCondition',
         'PartitionType' => 'setPartitionType',
-        'Type' => 'setType',
         'Listing' => 'setListing',
         'ListingType' => 'setListingType',
         'MinDays' => 'setMinDays',
@@ -416,10 +416,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'ParentCriterionId' => 'getParentCriterionId',
         'Condition' => 'getCondition',
         'PartitionType' => 'getPartitionType',
-        'Type' => 'getType',
         'Listing' => 'getListing',
         'ListingType' => 'getListingType',
         'MinDays' => 'getMinDays',
@@ -521,10 +521,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ParentCriterionId', $data ?? [], null);
         $this->setIfExists('Condition', $data ?? [], null);
         $this->setIfExists('PartitionType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'TopicCriterion');
         $this->setIfExists('Listing', $data ?? [], null);
         $this->setIfExists('ListingType', $data ?? [], null);
         $this->setIfExists('MinDays', $data ?? [], null);
@@ -613,6 +613,43 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets ParentCriterionId
@@ -720,43 +757,6 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
             $PartitionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType($PartitionType);
         }
         $this->container['PartitionType'] = $PartitionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

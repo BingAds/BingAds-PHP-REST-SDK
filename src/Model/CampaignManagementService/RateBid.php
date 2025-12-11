@@ -33,8 +33,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'RateAmount' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount',
-        'Type' => 'string'
+        'Type' => 'string',
+        'RateAmount' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount'
     ];
 
     /**
@@ -45,8 +45,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'RateAmount' => null,
-        'Type' => null
+        'Type' => null,
+        'RateAmount' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'RateAmount' => true,
-        'Type' => true
+        'Type' => true,
+        'RateAmount' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
-        'RateAmount' => 'RateAmount',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'RateAmount' => 'RateAmount'
     ];
 
     /**
@@ -155,8 +155,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
-        'RateAmount' => 'setRateAmount',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'RateAmount' => 'setRateAmount'
     ];
 
     /**
@@ -165,8 +165,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
-        'RateAmount' => 'getRateAmount',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'RateAmount' => 'getRateAmount'
     ];
 
     /**
@@ -226,8 +226,8 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('RateAmount', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'RateBid');
     }
 
     /**
@@ -273,43 +273,6 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets RateAmount
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount|null
-     */
-    public function getRateAmount()
-    {
-        if (!isset($this->container['RateAmount']) || is_null($this->container['RateAmount'])) {
-            return null;
-        }
-        return $this->container['RateAmount'];
-    }
-
-    /**
-     * Sets RateAmount
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount|null $RateAmount RateAmount
-     *
-     * @return self
-     */
-    public function setRateAmount($RateAmount)
-    {
-        if (is_null($RateAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'RateAmount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('RateAmount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['RateAmount'] = $RateAmount;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class RateBid extends CriterionBid implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets RateAmount
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount|null
+     */
+    public function getRateAmount()
+    {
+        if (!isset($this->container['RateAmount']) || is_null($this->container['RateAmount'])) {
+            return null;
+        }
+        return $this->container['RateAmount'];
+    }
+
+    /**
+     * Sets RateAmount
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RateAmount|null $RateAmount RateAmount
+     *
+     * @return self
+     */
+    public function setRateAmount($RateAmount)
+    {
+        if (is_null($RateAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'RateAmount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('RateAmount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['RateAmount'] = $RateAmount;
 
         return $this;
     }

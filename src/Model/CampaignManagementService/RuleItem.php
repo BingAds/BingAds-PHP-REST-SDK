@@ -248,7 +248,7 @@ class RuleItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'Number');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Operator', $data ?? [], null);
         $this->setIfExists('Value', $data ?? [], null);

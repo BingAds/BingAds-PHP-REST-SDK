@@ -23,6 +23,12 @@ class PortfolioBidStrategyAdditionalField
 
     public const MAX_CONVERSION_VALUE_WITH_MAX_CPC = 'MaxConversionValueWithMaxCpc';
 
+    public const SCOPE = 'Scope';
+
+    public const CURRENCY_CODE = 'CurrencyCode';
+
+    public const REPORTING_TIME_ZONE = 'ReportingTimeZone';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -91,7 +97,10 @@ class PortfolioBidStrategyAdditionalField
     {
         return [
             self::NONE,
-            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC
+            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC,
+            self::SCOPE,
+            self::CURRENCY_CODE,
+            self::REPORTING_TIME_ZONE
         ];
     }
 }

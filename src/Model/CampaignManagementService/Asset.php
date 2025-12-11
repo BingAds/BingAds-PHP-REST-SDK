@@ -44,10 +44,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Text' => 'string',
         'Id' => 'string',
         'Name' => 'string',
         'Type' => 'string',
+        'Text' => 'string',
         'SubType' => 'string',
         'CropX' => 'int',
         'CropY' => 'int',
@@ -66,10 +66,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Text' => null,
         'Id' => 'int64',
         'Name' => null,
         'Type' => null,
+        'Text' => null,
         'SubType' => null,
         'CropX' => 'int32',
         'CropY' => 'int32',
@@ -86,10 +86,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Text' => true,
         'Id' => true,
         'Name' => true,
         'Type' => true,
+        'Text' => true,
         'SubType' => true,
         'CropX' => true,
         'CropY' => true,
@@ -186,10 +186,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Text' => 'Text',
         'Id' => 'Id',
         'Name' => 'Name',
         'Type' => 'Type',
+        'Text' => 'Text',
         'SubType' => 'SubType',
         'CropX' => 'CropX',
         'CropY' => 'CropY',
@@ -206,10 +206,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Text' => 'setText',
         'Id' => 'setId',
         'Name' => 'setName',
         'Type' => 'setType',
+        'Text' => 'setText',
         'SubType' => 'setSubType',
         'CropX' => 'setCropX',
         'CropY' => 'setCropY',
@@ -226,10 +226,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Text' => 'getText',
         'Id' => 'getId',
         'Name' => 'getName',
         'Type' => 'getType',
+        'Text' => 'getText',
         'SubType' => 'getSubType',
         'CropX' => 'getCropX',
         'CropY' => 'getCropY',
@@ -297,10 +297,10 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'VideoAsset');
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('SubType', $data ?? [], null);
         $this->setIfExists('CropX', $data ?? [], null);
         $this->setIfExists('CropY', $data ?? [], null);
@@ -355,43 +355,6 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -500,6 +463,43 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
 
         return $this;
     }

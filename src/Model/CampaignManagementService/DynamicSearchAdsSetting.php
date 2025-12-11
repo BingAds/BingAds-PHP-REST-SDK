@@ -33,12 +33,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'DomainName' => 'string',
         'Language' => 'string',
         'Source' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource',
         'PageFeedIds' => 'string[]',
-        'DynamicDescriptionEnabled' => 'bool',
-        'Type' => 'string'
+        'DynamicDescriptionEnabled' => 'bool'
     ];
 
     /**
@@ -49,12 +49,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'DomainName' => null,
         'Language' => null,
         'Source' => null,
         'PageFeedIds' => 'int64',
-        'DynamicDescriptionEnabled' => null,
-        'Type' => null
+        'DynamicDescriptionEnabled' => null
     ];
 
     /**
@@ -63,12 +63,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'DomainName' => true,
         'Language' => true,
         'Source' => false,
         'PageFeedIds' => true,
-        'DynamicDescriptionEnabled' => true,
-        'Type' => true
+        'DynamicDescriptionEnabled' => true
     ];
 
     /**
@@ -157,12 +157,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'DomainName' => 'DomainName',
         'Language' => 'Language',
         'Source' => 'Source',
         'PageFeedIds' => 'PageFeedIds',
-        'DynamicDescriptionEnabled' => 'DynamicDescriptionEnabled',
-        'Type' => 'Type'
+        'DynamicDescriptionEnabled' => 'DynamicDescriptionEnabled'
     ];
 
     /**
@@ -171,12 +171,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'DomainName' => 'setDomainName',
         'Language' => 'setLanguage',
         'Source' => 'setSource',
         'PageFeedIds' => 'setPageFeedIds',
-        'DynamicDescriptionEnabled' => 'setDynamicDescriptionEnabled',
-        'Type' => 'setType'
+        'DynamicDescriptionEnabled' => 'setDynamicDescriptionEnabled'
     ];
 
     /**
@@ -185,12 +185,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'DomainName' => 'getDomainName',
         'Language' => 'getLanguage',
         'Source' => 'getSource',
         'PageFeedIds' => 'getPageFeedIds',
-        'DynamicDescriptionEnabled' => 'getDynamicDescriptionEnabled',
-        'Type' => 'getType'
+        'DynamicDescriptionEnabled' => 'getDynamicDescriptionEnabled'
     ];
 
     /**
@@ -250,12 +250,12 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DomainName', $data ?? [], null);
         $this->setIfExists('Language', $data ?? [], null);
         $this->setIfExists('Source', $data ?? [], null);
         $this->setIfExists('PageFeedIds', $data ?? [], null);
         $this->setIfExists('DynamicDescriptionEnabled', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DynamicSearchAdsSetting');
     }
 
     /**
@@ -299,6 +299,43 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets DomainName
@@ -480,43 +517,6 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
             }
         }
         $this->container['DynamicDescriptionEnabled'] = $DynamicDescriptionEnabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

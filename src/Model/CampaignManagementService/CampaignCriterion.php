@@ -277,7 +277,7 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BiddableCampaignCriterion');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CriterionBid', $data ?? [], null);
         $this->setIfExists('CriterionCashback', $data ?? [], null);
 

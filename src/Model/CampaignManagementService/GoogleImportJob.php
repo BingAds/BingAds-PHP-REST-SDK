@@ -33,10 +33,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CredentialId' => 'string',
-        'GoogleAccountId' => 'string',
-        'CampaignAdGroupIds' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]',
-        'GoogleUserName' => 'string',
         'Name' => 'string',
         'Id' => 'string',
         'Type' => 'string',
@@ -48,7 +44,11 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'LastRunTimeInUTC' => '\DateTime',
         'CreatedDateTimeInUTC' => '\DateTime',
         'ImportOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportOption',
-        'NotificationEmail' => 'string'
+        'NotificationEmail' => 'string',
+        'CredentialId' => 'string',
+        'GoogleAccountId' => 'string',
+        'CampaignAdGroupIds' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]',
+        'GoogleUserName' => 'string'
     ];
 
     /**
@@ -59,10 +59,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CredentialId' => null,
-        'GoogleAccountId' => 'int64',
-        'CampaignAdGroupIds' => null,
-        'GoogleUserName' => null,
         'Name' => null,
         'Id' => 'int64',
         'Type' => null,
@@ -74,7 +70,11 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'LastRunTimeInUTC' => 'date-time',
         'CreatedDateTimeInUTC' => 'date-time',
         'ImportOption' => null,
-        'NotificationEmail' => null
+        'NotificationEmail' => null,
+        'CredentialId' => null,
+        'GoogleAccountId' => 'int64',
+        'CampaignAdGroupIds' => null,
+        'GoogleUserName' => null
     ];
 
     /**
@@ -83,10 +83,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CredentialId' => true,
-        'GoogleAccountId' => true,
-        'CampaignAdGroupIds' => true,
-        'GoogleUserName' => true,
         'Name' => true,
         'Id' => true,
         'Type' => true,
@@ -98,7 +94,11 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'LastRunTimeInUTC' => true,
         'CreatedDateTimeInUTC' => true,
         'ImportOption' => true,
-        'NotificationEmail' => true
+        'NotificationEmail' => true,
+        'CredentialId' => true,
+        'GoogleAccountId' => true,
+        'CampaignAdGroupIds' => true,
+        'GoogleUserName' => true
     ];
 
     /**
@@ -187,10 +187,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CredentialId' => 'CredentialId',
-        'GoogleAccountId' => 'GoogleAccountId',
-        'CampaignAdGroupIds' => 'CampaignAdGroupIds',
-        'GoogleUserName' => 'GoogleUserName',
         'Name' => 'Name',
         'Id' => 'Id',
         'Type' => 'Type',
@@ -202,7 +198,11 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'LastRunTimeInUTC' => 'LastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
         'ImportOption' => 'ImportOption',
-        'NotificationEmail' => 'NotificationEmail'
+        'NotificationEmail' => 'NotificationEmail',
+        'CredentialId' => 'CredentialId',
+        'GoogleAccountId' => 'GoogleAccountId',
+        'CampaignAdGroupIds' => 'CampaignAdGroupIds',
+        'GoogleUserName' => 'GoogleUserName'
     ];
 
     /**
@@ -211,10 +211,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'CredentialId' => 'setCredentialId',
-        'GoogleAccountId' => 'setGoogleAccountId',
-        'CampaignAdGroupIds' => 'setCampaignAdGroupIds',
-        'GoogleUserName' => 'setGoogleUserName',
         'Name' => 'setName',
         'Id' => 'setId',
         'Type' => 'setType',
@@ -226,7 +222,11 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'LastRunTimeInUTC' => 'setLastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
         'ImportOption' => 'setImportOption',
-        'NotificationEmail' => 'setNotificationEmail'
+        'NotificationEmail' => 'setNotificationEmail',
+        'CredentialId' => 'setCredentialId',
+        'GoogleAccountId' => 'setGoogleAccountId',
+        'CampaignAdGroupIds' => 'setCampaignAdGroupIds',
+        'GoogleUserName' => 'setGoogleUserName'
     ];
 
     /**
@@ -235,10 +235,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'CredentialId' => 'getCredentialId',
-        'GoogleAccountId' => 'getGoogleAccountId',
-        'CampaignAdGroupIds' => 'getCampaignAdGroupIds',
-        'GoogleUserName' => 'getGoogleUserName',
         'Name' => 'getName',
         'Id' => 'getId',
         'Type' => 'getType',
@@ -250,7 +246,11 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'LastRunTimeInUTC' => 'getLastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
         'ImportOption' => 'getImportOption',
-        'NotificationEmail' => 'getNotificationEmail'
+        'NotificationEmail' => 'getNotificationEmail',
+        'CredentialId' => 'getCredentialId',
+        'GoogleAccountId' => 'getGoogleAccountId',
+        'CampaignAdGroupIds' => 'getCampaignAdGroupIds',
+        'GoogleUserName' => 'getGoogleUserName'
     ];
 
     /**
@@ -310,13 +310,9 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CredentialId', $data ?? [], null);
-        $this->setIfExists('GoogleAccountId', $data ?? [], null);
-        $this->setIfExists('CampaignAdGroupIds', $data ?? [], null);
-        $this->setIfExists('GoogleUserName', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'GoogleImportJob');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('NotificationType', $data ?? [], null);
         $this->setIfExists('CreatedByUserId', $data ?? [], null);
@@ -326,6 +322,10 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
         $this->setIfExists('ImportOption', $data ?? [], null);
         $this->setIfExists('NotificationEmail', $data ?? [], null);
+        $this->setIfExists('CredentialId', $data ?? [], null);
+        $this->setIfExists('GoogleAccountId', $data ?? [], null);
+        $this->setIfExists('CampaignAdGroupIds', $data ?? [], null);
+        $this->setIfExists('GoogleUserName', $data ?? [], null);
     }
 
     /**
@@ -369,154 +369,6 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets CredentialId
-     *
-     * @return string|null
-     */
-    public function getCredentialId()
-    {
-        if (!isset($this->container['CredentialId']) || is_null($this->container['CredentialId'])) {
-            return null;
-        }
-        return $this->container['CredentialId'];
-    }
-
-    /**
-     * Sets CredentialId
-     *
-     * @param string|null $CredentialId CredentialId
-     *
-     * @return self
-     */
-    public function setCredentialId($CredentialId)
-    {
-        if (is_null($CredentialId)) {
-            array_push($this->openAPINullablesSetToNull, 'CredentialId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CredentialId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CredentialId'] = $CredentialId;
-
-        return $this;
-    }
-
-    /**
-     * Gets GoogleAccountId
-     *
-     * @return string|null
-     */
-    public function getGoogleAccountId()
-    {
-        if (!isset($this->container['GoogleAccountId']) || is_null($this->container['GoogleAccountId'])) {
-            return null;
-        }
-        return $this->container['GoogleAccountId'];
-    }
-
-    /**
-     * Sets GoogleAccountId
-     *
-     * @param string|null $GoogleAccountId GoogleAccountId
-     *
-     * @return self
-     */
-    public function setGoogleAccountId($GoogleAccountId)
-    {
-        if (is_null($GoogleAccountId)) {
-            array_push($this->openAPINullablesSetToNull, 'GoogleAccountId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('GoogleAccountId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['GoogleAccountId'] = $GoogleAccountId;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignAdGroupIds
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]|null
-     */
-    public function getCampaignAdGroupIds()
-    {
-        if (!isset($this->container['CampaignAdGroupIds']) || is_null($this->container['CampaignAdGroupIds'])) {
-            return null;
-        }
-        return $this->container['CampaignAdGroupIds'];
-    }
-
-    /**
-     * Sets CampaignAdGroupIds
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]|null $CampaignAdGroupIds CampaignAdGroupIds
-     *
-     * @return self
-     */
-    public function setCampaignAdGroupIds($CampaignAdGroupIds)
-    {
-        if (is_null($CampaignAdGroupIds)) {
-            array_push($this->openAPINullablesSetToNull, 'CampaignAdGroupIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CampaignAdGroupIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CampaignAdGroupIds'] = $CampaignAdGroupIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets GoogleUserName
-     *
-     * @return string|null
-     */
-    public function getGoogleUserName()
-    {
-        if (!isset($this->container['GoogleUserName']) || is_null($this->container['GoogleUserName'])) {
-            return null;
-        }
-        return $this->container['GoogleUserName'];
-    }
-
-    /**
-     * Sets GoogleUserName
-     *
-     * @param string|null $GoogleUserName GoogleUserName
-     *
-     * @return self
-     */
-    public function setGoogleUserName($GoogleUserName)
-    {
-        if (is_null($GoogleUserName)) {
-            array_push($this->openAPINullablesSetToNull, 'GoogleUserName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('GoogleUserName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['GoogleUserName'] = $GoogleUserName;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -958,6 +810,154 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['NotificationEmail'] = $NotificationEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets CredentialId
+     *
+     * @return string|null
+     */
+    public function getCredentialId()
+    {
+        if (!isset($this->container['CredentialId']) || is_null($this->container['CredentialId'])) {
+            return null;
+        }
+        return $this->container['CredentialId'];
+    }
+
+    /**
+     * Sets CredentialId
+     *
+     * @param string|null $CredentialId CredentialId
+     *
+     * @return self
+     */
+    public function setCredentialId($CredentialId)
+    {
+        if (is_null($CredentialId)) {
+            array_push($this->openAPINullablesSetToNull, 'CredentialId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CredentialId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CredentialId'] = $CredentialId;
+
+        return $this;
+    }
+
+    /**
+     * Gets GoogleAccountId
+     *
+     * @return string|null
+     */
+    public function getGoogleAccountId()
+    {
+        if (!isset($this->container['GoogleAccountId']) || is_null($this->container['GoogleAccountId'])) {
+            return null;
+        }
+        return $this->container['GoogleAccountId'];
+    }
+
+    /**
+     * Sets GoogleAccountId
+     *
+     * @param string|null $GoogleAccountId GoogleAccountId
+     *
+     * @return self
+     */
+    public function setGoogleAccountId($GoogleAccountId)
+    {
+        if (is_null($GoogleAccountId)) {
+            array_push($this->openAPINullablesSetToNull, 'GoogleAccountId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GoogleAccountId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['GoogleAccountId'] = $GoogleAccountId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignAdGroupIds
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]|null
+     */
+    public function getCampaignAdGroupIds()
+    {
+        if (!isset($this->container['CampaignAdGroupIds']) || is_null($this->container['CampaignAdGroupIds'])) {
+            return null;
+        }
+        return $this->container['CampaignAdGroupIds'];
+    }
+
+    /**
+     * Sets CampaignAdGroupIds
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]|null $CampaignAdGroupIds CampaignAdGroupIds
+     *
+     * @return self
+     */
+    public function setCampaignAdGroupIds($CampaignAdGroupIds)
+    {
+        if (is_null($CampaignAdGroupIds)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignAdGroupIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignAdGroupIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignAdGroupIds'] = $CampaignAdGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets GoogleUserName
+     *
+     * @return string|null
+     */
+    public function getGoogleUserName()
+    {
+        if (!isset($this->container['GoogleUserName']) || is_null($this->container['GoogleUserName'])) {
+            return null;
+        }
+        return $this->container['GoogleUserName'];
+    }
+
+    /**
+     * Sets GoogleUserName
+     *
+     * @param string|null $GoogleUserName GoogleUserName
+     *
+     * @return self
+     */
+    public function setGoogleUserName($GoogleUserName)
+    {
+        if (is_null($GoogleUserName)) {
+            array_push($this->openAPINullablesSetToNull, 'GoogleUserName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GoogleUserName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['GoogleUserName'] = $GoogleUserName;
 
         return $this;
     }

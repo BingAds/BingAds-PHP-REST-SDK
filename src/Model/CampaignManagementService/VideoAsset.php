@@ -33,11 +33,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SubType' => 'string',
-        'ThumbnailImage' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset',
         'Id' => 'string',
         'Name' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'SubType' => 'string',
+        'ThumbnailImage' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset'
     ];
 
     /**
@@ -48,11 +48,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SubType' => null,
-        'ThumbnailImage' => null,
         'Id' => 'int64',
         'Name' => null,
-        'Type' => null
+        'Type' => null,
+        'SubType' => null,
+        'ThumbnailImage' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SubType' => true,
-        'ThumbnailImage' => true,
         'Id' => true,
         'Name' => true,
-        'Type' => true
+        'Type' => true,
+        'SubType' => true,
+        'ThumbnailImage' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SubType' => 'SubType',
-        'ThumbnailImage' => 'ThumbnailImage',
         'Id' => 'Id',
         'Name' => 'Name',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'SubType' => 'SubType',
+        'ThumbnailImage' => 'ThumbnailImage'
     ];
 
     /**
@@ -167,11 +167,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $setters = [
-        'SubType' => 'setSubType',
-        'ThumbnailImage' => 'setThumbnailImage',
         'Id' => 'setId',
         'Name' => 'setName',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'SubType' => 'setSubType',
+        'ThumbnailImage' => 'setThumbnailImage'
     ];
 
     /**
@@ -180,11 +180,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $getters = [
-        'SubType' => 'getSubType',
-        'ThumbnailImage' => 'getThumbnailImage',
         'Id' => 'getId',
         'Name' => 'getName',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'SubType' => 'getSubType',
+        'ThumbnailImage' => 'getThumbnailImage'
     ];
 
     /**
@@ -244,11 +244,11 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SubType', $data ?? [], null);
-        $this->setIfExists('ThumbnailImage', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'VideoAsset');
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('ThumbnailImage', $data ?? [], null);
     }
 
     /**
@@ -292,80 +292,6 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SubType
-     *
-     * @return string|null
-     */
-    public function getSubType()
-    {
-        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
-            return null;
-        }
-        return $this->container['SubType'];
-    }
-
-    /**
-     * Sets SubType
-     *
-     * @param string|null $SubType SubType
-     *
-     * @return self
-     */
-    public function setSubType($SubType)
-    {
-        if (is_null($SubType)) {
-            array_push($this->openAPINullablesSetToNull, 'SubType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SubType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SubType'] = $SubType;
-
-        return $this;
-    }
-
-    /**
-     * Gets ThumbnailImage
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset|null
-     */
-    public function getThumbnailImage()
-    {
-        if (!isset($this->container['ThumbnailImage']) || is_null($this->container['ThumbnailImage'])) {
-            return null;
-        }
-        return $this->container['ThumbnailImage'];
-    }
-
-    /**
-     * Sets ThumbnailImage
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset|null $ThumbnailImage ThumbnailImage
-     *
-     * @return self
-     */
-    public function setThumbnailImage($ThumbnailImage)
-    {
-        if (is_null($ThumbnailImage)) {
-            array_push($this->openAPINullablesSetToNull, 'ThumbnailImage');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ThumbnailImage', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ThumbnailImage'] = $ThumbnailImage;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -474,6 +400,80 @@ class VideoAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubType
+     *
+     * @return string|null
+     */
+    public function getSubType()
+    {
+        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
+            return null;
+        }
+        return $this->container['SubType'];
+    }
+
+    /**
+     * Sets SubType
+     *
+     * @param string|null $SubType SubType
+     *
+     * @return self
+     */
+    public function setSubType($SubType)
+    {
+        if (is_null($SubType)) {
+            array_push($this->openAPINullablesSetToNull, 'SubType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SubType'] = $SubType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ThumbnailImage
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset|null
+     */
+    public function getThumbnailImage()
+    {
+        if (!isset($this->container['ThumbnailImage']) || is_null($this->container['ThumbnailImage'])) {
+            return null;
+        }
+        return $this->container['ThumbnailImage'];
+    }
+
+    /**
+     * Sets ThumbnailImage
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset|null $ThumbnailImage ThumbnailImage
+     *
+     * @return self
+     */
+    public function setThumbnailImage($ThumbnailImage)
+    {
+        if (is_null($ThumbnailImage)) {
+            array_push($this->openAPINullablesSetToNull, 'ThumbnailImage');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ThumbnailImage', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ThumbnailImage'] = $ThumbnailImage;
 
         return $this;
     }

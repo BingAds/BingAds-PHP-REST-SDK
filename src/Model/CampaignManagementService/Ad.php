@@ -49,12 +49,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'DestinationUrl' => 'string',
-        'Title' => 'string',
-        'Text' => 'string',
-        'DisplayUrl' => 'string',
         'Id' => 'string',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'DevicePreference' => 'string',
@@ -66,6 +62,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'DestinationUrl' => 'string',
+        'Title' => 'string',
+        'Text' => 'string',
+        'DisplayUrl' => 'string',
         'PromotionalText' => 'string',
         'AppPlatform' => 'string',
         'AppStoreId' => 'string',
@@ -100,10 +100,6 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'DestinationUrl' => null,
-        'Title' => null,
-        'Text' => null,
-        'DisplayUrl' => null,
         'Id' => 'int64',
         'Type' => null,
         'Status' => null,
@@ -117,6 +113,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
         'ForwardCompatibilityMap' => null,
+        'DestinationUrl' => null,
+        'Title' => null,
+        'Text' => null,
+        'DisplayUrl' => null,
         'PromotionalText' => null,
         'AppPlatform' => null,
         'AppStoreId' => null,
@@ -149,12 +149,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'DestinationUrl' => true,
-        'Title' => true,
-        'Text' => true,
-        'DisplayUrl' => true,
         'Id' => true,
-        'Type' => true,
+        'Type' => false,
         'Status' => false,
         'EditorialStatus' => false,
         'DevicePreference' => true,
@@ -166,6 +162,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
         'ForwardCompatibilityMap' => true,
+        'DestinationUrl' => true,
+        'Title' => true,
+        'Text' => true,
+        'DisplayUrl' => true,
         'PromotionalText' => true,
         'AppPlatform' => true,
         'AppStoreId' => true,
@@ -278,10 +278,6 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'DestinationUrl' => 'DestinationUrl',
-        'Title' => 'Title',
-        'Text' => 'Text',
-        'DisplayUrl' => 'DisplayUrl',
         'Id' => 'Id',
         'Type' => 'Type',
         'Status' => 'Status',
@@ -295,6 +291,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'DestinationUrl' => 'DestinationUrl',
+        'Title' => 'Title',
+        'Text' => 'Text',
+        'DisplayUrl' => 'DisplayUrl',
         'PromotionalText' => 'PromotionalText',
         'AppPlatform' => 'AppPlatform',
         'AppStoreId' => 'AppStoreId',
@@ -327,10 +327,6 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'DestinationUrl' => 'setDestinationUrl',
-        'Title' => 'setTitle',
-        'Text' => 'setText',
-        'DisplayUrl' => 'setDisplayUrl',
         'Id' => 'setId',
         'Type' => 'setType',
         'Status' => 'setStatus',
@@ -344,6 +340,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'DestinationUrl' => 'setDestinationUrl',
+        'Title' => 'setTitle',
+        'Text' => 'setText',
+        'DisplayUrl' => 'setDisplayUrl',
         'PromotionalText' => 'setPromotionalText',
         'AppPlatform' => 'setAppPlatform',
         'AppStoreId' => 'setAppStoreId',
@@ -376,10 +376,6 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'DestinationUrl' => 'getDestinationUrl',
-        'Title' => 'getTitle',
-        'Text' => 'getText',
-        'DisplayUrl' => 'getDisplayUrl',
         'Id' => 'getId',
         'Type' => 'getType',
         'Status' => 'getStatus',
@@ -393,6 +389,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'DestinationUrl' => 'getDestinationUrl',
+        'Title' => 'getTitle',
+        'Text' => 'getText',
+        'DisplayUrl' => 'getDisplayUrl',
         'PromotionalText' => 'getPromotionalText',
         'AppPlatform' => 'getAppPlatform',
         'AppStoreId' => 'getAppStoreId',
@@ -476,12 +476,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('DestinationUrl', $data ?? [], null);
-        $this->setIfExists('Title', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('DisplayUrl', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ResponsiveSearch');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
@@ -493,6 +489,10 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('DestinationUrl', $data ?? [], null);
+        $this->setIfExists('Title', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('DisplayUrl', $data ?? [], null);
         $this->setIfExists('PromotionalText', $data ?? [], null);
         $this->setIfExists('AppPlatform', $data ?? [], null);
         $this->setIfExists('AppStoreId', $data ?? [], null);
@@ -565,154 +565,6 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets DestinationUrl
-     *
-     * @return string|null
-     */
-    public function getDestinationUrl()
-    {
-        if (!isset($this->container['DestinationUrl']) || is_null($this->container['DestinationUrl'])) {
-            return null;
-        }
-        return $this->container['DestinationUrl'];
-    }
-
-    /**
-     * Sets DestinationUrl
-     *
-     * @param string|null $DestinationUrl DestinationUrl
-     *
-     * @return self
-     */
-    public function setDestinationUrl($DestinationUrl)
-    {
-        if (is_null($DestinationUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'DestinationUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DestinationUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DestinationUrl'] = $DestinationUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets Title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
-            return null;
-        }
-        return $this->container['Title'];
-    }
-
-    /**
-     * Sets Title
-     *
-     * @param string|null $Title Title
-     *
-     * @return self
-     */
-    public function setTitle($Title)
-    {
-        if (is_null($Title)) {
-            array_push($this->openAPINullablesSetToNull, 'Title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Title'] = $Title;
-
-        return $this;
-    }
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
-     * Gets DisplayUrl
-     *
-     * @return string|null
-     */
-    public function getDisplayUrl()
-    {
-        if (!isset($this->container['DisplayUrl']) || is_null($this->container['DisplayUrl'])) {
-            return null;
-        }
-        return $this->container['DisplayUrl'];
-    }
-
-    /**
-     * Sets DisplayUrl
-     *
-     * @param string|null $DisplayUrl DisplayUrl
-     *
-     * @return self
-     */
-    public function setDisplayUrl($DisplayUrl)
-    {
-        if (is_null($DisplayUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'DisplayUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DisplayUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DisplayUrl'] = $DisplayUrl;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -752,12 +604,15 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -765,21 +620,17 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1187,6 +1038,154 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets DestinationUrl
+     *
+     * @return string|null
+     */
+    public function getDestinationUrl()
+    {
+        if (!isset($this->container['DestinationUrl']) || is_null($this->container['DestinationUrl'])) {
+            return null;
+        }
+        return $this->container['DestinationUrl'];
+    }
+
+    /**
+     * Sets DestinationUrl
+     *
+     * @param string|null $DestinationUrl DestinationUrl
+     *
+     * @return self
+     */
+    public function setDestinationUrl($DestinationUrl)
+    {
+        if (is_null($DestinationUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'DestinationUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DestinationUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DestinationUrl'] = $DestinationUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
+            return null;
+        }
+        return $this->container['Title'];
+    }
+
+    /**
+     * Sets Title
+     *
+     * @param string|null $Title Title
+     *
+     * @return self
+     */
+    public function setTitle($Title)
+    {
+        if (is_null($Title)) {
+            array_push($this->openAPINullablesSetToNull, 'Title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Title'] = $Title;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisplayUrl
+     *
+     * @return string|null
+     */
+    public function getDisplayUrl()
+    {
+        if (!isset($this->container['DisplayUrl']) || is_null($this->container['DisplayUrl'])) {
+            return null;
+        }
+        return $this->container['DisplayUrl'];
+    }
+
+    /**
+     * Sets DisplayUrl
+     *
+     * @param string|null $DisplayUrl DisplayUrl
+     *
+     * @return self
+     */
+    public function setDisplayUrl($DisplayUrl)
+    {
+        if (is_null($DisplayUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'DisplayUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DisplayUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DisplayUrl'] = $DisplayUrl;
 
         return $this;
     }

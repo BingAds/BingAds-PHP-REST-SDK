@@ -39,7 +39,7 @@ class CustomAudience extends Audience implements ModelInterface, ArrayAccess, \J
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'ParentId' => 'string',
         'MembershipDuration' => 'int',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
         'SupportedCampaignTypes' => 'string[]',
@@ -81,7 +81,7 @@ class CustomAudience extends Audience implements ModelInterface, ArrayAccess, \J
         'Scope' => false,
         'ParentId' => true,
         'MembershipDuration' => true,
-        'Type' => true,
+        'Type' => false,
         'SearchSize' => true,
         'AudienceNetworkSize' => true,
         'SupportedCampaignTypes' => true,
@@ -292,7 +292,7 @@ class CustomAudience extends Audience implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Custom');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
         $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
@@ -566,12 +566,15 @@ class CustomAudience extends Audience implements ModelInterface, ArrayAccess, \J
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -579,21 +582,17 @@ class CustomAudience extends Audience implements ModelInterface, ArrayAccess, \J
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
         }
         $this->container['Type'] = $Type;
 

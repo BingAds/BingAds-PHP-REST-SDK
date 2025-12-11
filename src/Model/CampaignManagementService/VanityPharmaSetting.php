@@ -33,9 +33,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'DisplayUrlMode' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaDisplayUrlMode',
-        'WebsiteDescription' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaWebsiteDescription',
-        'Type' => 'string'
+        'WebsiteDescription' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaWebsiteDescription'
     ];
 
     /**
@@ -46,9 +46,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'DisplayUrlMode' => null,
-        'WebsiteDescription' => null,
-        'Type' => null
+        'WebsiteDescription' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'DisplayUrlMode' => false,
-        'WebsiteDescription' => false,
-        'Type' => true
+        'WebsiteDescription' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'DisplayUrlMode' => 'DisplayUrlMode',
-        'WebsiteDescription' => 'WebsiteDescription',
-        'Type' => 'Type'
+        'WebsiteDescription' => 'WebsiteDescription'
     ];
 
     /**
@@ -159,9 +159,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'DisplayUrlMode' => 'setDisplayUrlMode',
-        'WebsiteDescription' => 'setWebsiteDescription',
-        'Type' => 'setType'
+        'WebsiteDescription' => 'setWebsiteDescription'
     ];
 
     /**
@@ -170,9 +170,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'DisplayUrlMode' => 'getDisplayUrlMode',
-        'WebsiteDescription' => 'getWebsiteDescription',
-        'Type' => 'getType'
+        'WebsiteDescription' => 'getWebsiteDescription'
     ];
 
     /**
@@ -232,9 +232,9 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DisplayUrlMode', $data ?? [], null);
         $this->setIfExists('WebsiteDescription', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'VanityPharmaSetting');
     }
 
     /**
@@ -278,6 +278,43 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets DisplayUrlMode
@@ -347,43 +384,6 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
             $WebsiteDescription = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaWebsiteDescription($WebsiteDescription);
         }
         $this->container['WebsiteDescription'] = $WebsiteDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

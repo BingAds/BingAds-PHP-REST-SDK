@@ -238,7 +238,7 @@ class StringRuleItem extends RuleItem implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'String');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Operator', $data ?? [], null);
         $this->setIfExists('Value', $data ?? [], null);

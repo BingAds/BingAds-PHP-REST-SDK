@@ -220,7 +220,7 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'ManualCpm');
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**

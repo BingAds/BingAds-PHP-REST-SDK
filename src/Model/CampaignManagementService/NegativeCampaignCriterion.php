@@ -255,7 +255,7 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'NegativeCampaignCriterion');
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**

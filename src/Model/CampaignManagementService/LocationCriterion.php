@@ -33,11 +33,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'LocationId' => 'string',
         'LocationType' => 'string',
         'DisplayName' => 'string',
-        'EnclosedLocationIds' => 'string[]',
-        'Type' => 'string'
+        'EnclosedLocationIds' => 'string[]'
     ];
 
     /**
@@ -48,11 +48,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'LocationId' => 'int64',
         'LocationType' => null,
         'DisplayName' => null,
-        'EnclosedLocationIds' => 'int64',
-        'Type' => null
+        'EnclosedLocationIds' => 'int64'
     ];
 
     /**
@@ -61,11 +61,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'LocationId' => true,
         'LocationType' => true,
         'DisplayName' => true,
-        'EnclosedLocationIds' => true,
-        'Type' => true
+        'EnclosedLocationIds' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'LocationId' => 'LocationId',
         'LocationType' => 'LocationType',
         'DisplayName' => 'DisplayName',
-        'EnclosedLocationIds' => 'EnclosedLocationIds',
-        'Type' => 'Type'
+        'EnclosedLocationIds' => 'EnclosedLocationIds'
     ];
 
     /**
@@ -167,11 +167,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'LocationId' => 'setLocationId',
         'LocationType' => 'setLocationType',
         'DisplayName' => 'setDisplayName',
-        'EnclosedLocationIds' => 'setEnclosedLocationIds',
-        'Type' => 'setType'
+        'EnclosedLocationIds' => 'setEnclosedLocationIds'
     ];
 
     /**
@@ -180,11 +180,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'LocationId' => 'getLocationId',
         'LocationType' => 'getLocationType',
         'DisplayName' => 'getDisplayName',
-        'EnclosedLocationIds' => 'getEnclosedLocationIds',
-        'Type' => 'getType'
+        'EnclosedLocationIds' => 'getEnclosedLocationIds'
     ];
 
     /**
@@ -244,11 +244,11 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('LocationId', $data ?? [], null);
         $this->setIfExists('LocationType', $data ?? [], null);
         $this->setIfExists('DisplayName', $data ?? [], null);
         $this->setIfExists('EnclosedLocationIds', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'LocationCriterion');
     }
 
     /**
@@ -292,6 +292,43 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets LocationId
@@ -437,43 +474,6 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
             }
         }
         $this->container['EnclosedLocationIds'] = $EnclosedLocationIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

@@ -45,7 +45,15 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EventsLostToBudget' => 'int',
         'EstReachAudienceSize' => '\Microsoft\MsAds\Rest\Model\AdInsightService\DecimalRoundedResult',
         'EstReachImpression' => '\Microsoft\MsAds\Rest\Model\AdInsightService\DecimalRoundedResult',
-        'Currency' => '\Microsoft\MsAds\Rest\Model\AdInsightService\Currency'
+        'Currency' => '\Microsoft\MsAds\Rest\Model\AdInsightService\Currency',
+        'EstImpressionByType' => 'object[]',
+        'EstClickByType' => 'object[]',
+        'EstSpendByType' => 'object[]',
+        'EstCostPerEventByType' => 'object[]',
+        'EstCPCByType' => 'object[]',
+        'EstViewByType' => 'object[]',
+        'EstCTRByType' => 'object[]',
+        'EstReachImpressionByType' => 'object[]'
     ];
 
     /**
@@ -68,7 +76,15 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EventsLostToBudget' => 'int32',
         'EstReachAudienceSize' => null,
         'EstReachImpression' => null,
-        'Currency' => null
+        'Currency' => null,
+        'EstImpressionByType' => null,
+        'EstClickByType' => null,
+        'EstSpendByType' => null,
+        'EstCostPerEventByType' => null,
+        'EstCPCByType' => null,
+        'EstViewByType' => null,
+        'EstCTRByType' => null,
+        'EstReachImpressionByType' => null
     ];
 
     /**
@@ -89,7 +105,15 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EventsLostToBudget' => true,
         'EstReachAudienceSize' => true,
         'EstReachImpression' => true,
-        'Currency' => false
+        'Currency' => false,
+        'EstImpressionByType' => true,
+        'EstClickByType' => true,
+        'EstSpendByType' => true,
+        'EstCostPerEventByType' => true,
+        'EstCPCByType' => true,
+        'EstViewByType' => true,
+        'EstCTRByType' => true,
+        'EstReachImpressionByType' => true
     ];
 
     /**
@@ -190,7 +214,15 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EventsLostToBudget' => 'EventsLostToBudget',
         'EstReachAudienceSize' => 'EstReachAudienceSize',
         'EstReachImpression' => 'EstReachImpression',
-        'Currency' => 'Currency'
+        'Currency' => 'Currency',
+        'EstImpressionByType' => 'EstImpressionByType',
+        'EstClickByType' => 'EstClickByType',
+        'EstSpendByType' => 'EstSpendByType',
+        'EstCostPerEventByType' => 'EstCostPerEventByType',
+        'EstCPCByType' => 'EstCPCByType',
+        'EstViewByType' => 'EstViewByType',
+        'EstCTRByType' => 'EstCTRByType',
+        'EstReachImpressionByType' => 'EstReachImpressionByType'
     ];
 
     /**
@@ -211,7 +243,15 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EventsLostToBudget' => 'setEventsLostToBudget',
         'EstReachAudienceSize' => 'setEstReachAudienceSize',
         'EstReachImpression' => 'setEstReachImpression',
-        'Currency' => 'setCurrency'
+        'Currency' => 'setCurrency',
+        'EstImpressionByType' => 'setEstImpressionByType',
+        'EstClickByType' => 'setEstClickByType',
+        'EstSpendByType' => 'setEstSpendByType',
+        'EstCostPerEventByType' => 'setEstCostPerEventByType',
+        'EstCPCByType' => 'setEstCPCByType',
+        'EstViewByType' => 'setEstViewByType',
+        'EstCTRByType' => 'setEstCTRByType',
+        'EstReachImpressionByType' => 'setEstReachImpressionByType'
     ];
 
     /**
@@ -232,7 +272,15 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EventsLostToBudget' => 'getEventsLostToBudget',
         'EstReachAudienceSize' => 'getEstReachAudienceSize',
         'EstReachImpression' => 'getEstReachImpression',
-        'Currency' => 'getCurrency'
+        'Currency' => 'getCurrency',
+        'EstImpressionByType' => 'getEstImpressionByType',
+        'EstClickByType' => 'getEstClickByType',
+        'EstSpendByType' => 'getEstSpendByType',
+        'EstCostPerEventByType' => 'getEstCostPerEventByType',
+        'EstCPCByType' => 'getEstCPCByType',
+        'EstViewByType' => 'getEstViewByType',
+        'EstCTRByType' => 'getEstCTRByType',
+        'EstReachImpressionByType' => 'getEstReachImpressionByType'
     ];
 
     /**
@@ -305,6 +353,14 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         $this->setIfExists('EstReachAudienceSize', $data ?? [], null);
         $this->setIfExists('EstReachImpression', $data ?? [], null);
         $this->setIfExists('Currency', $data ?? [], null);
+        $this->setIfExists('EstImpressionByType', $data ?? [], null);
+        $this->setIfExists('EstClickByType', $data ?? [], null);
+        $this->setIfExists('EstSpendByType', $data ?? [], null);
+        $this->setIfExists('EstCostPerEventByType', $data ?? [], null);
+        $this->setIfExists('EstCPCByType', $data ?? [], null);
+        $this->setIfExists('EstViewByType', $data ?? [], null);
+        $this->setIfExists('EstCTRByType', $data ?? [], null);
+        $this->setIfExists('EstReachImpressionByType', $data ?? [], null);
     }
 
     /**
@@ -825,6 +881,302 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
             $Currency = new \Microsoft\MsAds\Rest\Model\AdInsightService\Currency($Currency);
         }
         $this->container['Currency'] = $Currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstImpressionByType
+     *
+     * @return object[]|null
+     */
+    public function getEstImpressionByType()
+    {
+        if (!isset($this->container['EstImpressionByType']) || is_null($this->container['EstImpressionByType'])) {
+            return null;
+        }
+        return $this->container['EstImpressionByType'];
+    }
+
+    /**
+     * Sets EstImpressionByType
+     *
+     * @param object[]|null $EstImpressionByType EstImpressionByType
+     *
+     * @return self
+     */
+    public function setEstImpressionByType($EstImpressionByType)
+    {
+        if (is_null($EstImpressionByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstImpressionByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstImpressionByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstImpressionByType'] = $EstImpressionByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstClickByType
+     *
+     * @return object[]|null
+     */
+    public function getEstClickByType()
+    {
+        if (!isset($this->container['EstClickByType']) || is_null($this->container['EstClickByType'])) {
+            return null;
+        }
+        return $this->container['EstClickByType'];
+    }
+
+    /**
+     * Sets EstClickByType
+     *
+     * @param object[]|null $EstClickByType EstClickByType
+     *
+     * @return self
+     */
+    public function setEstClickByType($EstClickByType)
+    {
+        if (is_null($EstClickByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstClickByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstClickByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstClickByType'] = $EstClickByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstSpendByType
+     *
+     * @return object[]|null
+     */
+    public function getEstSpendByType()
+    {
+        if (!isset($this->container['EstSpendByType']) || is_null($this->container['EstSpendByType'])) {
+            return null;
+        }
+        return $this->container['EstSpendByType'];
+    }
+
+    /**
+     * Sets EstSpendByType
+     *
+     * @param object[]|null $EstSpendByType EstSpendByType
+     *
+     * @return self
+     */
+    public function setEstSpendByType($EstSpendByType)
+    {
+        if (is_null($EstSpendByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstSpendByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstSpendByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstSpendByType'] = $EstSpendByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstCostPerEventByType
+     *
+     * @return object[]|null
+     */
+    public function getEstCostPerEventByType()
+    {
+        if (!isset($this->container['EstCostPerEventByType']) || is_null($this->container['EstCostPerEventByType'])) {
+            return null;
+        }
+        return $this->container['EstCostPerEventByType'];
+    }
+
+    /**
+     * Sets EstCostPerEventByType
+     *
+     * @param object[]|null $EstCostPerEventByType EstCostPerEventByType
+     *
+     * @return self
+     */
+    public function setEstCostPerEventByType($EstCostPerEventByType)
+    {
+        if (is_null($EstCostPerEventByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstCostPerEventByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstCostPerEventByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstCostPerEventByType'] = $EstCostPerEventByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstCPCByType
+     *
+     * @return object[]|null
+     */
+    public function getEstCPCByType()
+    {
+        if (!isset($this->container['EstCPCByType']) || is_null($this->container['EstCPCByType'])) {
+            return null;
+        }
+        return $this->container['EstCPCByType'];
+    }
+
+    /**
+     * Sets EstCPCByType
+     *
+     * @param object[]|null $EstCPCByType EstCPCByType
+     *
+     * @return self
+     */
+    public function setEstCPCByType($EstCPCByType)
+    {
+        if (is_null($EstCPCByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstCPCByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstCPCByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstCPCByType'] = $EstCPCByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstViewByType
+     *
+     * @return object[]|null
+     */
+    public function getEstViewByType()
+    {
+        if (!isset($this->container['EstViewByType']) || is_null($this->container['EstViewByType'])) {
+            return null;
+        }
+        return $this->container['EstViewByType'];
+    }
+
+    /**
+     * Sets EstViewByType
+     *
+     * @param object[]|null $EstViewByType EstViewByType
+     *
+     * @return self
+     */
+    public function setEstViewByType($EstViewByType)
+    {
+        if (is_null($EstViewByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstViewByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstViewByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstViewByType'] = $EstViewByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstCTRByType
+     *
+     * @return object[]|null
+     */
+    public function getEstCTRByType()
+    {
+        if (!isset($this->container['EstCTRByType']) || is_null($this->container['EstCTRByType'])) {
+            return null;
+        }
+        return $this->container['EstCTRByType'];
+    }
+
+    /**
+     * Sets EstCTRByType
+     *
+     * @param object[]|null $EstCTRByType EstCTRByType
+     *
+     * @return self
+     */
+    public function setEstCTRByType($EstCTRByType)
+    {
+        if (is_null($EstCTRByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstCTRByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstCTRByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstCTRByType'] = $EstCTRByType;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstReachImpressionByType
+     *
+     * @return object[]|null
+     */
+    public function getEstReachImpressionByType()
+    {
+        if (!isset($this->container['EstReachImpressionByType']) || is_null($this->container['EstReachImpressionByType'])) {
+            return null;
+        }
+        return $this->container['EstReachImpressionByType'];
+    }
+
+    /**
+     * Sets EstReachImpressionByType
+     *
+     * @param object[]|null $EstReachImpressionByType EstReachImpressionByType
+     *
+     * @return self
+     */
+    public function setEstReachImpressionByType($EstReachImpressionByType)
+    {
+        if (is_null($EstReachImpressionByType)) {
+            array_push($this->openAPINullablesSetToNull, 'EstReachImpressionByType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstReachImpressionByType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstReachImpressionByType'] = $EstReachImpressionByType;
 
         return $this;
     }

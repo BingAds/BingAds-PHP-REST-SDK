@@ -33,8 +33,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Details' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[][]',
-        'Type' => 'string'
+        'Type' => 'string',
+        'Details' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[][]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Details' => null,
-        'Type' => null
+        'Type' => null,
+        'Details' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Details' => true,
-        'Type' => true
+        'Type' => true,
+        'Details' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Details' => 'Details',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Details' => 'Details'
     ];
 
     /**
@@ -155,8 +155,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
-        'Details' => 'setDetails',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Details' => 'setDetails'
     ];
 
     /**
@@ -165,8 +165,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
-        'Details' => 'getDetails',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Details' => 'getDetails'
     ];
 
     /**
@@ -226,8 +226,8 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Details', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'VerifiedTrackingSetting');
     }
 
     /**
@@ -273,43 +273,6 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets Details
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[][]|null
-     */
-    public function getDetails()
-    {
-        if (!isset($this->container['Details']) || is_null($this->container['Details'])) {
-            return null;
-        }
-        return $this->container['Details'];
-    }
-
-    /**
-     * Sets Details
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[][]|null $Details Details
-     *
-     * @return self
-     */
-    public function setDetails($Details)
-    {
-        if (is_null($Details)) {
-            array_push($this->openAPINullablesSetToNull, 'Details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Details', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Details'] = $Details;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class VerifiedTrackingSetting extends Setting implements ModelInterface, ArrayAc
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Details
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[][]|null
+     */
+    public function getDetails()
+    {
+        if (!isset($this->container['Details']) || is_null($this->container['Details'])) {
+            return null;
+        }
+        return $this->container['Details'];
+    }
+
+    /**
+     * Sets Details
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[][]|null $Details Details
+     *
+     * @return self
+     */
+    public function setDetails($Details)
+    {
+        if (is_null($Details)) {
+            array_push($this->openAPINullablesSetToNull, 'Details');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Details', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Details'] = $Details;
 
         return $this;
     }

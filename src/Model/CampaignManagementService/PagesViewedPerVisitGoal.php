@@ -33,11 +33,10 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MinimumPagesViewed' => 'int',
         'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -49,7 +48,8 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool'
+        'IsAutoGoal' => 'bool',
+        'MinimumPagesViewed' => 'int'
     ];
 
     /**
@@ -60,7 +60,6 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MinimumPagesViewed' => 'int32',
         'Id' => 'int64',
         'Name' => null,
         'Status' => null,
@@ -76,7 +75,8 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null
+        'IsAutoGoal' => null,
+        'MinimumPagesViewed' => 'int32'
     ];
 
     /**
@@ -85,11 +85,10 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MinimumPagesViewed' => true,
         'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => true,
+        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -101,7 +100,8 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true
+        'IsAutoGoal' => true,
+        'MinimumPagesViewed' => true
     ];
 
     /**
@@ -190,7 +190,6 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MinimumPagesViewed' => 'MinimumPagesViewed',
         'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
@@ -206,7 +205,8 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal'
+        'IsAutoGoal' => 'IsAutoGoal',
+        'MinimumPagesViewed' => 'MinimumPagesViewed'
     ];
 
     /**
@@ -215,7 +215,6 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
      * @var string[]
      */
     protected static array $setters = [
-        'MinimumPagesViewed' => 'setMinimumPagesViewed',
         'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
@@ -231,7 +230,8 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal'
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'MinimumPagesViewed' => 'setMinimumPagesViewed'
     ];
 
     /**
@@ -240,7 +240,6 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
      * @var string[]
      */
     protected static array $getters = [
-        'MinimumPagesViewed' => 'getMinimumPagesViewed',
         'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
@@ -256,7 +255,8 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal'
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'MinimumPagesViewed' => 'getMinimumPagesViewed'
     ];
 
     /**
@@ -316,11 +316,10 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MinimumPagesViewed', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'PagesViewedPerVisit');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -333,6 +332,7 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('MinimumPagesViewed', $data ?? [], null);
     }
 
     /**
@@ -376,43 +376,6 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets MinimumPagesViewed
-     *
-     * @return int|null
-     */
-    public function getMinimumPagesViewed()
-    {
-        if (!isset($this->container['MinimumPagesViewed']) || is_null($this->container['MinimumPagesViewed'])) {
-            return null;
-        }
-        return $this->container['MinimumPagesViewed'];
-    }
-
-    /**
-     * Sets MinimumPagesViewed
-     *
-     * @param int|null $MinimumPagesViewed MinimumPagesViewed
-     *
-     * @return self
-     */
-    public function setMinimumPagesViewed($MinimumPagesViewed)
-    {
-        if (is_null($MinimumPagesViewed)) {
-            array_push($this->openAPINullablesSetToNull, 'MinimumPagesViewed');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MinimumPagesViewed', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MinimumPagesViewed'] = $MinimumPagesViewed;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -527,12 +490,15 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -540,21 +506,17 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -996,6 +958,43 @@ class PagesViewedPerVisitGoal extends ConversionGoal implements ModelInterface, 
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets MinimumPagesViewed
+     *
+     * @return int|null
+     */
+    public function getMinimumPagesViewed()
+    {
+        if (!isset($this->container['MinimumPagesViewed']) || is_null($this->container['MinimumPagesViewed'])) {
+            return null;
+        }
+        return $this->container['MinimumPagesViewed'];
+    }
+
+    /**
+     * Sets MinimumPagesViewed
+     *
+     * @param int|null $MinimumPagesViewed MinimumPagesViewed
+     *
+     * @return self
+     */
+    public function setMinimumPagesViewed($MinimumPagesViewed)
+    {
+        if (is_null($MinimumPagesViewed)) {
+            array_push($this->openAPINullablesSetToNull, 'MinimumPagesViewed');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MinimumPagesViewed', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MinimumPagesViewed'] = $MinimumPagesViewed;
 
         return $this;
     }

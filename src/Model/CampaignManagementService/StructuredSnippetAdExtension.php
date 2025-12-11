@@ -33,14 +33,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Header' => 'string',
-        'Values' => 'string[]',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'Header' => 'string',
+        'Values' => 'string[]',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -52,14 +52,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Header' => null,
-        'Values' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'Header' => null,
+        'Values' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -69,14 +69,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Header' => true,
-        'Values' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'Header' => true,
+        'Values' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -166,14 +166,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Header' => 'Header',
-        'Values' => 'Values',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'Header' => 'Header',
+        'Values' => 'Values',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -183,14 +183,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'Header' => 'setHeader',
-        'Values' => 'setValues',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'Header' => 'setHeader',
+        'Values' => 'setValues',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -200,14 +200,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'Header' => 'getHeader',
-        'Values' => 'getValues',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'Header' => 'getHeader',
+        'Values' => 'getValues',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -268,14 +268,14 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Header', $data ?? [], null);
-        $this->setIfExists('Values', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'StructuredSnippetAdExtension');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
+        $this->setIfExists('Header', $data ?? [], null);
+        $this->setIfExists('Values', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -320,80 +320,6 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Header
-     *
-     * @return string|null
-     */
-    public function getHeader()
-    {
-        if (!isset($this->container['Header']) || is_null($this->container['Header'])) {
-            return null;
-        }
-        return $this->container['Header'];
-    }
-
-    /**
-     * Sets Header
-     *
-     * @param string|null $Header Header
-     *
-     * @return self
-     */
-    public function setHeader($Header)
-    {
-        if (is_null($Header)) {
-            array_push($this->openAPINullablesSetToNull, 'Header');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Header', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Header'] = $Header;
-
-        return $this;
-    }
-
-    /**
-     * Gets Values
-     *
-     * @return string[]|null
-     */
-    public function getValues()
-    {
-        if (!isset($this->container['Values']) || is_null($this->container['Values'])) {
-            return null;
-        }
-        return $this->container['Values'];
-    }
-
-    /**
-     * Sets Values
-     *
-     * @param string[]|null $Values Values
-     *
-     * @return self
-     */
-    public function setValues($Values)
-    {
-        if (is_null($Values)) {
-            array_push($this->openAPINullablesSetToNull, 'Values');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Values', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Values'] = $Values;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -612,6 +538,80 @@ class StructuredSnippetAdExtension extends AdExtension implements ModelInterface
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets Header
+     *
+     * @return string|null
+     */
+    public function getHeader()
+    {
+        if (!isset($this->container['Header']) || is_null($this->container['Header'])) {
+            return null;
+        }
+        return $this->container['Header'];
+    }
+
+    /**
+     * Sets Header
+     *
+     * @param string|null $Header Header
+     *
+     * @return self
+     */
+    public function setHeader($Header)
+    {
+        if (is_null($Header)) {
+            array_push($this->openAPINullablesSetToNull, 'Header');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Header', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Header'] = $Header;
+
+        return $this;
+    }
+
+    /**
+     * Gets Values
+     *
+     * @return string[]|null
+     */
+    public function getValues()
+    {
+        if (!isset($this->container['Values']) || is_null($this->container['Values'])) {
+            return null;
+        }
+        return $this->container['Values'];
+    }
+
+    /**
+     * Sets Values
+     *
+     * @param string[]|null $Values Values
+     *
+     * @return self
+     */
+    public function setValues($Values)
+    {
+        if (is_null($Values)) {
+            array_push($this->openAPINullablesSetToNull, 'Values');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Values', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Values'] = $Values;
 
         return $this;
     }

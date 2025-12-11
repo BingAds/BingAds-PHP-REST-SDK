@@ -33,7 +33,8 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'BidStrategyIds' => 'string[]'
+        'BidStrategyIds' => 'string[]',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope'
     ];
 
     /**
@@ -44,7 +45,8 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'BidStrategyIds' => 'int64'
+        'BidStrategyIds' => 'int64',
+        'Scope' => null
     ];
 
     /**
@@ -53,7 +55,8 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'BidStrategyIds' => true
+        'BidStrategyIds' => true,
+        'Scope' => false
     ];
 
     /**
@@ -142,7 +145,8 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'BidStrategyIds' => 'BidStrategyIds'
+        'BidStrategyIds' => 'BidStrategyIds',
+        'Scope' => 'Scope'
     ];
 
     /**
@@ -151,7 +155,8 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'BidStrategyIds' => 'setBidStrategyIds'
+        'BidStrategyIds' => 'setBidStrategyIds',
+        'Scope' => 'setScope'
     ];
 
     /**
@@ -160,7 +165,8 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'BidStrategyIds' => 'getBidStrategyIds'
+        'BidStrategyIds' => 'getBidStrategyIds',
+        'Scope' => 'getScope'
     ];
 
     /**
@@ -221,6 +227,7 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(?array $data = null)
     {
         $this->setIfExists('BidStrategyIds', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
     }
 
     /**
@@ -298,6 +305,42 @@ class DeleteBidStrategiesRequest implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['BidStrategyIds'] = $BidStrategyIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
+        }
+        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
 
         return $this;
     }

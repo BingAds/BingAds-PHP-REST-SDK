@@ -175,5 +175,5 @@ Logs will be generated in the base directory of the project with the request and
 
 ## About this package
 
-- SDK Package version: `13.0.25.1`
-- Generated date: `2025-07-31T13:28:36.717081200+08:00[Asia/Shanghai]`
+- SDK Package version: `13.0.26`
+- Generated date: `2025-12-11T13:28:36.717081200+08:00[Asia/Shanghai]`

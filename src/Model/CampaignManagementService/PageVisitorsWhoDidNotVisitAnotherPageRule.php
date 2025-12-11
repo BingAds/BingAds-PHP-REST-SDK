@@ -232,7 +232,7 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'PageVisitorsWhoDidNotVisitAnotherPage');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('IncludeRuleItemGroups', $data ?? [], null);
         $this->setIfExists('ExcludeRuleItemGroups', $data ?? [], null);
     }

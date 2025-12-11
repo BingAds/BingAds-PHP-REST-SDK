@@ -33,9 +33,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'TopicId' => 'string',
-        'TopicName' => 'string',
-        'Type' => 'string'
+        'TopicName' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'TopicId' => 'int64',
-        'TopicName' => null,
-        'Type' => null
+        'TopicName' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'TopicId' => false,
-        'TopicName' => true,
-        'Type' => true
+        'TopicName' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'TopicId' => 'TopicId',
-        'TopicName' => 'TopicName',
-        'Type' => 'Type'
+        'TopicName' => 'TopicName'
     ];
 
     /**
@@ -159,9 +159,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'TopicId' => 'setTopicId',
-        'TopicName' => 'setTopicName',
-        'Type' => 'setType'
+        'TopicName' => 'setTopicName'
     ];
 
     /**
@@ -170,9 +170,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'TopicId' => 'getTopicId',
-        'TopicName' => 'getTopicName',
-        'Type' => 'getType'
+        'TopicName' => 'getTopicName'
     ];
 
     /**
@@ -232,9 +232,9 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('TopicId', $data ?? [], null);
         $this->setIfExists('TopicName', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'TopicCriterion');
     }
 
     /**
@@ -278,6 +278,43 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets TopicId
@@ -342,43 +379,6 @@ class TopicCriterion extends Criterion implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['TopicName'] = $TopicName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

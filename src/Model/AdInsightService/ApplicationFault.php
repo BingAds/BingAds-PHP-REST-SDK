@@ -42,9 +42,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'TrackingId' => 'string',
         'OperationErrors' => '\Microsoft\MsAds\Rest\Model\AdInsightService\OperationError[]',
         'BatchErrors' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BatchError[]',
-        'TrackingId' => 'string',
         'Type' => 'string'
     ];
 
@@ -56,9 +56,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'TrackingId' => null,
         'OperationErrors' => null,
         'BatchErrors' => null,
-        'TrackingId' => null,
         'Type' => null
     ];
 
@@ -68,9 +68,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'TrackingId' => true,
         'OperationErrors' => true,
         'BatchErrors' => true,
-        'TrackingId' => true,
         'Type' => true
     ];
 
@@ -160,9 +160,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'TrackingId' => 'TrackingId',
         'OperationErrors' => 'OperationErrors',
         'BatchErrors' => 'BatchErrors',
-        'TrackingId' => 'TrackingId',
         'Type' => 'Type'
     ];
 
@@ -172,9 +172,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'TrackingId' => 'setTrackingId',
         'OperationErrors' => 'setOperationErrors',
         'BatchErrors' => 'setBatchErrors',
-        'TrackingId' => 'setTrackingId',
         'Type' => 'setType'
     ];
 
@@ -184,9 +184,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'TrackingId' => 'getTrackingId',
         'OperationErrors' => 'getOperationErrors',
         'BatchErrors' => 'getBatchErrors',
-        'TrackingId' => 'getTrackingId',
         'Type' => 'getType'
     ];
 
@@ -247,9 +247,9 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
-        $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'ApiFaultDetail');
 
         // Initialize discriminator property with the model name.
@@ -297,6 +297,43 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets TrackingId
+     *
+     * @return string|null
+     */
+    public function getTrackingId()
+    {
+        if (!isset($this->container['TrackingId']) || is_null($this->container['TrackingId'])) {
+            return null;
+        }
+        return $this->container['TrackingId'];
+    }
+
+    /**
+     * Sets TrackingId
+     *
+     * @param string|null $TrackingId TrackingId
+     *
+     * @return self
+     */
+    public function setTrackingId($TrackingId)
+    {
+        if (is_null($TrackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingId'] = $TrackingId;
+
+        return $this;
+    }
 
     /**
      * Gets OperationErrors
@@ -368,43 +405,6 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BatchErrors'] = $BatchErrors;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrackingId
-     *
-     * @return string|null
-     */
-    public function getTrackingId()
-    {
-        if (!isset($this->container['TrackingId']) || is_null($this->container['TrackingId'])) {
-            return null;
-        }
-        return $this->container['TrackingId'];
-    }
-
-    /**
-     * Sets TrackingId
-     *
-     * @param string|null $TrackingId TrackingId
-     *
-     * @return self
-     */
-    public function setTrackingId($TrackingId)
-    {
-        if (is_null($TrackingId)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TrackingId'] = $TrackingId;
 
         return $this;
     }

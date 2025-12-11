@@ -33,13 +33,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Text' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'Text' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -51,13 +51,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Text' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'Text' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -67,13 +67,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Text' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'Text' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -163,13 +163,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Text' => 'Text',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'Text' => 'Text',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -179,13 +179,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $setters = [
-        'Text' => 'setText',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'Text' => 'setText',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -195,13 +195,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $getters = [
-        'Text' => 'getText',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'Text' => 'getText',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -262,13 +262,13 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CalloutAdExtension');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -313,43 +313,6 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -568,6 +531,43 @@ class CalloutAdExtension extends AdExtension implements ModelInterface, ArrayAcc
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
 
         return $this;
     }

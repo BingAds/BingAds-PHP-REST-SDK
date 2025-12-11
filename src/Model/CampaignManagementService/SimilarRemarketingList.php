@@ -33,19 +33,19 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SourceId' => 'string',
         'Id' => 'string',
         'Name' => 'string',
         'Description' => 'string',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'ParentId' => 'string',
         'MembershipDuration' => 'int',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
         'SupportedCampaignTypes' => 'string[]',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'SourceId' => 'string'
     ];
 
     /**
@@ -56,7 +56,6 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SourceId' => 'int64',
         'Id' => 'int64',
         'Name' => null,
         'Description' => null,
@@ -68,7 +67,8 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
         'AudienceNetworkSize' => 'int64',
         'SupportedCampaignTypes' => null,
         'CustomerShare' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'SourceId' => 'int64'
     ];
 
     /**
@@ -77,19 +77,19 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SourceId' => false,
         'Id' => true,
         'Name' => true,
         'Description' => true,
         'Scope' => false,
         'ParentId' => true,
         'MembershipDuration' => true,
-        'Type' => true,
+        'Type' => false,
         'SearchSize' => true,
         'AudienceNetworkSize' => true,
         'SupportedCampaignTypes' => true,
         'CustomerShare' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'SourceId' => false
     ];
 
     /**
@@ -178,7 +178,6 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SourceId' => 'SourceId',
         'Id' => 'Id',
         'Name' => 'Name',
         'Description' => 'Description',
@@ -190,7 +189,8 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
         'AudienceNetworkSize' => 'AudienceNetworkSize',
         'SupportedCampaignTypes' => 'SupportedCampaignTypes',
         'CustomerShare' => 'CustomerShare',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'SourceId' => 'SourceId'
     ];
 
     /**
@@ -199,7 +199,6 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
-        'SourceId' => 'setSourceId',
         'Id' => 'setId',
         'Name' => 'setName',
         'Description' => 'setDescription',
@@ -211,7 +210,8 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
         'AudienceNetworkSize' => 'setAudienceNetworkSize',
         'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
         'CustomerShare' => 'setCustomerShare',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'SourceId' => 'setSourceId'
     ];
 
     /**
@@ -220,7 +220,6 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
-        'SourceId' => 'getSourceId',
         'Id' => 'getId',
         'Name' => 'getName',
         'Description' => 'getDescription',
@@ -232,7 +231,8 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
         'AudienceNetworkSize' => 'getAudienceNetworkSize',
         'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
         'CustomerShare' => 'getCustomerShare',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'SourceId' => 'getSourceId'
     ];
 
     /**
@@ -292,19 +292,19 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SourceId', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'SimilarRemarketingList');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
         $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('SourceId', $data ?? [], null);
     }
 
     /**
@@ -348,36 +348,6 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SourceId
-     *
-     * @return string|null
-     */
-    public function getSourceId()
-    {
-        if (!isset($this->container['SourceId']) || is_null($this->container['SourceId'])) {
-            return null;
-        }
-        return $this->container['SourceId'];
-    }
-
-    /**
-     * Sets SourceId
-     *
-     * @param string|null $SourceId SourceId
-     *
-     * @return self
-     */
-    public function setSourceId($SourceId)
-    {
-        if (is_null($SourceId)) {
-            throw new \InvalidArgumentException('non-nullable SourceId cannot be null');
-        }
-        $this->container['SourceId'] = $SourceId;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -603,12 +573,15 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -616,21 +589,17 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -818,6 +787,36 @@ class SimilarRemarketingList extends Audience implements ModelInterface, ArrayAc
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets SourceId
+     *
+     * @return string|null
+     */
+    public function getSourceId()
+    {
+        if (!isset($this->container['SourceId']) || is_null($this->container['SourceId'])) {
+            return null;
+        }
+        return $this->container['SourceId'];
+    }
+
+    /**
+     * Sets SourceId
+     *
+     * @param string|null $SourceId SourceId
+     *
+     * @return self
+     */
+    public function setSourceId($SourceId)
+    {
+        if (is_null($SourceId)) {
+            throw new \InvalidArgumentException('non-nullable SourceId cannot be null');
+        }
+        $this->container['SourceId'] = $SourceId;
 
         return $this;
     }

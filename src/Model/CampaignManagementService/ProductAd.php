@@ -33,9 +33,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PromotionalText' => 'string',
         'Id' => 'string',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'DevicePreference' => 'string',
@@ -46,7 +45,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         'FinalUrls' => 'string[]',
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'PromotionalText' => 'string'
     ];
 
     /**
@@ -57,7 +57,6 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PromotionalText' => null,
         'Id' => 'int64',
         'Type' => null,
         'Status' => null,
@@ -70,7 +69,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         'FinalUrls' => null,
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'PromotionalText' => null
     ];
 
     /**
@@ -79,9 +79,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PromotionalText' => true,
         'Id' => true,
-        'Type' => true,
+        'Type' => false,
         'Status' => false,
         'EditorialStatus' => false,
         'DevicePreference' => true,
@@ -92,7 +91,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         'FinalUrls' => true,
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'PromotionalText' => true
     ];
 
     /**
@@ -181,7 +181,6 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PromotionalText' => 'PromotionalText',
         'Id' => 'Id',
         'Type' => 'Type',
         'Status' => 'Status',
@@ -194,7 +193,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         'FinalUrls' => 'FinalUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'PromotionalText' => 'PromotionalText'
     ];
 
     /**
@@ -203,7 +203,6 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $setters = [
-        'PromotionalText' => 'setPromotionalText',
         'Id' => 'setId',
         'Type' => 'setType',
         'Status' => 'setStatus',
@@ -216,7 +215,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         'FinalUrls' => 'setFinalUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'PromotionalText' => 'setPromotionalText'
     ];
 
     /**
@@ -225,7 +225,6 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $getters = [
-        'PromotionalText' => 'getPromotionalText',
         'Id' => 'getId',
         'Type' => 'getType',
         'Status' => 'getStatus',
@@ -238,7 +237,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         'FinalUrls' => 'getFinalUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'PromotionalText' => 'getPromotionalText'
     ];
 
     /**
@@ -298,9 +298,8 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PromotionalText', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Product');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
@@ -312,6 +311,7 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('PromotionalText', $data ?? [], null);
     }
 
     /**
@@ -357,43 +357,6 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets PromotionalText
-     *
-     * @return string|null
-     */
-    public function getPromotionalText()
-    {
-        if (!isset($this->container['PromotionalText']) || is_null($this->container['PromotionalText'])) {
-            return null;
-        }
-        return $this->container['PromotionalText'];
-    }
-
-    /**
-     * Sets PromotionalText
-     *
-     * @param string|null $PromotionalText PromotionalText
-     *
-     * @return self
-     */
-    public function setPromotionalText($PromotionalText)
-    {
-        if (is_null($PromotionalText)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionalText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionalText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PromotionalText'] = $PromotionalText;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -433,12 +396,15 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -446,21 +412,17 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -868,6 +830,43 @@ class ProductAd extends Ad implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionalText
+     *
+     * @return string|null
+     */
+    public function getPromotionalText()
+    {
+        if (!isset($this->container['PromotionalText']) || is_null($this->container['PromotionalText'])) {
+            return null;
+        }
+        return $this->container['PromotionalText'];
+    }
+
+    /**
+     * Sets PromotionalText
+     *
+     * @param string|null $PromotionalText PromotionalText
+     *
+     * @return self
+     */
+    public function setPromotionalText($PromotionalText)
+    {
+        if (is_null($PromotionalText)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionalText');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionalText', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionalText'] = $PromotionalText;
 
         return $this;
     }

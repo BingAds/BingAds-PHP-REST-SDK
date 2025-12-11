@@ -33,8 +33,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AgeRange' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange',
-        'Type' => 'string'
+        'Type' => 'string',
+        'AgeRange' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AgeRange' => null,
-        'Type' => null
+        'Type' => null,
+        'AgeRange' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AgeRange' => false,
-        'Type' => true
+        'Type' => true,
+        'AgeRange' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AgeRange' => 'AgeRange',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'AgeRange' => 'AgeRange'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
-        'AgeRange' => 'setAgeRange',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'AgeRange' => 'setAgeRange'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
-        'AgeRange' => 'getAgeRange',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'AgeRange' => 'getAgeRange'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AgeRange', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'AgeCriterion');
     }
 
     /**
@@ -273,42 +273,6 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets AgeRange
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange|mixed|null
-     */
-    public function getAgeRange()
-    {
-        if (!isset($this->container['AgeRange']) || is_null($this->container['AgeRange'])) {
-            return null;
-        }
-        if ((is_object($this->container['AgeRange']) || is_string($this->container['AgeRange'])) && method_exists($this->container['AgeRange'], 'getValue')) {
-            return $this->container['AgeRange']->getValue();
-        }
-        return $this->container['AgeRange'];
-    }
-
-    /**
-     * Sets AgeRange
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange|mixed|null $AgeRange AgeRange
-     *
-     * @return self
-     */
-    public function setAgeRange($AgeRange)
-    {
-        if (is_null($AgeRange)) {
-            throw new \InvalidArgumentException('non-nullable AgeRange cannot be null');
-        }
-        if (!$AgeRange instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange) {
-            $AgeRange = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange($AgeRange);
-        }
-        $this->container['AgeRange'] = $AgeRange;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -341,6 +305,42 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets AgeRange
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange|mixed|null
+     */
+    public function getAgeRange()
+    {
+        if (!isset($this->container['AgeRange']) || is_null($this->container['AgeRange'])) {
+            return null;
+        }
+        if ((is_object($this->container['AgeRange']) || is_string($this->container['AgeRange'])) && method_exists($this->container['AgeRange'], 'getValue')) {
+            return $this->container['AgeRange']->getValue();
+        }
+        return $this->container['AgeRange'];
+    }
+
+    /**
+     * Sets AgeRange
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange|mixed|null $AgeRange AgeRange
+     *
+     * @return self
+     */
+    public function setAgeRange($AgeRange)
+    {
+        if (is_null($AgeRange)) {
+            throw new \InvalidArgumentException('non-nullable AgeRange cannot be null');
+        }
+        if (!$AgeRange instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange) {
+            $AgeRange = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange($AgeRange);
+        }
+        $this->container['AgeRange'] = $AgeRange;
 
         return $this;
     }

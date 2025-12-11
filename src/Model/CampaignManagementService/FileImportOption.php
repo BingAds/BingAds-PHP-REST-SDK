@@ -227,7 +227,7 @@ class FileImportOption extends ImportOption implements ModelInterface, ArrayAcce
     public function __construct(?array $data = null)
     {
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'FileImportOption');
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**

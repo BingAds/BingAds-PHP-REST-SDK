@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class SharedList implements ModelInterface, ArrayAccess, \JsonSerializable
+class SharedList extends SharedEntity implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = 'Type';
 
@@ -267,7 +267,7 @@ class SharedList implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ItemCount', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'AccountPlacementInclusionList');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
 

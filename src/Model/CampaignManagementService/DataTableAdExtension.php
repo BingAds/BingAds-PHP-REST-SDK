@@ -33,14 +33,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'NameUrl' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'Name' => 'string',
+        'NameUrl' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -52,14 +52,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'NameUrl' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'Name' => null,
+        'NameUrl' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -69,14 +69,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'NameUrl' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'Name' => true,
+        'NameUrl' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -166,14 +166,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'NameUrl' => 'NameUrl',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'Name' => 'Name',
+        'NameUrl' => 'NameUrl',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -183,14 +183,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'NameUrl' => 'setNameUrl',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'Name' => 'setName',
+        'NameUrl' => 'setNameUrl',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -200,14 +200,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'NameUrl' => 'getNameUrl',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'Name' => 'getName',
+        'NameUrl' => 'getNameUrl',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -268,14 +268,14 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('NameUrl', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'DataTableAdExtension');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('NameUrl', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -320,80 +320,6 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets NameUrl
-     *
-     * @return string|null
-     */
-    public function getNameUrl()
-    {
-        if (!isset($this->container['NameUrl']) || is_null($this->container['NameUrl'])) {
-            return null;
-        }
-        return $this->container['NameUrl'];
-    }
-
-    /**
-     * Sets NameUrl
-     *
-     * @param string|null $NameUrl NameUrl
-     *
-     * @return self
-     */
-    public function setNameUrl($NameUrl)
-    {
-        if (is_null($NameUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'NameUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NameUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NameUrl'] = $NameUrl;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -612,6 +538,80 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets NameUrl
+     *
+     * @return string|null
+     */
+    public function getNameUrl()
+    {
+        if (!isset($this->container['NameUrl']) || is_null($this->container['NameUrl'])) {
+            return null;
+        }
+        return $this->container['NameUrl'];
+    }
+
+    /**
+     * Sets NameUrl
+     *
+     * @param string|null $NameUrl NameUrl
+     *
+     * @return self
+     */
+    public function setNameUrl($NameUrl)
+    {
+        if (is_null($NameUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'NameUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NameUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NameUrl'] = $NameUrl;
 
         return $this;
     }

@@ -34,6 +34,9 @@ class AdInsightServiceApi extends AbstractServiceApi
         'getAuctionInsightData' => [
             'application/json',
         ],
+        'getAudienceBreakdown' => [
+            'application/json',
+        ],
         'getAudienceFullEstimation' => [
             'application/json',
         ],
@@ -787,6 +790,225 @@ class AdInsightServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForgetAuctionInsightData',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation getAudienceBreakdown
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownRequest $GetAudienceBreakdownRequest GetAudienceBreakdownRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAudienceBreakdown'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownResponse|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault
+     */
+    public function getAudienceBreakdown($GetAudienceBreakdownRequest, string $contentType = self::contentTypes['getAudienceBreakdown'][0])
+    {
+        list($response) = $this->getAudienceBreakdownWithHttpInfo($GetAudienceBreakdownRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAudienceBreakdownWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownRequest $GetAudienceBreakdownRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAudienceBreakdown'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownResponse|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault|\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAudienceBreakdownWithHttpInfo($GetAudienceBreakdownRequest, string $contentType = self::contentTypes['getAudienceBreakdown'][0])
+    {
+        $request = $this->getAudienceBreakdownRequest($GetAudienceBreakdownRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\AdInsightService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAudienceBreakdownAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownRequest $GetAudienceBreakdownRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAudienceBreakdown'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAudienceBreakdownAsync($GetAudienceBreakdownRequest, string $contentType = self::contentTypes['getAudienceBreakdown'][0])
+    {
+        return $this->getAudienceBreakdownAsyncWithHttpInfo($GetAudienceBreakdownRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAudienceBreakdownAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownRequest $GetAudienceBreakdownRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAudienceBreakdown'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAudienceBreakdownAsyncWithHttpInfo($GetAudienceBreakdownRequest, string $contentType = self::contentTypes['getAudienceBreakdown'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownResponse';
+        $request = $this->getAudienceBreakdownRequest($GetAudienceBreakdownRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAudienceBreakdown'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\AdInsightService\GetAudienceBreakdownRequest $GetAudienceBreakdownRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAudienceBreakdown'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAudienceBreakdownRequest($GetAudienceBreakdownRequest, string $contentType = self::contentTypes['getAudienceBreakdown'][0])
+    {
+
+        // verify the required parameter 'GetAudienceBreakdownRequest' is set
+        if ($GetAudienceBreakdownRequest === null || (is_array($GetAudienceBreakdownRequest) && count($GetAudienceBreakdownRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetAudienceBreakdownRequest when calling getAudienceBreakdown'
+            );
+        }
+
+
+        $resourcePath = '/AdInsight/v13/AudienceBreakdown/query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetAudienceBreakdownRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetAudienceBreakdown',
             null,
             [],
             $queryParams

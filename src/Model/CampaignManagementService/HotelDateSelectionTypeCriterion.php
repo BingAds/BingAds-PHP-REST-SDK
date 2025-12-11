@@ -33,8 +33,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'HotelDateSelectionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType',
-        'Type' => 'string'
+        'Type' => 'string',
+        'HotelDateSelectionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'HotelDateSelectionType' => null,
-        'Type' => null
+        'Type' => null,
+        'HotelDateSelectionType' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'HotelDateSelectionType' => false,
-        'Type' => true
+        'Type' => true,
+        'HotelDateSelectionType' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
      * @var string[]
      */
     protected static array $attributeMap = [
-        'HotelDateSelectionType' => 'HotelDateSelectionType',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'HotelDateSelectionType' => 'HotelDateSelectionType'
     ];
 
     /**
@@ -155,8 +155,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
      * @var string[]
      */
     protected static array $setters = [
-        'HotelDateSelectionType' => 'setHotelDateSelectionType',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'HotelDateSelectionType' => 'setHotelDateSelectionType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
      * @var string[]
      */
     protected static array $getters = [
-        'HotelDateSelectionType' => 'getHotelDateSelectionType',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'HotelDateSelectionType' => 'getHotelDateSelectionType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('HotelDateSelectionType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'HotelDateSelectionTypeCriterion');
     }
 
     /**
@@ -273,42 +273,6 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
 
 
     /**
-     * Gets HotelDateSelectionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType|mixed|null
-     */
-    public function getHotelDateSelectionType()
-    {
-        if (!isset($this->container['HotelDateSelectionType']) || is_null($this->container['HotelDateSelectionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['HotelDateSelectionType']) || is_string($this->container['HotelDateSelectionType'])) && method_exists($this->container['HotelDateSelectionType'], 'getValue')) {
-            return $this->container['HotelDateSelectionType']->getValue();
-        }
-        return $this->container['HotelDateSelectionType'];
-    }
-
-    /**
-     * Sets HotelDateSelectionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType|mixed|null $HotelDateSelectionType HotelDateSelectionType
-     *
-     * @return self
-     */
-    public function setHotelDateSelectionType($HotelDateSelectionType)
-    {
-        if (is_null($HotelDateSelectionType)) {
-            throw new \InvalidArgumentException('non-nullable HotelDateSelectionType cannot be null');
-        }
-        if (!$HotelDateSelectionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType) {
-            $HotelDateSelectionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType($HotelDateSelectionType);
-        }
-        $this->container['HotelDateSelectionType'] = $HotelDateSelectionType;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -341,6 +305,42 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets HotelDateSelectionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType|mixed|null
+     */
+    public function getHotelDateSelectionType()
+    {
+        if (!isset($this->container['HotelDateSelectionType']) || is_null($this->container['HotelDateSelectionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['HotelDateSelectionType']) || is_string($this->container['HotelDateSelectionType'])) && method_exists($this->container['HotelDateSelectionType'], 'getValue')) {
+            return $this->container['HotelDateSelectionType']->getValue();
+        }
+        return $this->container['HotelDateSelectionType'];
+    }
+
+    /**
+     * Sets HotelDateSelectionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType|mixed|null $HotelDateSelectionType HotelDateSelectionType
+     *
+     * @return self
+     */
+    public function setHotelDateSelectionType($HotelDateSelectionType)
+    {
+        if (is_null($HotelDateSelectionType)) {
+            throw new \InvalidArgumentException('non-nullable HotelDateSelectionType cannot be null');
+        }
+        if (!$HotelDateSelectionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType) {
+            $HotelDateSelectionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType($HotelDateSelectionType);
+        }
+        $this->container['HotelDateSelectionType'] = $HotelDateSelectionType;
 
         return $this;
     }

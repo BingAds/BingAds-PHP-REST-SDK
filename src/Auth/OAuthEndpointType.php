@@ -39,5 +39,10 @@ final class OAuthEndpointType
      * Sandbox for MS Identity V2 with new MSADS scope
      */
     public const SANDBOX_MSA_PROD = 'SandboxMSAProd';
+
+    /**
+     * Production for Google OAuth
+     */
+    const GoogleProduction = 'GoogleProduction';
 }
 

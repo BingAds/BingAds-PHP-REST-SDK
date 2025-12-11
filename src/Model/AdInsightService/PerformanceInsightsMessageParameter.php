@@ -18,18 +18,7 @@ use Microsoft\MsAds\Rest\ModelInterface;
 
 class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = 'Type';
-
-    /**
-     * Associative array for mapping discriminator values to model class names
-     *
-     * @var string[]
-     */
-    public const MAPPINGS = [
-        'Entities' => 'Microsoft\MsAds\Rest\Model\AdInsightService\EntityParameter',
-        'Text' => 'Microsoft\MsAds\Rest\Model\AdInsightService\TextParameter',
-        'Url' => 'Microsoft\MsAds\Rest\Model\AdInsightService\UrlParameter',
-    ];
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -44,14 +33,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SuggestedText' => 'string',
-        'Type' => 'string',
-        'UrlCategory' => '\Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory',
-        'UrlId' => '\Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId',
-        'SuggestedUrl' => 'string',
-        'EntityType' => '\Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType',
-        'EntityCount' => 'int',
-        'EntityDetails' => '\Microsoft\MsAds\Rest\Model\AdInsightService\EntityDetail[]'
+        'Type' => '\Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType'
     ];
 
     /**
@@ -62,14 +44,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SuggestedText' => null,
-        'Type' => null,
-        'UrlCategory' => null,
-        'UrlId' => null,
-        'SuggestedUrl' => null,
-        'EntityType' => null,
-        'EntityCount' => 'int32',
-        'EntityDetails' => null
+        'Type' => null
     ];
 
     /**
@@ -78,14 +53,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SuggestedText' => true,
-        'Type' => true,
-        'UrlCategory' => false,
-        'UrlId' => false,
-        'SuggestedUrl' => true,
-        'EntityType' => false,
-        'EntityCount' => false,
-        'EntityDetails' => true
+        'Type' => false
     ];
 
     /**
@@ -174,14 +142,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SuggestedText' => 'SuggestedText',
-        'Type' => 'Type',
-        'UrlCategory' => 'UrlCategory',
-        'UrlId' => 'UrlId',
-        'SuggestedUrl' => 'SuggestedUrl',
-        'EntityType' => 'EntityType',
-        'EntityCount' => 'EntityCount',
-        'EntityDetails' => 'EntityDetails'
+        'Type' => 'Type'
     ];
 
     /**
@@ -190,14 +151,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'SuggestedText' => 'setSuggestedText',
-        'Type' => 'setType',
-        'UrlCategory' => 'setUrlCategory',
-        'UrlId' => 'setUrlId',
-        'SuggestedUrl' => 'setSuggestedUrl',
-        'EntityType' => 'setEntityType',
-        'EntityCount' => 'setEntityCount',
-        'EntityDetails' => 'setEntityDetails'
+        'Type' => 'setType'
     ];
 
     /**
@@ -206,14 +160,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'SuggestedText' => 'getSuggestedText',
-        'Type' => 'getType',
-        'UrlCategory' => 'getUrlCategory',
-        'UrlId' => 'getUrlId',
-        'SuggestedUrl' => 'getSuggestedUrl',
-        'EntityType' => 'getEntityType',
-        'EntityCount' => 'getEntityCount',
-        'EntityDetails' => 'getEntityDetails'
+        'Type' => 'getType'
     ];
 
     /**
@@ -273,17 +220,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SuggestedText', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Entities');
-        $this->setIfExists('UrlCategory', $data ?? [], null);
-        $this->setIfExists('UrlId', $data ?? [], null);
-        $this->setIfExists('SuggestedUrl', $data ?? [], null);
-        $this->setIfExists('EntityType', $data ?? [], null);
-        $this->setIfExists('EntityCount', $data ?? [], null);
-        $this->setIfExists('EntityDetails', $data ?? [], null);
-
-        // Initialize discriminator property with the model name.
-        $this->container['Type'] = static::$openAPIModelName;
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -329,51 +266,17 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets SuggestedText
-     *
-     * @return string|null
-     */
-    public function getSuggestedText()
-    {
-        if (!isset($this->container['SuggestedText']) || is_null($this->container['SuggestedText'])) {
-            return null;
-        }
-        return $this->container['SuggestedText'];
-    }
-
-    /**
-     * Sets SuggestedText
-     *
-     * @param string|null $SuggestedText SuggestedText
-     *
-     * @return self
-     */
-    public function setSuggestedText($SuggestedText)
-    {
-        if (is_null($SuggestedText)) {
-            array_push($this->openAPINullablesSetToNull, 'SuggestedText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SuggestedText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SuggestedText'] = $SuggestedText;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -381,235 +284,19 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
         }
         $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlCategory
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory|mixed|null
-     */
-    public function getUrlCategory()
-    {
-        if (!isset($this->container['UrlCategory']) || is_null($this->container['UrlCategory'])) {
-            return null;
-        }
-        if ((is_object($this->container['UrlCategory']) || is_string($this->container['UrlCategory'])) && method_exists($this->container['UrlCategory'], 'getValue')) {
-            return $this->container['UrlCategory']->getValue();
-        }
-        return $this->container['UrlCategory'];
-    }
-
-    /**
-     * Sets UrlCategory
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory|mixed|null $UrlCategory UrlCategory
-     *
-     * @return self
-     */
-    public function setUrlCategory($UrlCategory)
-    {
-        if (is_null($UrlCategory)) {
-            throw new \InvalidArgumentException('non-nullable UrlCategory cannot be null');
-        }
-        if (!$UrlCategory instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory) {
-            $UrlCategory = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory($UrlCategory);
-        }
-        $this->container['UrlCategory'] = $UrlCategory;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlId
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId|mixed|null
-     */
-    public function getUrlId()
-    {
-        if (!isset($this->container['UrlId']) || is_null($this->container['UrlId'])) {
-            return null;
-        }
-        if ((is_object($this->container['UrlId']) || is_string($this->container['UrlId'])) && method_exists($this->container['UrlId'], 'getValue')) {
-            return $this->container['UrlId']->getValue();
-        }
-        return $this->container['UrlId'];
-    }
-
-    /**
-     * Sets UrlId
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId|mixed|null $UrlId UrlId
-     *
-     * @return self
-     */
-    public function setUrlId($UrlId)
-    {
-        if (is_null($UrlId)) {
-            throw new \InvalidArgumentException('non-nullable UrlId cannot be null');
-        }
-        if (!$UrlId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId) {
-            $UrlId = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId($UrlId);
-        }
-        $this->container['UrlId'] = $UrlId;
-
-        return $this;
-    }
-
-    /**
-     * Gets SuggestedUrl
-     *
-     * @return string|null
-     */
-    public function getSuggestedUrl()
-    {
-        if (!isset($this->container['SuggestedUrl']) || is_null($this->container['SuggestedUrl'])) {
-            return null;
-        }
-        return $this->container['SuggestedUrl'];
-    }
-
-    /**
-     * Sets SuggestedUrl
-     *
-     * @param string|null $SuggestedUrl SuggestedUrl
-     *
-     * @return self
-     */
-    public function setSuggestedUrl($SuggestedUrl)
-    {
-        if (is_null($SuggestedUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'SuggestedUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SuggestedUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SuggestedUrl'] = $SuggestedUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets EntityType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType|mixed|null
-     */
-    public function getEntityType()
-    {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
-            return null;
-        }
-        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
-            return $this->container['EntityType']->getValue();
-        }
-        return $this->container['EntityType'];
-    }
-
-    /**
-     * Sets EntityType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType|mixed|null $EntityType EntityType
-     *
-     * @return self
-     */
-    public function setEntityType($EntityType)
-    {
-        if (is_null($EntityType)) {
-            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
-        }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType) {
-            $EntityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType($EntityType);
-        }
-        $this->container['EntityType'] = $EntityType;
-
-        return $this;
-    }
-
-    /**
-     * Gets EntityCount
-     *
-     * @return int|null
-     */
-    public function getEntityCount()
-    {
-        if (!isset($this->container['EntityCount']) || is_null($this->container['EntityCount'])) {
-            return null;
-        }
-        return $this->container['EntityCount'];
-    }
-
-    /**
-     * Sets EntityCount
-     *
-     * @param int|null $EntityCount EntityCount
-     *
-     * @return self
-     */
-    public function setEntityCount($EntityCount)
-    {
-        if (is_null($EntityCount)) {
-            throw new \InvalidArgumentException('non-nullable EntityCount cannot be null');
-        }
-        $this->container['EntityCount'] = $EntityCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets EntityDetails
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\EntityDetail[]|null
-     */
-    public function getEntityDetails()
-    {
-        if (!isset($this->container['EntityDetails']) || is_null($this->container['EntityDetails'])) {
-            return null;
-        }
-        return $this->container['EntityDetails'];
-    }
-
-    /**
-     * Sets EntityDetails
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\EntityDetail[]|null $EntityDetails EntityDetails
-     *
-     * @return self
-     */
-    public function setEntityDetails($EntityDetails)
-    {
-        if (is_null($EntityDetails)) {
-            array_push($this->openAPINullablesSetToNull, 'EntityDetails');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EntityDetails', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EntityDetails'] = $EntityDetails;
 
         return $this;
     }

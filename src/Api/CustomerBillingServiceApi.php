@@ -37,6 +37,9 @@ class CustomerBillingServiceApi extends AbstractServiceApi
         'dispatchCoupons' => [
             'application/json',
         ],
+        'distributeCoupons' => [
+            'application/json',
+        ],
         'getAccountMonthlySpend' => [
             'application/json',
         ],
@@ -949,6 +952,225 @@ class CustomerBillingServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsFordispatchCoupons',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation distributeCoupons
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsRequest $DistributeCouponsRequest DistributeCouponsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['distributeCoupons'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault
+     */
+    public function distributeCoupons($DistributeCouponsRequest, string $contentType = self::contentTypes['distributeCoupons'][0])
+    {
+        list($response) = $this->distributeCouponsWithHttpInfo($DistributeCouponsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation distributeCouponsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsRequest $DistributeCouponsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['distributeCoupons'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function distributeCouponsWithHttpInfo($DistributeCouponsRequest, string $contentType = self::contentTypes['distributeCoupons'][0])
+    {
+        $request = $this->distributeCouponsRequest($DistributeCouponsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation distributeCouponsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsRequest $DistributeCouponsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['distributeCoupons'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function distributeCouponsAsync($DistributeCouponsRequest, string $contentType = self::contentTypes['distributeCoupons'][0])
+    {
+        return $this->distributeCouponsAsyncWithHttpInfo($DistributeCouponsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation distributeCouponsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsRequest $DistributeCouponsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['distributeCoupons'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function distributeCouponsAsyncWithHttpInfo($DistributeCouponsRequest, string $contentType = self::contentTypes['distributeCoupons'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsResponse';
+        $request = $this->distributeCouponsRequest($DistributeCouponsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'distributeCoupons'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\DistributeCouponsRequest $DistributeCouponsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['distributeCoupons'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function distributeCouponsRequest($DistributeCouponsRequest, string $contentType = self::contentTypes['distributeCoupons'][0])
+    {
+
+        // verify the required parameter 'DistributeCouponsRequest' is set
+        if ($DistributeCouponsRequest === null || (is_array($DistributeCouponsRequest) && count($DistributeCouponsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $DistributeCouponsRequest when calling distributeCoupons'
+            );
+        }
+
+
+        $resourcePath = '/CustomerBilling/v13/Coupons/Distribute';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $DistributeCouponsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsFordistributeCoupons',
             null,
             [],
             $queryParams

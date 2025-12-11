@@ -33,16 +33,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'IsExact' => 'bool',
-        'Text' => 'string',
-        'Source' => 'string',
-        'Url' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
         'Type' => 'string',
         'Version' => 'int',
+        'IsExact' => 'bool',
+        'Text' => 'string',
+        'Source' => 'string',
+        'Url' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -54,16 +54,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'IsExact' => null,
-        'Text' => null,
-        'Source' => null,
-        'Url' => null,
         'Status' => null,
         'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
         'Type' => null,
         'Version' => 'int32',
+        'IsExact' => null,
+        'Text' => null,
+        'Source' => null,
+        'Url' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -73,16 +73,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'IsExact' => false,
-        'Text' => true,
-        'Source' => true,
-        'Url' => true,
         'Status' => false,
         'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
         'Type' => true,
         'Version' => true,
+        'IsExact' => false,
+        'Text' => true,
+        'Source' => true,
+        'Url' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -172,16 +172,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
-        'IsExact' => 'IsExact',
-        'Text' => 'Text',
-        'Source' => 'Source',
-        'Url' => 'Url',
         'Status' => 'Status',
         'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
         'Type' => 'Type',
         'Version' => 'Version',
+        'IsExact' => 'IsExact',
+        'Text' => 'Text',
+        'Source' => 'Source',
+        'Url' => 'Url',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -191,16 +191,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
-        'IsExact' => 'setIsExact',
-        'Text' => 'setText',
-        'Source' => 'setSource',
-        'Url' => 'setUrl',
         'Status' => 'setStatus',
         'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'IsExact' => 'setIsExact',
+        'Text' => 'setText',
+        'Source' => 'setSource',
+        'Url' => 'setUrl',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -210,16 +210,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
-        'IsExact' => 'getIsExact',
-        'Text' => 'getText',
-        'Source' => 'getSource',
-        'Url' => 'getUrl',
         'Status' => 'getStatus',
         'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'IsExact' => 'getIsExact',
+        'Text' => 'getText',
+        'Source' => 'getSource',
+        'Url' => 'getUrl',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -280,16 +280,16 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('IsExact', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('Source', $data ?? [], null);
-        $this->setIfExists('Url', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ReviewAdExtension');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
+        $this->setIfExists('IsExact', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('Source', $data ?? [], null);
+        $this->setIfExists('Url', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -334,147 +334,6 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets IsExact
-     *
-     * @return bool|null
-     */
-    public function getIsExact()
-    {
-        if (!isset($this->container['IsExact']) || is_null($this->container['IsExact'])) {
-            return null;
-        }
-        return $this->container['IsExact'];
-    }
-
-    /**
-     * Sets IsExact
-     *
-     * @param bool|null $IsExact IsExact
-     *
-     * @return self
-     */
-    public function setIsExact($IsExact)
-    {
-        if (is_null($IsExact)) {
-            throw new \InvalidArgumentException('non-nullable IsExact cannot be null');
-        }
-        $this->container['IsExact'] = $IsExact;
-
-        return $this;
-    }
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
-     * Gets Source
-     *
-     * @return string|null
-     */
-    public function getSource()
-    {
-        if (!isset($this->container['Source']) || is_null($this->container['Source'])) {
-            return null;
-        }
-        return $this->container['Source'];
-    }
-
-    /**
-     * Sets Source
-     *
-     * @param string|null $Source Source
-     *
-     * @return self
-     */
-    public function setSource($Source)
-    {
-        if (is_null($Source)) {
-            array_push($this->openAPINullablesSetToNull, 'Source');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Source', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Source'] = $Source;
-
-        return $this;
-    }
-
-    /**
-     * Gets Url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
-            return null;
-        }
-        return $this->container['Url'];
-    }
-
-    /**
-     * Sets Url
-     *
-     * @param string|null $Url Url
-     *
-     * @return self
-     */
-    public function setUrl($Url)
-    {
-        if (is_null($Url)) {
-            array_push($this->openAPINullablesSetToNull, 'Url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Url'] = $Url;
-
-        return $this;
-    }
 
     /**
      * Gets Status
@@ -693,6 +552,147 @@ class ReviewAdExtension extends AdExtension implements ModelInterface, ArrayAcce
             }
         }
         $this->container['Version'] = $Version;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsExact
+     *
+     * @return bool|null
+     */
+    public function getIsExact()
+    {
+        if (!isset($this->container['IsExact']) || is_null($this->container['IsExact'])) {
+            return null;
+        }
+        return $this->container['IsExact'];
+    }
+
+    /**
+     * Sets IsExact
+     *
+     * @param bool|null $IsExact IsExact
+     *
+     * @return self
+     */
+    public function setIsExact($IsExact)
+    {
+        if (is_null($IsExact)) {
+            throw new \InvalidArgumentException('non-nullable IsExact cannot be null');
+        }
+        $this->container['IsExact'] = $IsExact;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets Source
+     *
+     * @return string|null
+     */
+    public function getSource()
+    {
+        if (!isset($this->container['Source']) || is_null($this->container['Source'])) {
+            return null;
+        }
+        return $this->container['Source'];
+    }
+
+    /**
+     * Sets Source
+     *
+     * @param string|null $Source Source
+     *
+     * @return self
+     */
+    public function setSource($Source)
+    {
+        if (is_null($Source)) {
+            array_push($this->openAPINullablesSetToNull, 'Source');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Source', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Source'] = $Source;
+
+        return $this;
+    }
+
+    /**
+     * Gets Url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
+            return null;
+        }
+        return $this->container['Url'];
+    }
+
+    /**
+     * Sets Url
+     *
+     * @param string|null $Url Url
+     *
+     * @return self
+     */
+    public function setUrl($Url)
+    {
+        if (is_null($Url)) {
+            array_push($this->openAPINullablesSetToNull, 'Url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Url'] = $Url;
 
         return $this;
     }

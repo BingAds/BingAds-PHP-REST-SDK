@@ -33,9 +33,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'MinNights' => 'int',
-        'MaxNights' => 'int',
-        'Type' => 'string'
+        'MaxNights' => 'int'
     ];
 
     /**
@@ -46,9 +46,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'MinNights' => 'int32',
-        'MaxNights' => 'int32',
-        'Type' => null
+        'MaxNights' => 'int32'
     ];
 
     /**
@@ -57,9 +57,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'MinNights' => true,
-        'MaxNights' => true,
-        'Type' => true
+        'MaxNights' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'MinNights' => 'MinNights',
-        'MaxNights' => 'MaxNights',
-        'Type' => 'Type'
+        'MaxNights' => 'MaxNights'
     ];
 
     /**
@@ -159,9 +159,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'MinNights' => 'setMinNights',
-        'MaxNights' => 'setMaxNights',
-        'Type' => 'setType'
+        'MaxNights' => 'setMaxNights'
     ];
 
     /**
@@ -170,9 +170,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'MinNights' => 'getMinNights',
-        'MaxNights' => 'getMaxNights',
-        'Type' => 'getType'
+        'MaxNights' => 'getMaxNights'
     ];
 
     /**
@@ -232,9 +232,9 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('MinNights', $data ?? [], null);
         $this->setIfExists('MaxNights', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'HotelLengthOfStayCriterion');
     }
 
     /**
@@ -278,6 +278,43 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets MinNights
@@ -349,43 +386,6 @@ class HotelLengthOfStayCriterion extends Criterion implements ModelInterface, Ar
             }
         }
         $this->container['MaxNights'] = $MaxNights;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

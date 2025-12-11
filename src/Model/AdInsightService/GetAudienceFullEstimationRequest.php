@@ -40,13 +40,21 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'Industry' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
         'JobFunction' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
         'Location' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
+        'Placement' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
+        'Device' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOfDeviceEnum',
+        'Topic' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
         'RadiusTargets' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RadiusTarget[]',
         'CampaignBiddingStrategy' => 'int',
         'CampaignSubType' => 'int',
         'Feed' => '\Microsoft\MsAds\Rest\Model\AdInsightService\Feed',
         'DailyBudget' => 'float',
         'Bid' => 'float',
-        'Currency' => '\Microsoft\MsAds\Rest\Model\AdInsightService\Currency'
+        'Currency' => '\Microsoft\MsAds\Rest\Model\AdInsightService\Currency',
+        'MultiAdTypes' => 'int',
+        'StartDate' => '\DateTime',
+        'EndDate' => '\DateTime',
+        'TotalBudget' => 'float',
+        'IncludeImpressionsBreakdown' => 'bool'
     ];
 
     /**
@@ -64,13 +72,21 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'Industry' => null,
         'JobFunction' => null,
         'Location' => null,
+        'Placement' => null,
+        'Device' => null,
+        'Topic' => null,
         'RadiusTargets' => null,
         'CampaignBiddingStrategy' => 'int32',
         'CampaignSubType' => 'int32',
         'Feed' => null,
         'DailyBudget' => 'double',
         'Bid' => 'double',
-        'Currency' => null
+        'Currency' => null,
+        'MultiAdTypes' => 'int32',
+        'StartDate' => 'date-time',
+        'EndDate' => 'date-time',
+        'TotalBudget' => 'double',
+        'IncludeImpressionsBreakdown' => null
     ];
 
     /**
@@ -86,13 +102,21 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'Industry' => true,
         'JobFunction' => true,
         'Location' => true,
+        'Placement' => true,
+        'Device' => true,
+        'Topic' => true,
         'RadiusTargets' => true,
         'CampaignBiddingStrategy' => true,
         'CampaignSubType' => true,
         'Feed' => true,
         'DailyBudget' => true,
         'Bid' => true,
-        'Currency' => false
+        'Currency' => false,
+        'MultiAdTypes' => true,
+        'StartDate' => true,
+        'EndDate' => true,
+        'TotalBudget' => true,
+        'IncludeImpressionsBreakdown' => true
     ];
 
     /**
@@ -188,13 +212,21 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'Industry' => 'Industry',
         'JobFunction' => 'JobFunction',
         'Location' => 'Location',
+        'Placement' => 'Placement',
+        'Device' => 'Device',
+        'Topic' => 'Topic',
         'RadiusTargets' => 'RadiusTargets',
         'CampaignBiddingStrategy' => 'CampaignBiddingStrategy',
         'CampaignSubType' => 'CampaignSubType',
         'Feed' => 'Feed',
         'DailyBudget' => 'DailyBudget',
         'Bid' => 'Bid',
-        'Currency' => 'Currency'
+        'Currency' => 'Currency',
+        'MultiAdTypes' => 'MultiAdTypes',
+        'StartDate' => 'StartDate',
+        'EndDate' => 'EndDate',
+        'TotalBudget' => 'TotalBudget',
+        'IncludeImpressionsBreakdown' => 'IncludeImpressionsBreakdown'
     ];
 
     /**
@@ -210,13 +242,21 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'Industry' => 'setIndustry',
         'JobFunction' => 'setJobFunction',
         'Location' => 'setLocation',
+        'Placement' => 'setPlacement',
+        'Device' => 'setDevice',
+        'Topic' => 'setTopic',
         'RadiusTargets' => 'setRadiusTargets',
         'CampaignBiddingStrategy' => 'setCampaignBiddingStrategy',
         'CampaignSubType' => 'setCampaignSubType',
         'Feed' => 'setFeed',
         'DailyBudget' => 'setDailyBudget',
         'Bid' => 'setBid',
-        'Currency' => 'setCurrency'
+        'Currency' => 'setCurrency',
+        'MultiAdTypes' => 'setMultiAdTypes',
+        'StartDate' => 'setStartDate',
+        'EndDate' => 'setEndDate',
+        'TotalBudget' => 'setTotalBudget',
+        'IncludeImpressionsBreakdown' => 'setIncludeImpressionsBreakdown'
     ];
 
     /**
@@ -232,13 +272,21 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'Industry' => 'getIndustry',
         'JobFunction' => 'getJobFunction',
         'Location' => 'getLocation',
+        'Placement' => 'getPlacement',
+        'Device' => 'getDevice',
+        'Topic' => 'getTopic',
         'RadiusTargets' => 'getRadiusTargets',
         'CampaignBiddingStrategy' => 'getCampaignBiddingStrategy',
         'CampaignSubType' => 'getCampaignSubType',
         'Feed' => 'getFeed',
         'DailyBudget' => 'getDailyBudget',
         'Bid' => 'getBid',
-        'Currency' => 'getCurrency'
+        'Currency' => 'getCurrency',
+        'MultiAdTypes' => 'getMultiAdTypes',
+        'StartDate' => 'getStartDate',
+        'EndDate' => 'getEndDate',
+        'TotalBudget' => 'getTotalBudget',
+        'IncludeImpressionsBreakdown' => 'getIncludeImpressionsBreakdown'
     ];
 
     /**
@@ -305,6 +353,9 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         $this->setIfExists('Industry', $data ?? [], null);
         $this->setIfExists('JobFunction', $data ?? [], null);
         $this->setIfExists('Location', $data ?? [], null);
+        $this->setIfExists('Placement', $data ?? [], null);
+        $this->setIfExists('Device', $data ?? [], null);
+        $this->setIfExists('Topic', $data ?? [], null);
         $this->setIfExists('RadiusTargets', $data ?? [], null);
         $this->setIfExists('CampaignBiddingStrategy', $data ?? [], null);
         $this->setIfExists('CampaignSubType', $data ?? [], null);
@@ -312,6 +363,11 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         $this->setIfExists('DailyBudget', $data ?? [], null);
         $this->setIfExists('Bid', $data ?? [], null);
         $this->setIfExists('Currency', $data ?? [], null);
+        $this->setIfExists('MultiAdTypes', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('TotalBudget', $data ?? [], null);
+        $this->setIfExists('IncludeImpressionsBreakdown', $data ?? [], null);
     }
 
     /**
@@ -616,6 +672,117 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Gets Placement
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getPlacement()
+    {
+        if (!isset($this->container['Placement']) || is_null($this->container['Placement'])) {
+            return null;
+        }
+        return $this->container['Placement'];
+    }
+
+    /**
+     * Sets Placement
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $Placement Placement
+     *
+     * @return self
+     */
+    public function setPlacement($Placement)
+    {
+        if (is_null($Placement)) {
+            array_push($this->openAPINullablesSetToNull, 'Placement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Placement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Placement'] = $Placement;
+
+        return $this;
+    }
+
+    /**
+     * Gets Device
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOfDeviceEnum|null
+     */
+    public function getDevice()
+    {
+        if (!isset($this->container['Device']) || is_null($this->container['Device'])) {
+            return null;
+        }
+        return $this->container['Device'];
+    }
+
+    /**
+     * Sets Device
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOfDeviceEnum|null $Device Device
+     *
+     * @return self
+     */
+    public function setDevice($Device)
+    {
+        if (is_null($Device)) {
+            array_push($this->openAPINullablesSetToNull, 'Device');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Device', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Device'] = $Device;
+
+        return $this;
+    }
+
+    /**
+     * Gets Topic
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getTopic()
+    {
+        if (!isset($this->container['Topic']) || is_null($this->container['Topic'])) {
+            return null;
+        }
+        return $this->container['Topic'];
+    }
+
+    /**
+     * Sets Topic
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $Topic Topic
+     *
+     * @return self
+     */
+    public function setTopic($Topic)
+    {
+        if (is_null($Topic)) {
+            array_push($this->openAPINullablesSetToNull, 'Topic');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Topic', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Topic'] = $Topic;
+
+        return $this;
+    }
+
+    /**
      * Gets RadiusTargets
      *
      * @return \Microsoft\MsAds\Rest\Model\AdInsightService\RadiusTarget[]|null
@@ -869,6 +1036,191 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
             $Currency = new \Microsoft\MsAds\Rest\Model\AdInsightService\Currency($Currency);
         }
         $this->container['Currency'] = $Currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets MultiAdTypes
+     *
+     * @return int|null
+     */
+    public function getMultiAdTypes()
+    {
+        if (!isset($this->container['MultiAdTypes']) || is_null($this->container['MultiAdTypes'])) {
+            return null;
+        }
+        return $this->container['MultiAdTypes'];
+    }
+
+    /**
+     * Sets MultiAdTypes
+     *
+     * @param int|null $MultiAdTypes MultiAdTypes
+     *
+     * @return self
+     */
+    public function setMultiAdTypes($MultiAdTypes)
+    {
+        if (is_null($MultiAdTypes)) {
+            array_push($this->openAPINullablesSetToNull, 'MultiAdTypes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MultiAdTypes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MultiAdTypes'] = $MultiAdTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartDate
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \DateTime|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets EndDate
+     *
+     * @return \DateTime|null
+     */
+    public function getEndDate()
+    {
+        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
+            return null;
+        }
+        return $this->container['EndDate'];
+    }
+
+    /**
+     * Sets EndDate
+     *
+     * @param \DateTime|null $EndDate EndDate
+     *
+     * @return self
+     */
+    public function setEndDate($EndDate)
+    {
+        if (is_null($EndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets TotalBudget
+     *
+     * @return float|null
+     */
+    public function getTotalBudget()
+    {
+        if (!isset($this->container['TotalBudget']) || is_null($this->container['TotalBudget'])) {
+            return null;
+        }
+        return $this->container['TotalBudget'];
+    }
+
+    /**
+     * Sets TotalBudget
+     *
+     * @param float|null $TotalBudget TotalBudget
+     *
+     * @return self
+     */
+    public function setTotalBudget($TotalBudget)
+    {
+        if (is_null($TotalBudget)) {
+            array_push($this->openAPINullablesSetToNull, 'TotalBudget');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TotalBudget', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TotalBudget'] = $TotalBudget;
+
+        return $this;
+    }
+
+    /**
+     * Gets IncludeImpressionsBreakdown
+     *
+     * @return bool|null
+     */
+    public function getIncludeImpressionsBreakdown()
+    {
+        if (!isset($this->container['IncludeImpressionsBreakdown']) || is_null($this->container['IncludeImpressionsBreakdown'])) {
+            return null;
+        }
+        return $this->container['IncludeImpressionsBreakdown'];
+    }
+
+    /**
+     * Sets IncludeImpressionsBreakdown
+     *
+     * @param bool|null $IncludeImpressionsBreakdown IncludeImpressionsBreakdown
+     *
+     * @return self
+     */
+    public function setIncludeImpressionsBreakdown($IncludeImpressionsBreakdown)
+    {
+        if (is_null($IncludeImpressionsBreakdown)) {
+            array_push($this->openAPINullablesSetToNull, 'IncludeImpressionsBreakdown');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IncludeImpressionsBreakdown', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IncludeImpressionsBreakdown'] = $IncludeImpressionsBreakdown;
 
         return $this;
     }

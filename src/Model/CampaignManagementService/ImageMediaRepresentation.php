@@ -33,11 +33,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Height' => 'int',
-        'Width' => 'int',
-        'Type' => 'string',
         'Name' => 'string',
-        'Url' => 'string'
+        'Url' => 'string',
+        'Type' => 'string',
+        'Height' => 'int',
+        'Width' => 'int'
     ];
 
     /**
@@ -48,11 +48,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Height' => 'int32',
-        'Width' => 'int32',
-        'Type' => null,
         'Name' => null,
-        'Url' => null
+        'Url' => null,
+        'Type' => null,
+        'Height' => 'int32',
+        'Width' => 'int32'
     ];
 
     /**
@@ -61,11 +61,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Height' => false,
-        'Width' => false,
-        'Type' => true,
         'Name' => true,
-        'Url' => true
+        'Url' => true,
+        'Type' => true,
+        'Height' => false,
+        'Width' => false
     ];
 
     /**
@@ -154,11 +154,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Height' => 'Height',
-        'Width' => 'Width',
-        'Type' => 'Type',
         'Name' => 'Name',
-        'Url' => 'Url'
+        'Url' => 'Url',
+        'Type' => 'Type',
+        'Height' => 'Height',
+        'Width' => 'Width'
     ];
 
     /**
@@ -167,11 +167,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
      * @var string[]
      */
     protected static array $setters = [
-        'Height' => 'setHeight',
-        'Width' => 'setWidth',
-        'Type' => 'setType',
         'Name' => 'setName',
-        'Url' => 'setUrl'
+        'Url' => 'setUrl',
+        'Type' => 'setType',
+        'Height' => 'setHeight',
+        'Width' => 'setWidth'
     ];
 
     /**
@@ -180,11 +180,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
      * @var string[]
      */
     protected static array $getters = [
-        'Height' => 'getHeight',
-        'Width' => 'getWidth',
-        'Type' => 'getType',
         'Name' => 'getName',
-        'Url' => 'getUrl'
+        'Url' => 'getUrl',
+        'Type' => 'getType',
+        'Height' => 'getHeight',
+        'Width' => 'getWidth'
     ];
 
     /**
@@ -244,11 +244,11 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Height', $data ?? [], null);
-        $this->setIfExists('Width', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ImageMediaRepresentation');
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Url', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], 'MediaRepresentation');
+        $this->setIfExists('Height', $data ?? [], null);
+        $this->setIfExists('Width', $data ?? [], null);
     }
 
     /**
@@ -292,103 +292,6 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Height
-     *
-     * @return int|null
-     */
-    public function getHeight()
-    {
-        if (!isset($this->container['Height']) || is_null($this->container['Height'])) {
-            return null;
-        }
-        return $this->container['Height'];
-    }
-
-    /**
-     * Sets Height
-     *
-     * @param int|null $Height Height
-     *
-     * @return self
-     */
-    public function setHeight($Height)
-    {
-        if (is_null($Height)) {
-            throw new \InvalidArgumentException('non-nullable Height cannot be null');
-        }
-        $this->container['Height'] = $Height;
-
-        return $this;
-    }
-
-    /**
-     * Gets Width
-     *
-     * @return int|null
-     */
-    public function getWidth()
-    {
-        if (!isset($this->container['Width']) || is_null($this->container['Width'])) {
-            return null;
-        }
-        return $this->container['Width'];
-    }
-
-    /**
-     * Sets Width
-     *
-     * @param int|null $Width Width
-     *
-     * @return self
-     */
-    public function setWidth($Width)
-    {
-        if (is_null($Width)) {
-            throw new \InvalidArgumentException('non-nullable Width cannot be null');
-        }
-        $this->container['Width'] = $Width;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -460,6 +363,103 @@ class ImageMediaRepresentation extends MediaRepresentation implements ModelInter
             }
         }
         $this->container['Url'] = $Url;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Height
+     *
+     * @return int|null
+     */
+    public function getHeight()
+    {
+        if (!isset($this->container['Height']) || is_null($this->container['Height'])) {
+            return null;
+        }
+        return $this->container['Height'];
+    }
+
+    /**
+     * Sets Height
+     *
+     * @param int|null $Height Height
+     *
+     * @return self
+     */
+    public function setHeight($Height)
+    {
+        if (is_null($Height)) {
+            throw new \InvalidArgumentException('non-nullable Height cannot be null');
+        }
+        $this->container['Height'] = $Height;
+
+        return $this;
+    }
+
+    /**
+     * Gets Width
+     *
+     * @return int|null
+     */
+    public function getWidth()
+    {
+        if (!isset($this->container['Width']) || is_null($this->container['Width'])) {
+            return null;
+        }
+        return $this->container['Width'];
+    }
+
+    /**
+     * Sets Width
+     *
+     * @param int|null $Width Width
+     *
+     * @return self
+     */
+    public function setWidth($Width)
+    {
+        if (is_null($Width)) {
+            throw new \InvalidArgumentException('non-nullable Width cannot be null');
+        }
+        $this->container['Width'] = $Width;
 
         return $this;
     }

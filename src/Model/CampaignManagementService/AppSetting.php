@@ -33,9 +33,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'AppStore' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore',
-        'AppId' => 'string',
-        'Type' => 'string'
+        'AppId' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'AppStore' => null,
-        'AppId' => null,
-        'Type' => null
+        'AppId' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'AppStore' => false,
-        'AppId' => true,
-        'Type' => true
+        'AppId' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'AppStore' => 'AppStore',
-        'AppId' => 'AppId',
-        'Type' => 'Type'
+        'AppId' => 'AppId'
     ];
 
     /**
@@ -159,9 +159,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'AppStore' => 'setAppStore',
-        'AppId' => 'setAppId',
-        'Type' => 'setType'
+        'AppId' => 'setAppId'
     ];
 
     /**
@@ -170,9 +170,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'AppStore' => 'getAppStore',
-        'AppId' => 'getAppId',
-        'Type' => 'getType'
+        'AppId' => 'getAppId'
     ];
 
     /**
@@ -232,9 +232,9 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AppStore', $data ?? [], null);
         $this->setIfExists('AppId', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'AppSetting');
     }
 
     /**
@@ -278,6 +278,43 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets AppStore
@@ -348,43 +385,6 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['AppId'] = $AppId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

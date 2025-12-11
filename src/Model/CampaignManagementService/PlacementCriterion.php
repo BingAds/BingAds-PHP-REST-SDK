@@ -33,9 +33,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'PlacementId' => 'string',
-        'PlacementName' => 'string',
-        'Type' => 'string'
+        'PlacementName' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'PlacementId' => 'int64',
-        'PlacementName' => null,
-        'Type' => null
+        'PlacementName' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'PlacementId' => false,
-        'PlacementName' => true,
-        'Type' => true
+        'PlacementName' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'PlacementId' => 'PlacementId',
-        'PlacementName' => 'PlacementName',
-        'Type' => 'Type'
+        'PlacementName' => 'PlacementName'
     ];
 
     /**
@@ -159,9 +159,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'PlacementId' => 'setPlacementId',
-        'PlacementName' => 'setPlacementName',
-        'Type' => 'setType'
+        'PlacementName' => 'setPlacementName'
     ];
 
     /**
@@ -170,9 +170,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'PlacementId' => 'getPlacementId',
-        'PlacementName' => 'getPlacementName',
-        'Type' => 'getType'
+        'PlacementName' => 'getPlacementName'
     ];
 
     /**
@@ -232,9 +232,9 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('PlacementId', $data ?? [], null);
         $this->setIfExists('PlacementName', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'PlacementCriterion');
     }
 
     /**
@@ -278,6 +278,43 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets PlacementId
@@ -342,43 +379,6 @@ class PlacementCriterion extends Criterion implements ModelInterface, ArrayAcces
             }
         }
         $this->container['PlacementName'] = $PlacementName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

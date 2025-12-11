@@ -232,7 +232,7 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'PageVisitorsWhoVisitedAnotherPage');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('AnotherRuleItemGroups', $data ?? [], null);
     }

@@ -69,6 +69,12 @@ class ImportAdditionalField
 
     public const UPDATE_ASSET_AUTOMATION_CAMPAIGN_SETTING = 'UpdateAssetAutomationCampaignSetting';
 
+    public const ENABLE_COPILOT = 'EnableCopilot';
+
+    public const NEW_TOPIC_TARGETS = 'NewTopicTargets';
+
+    public const UPDATE_TOPIC_TARGETS = 'UpdateTopicTargets';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -160,7 +166,10 @@ class ImportAdditionalField
             self::NEW_BRAND_SUITABILITY,
             self::UPDATE_BRAND_SUITABILITY,
             self::NEW_CAROUSEL_AD,
-            self::UPDATE_ASSET_AUTOMATION_CAMPAIGN_SETTING
+            self::UPDATE_ASSET_AUTOMATION_CAMPAIGN_SETTING,
+            self::ENABLE_COPILOT,
+            self::NEW_TOPIC_TARGETS,
+            self::UPDATE_TOPIC_TARGETS
         ];
     }
 }

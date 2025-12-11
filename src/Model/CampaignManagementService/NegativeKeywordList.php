@@ -253,7 +253,7 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
         $this->setIfExists('ItemCount', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'NegativeKeywordList');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }

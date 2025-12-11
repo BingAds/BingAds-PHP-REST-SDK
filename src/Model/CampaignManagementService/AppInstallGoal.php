@@ -33,12 +33,10 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AppPlatform' => 'string',
-        'AppStoreId' => 'string',
         'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -50,7 +48,9 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool'
+        'IsAutoGoal' => 'bool',
+        'AppPlatform' => 'string',
+        'AppStoreId' => 'string'
     ];
 
     /**
@@ -61,8 +61,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AppPlatform' => null,
-        'AppStoreId' => null,
         'Id' => 'int64',
         'Name' => null,
         'Status' => null,
@@ -78,7 +76,9 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'GoalCategory' => null,
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null
+        'IsAutoGoal' => null,
+        'AppPlatform' => null,
+        'AppStoreId' => null
     ];
 
     /**
@@ -87,12 +87,10 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AppPlatform' => true,
-        'AppStoreId' => true,
         'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => true,
+        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -104,7 +102,9 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'GoalCategory' => false,
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true
+        'IsAutoGoal' => true,
+        'AppPlatform' => true,
+        'AppStoreId' => true
     ];
 
     /**
@@ -193,8 +193,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AppPlatform' => 'AppPlatform',
-        'AppStoreId' => 'AppStoreId',
         'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
@@ -210,7 +208,9 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'GoalCategory' => 'GoalCategory',
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal'
+        'IsAutoGoal' => 'IsAutoGoal',
+        'AppPlatform' => 'AppPlatform',
+        'AppStoreId' => 'AppStoreId'
     ];
 
     /**
@@ -219,8 +219,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
-        'AppPlatform' => 'setAppPlatform',
-        'AppStoreId' => 'setAppStoreId',
         'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
@@ -236,7 +234,9 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'GoalCategory' => 'setGoalCategory',
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal'
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'AppPlatform' => 'setAppPlatform',
+        'AppStoreId' => 'setAppStoreId'
     ];
 
     /**
@@ -245,8 +245,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
-        'AppPlatform' => 'getAppPlatform',
-        'AppStoreId' => 'getAppStoreId',
         'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
@@ -262,7 +260,9 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'GoalCategory' => 'getGoalCategory',
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal'
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'AppPlatform' => 'getAppPlatform',
+        'AppStoreId' => 'getAppStoreId'
     ];
 
     /**
@@ -322,12 +322,10 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AppPlatform', $data ?? [], null);
-        $this->setIfExists('AppStoreId', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'AppInstall');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -340,6 +338,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('AppPlatform', $data ?? [], null);
+        $this->setIfExists('AppStoreId', $data ?? [], null);
     }
 
     /**
@@ -383,80 +383,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets AppPlatform
-     *
-     * @return string|null
-     */
-    public function getAppPlatform()
-    {
-        if (!isset($this->container['AppPlatform']) || is_null($this->container['AppPlatform'])) {
-            return null;
-        }
-        return $this->container['AppPlatform'];
-    }
-
-    /**
-     * Sets AppPlatform
-     *
-     * @param string|null $AppPlatform AppPlatform
-     *
-     * @return self
-     */
-    public function setAppPlatform($AppPlatform)
-    {
-        if (is_null($AppPlatform)) {
-            array_push($this->openAPINullablesSetToNull, 'AppPlatform');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AppPlatform', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AppPlatform'] = $AppPlatform;
-
-        return $this;
-    }
-
-    /**
-     * Gets AppStoreId
-     *
-     * @return string|null
-     */
-    public function getAppStoreId()
-    {
-        if (!isset($this->container['AppStoreId']) || is_null($this->container['AppStoreId'])) {
-            return null;
-        }
-        return $this->container['AppStoreId'];
-    }
-
-    /**
-     * Sets AppStoreId
-     *
-     * @param string|null $AppStoreId AppStoreId
-     *
-     * @return self
-     */
-    public function setAppStoreId($AppStoreId)
-    {
-        if (is_null($AppStoreId)) {
-            array_push($this->openAPINullablesSetToNull, 'AppStoreId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AppStoreId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AppStoreId'] = $AppStoreId;
-
-        return $this;
-    }
 
     /**
      * Gets Id
@@ -571,12 +497,15 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -584,21 +513,17 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1040,6 +965,80 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets AppPlatform
+     *
+     * @return string|null
+     */
+    public function getAppPlatform()
+    {
+        if (!isset($this->container['AppPlatform']) || is_null($this->container['AppPlatform'])) {
+            return null;
+        }
+        return $this->container['AppPlatform'];
+    }
+
+    /**
+     * Sets AppPlatform
+     *
+     * @param string|null $AppPlatform AppPlatform
+     *
+     * @return self
+     */
+    public function setAppPlatform($AppPlatform)
+    {
+        if (is_null($AppPlatform)) {
+            array_push($this->openAPINullablesSetToNull, 'AppPlatform');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AppPlatform', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AppPlatform'] = $AppPlatform;
+
+        return $this;
+    }
+
+    /**
+     * Gets AppStoreId
+     *
+     * @return string|null
+     */
+    public function getAppStoreId()
+    {
+        if (!isset($this->container['AppStoreId']) || is_null($this->container['AppStoreId'])) {
+            return null;
+        }
+        return $this->container['AppStoreId'];
+    }
+
+    /**
+     * Sets AppStoreId
+     *
+     * @param string|null $AppStoreId AppStoreId
+     *
+     * @return self
+     */
+    public function setAppStoreId($AppStoreId)
+    {
+        if (is_null($AppStoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'AppStoreId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AppStoreId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AppStoreId'] = $AppStoreId;
 
         return $this;
     }

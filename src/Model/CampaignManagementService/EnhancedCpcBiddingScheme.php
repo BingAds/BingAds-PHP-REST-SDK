@@ -220,7 +220,7 @@ class EnhancedCpcBiddingScheme extends BiddingScheme implements ModelInterface, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'EnhancedCpc');
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**

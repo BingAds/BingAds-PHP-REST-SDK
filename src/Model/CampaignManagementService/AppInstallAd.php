@@ -33,12 +33,8 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AppPlatform' => 'string',
-        'AppStoreId' => 'string',
-        'Title' => 'string',
-        'Text' => 'string',
         'Id' => 'string',
-        'Type' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'DevicePreference' => 'string',
@@ -49,7 +45,11 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         'FinalUrls' => 'string[]',
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'AppPlatform' => 'string',
+        'AppStoreId' => 'string',
+        'Title' => 'string',
+        'Text' => 'string'
     ];
 
     /**
@@ -60,10 +60,6 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AppPlatform' => null,
-        'AppStoreId' => null,
-        'Title' => null,
-        'Text' => null,
         'Id' => 'int64',
         'Type' => null,
         'Status' => null,
@@ -76,7 +72,11 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         'FinalUrls' => null,
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'AppPlatform' => null,
+        'AppStoreId' => null,
+        'Title' => null,
+        'Text' => null
     ];
 
     /**
@@ -85,12 +85,8 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AppPlatform' => true,
-        'AppStoreId' => true,
-        'Title' => true,
-        'Text' => true,
         'Id' => true,
-        'Type' => true,
+        'Type' => false,
         'Status' => false,
         'EditorialStatus' => false,
         'DevicePreference' => true,
@@ -101,7 +97,11 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         'FinalUrls' => true,
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'AppPlatform' => true,
+        'AppStoreId' => true,
+        'Title' => true,
+        'Text' => true
     ];
 
     /**
@@ -190,10 +190,6 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AppPlatform' => 'AppPlatform',
-        'AppStoreId' => 'AppStoreId',
-        'Title' => 'Title',
-        'Text' => 'Text',
         'Id' => 'Id',
         'Type' => 'Type',
         'Status' => 'Status',
@@ -206,7 +202,11 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         'FinalUrls' => 'FinalUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'AppPlatform' => 'AppPlatform',
+        'AppStoreId' => 'AppStoreId',
+        'Title' => 'Title',
+        'Text' => 'Text'
     ];
 
     /**
@@ -215,10 +215,6 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
-        'AppPlatform' => 'setAppPlatform',
-        'AppStoreId' => 'setAppStoreId',
-        'Title' => 'setTitle',
-        'Text' => 'setText',
         'Id' => 'setId',
         'Type' => 'setType',
         'Status' => 'setStatus',
@@ -231,7 +227,11 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         'FinalUrls' => 'setFinalUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'AppPlatform' => 'setAppPlatform',
+        'AppStoreId' => 'setAppStoreId',
+        'Title' => 'setTitle',
+        'Text' => 'setText'
     ];
 
     /**
@@ -240,10 +240,6 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
-        'AppPlatform' => 'getAppPlatform',
-        'AppStoreId' => 'getAppStoreId',
-        'Title' => 'getTitle',
-        'Text' => 'getText',
         'Id' => 'getId',
         'Type' => 'getType',
         'Status' => 'getStatus',
@@ -256,7 +252,11 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         'FinalUrls' => 'getFinalUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'AppPlatform' => 'getAppPlatform',
+        'AppStoreId' => 'getAppStoreId',
+        'Title' => 'getTitle',
+        'Text' => 'getText'
     ];
 
     /**
@@ -316,12 +316,8 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AppPlatform', $data ?? [], null);
-        $this->setIfExists('AppStoreId', $data ?? [], null);
-        $this->setIfExists('Title', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'AppInstall');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
@@ -333,6 +329,10 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('AppPlatform', $data ?? [], null);
+        $this->setIfExists('AppStoreId', $data ?? [], null);
+        $this->setIfExists('Title', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
     }
 
     /**
@@ -378,154 +378,6 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets AppPlatform
-     *
-     * @return string|null
-     */
-    public function getAppPlatform()
-    {
-        if (!isset($this->container['AppPlatform']) || is_null($this->container['AppPlatform'])) {
-            return null;
-        }
-        return $this->container['AppPlatform'];
-    }
-
-    /**
-     * Sets AppPlatform
-     *
-     * @param string|null $AppPlatform AppPlatform
-     *
-     * @return self
-     */
-    public function setAppPlatform($AppPlatform)
-    {
-        if (is_null($AppPlatform)) {
-            array_push($this->openAPINullablesSetToNull, 'AppPlatform');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AppPlatform', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AppPlatform'] = $AppPlatform;
-
-        return $this;
-    }
-
-    /**
-     * Gets AppStoreId
-     *
-     * @return string|null
-     */
-    public function getAppStoreId()
-    {
-        if (!isset($this->container['AppStoreId']) || is_null($this->container['AppStoreId'])) {
-            return null;
-        }
-        return $this->container['AppStoreId'];
-    }
-
-    /**
-     * Sets AppStoreId
-     *
-     * @param string|null $AppStoreId AppStoreId
-     *
-     * @return self
-     */
-    public function setAppStoreId($AppStoreId)
-    {
-        if (is_null($AppStoreId)) {
-            array_push($this->openAPINullablesSetToNull, 'AppStoreId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AppStoreId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AppStoreId'] = $AppStoreId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
-            return null;
-        }
-        return $this->container['Title'];
-    }
-
-    /**
-     * Sets Title
-     *
-     * @param string|null $Title Title
-     *
-     * @return self
-     */
-    public function setTitle($Title)
-    {
-        if (is_null($Title)) {
-            array_push($this->openAPINullablesSetToNull, 'Title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Title'] = $Title;
-
-        return $this;
-    }
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -565,12 +417,15 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
      */
     public function getType()
     {
         if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
         }
         return $this->container['Type'];
     }
@@ -578,21 +433,17 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets Type
      *
-     * @param string|null $Type Type
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
      *
      * @return self
      */
     public function setType($Type)
     {
         if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
         }
         $this->container['Type'] = $Type;
 
@@ -1000,6 +851,154 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets AppPlatform
+     *
+     * @return string|null
+     */
+    public function getAppPlatform()
+    {
+        if (!isset($this->container['AppPlatform']) || is_null($this->container['AppPlatform'])) {
+            return null;
+        }
+        return $this->container['AppPlatform'];
+    }
+
+    /**
+     * Sets AppPlatform
+     *
+     * @param string|null $AppPlatform AppPlatform
+     *
+     * @return self
+     */
+    public function setAppPlatform($AppPlatform)
+    {
+        if (is_null($AppPlatform)) {
+            array_push($this->openAPINullablesSetToNull, 'AppPlatform');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AppPlatform', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AppPlatform'] = $AppPlatform;
+
+        return $this;
+    }
+
+    /**
+     * Gets AppStoreId
+     *
+     * @return string|null
+     */
+    public function getAppStoreId()
+    {
+        if (!isset($this->container['AppStoreId']) || is_null($this->container['AppStoreId'])) {
+            return null;
+        }
+        return $this->container['AppStoreId'];
+    }
+
+    /**
+     * Sets AppStoreId
+     *
+     * @param string|null $AppStoreId AppStoreId
+     *
+     * @return self
+     */
+    public function setAppStoreId($AppStoreId)
+    {
+        if (is_null($AppStoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'AppStoreId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AppStoreId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AppStoreId'] = $AppStoreId;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
+            return null;
+        }
+        return $this->container['Title'];
+    }
+
+    /**
+     * Sets Title
+     *
+     * @param string|null $Title Title
+     *
+     * @return self
+     */
+    public function setTitle($Title)
+    {
+        if (is_null($Title)) {
+            array_push($this->openAPINullablesSetToNull, 'Title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Title'] = $Title;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
 
         return $this;
     }

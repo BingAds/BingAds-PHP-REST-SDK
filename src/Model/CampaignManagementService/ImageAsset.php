@@ -33,16 +33,16 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Id' => 'string',
+        'Name' => 'string',
+        'Type' => 'string',
         'SubType' => 'string',
         'CropX' => 'int',
         'CropY' => 'int',
         'CropWidth' => 'int',
         'CropHeight' => 'int',
         'TargetWidth' => 'int',
-        'TargetHeight' => 'int',
-        'Id' => 'string',
-        'Name' => 'string',
-        'Type' => 'string'
+        'TargetHeight' => 'int'
     ];
 
     /**
@@ -53,16 +53,16 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Id' => 'int64',
+        'Name' => null,
+        'Type' => null,
         'SubType' => null,
         'CropX' => 'int32',
         'CropY' => 'int32',
         'CropWidth' => 'int32',
         'CropHeight' => 'int32',
         'TargetWidth' => 'int32',
-        'TargetHeight' => 'int32',
-        'Id' => 'int64',
-        'Name' => null,
-        'Type' => null
+        'TargetHeight' => 'int32'
     ];
 
     /**
@@ -71,16 +71,16 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Id' => true,
+        'Name' => true,
+        'Type' => true,
         'SubType' => true,
         'CropX' => true,
         'CropY' => true,
         'CropWidth' => true,
         'CropHeight' => true,
         'TargetWidth' => true,
-        'TargetHeight' => true,
-        'Id' => true,
-        'Name' => true,
-        'Type' => true
+        'TargetHeight' => true
     ];
 
     /**
@@ -169,16 +169,16 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Id' => 'Id',
+        'Name' => 'Name',
+        'Type' => 'Type',
         'SubType' => 'SubType',
         'CropX' => 'CropX',
         'CropY' => 'CropY',
         'CropWidth' => 'CropWidth',
         'CropHeight' => 'CropHeight',
         'TargetWidth' => 'TargetWidth',
-        'TargetHeight' => 'TargetHeight',
-        'Id' => 'Id',
-        'Name' => 'Name',
-        'Type' => 'Type'
+        'TargetHeight' => 'TargetHeight'
     ];
 
     /**
@@ -187,16 +187,16 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $setters = [
+        'Id' => 'setId',
+        'Name' => 'setName',
+        'Type' => 'setType',
         'SubType' => 'setSubType',
         'CropX' => 'setCropX',
         'CropY' => 'setCropY',
         'CropWidth' => 'setCropWidth',
         'CropHeight' => 'setCropHeight',
         'TargetWidth' => 'setTargetWidth',
-        'TargetHeight' => 'setTargetHeight',
-        'Id' => 'setId',
-        'Name' => 'setName',
-        'Type' => 'setType'
+        'TargetHeight' => 'setTargetHeight'
     ];
 
     /**
@@ -205,16 +205,16 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $getters = [
+        'Id' => 'getId',
+        'Name' => 'getName',
+        'Type' => 'getType',
         'SubType' => 'getSubType',
         'CropX' => 'getCropX',
         'CropY' => 'getCropY',
         'CropWidth' => 'getCropWidth',
         'CropHeight' => 'getCropHeight',
         'TargetWidth' => 'getTargetWidth',
-        'TargetHeight' => 'getTargetHeight',
-        'Id' => 'getId',
-        'Name' => 'getName',
-        'Type' => 'getType'
+        'TargetHeight' => 'getTargetHeight'
     ];
 
     /**
@@ -274,6 +274,9 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SubType', $data ?? [], null);
         $this->setIfExists('CropX', $data ?? [], null);
         $this->setIfExists('CropY', $data ?? [], null);
@@ -281,9 +284,6 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('CropHeight', $data ?? [], null);
         $this->setIfExists('TargetWidth', $data ?? [], null);
         $this->setIfExists('TargetHeight', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ImageAsset');
     }
 
     /**
@@ -327,6 +327,117 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets SubType
@@ -583,117 +694,6 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['TargetHeight'] = $TargetHeight;
-
-        return $this;
-    }
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

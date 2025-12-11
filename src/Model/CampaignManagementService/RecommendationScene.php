@@ -40,7 +40,9 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         'TextData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\VideoRecommendationTextData[]',
         'Logos' => 'string[]',
         'LogoData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\VideoRecommendationImageData[]',
-        'KeyFrame' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyFrame'
+        'KeyFrame' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyFrame',
+        'Colors' => 'string[]',
+        'ColorData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\VideoRecommendationColorData[]'
     ];
 
     /**
@@ -58,7 +60,9 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         'TextData' => null,
         'Logos' => null,
         'LogoData' => null,
-        'KeyFrame' => null
+        'KeyFrame' => null,
+        'Colors' => null,
+        'ColorData' => null
     ];
 
     /**
@@ -74,7 +78,9 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         'TextData' => true,
         'Logos' => true,
         'LogoData' => true,
-        'KeyFrame' => true
+        'KeyFrame' => true,
+        'Colors' => true,
+        'ColorData' => true
     ];
 
     /**
@@ -170,7 +176,9 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         'TextData' => 'textData',
         'Logos' => 'logos',
         'LogoData' => 'logoData',
-        'KeyFrame' => 'keyFrame'
+        'KeyFrame' => 'keyFrame',
+        'Colors' => 'colors',
+        'ColorData' => 'colorData'
     ];
 
     /**
@@ -186,7 +194,9 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         'TextData' => 'setTextData',
         'Logos' => 'setLogos',
         'LogoData' => 'setLogoData',
-        'KeyFrame' => 'setKeyFrame'
+        'KeyFrame' => 'setKeyFrame',
+        'Colors' => 'setColors',
+        'ColorData' => 'setColorData'
     ];
 
     /**
@@ -202,7 +212,9 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         'TextData' => 'getTextData',
         'Logos' => 'getLogos',
         'LogoData' => 'getLogoData',
-        'KeyFrame' => 'getKeyFrame'
+        'KeyFrame' => 'getKeyFrame',
+        'Colors' => 'getColors',
+        'ColorData' => 'getColorData'
     ];
 
     /**
@@ -270,6 +282,8 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('Logos', $data ?? [], null);
         $this->setIfExists('LogoData', $data ?? [], null);
         $this->setIfExists('KeyFrame', $data ?? [], null);
+        $this->setIfExists('Colors', $data ?? [], null);
+        $this->setIfExists('ColorData', $data ?? [], null);
     }
 
     /**
@@ -606,6 +620,80 @@ class RecommendationScene implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['KeyFrame'] = $KeyFrame;
+
+        return $this;
+    }
+
+    /**
+     * Gets Colors
+     *
+     * @return string[]|null
+     */
+    public function getColors()
+    {
+        if (!isset($this->container['Colors']) || is_null($this->container['Colors'])) {
+            return null;
+        }
+        return $this->container['Colors'];
+    }
+
+    /**
+     * Sets Colors
+     *
+     * @param string[]|null $Colors Colors
+     *
+     * @return self
+     */
+    public function setColors($Colors)
+    {
+        if (is_null($Colors)) {
+            array_push($this->openAPINullablesSetToNull, 'Colors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Colors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Colors'] = $Colors;
+
+        return $this;
+    }
+
+    /**
+     * Gets ColorData
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\VideoRecommendationColorData[]|null
+     */
+    public function getColorData()
+    {
+        if (!isset($this->container['ColorData']) || is_null($this->container['ColorData'])) {
+            return null;
+        }
+        return $this->container['ColorData'];
+    }
+
+    /**
+     * Sets ColorData
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\VideoRecommendationColorData[]|null $ColorData ColorData
+     *
+     * @return self
+     */
+    public function setColorData($ColorData)
+    {
+        if (is_null($ColorData)) {
+            array_push($this->openAPINullablesSetToNull, 'ColorData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ColorData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ColorData'] = $ColorData;
 
         return $this;
     }

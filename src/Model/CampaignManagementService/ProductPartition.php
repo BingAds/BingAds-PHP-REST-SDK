@@ -33,10 +33,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'ParentCriterionId' => 'string',
         'Condition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition',
-        'PartitionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType',
-        'Type' => 'string'
+        'PartitionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType'
     ];
 
     /**
@@ -47,10 +47,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'ParentCriterionId' => 'int64',
         'Condition' => null,
-        'PartitionType' => null,
-        'Type' => null
+        'PartitionType' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'ParentCriterionId' => true,
         'Condition' => true,
-        'PartitionType' => false,
-        'Type' => true
+        'PartitionType' => false
     ];
 
     /**
@@ -151,10 +151,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'ParentCriterionId' => 'ParentCriterionId',
         'Condition' => 'Condition',
-        'PartitionType' => 'PartitionType',
-        'Type' => 'Type'
+        'PartitionType' => 'PartitionType'
     ];
 
     /**
@@ -163,10 +163,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'ParentCriterionId' => 'setParentCriterionId',
         'Condition' => 'setCondition',
-        'PartitionType' => 'setPartitionType',
-        'Type' => 'setType'
+        'PartitionType' => 'setPartitionType'
     ];
 
     /**
@@ -175,10 +175,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'ParentCriterionId' => 'getParentCriterionId',
         'Condition' => 'getCondition',
-        'PartitionType' => 'getPartitionType',
-        'Type' => 'getType'
+        'PartitionType' => 'getPartitionType'
     ];
 
     /**
@@ -238,10 +238,10 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ParentCriterionId', $data ?? [], null);
         $this->setIfExists('Condition', $data ?? [], null);
         $this->setIfExists('PartitionType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ProductPartition');
     }
 
     /**
@@ -285,6 +285,43 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets ParentCriterionId
@@ -392,43 +429,6 @@ class ProductPartition extends Criterion implements ModelInterface, ArrayAccess,
             $PartitionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType($PartitionType);
         }
         $this->container['PartitionType'] = $PartitionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

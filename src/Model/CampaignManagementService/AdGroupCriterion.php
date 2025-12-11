@@ -43,6 +43,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AdGroupId' => 'string',
+        'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
+        'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
+        'Type' => 'string',
         'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
         'DestinationUrl' => 'string',
         'TrackingUrlTemplate' => 'string',
@@ -52,12 +57,7 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus',
-        'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback',
-        'AdGroupId' => 'string',
-        'Id' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
-        'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
-        'Type' => 'string'
+        'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback'
     ];
 
     /**
@@ -68,6 +68,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AdGroupId' => 'int64',
+        'Id' => 'int64',
+        'Status' => null,
+        'Criterion' => null,
+        'Type' => null,
         'CriterionBid' => null,
         'DestinationUrl' => null,
         'TrackingUrlTemplate' => null,
@@ -77,12 +82,7 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
         'EditorialStatus' => null,
-        'CriterionCashback' => null,
-        'AdGroupId' => 'int64',
-        'Id' => 'int64',
-        'Status' => null,
-        'Criterion' => null,
-        'Type' => null
+        'CriterionCashback' => null
     ];
 
     /**
@@ -91,6 +91,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AdGroupId' => false,
+        'Id' => true,
+        'Status' => false,
+        'Criterion' => true,
+        'Type' => true,
         'CriterionBid' => true,
         'DestinationUrl' => true,
         'TrackingUrlTemplate' => true,
@@ -100,12 +105,7 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
         'EditorialStatus' => false,
-        'CriterionCashback' => true,
-        'AdGroupId' => false,
-        'Id' => true,
-        'Status' => false,
-        'Criterion' => true,
-        'Type' => true
+        'CriterionCashback' => true
     ];
 
     /**
@@ -194,6 +194,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AdGroupId' => 'AdGroupId',
+        'Id' => 'Id',
+        'Status' => 'Status',
+        'Criterion' => 'Criterion',
+        'Type' => 'Type',
         'CriterionBid' => 'CriterionBid',
         'DestinationUrl' => 'DestinationUrl',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
@@ -203,12 +208,7 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
         'EditorialStatus' => 'EditorialStatus',
-        'CriterionCashback' => 'CriterionCashback',
-        'AdGroupId' => 'AdGroupId',
-        'Id' => 'Id',
-        'Status' => 'Status',
-        'Criterion' => 'Criterion',
-        'Type' => 'Type'
+        'CriterionCashback' => 'CriterionCashback'
     ];
 
     /**
@@ -217,6 +217,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'AdGroupId' => 'setAdGroupId',
+        'Id' => 'setId',
+        'Status' => 'setStatus',
+        'Criterion' => 'setCriterion',
+        'Type' => 'setType',
         'CriterionBid' => 'setCriterionBid',
         'DestinationUrl' => 'setDestinationUrl',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
@@ -226,12 +231,7 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
         'EditorialStatus' => 'setEditorialStatus',
-        'CriterionCashback' => 'setCriterionCashback',
-        'AdGroupId' => 'setAdGroupId',
-        'Id' => 'setId',
-        'Status' => 'setStatus',
-        'Criterion' => 'setCriterion',
-        'Type' => 'setType'
+        'CriterionCashback' => 'setCriterionCashback'
     ];
 
     /**
@@ -240,6 +240,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'AdGroupId' => 'getAdGroupId',
+        'Id' => 'getId',
+        'Status' => 'getStatus',
+        'Criterion' => 'getCriterion',
+        'Type' => 'getType',
         'CriterionBid' => 'getCriterionBid',
         'DestinationUrl' => 'getDestinationUrl',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
@@ -249,12 +254,7 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
         'EditorialStatus' => 'getEditorialStatus',
-        'CriterionCashback' => 'getCriterionCashback',
-        'AdGroupId' => 'getAdGroupId',
-        'Id' => 'getId',
-        'Status' => 'getStatus',
-        'Criterion' => 'getCriterion',
-        'Type' => 'getType'
+        'CriterionCashback' => 'getCriterionCashback'
     ];
 
     /**
@@ -314,6 +314,11 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AdGroupId', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Criterion', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CriterionBid', $data ?? [], null);
         $this->setIfExists('DestinationUrl', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
@@ -324,11 +329,6 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('CriterionCashback', $data ?? [], null);
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Criterion', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'NegativeAdGroupCriterion');
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -375,6 +375,183 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AdGroupId
+     *
+     * @return string|null
+     */
+    public function getAdGroupId()
+    {
+        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+            return null;
+        }
+        return $this->container['AdGroupId'];
+    }
+
+    /**
+     * Sets AdGroupId
+     *
+     * @param string|null $AdGroupId AdGroupId
+     *
+     * @return self
+     */
+    public function setAdGroupId($AdGroupId)
+    {
+        if (is_null($AdGroupId)) {
+            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        }
+        $this->container['AdGroupId'] = $AdGroupId;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            throw new \InvalidArgumentException('non-nullable Status cannot be null');
+        }
+        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Criterion
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion|null
+     */
+    public function getCriterion()
+    {
+        if (!isset($this->container['Criterion']) || is_null($this->container['Criterion'])) {
+            return null;
+        }
+        return $this->container['Criterion'];
+    }
+
+    /**
+     * Sets Criterion
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion|null $Criterion Criterion
+     *
+     * @return self
+     */
+    public function setCriterion($Criterion)
+    {
+        if (is_null($Criterion)) {
+            array_push($this->openAPINullablesSetToNull, 'Criterion');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Criterion', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Criterion'] = $Criterion;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets CriterionBid
@@ -741,183 +918,6 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['CriterionCashback'] = $CriterionCashback;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdGroupId
-     *
-     * @return string|null
-     */
-    public function getAdGroupId()
-    {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
-            return null;
-        }
-        return $this->container['AdGroupId'];
-    }
-
-    /**
-     * Sets AdGroupId
-     *
-     * @param string|null $AdGroupId AdGroupId
-     *
-     * @return self
-     */
-    public function setAdGroupId($AdGroupId)
-    {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
-        }
-        $this->container['AdGroupId'] = $AdGroupId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Criterion
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion|null
-     */
-    public function getCriterion()
-    {
-        if (!isset($this->container['Criterion']) || is_null($this->container['Criterion'])) {
-            return null;
-        }
-        return $this->container['Criterion'];
-    }
-
-    /**
-     * Sets Criterion
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion|null $Criterion Criterion
-     *
-     * @return self
-     */
-    public function setCriterion($Criterion)
-    {
-        if (is_null($Criterion)) {
-            array_push($this->openAPINullablesSetToNull, 'Criterion');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Criterion', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Criterion'] = $Criterion;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

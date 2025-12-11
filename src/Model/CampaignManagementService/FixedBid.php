@@ -33,8 +33,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Amount' => 'float',
-        'Type' => 'string'
+        'Type' => 'string',
+        'Amount' => 'float'
     ];
 
     /**
@@ -45,8 +45,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Amount' => 'double',
-        'Type' => null
+        'Type' => null,
+        'Amount' => 'double'
     ];
 
     /**
@@ -55,8 +55,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Amount' => false,
-        'Type' => true
+        'Type' => true,
+        'Amount' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Amount' => 'Amount',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Amount' => 'Amount'
     ];
 
     /**
@@ -155,8 +155,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'Amount' => 'setAmount',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Amount' => 'setAmount'
     ];
 
     /**
@@ -165,8 +165,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'Amount' => 'getAmount',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Amount' => 'getAmount'
     ];
 
     /**
@@ -226,8 +226,8 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Amount', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'FixedBid');
     }
 
     /**
@@ -273,36 +273,6 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets Amount
-     *
-     * @return float|null
-     */
-    public function getAmount()
-    {
-        if (!isset($this->container['Amount']) || is_null($this->container['Amount'])) {
-            return null;
-        }
-        return $this->container['Amount'];
-    }
-
-    /**
-     * Sets Amount
-     *
-     * @param float|null $Amount Amount
-     *
-     * @return self
-     */
-    public function setAmount($Amount)
-    {
-        if (is_null($Amount)) {
-            throw new \InvalidArgumentException('non-nullable Amount cannot be null');
-        }
-        $this->container['Amount'] = $Amount;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -335,6 +305,36 @@ class FixedBid extends CriterionBid implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Amount
+     *
+     * @return float|null
+     */
+    public function getAmount()
+    {
+        if (!isset($this->container['Amount']) || is_null($this->container['Amount'])) {
+            return null;
+        }
+        return $this->container['Amount'];
+    }
+
+    /**
+     * Sets Amount
+     *
+     * @param float|null $Amount Amount
+     *
+     * @return self
+     */
+    public function setAmount($Amount)
+    {
+        if (is_null($Amount)) {
+            throw new \InvalidArgumentException('non-nullable Amount cannot be null');
+        }
+        $this->container['Amount'] = $Amount;
 
         return $this;
     }

@@ -52,6 +52,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExperimentId' => 'string',
         'AdScheduleUseSearcherTimeZone' => 'bool',
         'BidStrategyId' => 'string',
+        'BidStrategyScope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'MultimediaAdsBidAdjustment' => 'int',
         'GoalIds' => 'string[]',
         'DealIds' => 'string[]',
@@ -59,6 +60,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'StartDate' => '\DateTime',
         'EndDate' => '\DateTime',
         'UseCampaignLevelDates' => 'bool',
+        'IsPolitical' => 'bool',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -89,6 +91,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExperimentId' => 'int64',
         'AdScheduleUseSearcherTimeZone' => null,
         'BidStrategyId' => 'int64',
+        'BidStrategyScope' => null,
         'MultimediaAdsBidAdjustment' => 'int32',
         'GoalIds' => 'int64',
         'DealIds' => 'int64',
@@ -96,6 +99,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'StartDate' => 'date-time',
         'EndDate' => 'date-time',
         'UseCampaignLevelDates' => null,
+        'IsPolitical' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -124,6 +128,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExperimentId' => true,
         'AdScheduleUseSearcherTimeZone' => true,
         'BidStrategyId' => true,
+        'BidStrategyScope' => false,
         'MultimediaAdsBidAdjustment' => true,
         'GoalIds' => true,
         'DealIds' => true,
@@ -131,6 +136,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'StartDate' => true,
         'EndDate' => true,
         'UseCampaignLevelDates' => true,
+        'IsPolitical' => false,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -239,6 +245,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExperimentId' => 'ExperimentId',
         'AdScheduleUseSearcherTimeZone' => 'AdScheduleUseSearcherTimeZone',
         'BidStrategyId' => 'BidStrategyId',
+        'BidStrategyScope' => 'BidStrategyScope',
         'MultimediaAdsBidAdjustment' => 'MultimediaAdsBidAdjustment',
         'GoalIds' => 'GoalIds',
         'DealIds' => 'DealIds',
@@ -246,6 +253,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'StartDate' => 'StartDate',
         'EndDate' => 'EndDate',
         'UseCampaignLevelDates' => 'UseCampaignLevelDates',
+        'IsPolitical' => 'IsPolitical',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -274,6 +282,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExperimentId' => 'setExperimentId',
         'AdScheduleUseSearcherTimeZone' => 'setAdScheduleUseSearcherTimeZone',
         'BidStrategyId' => 'setBidStrategyId',
+        'BidStrategyScope' => 'setBidStrategyScope',
         'MultimediaAdsBidAdjustment' => 'setMultimediaAdsBidAdjustment',
         'GoalIds' => 'setGoalIds',
         'DealIds' => 'setDealIds',
@@ -281,6 +290,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'StartDate' => 'setStartDate',
         'EndDate' => 'setEndDate',
         'UseCampaignLevelDates' => 'setUseCampaignLevelDates',
+        'IsPolitical' => 'setIsPolitical',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -309,6 +319,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'ExperimentId' => 'getExperimentId',
         'AdScheduleUseSearcherTimeZone' => 'getAdScheduleUseSearcherTimeZone',
         'BidStrategyId' => 'getBidStrategyId',
+        'BidStrategyScope' => 'getBidStrategyScope',
         'MultimediaAdsBidAdjustment' => 'getMultimediaAdsBidAdjustment',
         'GoalIds' => 'getGoalIds',
         'DealIds' => 'getDealIds',
@@ -316,6 +327,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'StartDate' => 'getStartDate',
         'EndDate' => 'getEndDate',
         'UseCampaignLevelDates' => 'getUseCampaignLevelDates',
+        'IsPolitical' => 'getIsPolitical',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -395,6 +407,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ExperimentId', $data ?? [], null);
         $this->setIfExists('AdScheduleUseSearcherTimeZone', $data ?? [], null);
         $this->setIfExists('BidStrategyId', $data ?? [], null);
+        $this->setIfExists('BidStrategyScope', $data ?? [], null);
         $this->setIfExists('MultimediaAdsBidAdjustment', $data ?? [], null);
         $this->setIfExists('GoalIds', $data ?? [], null);
         $this->setIfExists('DealIds', $data ?? [], null);
@@ -402,6 +415,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('StartDate', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('UseCampaignLevelDates', $data ?? [], null);
+        $this->setIfExists('IsPolitical', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -1148,6 +1162,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets BidStrategyScope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
+     */
+    public function getBidStrategyScope()
+    {
+        if (!isset($this->container['BidStrategyScope']) || is_null($this->container['BidStrategyScope'])) {
+            return null;
+        }
+        if ((is_object($this->container['BidStrategyScope']) || is_string($this->container['BidStrategyScope'])) && method_exists($this->container['BidStrategyScope'], 'getValue')) {
+            return $this->container['BidStrategyScope']->getValue();
+        }
+        return $this->container['BidStrategyScope'];
+    }
+
+    /**
+     * Sets BidStrategyScope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $BidStrategyScope BidStrategyScope
+     *
+     * @return self
+     */
+    public function setBidStrategyScope($BidStrategyScope)
+    {
+        if (is_null($BidStrategyScope)) {
+            throw new \InvalidArgumentException('non-nullable BidStrategyScope cannot be null');
+        }
+        if (!$BidStrategyScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $BidStrategyScope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($BidStrategyScope);
+        }
+        $this->container['BidStrategyScope'] = $BidStrategyScope;
+
+        return $this;
+    }
+
+    /**
      * Gets MultimediaAdsBidAdjustment
      *
      * @return int|null
@@ -1402,6 +1452,36 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UseCampaignLevelDates'] = $UseCampaignLevelDates;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsPolitical
+     *
+     * @return bool|null
+     */
+    public function getIsPolitical()
+    {
+        if (!isset($this->container['IsPolitical']) || is_null($this->container['IsPolitical'])) {
+            return null;
+        }
+        return $this->container['IsPolitical'];
+    }
+
+    /**
+     * Sets IsPolitical
+     *
+     * @param bool|null $IsPolitical IsPolitical
+     *
+     * @return self
+     */
+    public function setIsPolitical($IsPolitical)
+    {
+        if (is_null($IsPolitical)) {
+            throw new \InvalidArgumentException('non-nullable IsPolitical cannot be null');
+        }
+        $this->container['IsPolitical'] = $IsPolitical;
 
         return $this;
     }

@@ -226,7 +226,7 @@ class InheritFromParentBiddingScheme extends BiddingScheme implements ModelInter
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'InheritFromParent');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('InheritedBidStrategyType', $data ?? [], null);
     }
 

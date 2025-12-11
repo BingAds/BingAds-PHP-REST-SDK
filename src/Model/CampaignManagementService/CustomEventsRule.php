@@ -268,7 +268,7 @@ class CustomEventsRule extends RemarketingRule implements ModelInterface, ArrayA
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], 'CustomEvents');
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CategoryOperator', $data ?? [], null);
         $this->setIfExists('Category', $data ?? [], null);
         $this->setIfExists('ActionOperator', $data ?? [], null);

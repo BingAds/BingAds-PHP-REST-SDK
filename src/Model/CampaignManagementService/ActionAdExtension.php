@@ -33,6 +33,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'DevicePreference' => 'string',
+        'Id' => 'string',
+        'Type' => 'string',
+        'Version' => 'int',
         'ActionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ActionAdExtensionActionType',
         'Language' => 'string',
         'FinalMobileUrls' => 'string[]',
@@ -40,12 +46,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         'TrackingUrlTemplate' => 'string',
         'FinalUrlSuffix' => 'string',
         'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
-        'DevicePreference' => 'string',
-        'Id' => 'string',
-        'Type' => 'string',
-        'Version' => 'int',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -57,6 +57,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Status' => null,
+        'Scheduling' => null,
+        'DevicePreference' => 'int64',
+        'Id' => 'int64',
+        'Type' => null,
+        'Version' => 'int32',
         'ActionType' => null,
         'Language' => null,
         'FinalMobileUrls' => null,
@@ -64,12 +70,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         'TrackingUrlTemplate' => null,
         'FinalUrlSuffix' => null,
         'UrlCustomParameters' => null,
-        'Status' => null,
-        'Scheduling' => null,
-        'DevicePreference' => 'int64',
-        'Id' => 'int64',
-        'Type' => null,
-        'Version' => 'int32',
         'ForwardCompatibilityMap' => null
     ];
 
@@ -79,6 +79,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Status' => false,
+        'Scheduling' => true,
+        'DevicePreference' => true,
+        'Id' => true,
+        'Type' => true,
+        'Version' => true,
         'ActionType' => false,
         'Language' => true,
         'FinalMobileUrls' => true,
@@ -86,12 +92,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         'TrackingUrlTemplate' => true,
         'FinalUrlSuffix' => true,
         'UrlCustomParameters' => true,
-        'Status' => false,
-        'Scheduling' => true,
-        'DevicePreference' => true,
-        'Id' => true,
-        'Type' => true,
-        'Version' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -181,6 +181,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Status' => 'Status',
+        'Scheduling' => 'Scheduling',
+        'DevicePreference' => 'DevicePreference',
+        'Id' => 'Id',
+        'Type' => 'Type',
+        'Version' => 'Version',
         'ActionType' => 'ActionType',
         'Language' => 'Language',
         'FinalMobileUrls' => 'FinalMobileUrls',
@@ -188,12 +194,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
         'FinalUrlSuffix' => 'FinalUrlSuffix',
         'UrlCustomParameters' => 'UrlCustomParameters',
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
-        'DevicePreference' => 'DevicePreference',
-        'Id' => 'Id',
-        'Type' => 'Type',
-        'Version' => 'Version',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -203,6 +203,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
+        'Status' => 'setStatus',
+        'Scheduling' => 'setScheduling',
+        'DevicePreference' => 'setDevicePreference',
+        'Id' => 'setId',
+        'Type' => 'setType',
+        'Version' => 'setVersion',
         'ActionType' => 'setActionType',
         'Language' => 'setLanguage',
         'FinalMobileUrls' => 'setFinalMobileUrls',
@@ -210,12 +216,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
         'FinalUrlSuffix' => 'setFinalUrlSuffix',
         'UrlCustomParameters' => 'setUrlCustomParameters',
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
-        'DevicePreference' => 'setDevicePreference',
-        'Id' => 'setId',
-        'Type' => 'setType',
-        'Version' => 'setVersion',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -225,6 +225,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
+        'Status' => 'getStatus',
+        'Scheduling' => 'getScheduling',
+        'DevicePreference' => 'getDevicePreference',
+        'Id' => 'getId',
+        'Type' => 'getType',
+        'Version' => 'getVersion',
         'ActionType' => 'getActionType',
         'Language' => 'getLanguage',
         'FinalMobileUrls' => 'getFinalMobileUrls',
@@ -232,12 +238,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
         'FinalUrlSuffix' => 'getFinalUrlSuffix',
         'UrlCustomParameters' => 'getUrlCustomParameters',
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
-        'DevicePreference' => 'getDevicePreference',
-        'Id' => 'getId',
-        'Type' => 'getType',
-        'Version' => 'getVersion',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -298,6 +298,12 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('DevicePreference', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('Version', $data ?? [], null);
         $this->setIfExists('ActionType', $data ?? [], null);
         $this->setIfExists('Language', $data ?? [], null);
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
@@ -305,12 +311,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
         $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
         $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
-        $this->setIfExists('DevicePreference', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ActionAdExtension');
-        $this->setIfExists('Version', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -355,6 +355,227 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            throw new \InvalidArgumentException('non-nullable Status cannot be null');
+        }
+        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets DevicePreference
+     *
+     * @return string|null
+     */
+    public function getDevicePreference()
+    {
+        if (!isset($this->container['DevicePreference']) || is_null($this->container['DevicePreference'])) {
+            return null;
+        }
+        return $this->container['DevicePreference'];
+    }
+
+    /**
+     * Sets DevicePreference
+     *
+     * @param string|null $DevicePreference DevicePreference
+     *
+     * @return self
+     */
+    public function setDevicePreference($DevicePreference)
+    {
+        if (is_null($DevicePreference)) {
+            array_push($this->openAPINullablesSetToNull, 'DevicePreference');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DevicePreference', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DevicePreference'] = $DevicePreference;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Version
+     *
+     * @return int|null
+     */
+    public function getVersion()
+    {
+        if (!isset($this->container['Version']) || is_null($this->container['Version'])) {
+            return null;
+        }
+        return $this->container['Version'];
+    }
+
+    /**
+     * Sets Version
+     *
+     * @param int|null $Version Version
+     *
+     * @return self
+     */
+    public function setVersion($Version)
+    {
+        if (is_null($Version)) {
+            array_push($this->openAPINullablesSetToNull, 'Version');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Version', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Version'] = $Version;
+
+        return $this;
+    }
 
     /**
      * Gets ActionType
@@ -610,227 +831,6 @@ class ActionAdExtension extends AdExtension implements ModelInterface, ArrayAcce
             }
         }
         $this->container['UrlCustomParameters'] = $UrlCustomParameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
-
-    /**
-     * Gets DevicePreference
-     *
-     * @return string|null
-     */
-    public function getDevicePreference()
-    {
-        if (!isset($this->container['DevicePreference']) || is_null($this->container['DevicePreference'])) {
-            return null;
-        }
-        return $this->container['DevicePreference'];
-    }
-
-    /**
-     * Sets DevicePreference
-     *
-     * @param string|null $DevicePreference DevicePreference
-     *
-     * @return self
-     */
-    public function setDevicePreference($DevicePreference)
-    {
-        if (is_null($DevicePreference)) {
-            array_push($this->openAPINullablesSetToNull, 'DevicePreference');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DevicePreference', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DevicePreference'] = $DevicePreference;
-
-        return $this;
-    }
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets Version
-     *
-     * @return int|null
-     */
-    public function getVersion()
-    {
-        if (!isset($this->container['Version']) || is_null($this->container['Version'])) {
-            return null;
-        }
-        return $this->container['Version'];
-    }
-
-    /**
-     * Sets Version
-     *
-     * @param int|null $Version Version
-     *
-     * @return self
-     */
-    public function setVersion($Version)
-    {
-        if (is_null($Version)) {
-            array_push($this->openAPINullablesSetToNull, 'Version');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Version', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Version'] = $Version;
 
         return $this;
     }

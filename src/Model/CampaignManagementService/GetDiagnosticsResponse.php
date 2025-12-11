@@ -33,10 +33,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'DiagnosticTileData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticTileData',
-        'DiagnosticCategoryData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCategoryData[]',
-        'DiagnosticCardData' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCardData[]',
-        'DiagnosticErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckError[]'
+        'RequestStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsRequestStatus',
+        'Entities' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityResult[]'
     ];
 
     /**
@@ -47,10 +45,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'DiagnosticTileData' => null,
-        'DiagnosticCategoryData' => null,
-        'DiagnosticCardData' => null,
-        'DiagnosticErrors' => null
+        'RequestStatus' => null,
+        'Entities' => null
     ];
 
     /**
@@ -59,10 +55,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'DiagnosticTileData' => true,
-        'DiagnosticCategoryData' => true,
-        'DiagnosticCardData' => true,
-        'DiagnosticErrors' => true
+        'RequestStatus' => true,
+        'Entities' => true
     ];
 
     /**
@@ -151,10 +145,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'DiagnosticTileData' => 'DiagnosticTileData',
-        'DiagnosticCategoryData' => 'DiagnosticCategoryData',
-        'DiagnosticCardData' => 'DiagnosticCardData',
-        'DiagnosticErrors' => 'DiagnosticErrors'
+        'RequestStatus' => 'RequestStatus',
+        'Entities' => 'Entities'
     ];
 
     /**
@@ -163,10 +155,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'DiagnosticTileData' => 'setDiagnosticTileData',
-        'DiagnosticCategoryData' => 'setDiagnosticCategoryData',
-        'DiagnosticCardData' => 'setDiagnosticCardData',
-        'DiagnosticErrors' => 'setDiagnosticErrors'
+        'RequestStatus' => 'setRequestStatus',
+        'Entities' => 'setEntities'
     ];
 
     /**
@@ -175,10 +165,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'DiagnosticTileData' => 'getDiagnosticTileData',
-        'DiagnosticCategoryData' => 'getDiagnosticCategoryData',
-        'DiagnosticCardData' => 'getDiagnosticCardData',
-        'DiagnosticErrors' => 'getDiagnosticErrors'
+        'RequestStatus' => 'getRequestStatus',
+        'Entities' => 'getEntities'
     ];
 
     /**
@@ -238,10 +226,8 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('DiagnosticTileData', $data ?? [], null);
-        $this->setIfExists('DiagnosticCategoryData', $data ?? [], null);
-        $this->setIfExists('DiagnosticCardData', $data ?? [], null);
-        $this->setIfExists('DiagnosticErrors', $data ?? [], null);
+        $this->setIfExists('RequestStatus', $data ?? [], null);
+        $this->setIfExists('Entities', $data ?? [], null);
     }
 
     /**
@@ -287,149 +273,75 @@ class GetDiagnosticsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets DiagnosticTileData
+     * Gets RequestStatus
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticTileData|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsRequestStatus|null
      */
-    public function getDiagnosticTileData()
+    public function getRequestStatus()
     {
-        if (!isset($this->container['DiagnosticTileData']) || is_null($this->container['DiagnosticTileData'])) {
+        if (!isset($this->container['RequestStatus']) || is_null($this->container['RequestStatus'])) {
             return null;
         }
-        return $this->container['DiagnosticTileData'];
+        return $this->container['RequestStatus'];
     }
 
     /**
-     * Sets DiagnosticTileData
+     * Sets RequestStatus
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticTileData|null $DiagnosticTileData DiagnosticTileData
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticsRequestStatus|null $RequestStatus RequestStatus
      *
      * @return self
      */
-    public function setDiagnosticTileData($DiagnosticTileData)
+    public function setRequestStatus($RequestStatus)
     {
-        if (is_null($DiagnosticTileData)) {
-            array_push($this->openAPINullablesSetToNull, 'DiagnosticTileData');
+        if (is_null($RequestStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'RequestStatus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DiagnosticTileData', $nullablesSetToNull);
+            $index = array_search('RequestStatus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['DiagnosticTileData'] = $DiagnosticTileData;
+        $this->container['RequestStatus'] = $RequestStatus;
 
         return $this;
     }
 
     /**
-     * Gets DiagnosticCategoryData
+     * Gets Entities
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCategoryData[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityResult[]|null
      */
-    public function getDiagnosticCategoryData()
+    public function getEntities()
     {
-        if (!isset($this->container['DiagnosticCategoryData']) || is_null($this->container['DiagnosticCategoryData'])) {
+        if (!isset($this->container['Entities']) || is_null($this->container['Entities'])) {
             return null;
         }
-        return $this->container['DiagnosticCategoryData'];
+        return $this->container['Entities'];
     }
 
     /**
-     * Sets DiagnosticCategoryData
+     * Sets Entities
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCategoryData[]|null $DiagnosticCategoryData DiagnosticCategoryData
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityResult[]|null $Entities Entities
      *
      * @return self
      */
-    public function setDiagnosticCategoryData($DiagnosticCategoryData)
+    public function setEntities($Entities)
     {
-        if (is_null($DiagnosticCategoryData)) {
-            array_push($this->openAPINullablesSetToNull, 'DiagnosticCategoryData');
+        if (is_null($Entities)) {
+            array_push($this->openAPINullablesSetToNull, 'Entities');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DiagnosticCategoryData', $nullablesSetToNull);
+            $index = array_search('Entities', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['DiagnosticCategoryData'] = $DiagnosticCategoryData;
-
-        return $this;
-    }
-
-    /**
-     * Gets DiagnosticCardData
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCardData[]|null
-     */
-    public function getDiagnosticCardData()
-    {
-        if (!isset($this->container['DiagnosticCardData']) || is_null($this->container['DiagnosticCardData'])) {
-            return null;
-        }
-        return $this->container['DiagnosticCardData'];
-    }
-
-    /**
-     * Sets DiagnosticCardData
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DiagnosticCardData[]|null $DiagnosticCardData DiagnosticCardData
-     *
-     * @return self
-     */
-    public function setDiagnosticCardData($DiagnosticCardData)
-    {
-        if (is_null($DiagnosticCardData)) {
-            array_push($this->openAPINullablesSetToNull, 'DiagnosticCardData');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DiagnosticCardData', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DiagnosticCardData'] = $DiagnosticCardData;
-
-        return $this;
-    }
-
-    /**
-     * Gets DiagnosticErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckError[]|null
-     */
-    public function getDiagnosticErrors()
-    {
-        if (!isset($this->container['DiagnosticErrors']) || is_null($this->container['DiagnosticErrors'])) {
-            return null;
-        }
-        return $this->container['DiagnosticErrors'];
-    }
-
-    /**
-     * Sets DiagnosticErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckError[]|null $DiagnosticErrors DiagnosticErrors
-     *
-     * @return self
-     */
-    public function setDiagnosticErrors($DiagnosticErrors)
-    {
-        if (is_null($DiagnosticErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'DiagnosticErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DiagnosticErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DiagnosticErrors'] = $DiagnosticErrors;
+        $this->container['Entities'] = $Entities;
 
         return $this;
     }

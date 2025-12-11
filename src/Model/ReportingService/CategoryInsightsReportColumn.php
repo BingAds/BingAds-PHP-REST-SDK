@@ -53,6 +53,10 @@ class CategoryInsightsReportColumn
 
     public const COUNTRY = 'Country';
 
+    public const MARKETPLACE_CLICK_COVERAGE = 'MarketplaceClickCoverage';
+
+    public const PROPORTION_OF_SPEND = 'ProportionOfSpend';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -136,7 +140,9 @@ class CategoryInsightsReportColumn
             self::CLICKS_INDEXED,
             self::CLICKS_PEAK_WEEK,
             self::YO_Y_LAST4_WEEKS_CLICKS,
-            self::COUNTRY
+            self::COUNTRY,
+            self::MARKETPLACE_CLICK_COVERAGE,
+            self::PROPORTION_OF_SPEND
         ];
     }
 }

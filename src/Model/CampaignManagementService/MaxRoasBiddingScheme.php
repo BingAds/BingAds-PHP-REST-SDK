@@ -33,8 +33,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
-        'Type' => 'string'
+        'Type' => 'string',
+        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid'
     ];
 
     /**
@@ -45,8 +45,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MaxCpc' => null,
-        'Type' => null
+        'Type' => null,
+        'MaxCpc' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MaxCpc' => true,
-        'Type' => true
+        'Type' => true,
+        'MaxCpc' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MaxCpc' => 'MaxCpc',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'MaxCpc' => 'MaxCpc'
     ];
 
     /**
@@ -155,8 +155,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
      * @var string[]
      */
     protected static array $setters = [
-        'MaxCpc' => 'setMaxCpc',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'MaxCpc' => 'setMaxCpc'
     ];
 
     /**
@@ -165,8 +165,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
      * @var string[]
      */
     protected static array $getters = [
-        'MaxCpc' => 'getMaxCpc',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'MaxCpc' => 'getMaxCpc'
     ];
 
     /**
@@ -226,8 +226,8 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('MaxCpc', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'MaxRoasBiddingScheme');
     }
 
     /**
@@ -273,43 +273,6 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
 
 
     /**
-     * Gets MaxCpc
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
-     */
-    public function getMaxCpc()
-    {
-        if (!isset($this->container['MaxCpc']) || is_null($this->container['MaxCpc'])) {
-            return null;
-        }
-        return $this->container['MaxCpc'];
-    }
-
-    /**
-     * Sets MaxCpc
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null $MaxCpc MaxCpc
-     *
-     * @return self
-     */
-    public function setMaxCpc($MaxCpc)
-    {
-        if (is_null($MaxCpc)) {
-            array_push($this->openAPINullablesSetToNull, 'MaxCpc');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MaxCpc', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MaxCpc'] = $MaxCpc;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -342,6 +305,43 @@ class MaxRoasBiddingScheme extends BiddingScheme implements ModelInterface, Arra
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets MaxCpc
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
+     */
+    public function getMaxCpc()
+    {
+        if (!isset($this->container['MaxCpc']) || is_null($this->container['MaxCpc'])) {
+            return null;
+        }
+        return $this->container['MaxCpc'];
+    }
+
+    /**
+     * Sets MaxCpc
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null $MaxCpc MaxCpc
+     *
+     * @return self
+     */
+    public function setMaxCpc($MaxCpc)
+    {
+        if (is_null($MaxCpc)) {
+            array_push($this->openAPINullablesSetToNull, 'MaxCpc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MaxCpc', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MaxCpc'] = $MaxCpc;
 
         return $this;
     }

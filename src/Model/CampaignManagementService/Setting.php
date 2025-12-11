@@ -56,13 +56,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => 'string',
         'Priority' => 'int',
         'SalesCountryCode' => 'string',
         'StoreId' => 'string',
         'LocalInventoryAdsEnabled' => 'bool',
         'ShoppableAdsEnabled' => 'bool',
         'FeedLabel' => 'string',
-        'Type' => 'string',
         'FeedId' => 'string',
         'DomainName' => 'string',
         'Language' => 'string',
@@ -99,13 +99,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'Priority' => 'int32',
         'SalesCountryCode' => null,
         'StoreId' => 'int64',
         'LocalInventoryAdsEnabled' => null,
         'ShoppableAdsEnabled' => null,
         'FeedLabel' => null,
-        'Type' => null,
         'FeedId' => 'int64',
         'DomainName' => null,
         'Language' => null,
@@ -140,13 +140,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => true,
         'Priority' => true,
         'SalesCountryCode' => true,
         'StoreId' => true,
         'LocalInventoryAdsEnabled' => true,
         'ShoppableAdsEnabled' => true,
         'FeedLabel' => true,
-        'Type' => true,
         'FeedId' => true,
         'DomainName' => true,
         'Language' => true,
@@ -261,13 +261,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'Priority' => 'Priority',
         'SalesCountryCode' => 'SalesCountryCode',
         'StoreId' => 'StoreId',
         'LocalInventoryAdsEnabled' => 'LocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'ShoppableAdsEnabled',
         'FeedLabel' => 'FeedLabel',
-        'Type' => 'Type',
         'FeedId' => 'FeedId',
         'DomainName' => 'DomainName',
         'Language' => 'Language',
@@ -302,13 +302,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'Priority' => 'setPriority',
         'SalesCountryCode' => 'setSalesCountryCode',
         'StoreId' => 'setStoreId',
         'LocalInventoryAdsEnabled' => 'setLocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'setShoppableAdsEnabled',
         'FeedLabel' => 'setFeedLabel',
-        'Type' => 'setType',
         'FeedId' => 'setFeedId',
         'DomainName' => 'setDomainName',
         'Language' => 'setLanguage',
@@ -343,13 +343,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'Priority' => 'getPriority',
         'SalesCountryCode' => 'getSalesCountryCode',
         'StoreId' => 'getStoreId',
         'LocalInventoryAdsEnabled' => 'getLocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'getShoppableAdsEnabled',
         'FeedLabel' => 'getFeedLabel',
-        'Type' => 'getType',
         'FeedId' => 'getFeedId',
         'DomainName' => 'getDomainName',
         'Language' => 'getLanguage',
@@ -435,13 +435,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Priority', $data ?? [], null);
         $this->setIfExists('SalesCountryCode', $data ?? [], null);
         $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('LocalInventoryAdsEnabled', $data ?? [], null);
         $this->setIfExists('ShoppableAdsEnabled', $data ?? [], null);
         $this->setIfExists('FeedLabel', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'NewCustomerAcquisitionGoalSetting');
         $this->setIfExists('FeedId', $data ?? [], null);
         $this->setIfExists('DomainName', $data ?? [], null);
         $this->setIfExists('Language', $data ?? [], null);
@@ -514,6 +514,43 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets Priority
@@ -733,43 +770,6 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['FeedLabel'] = $FeedLabel;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

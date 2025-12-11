@@ -31,6 +31,10 @@ class EntityType
 
     public const ASSET_GROUP = 'AssetGroup';
 
+    public const TEXT_ASSET = 'TextAsset';
+
+    public const IMAGE_ASSET = 'ImageAsset';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -103,7 +107,9 @@ class EntityType
             self::AD_GROUP,
             self::AD,
             self::KEYWORD,
-            self::ASSET_GROUP
+            self::ASSET_GROUP,
+            self::TEXT_ASSET,
+            self::IMAGE_ASSET
         ];
     }
 }
