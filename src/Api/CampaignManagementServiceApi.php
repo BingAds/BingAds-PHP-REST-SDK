@@ -88,6 +88,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'addLabels' => [
             'application/json',
         ],
+        'addLinkedInSegments' => [
+            'application/json',
+        ],
         'addListItemsToSharedList' => [
             'application/json',
         ],
@@ -215,6 +218,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'deleteLabels' => [
+            'application/json',
+        ],
+        'deleteLinkedInSegments' => [
             'application/json',
         ],
         'deleteListItemsFromSharedList' => [
@@ -433,6 +439,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'getNewCustomerAcquisitionGoalsByAccountId' => [
             'application/json',
         ],
+        'getOfflineConversionReportByGoalIds' => [
+            'application/json',
+        ],
         'getOfflineConversionReports' => [
             'application/json',
         ],
@@ -566,6 +575,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'updateLabels' => [
+            'application/json',
+        ],
+        'updateLinkedInSegments' => [
             'application/json',
         ],
         'updateNewCustomerAcquisitionGoals' => [
@@ -5194,6 +5206,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForaddLabels',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation addLinkedInSegments
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsRequest $AddLinkedInSegmentsRequest AddLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function addLinkedInSegments($AddLinkedInSegmentsRequest, string $contentType = self::contentTypes['addLinkedInSegments'][0])
+    {
+        list($response) = $this->addLinkedInSegmentsWithHttpInfo($AddLinkedInSegmentsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation addLinkedInSegmentsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsRequest $AddLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addLinkedInSegmentsWithHttpInfo($AddLinkedInSegmentsRequest, string $contentType = self::contentTypes['addLinkedInSegments'][0])
+    {
+        $request = $this->addLinkedInSegmentsRequest($AddLinkedInSegmentsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addLinkedInSegmentsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsRequest $AddLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addLinkedInSegmentsAsync($AddLinkedInSegmentsRequest, string $contentType = self::contentTypes['addLinkedInSegments'][0])
+    {
+        return $this->addLinkedInSegmentsAsyncWithHttpInfo($AddLinkedInSegmentsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addLinkedInSegmentsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsRequest $AddLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addLinkedInSegmentsAsyncWithHttpInfo($AddLinkedInSegmentsRequest, string $contentType = self::contentTypes['addLinkedInSegments'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsResponse';
+        $request = $this->addLinkedInSegmentsRequest($AddLinkedInSegmentsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addLinkedInSegments'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\AddLinkedInSegmentsRequest $AddLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function addLinkedInSegmentsRequest($AddLinkedInSegmentsRequest, string $contentType = self::contentTypes['addLinkedInSegments'][0])
+    {
+
+        // verify the required parameter 'AddLinkedInSegmentsRequest' is set
+        if ($AddLinkedInSegmentsRequest === null || (is_array($AddLinkedInSegmentsRequest) && count($AddLinkedInSegmentsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $AddLinkedInSegmentsRequest when calling addLinkedInSegments'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/LinkedInSegments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $AddLinkedInSegmentsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForaddLinkedInSegments',
             null,
             [],
             $queryParams
@@ -14611,6 +14842,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsFordeleteLabels',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation deleteLinkedInSegments
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsRequest $DeleteLinkedInSegmentsRequest DeleteLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function deleteLinkedInSegments($DeleteLinkedInSegmentsRequest, string $contentType = self::contentTypes['deleteLinkedInSegments'][0])
+    {
+        list($response) = $this->deleteLinkedInSegmentsWithHttpInfo($DeleteLinkedInSegmentsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deleteLinkedInSegmentsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsRequest $DeleteLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteLinkedInSegmentsWithHttpInfo($DeleteLinkedInSegmentsRequest, string $contentType = self::contentTypes['deleteLinkedInSegments'][0])
+    {
+        $request = $this->deleteLinkedInSegmentsRequest($DeleteLinkedInSegmentsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteLinkedInSegmentsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsRequest $DeleteLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteLinkedInSegmentsAsync($DeleteLinkedInSegmentsRequest, string $contentType = self::contentTypes['deleteLinkedInSegments'][0])
+    {
+        return $this->deleteLinkedInSegmentsAsyncWithHttpInfo($DeleteLinkedInSegmentsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteLinkedInSegmentsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsRequest $DeleteLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteLinkedInSegmentsAsyncWithHttpInfo($DeleteLinkedInSegmentsRequest, string $contentType = self::contentTypes['deleteLinkedInSegments'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsResponse';
+        $request = $this->deleteLinkedInSegmentsRequest($DeleteLinkedInSegmentsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteLinkedInSegments'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeleteLinkedInSegmentsRequest $DeleteLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteLinkedInSegmentsRequest($DeleteLinkedInSegmentsRequest, string $contentType = self::contentTypes['deleteLinkedInSegments'][0])
+    {
+
+        // verify the required parameter 'DeleteLinkedInSegmentsRequest' is set
+        if ($DeleteLinkedInSegmentsRequest === null || (is_array($DeleteLinkedInSegmentsRequest) && count($DeleteLinkedInSegmentsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $DeleteLinkedInSegmentsRequest when calling deleteLinkedInSegments'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/LinkedInSegments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'DELETE',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $DeleteLinkedInSegmentsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsFordeleteLinkedInSegments',
             null,
             [],
             $queryParams
@@ -30386,6 +30836,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
     }
 
     /**
+     * Operation getOfflineConversionReportByGoalIds
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsRequest $GetOfflineConversionReportByGoalIdsRequest GetOfflineConversionReportByGoalIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfflineConversionReportByGoalIds'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getOfflineConversionReportByGoalIds($GetOfflineConversionReportByGoalIdsRequest, string $contentType = self::contentTypes['getOfflineConversionReportByGoalIds'][0])
+    {
+        list($response) = $this->getOfflineConversionReportByGoalIdsWithHttpInfo($GetOfflineConversionReportByGoalIdsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getOfflineConversionReportByGoalIdsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsRequest $GetOfflineConversionReportByGoalIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfflineConversionReportByGoalIds'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOfflineConversionReportByGoalIdsWithHttpInfo($GetOfflineConversionReportByGoalIdsRequest, string $contentType = self::contentTypes['getOfflineConversionReportByGoalIds'][0])
+    {
+        $request = $this->getOfflineConversionReportByGoalIdsRequest($GetOfflineConversionReportByGoalIdsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOfflineConversionReportByGoalIdsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsRequest $GetOfflineConversionReportByGoalIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfflineConversionReportByGoalIds'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOfflineConversionReportByGoalIdsAsync($GetOfflineConversionReportByGoalIdsRequest, string $contentType = self::contentTypes['getOfflineConversionReportByGoalIds'][0])
+    {
+        return $this->getOfflineConversionReportByGoalIdsAsyncWithHttpInfo($GetOfflineConversionReportByGoalIdsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getOfflineConversionReportByGoalIdsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsRequest $GetOfflineConversionReportByGoalIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfflineConversionReportByGoalIds'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOfflineConversionReportByGoalIdsAsyncWithHttpInfo($GetOfflineConversionReportByGoalIdsRequest, string $contentType = self::contentTypes['getOfflineConversionReportByGoalIds'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsResponse';
+        $request = $this->getOfflineConversionReportByGoalIdsRequest($GetOfflineConversionReportByGoalIdsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOfflineConversionReportByGoalIds'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportByGoalIdsRequest $GetOfflineConversionReportByGoalIdsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfflineConversionReportByGoalIds'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getOfflineConversionReportByGoalIdsRequest($GetOfflineConversionReportByGoalIdsRequest, string $contentType = self::contentTypes['getOfflineConversionReportByGoalIds'][0])
+    {
+
+        // verify the required parameter 'GetOfflineConversionReportByGoalIdsRequest' is set
+        if ($GetOfflineConversionReportByGoalIdsRequest === null || (is_array($GetOfflineConversionReportByGoalIdsRequest) && count($GetOfflineConversionReportByGoalIdsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetOfflineConversionReportByGoalIdsRequest when calling getOfflineConversionReportByGoalIds'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/OfflineConversionReport/QueryByGoalIds';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetOfflineConversionReportByGoalIdsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetOfflineConversionReportByGoalIds',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
      * Operation getOfflineConversionReports
      *
      * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetOfflineConversionReportsRequest $GetOfflineConversionReportsRequest GetOfflineConversionReportsRequest (required)
@@ -40234,6 +40903,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForupdateLabels',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation updateLinkedInSegments
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsRequest $UpdateLinkedInSegmentsRequest UpdateLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function updateLinkedInSegments($UpdateLinkedInSegmentsRequest, string $contentType = self::contentTypes['updateLinkedInSegments'][0])
+    {
+        list($response) = $this->updateLinkedInSegmentsWithHttpInfo($UpdateLinkedInSegmentsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateLinkedInSegmentsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsRequest $UpdateLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateLinkedInSegmentsWithHttpInfo($UpdateLinkedInSegmentsRequest, string $contentType = self::contentTypes['updateLinkedInSegments'][0])
+    {
+        $request = $this->updateLinkedInSegmentsRequest($UpdateLinkedInSegmentsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateLinkedInSegmentsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsRequest $UpdateLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateLinkedInSegmentsAsync($UpdateLinkedInSegmentsRequest, string $contentType = self::contentTypes['updateLinkedInSegments'][0])
+    {
+        return $this->updateLinkedInSegmentsAsyncWithHttpInfo($UpdateLinkedInSegmentsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateLinkedInSegmentsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsRequest $UpdateLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateLinkedInSegmentsAsyncWithHttpInfo($UpdateLinkedInSegmentsRequest, string $contentType = self::contentTypes['updateLinkedInSegments'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsResponse';
+        $request = $this->updateLinkedInSegmentsRequest($UpdateLinkedInSegmentsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateLinkedInSegments'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateLinkedInSegmentsRequest $UpdateLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateLinkedInSegmentsRequest($UpdateLinkedInSegmentsRequest, string $contentType = self::contentTypes['updateLinkedInSegments'][0])
+    {
+
+        // verify the required parameter 'UpdateLinkedInSegmentsRequest' is set
+        if ($UpdateLinkedInSegmentsRequest === null || (is_array($UpdateLinkedInSegmentsRequest) && count($UpdateLinkedInSegmentsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $UpdateLinkedInSegmentsRequest when calling updateLinkedInSegments'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/LinkedInSegments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'PUT',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $UpdateLinkedInSegmentsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForupdateLinkedInSegments',
             null,
             [],
             $queryParams

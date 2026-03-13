@@ -89,6 +89,8 @@ class CampaignAdditionalField
 
     public const CROSS_ACCOUNT_BID_STRATEGY_FIELDS = 'CrossAccountBidStrategyFields';
 
+    public const AI_SEARCH_SETTING = 'AISearchSetting';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -190,7 +192,8 @@ class CampaignAdditionalField
             self::LIFETIME_BUDGET_FIELDS,
             self::MAX_CONVERSION_VALUE_WITH_MAX_CPC,
             self::PMAX_APP_CAMPAIGN,
-            self::CROSS_ACCOUNT_BID_STRATEGY_FIELDS
+            self::CROSS_ACCOUNT_BID_STRATEGY_FIELDS,
+            self::AI_SEARCH_SETTING
         ];
     }
 }

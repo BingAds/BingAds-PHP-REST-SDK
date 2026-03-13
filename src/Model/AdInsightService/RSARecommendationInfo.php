@@ -33,10 +33,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdId' => 'string',
         'RecommendationId' => 'string',
         'RecommendationHash' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'AdId' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdId' => 'int64',
         'RecommendationId' => null,
         'RecommendationHash' => null,
-        'Type' => null
+        'Type' => null,
+        'AdId' => 'int64'
     ];
 
     /**
@@ -59,10 +59,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdId' => true,
         'RecommendationId' => true,
         'RecommendationHash' => true,
-        'Type' => true
+        'Type' => true,
+        'AdId' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdId' => 'AdId',
         'RecommendationId' => 'RecommendationId',
         'RecommendationHash' => 'RecommendationHash',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'AdId' => 'AdId'
     ];
 
     /**
@@ -163,10 +163,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'AdId' => 'setAdId',
         'RecommendationId' => 'setRecommendationId',
         'RecommendationHash' => 'setRecommendationHash',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'AdId' => 'setAdId'
     ];
 
     /**
@@ -175,10 +175,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'AdId' => 'getAdId',
         'RecommendationId' => 'getRecommendationId',
         'RecommendationHash' => 'getRecommendationHash',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'AdId' => 'getAdId'
     ];
 
     /**
@@ -238,10 +238,10 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdId', $data ?? [], null);
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'RSARecommendationInfo');
+        $this->setIfExists('Type', $data ?? [], 'RecommendationInfo');
+        $this->setIfExists('AdId', $data ?? [], null);
     }
 
     /**
@@ -285,43 +285,6 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets AdId
-     *
-     * @return string|null
-     */
-    public function getAdId()
-    {
-        if (!isset($this->container['AdId']) || is_null($this->container['AdId'])) {
-            return null;
-        }
-        return $this->container['AdId'];
-    }
-
-    /**
-     * Sets AdId
-     *
-     * @param string|null $AdId AdId
-     *
-     * @return self
-     */
-    public function setAdId($AdId)
-    {
-        if (is_null($AdId)) {
-            array_push($this->openAPINullablesSetToNull, 'AdId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AdId'] = $AdId;
-
-        return $this;
-    }
 
     /**
      * Gets RecommendationId
@@ -430,6 +393,43 @@ class RSARecommendationInfo extends RecommendationInfo implements ModelInterface
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdId
+     *
+     * @return string|null
+     */
+    public function getAdId()
+    {
+        if (!isset($this->container['AdId']) || is_null($this->container['AdId'])) {
+            return null;
+        }
+        return $this->container['AdId'];
+    }
+
+    /**
+     * Sets AdId
+     *
+     * @param string|null $AdId AdId
+     *
+     * @return self
+     */
+    public function setAdId($AdId)
+    {
+        if (is_null($AdId)) {
+            array_push($this->openAPINullablesSetToNull, 'AdId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdId'] = $AdId;
 
         return $this;
     }

@@ -54,7 +54,8 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'StartDate' => '\DateTime',
         'EndDate' => '\DateTime',
         'TotalBudget' => 'float',
-        'IncludeImpressionsBreakdown' => 'bool'
+        'IncludeImpressionsBreakdown' => 'bool',
+        'AutoTargeting' => 'bool'
     ];
 
     /**
@@ -86,7 +87,8 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'StartDate' => 'date-time',
         'EndDate' => 'date-time',
         'TotalBudget' => 'double',
-        'IncludeImpressionsBreakdown' => null
+        'IncludeImpressionsBreakdown' => null,
+        'AutoTargeting' => null
     ];
 
     /**
@@ -116,7 +118,8 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'StartDate' => true,
         'EndDate' => true,
         'TotalBudget' => true,
-        'IncludeImpressionsBreakdown' => true
+        'IncludeImpressionsBreakdown' => true,
+        'AutoTargeting' => true
     ];
 
     /**
@@ -226,7 +229,8 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'StartDate' => 'StartDate',
         'EndDate' => 'EndDate',
         'TotalBudget' => 'TotalBudget',
-        'IncludeImpressionsBreakdown' => 'IncludeImpressionsBreakdown'
+        'IncludeImpressionsBreakdown' => 'IncludeImpressionsBreakdown',
+        'AutoTargeting' => 'AutoTargeting'
     ];
 
     /**
@@ -256,7 +260,8 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'StartDate' => 'setStartDate',
         'EndDate' => 'setEndDate',
         'TotalBudget' => 'setTotalBudget',
-        'IncludeImpressionsBreakdown' => 'setIncludeImpressionsBreakdown'
+        'IncludeImpressionsBreakdown' => 'setIncludeImpressionsBreakdown',
+        'AutoTargeting' => 'setAutoTargeting'
     ];
 
     /**
@@ -286,7 +291,8 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'StartDate' => 'getStartDate',
         'EndDate' => 'getEndDate',
         'TotalBudget' => 'getTotalBudget',
-        'IncludeImpressionsBreakdown' => 'getIncludeImpressionsBreakdown'
+        'IncludeImpressionsBreakdown' => 'getIncludeImpressionsBreakdown',
+        'AutoTargeting' => 'getAutoTargeting'
     ];
 
     /**
@@ -368,6 +374,7 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('TotalBudget', $data ?? [], null);
         $this->setIfExists('IncludeImpressionsBreakdown', $data ?? [], null);
+        $this->setIfExists('AutoTargeting', $data ?? [], null);
     }
 
     /**
@@ -1221,6 +1228,43 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['IncludeImpressionsBreakdown'] = $IncludeImpressionsBreakdown;
+
+        return $this;
+    }
+
+    /**
+     * Gets AutoTargeting
+     *
+     * @return bool|null
+     */
+    public function getAutoTargeting()
+    {
+        if (!isset($this->container['AutoTargeting']) || is_null($this->container['AutoTargeting'])) {
+            return null;
+        }
+        return $this->container['AutoTargeting'];
+    }
+
+    /**
+     * Sets AutoTargeting
+     *
+     * @param bool|null $AutoTargeting AutoTargeting
+     *
+     * @return self
+     */
+    public function setAutoTargeting($AutoTargeting)
+    {
+        if (is_null($AutoTargeting)) {
+            array_push($this->openAPINullablesSetToNull, 'AutoTargeting');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AutoTargeting', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AutoTargeting'] = $AutoTargeting;
 
         return $this;
     }

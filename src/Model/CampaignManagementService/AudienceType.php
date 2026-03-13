@@ -35,6 +35,8 @@ class AudienceType
 
     public const IMPRESSION_BASED_REMARKETING_LIST = 'ImpressionBasedRemarketingList';
 
+    public const CUSTOM_SEGMENT = 'CustomSegment';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -109,7 +111,8 @@ class AudienceType
             self::SIMILAR_REMARKETING_LIST,
             self::COMBINED_LIST,
             self::CUSTOMER_LIST,
-            self::IMPRESSION_BASED_REMARKETING_LIST
+            self::IMPRESSION_BASED_REMARKETING_LIST,
+            self::CUSTOM_SEGMENT
         ];
     }
 }

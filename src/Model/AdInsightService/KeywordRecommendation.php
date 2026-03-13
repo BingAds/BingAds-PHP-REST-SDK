@@ -33,11 +33,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SuggestedKeyword' => 'string',
-        'SuggestedBid' => 'float',
-        'MonthlySearches' => 'string',
-        'MatchType' => 'int',
-        'Competition' => 'float',
         'AccountId' => 'string',
         'AccountName' => 'string',
         'CampaignId' => 'string',
@@ -56,7 +51,12 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Dismissed' => 'bool'
+        'Dismissed' => 'bool',
+        'SuggestedKeyword' => 'string',
+        'SuggestedBid' => 'float',
+        'MonthlySearches' => 'string',
+        'MatchType' => 'int',
+        'Competition' => 'float'
     ];
 
     /**
@@ -67,11 +67,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SuggestedKeyword' => null,
-        'SuggestedBid' => 'double',
-        'MonthlySearches' => 'int64',
-        'MatchType' => 'int32',
-        'Competition' => 'double',
         'AccountId' => 'int64',
         'AccountName' => null,
         'CampaignId' => 'int64',
@@ -90,7 +85,12 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Dismissed' => null
+        'Dismissed' => null,
+        'SuggestedKeyword' => null,
+        'SuggestedBid' => 'double',
+        'MonthlySearches' => 'int64',
+        'MatchType' => 'int32',
+        'Competition' => 'double'
     ];
 
     /**
@@ -99,11 +99,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SuggestedKeyword' => true,
-        'SuggestedBid' => false,
-        'MonthlySearches' => false,
-        'MatchType' => false,
-        'Competition' => false,
         'AccountId' => false,
         'AccountName' => true,
         'CampaignId' => true,
@@ -122,7 +117,12 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Dismissed' => false
+        'Dismissed' => false,
+        'SuggestedKeyword' => true,
+        'SuggestedBid' => false,
+        'MonthlySearches' => false,
+        'MatchType' => false,
+        'Competition' => false
     ];
 
     /**
@@ -211,11 +211,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SuggestedKeyword' => 'SuggestedKeyword',
-        'SuggestedBid' => 'SuggestedBid',
-        'MonthlySearches' => 'MonthlySearches',
-        'MatchType' => 'MatchType',
-        'Competition' => 'Competition',
         'AccountId' => 'AccountId',
         'AccountName' => 'AccountName',
         'CampaignId' => 'CampaignId',
@@ -234,7 +229,12 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Dismissed' => 'Dismissed'
+        'Dismissed' => 'Dismissed',
+        'SuggestedKeyword' => 'SuggestedKeyword',
+        'SuggestedBid' => 'SuggestedBid',
+        'MonthlySearches' => 'MonthlySearches',
+        'MatchType' => 'MatchType',
+        'Competition' => 'Competition'
     ];
 
     /**
@@ -243,11 +243,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'SuggestedKeyword' => 'setSuggestedKeyword',
-        'SuggestedBid' => 'setSuggestedBid',
-        'MonthlySearches' => 'setMonthlySearches',
-        'MatchType' => 'setMatchType',
-        'Competition' => 'setCompetition',
         'AccountId' => 'setAccountId',
         'AccountName' => 'setAccountName',
         'CampaignId' => 'setCampaignId',
@@ -266,7 +261,12 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Dismissed' => 'setDismissed'
+        'Dismissed' => 'setDismissed',
+        'SuggestedKeyword' => 'setSuggestedKeyword',
+        'SuggestedBid' => 'setSuggestedBid',
+        'MonthlySearches' => 'setMonthlySearches',
+        'MatchType' => 'setMatchType',
+        'Competition' => 'setCompetition'
     ];
 
     /**
@@ -275,11 +275,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'SuggestedKeyword' => 'getSuggestedKeyword',
-        'SuggestedBid' => 'getSuggestedBid',
-        'MonthlySearches' => 'getMonthlySearches',
-        'MatchType' => 'getMatchType',
-        'Competition' => 'getCompetition',
         'AccountId' => 'getAccountId',
         'AccountName' => 'getAccountName',
         'CampaignId' => 'getCampaignId',
@@ -298,7 +293,12 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Dismissed' => 'getDismissed'
+        'Dismissed' => 'getDismissed',
+        'SuggestedKeyword' => 'getSuggestedKeyword',
+        'SuggestedBid' => 'getSuggestedBid',
+        'MonthlySearches' => 'getMonthlySearches',
+        'MatchType' => 'getMatchType',
+        'Competition' => 'getCompetition'
     ];
 
     /**
@@ -358,11 +358,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SuggestedKeyword', $data ?? [], null);
-        $this->setIfExists('SuggestedBid', $data ?? [], null);
-        $this->setIfExists('MonthlySearches', $data ?? [], null);
-        $this->setIfExists('MatchType', $data ?? [], null);
-        $this->setIfExists('Competition', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('AccountName', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
@@ -370,7 +365,7 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('AdGroupName', $data ?? [], null);
         $this->setIfExists('RecommendationType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'KeywordRecommendation');
+        $this->setIfExists('Type', $data ?? [], 'RecommendationBase');
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
         $this->setIfExists('CurrentClicks', $data ?? [], null);
@@ -382,6 +377,11 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
         $this->setIfExists('Dismissed', $data ?? [], null);
+        $this->setIfExists('SuggestedKeyword', $data ?? [], null);
+        $this->setIfExists('SuggestedBid', $data ?? [], null);
+        $this->setIfExists('MonthlySearches', $data ?? [], null);
+        $this->setIfExists('MatchType', $data ?? [], null);
+        $this->setIfExists('Competition', $data ?? [], null);
     }
 
     /**
@@ -425,163 +425,6 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SuggestedKeyword
-     *
-     * @return string|null
-     */
-    public function getSuggestedKeyword()
-    {
-        if (!isset($this->container['SuggestedKeyword']) || is_null($this->container['SuggestedKeyword'])) {
-            return null;
-        }
-        return $this->container['SuggestedKeyword'];
-    }
-
-    /**
-     * Sets SuggestedKeyword
-     *
-     * @param string|null $SuggestedKeyword SuggestedKeyword
-     *
-     * @return self
-     */
-    public function setSuggestedKeyword($SuggestedKeyword)
-    {
-        if (is_null($SuggestedKeyword)) {
-            array_push($this->openAPINullablesSetToNull, 'SuggestedKeyword');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SuggestedKeyword', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SuggestedKeyword'] = $SuggestedKeyword;
-
-        return $this;
-    }
-
-    /**
-     * Gets SuggestedBid
-     *
-     * @return float|null
-     */
-    public function getSuggestedBid()
-    {
-        if (!isset($this->container['SuggestedBid']) || is_null($this->container['SuggestedBid'])) {
-            return null;
-        }
-        return $this->container['SuggestedBid'];
-    }
-
-    /**
-     * Sets SuggestedBid
-     *
-     * @param float|null $SuggestedBid SuggestedBid
-     *
-     * @return self
-     */
-    public function setSuggestedBid($SuggestedBid)
-    {
-        if (is_null($SuggestedBid)) {
-            throw new \InvalidArgumentException('non-nullable SuggestedBid cannot be null');
-        }
-        $this->container['SuggestedBid'] = $SuggestedBid;
-
-        return $this;
-    }
-
-    /**
-     * Gets MonthlySearches
-     *
-     * @return string|null
-     */
-    public function getMonthlySearches()
-    {
-        if (!isset($this->container['MonthlySearches']) || is_null($this->container['MonthlySearches'])) {
-            return null;
-        }
-        return $this->container['MonthlySearches'];
-    }
-
-    /**
-     * Sets MonthlySearches
-     *
-     * @param string|null $MonthlySearches MonthlySearches
-     *
-     * @return self
-     */
-    public function setMonthlySearches($MonthlySearches)
-    {
-        if (is_null($MonthlySearches)) {
-            throw new \InvalidArgumentException('non-nullable MonthlySearches cannot be null');
-        }
-        $this->container['MonthlySearches'] = $MonthlySearches;
-
-        return $this;
-    }
-
-    /**
-     * Gets MatchType
-     *
-     * @return int|null
-     */
-    public function getMatchType()
-    {
-        if (!isset($this->container['MatchType']) || is_null($this->container['MatchType'])) {
-            return null;
-        }
-        return $this->container['MatchType'];
-    }
-
-    /**
-     * Sets MatchType
-     *
-     * @param int|null $MatchType MatchType
-     *
-     * @return self
-     */
-    public function setMatchType($MatchType)
-    {
-        if (is_null($MatchType)) {
-            throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
-        }
-        $this->container['MatchType'] = $MatchType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Competition
-     *
-     * @return float|null
-     */
-    public function getCompetition()
-    {
-        if (!isset($this->container['Competition']) || is_null($this->container['Competition'])) {
-            return null;
-        }
-        return $this->container['Competition'];
-    }
-
-    /**
-     * Sets Competition
-     *
-     * @param float|null $Competition Competition
-     *
-     * @return self
-     */
-    public function setCompetition($Competition)
-    {
-        if (is_null($Competition)) {
-            throw new \InvalidArgumentException('non-nullable Competition cannot be null');
-        }
-        $this->container['Competition'] = $Competition;
-
-        return $this;
-    }
 
     /**
      * Gets AccountId
@@ -1212,6 +1055,163 @@ class KeywordRecommendation extends RecommendationBase implements ModelInterface
             throw new \InvalidArgumentException('non-nullable Dismissed cannot be null');
         }
         $this->container['Dismissed'] = $Dismissed;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedKeyword
+     *
+     * @return string|null
+     */
+    public function getSuggestedKeyword()
+    {
+        if (!isset($this->container['SuggestedKeyword']) || is_null($this->container['SuggestedKeyword'])) {
+            return null;
+        }
+        return $this->container['SuggestedKeyword'];
+    }
+
+    /**
+     * Sets SuggestedKeyword
+     *
+     * @param string|null $SuggestedKeyword SuggestedKeyword
+     *
+     * @return self
+     */
+    public function setSuggestedKeyword($SuggestedKeyword)
+    {
+        if (is_null($SuggestedKeyword)) {
+            array_push($this->openAPINullablesSetToNull, 'SuggestedKeyword');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SuggestedKeyword', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SuggestedKeyword'] = $SuggestedKeyword;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedBid
+     *
+     * @return float|null
+     */
+    public function getSuggestedBid()
+    {
+        if (!isset($this->container['SuggestedBid']) || is_null($this->container['SuggestedBid'])) {
+            return null;
+        }
+        return $this->container['SuggestedBid'];
+    }
+
+    /**
+     * Sets SuggestedBid
+     *
+     * @param float|null $SuggestedBid SuggestedBid
+     *
+     * @return self
+     */
+    public function setSuggestedBid($SuggestedBid)
+    {
+        if (is_null($SuggestedBid)) {
+            throw new \InvalidArgumentException('non-nullable SuggestedBid cannot be null');
+        }
+        $this->container['SuggestedBid'] = $SuggestedBid;
+
+        return $this;
+    }
+
+    /**
+     * Gets MonthlySearches
+     *
+     * @return string|null
+     */
+    public function getMonthlySearches()
+    {
+        if (!isset($this->container['MonthlySearches']) || is_null($this->container['MonthlySearches'])) {
+            return null;
+        }
+        return $this->container['MonthlySearches'];
+    }
+
+    /**
+     * Sets MonthlySearches
+     *
+     * @param string|null $MonthlySearches MonthlySearches
+     *
+     * @return self
+     */
+    public function setMonthlySearches($MonthlySearches)
+    {
+        if (is_null($MonthlySearches)) {
+            throw new \InvalidArgumentException('non-nullable MonthlySearches cannot be null');
+        }
+        $this->container['MonthlySearches'] = $MonthlySearches;
+
+        return $this;
+    }
+
+    /**
+     * Gets MatchType
+     *
+     * @return int|null
+     */
+    public function getMatchType()
+    {
+        if (!isset($this->container['MatchType']) || is_null($this->container['MatchType'])) {
+            return null;
+        }
+        return $this->container['MatchType'];
+    }
+
+    /**
+     * Sets MatchType
+     *
+     * @param int|null $MatchType MatchType
+     *
+     * @return self
+     */
+    public function setMatchType($MatchType)
+    {
+        if (is_null($MatchType)) {
+            throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
+        }
+        $this->container['MatchType'] = $MatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Competition
+     *
+     * @return float|null
+     */
+    public function getCompetition()
+    {
+        if (!isset($this->container['Competition']) || is_null($this->container['Competition'])) {
+            return null;
+        }
+        return $this->container['Competition'];
+    }
+
+    /**
+     * Sets Competition
+     *
+     * @param float|null $Competition Competition
+     *
+     * @return self
+     */
+    public function setCompetition($Competition)
+    {
+        if (is_null($Competition)) {
+            throw new \InvalidArgumentException('non-nullable Competition cannot be null');
+        }
+        $this->container['Competition'] = $Competition;
 
         return $this;
     }

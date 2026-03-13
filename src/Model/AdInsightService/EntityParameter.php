@@ -33,11 +33,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => '\Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType',
         'SuggestedText' => 'string',
         'EntityType' => '\Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType',
         'EntityCount' => 'int',
-        'EntityDetails' => '\Microsoft\MsAds\Rest\Model\AdInsightService\EntityDetail[]',
-        'Type' => 'string'
+        'EntityDetails' => '\Microsoft\MsAds\Rest\Model\AdInsightService\EntityDetail[]'
     ];
 
     /**
@@ -48,11 +48,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'SuggestedText' => null,
         'EntityType' => null,
         'EntityCount' => 'int32',
-        'EntityDetails' => null,
-        'Type' => null
+        'EntityDetails' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => false,
         'SuggestedText' => true,
         'EntityType' => false,
         'EntityCount' => false,
-        'EntityDetails' => true,
-        'Type' => true
+        'EntityDetails' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'SuggestedText' => 'SuggestedText',
         'EntityType' => 'EntityType',
         'EntityCount' => 'EntityCount',
-        'EntityDetails' => 'EntityDetails',
-        'Type' => 'Type'
+        'EntityDetails' => 'EntityDetails'
     ];
 
     /**
@@ -167,11 +167,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'SuggestedText' => 'setSuggestedText',
         'EntityType' => 'setEntityType',
         'EntityCount' => 'setEntityCount',
-        'EntityDetails' => 'setEntityDetails',
-        'Type' => 'setType'
+        'EntityDetails' => 'setEntityDetails'
     ];
 
     /**
@@ -180,11 +180,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'SuggestedText' => 'getSuggestedText',
         'EntityType' => 'getEntityType',
         'EntityCount' => 'getEntityCount',
-        'EntityDetails' => 'getEntityDetails',
-        'Type' => 'getType'
+        'EntityDetails' => 'getEntityDetails'
     ];
 
     /**
@@ -244,11 +244,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SuggestedText', $data ?? [], null);
         $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('EntityCount', $data ?? [], null);
         $this->setIfExists('EntityDetails', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Entities');
     }
 
     /**
@@ -292,6 +292,42 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets SuggestedText
@@ -429,43 +465,6 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
             }
         }
         $this->container['EntityDetails'] = $EntityDetails;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

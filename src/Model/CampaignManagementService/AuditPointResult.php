@@ -36,6 +36,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'Key' => 'string',
         'Severity' => 'string',
         'Description' => 'string',
+        'Timestamp' => 'string',
         'Details' => 'array<string,string>'
     ];
 
@@ -50,6 +51,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'Key' => null,
         'Severity' => null,
         'Description' => null,
+        'Timestamp' => null,
         'Details' => null
     ];
 
@@ -62,6 +64,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'Key' => true,
         'Severity' => true,
         'Description' => true,
+        'Timestamp' => true,
         'Details' => true
     ];
 
@@ -154,6 +157,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'Key' => 'Key',
         'Severity' => 'Severity',
         'Description' => 'Description',
+        'Timestamp' => 'Timestamp',
         'Details' => 'Details'
     ];
 
@@ -166,6 +170,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'Key' => 'setKey',
         'Severity' => 'setSeverity',
         'Description' => 'setDescription',
+        'Timestamp' => 'setTimestamp',
         'Details' => 'setDetails'
     ];
 
@@ -178,6 +183,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'Key' => 'getKey',
         'Severity' => 'getSeverity',
         'Description' => 'getDescription',
+        'Timestamp' => 'getTimestamp',
         'Details' => 'getDetails'
     ];
 
@@ -241,6 +247,7 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Key', $data ?? [], null);
         $this->setIfExists('Severity', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('Timestamp', $data ?? [], null);
         $this->setIfExists('Details', $data ?? [], null);
     }
 
@@ -393,6 +400,43 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets Timestamp
+     *
+     * @return string|null
+     */
+    public function getTimestamp()
+    {
+        if (!isset($this->container['Timestamp']) || is_null($this->container['Timestamp'])) {
+            return null;
+        }
+        return $this->container['Timestamp'];
+    }
+
+    /**
+     * Sets Timestamp
+     *
+     * @param string|null $Timestamp Timestamp
+     *
+     * @return self
+     */
+    public function setTimestamp($Timestamp)
+    {
+        if (is_null($Timestamp)) {
+            array_push($this->openAPINullablesSetToNull, 'Timestamp');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Timestamp', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Timestamp'] = $Timestamp;
 
         return $this;
     }

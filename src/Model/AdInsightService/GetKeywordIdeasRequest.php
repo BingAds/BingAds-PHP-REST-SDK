@@ -35,7 +35,7 @@ class GetKeywordIdeasRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPITypes = [
         'ExpandIdeas' => 'bool',
         'IdeaAttributes' => '\Microsoft\MsAds\Rest\Model\AdInsightService\KeywordIdeaAttribute[]',
-        'SearchParameters' => 'object[]'
+        'SearchParameters' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SearchParameter[]'
     ];
 
     /**
@@ -375,7 +375,7 @@ class GetKeywordIdeasRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets SearchParameters
      *
-     * @return object[]|null
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SearchParameter[]|null
      */
     public function getSearchParameters()
     {
@@ -388,7 +388,7 @@ class GetKeywordIdeasRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets SearchParameters
      *
-     * @param object[]|null $SearchParameters SearchParameters
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SearchParameter[]|null $SearchParameters SearchParameters
      *
      * @return self
      */

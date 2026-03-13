@@ -33,7 +33,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SuggestedAd' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd',
         'AccountId' => 'string',
         'AccountName' => 'string',
         'CampaignId' => 'string',
@@ -52,7 +51,8 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Dismissed' => 'bool'
+        'Dismissed' => 'bool',
+        'SuggestedAd' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd'
     ];
 
     /**
@@ -63,7 +63,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SuggestedAd' => null,
         'AccountId' => 'int64',
         'AccountName' => null,
         'CampaignId' => 'int64',
@@ -82,7 +81,8 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Dismissed' => null
+        'Dismissed' => null,
+        'SuggestedAd' => null
     ];
 
     /**
@@ -91,7 +91,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SuggestedAd' => true,
         'AccountId' => false,
         'AccountName' => true,
         'CampaignId' => true,
@@ -110,7 +109,8 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Dismissed' => false
+        'Dismissed' => false,
+        'SuggestedAd' => true
     ];
 
     /**
@@ -199,7 +199,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SuggestedAd' => 'SuggestedAd',
         'AccountId' => 'AccountId',
         'AccountName' => 'AccountName',
         'CampaignId' => 'CampaignId',
@@ -218,7 +217,8 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Dismissed' => 'Dismissed'
+        'Dismissed' => 'Dismissed',
+        'SuggestedAd' => 'SuggestedAd'
     ];
 
     /**
@@ -227,7 +227,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
      * @var string[]
      */
     protected static array $setters = [
-        'SuggestedAd' => 'setSuggestedAd',
         'AccountId' => 'setAccountId',
         'AccountName' => 'setAccountName',
         'CampaignId' => 'setCampaignId',
@@ -246,7 +245,8 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Dismissed' => 'setDismissed'
+        'Dismissed' => 'setDismissed',
+        'SuggestedAd' => 'setSuggestedAd'
     ];
 
     /**
@@ -255,7 +255,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
      * @var string[]
      */
     protected static array $getters = [
-        'SuggestedAd' => 'getSuggestedAd',
         'AccountId' => 'getAccountId',
         'AccountName' => 'getAccountName',
         'CampaignId' => 'getCampaignId',
@@ -274,7 +273,8 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Dismissed' => 'getDismissed'
+        'Dismissed' => 'getDismissed',
+        'SuggestedAd' => 'getSuggestedAd'
     ];
 
     /**
@@ -334,7 +334,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SuggestedAd', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('AccountName', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
@@ -342,7 +341,7 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('AdGroupName', $data ?? [], null);
         $this->setIfExists('RecommendationType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'ResponsiveSearchAdRecommendation');
+        $this->setIfExists('Type', $data ?? [], 'RecommendationBase');
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
         $this->setIfExists('CurrentClicks', $data ?? [], null);
@@ -354,6 +353,7 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
         $this->setIfExists('Dismissed', $data ?? [], null);
+        $this->setIfExists('SuggestedAd', $data ?? [], null);
     }
 
     /**
@@ -397,43 +397,6 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SuggestedAd
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null
-     */
-    public function getSuggestedAd()
-    {
-        if (!isset($this->container['SuggestedAd']) || is_null($this->container['SuggestedAd'])) {
-            return null;
-        }
-        return $this->container['SuggestedAd'];
-    }
-
-    /**
-     * Sets SuggestedAd
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null $SuggestedAd SuggestedAd
-     *
-     * @return self
-     */
-    public function setSuggestedAd($SuggestedAd)
-    {
-        if (is_null($SuggestedAd)) {
-            array_push($this->openAPINullablesSetToNull, 'SuggestedAd');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SuggestedAd', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SuggestedAd'] = $SuggestedAd;
-
-        return $this;
-    }
 
     /**
      * Gets AccountId
@@ -1064,6 +1027,43 @@ class ResponsiveSearchAdRecommendation extends RecommendationBase implements Mod
             throw new \InvalidArgumentException('non-nullable Dismissed cannot be null');
         }
         $this->container['Dismissed'] = $Dismissed;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedAd
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null
+     */
+    public function getSuggestedAd()
+    {
+        if (!isset($this->container['SuggestedAd']) || is_null($this->container['SuggestedAd'])) {
+            return null;
+        }
+        return $this->container['SuggestedAd'];
+    }
+
+    /**
+     * Sets SuggestedAd
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null $SuggestedAd SuggestedAd
+     *
+     * @return self
+     */
+    public function setSuggestedAd($SuggestedAd)
+    {
+        if (is_null($SuggestedAd)) {
+            array_push($this->openAPINullablesSetToNull, 'SuggestedAd');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SuggestedAd', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SuggestedAd'] = $SuggestedAd;
 
         return $this;
     }

@@ -33,9 +33,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AudienceIds' => 'string[]',
         'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceAdditionalField'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceAdditionalField',
+        'AudienceIds' => 'string[]'
     ];
 
     /**
@@ -46,9 +46,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AudienceIds' => 'int64',
         'Type' => null,
-        'ReturnAdditionalFields' => null
+        'ReturnAdditionalFields' => null,
+        'AudienceIds' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AudienceIds' => true,
         'Type' => false,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => false,
+        'AudienceIds' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AudienceIds' => 'AudienceIds',
         'Type' => 'Type',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
+        'AudienceIds' => 'AudienceIds'
     ];
 
     /**
@@ -159,9 +159,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $setters = [
-        'AudienceIds' => 'setAudienceIds',
         'Type' => 'setType',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
+        'AudienceIds' => 'setAudienceIds'
     ];
 
     /**
@@ -170,9 +170,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $getters = [
-        'AudienceIds' => 'getAudienceIds',
         'Type' => 'getType',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
+        'AudienceIds' => 'getAudienceIds'
     ];
 
     /**
@@ -232,9 +232,9 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AudienceIds', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('AudienceIds', $data ?? [], null);
     }
 
     /**
@@ -278,43 +278,6 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets AudienceIds
-     *
-     * @return string[]|null
-     */
-    public function getAudienceIds()
-    {
-        if (!isset($this->container['AudienceIds']) || is_null($this->container['AudienceIds'])) {
-            return null;
-        }
-        return $this->container['AudienceIds'];
-    }
-
-    /**
-     * Sets AudienceIds
-     *
-     * @param string[]|null $AudienceIds AudienceIds
-     *
-     * @return self
-     */
-    public function setAudienceIds($AudienceIds)
-    {
-        if (is_null($AudienceIds)) {
-            array_push($this->openAPINullablesSetToNull, 'AudienceIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AudienceIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AudienceIds'] = $AudienceIds;
-
-        return $this;
-    }
 
     /**
      * Gets Type
@@ -384,6 +347,43 @@ class GetAudiencesByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+
+        return $this;
+    }
+
+    /**
+     * Gets AudienceIds
+     *
+     * @return string[]|null
+     */
+    public function getAudienceIds()
+    {
+        if (!isset($this->container['AudienceIds']) || is_null($this->container['AudienceIds'])) {
+            return null;
+        }
+        return $this->container['AudienceIds'];
+    }
+
+    /**
+     * Sets AudienceIds
+     *
+     * @param string[]|null $AudienceIds AudienceIds
+     *
+     * @return self
+     */
+    public function setAudienceIds($AudienceIds)
+    {
+        if (is_null($AudienceIds)) {
+            array_push($this->openAPINullablesSetToNull, 'AudienceIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AudienceIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AudienceIds'] = $AudienceIds;
 
         return $this;
     }

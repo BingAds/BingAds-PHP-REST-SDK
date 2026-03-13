@@ -41,6 +41,10 @@ class ProfessionalDemographicsAudienceReportColumn
 
     public const JOB_FUNCTION_NAME = 'JobFunctionName';
 
+    public const JOB_SENIORITY_NAME = 'JobSeniorityName';
+
+    public const CUSTOM_LINKED_IN_NAME = 'CustomLinkedInName';
+
     public const AD_DISTRIBUTION = 'AdDistribution';
 
     public const IMPRESSIONS = 'Impressions';
@@ -173,6 +177,8 @@ class ProfessionalDemographicsAudienceReportColumn
             self::COMPANY_NAME,
             self::INDUSTRY_NAME,
             self::JOB_FUNCTION_NAME,
+            self::JOB_SENIORITY_NAME,
+            self::CUSTOM_LINKED_IN_NAME,
             self::AD_DISTRIBUTION,
             self::IMPRESSIONS,
             self::CLICKS,

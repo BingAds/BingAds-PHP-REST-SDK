@@ -38,6 +38,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EstClick' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfDecimalRoundedResult',
         'EstSpend' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfDecimalRoundedResult',
         'EstCostPerEvent' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfDecimalRoundedResult',
+        'EstCPC' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfDecimalRoundedResult',
         'EstCTR' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfdouble',
         'SuggestedBid' => 'float',
         'SuggestedBudget' => 'float',
@@ -69,6 +70,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EstClick' => null,
         'EstSpend' => null,
         'EstCostPerEvent' => null,
+        'EstCPC' => null,
         'EstCTR' => null,
         'SuggestedBid' => 'double',
         'SuggestedBudget' => 'double',
@@ -98,6 +100,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EstClick' => true,
         'EstSpend' => true,
         'EstCostPerEvent' => true,
+        'EstCPC' => true,
         'EstCTR' => true,
         'SuggestedBid' => true,
         'SuggestedBudget' => true,
@@ -207,6 +210,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EstClick' => 'EstClick',
         'EstSpend' => 'EstSpend',
         'EstCostPerEvent' => 'EstCostPerEvent',
+        'EstCPC' => 'EstCPC',
         'EstCTR' => 'EstCTR',
         'SuggestedBid' => 'SuggestedBid',
         'SuggestedBudget' => 'SuggestedBudget',
@@ -236,6 +240,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EstClick' => 'setEstClick',
         'EstSpend' => 'setEstSpend',
         'EstCostPerEvent' => 'setEstCostPerEvent',
+        'EstCPC' => 'setEstCPC',
         'EstCTR' => 'setEstCTR',
         'SuggestedBid' => 'setSuggestedBid',
         'SuggestedBudget' => 'setSuggestedBudget',
@@ -265,6 +270,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         'EstClick' => 'getEstClick',
         'EstSpend' => 'getEstSpend',
         'EstCostPerEvent' => 'getEstCostPerEvent',
+        'EstCPC' => 'getEstCPC',
         'EstCTR' => 'getEstCTR',
         'SuggestedBid' => 'getSuggestedBid',
         'SuggestedBudget' => 'getSuggestedBudget',
@@ -345,6 +351,7 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
         $this->setIfExists('EstClick', $data ?? [], null);
         $this->setIfExists('EstSpend', $data ?? [], null);
         $this->setIfExists('EstCostPerEvent', $data ?? [], null);
+        $this->setIfExists('EstCPC', $data ?? [], null);
         $this->setIfExists('EstCTR', $data ?? [], null);
         $this->setIfExists('SuggestedBid', $data ?? [], null);
         $this->setIfExists('SuggestedBudget', $data ?? [], null);
@@ -586,6 +593,43 @@ class GetAudienceFullEstimationResponse implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['EstCostPerEvent'] = $EstCostPerEvent;
+
+        return $this;
+    }
+
+    /**
+     * Gets EstCPC
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfDecimalRoundedResult|null
+     */
+    public function getEstCPC()
+    {
+        if (!isset($this->container['EstCPC']) || is_null($this->container['EstCPC'])) {
+            return null;
+        }
+        return $this->container['EstCPC'];
+    }
+
+    /**
+     * Sets EstCPC
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\RangeResultOfDecimalRoundedResult|null $EstCPC EstCPC
+     *
+     * @return self
+     */
+    public function setEstCPC($EstCPC)
+    {
+        if (is_null($EstCPC)) {
+            array_push($this->openAPINullablesSetToNull, 'EstCPC');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EstCPC', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EstCPC'] = $EstCPC;
 
         return $this;
     }

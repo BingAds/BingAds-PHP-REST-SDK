@@ -33,20 +33,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'Name' => 'string',
-        'Description' => 'string',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'ParentId' => 'string',
         'MembershipDuration' => 'int',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
         'SupportedCampaignTypes' => 'string[]',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
+        'Id' => 'string',
+        'Name' => 'string',
+        'Description' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
+        'ParentId' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
-        'TagId' => 'string',
-        'ProductAudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType'
+        'ProductAudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType',
+        'TagId' => 'string'
     ];
 
     /**
@@ -57,20 +57,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
-        'Name' => null,
-        'Description' => null,
         'Scope' => null,
-        'ParentId' => 'int64',
         'MembershipDuration' => 'int32',
-        'Type' => null,
         'SearchSize' => 'int64',
         'AudienceNetworkSize' => 'int64',
         'SupportedCampaignTypes' => null,
         'CustomerShare' => null,
+        'Id' => 'int64',
+        'Name' => null,
+        'Description' => null,
+        'Type' => null,
+        'ParentId' => 'int64',
         'ForwardCompatibilityMap' => null,
-        'TagId' => 'int64',
-        'ProductAudienceType' => null
+        'ProductAudienceType' => null,
+        'TagId' => 'int64'
     ];
 
     /**
@@ -79,20 +79,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
-        'Name' => true,
-        'Description' => true,
         'Scope' => false,
-        'ParentId' => true,
         'MembershipDuration' => true,
-        'Type' => false,
         'SearchSize' => true,
         'AudienceNetworkSize' => true,
         'SupportedCampaignTypes' => true,
         'CustomerShare' => true,
+        'Id' => true,
+        'Name' => true,
+        'Description' => true,
+        'Type' => false,
+        'ParentId' => true,
         'ForwardCompatibilityMap' => true,
-        'TagId' => true,
-        'ProductAudienceType' => false
+        'ProductAudienceType' => false,
+        'TagId' => true
     ];
 
     /**
@@ -181,20 +181,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'Name' => 'Name',
-        'Description' => 'Description',
         'Scope' => 'Scope',
-        'ParentId' => 'ParentId',
         'MembershipDuration' => 'MembershipDuration',
-        'Type' => 'Type',
         'SearchSize' => 'SearchSize',
         'AudienceNetworkSize' => 'AudienceNetworkSize',
         'SupportedCampaignTypes' => 'SupportedCampaignTypes',
         'CustomerShare' => 'CustomerShare',
+        'Id' => 'Id',
+        'Name' => 'Name',
+        'Description' => 'Description',
+        'Type' => 'Type',
+        'ParentId' => 'ParentId',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'TagId' => 'TagId',
-        'ProductAudienceType' => 'ProductAudienceType'
+        'ProductAudienceType' => 'ProductAudienceType',
+        'TagId' => 'TagId'
     ];
 
     /**
@@ -203,20 +203,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'Name' => 'setName',
-        'Description' => 'setDescription',
         'Scope' => 'setScope',
-        'ParentId' => 'setParentId',
         'MembershipDuration' => 'setMembershipDuration',
-        'Type' => 'setType',
         'SearchSize' => 'setSearchSize',
         'AudienceNetworkSize' => 'setAudienceNetworkSize',
         'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
         'CustomerShare' => 'setCustomerShare',
+        'Id' => 'setId',
+        'Name' => 'setName',
+        'Description' => 'setDescription',
+        'Type' => 'setType',
+        'ParentId' => 'setParentId',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'TagId' => 'setTagId',
-        'ProductAudienceType' => 'setProductAudienceType'
+        'ProductAudienceType' => 'setProductAudienceType',
+        'TagId' => 'setTagId'
     ];
 
     /**
@@ -225,20 +225,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'Name' => 'getName',
-        'Description' => 'getDescription',
         'Scope' => 'getScope',
-        'ParentId' => 'getParentId',
         'MembershipDuration' => 'getMembershipDuration',
-        'Type' => 'getType',
         'SearchSize' => 'getSearchSize',
         'AudienceNetworkSize' => 'getAudienceNetworkSize',
         'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
         'CustomerShare' => 'getCustomerShare',
+        'Id' => 'getId',
+        'Name' => 'getName',
+        'Description' => 'getDescription',
+        'Type' => 'getType',
+        'ParentId' => 'getParentId',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'TagId' => 'getTagId',
-        'ProductAudienceType' => 'getProductAudienceType'
+        'ProductAudienceType' => 'getProductAudienceType',
+        'TagId' => 'getTagId'
     ];
 
     /**
@@ -298,20 +298,20 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
         $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('TagId', $data ?? [], null);
         $this->setIfExists('ProductAudienceType', $data ?? [], null);
+        $this->setIfExists('TagId', $data ?? [], null);
     }
 
     /**
@@ -357,117 +357,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets Description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
-            return null;
-        }
-        return $this->container['Description'];
-    }
-
-    /**
-     * Sets Description
-     *
-     * @param string|null $Description Description
-     *
-     * @return self
-     */
-    public function setDescription($Description)
-    {
-        if (is_null($Description)) {
-            array_push($this->openAPINullablesSetToNull, 'Description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Description'] = $Description;
-
-        return $this;
-    }
-
-    /**
      * Gets Scope
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
@@ -499,43 +388,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
             $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
         }
         $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets ParentId
-     *
-     * @return string|null
-     */
-    public function getParentId()
-    {
-        if (!isset($this->container['ParentId']) || is_null($this->container['ParentId'])) {
-            return null;
-        }
-        return $this->container['ParentId'];
-    }
-
-    /**
-     * Sets ParentId
-     *
-     * @param string|null $ParentId ParentId
-     *
-     * @return self
-     */
-    public function setParentId($ParentId)
-    {
-        if (is_null($ParentId)) {
-            array_push($this->openAPINullablesSetToNull, 'ParentId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ParentId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ParentId'] = $ParentId;
 
         return $this;
     }
@@ -573,42 +425,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['MembershipDuration'] = $MembershipDuration;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -762,6 +578,190 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
+        }
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets ParentId
+     *
+     * @return string|null
+     */
+    public function getParentId()
+    {
+        if (!isset($this->container['ParentId']) || is_null($this->container['ParentId'])) {
+            return null;
+        }
+        return $this->container['ParentId'];
+    }
+
+    /**
+     * Sets ParentId
+     *
+     * @param string|null $ParentId ParentId
+     *
+     * @return self
+     */
+    public function setParentId($ParentId)
+    {
+        if (is_null($ParentId)) {
+            array_push($this->openAPINullablesSetToNull, 'ParentId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ParentId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ParentId'] = $ParentId;
+
+        return $this;
+    }
+
+    /**
      * Gets ForwardCompatibilityMap
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
@@ -799,6 +799,42 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Gets ProductAudienceType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null
+     */
+    public function getProductAudienceType()
+    {
+        if (!isset($this->container['ProductAudienceType']) || is_null($this->container['ProductAudienceType'])) {
+            return null;
+        }
+        if ((is_object($this->container['ProductAudienceType']) || is_string($this->container['ProductAudienceType'])) && method_exists($this->container['ProductAudienceType'], 'getValue')) {
+            return $this->container['ProductAudienceType']->getValue();
+        }
+        return $this->container['ProductAudienceType'];
+    }
+
+    /**
+     * Sets ProductAudienceType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null $ProductAudienceType ProductAudienceType
+     *
+     * @return self
+     */
+    public function setProductAudienceType($ProductAudienceType)
+    {
+        if (is_null($ProductAudienceType)) {
+            throw new \InvalidArgumentException('non-nullable ProductAudienceType cannot be null');
+        }
+        if (!$ProductAudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType) {
+            $ProductAudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType($ProductAudienceType);
+        }
+        $this->container['ProductAudienceType'] = $ProductAudienceType;
+
+        return $this;
+    }
+
+    /**
      * Gets TagId
      *
      * @return string|null
@@ -831,42 +867,6 @@ class ProductAudience extends Audience implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['TagId'] = $TagId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ProductAudienceType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null
-     */
-    public function getProductAudienceType()
-    {
-        if (!isset($this->container['ProductAudienceType']) || is_null($this->container['ProductAudienceType'])) {
-            return null;
-        }
-        if ((is_object($this->container['ProductAudienceType']) || is_string($this->container['ProductAudienceType'])) && method_exists($this->container['ProductAudienceType'], 'getValue')) {
-            return $this->container['ProductAudienceType']->getValue();
-        }
-        return $this->container['ProductAudienceType'];
-    }
-
-    /**
-     * Sets ProductAudienceType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType|mixed|null $ProductAudienceType ProductAudienceType
-     *
-     * @return self
-     */
-    public function setProductAudienceType($ProductAudienceType)
-    {
-        if (is_null($ProductAudienceType)) {
-            throw new \InvalidArgumentException('non-nullable ProductAudienceType cannot be null');
-        }
-        if (!$ProductAudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType) {
-            $ProductAudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType($ProductAudienceType);
-        }
-        $this->container['ProductAudienceType'] = $ProductAudienceType;
 
         return $this;
     }

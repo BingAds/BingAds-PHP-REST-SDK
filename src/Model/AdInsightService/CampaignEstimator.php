@@ -35,7 +35,7 @@ class CampaignEstimator implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static array $openAPITypes = [
         'CampaignId' => 'string',
         'DailyBudget' => 'float',
-        'Criteria' => 'object[]',
+        'Criteria' => '\Microsoft\MsAds\Rest\Model\AdInsightService\Criterion[]',
         'AdGroupEstimators' => '\Microsoft\MsAds\Rest\Model\AdInsightService\AdGroupEstimator[]',
         'NegativeKeywords' => '\Microsoft\MsAds\Rest\Model\AdInsightService\NegativeKeyword[]'
     ];
@@ -370,7 +370,7 @@ class CampaignEstimator implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets Criteria
      *
-     * @return object[]|null
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\Criterion[]|null
      */
     public function getCriteria()
     {
@@ -383,7 +383,7 @@ class CampaignEstimator implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets Criteria
      *
-     * @param object[]|null $Criteria Criteria
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\Criterion[]|null $Criteria Criteria
      *
      * @return self
      */

@@ -33,10 +33,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'RecommendedBudget' => 'float',
-        'CurrentBudget' => 'float',
-        'BudgetPoints' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPoint[]',
-        'BudgetType' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType',
         'AccountId' => 'string',
         'AccountName' => 'string',
         'CampaignId' => 'string',
@@ -55,7 +51,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Dismissed' => 'bool'
+        'Dismissed' => 'bool',
+        'RecommendedBudget' => 'float',
+        'CurrentBudget' => 'float',
+        'BudgetPoints' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPoint[]',
+        'BudgetType' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType'
     ];
 
     /**
@@ -66,10 +66,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'RecommendedBudget' => 'double',
-        'CurrentBudget' => 'double',
-        'BudgetPoints' => null,
-        'BudgetType' => null,
         'AccountId' => 'int64',
         'AccountName' => null,
         'CampaignId' => 'int64',
@@ -88,7 +84,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Dismissed' => null
+        'Dismissed' => null,
+        'RecommendedBudget' => 'double',
+        'CurrentBudget' => 'double',
+        'BudgetPoints' => null,
+        'BudgetType' => null
     ];
 
     /**
@@ -97,10 +97,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'RecommendedBudget' => false,
-        'CurrentBudget' => false,
-        'BudgetPoints' => true,
-        'BudgetType' => false,
         'AccountId' => false,
         'AccountName' => true,
         'CampaignId' => true,
@@ -119,7 +115,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Dismissed' => false
+        'Dismissed' => false,
+        'RecommendedBudget' => false,
+        'CurrentBudget' => false,
+        'BudgetPoints' => true,
+        'BudgetType' => false
     ];
 
     /**
@@ -208,10 +208,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'RecommendedBudget' => 'RecommendedBudget',
-        'CurrentBudget' => 'CurrentBudget',
-        'BudgetPoints' => 'BudgetPoints',
-        'BudgetType' => 'BudgetType',
         'AccountId' => 'AccountId',
         'AccountName' => 'AccountName',
         'CampaignId' => 'CampaignId',
@@ -230,7 +226,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Dismissed' => 'Dismissed'
+        'Dismissed' => 'Dismissed',
+        'RecommendedBudget' => 'RecommendedBudget',
+        'CurrentBudget' => 'CurrentBudget',
+        'BudgetPoints' => 'BudgetPoints',
+        'BudgetType' => 'BudgetType'
     ];
 
     /**
@@ -239,10 +239,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'RecommendedBudget' => 'setRecommendedBudget',
-        'CurrentBudget' => 'setCurrentBudget',
-        'BudgetPoints' => 'setBudgetPoints',
-        'BudgetType' => 'setBudgetType',
         'AccountId' => 'setAccountId',
         'AccountName' => 'setAccountName',
         'CampaignId' => 'setCampaignId',
@@ -261,7 +257,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Dismissed' => 'setDismissed'
+        'Dismissed' => 'setDismissed',
+        'RecommendedBudget' => 'setRecommendedBudget',
+        'CurrentBudget' => 'setCurrentBudget',
+        'BudgetPoints' => 'setBudgetPoints',
+        'BudgetType' => 'setBudgetType'
     ];
 
     /**
@@ -270,10 +270,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'RecommendedBudget' => 'getRecommendedBudget',
-        'CurrentBudget' => 'getCurrentBudget',
-        'BudgetPoints' => 'getBudgetPoints',
-        'BudgetType' => 'getBudgetType',
         'AccountId' => 'getAccountId',
         'AccountName' => 'getAccountName',
         'CampaignId' => 'getCampaignId',
@@ -292,7 +288,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Dismissed' => 'getDismissed'
+        'Dismissed' => 'getDismissed',
+        'RecommendedBudget' => 'getRecommendedBudget',
+        'CurrentBudget' => 'getCurrentBudget',
+        'BudgetPoints' => 'getBudgetPoints',
+        'BudgetType' => 'getBudgetType'
     ];
 
     /**
@@ -352,10 +352,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('RecommendedBudget', $data ?? [], null);
-        $this->setIfExists('CurrentBudget', $data ?? [], null);
-        $this->setIfExists('BudgetPoints', $data ?? [], null);
-        $this->setIfExists('BudgetType', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('AccountName', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
@@ -363,7 +359,7 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('AdGroupName', $data ?? [], null);
         $this->setIfExists('RecommendationType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'CampaignBudgetRecommendation');
+        $this->setIfExists('Type', $data ?? [], 'RecommendationBase');
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
         $this->setIfExists('CurrentClicks', $data ?? [], null);
@@ -375,6 +371,10 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
         $this->setIfExists('Dismissed', $data ?? [], null);
+        $this->setIfExists('RecommendedBudget', $data ?? [], null);
+        $this->setIfExists('CurrentBudget', $data ?? [], null);
+        $this->setIfExists('BudgetPoints', $data ?? [], null);
+        $this->setIfExists('BudgetType', $data ?? [], null);
     }
 
     /**
@@ -418,139 +418,6 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets RecommendedBudget
-     *
-     * @return float|null
-     */
-    public function getRecommendedBudget()
-    {
-        if (!isset($this->container['RecommendedBudget']) || is_null($this->container['RecommendedBudget'])) {
-            return null;
-        }
-        return $this->container['RecommendedBudget'];
-    }
-
-    /**
-     * Sets RecommendedBudget
-     *
-     * @param float|null $RecommendedBudget RecommendedBudget
-     *
-     * @return self
-     */
-    public function setRecommendedBudget($RecommendedBudget)
-    {
-        if (is_null($RecommendedBudget)) {
-            throw new \InvalidArgumentException('non-nullable RecommendedBudget cannot be null');
-        }
-        $this->container['RecommendedBudget'] = $RecommendedBudget;
-
-        return $this;
-    }
-
-    /**
-     * Gets CurrentBudget
-     *
-     * @return float|null
-     */
-    public function getCurrentBudget()
-    {
-        if (!isset($this->container['CurrentBudget']) || is_null($this->container['CurrentBudget'])) {
-            return null;
-        }
-        return $this->container['CurrentBudget'];
-    }
-
-    /**
-     * Sets CurrentBudget
-     *
-     * @param float|null $CurrentBudget CurrentBudget
-     *
-     * @return self
-     */
-    public function setCurrentBudget($CurrentBudget)
-    {
-        if (is_null($CurrentBudget)) {
-            throw new \InvalidArgumentException('non-nullable CurrentBudget cannot be null');
-        }
-        $this->container['CurrentBudget'] = $CurrentBudget;
-
-        return $this;
-    }
-
-    /**
-     * Gets BudgetPoints
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPoint[]|null
-     */
-    public function getBudgetPoints()
-    {
-        if (!isset($this->container['BudgetPoints']) || is_null($this->container['BudgetPoints'])) {
-            return null;
-        }
-        return $this->container['BudgetPoints'];
-    }
-
-    /**
-     * Sets BudgetPoints
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPoint[]|null $BudgetPoints BudgetPoints
-     *
-     * @return self
-     */
-    public function setBudgetPoints($BudgetPoints)
-    {
-        if (is_null($BudgetPoints)) {
-            array_push($this->openAPINullablesSetToNull, 'BudgetPoints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BudgetPoints', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BudgetPoints'] = $BudgetPoints;
-
-        return $this;
-    }
-
-    /**
-     * Gets BudgetType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType|mixed|null
-     */
-    public function getBudgetType()
-    {
-        if (!isset($this->container['BudgetType']) || is_null($this->container['BudgetType'])) {
-            return null;
-        }
-        if ((is_object($this->container['BudgetType']) || is_string($this->container['BudgetType'])) && method_exists($this->container['BudgetType'], 'getValue')) {
-            return $this->container['BudgetType']->getValue();
-        }
-        return $this->container['BudgetType'];
-    }
-
-    /**
-     * Sets BudgetType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType|mixed|null $BudgetType BudgetType
-     *
-     * @return self
-     */
-    public function setBudgetType($BudgetType)
-    {
-        if (is_null($BudgetType)) {
-            throw new \InvalidArgumentException('non-nullable BudgetType cannot be null');
-        }
-        if (!$BudgetType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType) {
-            $BudgetType = new \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType($BudgetType);
-        }
-        $this->container['BudgetType'] = $BudgetType;
-
-        return $this;
-    }
 
     /**
      * Gets AccountId
@@ -1181,6 +1048,139 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
             throw new \InvalidArgumentException('non-nullable Dismissed cannot be null');
         }
         $this->container['Dismissed'] = $Dismissed;
+
+        return $this;
+    }
+
+    /**
+     * Gets RecommendedBudget
+     *
+     * @return float|null
+     */
+    public function getRecommendedBudget()
+    {
+        if (!isset($this->container['RecommendedBudget']) || is_null($this->container['RecommendedBudget'])) {
+            return null;
+        }
+        return $this->container['RecommendedBudget'];
+    }
+
+    /**
+     * Sets RecommendedBudget
+     *
+     * @param float|null $RecommendedBudget RecommendedBudget
+     *
+     * @return self
+     */
+    public function setRecommendedBudget($RecommendedBudget)
+    {
+        if (is_null($RecommendedBudget)) {
+            throw new \InvalidArgumentException('non-nullable RecommendedBudget cannot be null');
+        }
+        $this->container['RecommendedBudget'] = $RecommendedBudget;
+
+        return $this;
+    }
+
+    /**
+     * Gets CurrentBudget
+     *
+     * @return float|null
+     */
+    public function getCurrentBudget()
+    {
+        if (!isset($this->container['CurrentBudget']) || is_null($this->container['CurrentBudget'])) {
+            return null;
+        }
+        return $this->container['CurrentBudget'];
+    }
+
+    /**
+     * Sets CurrentBudget
+     *
+     * @param float|null $CurrentBudget CurrentBudget
+     *
+     * @return self
+     */
+    public function setCurrentBudget($CurrentBudget)
+    {
+        if (is_null($CurrentBudget)) {
+            throw new \InvalidArgumentException('non-nullable CurrentBudget cannot be null');
+        }
+        $this->container['CurrentBudget'] = $CurrentBudget;
+
+        return $this;
+    }
+
+    /**
+     * Gets BudgetPoints
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPoint[]|null
+     */
+    public function getBudgetPoints()
+    {
+        if (!isset($this->container['BudgetPoints']) || is_null($this->container['BudgetPoints'])) {
+            return null;
+        }
+        return $this->container['BudgetPoints'];
+    }
+
+    /**
+     * Sets BudgetPoints
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPoint[]|null $BudgetPoints BudgetPoints
+     *
+     * @return self
+     */
+    public function setBudgetPoints($BudgetPoints)
+    {
+        if (is_null($BudgetPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'BudgetPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BudgetPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BudgetPoints'] = $BudgetPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets BudgetType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType|mixed|null
+     */
+    public function getBudgetType()
+    {
+        if (!isset($this->container['BudgetType']) || is_null($this->container['BudgetType'])) {
+            return null;
+        }
+        if ((is_object($this->container['BudgetType']) || is_string($this->container['BudgetType'])) && method_exists($this->container['BudgetType'], 'getValue')) {
+            return $this->container['BudgetType']->getValue();
+        }
+        return $this->container['BudgetType'];
+    }
+
+    /**
+     * Sets BudgetType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType|mixed|null $BudgetType BudgetType
+     *
+     * @return self
+     */
+    public function setBudgetType($BudgetType)
+    {
+        if (is_null($BudgetType)) {
+            throw new \InvalidArgumentException('non-nullable BudgetType cannot be null');
+        }
+        if (!$BudgetType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType) {
+            $BudgetType = new \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType($BudgetType);
+        }
+        $this->container['BudgetType'] = $BudgetType;
 
         return $this;
     }

@@ -299,14 +299,6 @@ class DataExclusion implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['Name']) && (mb_strlen($this->container['Name']) > 255)) {
-            $invalidProperties[] = "invalid value for 'Name', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['Description']) && (mb_strlen($this->container['Description']) > 2048)) {
-            $invalidProperties[] = "invalid value for 'Description', the character length must be smaller than or equal to 2048.";
-        }
-
         return $invalidProperties;
     }
 
@@ -391,10 +383,6 @@ class DataExclusion implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        if (!is_null($Name) && (mb_strlen($Name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $Name when calling DataExclusion., must be smaller than or equal to 255.');
-        }
-
         $this->container['Name'] = $Name;
 
         return $this;
@@ -432,10 +420,6 @@ class DataExclusion implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        if (!is_null($Description) && (mb_strlen($Description) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $Description when calling DataExclusion., must be smaller than or equal to 2048.');
-        }
-
         $this->container['Description'] = $Description;
 
         return $this;

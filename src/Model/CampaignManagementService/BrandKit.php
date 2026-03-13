@@ -41,7 +41,9 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'LandscapeLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
         'Palettes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitPalette[]',
         'Fonts' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]',
-        'BrandVoice' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice'
+        'BrandVoice' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice',
+        'TermExclusions' => 'string[]',
+        'MessagingRestrictions' => 'string[]'
     ];
 
     /**
@@ -60,7 +62,9 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'LandscapeLogos' => null,
         'Palettes' => null,
         'Fonts' => null,
-        'BrandVoice' => null
+        'BrandVoice' => null,
+        'TermExclusions' => null,
+        'MessagingRestrictions' => null
     ];
 
     /**
@@ -77,7 +81,9 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'LandscapeLogos' => true,
         'Palettes' => true,
         'Fonts' => true,
-        'BrandVoice' => true
+        'BrandVoice' => true,
+        'TermExclusions' => true,
+        'MessagingRestrictions' => true
     ];
 
     /**
@@ -174,7 +180,9 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'LandscapeLogos' => 'LandscapeLogos',
         'Palettes' => 'Palettes',
         'Fonts' => 'Fonts',
-        'BrandVoice' => 'BrandVoice'
+        'BrandVoice' => 'BrandVoice',
+        'TermExclusions' => 'TermExclusions',
+        'MessagingRestrictions' => 'MessagingRestrictions'
     ];
 
     /**
@@ -191,7 +199,9 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'LandscapeLogos' => 'setLandscapeLogos',
         'Palettes' => 'setPalettes',
         'Fonts' => 'setFonts',
-        'BrandVoice' => 'setBrandVoice'
+        'BrandVoice' => 'setBrandVoice',
+        'TermExclusions' => 'setTermExclusions',
+        'MessagingRestrictions' => 'setMessagingRestrictions'
     ];
 
     /**
@@ -208,7 +218,9 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         'LandscapeLogos' => 'getLandscapeLogos',
         'Palettes' => 'getPalettes',
         'Fonts' => 'getFonts',
-        'BrandVoice' => 'getBrandVoice'
+        'BrandVoice' => 'getBrandVoice',
+        'TermExclusions' => 'getTermExclusions',
+        'MessagingRestrictions' => 'getMessagingRestrictions'
     ];
 
     /**
@@ -277,6 +289,8 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Palettes', $data ?? [], null);
         $this->setIfExists('Fonts', $data ?? [], null);
         $this->setIfExists('BrandVoice', $data ?? [], null);
+        $this->setIfExists('TermExclusions', $data ?? [], null);
+        $this->setIfExists('MessagingRestrictions', $data ?? [], null);
     }
 
     /**
@@ -650,6 +664,80 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BrandVoice'] = $BrandVoice;
+
+        return $this;
+    }
+
+    /**
+     * Gets TermExclusions
+     *
+     * @return string[]|null
+     */
+    public function getTermExclusions()
+    {
+        if (!isset($this->container['TermExclusions']) || is_null($this->container['TermExclusions'])) {
+            return null;
+        }
+        return $this->container['TermExclusions'];
+    }
+
+    /**
+     * Sets TermExclusions
+     *
+     * @param string[]|null $TermExclusions TermExclusions
+     *
+     * @return self
+     */
+    public function setTermExclusions($TermExclusions)
+    {
+        if (is_null($TermExclusions)) {
+            array_push($this->openAPINullablesSetToNull, 'TermExclusions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TermExclusions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TermExclusions'] = $TermExclusions;
+
+        return $this;
+    }
+
+    /**
+     * Gets MessagingRestrictions
+     *
+     * @return string[]|null
+     */
+    public function getMessagingRestrictions()
+    {
+        if (!isset($this->container['MessagingRestrictions']) || is_null($this->container['MessagingRestrictions'])) {
+            return null;
+        }
+        return $this->container['MessagingRestrictions'];
+    }
+
+    /**
+     * Sets MessagingRestrictions
+     *
+     * @param string[]|null $MessagingRestrictions MessagingRestrictions
+     *
+     * @return self
+     */
+    public function setMessagingRestrictions($MessagingRestrictions)
+    {
+        if (is_null($MessagingRestrictions)) {
+            array_push($this->openAPINullablesSetToNull, 'MessagingRestrictions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MessagingRestrictions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MessagingRestrictions'] = $MessagingRestrictions;
 
         return $this;
     }

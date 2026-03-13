@@ -45,6 +45,8 @@ class AdGroupAdditionalField
 
     public const MAX_CONVERSION_VALUE_WITH_MAX_CPC = 'MaxConversionValueWithMaxCpc';
 
+    public const BASE_DOMAIN = 'BaseDomain';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -124,7 +126,8 @@ class AdGroupAdditionalField
             self::USE_OPTIMIZED_TARGETING,
             self::FREQUENCY_CAP_SETTINGS,
             self::USE_PREDICTIVE_TARGETING,
-            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC
+            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC,
+            self::BASE_DOMAIN
         ];
     }
 }

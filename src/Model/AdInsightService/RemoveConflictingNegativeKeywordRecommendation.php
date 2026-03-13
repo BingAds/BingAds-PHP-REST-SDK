@@ -33,12 +33,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'NegativeKeywordId' => 'string',
-        'NegativeKeyword' => 'string',
-        'NegativeKeywordMatchType' => 'int',
-        'NegativeKeywordSharedListId' => 'string',
-        'NegativeKeywordListName' => 'string',
-        'Source' => 'string',
         'AccountId' => 'string',
         'AccountName' => 'string',
         'CampaignId' => 'string',
@@ -57,7 +51,13 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Dismissed' => 'bool'
+        'Dismissed' => 'bool',
+        'NegativeKeywordId' => 'string',
+        'NegativeKeyword' => 'string',
+        'NegativeKeywordMatchType' => 'int',
+        'NegativeKeywordSharedListId' => 'string',
+        'NegativeKeywordListName' => 'string',
+        'Source' => 'string'
     ];
 
     /**
@@ -68,12 +68,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'NegativeKeywordId' => 'int64',
-        'NegativeKeyword' => null,
-        'NegativeKeywordMatchType' => 'int32',
-        'NegativeKeywordSharedListId' => 'int64',
-        'NegativeKeywordListName' => null,
-        'Source' => null,
         'AccountId' => 'int64',
         'AccountName' => null,
         'CampaignId' => 'int64',
@@ -92,7 +86,13 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Dismissed' => null
+        'Dismissed' => null,
+        'NegativeKeywordId' => 'int64',
+        'NegativeKeyword' => null,
+        'NegativeKeywordMatchType' => 'int32',
+        'NegativeKeywordSharedListId' => 'int64',
+        'NegativeKeywordListName' => null,
+        'Source' => null
     ];
 
     /**
@@ -101,12 +101,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'NegativeKeywordId' => false,
-        'NegativeKeyword' => true,
-        'NegativeKeywordMatchType' => false,
-        'NegativeKeywordSharedListId' => true,
-        'NegativeKeywordListName' => true,
-        'Source' => true,
         'AccountId' => false,
         'AccountName' => true,
         'CampaignId' => true,
@@ -125,7 +119,13 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Dismissed' => false
+        'Dismissed' => false,
+        'NegativeKeywordId' => false,
+        'NegativeKeyword' => true,
+        'NegativeKeywordMatchType' => false,
+        'NegativeKeywordSharedListId' => true,
+        'NegativeKeywordListName' => true,
+        'Source' => true
     ];
 
     /**
@@ -214,12 +214,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'NegativeKeywordId' => 'NegativeKeywordId',
-        'NegativeKeyword' => 'NegativeKeyword',
-        'NegativeKeywordMatchType' => 'NegativeKeywordMatchType',
-        'NegativeKeywordSharedListId' => 'NegativeKeywordSharedListId',
-        'NegativeKeywordListName' => 'NegativeKeywordListName',
-        'Source' => 'Source',
         'AccountId' => 'AccountId',
         'AccountName' => 'AccountName',
         'CampaignId' => 'CampaignId',
@@ -238,7 +232,13 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Dismissed' => 'Dismissed'
+        'Dismissed' => 'Dismissed',
+        'NegativeKeywordId' => 'NegativeKeywordId',
+        'NegativeKeyword' => 'NegativeKeyword',
+        'NegativeKeywordMatchType' => 'NegativeKeywordMatchType',
+        'NegativeKeywordSharedListId' => 'NegativeKeywordSharedListId',
+        'NegativeKeywordListName' => 'NegativeKeywordListName',
+        'Source' => 'Source'
     ];
 
     /**
@@ -247,12 +247,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
      * @var string[]
      */
     protected static array $setters = [
-        'NegativeKeywordId' => 'setNegativeKeywordId',
-        'NegativeKeyword' => 'setNegativeKeyword',
-        'NegativeKeywordMatchType' => 'setNegativeKeywordMatchType',
-        'NegativeKeywordSharedListId' => 'setNegativeKeywordSharedListId',
-        'NegativeKeywordListName' => 'setNegativeKeywordListName',
-        'Source' => 'setSource',
         'AccountId' => 'setAccountId',
         'AccountName' => 'setAccountName',
         'CampaignId' => 'setCampaignId',
@@ -271,7 +265,13 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Dismissed' => 'setDismissed'
+        'Dismissed' => 'setDismissed',
+        'NegativeKeywordId' => 'setNegativeKeywordId',
+        'NegativeKeyword' => 'setNegativeKeyword',
+        'NegativeKeywordMatchType' => 'setNegativeKeywordMatchType',
+        'NegativeKeywordSharedListId' => 'setNegativeKeywordSharedListId',
+        'NegativeKeywordListName' => 'setNegativeKeywordListName',
+        'Source' => 'setSource'
     ];
 
     /**
@@ -280,12 +280,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
      * @var string[]
      */
     protected static array $getters = [
-        'NegativeKeywordId' => 'getNegativeKeywordId',
-        'NegativeKeyword' => 'getNegativeKeyword',
-        'NegativeKeywordMatchType' => 'getNegativeKeywordMatchType',
-        'NegativeKeywordSharedListId' => 'getNegativeKeywordSharedListId',
-        'NegativeKeywordListName' => 'getNegativeKeywordListName',
-        'Source' => 'getSource',
         'AccountId' => 'getAccountId',
         'AccountName' => 'getAccountName',
         'CampaignId' => 'getCampaignId',
@@ -304,7 +298,13 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Dismissed' => 'getDismissed'
+        'Dismissed' => 'getDismissed',
+        'NegativeKeywordId' => 'getNegativeKeywordId',
+        'NegativeKeyword' => 'getNegativeKeyword',
+        'NegativeKeywordMatchType' => 'getNegativeKeywordMatchType',
+        'NegativeKeywordSharedListId' => 'getNegativeKeywordSharedListId',
+        'NegativeKeywordListName' => 'getNegativeKeywordListName',
+        'Source' => 'getSource'
     ];
 
     /**
@@ -364,12 +364,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('NegativeKeywordId', $data ?? [], null);
-        $this->setIfExists('NegativeKeyword', $data ?? [], null);
-        $this->setIfExists('NegativeKeywordMatchType', $data ?? [], null);
-        $this->setIfExists('NegativeKeywordSharedListId', $data ?? [], null);
-        $this->setIfExists('NegativeKeywordListName', $data ?? [], null);
-        $this->setIfExists('Source', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('AccountName', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
@@ -377,7 +371,7 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('AdGroupName', $data ?? [], null);
         $this->setIfExists('RecommendationType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'RemoveConflictingNegativeKeywordRecommendation');
+        $this->setIfExists('Type', $data ?? [], 'RecommendationBase');
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
         $this->setIfExists('CurrentClicks', $data ?? [], null);
@@ -389,6 +383,12 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
         $this->setIfExists('Dismissed', $data ?? [], null);
+        $this->setIfExists('NegativeKeywordId', $data ?? [], null);
+        $this->setIfExists('NegativeKeyword', $data ?? [], null);
+        $this->setIfExists('NegativeKeywordMatchType', $data ?? [], null);
+        $this->setIfExists('NegativeKeywordSharedListId', $data ?? [], null);
+        $this->setIfExists('NegativeKeywordListName', $data ?? [], null);
+        $this->setIfExists('Source', $data ?? [], null);
     }
 
     /**
@@ -432,214 +432,6 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets NegativeKeywordId
-     *
-     * @return string|null
-     */
-    public function getNegativeKeywordId()
-    {
-        if (!isset($this->container['NegativeKeywordId']) || is_null($this->container['NegativeKeywordId'])) {
-            return null;
-        }
-        return $this->container['NegativeKeywordId'];
-    }
-
-    /**
-     * Sets NegativeKeywordId
-     *
-     * @param string|null $NegativeKeywordId NegativeKeywordId
-     *
-     * @return self
-     */
-    public function setNegativeKeywordId($NegativeKeywordId)
-    {
-        if (is_null($NegativeKeywordId)) {
-            throw new \InvalidArgumentException('non-nullable NegativeKeywordId cannot be null');
-        }
-        $this->container['NegativeKeywordId'] = $NegativeKeywordId;
-
-        return $this;
-    }
-
-    /**
-     * Gets NegativeKeyword
-     *
-     * @return string|null
-     */
-    public function getNegativeKeyword()
-    {
-        if (!isset($this->container['NegativeKeyword']) || is_null($this->container['NegativeKeyword'])) {
-            return null;
-        }
-        return $this->container['NegativeKeyword'];
-    }
-
-    /**
-     * Sets NegativeKeyword
-     *
-     * @param string|null $NegativeKeyword NegativeKeyword
-     *
-     * @return self
-     */
-    public function setNegativeKeyword($NegativeKeyword)
-    {
-        if (is_null($NegativeKeyword)) {
-            array_push($this->openAPINullablesSetToNull, 'NegativeKeyword');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NegativeKeyword', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NegativeKeyword'] = $NegativeKeyword;
-
-        return $this;
-    }
-
-    /**
-     * Gets NegativeKeywordMatchType
-     *
-     * @return int|null
-     */
-    public function getNegativeKeywordMatchType()
-    {
-        if (!isset($this->container['NegativeKeywordMatchType']) || is_null($this->container['NegativeKeywordMatchType'])) {
-            return null;
-        }
-        return $this->container['NegativeKeywordMatchType'];
-    }
-
-    /**
-     * Sets NegativeKeywordMatchType
-     *
-     * @param int|null $NegativeKeywordMatchType NegativeKeywordMatchType
-     *
-     * @return self
-     */
-    public function setNegativeKeywordMatchType($NegativeKeywordMatchType)
-    {
-        if (is_null($NegativeKeywordMatchType)) {
-            throw new \InvalidArgumentException('non-nullable NegativeKeywordMatchType cannot be null');
-        }
-        $this->container['NegativeKeywordMatchType'] = $NegativeKeywordMatchType;
-
-        return $this;
-    }
-
-    /**
-     * Gets NegativeKeywordSharedListId
-     *
-     * @return string|null
-     */
-    public function getNegativeKeywordSharedListId()
-    {
-        if (!isset($this->container['NegativeKeywordSharedListId']) || is_null($this->container['NegativeKeywordSharedListId'])) {
-            return null;
-        }
-        return $this->container['NegativeKeywordSharedListId'];
-    }
-
-    /**
-     * Sets NegativeKeywordSharedListId
-     *
-     * @param string|null $NegativeKeywordSharedListId NegativeKeywordSharedListId
-     *
-     * @return self
-     */
-    public function setNegativeKeywordSharedListId($NegativeKeywordSharedListId)
-    {
-        if (is_null($NegativeKeywordSharedListId)) {
-            array_push($this->openAPINullablesSetToNull, 'NegativeKeywordSharedListId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NegativeKeywordSharedListId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NegativeKeywordSharedListId'] = $NegativeKeywordSharedListId;
-
-        return $this;
-    }
-
-    /**
-     * Gets NegativeKeywordListName
-     *
-     * @return string|null
-     */
-    public function getNegativeKeywordListName()
-    {
-        if (!isset($this->container['NegativeKeywordListName']) || is_null($this->container['NegativeKeywordListName'])) {
-            return null;
-        }
-        return $this->container['NegativeKeywordListName'];
-    }
-
-    /**
-     * Sets NegativeKeywordListName
-     *
-     * @param string|null $NegativeKeywordListName NegativeKeywordListName
-     *
-     * @return self
-     */
-    public function setNegativeKeywordListName($NegativeKeywordListName)
-    {
-        if (is_null($NegativeKeywordListName)) {
-            array_push($this->openAPINullablesSetToNull, 'NegativeKeywordListName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NegativeKeywordListName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NegativeKeywordListName'] = $NegativeKeywordListName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Source
-     *
-     * @return string|null
-     */
-    public function getSource()
-    {
-        if (!isset($this->container['Source']) || is_null($this->container['Source'])) {
-            return null;
-        }
-        return $this->container['Source'];
-    }
-
-    /**
-     * Sets Source
-     *
-     * @param string|null $Source Source
-     *
-     * @return self
-     */
-    public function setSource($Source)
-    {
-        if (is_null($Source)) {
-            array_push($this->openAPINullablesSetToNull, 'Source');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Source', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Source'] = $Source;
-
-        return $this;
-    }
 
     /**
      * Gets AccountId
@@ -1270,6 +1062,214 @@ class RemoveConflictingNegativeKeywordRecommendation extends RecommendationBase 
             throw new \InvalidArgumentException('non-nullable Dismissed cannot be null');
         }
         $this->container['Dismissed'] = $Dismissed;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordId
+     *
+     * @return string|null
+     */
+    public function getNegativeKeywordId()
+    {
+        if (!isset($this->container['NegativeKeywordId']) || is_null($this->container['NegativeKeywordId'])) {
+            return null;
+        }
+        return $this->container['NegativeKeywordId'];
+    }
+
+    /**
+     * Sets NegativeKeywordId
+     *
+     * @param string|null $NegativeKeywordId NegativeKeywordId
+     *
+     * @return self
+     */
+    public function setNegativeKeywordId($NegativeKeywordId)
+    {
+        if (is_null($NegativeKeywordId)) {
+            throw new \InvalidArgumentException('non-nullable NegativeKeywordId cannot be null');
+        }
+        $this->container['NegativeKeywordId'] = $NegativeKeywordId;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeyword
+     *
+     * @return string|null
+     */
+    public function getNegativeKeyword()
+    {
+        if (!isset($this->container['NegativeKeyword']) || is_null($this->container['NegativeKeyword'])) {
+            return null;
+        }
+        return $this->container['NegativeKeyword'];
+    }
+
+    /**
+     * Sets NegativeKeyword
+     *
+     * @param string|null $NegativeKeyword NegativeKeyword
+     *
+     * @return self
+     */
+    public function setNegativeKeyword($NegativeKeyword)
+    {
+        if (is_null($NegativeKeyword)) {
+            array_push($this->openAPINullablesSetToNull, 'NegativeKeyword');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NegativeKeyword', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NegativeKeyword'] = $NegativeKeyword;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordMatchType
+     *
+     * @return int|null
+     */
+    public function getNegativeKeywordMatchType()
+    {
+        if (!isset($this->container['NegativeKeywordMatchType']) || is_null($this->container['NegativeKeywordMatchType'])) {
+            return null;
+        }
+        return $this->container['NegativeKeywordMatchType'];
+    }
+
+    /**
+     * Sets NegativeKeywordMatchType
+     *
+     * @param int|null $NegativeKeywordMatchType NegativeKeywordMatchType
+     *
+     * @return self
+     */
+    public function setNegativeKeywordMatchType($NegativeKeywordMatchType)
+    {
+        if (is_null($NegativeKeywordMatchType)) {
+            throw new \InvalidArgumentException('non-nullable NegativeKeywordMatchType cannot be null');
+        }
+        $this->container['NegativeKeywordMatchType'] = $NegativeKeywordMatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordSharedListId
+     *
+     * @return string|null
+     */
+    public function getNegativeKeywordSharedListId()
+    {
+        if (!isset($this->container['NegativeKeywordSharedListId']) || is_null($this->container['NegativeKeywordSharedListId'])) {
+            return null;
+        }
+        return $this->container['NegativeKeywordSharedListId'];
+    }
+
+    /**
+     * Sets NegativeKeywordSharedListId
+     *
+     * @param string|null $NegativeKeywordSharedListId NegativeKeywordSharedListId
+     *
+     * @return self
+     */
+    public function setNegativeKeywordSharedListId($NegativeKeywordSharedListId)
+    {
+        if (is_null($NegativeKeywordSharedListId)) {
+            array_push($this->openAPINullablesSetToNull, 'NegativeKeywordSharedListId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NegativeKeywordSharedListId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NegativeKeywordSharedListId'] = $NegativeKeywordSharedListId;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordListName
+     *
+     * @return string|null
+     */
+    public function getNegativeKeywordListName()
+    {
+        if (!isset($this->container['NegativeKeywordListName']) || is_null($this->container['NegativeKeywordListName'])) {
+            return null;
+        }
+        return $this->container['NegativeKeywordListName'];
+    }
+
+    /**
+     * Sets NegativeKeywordListName
+     *
+     * @param string|null $NegativeKeywordListName NegativeKeywordListName
+     *
+     * @return self
+     */
+    public function setNegativeKeywordListName($NegativeKeywordListName)
+    {
+        if (is_null($NegativeKeywordListName)) {
+            array_push($this->openAPINullablesSetToNull, 'NegativeKeywordListName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NegativeKeywordListName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NegativeKeywordListName'] = $NegativeKeywordListName;
+
+        return $this;
+    }
+
+    /**
+     * Gets Source
+     *
+     * @return string|null
+     */
+    public function getSource()
+    {
+        if (!isset($this->container['Source']) || is_null($this->container['Source'])) {
+            return null;
+        }
+        return $this->container['Source'];
+    }
+
+    /**
+     * Sets Source
+     *
+     * @param string|null $Source Source
+     *
+     * @return self
+     */
+    public function setSource($Source)
+    {
+        if (is_null($Source)) {
+            array_push($this->openAPINullablesSetToNull, 'Source');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Source', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Source'] = $Source;
 
         return $this;
     }

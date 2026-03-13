@@ -83,6 +83,8 @@ class AdGroupCriterionType
 
     public const TOPIC = 'Topic';
 
+    public const CUSTOM_SEGMENT = 'CustomSegment';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -181,7 +183,8 @@ class AdGroupCriterionType
             self::CUSTOMER_LIST,
             self::IMPRESSION_BASED_REMARKETING_LIST,
             self::PLACEMENT,
-            self::TOPIC
+            self::TOPIC,
+            self::CUSTOM_SEGMENT
         ];
     }
 }

@@ -31,6 +31,8 @@ class AssetGroupAdditionalField
 
     public const URL_CUSTOM_PARAMETERS = 'UrlCustomParameters';
 
+    public const CROPPING_TYPE = 'CroppingType';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -103,7 +105,8 @@ class AssetGroupAdditionalField
             self::ASSET_GROUP_URL_TARGETS,
             self::TRACKING_URL_TEMPLATE,
             self::FINAL_URL_SUFFIX,
-            self::URL_CUSTOM_PARAMETERS
+            self::URL_CUSTOM_PARAMETERS,
+            self::CROPPING_TYPE
         ];
     }
 }

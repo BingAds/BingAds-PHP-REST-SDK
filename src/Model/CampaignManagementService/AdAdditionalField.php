@@ -31,6 +31,8 @@ class AdAdditionalField
 
     public const AD_SUB_TYPE = 'AdSubType';
 
+    public const CROPPING_TYPE = 'CroppingType';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -103,7 +105,8 @@ class AdAdditionalField
             self::VIDEOS,
             self::LONG_HEADLINES,
             self::IMAGE_TARGET_DIMENSION,
-            self::AD_SUB_TYPE
+            self::AD_SUB_TYPE,
+            self::CROPPING_TYPE
         ];
     }
 }

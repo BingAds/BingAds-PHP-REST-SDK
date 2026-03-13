@@ -33,7 +33,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus',
         'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
@@ -55,6 +54,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus',
         'AssetGroupUrlTargets' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]',
+        'Id' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -66,7 +66,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'Status' => null,
         'StartDate' => null,
@@ -88,6 +87,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'UrlCustomParameters' => null,
         'EditorialStatus' => null,
         'AssetGroupUrlTargets' => null,
+        'Id' => 'int64',
         'ForwardCompatibilityMap' => null
     ];
 
@@ -97,7 +97,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'Status' => false,
         'StartDate' => true,
@@ -119,6 +118,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'UrlCustomParameters' => true,
         'EditorialStatus' => false,
         'AssetGroupUrlTargets' => true,
+        'Id' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -208,7 +208,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
         'StartDate' => 'StartDate',
@@ -230,6 +229,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'UrlCustomParameters' => 'UrlCustomParameters',
         'EditorialStatus' => 'EditorialStatus',
         'AssetGroupUrlTargets' => 'AssetGroupUrlTargets',
+        'Id' => 'Id',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -239,7 +239,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
         'StartDate' => 'setStartDate',
@@ -261,6 +260,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'UrlCustomParameters' => 'setUrlCustomParameters',
         'EditorialStatus' => 'setEditorialStatus',
         'AssetGroupUrlTargets' => 'setAssetGroupUrlTargets',
+        'Id' => 'setId',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -270,7 +270,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
         'StartDate' => 'getStartDate',
@@ -292,6 +291,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'UrlCustomParameters' => 'getUrlCustomParameters',
         'EditorialStatus' => 'getEditorialStatus',
         'AssetGroupUrlTargets' => 'getAssetGroupUrlTargets',
+        'Id' => 'getId',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -352,7 +352,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('StartDate', $data ?? [], null);
@@ -374,6 +373,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('AssetGroupUrlTargets', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -418,43 +418,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -1226,6 +1189,43 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AssetGroupUrlTargets'] = $AssetGroupUrlTargets;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }
