@@ -18,7 +18,17 @@ use Microsoft\MsAds\Rest\ModelInterface;
 
 class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = 'Type';
+
+    /**
+     * Associative array for mapping discriminator values to model class names
+     *
+     * @var string[]
+     */
+    public const MAPPINGS = [
+        'Recommendation' => 'Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationBase',
+        'ResponsiveSearchAdsRecommendation' => 'Microsoft\MsAds\Rest\Model\AdInsightService\ResponsiveSearchAdsRecommendation',
+    ];
 
     /**
       * The original name of the model.
@@ -47,7 +57,8 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'SuggestedAd' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd'
     ];
 
     /**
@@ -72,7 +83,8 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Type' => null
+        'Type' => null,
+        'SuggestedAd' => null
     ];
 
     /**
@@ -95,7 +107,8 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Type' => true
+        'Type' => true,
+        'SuggestedAd' => true
     ];
 
     /**
@@ -198,7 +211,8 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'SuggestedAd' => 'SuggestedAd'
     ];
 
     /**
@@ -221,7 +235,8 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'SuggestedAd' => 'setSuggestedAd'
     ];
 
     /**
@@ -244,7 +259,8 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'SuggestedAd' => 'getSuggestedAd'
     ];
 
     /**
@@ -318,7 +334,11 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('EstimatedIncreaseInImpressions', $data ?? [], null);
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], 'Recommendation');
+        $this->setIfExists('SuggestedAd', $data ?? [], null);
+
+        // Initialize discriminator property with the model name.
+        $this->container['Type'] = static::$openAPIModelName;
     }
 
     /**
@@ -851,6 +871,43 @@ class Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedAd
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null
+     */
+    public function getSuggestedAd()
+    {
+        if (!isset($this->container['SuggestedAd']) || is_null($this->container['SuggestedAd'])) {
+            return null;
+        }
+        return $this->container['SuggestedAd'];
+    }
+
+    /**
+     * Sets SuggestedAd
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SuggestedResponsiveSearchAd|null $SuggestedAd SuggestedAd
+     *
+     * @return self
+     */
+    public function setSuggestedAd($SuggestedAd)
+    {
+        if (is_null($SuggestedAd)) {
+            array_push($this->openAPINullablesSetToNull, 'SuggestedAd');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SuggestedAd', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SuggestedAd'] = $SuggestedAd;
 
         return $this;
     }

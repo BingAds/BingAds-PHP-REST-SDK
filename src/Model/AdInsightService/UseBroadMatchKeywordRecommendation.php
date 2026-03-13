@@ -33,13 +33,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'KeywordOrderItemId' => 'string',
-        'Keyword' => 'string',
-        'CurrentMatchType' => 'int',
-        'SuggestedMatchType' => 'int',
-        'SuggestedBid' => 'float',
-        'CurrentStatus' => 'string',
-        'SuggestedStatus' => 'string',
         'AccountId' => 'string',
         'AccountName' => 'string',
         'CampaignId' => 'string',
@@ -58,7 +51,14 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Dismissed' => 'bool'
+        'Dismissed' => 'bool',
+        'KeywordOrderItemId' => 'string',
+        'Keyword' => 'string',
+        'CurrentMatchType' => 'int',
+        'SuggestedMatchType' => 'int',
+        'SuggestedBid' => 'float',
+        'CurrentStatus' => 'string',
+        'SuggestedStatus' => 'string'
     ];
 
     /**
@@ -69,13 +69,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'KeywordOrderItemId' => 'int64',
-        'Keyword' => null,
-        'CurrentMatchType' => 'int32',
-        'SuggestedMatchType' => 'int32',
-        'SuggestedBid' => 'double',
-        'CurrentStatus' => null,
-        'SuggestedStatus' => null,
         'AccountId' => 'int64',
         'AccountName' => null,
         'CampaignId' => 'int64',
@@ -94,7 +87,14 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Dismissed' => null
+        'Dismissed' => null,
+        'KeywordOrderItemId' => 'int64',
+        'Keyword' => null,
+        'CurrentMatchType' => 'int32',
+        'SuggestedMatchType' => 'int32',
+        'SuggestedBid' => 'double',
+        'CurrentStatus' => null,
+        'SuggestedStatus' => null
     ];
 
     /**
@@ -103,13 +103,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'KeywordOrderItemId' => false,
-        'Keyword' => true,
-        'CurrentMatchType' => false,
-        'SuggestedMatchType' => false,
-        'SuggestedBid' => false,
-        'CurrentStatus' => true,
-        'SuggestedStatus' => true,
         'AccountId' => false,
         'AccountName' => true,
         'CampaignId' => true,
@@ -128,7 +121,14 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Dismissed' => false
+        'Dismissed' => false,
+        'KeywordOrderItemId' => false,
+        'Keyword' => true,
+        'CurrentMatchType' => false,
+        'SuggestedMatchType' => false,
+        'SuggestedBid' => false,
+        'CurrentStatus' => true,
+        'SuggestedStatus' => true
     ];
 
     /**
@@ -217,13 +217,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
      * @var string[]
      */
     protected static array $attributeMap = [
-        'KeywordOrderItemId' => 'KeywordOrderItemId',
-        'Keyword' => 'Keyword',
-        'CurrentMatchType' => 'CurrentMatchType',
-        'SuggestedMatchType' => 'SuggestedMatchType',
-        'SuggestedBid' => 'SuggestedBid',
-        'CurrentStatus' => 'CurrentStatus',
-        'SuggestedStatus' => 'SuggestedStatus',
         'AccountId' => 'AccountId',
         'AccountName' => 'AccountName',
         'CampaignId' => 'CampaignId',
@@ -242,7 +235,14 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Dismissed' => 'Dismissed'
+        'Dismissed' => 'Dismissed',
+        'KeywordOrderItemId' => 'KeywordOrderItemId',
+        'Keyword' => 'Keyword',
+        'CurrentMatchType' => 'CurrentMatchType',
+        'SuggestedMatchType' => 'SuggestedMatchType',
+        'SuggestedBid' => 'SuggestedBid',
+        'CurrentStatus' => 'CurrentStatus',
+        'SuggestedStatus' => 'SuggestedStatus'
     ];
 
     /**
@@ -251,13 +251,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
      * @var string[]
      */
     protected static array $setters = [
-        'KeywordOrderItemId' => 'setKeywordOrderItemId',
-        'Keyword' => 'setKeyword',
-        'CurrentMatchType' => 'setCurrentMatchType',
-        'SuggestedMatchType' => 'setSuggestedMatchType',
-        'SuggestedBid' => 'setSuggestedBid',
-        'CurrentStatus' => 'setCurrentStatus',
-        'SuggestedStatus' => 'setSuggestedStatus',
         'AccountId' => 'setAccountId',
         'AccountName' => 'setAccountName',
         'CampaignId' => 'setCampaignId',
@@ -276,7 +269,14 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Dismissed' => 'setDismissed'
+        'Dismissed' => 'setDismissed',
+        'KeywordOrderItemId' => 'setKeywordOrderItemId',
+        'Keyword' => 'setKeyword',
+        'CurrentMatchType' => 'setCurrentMatchType',
+        'SuggestedMatchType' => 'setSuggestedMatchType',
+        'SuggestedBid' => 'setSuggestedBid',
+        'CurrentStatus' => 'setCurrentStatus',
+        'SuggestedStatus' => 'setSuggestedStatus'
     ];
 
     /**
@@ -285,13 +285,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
      * @var string[]
      */
     protected static array $getters = [
-        'KeywordOrderItemId' => 'getKeywordOrderItemId',
-        'Keyword' => 'getKeyword',
-        'CurrentMatchType' => 'getCurrentMatchType',
-        'SuggestedMatchType' => 'getSuggestedMatchType',
-        'SuggestedBid' => 'getSuggestedBid',
-        'CurrentStatus' => 'getCurrentStatus',
-        'SuggestedStatus' => 'getSuggestedStatus',
         'AccountId' => 'getAccountId',
         'AccountName' => 'getAccountName',
         'CampaignId' => 'getCampaignId',
@@ -310,7 +303,14 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Dismissed' => 'getDismissed'
+        'Dismissed' => 'getDismissed',
+        'KeywordOrderItemId' => 'getKeywordOrderItemId',
+        'Keyword' => 'getKeyword',
+        'CurrentMatchType' => 'getCurrentMatchType',
+        'SuggestedMatchType' => 'getSuggestedMatchType',
+        'SuggestedBid' => 'getSuggestedBid',
+        'CurrentStatus' => 'getCurrentStatus',
+        'SuggestedStatus' => 'getSuggestedStatus'
     ];
 
     /**
@@ -370,13 +370,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('KeywordOrderItemId', $data ?? [], null);
-        $this->setIfExists('Keyword', $data ?? [], null);
-        $this->setIfExists('CurrentMatchType', $data ?? [], null);
-        $this->setIfExists('SuggestedMatchType', $data ?? [], null);
-        $this->setIfExists('SuggestedBid', $data ?? [], null);
-        $this->setIfExists('CurrentStatus', $data ?? [], null);
-        $this->setIfExists('SuggestedStatus', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
         $this->setIfExists('AccountName', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
@@ -384,7 +377,7 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('AdGroupName', $data ?? [], null);
         $this->setIfExists('RecommendationType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'UseBroadMatchKeywordRecommendation');
+        $this->setIfExists('Type', $data ?? [], 'RecommendationBase');
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
         $this->setIfExists('CurrentClicks', $data ?? [], null);
@@ -396,6 +389,13 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
         $this->setIfExists('Dismissed', $data ?? [], null);
+        $this->setIfExists('KeywordOrderItemId', $data ?? [], null);
+        $this->setIfExists('Keyword', $data ?? [], null);
+        $this->setIfExists('CurrentMatchType', $data ?? [], null);
+        $this->setIfExists('SuggestedMatchType', $data ?? [], null);
+        $this->setIfExists('SuggestedBid', $data ?? [], null);
+        $this->setIfExists('CurrentStatus', $data ?? [], null);
+        $this->setIfExists('SuggestedStatus', $data ?? [], null);
     }
 
     /**
@@ -439,237 +439,6 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets KeywordOrderItemId
-     *
-     * @return string|null
-     */
-    public function getKeywordOrderItemId()
-    {
-        if (!isset($this->container['KeywordOrderItemId']) || is_null($this->container['KeywordOrderItemId'])) {
-            return null;
-        }
-        return $this->container['KeywordOrderItemId'];
-    }
-
-    /**
-     * Sets KeywordOrderItemId
-     *
-     * @param string|null $KeywordOrderItemId KeywordOrderItemId
-     *
-     * @return self
-     */
-    public function setKeywordOrderItemId($KeywordOrderItemId)
-    {
-        if (is_null($KeywordOrderItemId)) {
-            throw new \InvalidArgumentException('non-nullable KeywordOrderItemId cannot be null');
-        }
-        $this->container['KeywordOrderItemId'] = $KeywordOrderItemId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Keyword
-     *
-     * @return string|null
-     */
-    public function getKeyword()
-    {
-        if (!isset($this->container['Keyword']) || is_null($this->container['Keyword'])) {
-            return null;
-        }
-        return $this->container['Keyword'];
-    }
-
-    /**
-     * Sets Keyword
-     *
-     * @param string|null $Keyword Keyword
-     *
-     * @return self
-     */
-    public function setKeyword($Keyword)
-    {
-        if (is_null($Keyword)) {
-            array_push($this->openAPINullablesSetToNull, 'Keyword');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Keyword', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Keyword'] = $Keyword;
-
-        return $this;
-    }
-
-    /**
-     * Gets CurrentMatchType
-     *
-     * @return int|null
-     */
-    public function getCurrentMatchType()
-    {
-        if (!isset($this->container['CurrentMatchType']) || is_null($this->container['CurrentMatchType'])) {
-            return null;
-        }
-        return $this->container['CurrentMatchType'];
-    }
-
-    /**
-     * Sets CurrentMatchType
-     *
-     * @param int|null $CurrentMatchType CurrentMatchType
-     *
-     * @return self
-     */
-    public function setCurrentMatchType($CurrentMatchType)
-    {
-        if (is_null($CurrentMatchType)) {
-            throw new \InvalidArgumentException('non-nullable CurrentMatchType cannot be null');
-        }
-        $this->container['CurrentMatchType'] = $CurrentMatchType;
-
-        return $this;
-    }
-
-    /**
-     * Gets SuggestedMatchType
-     *
-     * @return int|null
-     */
-    public function getSuggestedMatchType()
-    {
-        if (!isset($this->container['SuggestedMatchType']) || is_null($this->container['SuggestedMatchType'])) {
-            return null;
-        }
-        return $this->container['SuggestedMatchType'];
-    }
-
-    /**
-     * Sets SuggestedMatchType
-     *
-     * @param int|null $SuggestedMatchType SuggestedMatchType
-     *
-     * @return self
-     */
-    public function setSuggestedMatchType($SuggestedMatchType)
-    {
-        if (is_null($SuggestedMatchType)) {
-            throw new \InvalidArgumentException('non-nullable SuggestedMatchType cannot be null');
-        }
-        $this->container['SuggestedMatchType'] = $SuggestedMatchType;
-
-        return $this;
-    }
-
-    /**
-     * Gets SuggestedBid
-     *
-     * @return float|null
-     */
-    public function getSuggestedBid()
-    {
-        if (!isset($this->container['SuggestedBid']) || is_null($this->container['SuggestedBid'])) {
-            return null;
-        }
-        return $this->container['SuggestedBid'];
-    }
-
-    /**
-     * Sets SuggestedBid
-     *
-     * @param float|null $SuggestedBid SuggestedBid
-     *
-     * @return self
-     */
-    public function setSuggestedBid($SuggestedBid)
-    {
-        if (is_null($SuggestedBid)) {
-            throw new \InvalidArgumentException('non-nullable SuggestedBid cannot be null');
-        }
-        $this->container['SuggestedBid'] = $SuggestedBid;
-
-        return $this;
-    }
-
-    /**
-     * Gets CurrentStatus
-     *
-     * @return string|null
-     */
-    public function getCurrentStatus()
-    {
-        if (!isset($this->container['CurrentStatus']) || is_null($this->container['CurrentStatus'])) {
-            return null;
-        }
-        return $this->container['CurrentStatus'];
-    }
-
-    /**
-     * Sets CurrentStatus
-     *
-     * @param string|null $CurrentStatus CurrentStatus
-     *
-     * @return self
-     */
-    public function setCurrentStatus($CurrentStatus)
-    {
-        if (is_null($CurrentStatus)) {
-            array_push($this->openAPINullablesSetToNull, 'CurrentStatus');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CurrentStatus', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CurrentStatus'] = $CurrentStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets SuggestedStatus
-     *
-     * @return string|null
-     */
-    public function getSuggestedStatus()
-    {
-        if (!isset($this->container['SuggestedStatus']) || is_null($this->container['SuggestedStatus'])) {
-            return null;
-        }
-        return $this->container['SuggestedStatus'];
-    }
-
-    /**
-     * Sets SuggestedStatus
-     *
-     * @param string|null $SuggestedStatus SuggestedStatus
-     *
-     * @return self
-     */
-    public function setSuggestedStatus($SuggestedStatus)
-    {
-        if (is_null($SuggestedStatus)) {
-            array_push($this->openAPINullablesSetToNull, 'SuggestedStatus');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SuggestedStatus', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SuggestedStatus'] = $SuggestedStatus;
-
-        return $this;
-    }
 
     /**
      * Gets AccountId
@@ -1300,6 +1069,237 @@ class UseBroadMatchKeywordRecommendation extends RecommendationBase implements M
             throw new \InvalidArgumentException('non-nullable Dismissed cannot be null');
         }
         $this->container['Dismissed'] = $Dismissed;
+
+        return $this;
+    }
+
+    /**
+     * Gets KeywordOrderItemId
+     *
+     * @return string|null
+     */
+    public function getKeywordOrderItemId()
+    {
+        if (!isset($this->container['KeywordOrderItemId']) || is_null($this->container['KeywordOrderItemId'])) {
+            return null;
+        }
+        return $this->container['KeywordOrderItemId'];
+    }
+
+    /**
+     * Sets KeywordOrderItemId
+     *
+     * @param string|null $KeywordOrderItemId KeywordOrderItemId
+     *
+     * @return self
+     */
+    public function setKeywordOrderItemId($KeywordOrderItemId)
+    {
+        if (is_null($KeywordOrderItemId)) {
+            throw new \InvalidArgumentException('non-nullable KeywordOrderItemId cannot be null');
+        }
+        $this->container['KeywordOrderItemId'] = $KeywordOrderItemId;
+
+        return $this;
+    }
+
+    /**
+     * Gets Keyword
+     *
+     * @return string|null
+     */
+    public function getKeyword()
+    {
+        if (!isset($this->container['Keyword']) || is_null($this->container['Keyword'])) {
+            return null;
+        }
+        return $this->container['Keyword'];
+    }
+
+    /**
+     * Sets Keyword
+     *
+     * @param string|null $Keyword Keyword
+     *
+     * @return self
+     */
+    public function setKeyword($Keyword)
+    {
+        if (is_null($Keyword)) {
+            array_push($this->openAPINullablesSetToNull, 'Keyword');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Keyword', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Keyword'] = $Keyword;
+
+        return $this;
+    }
+
+    /**
+     * Gets CurrentMatchType
+     *
+     * @return int|null
+     */
+    public function getCurrentMatchType()
+    {
+        if (!isset($this->container['CurrentMatchType']) || is_null($this->container['CurrentMatchType'])) {
+            return null;
+        }
+        return $this->container['CurrentMatchType'];
+    }
+
+    /**
+     * Sets CurrentMatchType
+     *
+     * @param int|null $CurrentMatchType CurrentMatchType
+     *
+     * @return self
+     */
+    public function setCurrentMatchType($CurrentMatchType)
+    {
+        if (is_null($CurrentMatchType)) {
+            throw new \InvalidArgumentException('non-nullable CurrentMatchType cannot be null');
+        }
+        $this->container['CurrentMatchType'] = $CurrentMatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedMatchType
+     *
+     * @return int|null
+     */
+    public function getSuggestedMatchType()
+    {
+        if (!isset($this->container['SuggestedMatchType']) || is_null($this->container['SuggestedMatchType'])) {
+            return null;
+        }
+        return $this->container['SuggestedMatchType'];
+    }
+
+    /**
+     * Sets SuggestedMatchType
+     *
+     * @param int|null $SuggestedMatchType SuggestedMatchType
+     *
+     * @return self
+     */
+    public function setSuggestedMatchType($SuggestedMatchType)
+    {
+        if (is_null($SuggestedMatchType)) {
+            throw new \InvalidArgumentException('non-nullable SuggestedMatchType cannot be null');
+        }
+        $this->container['SuggestedMatchType'] = $SuggestedMatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedBid
+     *
+     * @return float|null
+     */
+    public function getSuggestedBid()
+    {
+        if (!isset($this->container['SuggestedBid']) || is_null($this->container['SuggestedBid'])) {
+            return null;
+        }
+        return $this->container['SuggestedBid'];
+    }
+
+    /**
+     * Sets SuggestedBid
+     *
+     * @param float|null $SuggestedBid SuggestedBid
+     *
+     * @return self
+     */
+    public function setSuggestedBid($SuggestedBid)
+    {
+        if (is_null($SuggestedBid)) {
+            throw new \InvalidArgumentException('non-nullable SuggestedBid cannot be null');
+        }
+        $this->container['SuggestedBid'] = $SuggestedBid;
+
+        return $this;
+    }
+
+    /**
+     * Gets CurrentStatus
+     *
+     * @return string|null
+     */
+    public function getCurrentStatus()
+    {
+        if (!isset($this->container['CurrentStatus']) || is_null($this->container['CurrentStatus'])) {
+            return null;
+        }
+        return $this->container['CurrentStatus'];
+    }
+
+    /**
+     * Sets CurrentStatus
+     *
+     * @param string|null $CurrentStatus CurrentStatus
+     *
+     * @return self
+     */
+    public function setCurrentStatus($CurrentStatus)
+    {
+        if (is_null($CurrentStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrentStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CurrentStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CurrentStatus'] = $CurrentStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets SuggestedStatus
+     *
+     * @return string|null
+     */
+    public function getSuggestedStatus()
+    {
+        if (!isset($this->container['SuggestedStatus']) || is_null($this->container['SuggestedStatus'])) {
+            return null;
+        }
+        return $this->container['SuggestedStatus'];
+    }
+
+    /**
+     * Sets SuggestedStatus
+     *
+     * @param string|null $SuggestedStatus SuggestedStatus
+     *
+     * @return self
+     */
+    public function setSuggestedStatus($SuggestedStatus)
+    {
+        if (is_null($SuggestedStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'SuggestedStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SuggestedStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SuggestedStatus'] = $SuggestedStatus;
 
         return $this;
     }

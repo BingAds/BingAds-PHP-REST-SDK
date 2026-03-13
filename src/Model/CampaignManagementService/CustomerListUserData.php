@@ -36,7 +36,8 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         'AudienceId' => 'string',
         'CustomerListItems' => 'string[]',
         'CustomerListItemSubType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType',
-        'ActionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType'
+        'ActionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType',
+        'AcceptCustomerMatchTerm' => 'bool'
     ];
 
     /**
@@ -50,7 +51,8 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         'AudienceId' => 'int64',
         'CustomerListItems' => null,
         'CustomerListItemSubType' => null,
-        'ActionType' => null
+        'ActionType' => null,
+        'AcceptCustomerMatchTerm' => null
     ];
 
     /**
@@ -62,7 +64,8 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         'AudienceId' => false,
         'CustomerListItems' => true,
         'CustomerListItemSubType' => false,
-        'ActionType' => false
+        'ActionType' => false,
+        'AcceptCustomerMatchTerm' => true
     ];
 
     /**
@@ -154,7 +157,8 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         'AudienceId' => 'AudienceId',
         'CustomerListItems' => 'CustomerListItems',
         'CustomerListItemSubType' => 'CustomerListItemSubType',
-        'ActionType' => 'ActionType'
+        'ActionType' => 'ActionType',
+        'AcceptCustomerMatchTerm' => 'AcceptCustomerMatchTerm'
     ];
 
     /**
@@ -166,7 +170,8 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         'AudienceId' => 'setAudienceId',
         'CustomerListItems' => 'setCustomerListItems',
         'CustomerListItemSubType' => 'setCustomerListItemSubType',
-        'ActionType' => 'setActionType'
+        'ActionType' => 'setActionType',
+        'AcceptCustomerMatchTerm' => 'setAcceptCustomerMatchTerm'
     ];
 
     /**
@@ -178,7 +183,8 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         'AudienceId' => 'getAudienceId',
         'CustomerListItems' => 'getCustomerListItems',
         'CustomerListItemSubType' => 'getCustomerListItemSubType',
-        'ActionType' => 'getActionType'
+        'ActionType' => 'getActionType',
+        'AcceptCustomerMatchTerm' => 'getAcceptCustomerMatchTerm'
     ];
 
     /**
@@ -242,6 +248,7 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('CustomerListItems', $data ?? [], null);
         $this->setIfExists('CustomerListItemSubType', $data ?? [], null);
         $this->setIfExists('ActionType', $data ?? [], null);
+        $this->setIfExists('AcceptCustomerMatchTerm', $data ?? [], null);
     }
 
     /**
@@ -421,6 +428,43 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
             $ActionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType($ActionType);
         }
         $this->container['ActionType'] = $ActionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets AcceptCustomerMatchTerm
+     *
+     * @return bool|null
+     */
+    public function getAcceptCustomerMatchTerm()
+    {
+        if (!isset($this->container['AcceptCustomerMatchTerm']) || is_null($this->container['AcceptCustomerMatchTerm'])) {
+            return null;
+        }
+        return $this->container['AcceptCustomerMatchTerm'];
+    }
+
+    /**
+     * Sets AcceptCustomerMatchTerm
+     *
+     * @param bool|null $AcceptCustomerMatchTerm AcceptCustomerMatchTerm
+     *
+     * @return self
+     */
+    public function setAcceptCustomerMatchTerm($AcceptCustomerMatchTerm)
+    {
+        if (is_null($AcceptCustomerMatchTerm)) {
+            array_push($this->openAPINullablesSetToNull, 'AcceptCustomerMatchTerm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AcceptCustomerMatchTerm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AcceptCustomerMatchTerm'] = $AcceptCustomerMatchTerm;
 
         return $this;
     }

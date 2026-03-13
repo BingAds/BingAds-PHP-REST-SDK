@@ -84,6 +84,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewBrandSuitability' => 'bool',
         'NewConversionGoals' => 'bool',
         'NewCarouselAd' => 'bool',
+        'NewPortfolioBidStrategy' => 'bool',
+        'NewAIMaxSettings' => 'bool',
         'UpdateEntities' => 'bool',
         'UpdateCampaignBudgets' => 'bool',
         'UpdateBids' => 'bool',
@@ -124,6 +126,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'bool',
         'UpdateBrandSuitability' => 'bool',
         'UpdateAdCustomizerAttributes' => 'bool',
+        'UpdateAIMaxSettings' => 'bool',
         'EnableCopilot' => 'bool',
         'DeleteRemovedEntities' => 'bool',
         'RaiseBidsToMinimum' => 'bool',
@@ -153,7 +156,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'bool',
         'UpdateAdUrls' => 'bool',
         'UpdateSitelinkUrls' => 'bool',
-        'UpdateAssetAutomationCampaignSetting' => 'bool'
+        'UpdateAssetAutomationCampaignSetting' => 'bool',
+        'ImageAssetAutomationOptOut' => 'bool'
     ];
 
     /**
@@ -205,6 +209,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewBrandSuitability' => null,
         'NewConversionGoals' => null,
         'NewCarouselAd' => null,
+        'NewPortfolioBidStrategy' => null,
+        'NewAIMaxSettings' => null,
         'UpdateEntities' => null,
         'UpdateCampaignBudgets' => null,
         'UpdateBids' => null,
@@ -245,6 +251,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => null,
         'UpdateBrandSuitability' => null,
         'UpdateAdCustomizerAttributes' => null,
+        'UpdateAIMaxSettings' => null,
         'EnableCopilot' => null,
         'DeleteRemovedEntities' => null,
         'RaiseBidsToMinimum' => null,
@@ -274,7 +281,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => null,
         'UpdateAdUrls' => null,
         'UpdateSitelinkUrls' => null,
-        'UpdateAssetAutomationCampaignSetting' => null
+        'UpdateAssetAutomationCampaignSetting' => null,
+        'ImageAssetAutomationOptOut' => null
     ];
 
     /**
@@ -324,6 +332,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewBrandSuitability' => true,
         'NewConversionGoals' => true,
         'NewCarouselAd' => true,
+        'NewPortfolioBidStrategy' => true,
+        'NewAIMaxSettings' => true,
         'UpdateEntities' => true,
         'UpdateCampaignBudgets' => true,
         'UpdateBids' => true,
@@ -364,6 +374,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => true,
         'UpdateBrandSuitability' => true,
         'UpdateAdCustomizerAttributes' => true,
+        'UpdateAIMaxSettings' => true,
         'EnableCopilot' => true,
         'DeleteRemovedEntities' => true,
         'RaiseBidsToMinimum' => true,
@@ -393,7 +404,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => true,
         'UpdateAdUrls' => true,
         'UpdateSitelinkUrls' => true,
-        'UpdateAssetAutomationCampaignSetting' => true
+        'UpdateAssetAutomationCampaignSetting' => true,
+        'ImageAssetAutomationOptOut' => true
     ];
 
     /**
@@ -523,6 +535,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewBrandSuitability' => 'NewBrandSuitability',
         'NewConversionGoals' => 'NewConversionGoals',
         'NewCarouselAd' => 'NewCarouselAd',
+        'NewPortfolioBidStrategy' => 'NewPortfolioBidStrategy',
+        'NewAIMaxSettings' => 'NewAIMaxSettings',
         'UpdateEntities' => 'UpdateEntities',
         'UpdateCampaignBudgets' => 'UpdateCampaignBudgets',
         'UpdateBids' => 'UpdateBids',
@@ -563,6 +577,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'UpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'UpdateBrandSuitability',
         'UpdateAdCustomizerAttributes' => 'UpdateAdCustomizerAttributes',
+        'UpdateAIMaxSettings' => 'UpdateAIMaxSettings',
         'EnableCopilot' => 'EnableCopilot',
         'DeleteRemovedEntities' => 'DeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'RaiseBidsToMinimum',
@@ -592,7 +607,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'RenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'UpdateAdUrls',
         'UpdateSitelinkUrls' => 'UpdateSitelinkUrls',
-        'UpdateAssetAutomationCampaignSetting' => 'UpdateAssetAutomationCampaignSetting'
+        'UpdateAssetAutomationCampaignSetting' => 'UpdateAssetAutomationCampaignSetting',
+        'ImageAssetAutomationOptOut' => 'ImageAssetAutomationOptOut'
     ];
 
     /**
@@ -642,6 +658,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewBrandSuitability' => 'setNewBrandSuitability',
         'NewConversionGoals' => 'setNewConversionGoals',
         'NewCarouselAd' => 'setNewCarouselAd',
+        'NewPortfolioBidStrategy' => 'setNewPortfolioBidStrategy',
+        'NewAIMaxSettings' => 'setNewAIMaxSettings',
         'UpdateEntities' => 'setUpdateEntities',
         'UpdateCampaignBudgets' => 'setUpdateCampaignBudgets',
         'UpdateBids' => 'setUpdateBids',
@@ -682,6 +700,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'setUpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'setUpdateBrandSuitability',
         'UpdateAdCustomizerAttributes' => 'setUpdateAdCustomizerAttributes',
+        'UpdateAIMaxSettings' => 'setUpdateAIMaxSettings',
         'EnableCopilot' => 'setEnableCopilot',
         'DeleteRemovedEntities' => 'setDeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'setRaiseBidsToMinimum',
@@ -711,7 +730,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'setRenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'setUpdateAdUrls',
         'UpdateSitelinkUrls' => 'setUpdateSitelinkUrls',
-        'UpdateAssetAutomationCampaignSetting' => 'setUpdateAssetAutomationCampaignSetting'
+        'UpdateAssetAutomationCampaignSetting' => 'setUpdateAssetAutomationCampaignSetting',
+        'ImageAssetAutomationOptOut' => 'setImageAssetAutomationOptOut'
     ];
 
     /**
@@ -761,6 +781,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewBrandSuitability' => 'getNewBrandSuitability',
         'NewConversionGoals' => 'getNewConversionGoals',
         'NewCarouselAd' => 'getNewCarouselAd',
+        'NewPortfolioBidStrategy' => 'getNewPortfolioBidStrategy',
+        'NewAIMaxSettings' => 'getNewAIMaxSettings',
         'UpdateEntities' => 'getUpdateEntities',
         'UpdateCampaignBudgets' => 'getUpdateCampaignBudgets',
         'UpdateBids' => 'getUpdateBids',
@@ -801,6 +823,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdateAdCustomizerFeeds' => 'getUpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'getUpdateBrandSuitability',
         'UpdateAdCustomizerAttributes' => 'getUpdateAdCustomizerAttributes',
+        'UpdateAIMaxSettings' => 'getUpdateAIMaxSettings',
         'EnableCopilot' => 'getEnableCopilot',
         'DeleteRemovedEntities' => 'getDeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'getRaiseBidsToMinimum',
@@ -830,7 +853,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'RenameCampaignNameWithSuffix' => 'getRenameCampaignNameWithSuffix',
         'UpdateAdUrls' => 'getUpdateAdUrls',
         'UpdateSitelinkUrls' => 'getUpdateSitelinkUrls',
-        'UpdateAssetAutomationCampaignSetting' => 'getUpdateAssetAutomationCampaignSetting'
+        'UpdateAssetAutomationCampaignSetting' => 'getUpdateAssetAutomationCampaignSetting',
+        'ImageAssetAutomationOptOut' => 'getImageAssetAutomationOptOut'
     ];
 
     /**
@@ -931,6 +955,8 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('NewBrandSuitability', $data ?? [], null);
         $this->setIfExists('NewConversionGoals', $data ?? [], null);
         $this->setIfExists('NewCarouselAd', $data ?? [], null);
+        $this->setIfExists('NewPortfolioBidStrategy', $data ?? [], null);
+        $this->setIfExists('NewAIMaxSettings', $data ?? [], null);
         $this->setIfExists('UpdateEntities', $data ?? [], null);
         $this->setIfExists('UpdateCampaignBudgets', $data ?? [], null);
         $this->setIfExists('UpdateBids', $data ?? [], null);
@@ -971,6 +997,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UpdateAdCustomizerFeeds', $data ?? [], null);
         $this->setIfExists('UpdateBrandSuitability', $data ?? [], null);
         $this->setIfExists('UpdateAdCustomizerAttributes', $data ?? [], null);
+        $this->setIfExists('UpdateAIMaxSettings', $data ?? [], null);
         $this->setIfExists('EnableCopilot', $data ?? [], null);
         $this->setIfExists('DeleteRemovedEntities', $data ?? [], null);
         $this->setIfExists('RaiseBidsToMinimum', $data ?? [], null);
@@ -1001,6 +1028,7 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UpdateAdUrls', $data ?? [], null);
         $this->setIfExists('UpdateSitelinkUrls', $data ?? [], null);
         $this->setIfExists('UpdateAssetAutomationCampaignSetting', $data ?? [], null);
+        $this->setIfExists('ImageAssetAutomationOptOut', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -2566,6 +2594,80 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets NewPortfolioBidStrategy
+     *
+     * @return bool|null
+     */
+    public function getNewPortfolioBidStrategy()
+    {
+        if (!isset($this->container['NewPortfolioBidStrategy']) || is_null($this->container['NewPortfolioBidStrategy'])) {
+            return null;
+        }
+        return $this->container['NewPortfolioBidStrategy'];
+    }
+
+    /**
+     * Sets NewPortfolioBidStrategy
+     *
+     * @param bool|null $NewPortfolioBidStrategy NewPortfolioBidStrategy
+     *
+     * @return self
+     */
+    public function setNewPortfolioBidStrategy($NewPortfolioBidStrategy)
+    {
+        if (is_null($NewPortfolioBidStrategy)) {
+            array_push($this->openAPINullablesSetToNull, 'NewPortfolioBidStrategy');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NewPortfolioBidStrategy', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NewPortfolioBidStrategy'] = $NewPortfolioBidStrategy;
+
+        return $this;
+    }
+
+    /**
+     * Gets NewAIMaxSettings
+     *
+     * @return bool|null
+     */
+    public function getNewAIMaxSettings()
+    {
+        if (!isset($this->container['NewAIMaxSettings']) || is_null($this->container['NewAIMaxSettings'])) {
+            return null;
+        }
+        return $this->container['NewAIMaxSettings'];
+    }
+
+    /**
+     * Sets NewAIMaxSettings
+     *
+     * @param bool|null $NewAIMaxSettings NewAIMaxSettings
+     *
+     * @return self
+     */
+    public function setNewAIMaxSettings($NewAIMaxSettings)
+    {
+        if (is_null($NewAIMaxSettings)) {
+            array_push($this->openAPINullablesSetToNull, 'NewAIMaxSettings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NewAIMaxSettings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NewAIMaxSettings'] = $NewAIMaxSettings;
+
+        return $this;
+    }
+
+    /**
      * Gets UpdateEntities
      *
      * @return bool|null
@@ -4046,6 +4148,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets UpdateAIMaxSettings
+     *
+     * @return bool|null
+     */
+    public function getUpdateAIMaxSettings()
+    {
+        if (!isset($this->container['UpdateAIMaxSettings']) || is_null($this->container['UpdateAIMaxSettings'])) {
+            return null;
+        }
+        return $this->container['UpdateAIMaxSettings'];
+    }
+
+    /**
+     * Sets UpdateAIMaxSettings
+     *
+     * @param bool|null $UpdateAIMaxSettings UpdateAIMaxSettings
+     *
+     * @return self
+     */
+    public function setUpdateAIMaxSettings($UpdateAIMaxSettings)
+    {
+        if (is_null($UpdateAIMaxSettings)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateAIMaxSettings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateAIMaxSettings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateAIMaxSettings'] = $UpdateAIMaxSettings;
+
+        return $this;
+    }
+
+    /**
      * Gets EnableCopilot
      *
      * @return bool|null
@@ -5151,6 +5290,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UpdateAssetAutomationCampaignSetting'] = $UpdateAssetAutomationCampaignSetting;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImageAssetAutomationOptOut
+     *
+     * @return bool|null
+     */
+    public function getImageAssetAutomationOptOut()
+    {
+        if (!isset($this->container['ImageAssetAutomationOptOut']) || is_null($this->container['ImageAssetAutomationOptOut'])) {
+            return null;
+        }
+        return $this->container['ImageAssetAutomationOptOut'];
+    }
+
+    /**
+     * Sets ImageAssetAutomationOptOut
+     *
+     * @param bool|null $ImageAssetAutomationOptOut ImageAssetAutomationOptOut
+     *
+     * @return self
+     */
+    public function setImageAssetAutomationOptOut($ImageAssetAutomationOptOut)
+    {
+        if (is_null($ImageAssetAutomationOptOut)) {
+            array_push($this->openAPINullablesSetToNull, 'ImageAssetAutomationOptOut');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImageAssetAutomationOptOut', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImageAssetAutomationOptOut'] = $ImageAssetAutomationOptOut;
 
         return $this;
     }

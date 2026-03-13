@@ -411,6 +411,16 @@ class DownloadEntity
 
     public const BRAND_KIT = 'BrandKit';
 
+    public const CUSTOM_SEGMENT = 'CustomSegment';
+
+    public const AD_GROUP_CUSTOM_SEGMENT_ASSOCIATIONS = 'AdGroupCustomSegmentAssociations';
+
+    public const ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST = 'AccountContentNegativeKeywordList';
+
+    public const ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST_ASSOCIATION = 'AccountContentNegativeKeywordListAssociation';
+
+    public const ACCOUNT_CONTENT_NEGATIVE_KEYWORD = 'AccountContentNegativeKeyword';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -673,7 +683,12 @@ class DownloadEntity
             self::CAMPAIGN_ACCOUNT_PLACEMENT_INCLUSION_LIST_ASSOCIATION,
             self::TOPIC,
             self::CONTENT_PLACEMENT,
-            self::BRAND_KIT
+            self::BRAND_KIT,
+            self::CUSTOM_SEGMENT,
+            self::AD_GROUP_CUSTOM_SEGMENT_ASSOCIATIONS,
+            self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST,
+            self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST_ASSOCIATION,
+            self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD
         ];
     }
 }

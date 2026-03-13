@@ -75,6 +75,14 @@ class ImportAdditionalField
 
     public const UPDATE_TOPIC_TARGETS = 'UpdateTopicTargets';
 
+    public const NEW_PORTFOLIO_BID_STRATEGY = 'NewPortfolioBidStrategy';
+
+    public const NEW_AI_MAX_SETTINGS = 'NewAIMaxSettings';
+
+    public const IMAGE_ASSET_AUTOMATION_OPT_OUT = 'ImageAssetAutomationOptOut';
+
+    public const UPDATE_AI_MAX_SETTINGS = 'UpdateAIMaxSettings';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -169,7 +177,11 @@ class ImportAdditionalField
             self::UPDATE_ASSET_AUTOMATION_CAMPAIGN_SETTING,
             self::ENABLE_COPILOT,
             self::NEW_TOPIC_TARGETS,
-            self::UPDATE_TOPIC_TARGETS
+            self::UPDATE_TOPIC_TARGETS,
+            self::NEW_PORTFOLIO_BID_STRATEGY,
+            self::NEW_AI_MAX_SETTINGS,
+            self::IMAGE_ASSET_AUTOMATION_OPT_OUT,
+            self::UPDATE_AI_MAX_SETTINGS
         ];
     }
 }

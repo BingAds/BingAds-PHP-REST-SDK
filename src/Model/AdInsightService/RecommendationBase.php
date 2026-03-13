@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializable
+class RecommendationBase extends Recommendation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -34,13 +34,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPITypes = [
         'AccountId' => 'string',
-        'AccountName' => 'string',
         'CampaignId' => 'string',
-        'CampaignName' => 'string',
         'AdGroupId' => 'string',
-        'AdGroupName' => 'string',
         'RecommendationType' => 'string',
-        'Type' => '\Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationType',
         'RecommendationId' => 'string',
         'RecommendationHash' => 'string',
         'CurrentClicks' => 'string',
@@ -51,7 +47,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         'EstimatedIncreaseInImpressions' => 'string',
         'CurrentConversions' => 'string',
         'EstimatedIncreaseInConversions' => 'string',
-        'Dismissed' => 'bool'
+        'Type' => 'string'
     ];
 
     /**
@@ -63,13 +59,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPIFormats = [
         'AccountId' => 'int64',
-        'AccountName' => null,
         'CampaignId' => 'int64',
-        'CampaignName' => null,
         'AdGroupId' => 'int64',
-        'AdGroupName' => null,
         'RecommendationType' => null,
-        'Type' => null,
         'RecommendationId' => null,
         'RecommendationHash' => null,
         'CurrentClicks' => 'int64',
@@ -80,7 +72,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         'EstimatedIncreaseInImpressions' => 'int64',
         'CurrentConversions' => 'int64',
         'EstimatedIncreaseInConversions' => 'int64',
-        'Dismissed' => null
+        'Type' => null
     ];
 
     /**
@@ -90,13 +82,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'AccountId' => false,
-        'AccountName' => true,
         'CampaignId' => true,
-        'CampaignName' => true,
         'AdGroupId' => true,
-        'AdGroupName' => true,
         'RecommendationType' => true,
-        'Type' => false,
         'RecommendationId' => true,
         'RecommendationHash' => true,
         'CurrentClicks' => false,
@@ -107,7 +95,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         'EstimatedIncreaseInImpressions' => false,
         'CurrentConversions' => false,
         'EstimatedIncreaseInConversions' => false,
-        'Dismissed' => false
+        'Type' => true
     ];
 
     /**
@@ -197,13 +185,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static array $attributeMap = [
         'AccountId' => 'AccountId',
-        'AccountName' => 'AccountName',
         'CampaignId' => 'CampaignId',
-        'CampaignName' => 'CampaignName',
         'AdGroupId' => 'AdGroupId',
-        'AdGroupName' => 'AdGroupName',
         'RecommendationType' => 'RecommendationType',
-        'Type' => 'Type',
         'RecommendationId' => 'RecommendationId',
         'RecommendationHash' => 'RecommendationHash',
         'CurrentClicks' => 'CurrentClicks',
@@ -214,7 +198,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'CurrentConversions' => 'CurrentConversions',
         'EstimatedIncreaseInConversions' => 'EstimatedIncreaseInConversions',
-        'Dismissed' => 'Dismissed'
+        'Type' => 'Type'
     ];
 
     /**
@@ -224,13 +208,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static array $setters = [
         'AccountId' => 'setAccountId',
-        'AccountName' => 'setAccountName',
         'CampaignId' => 'setCampaignId',
-        'CampaignName' => 'setCampaignName',
         'AdGroupId' => 'setAdGroupId',
-        'AdGroupName' => 'setAdGroupName',
         'RecommendationType' => 'setRecommendationType',
-        'Type' => 'setType',
         'RecommendationId' => 'setRecommendationId',
         'RecommendationHash' => 'setRecommendationHash',
         'CurrentClicks' => 'setCurrentClicks',
@@ -241,7 +221,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'setCurrentConversions',
         'EstimatedIncreaseInConversions' => 'setEstimatedIncreaseInConversions',
-        'Dismissed' => 'setDismissed'
+        'Type' => 'setType'
     ];
 
     /**
@@ -251,13 +231,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static array $getters = [
         'AccountId' => 'getAccountId',
-        'AccountName' => 'getAccountName',
         'CampaignId' => 'getCampaignId',
-        'CampaignName' => 'getCampaignName',
         'AdGroupId' => 'getAdGroupId',
-        'AdGroupName' => 'getAdGroupName',
         'RecommendationType' => 'getRecommendationType',
-        'Type' => 'getType',
         'RecommendationId' => 'getRecommendationId',
         'RecommendationHash' => 'getRecommendationHash',
         'CurrentClicks' => 'getCurrentClicks',
@@ -268,7 +244,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'CurrentConversions' => 'getCurrentConversions',
         'EstimatedIncreaseInConversions' => 'getEstimatedIncreaseInConversions',
-        'Dismissed' => 'getDismissed'
+        'Type' => 'getType'
     ];
 
     /**
@@ -329,13 +305,9 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountId', $data ?? [], null);
-        $this->setIfExists('AccountName', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
-        $this->setIfExists('CampaignName', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('AdGroupName', $data ?? [], null);
         $this->setIfExists('RecommendationType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('RecommendationId', $data ?? [], null);
         $this->setIfExists('RecommendationHash', $data ?? [], null);
         $this->setIfExists('CurrentClicks', $data ?? [], null);
@@ -346,7 +318,7 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('EstimatedIncreaseInImpressions', $data ?? [], null);
         $this->setIfExists('CurrentConversions', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInConversions', $data ?? [], null);
-        $this->setIfExists('Dismissed', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], 'Recommendation');
     }
 
     /**
@@ -422,43 +394,6 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets AccountName
-     *
-     * @return string|null
-     */
-    public function getAccountName()
-    {
-        if (!isset($this->container['AccountName']) || is_null($this->container['AccountName'])) {
-            return null;
-        }
-        return $this->container['AccountName'];
-    }
-
-    /**
-     * Sets AccountName
-     *
-     * @param string|null $AccountName AccountName
-     *
-     * @return self
-     */
-    public function setAccountName($AccountName)
-    {
-        if (is_null($AccountName)) {
-            array_push($this->openAPINullablesSetToNull, 'AccountName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AccountName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AccountName'] = $AccountName;
-
-        return $this;
-    }
-
-    /**
      * Gets CampaignId
      *
      * @return string|null
@@ -491,43 +426,6 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['CampaignId'] = $CampaignId;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignName
-     *
-     * @return string|null
-     */
-    public function getCampaignName()
-    {
-        if (!isset($this->container['CampaignName']) || is_null($this->container['CampaignName'])) {
-            return null;
-        }
-        return $this->container['CampaignName'];
-    }
-
-    /**
-     * Sets CampaignName
-     *
-     * @param string|null $CampaignName CampaignName
-     *
-     * @return self
-     */
-    public function setCampaignName($CampaignName)
-    {
-        if (is_null($CampaignName)) {
-            array_push($this->openAPINullablesSetToNull, 'CampaignName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CampaignName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CampaignName'] = $CampaignName;
 
         return $this;
     }
@@ -570,43 +468,6 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets AdGroupName
-     *
-     * @return string|null
-     */
-    public function getAdGroupName()
-    {
-        if (!isset($this->container['AdGroupName']) || is_null($this->container['AdGroupName'])) {
-            return null;
-        }
-        return $this->container['AdGroupName'];
-    }
-
-    /**
-     * Sets AdGroupName
-     *
-     * @param string|null $AdGroupName AdGroupName
-     *
-     * @return self
-     */
-    public function setAdGroupName($AdGroupName)
-    {
-        if (is_null($AdGroupName)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AdGroupName'] = $AdGroupName;
-
-        return $this;
-    }
-
-    /**
      * Gets RecommendationType
      *
      * @return string|null
@@ -639,42 +500,6 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['RecommendationType'] = $RecommendationType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\RecommendationType($Type);
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -994,31 +819,38 @@ class RecommendationBase implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets Dismissed
+     * Gets Type
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getDismissed()
+    public function getType()
     {
-        if (!isset($this->container['Dismissed']) || is_null($this->container['Dismissed'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['Dismissed'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets Dismissed
+     * Sets Type
      *
-     * @param bool|null $Dismissed Dismissed
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setDismissed($Dismissed)
+    public function setType($Type)
     {
-        if (is_null($Dismissed)) {
-            throw new \InvalidArgumentException('non-nullable Dismissed cannot be null');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['Dismissed'] = $Dismissed;
+        $this->container['Type'] = $Type;
 
         return $this;
     }

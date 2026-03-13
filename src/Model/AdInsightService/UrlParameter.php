@@ -33,11 +33,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Type' => '\Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType',
         'SuggestedText' => 'string',
         'UrlCategory' => '\Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory',
         'UrlId' => '\Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId',
-        'SuggestedUrl' => 'string',
-        'Type' => 'string'
+        'SuggestedUrl' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Type' => null,
         'SuggestedText' => null,
         'UrlCategory' => null,
         'UrlId' => null,
-        'SuggestedUrl' => null,
-        'Type' => null
+        'SuggestedUrl' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Type' => false,
         'SuggestedText' => true,
         'UrlCategory' => false,
         'UrlId' => false,
-        'SuggestedUrl' => true,
-        'Type' => true
+        'SuggestedUrl' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Type' => 'Type',
         'SuggestedText' => 'SuggestedText',
         'UrlCategory' => 'UrlCategory',
         'UrlId' => 'UrlId',
-        'SuggestedUrl' => 'SuggestedUrl',
-        'Type' => 'Type'
+        'SuggestedUrl' => 'SuggestedUrl'
     ];
 
     /**
@@ -167,11 +167,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
      * @var string[]
      */
     protected static array $setters = [
+        'Type' => 'setType',
         'SuggestedText' => 'setSuggestedText',
         'UrlCategory' => 'setUrlCategory',
         'UrlId' => 'setUrlId',
-        'SuggestedUrl' => 'setSuggestedUrl',
-        'Type' => 'setType'
+        'SuggestedUrl' => 'setSuggestedUrl'
     ];
 
     /**
@@ -180,11 +180,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
      * @var string[]
      */
     protected static array $getters = [
+        'Type' => 'getType',
         'SuggestedText' => 'getSuggestedText',
         'UrlCategory' => 'getUrlCategory',
         'UrlId' => 'getUrlId',
-        'SuggestedUrl' => 'getSuggestedUrl',
-        'Type' => 'getType'
+        'SuggestedUrl' => 'getSuggestedUrl'
     ];
 
     /**
@@ -244,11 +244,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SuggestedText', $data ?? [], null);
         $this->setIfExists('UrlCategory', $data ?? [], null);
         $this->setIfExists('UrlId', $data ?? [], null);
         $this->setIfExists('SuggestedUrl', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Url');
     }
 
     /**
@@ -292,6 +292,42 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
 
     /**
      * Gets SuggestedText
@@ -435,43 +471,6 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
             }
         }
         $this->container['SuggestedUrl'] = $SuggestedUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SuggestedText' => 'string',
-        'Type' => 'string'
+        'Type' => '\Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType',
+        'SuggestedText' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SuggestedText' => null,
-        'Type' => null
+        'Type' => null,
+        'SuggestedText' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SuggestedText' => true,
-        'Type' => true
+        'Type' => false,
+        'SuggestedText' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SuggestedText' => 'SuggestedText',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'SuggestedText' => 'SuggestedText'
     ];
 
     /**
@@ -155,8 +155,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
      * @var string[]
      */
     protected static array $setters = [
-        'SuggestedText' => 'setSuggestedText',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'SuggestedText' => 'setSuggestedText'
     ];
 
     /**
@@ -165,8 +165,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
      * @var string[]
      */
     protected static array $getters = [
-        'SuggestedText' => 'getSuggestedText',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'SuggestedText' => 'getSuggestedText'
     ];
 
     /**
@@ -226,8 +226,8 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SuggestedText', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'Text');
     }
 
     /**
@@ -273,6 +273,42 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
 
 
     /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
      * Gets SuggestedText
      *
      * @return string|null
@@ -305,43 +341,6 @@ class TextParameter extends PerformanceInsightsMessageParameter implements Model
             }
         }
         $this->container['SuggestedText'] = $SuggestedText;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

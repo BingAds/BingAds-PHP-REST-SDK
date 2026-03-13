@@ -26,6 +26,7 @@ class SharedList extends SharedEntity implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     public const MAPPINGS = [
+        'AccountContentNegativeKeywordList' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountContentNegativeKeywordList',
         'AccountNegativeKeywordList' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountNegativeKeywordList',
         'AccountPlacementExclusionList' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountPlacementExclusionList',
         'AccountPlacementInclusionList' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountPlacementInclusionList',

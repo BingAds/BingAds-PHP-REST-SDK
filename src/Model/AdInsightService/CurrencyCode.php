@@ -203,6 +203,8 @@ class CurrencyCode
 
     public const ZWD = 'ZWD';
 
+    public const UNSPECIFY = 'UNSPECIFY';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -361,7 +363,8 @@ class CurrencyCode
             self::VND,
             self::YUN,
             self::ZAR,
-            self::ZWD
+            self::ZWD,
+            self::UNSPECIFY
         ];
     }
 }

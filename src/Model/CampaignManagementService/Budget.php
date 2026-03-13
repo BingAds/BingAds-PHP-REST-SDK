@@ -33,11 +33,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'Amount' => 'float',
         'BudgetType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType',
-        'AssociationCount' => 'int'
+        'AssociationCount' => 'int',
+        'Id' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'Amount' => 'double',
         'BudgetType' => null,
-        'AssociationCount' => 'int32'
+        'AssociationCount' => 'int32',
+        'Id' => 'int64'
     ];
 
     /**
@@ -61,11 +61,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'Amount' => true,
         'BudgetType' => false,
-        'AssociationCount' => true
+        'AssociationCount' => true,
+        'Id' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'Amount' => 'Amount',
         'BudgetType' => 'BudgetType',
-        'AssociationCount' => 'AssociationCount'
+        'AssociationCount' => 'AssociationCount',
+        'Id' => 'Id'
     ];
 
     /**
@@ -167,11 +167,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'Amount' => 'setAmount',
         'BudgetType' => 'setBudgetType',
-        'AssociationCount' => 'setAssociationCount'
+        'AssociationCount' => 'setAssociationCount',
+        'Id' => 'setId'
     ];
 
     /**
@@ -180,11 +180,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'Amount' => 'getAmount',
         'BudgetType' => 'getBudgetType',
-        'AssociationCount' => 'getAssociationCount'
+        'AssociationCount' => 'getAssociationCount',
+        'Id' => 'getId'
     ];
 
     /**
@@ -244,11 +244,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Amount', $data ?? [], null);
         $this->setIfExists('BudgetType', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
     }
 
     /**
@@ -292,43 +292,6 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -473,6 +436,43 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AssociationCount'] = $AssociationCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

@@ -33,14 +33,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ClickShare' => 'float',
-        'AverageCTR' => 'float',
-        'AverageCPC' => 'float',
-        'ReferenceKeywordId' => 'string',
-        'ReferenceKeywordBid' => 'float',
-        'ReferenceKeywordMatchType' => 'int',
-        'ImpressionShare' => 'float',
-        'SearchQueryKPIs' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BroadMatchSearchQueryKPI[]',
         'AdGroupId' => 'string',
         'CampaignId' => 'string',
         'AdGroupName' => 'string',
@@ -54,7 +46,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         'EstimatedIncreaseInCost' => 'float',
         'EstimatedIncreaseInImpressions' => 'string',
         'OpportunityKey' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'ClickShare' => 'float',
+        'AverageCTR' => 'float',
+        'AverageCPC' => 'float',
+        'ReferenceKeywordId' => 'string',
+        'ReferenceKeywordBid' => 'float',
+        'ReferenceKeywordMatchType' => 'int',
+        'ImpressionShare' => 'float',
+        'SearchQueryKPIs' => '\Microsoft\MsAds\Rest\Model\AdInsightService\BroadMatchSearchQueryKPI[]'
     ];
 
     /**
@@ -65,14 +65,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ClickShare' => 'double',
-        'AverageCTR' => 'double',
-        'AverageCPC' => 'double',
-        'ReferenceKeywordId' => 'int64',
-        'ReferenceKeywordBid' => 'double',
-        'ReferenceKeywordMatchType' => 'int32',
-        'ImpressionShare' => 'double',
-        'SearchQueryKPIs' => null,
         'AdGroupId' => 'int64',
         'CampaignId' => 'int64',
         'AdGroupName' => null,
@@ -86,7 +78,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         'EstimatedIncreaseInCost' => 'double',
         'EstimatedIncreaseInImpressions' => 'int64',
         'OpportunityKey' => null,
-        'Type' => null
+        'Type' => null,
+        'ClickShare' => 'double',
+        'AverageCTR' => 'double',
+        'AverageCPC' => 'double',
+        'ReferenceKeywordId' => 'int64',
+        'ReferenceKeywordBid' => 'double',
+        'ReferenceKeywordMatchType' => 'int32',
+        'ImpressionShare' => 'double',
+        'SearchQueryKPIs' => null
     ];
 
     /**
@@ -95,14 +95,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ClickShare' => false,
-        'AverageCTR' => false,
-        'AverageCPC' => false,
-        'ReferenceKeywordId' => false,
-        'ReferenceKeywordBid' => false,
-        'ReferenceKeywordMatchType' => false,
-        'ImpressionShare' => false,
-        'SearchQueryKPIs' => true,
         'AdGroupId' => false,
         'CampaignId' => false,
         'AdGroupName' => true,
@@ -116,7 +108,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         'EstimatedIncreaseInCost' => false,
         'EstimatedIncreaseInImpressions' => false,
         'OpportunityKey' => true,
-        'Type' => true
+        'Type' => true,
+        'ClickShare' => false,
+        'AverageCTR' => false,
+        'AverageCPC' => false,
+        'ReferenceKeywordId' => false,
+        'ReferenceKeywordBid' => false,
+        'ReferenceKeywordMatchType' => false,
+        'ImpressionShare' => false,
+        'SearchQueryKPIs' => true
     ];
 
     /**
@@ -205,14 +205,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ClickShare' => 'ClickShare',
-        'AverageCTR' => 'AverageCTR',
-        'AverageCPC' => 'AverageCPC',
-        'ReferenceKeywordId' => 'ReferenceKeywordId',
-        'ReferenceKeywordBid' => 'ReferenceKeywordBid',
-        'ReferenceKeywordMatchType' => 'ReferenceKeywordMatchType',
-        'ImpressionShare' => 'ImpressionShare',
-        'SearchQueryKPIs' => 'SearchQueryKPIs',
         'AdGroupId' => 'AdGroupId',
         'CampaignId' => 'CampaignId',
         'AdGroupName' => 'AdGroupName',
@@ -226,7 +218,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         'EstimatedIncreaseInCost' => 'EstimatedIncreaseInCost',
         'EstimatedIncreaseInImpressions' => 'EstimatedIncreaseInImpressions',
         'OpportunityKey' => 'OpportunityKey',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'ClickShare' => 'ClickShare',
+        'AverageCTR' => 'AverageCTR',
+        'AverageCPC' => 'AverageCPC',
+        'ReferenceKeywordId' => 'ReferenceKeywordId',
+        'ReferenceKeywordBid' => 'ReferenceKeywordBid',
+        'ReferenceKeywordMatchType' => 'ReferenceKeywordMatchType',
+        'ImpressionShare' => 'ImpressionShare',
+        'SearchQueryKPIs' => 'SearchQueryKPIs'
     ];
 
     /**
@@ -235,14 +235,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'ClickShare' => 'setClickShare',
-        'AverageCTR' => 'setAverageCTR',
-        'AverageCPC' => 'setAverageCPC',
-        'ReferenceKeywordId' => 'setReferenceKeywordId',
-        'ReferenceKeywordBid' => 'setReferenceKeywordBid',
-        'ReferenceKeywordMatchType' => 'setReferenceKeywordMatchType',
-        'ImpressionShare' => 'setImpressionShare',
-        'SearchQueryKPIs' => 'setSearchQueryKPIs',
         'AdGroupId' => 'setAdGroupId',
         'CampaignId' => 'setCampaignId',
         'AdGroupName' => 'setAdGroupName',
@@ -256,7 +248,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         'EstimatedIncreaseInCost' => 'setEstimatedIncreaseInCost',
         'EstimatedIncreaseInImpressions' => 'setEstimatedIncreaseInImpressions',
         'OpportunityKey' => 'setOpportunityKey',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'ClickShare' => 'setClickShare',
+        'AverageCTR' => 'setAverageCTR',
+        'AverageCPC' => 'setAverageCPC',
+        'ReferenceKeywordId' => 'setReferenceKeywordId',
+        'ReferenceKeywordBid' => 'setReferenceKeywordBid',
+        'ReferenceKeywordMatchType' => 'setReferenceKeywordMatchType',
+        'ImpressionShare' => 'setImpressionShare',
+        'SearchQueryKPIs' => 'setSearchQueryKPIs'
     ];
 
     /**
@@ -265,14 +265,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'ClickShare' => 'getClickShare',
-        'AverageCTR' => 'getAverageCTR',
-        'AverageCPC' => 'getAverageCPC',
-        'ReferenceKeywordId' => 'getReferenceKeywordId',
-        'ReferenceKeywordBid' => 'getReferenceKeywordBid',
-        'ReferenceKeywordMatchType' => 'getReferenceKeywordMatchType',
-        'ImpressionShare' => 'getImpressionShare',
-        'SearchQueryKPIs' => 'getSearchQueryKPIs',
         'AdGroupId' => 'getAdGroupId',
         'CampaignId' => 'getCampaignId',
         'AdGroupName' => 'getAdGroupName',
@@ -286,7 +278,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         'EstimatedIncreaseInCost' => 'getEstimatedIncreaseInCost',
         'EstimatedIncreaseInImpressions' => 'getEstimatedIncreaseInImpressions',
         'OpportunityKey' => 'getOpportunityKey',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'ClickShare' => 'getClickShare',
+        'AverageCTR' => 'getAverageCTR',
+        'AverageCPC' => 'getAverageCPC',
+        'ReferenceKeywordId' => 'getReferenceKeywordId',
+        'ReferenceKeywordBid' => 'getReferenceKeywordBid',
+        'ReferenceKeywordMatchType' => 'getReferenceKeywordMatchType',
+        'ImpressionShare' => 'getImpressionShare',
+        'SearchQueryKPIs' => 'getSearchQueryKPIs'
     ];
 
     /**
@@ -346,14 +346,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ClickShare', $data ?? [], null);
-        $this->setIfExists('AverageCTR', $data ?? [], null);
-        $this->setIfExists('AverageCPC', $data ?? [], null);
-        $this->setIfExists('ReferenceKeywordId', $data ?? [], null);
-        $this->setIfExists('ReferenceKeywordBid', $data ?? [], null);
-        $this->setIfExists('ReferenceKeywordMatchType', $data ?? [], null);
-        $this->setIfExists('ImpressionShare', $data ?? [], null);
-        $this->setIfExists('SearchQueryKPIs', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('AdGroupName', $data ?? [], null);
@@ -367,7 +359,15 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         $this->setIfExists('EstimatedIncreaseInCost', $data ?? [], null);
         $this->setIfExists('EstimatedIncreaseInImpressions', $data ?? [], null);
         $this->setIfExists('OpportunityKey', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BroadMatchKeywordOpportunity');
+        $this->setIfExists('Type', $data ?? [], 'KeywordOpportunity');
+        $this->setIfExists('ClickShare', $data ?? [], null);
+        $this->setIfExists('AverageCTR', $data ?? [], null);
+        $this->setIfExists('AverageCPC', $data ?? [], null);
+        $this->setIfExists('ReferenceKeywordId', $data ?? [], null);
+        $this->setIfExists('ReferenceKeywordBid', $data ?? [], null);
+        $this->setIfExists('ReferenceKeywordMatchType', $data ?? [], null);
+        $this->setIfExists('ImpressionShare', $data ?? [], null);
+        $this->setIfExists('SearchQueryKPIs', $data ?? [], null);
     }
 
     /**
@@ -411,253 +411,6 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets ClickShare
-     *
-     * @return float|null
-     */
-    public function getClickShare()
-    {
-        if (!isset($this->container['ClickShare']) || is_null($this->container['ClickShare'])) {
-            return null;
-        }
-        return $this->container['ClickShare'];
-    }
-
-    /**
-     * Sets ClickShare
-     *
-     * @param float|null $ClickShare ClickShare
-     *
-     * @return self
-     */
-    public function setClickShare($ClickShare)
-    {
-        if (is_null($ClickShare)) {
-            throw new \InvalidArgumentException('non-nullable ClickShare cannot be null');
-        }
-        $this->container['ClickShare'] = $ClickShare;
-
-        return $this;
-    }
-
-    /**
-     * Gets AverageCTR
-     *
-     * @return float|null
-     */
-    public function getAverageCTR()
-    {
-        if (!isset($this->container['AverageCTR']) || is_null($this->container['AverageCTR'])) {
-            return null;
-        }
-        return $this->container['AverageCTR'];
-    }
-
-    /**
-     * Sets AverageCTR
-     *
-     * @param float|null $AverageCTR AverageCTR
-     *
-     * @return self
-     */
-    public function setAverageCTR($AverageCTR)
-    {
-        if (is_null($AverageCTR)) {
-            throw new \InvalidArgumentException('non-nullable AverageCTR cannot be null');
-        }
-        $this->container['AverageCTR'] = $AverageCTR;
-
-        return $this;
-    }
-
-    /**
-     * Gets AverageCPC
-     *
-     * @return float|null
-     */
-    public function getAverageCPC()
-    {
-        if (!isset($this->container['AverageCPC']) || is_null($this->container['AverageCPC'])) {
-            return null;
-        }
-        return $this->container['AverageCPC'];
-    }
-
-    /**
-     * Sets AverageCPC
-     *
-     * @param float|null $AverageCPC AverageCPC
-     *
-     * @return self
-     */
-    public function setAverageCPC($AverageCPC)
-    {
-        if (is_null($AverageCPC)) {
-            throw new \InvalidArgumentException('non-nullable AverageCPC cannot be null');
-        }
-        $this->container['AverageCPC'] = $AverageCPC;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReferenceKeywordId
-     *
-     * @return string|null
-     */
-    public function getReferenceKeywordId()
-    {
-        if (!isset($this->container['ReferenceKeywordId']) || is_null($this->container['ReferenceKeywordId'])) {
-            return null;
-        }
-        return $this->container['ReferenceKeywordId'];
-    }
-
-    /**
-     * Sets ReferenceKeywordId
-     *
-     * @param string|null $ReferenceKeywordId ReferenceKeywordId
-     *
-     * @return self
-     */
-    public function setReferenceKeywordId($ReferenceKeywordId)
-    {
-        if (is_null($ReferenceKeywordId)) {
-            throw new \InvalidArgumentException('non-nullable ReferenceKeywordId cannot be null');
-        }
-        $this->container['ReferenceKeywordId'] = $ReferenceKeywordId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReferenceKeywordBid
-     *
-     * @return float|null
-     */
-    public function getReferenceKeywordBid()
-    {
-        if (!isset($this->container['ReferenceKeywordBid']) || is_null($this->container['ReferenceKeywordBid'])) {
-            return null;
-        }
-        return $this->container['ReferenceKeywordBid'];
-    }
-
-    /**
-     * Sets ReferenceKeywordBid
-     *
-     * @param float|null $ReferenceKeywordBid ReferenceKeywordBid
-     *
-     * @return self
-     */
-    public function setReferenceKeywordBid($ReferenceKeywordBid)
-    {
-        if (is_null($ReferenceKeywordBid)) {
-            throw new \InvalidArgumentException('non-nullable ReferenceKeywordBid cannot be null');
-        }
-        $this->container['ReferenceKeywordBid'] = $ReferenceKeywordBid;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReferenceKeywordMatchType
-     *
-     * @return int|null
-     */
-    public function getReferenceKeywordMatchType()
-    {
-        if (!isset($this->container['ReferenceKeywordMatchType']) || is_null($this->container['ReferenceKeywordMatchType'])) {
-            return null;
-        }
-        return $this->container['ReferenceKeywordMatchType'];
-    }
-
-    /**
-     * Sets ReferenceKeywordMatchType
-     *
-     * @param int|null $ReferenceKeywordMatchType ReferenceKeywordMatchType
-     *
-     * @return self
-     */
-    public function setReferenceKeywordMatchType($ReferenceKeywordMatchType)
-    {
-        if (is_null($ReferenceKeywordMatchType)) {
-            throw new \InvalidArgumentException('non-nullable ReferenceKeywordMatchType cannot be null');
-        }
-        $this->container['ReferenceKeywordMatchType'] = $ReferenceKeywordMatchType;
-
-        return $this;
-    }
-
-    /**
-     * Gets ImpressionShare
-     *
-     * @return float|null
-     */
-    public function getImpressionShare()
-    {
-        if (!isset($this->container['ImpressionShare']) || is_null($this->container['ImpressionShare'])) {
-            return null;
-        }
-        return $this->container['ImpressionShare'];
-    }
-
-    /**
-     * Sets ImpressionShare
-     *
-     * @param float|null $ImpressionShare ImpressionShare
-     *
-     * @return self
-     */
-    public function setImpressionShare($ImpressionShare)
-    {
-        if (is_null($ImpressionShare)) {
-            throw new \InvalidArgumentException('non-nullable ImpressionShare cannot be null');
-        }
-        $this->container['ImpressionShare'] = $ImpressionShare;
-
-        return $this;
-    }
-
-    /**
-     * Gets SearchQueryKPIs
-     *
-     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\BroadMatchSearchQueryKPI[]|null
-     */
-    public function getSearchQueryKPIs()
-    {
-        if (!isset($this->container['SearchQueryKPIs']) || is_null($this->container['SearchQueryKPIs'])) {
-            return null;
-        }
-        return $this->container['SearchQueryKPIs'];
-    }
-
-    /**
-     * Sets SearchQueryKPIs
-     *
-     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\BroadMatchSearchQueryKPI[]|null $SearchQueryKPIs SearchQueryKPIs
-     *
-     * @return self
-     */
-    public function setSearchQueryKPIs($SearchQueryKPIs)
-    {
-        if (is_null($SearchQueryKPIs)) {
-            array_push($this->openAPINullablesSetToNull, 'SearchQueryKPIs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SearchQueryKPIs', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SearchQueryKPIs'] = $SearchQueryKPIs;
-
-        return $this;
-    }
 
     /**
      * Gets AdGroupId
@@ -1110,6 +863,253 @@ class BroadMatchKeywordOpportunity extends KeywordOpportunity implements ModelIn
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets ClickShare
+     *
+     * @return float|null
+     */
+    public function getClickShare()
+    {
+        if (!isset($this->container['ClickShare']) || is_null($this->container['ClickShare'])) {
+            return null;
+        }
+        return $this->container['ClickShare'];
+    }
+
+    /**
+     * Sets ClickShare
+     *
+     * @param float|null $ClickShare ClickShare
+     *
+     * @return self
+     */
+    public function setClickShare($ClickShare)
+    {
+        if (is_null($ClickShare)) {
+            throw new \InvalidArgumentException('non-nullable ClickShare cannot be null');
+        }
+        $this->container['ClickShare'] = $ClickShare;
+
+        return $this;
+    }
+
+    /**
+     * Gets AverageCTR
+     *
+     * @return float|null
+     */
+    public function getAverageCTR()
+    {
+        if (!isset($this->container['AverageCTR']) || is_null($this->container['AverageCTR'])) {
+            return null;
+        }
+        return $this->container['AverageCTR'];
+    }
+
+    /**
+     * Sets AverageCTR
+     *
+     * @param float|null $AverageCTR AverageCTR
+     *
+     * @return self
+     */
+    public function setAverageCTR($AverageCTR)
+    {
+        if (is_null($AverageCTR)) {
+            throw new \InvalidArgumentException('non-nullable AverageCTR cannot be null');
+        }
+        $this->container['AverageCTR'] = $AverageCTR;
+
+        return $this;
+    }
+
+    /**
+     * Gets AverageCPC
+     *
+     * @return float|null
+     */
+    public function getAverageCPC()
+    {
+        if (!isset($this->container['AverageCPC']) || is_null($this->container['AverageCPC'])) {
+            return null;
+        }
+        return $this->container['AverageCPC'];
+    }
+
+    /**
+     * Sets AverageCPC
+     *
+     * @param float|null $AverageCPC AverageCPC
+     *
+     * @return self
+     */
+    public function setAverageCPC($AverageCPC)
+    {
+        if (is_null($AverageCPC)) {
+            throw new \InvalidArgumentException('non-nullable AverageCPC cannot be null');
+        }
+        $this->container['AverageCPC'] = $AverageCPC;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReferenceKeywordId
+     *
+     * @return string|null
+     */
+    public function getReferenceKeywordId()
+    {
+        if (!isset($this->container['ReferenceKeywordId']) || is_null($this->container['ReferenceKeywordId'])) {
+            return null;
+        }
+        return $this->container['ReferenceKeywordId'];
+    }
+
+    /**
+     * Sets ReferenceKeywordId
+     *
+     * @param string|null $ReferenceKeywordId ReferenceKeywordId
+     *
+     * @return self
+     */
+    public function setReferenceKeywordId($ReferenceKeywordId)
+    {
+        if (is_null($ReferenceKeywordId)) {
+            throw new \InvalidArgumentException('non-nullable ReferenceKeywordId cannot be null');
+        }
+        $this->container['ReferenceKeywordId'] = $ReferenceKeywordId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReferenceKeywordBid
+     *
+     * @return float|null
+     */
+    public function getReferenceKeywordBid()
+    {
+        if (!isset($this->container['ReferenceKeywordBid']) || is_null($this->container['ReferenceKeywordBid'])) {
+            return null;
+        }
+        return $this->container['ReferenceKeywordBid'];
+    }
+
+    /**
+     * Sets ReferenceKeywordBid
+     *
+     * @param float|null $ReferenceKeywordBid ReferenceKeywordBid
+     *
+     * @return self
+     */
+    public function setReferenceKeywordBid($ReferenceKeywordBid)
+    {
+        if (is_null($ReferenceKeywordBid)) {
+            throw new \InvalidArgumentException('non-nullable ReferenceKeywordBid cannot be null');
+        }
+        $this->container['ReferenceKeywordBid'] = $ReferenceKeywordBid;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReferenceKeywordMatchType
+     *
+     * @return int|null
+     */
+    public function getReferenceKeywordMatchType()
+    {
+        if (!isset($this->container['ReferenceKeywordMatchType']) || is_null($this->container['ReferenceKeywordMatchType'])) {
+            return null;
+        }
+        return $this->container['ReferenceKeywordMatchType'];
+    }
+
+    /**
+     * Sets ReferenceKeywordMatchType
+     *
+     * @param int|null $ReferenceKeywordMatchType ReferenceKeywordMatchType
+     *
+     * @return self
+     */
+    public function setReferenceKeywordMatchType($ReferenceKeywordMatchType)
+    {
+        if (is_null($ReferenceKeywordMatchType)) {
+            throw new \InvalidArgumentException('non-nullable ReferenceKeywordMatchType cannot be null');
+        }
+        $this->container['ReferenceKeywordMatchType'] = $ReferenceKeywordMatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImpressionShare
+     *
+     * @return float|null
+     */
+    public function getImpressionShare()
+    {
+        if (!isset($this->container['ImpressionShare']) || is_null($this->container['ImpressionShare'])) {
+            return null;
+        }
+        return $this->container['ImpressionShare'];
+    }
+
+    /**
+     * Sets ImpressionShare
+     *
+     * @param float|null $ImpressionShare ImpressionShare
+     *
+     * @return self
+     */
+    public function setImpressionShare($ImpressionShare)
+    {
+        if (is_null($ImpressionShare)) {
+            throw new \InvalidArgumentException('non-nullable ImpressionShare cannot be null');
+        }
+        $this->container['ImpressionShare'] = $ImpressionShare;
+
+        return $this;
+    }
+
+    /**
+     * Gets SearchQueryKPIs
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\BroadMatchSearchQueryKPI[]|null
+     */
+    public function getSearchQueryKPIs()
+    {
+        if (!isset($this->container['SearchQueryKPIs']) || is_null($this->container['SearchQueryKPIs'])) {
+            return null;
+        }
+        return $this->container['SearchQueryKPIs'];
+    }
+
+    /**
+     * Sets SearchQueryKPIs
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\BroadMatchSearchQueryKPI[]|null $SearchQueryKPIs SearchQueryKPIs
+     *
+     * @return self
+     */
+    public function setSearchQueryKPIs($SearchQueryKPIs)
+    {
+        if (is_null($SearchQueryKPIs)) {
+            array_push($this->openAPINullablesSetToNull, 'SearchQueryKPIs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SearchQueryKPIs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SearchQueryKPIs'] = $SearchQueryKPIs;
 
         return $this;
     }

@@ -55,6 +55,8 @@ class AccountPropertyName
 
     public const ASSET_AI_ENHANCEMENT_OPTOUT = 'AssetAIEnhancementOptout';
 
+    public const ACCEPT_NIELSEN_TERMS_AND_CONDITIONS = 'AcceptNielsenTermsAndConditions';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -139,7 +141,8 @@ class AccountPropertyName
             self::OPT_OUT_FROM_MCM,
             self::NETFLIX_TC_ACCEPTED,
             self::BLOCKED_CONTENT_SEGMENTS,
-            self::ASSET_AI_ENHANCEMENT_OPTOUT
+            self::ASSET_AI_ENHANCEMENT_OPTOUT,
+            self::ACCEPT_NIELSEN_TERMS_AND_CONDITIONS
         ];
     }
 }
