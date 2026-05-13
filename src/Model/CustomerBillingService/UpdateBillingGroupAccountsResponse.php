@@ -1,22 +1,22 @@
 <?php
 /**
- * UpdateKeywordsResponse
- * CampaignManagementService
+ * UpdateBillingGroupAccountsResponse
+ * CustomerBillingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\CustomerBillingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\CustomerBillingService;
 
 use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateBillingGroupAccountsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsResponse';
+    protected static string $openAPIModelName = 'UpdateBillingGroupAccountsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'InheritedBidStrategyTypes' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[][]'
     ];
 
     /**
@@ -45,7 +44,6 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'InheritedBidStrategyTypes' => null,
         'PartialErrors' => null
     ];
 
@@ -55,7 +53,6 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'InheritedBidStrategyTypes' => true,
         'PartialErrors' => true
     ];
 
@@ -145,7 +142,6 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
         'PartialErrors' => 'PartialErrors'
     ];
 
@@ -155,7 +151,6 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
         'PartialErrors' => 'setPartialErrors'
     ];
 
@@ -165,7 +160,6 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
         'PartialErrors' => 'getPartialErrors'
     ];
 
@@ -226,7 +220,6 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
         $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
@@ -273,46 +266,9 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets InheritedBidStrategyTypes
-     *
-     * @return string[]|null
-     */
-    public function getInheritedBidStrategyTypes()
-    {
-        if (!isset($this->container['InheritedBidStrategyTypes']) || is_null($this->container['InheritedBidStrategyTypes'])) {
-            return null;
-        }
-        return $this->container['InheritedBidStrategyTypes'];
-    }
-
-    /**
-     * Sets InheritedBidStrategyTypes
-     *
-     * @param string[]|null $InheritedBidStrategyTypes InheritedBidStrategyTypes
-     *
-     * @return self
-     */
-    public function setInheritedBidStrategyTypes($InheritedBidStrategyTypes)
-    {
-        if (is_null($InheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'InheritedBidStrategyTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InheritedBidStrategyTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
-
-        return $this;
-    }
-
-    /**
      * Gets PartialErrors
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[][]|null
      */
     public function getPartialErrors()
     {
@@ -325,7 +281,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets PartialErrors
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     * @param \Microsoft\MsAds\Rest\Model\CustomerBillingService\OperationError[][]|null $PartialErrors PartialErrors
      *
      * @return self
      */

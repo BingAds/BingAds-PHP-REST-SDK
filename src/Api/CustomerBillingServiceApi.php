@@ -49,7 +49,13 @@ class CustomerBillingServiceApi extends AbstractServiceApi
         'getBillingDocumentsInfo' => [
             'application/json',
         ],
+        'getBillingGroups' => [
+            'application/json',
+        ],
         'getCouponInfo' => [
+            'application/json',
+        ],
+        'getUngroupedAccounts' => [
             'application/json',
         ],
         'redeemCoupon' => [
@@ -59,6 +65,9 @@ class CustomerBillingServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'searchInsertionOrders' => [
+            'application/json',
+        ],
+        'updateBillingGroupAccounts' => [
             'application/json',
         ],
         'updateInsertionOrder' => [
@@ -1835,6 +1844,225 @@ class CustomerBillingServiceApi extends AbstractServiceApi
     }
 
     /**
+     * Operation getBillingGroups
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsRequest $GetBillingGroupsRequest GetBillingGroupsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBillingGroups'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault
+     */
+    public function getBillingGroups($GetBillingGroupsRequest, string $contentType = self::contentTypes['getBillingGroups'][0])
+    {
+        list($response) = $this->getBillingGroupsWithHttpInfo($GetBillingGroupsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getBillingGroupsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsRequest $GetBillingGroupsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBillingGroups'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getBillingGroupsWithHttpInfo($GetBillingGroupsRequest, string $contentType = self::contentTypes['getBillingGroups'][0])
+    {
+        $request = $this->getBillingGroupsRequest($GetBillingGroupsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getBillingGroupsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsRequest $GetBillingGroupsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBillingGroups'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBillingGroupsAsync($GetBillingGroupsRequest, string $contentType = self::contentTypes['getBillingGroups'][0])
+    {
+        return $this->getBillingGroupsAsyncWithHttpInfo($GetBillingGroupsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getBillingGroupsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsRequest $GetBillingGroupsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBillingGroups'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBillingGroupsAsyncWithHttpInfo($GetBillingGroupsRequest, string $contentType = self::contentTypes['getBillingGroups'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsResponse';
+        $request = $this->getBillingGroupsRequest($GetBillingGroupsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getBillingGroups'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetBillingGroupsRequest $GetBillingGroupsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBillingGroups'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getBillingGroupsRequest($GetBillingGroupsRequest, string $contentType = self::contentTypes['getBillingGroups'][0])
+    {
+
+        // verify the required parameter 'GetBillingGroupsRequest' is set
+        if ($GetBillingGroupsRequest === null || (is_array($GetBillingGroupsRequest) && count($GetBillingGroupsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetBillingGroupsRequest when calling getBillingGroups'
+            );
+        }
+
+
+        $resourcePath = '/CustomerBilling/v13/BillingGroups/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetBillingGroupsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetBillingGroups',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
      * Operation getCouponInfo
      *
      * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetCouponInfoRequest $GetCouponInfoRequest GetCouponInfoRequest (required)
@@ -2047,6 +2275,225 @@ class CustomerBillingServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForgetCouponInfo',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation getUngroupedAccounts
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsRequest $GetUngroupedAccountsRequest GetUngroupedAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUngroupedAccounts'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault
+     */
+    public function getUngroupedAccounts($GetUngroupedAccountsRequest, string $contentType = self::contentTypes['getUngroupedAccounts'][0])
+    {
+        list($response) = $this->getUngroupedAccountsWithHttpInfo($GetUngroupedAccountsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getUngroupedAccountsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsRequest $GetUngroupedAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUngroupedAccounts'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUngroupedAccountsWithHttpInfo($GetUngroupedAccountsRequest, string $contentType = self::contentTypes['getUngroupedAccounts'][0])
+    {
+        $request = $this->getUngroupedAccountsRequest($GetUngroupedAccountsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUngroupedAccountsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsRequest $GetUngroupedAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUngroupedAccounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUngroupedAccountsAsync($GetUngroupedAccountsRequest, string $contentType = self::contentTypes['getUngroupedAccounts'][0])
+    {
+        return $this->getUngroupedAccountsAsyncWithHttpInfo($GetUngroupedAccountsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getUngroupedAccountsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsRequest $GetUngroupedAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUngroupedAccounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUngroupedAccountsAsyncWithHttpInfo($GetUngroupedAccountsRequest, string $contentType = self::contentTypes['getUngroupedAccounts'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsResponse';
+        $request = $this->getUngroupedAccountsRequest($GetUngroupedAccountsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getUngroupedAccounts'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\GetUngroupedAccountsRequest $GetUngroupedAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUngroupedAccounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getUngroupedAccountsRequest($GetUngroupedAccountsRequest, string $contentType = self::contentTypes['getUngroupedAccounts'][0])
+    {
+
+        // verify the required parameter 'GetUngroupedAccountsRequest' is set
+        if ($GetUngroupedAccountsRequest === null || (is_array($GetUngroupedAccountsRequest) && count($GetUngroupedAccountsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetUngroupedAccountsRequest when calling getUngroupedAccounts'
+            );
+        }
+
+
+        $resourcePath = '/CustomerBilling/v13/UngroupedAccounts/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetUngroupedAccountsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetUngroupedAccounts',
             null,
             [],
             $queryParams
@@ -2704,6 +3151,225 @@ class CustomerBillingServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForsearchInsertionOrders',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation updateBillingGroupAccounts
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsRequest $UpdateBillingGroupAccountsRequest UpdateBillingGroupAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBillingGroupAccounts'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault
+     */
+    public function updateBillingGroupAccounts($UpdateBillingGroupAccountsRequest, string $contentType = self::contentTypes['updateBillingGroupAccounts'][0])
+    {
+        list($response) = $this->updateBillingGroupAccountsWithHttpInfo($UpdateBillingGroupAccountsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateBillingGroupAccountsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsRequest $UpdateBillingGroupAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBillingGroupAccounts'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsResponse|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateBillingGroupAccountsWithHttpInfo($UpdateBillingGroupAccountsRequest, string $contentType = self::contentTypes['updateBillingGroupAccounts'][0])
+    {
+        $request = $this->updateBillingGroupAccountsRequest($UpdateBillingGroupAccountsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CustomerBillingService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateBillingGroupAccountsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsRequest $UpdateBillingGroupAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBillingGroupAccounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateBillingGroupAccountsAsync($UpdateBillingGroupAccountsRequest, string $contentType = self::contentTypes['updateBillingGroupAccounts'][0])
+    {
+        return $this->updateBillingGroupAccountsAsyncWithHttpInfo($UpdateBillingGroupAccountsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateBillingGroupAccountsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsRequest $UpdateBillingGroupAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBillingGroupAccounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateBillingGroupAccountsAsyncWithHttpInfo($UpdateBillingGroupAccountsRequest, string $contentType = self::contentTypes['updateBillingGroupAccounts'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsResponse';
+        $request = $this->updateBillingGroupAccountsRequest($UpdateBillingGroupAccountsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateBillingGroupAccounts'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CustomerBillingService\UpdateBillingGroupAccountsRequest $UpdateBillingGroupAccountsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBillingGroupAccounts'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateBillingGroupAccountsRequest($UpdateBillingGroupAccountsRequest, string $contentType = self::contentTypes['updateBillingGroupAccounts'][0])
+    {
+
+        // verify the required parameter 'UpdateBillingGroupAccountsRequest' is set
+        if ($UpdateBillingGroupAccountsRequest === null || (is_array($UpdateBillingGroupAccountsRequest) && count($UpdateBillingGroupAccountsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $UpdateBillingGroupAccountsRequest when calling updateBillingGroupAccounts'
+            );
+        }
+
+
+        $resourcePath = '/CustomerBilling/v13/BillingGroupAccounts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'PUT',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $UpdateBillingGroupAccountsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForupdateBillingGroupAccounts',
             null,
             [],
             $queryParams

@@ -33,9 +33,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PageInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField',
         'ExperimentIds' => 'string[]',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField'
+        'PageInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging'
     ];
 
     /**
@@ -46,9 +46,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PageInfo' => null,
+        'ReturnAdditionalFields' => null,
         'ExperimentIds' => 'int64',
-        'ReturnAdditionalFields' => null
+        'PageInfo' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PageInfo' => true,
+        'ReturnAdditionalFields' => false,
         'ExperimentIds' => true,
-        'ReturnAdditionalFields' => false
+        'PageInfo' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PageInfo' => 'PageInfo',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
         'ExperimentIds' => 'ExperimentIds',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'PageInfo' => 'PageInfo'
     ];
 
     /**
@@ -159,9 +159,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'PageInfo' => 'setPageInfo',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
         'ExperimentIds' => 'setExperimentIds',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'PageInfo' => 'setPageInfo'
     ];
 
     /**
@@ -170,9 +170,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'PageInfo' => 'getPageInfo',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
         'ExperimentIds' => 'getExperimentIds',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'PageInfo' => 'getPageInfo'
     ];
 
     /**
@@ -232,9 +232,9 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PageInfo', $data ?? [], null);
-        $this->setIfExists('ExperimentIds', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('ExperimentIds', $data ?? [], null);
+        $this->setIfExists('PageInfo', $data ?? [], null);
     }
 
     /**
@@ -280,38 +280,37 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets PageInfo
+     * Gets ReturnAdditionalFields
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField|mixed|null
      */
-    public function getPageInfo()
+    public function getReturnAdditionalFields()
     {
-        if (!isset($this->container['PageInfo']) || is_null($this->container['PageInfo'])) {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
             return null;
         }
-        return $this->container['PageInfo'];
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
     }
 
     /**
-     * Sets PageInfo
+     * Sets ReturnAdditionalFields
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null $PageInfo PageInfo
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
      *
      * @return self
      */
-    public function setPageInfo($PageInfo)
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
-        if (is_null($PageInfo)) {
-            array_push($this->openAPINullablesSetToNull, 'PageInfo');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PageInfo', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
         }
-        $this->container['PageInfo'] = $PageInfo;
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }
@@ -354,37 +353,38 @@ class GetExperimentsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets ReturnAdditionalFields
+     * Gets PageInfo
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null
      */
-    public function getReturnAdditionalFields()
+    public function getPageInfo()
     {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+        if (!isset($this->container['PageInfo']) || is_null($this->container['PageInfo'])) {
             return null;
         }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
+        return $this->container['PageInfo'];
     }
 
     /**
-     * Sets ReturnAdditionalFields
+     * Sets PageInfo
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null $PageInfo PageInfo
      *
      * @return self
      */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    public function setPageInfo($PageInfo)
     {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        if (is_null($PageInfo)) {
+            array_push($this->openAPINullablesSetToNull, 'PageInfo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PageInfo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+        $this->container['PageInfo'] = $PageInfo;
 
         return $this;
     }

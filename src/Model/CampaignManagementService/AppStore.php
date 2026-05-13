@@ -25,6 +25,8 @@ class AppStore
 
     public const MICROSOFT_APP_STORE = 'MicrosoftAppStore';
 
+    public const XBOX_STORE = 'XboxStore';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -94,7 +96,8 @@ class AppStore
         return [
             self::GOOGLE_APP_STORE,
             self::APPLE_APP_STORE,
-            self::MICROSOFT_APP_STORE
+            self::MICROSOFT_APP_STORE,
+            self::XBOX_STORE
         ];
     }
 }

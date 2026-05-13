@@ -161,6 +161,18 @@ class PublisherUsagePerformanceReportColumn
 
     public const CPS = 'CPS';
 
+    public const LOW_QUALITY_CLICKS = 'LowQualityClicks';
+
+    public const LOW_QUALITY_CLICKS_PERCENT = 'LowQualityClicksPercent';
+
+    public const LOW_QUALITY_IMPRESSIONS = 'LowQualityImpressions';
+
+    public const LOW_QUALITY_IMPRESSIONS_PERCENT = 'LowQualityImpressionsPercent';
+
+    public const LOW_QUALITY_GENERAL_CLICKS = 'LowQualityGeneralClicks';
+
+    public const LOW_QUALITY_SOPHISTICATED_CLICKS = 'LowQualitySophisticatedClicks';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -298,7 +310,13 @@ class PublisherUsagePerformanceReportColumn
             self::CPP,
             self::SUBSCRIPTIONS,
             self::POST_INSTALL_SUBSCRIPTION_RATE,
-            self::CPS
+            self::CPS,
+            self::LOW_QUALITY_CLICKS,
+            self::LOW_QUALITY_CLICKS_PERCENT,
+            self::LOW_QUALITY_IMPRESSIONS,
+            self::LOW_QUALITY_IMPRESSIONS_PERCENT,
+            self::LOW_QUALITY_GENERAL_CLICKS,
+            self::LOW_QUALITY_SOPHISTICATED_CLICKS
         ];
     }
 }

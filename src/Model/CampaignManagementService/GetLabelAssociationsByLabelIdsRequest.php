@@ -33,9 +33,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PageInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging',
+        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType',
         'LabelIds' => 'string[]',
-        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType'
+        'PageInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging'
     ];
 
     /**
@@ -46,9 +46,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PageInfo' => null,
+        'EntityType' => null,
         'LabelIds' => 'int64',
-        'EntityType' => null
+        'PageInfo' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PageInfo' => true,
+        'EntityType' => false,
         'LabelIds' => true,
-        'EntityType' => false
+        'PageInfo' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PageInfo' => 'PageInfo',
+        'EntityType' => 'EntityType',
         'LabelIds' => 'LabelIds',
-        'EntityType' => 'EntityType'
+        'PageInfo' => 'PageInfo'
     ];
 
     /**
@@ -159,9 +159,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
-        'PageInfo' => 'setPageInfo',
+        'EntityType' => 'setEntityType',
         'LabelIds' => 'setLabelIds',
-        'EntityType' => 'setEntityType'
+        'PageInfo' => 'setPageInfo'
     ];
 
     /**
@@ -170,9 +170,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
-        'PageInfo' => 'getPageInfo',
+        'EntityType' => 'getEntityType',
         'LabelIds' => 'getLabelIds',
-        'EntityType' => 'getEntityType'
+        'PageInfo' => 'getPageInfo'
     ];
 
     /**
@@ -232,9 +232,9 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PageInfo', $data ?? [], null);
-        $this->setIfExists('LabelIds', $data ?? [], null);
         $this->setIfExists('EntityType', $data ?? [], null);
+        $this->setIfExists('LabelIds', $data ?? [], null);
+        $this->setIfExists('PageInfo', $data ?? [], null);
     }
 
     /**
@@ -280,38 +280,37 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets PageInfo
+     * Gets EntityType
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null
      */
-    public function getPageInfo()
+    public function getEntityType()
     {
-        if (!isset($this->container['PageInfo']) || is_null($this->container['PageInfo'])) {
+        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
             return null;
         }
-        return $this->container['PageInfo'];
+        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
+            return $this->container['EntityType']->getValue();
+        }
+        return $this->container['EntityType'];
     }
 
     /**
-     * Sets PageInfo
+     * Sets EntityType
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null $PageInfo PageInfo
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null $EntityType EntityType
      *
      * @return self
      */
-    public function setPageInfo($PageInfo)
+    public function setEntityType($EntityType)
     {
-        if (is_null($PageInfo)) {
-            array_push($this->openAPINullablesSetToNull, 'PageInfo');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PageInfo', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($EntityType)) {
+            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        $this->container['PageInfo'] = $PageInfo;
+        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
+            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
+        }
+        $this->container['EntityType'] = $EntityType;
 
         return $this;
     }
@@ -354,37 +353,38 @@ class GetLabelAssociationsByLabelIdsRequest implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets EntityType
+     * Gets PageInfo
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null
      */
-    public function getEntityType()
+    public function getPageInfo()
     {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
+        if (!isset($this->container['PageInfo']) || is_null($this->container['PageInfo'])) {
             return null;
         }
-        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
-            return $this->container['EntityType']->getValue();
-        }
-        return $this->container['EntityType'];
+        return $this->container['PageInfo'];
     }
 
     /**
-     * Sets EntityType
+     * Sets PageInfo
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null $EntityType EntityType
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null $PageInfo PageInfo
      *
      * @return self
      */
-    public function setEntityType($EntityType)
+    public function setPageInfo($PageInfo)
     {
-        if (is_null($EntityType)) {
-            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
+        if (is_null($PageInfo)) {
+            array_push($this->openAPINullablesSetToNull, 'PageInfo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PageInfo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
-            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
-        }
-        $this->container['EntityType'] = $EntityType;
+        $this->container['PageInfo'] = $PageInfo;
 
         return $this;
     }

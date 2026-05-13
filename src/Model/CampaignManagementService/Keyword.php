@@ -44,12 +44,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus',
         'DestinationUrl' => 'string',
         'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
         'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'FinalUrls' => 'string[]',
         'FinalMobileUrls' => 'string[]',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
         'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
+        'FinalUrlSuffix' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -72,12 +72,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         'EditorialStatus' => null,
         'DestinationUrl' => null,
         'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
         'UrlCustomParameters' => null,
         'FinalUrls' => null,
         'FinalMobileUrls' => null,
         'FinalAppUrls' => null,
         'BiddingScheme' => null,
+        'FinalUrlSuffix' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -98,12 +98,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         'EditorialStatus' => false,
         'DestinationUrl' => true,
         'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
         'UrlCustomParameters' => true,
         'FinalUrls' => true,
         'FinalMobileUrls' => true,
         'FinalAppUrls' => true,
         'BiddingScheme' => true,
+        'FinalUrlSuffix' => true,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -204,12 +204,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         'EditorialStatus' => 'EditorialStatus',
         'DestinationUrl' => 'DestinationUrl',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
         'UrlCustomParameters' => 'UrlCustomParameters',
         'FinalUrls' => 'FinalUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalAppUrls' => 'FinalAppUrls',
         'BiddingScheme' => 'BiddingScheme',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -230,12 +230,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         'EditorialStatus' => 'setEditorialStatus',
         'DestinationUrl' => 'setDestinationUrl',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
         'UrlCustomParameters' => 'setUrlCustomParameters',
         'FinalUrls' => 'setFinalUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalAppUrls' => 'setFinalAppUrls',
         'BiddingScheme' => 'setBiddingScheme',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -256,12 +256,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         'EditorialStatus' => 'getEditorialStatus',
         'DestinationUrl' => 'getDestinationUrl',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
         'UrlCustomParameters' => 'getUrlCustomParameters',
         'FinalUrls' => 'getFinalUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalAppUrls' => 'getFinalAppUrls',
         'BiddingScheme' => 'getBiddingScheme',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -333,12 +333,12 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('DestinationUrl', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
         $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('FinalUrls', $data ?? [], null);
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('BiddingScheme', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -789,43 +789,6 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
      * Gets UrlCustomParameters
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
@@ -1006,6 +969,43 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BiddingScheme'] = $BiddingScheme;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
 
         return $this;
     }

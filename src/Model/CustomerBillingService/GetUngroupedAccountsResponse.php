@@ -1,22 +1,22 @@
 <?php
 /**
- * UpdateKeywordsResponse
- * CampaignManagementService
+ * GetUngroupedAccountsResponse
+ * CustomerBillingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\CustomerBillingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\CustomerBillingService;
 
 use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetUngroupedAccountsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsResponse';
+    protected static string $openAPIModelName = 'GetUngroupedAccountsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'InheritedBidStrategyTypes' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
+        'UngroupedAccounts' => '\Microsoft\MsAds\Rest\Model\CustomerBillingService\UngroupedAccount[]'
     ];
 
     /**
@@ -45,8 +44,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'InheritedBidStrategyTypes' => null,
-        'PartialErrors' => null
+        'UngroupedAccounts' => null
     ];
 
     /**
@@ -55,8 +53,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'InheritedBidStrategyTypes' => true,
-        'PartialErrors' => true
+        'UngroupedAccounts' => true
     ];
 
     /**
@@ -145,8 +142,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
-        'PartialErrors' => 'PartialErrors'
+        'UngroupedAccounts' => 'UngroupedAccounts'
     ];
 
     /**
@@ -155,8 +151,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
-        'PartialErrors' => 'setPartialErrors'
+        'UngroupedAccounts' => 'setUngroupedAccounts'
     ];
 
     /**
@@ -165,8 +160,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
-        'PartialErrors' => 'getPartialErrors'
+        'UngroupedAccounts' => 'getUngroupedAccounts'
     ];
 
     /**
@@ -226,8 +220,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
-        $this->setIfExists('PartialErrors', $data ?? [], null);
+        $this->setIfExists('UngroupedAccounts', $data ?? [], null);
     }
 
     /**
@@ -273,75 +266,38 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets InheritedBidStrategyTypes
+     * Gets UngroupedAccounts
      *
-     * @return string[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\UngroupedAccount[]|null
      */
-    public function getInheritedBidStrategyTypes()
+    public function getUngroupedAccounts()
     {
-        if (!isset($this->container['InheritedBidStrategyTypes']) || is_null($this->container['InheritedBidStrategyTypes'])) {
+        if (!isset($this->container['UngroupedAccounts']) || is_null($this->container['UngroupedAccounts'])) {
             return null;
         }
-        return $this->container['InheritedBidStrategyTypes'];
+        return $this->container['UngroupedAccounts'];
     }
 
     /**
-     * Sets InheritedBidStrategyTypes
+     * Sets UngroupedAccounts
      *
-     * @param string[]|null $InheritedBidStrategyTypes InheritedBidStrategyTypes
+     * @param \Microsoft\MsAds\Rest\Model\CustomerBillingService\UngroupedAccount[]|null $UngroupedAccounts UngroupedAccounts
      *
      * @return self
      */
-    public function setInheritedBidStrategyTypes($InheritedBidStrategyTypes)
+    public function setUngroupedAccounts($UngroupedAccounts)
     {
-        if (is_null($InheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'InheritedBidStrategyTypes');
+        if (is_null($UngroupedAccounts)) {
+            array_push($this->openAPINullablesSetToNull, 'UngroupedAccounts');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InheritedBidStrategyTypes', $nullablesSetToNull);
+            $index = array_search('UngroupedAccounts', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
-
-        return $this;
-    }
-
-    /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
+        $this->container['UngroupedAccounts'] = $UngroupedAccounts;
 
         return $this;
     }

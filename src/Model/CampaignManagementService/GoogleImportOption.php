@@ -147,7 +147,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateAdUrls' => 'bool',
         'UpdateSitelinkUrls' => 'bool',
         'UpdateAssetAutomationCampaignSetting' => 'bool',
-        'ImageAssetAutomationOptOut' => 'bool'
+        'ImageAssetAutomationOptOut' => 'bool',
+        'ImportNCAGoalWithSystemGeneratedAudience' => 'bool'
     ];
 
     /**
@@ -272,7 +273,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateAdUrls' => null,
         'UpdateSitelinkUrls' => null,
         'UpdateAssetAutomationCampaignSetting' => null,
-        'ImageAssetAutomationOptOut' => null
+        'ImageAssetAutomationOptOut' => null,
+        'ImportNCAGoalWithSystemGeneratedAudience' => null
     ];
 
     /**
@@ -395,7 +397,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateAdUrls' => true,
         'UpdateSitelinkUrls' => true,
         'UpdateAssetAutomationCampaignSetting' => true,
-        'ImageAssetAutomationOptOut' => true
+        'ImageAssetAutomationOptOut' => true,
+        'ImportNCAGoalWithSystemGeneratedAudience' => true
     ];
 
     /**
@@ -598,7 +601,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateAdUrls' => 'UpdateAdUrls',
         'UpdateSitelinkUrls' => 'UpdateSitelinkUrls',
         'UpdateAssetAutomationCampaignSetting' => 'UpdateAssetAutomationCampaignSetting',
-        'ImageAssetAutomationOptOut' => 'ImageAssetAutomationOptOut'
+        'ImageAssetAutomationOptOut' => 'ImageAssetAutomationOptOut',
+        'ImportNCAGoalWithSystemGeneratedAudience' => 'ImportNCAGoalWithSystemGeneratedAudience'
     ];
 
     /**
@@ -721,7 +725,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateAdUrls' => 'setUpdateAdUrls',
         'UpdateSitelinkUrls' => 'setUpdateSitelinkUrls',
         'UpdateAssetAutomationCampaignSetting' => 'setUpdateAssetAutomationCampaignSetting',
-        'ImageAssetAutomationOptOut' => 'setImageAssetAutomationOptOut'
+        'ImageAssetAutomationOptOut' => 'setImageAssetAutomationOptOut',
+        'ImportNCAGoalWithSystemGeneratedAudience' => 'setImportNCAGoalWithSystemGeneratedAudience'
     ];
 
     /**
@@ -844,7 +849,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateAdUrls' => 'getUpdateAdUrls',
         'UpdateSitelinkUrls' => 'getUpdateSitelinkUrls',
         'UpdateAssetAutomationCampaignSetting' => 'getUpdateAssetAutomationCampaignSetting',
-        'ImageAssetAutomationOptOut' => 'getImageAssetAutomationOptOut'
+        'ImageAssetAutomationOptOut' => 'getImageAssetAutomationOptOut',
+        'ImportNCAGoalWithSystemGeneratedAudience' => 'getImportNCAGoalWithSystemGeneratedAudience'
     ];
 
     /**
@@ -1019,6 +1025,7 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         $this->setIfExists('UpdateSitelinkUrls', $data ?? [], null);
         $this->setIfExists('UpdateAssetAutomationCampaignSetting', $data ?? [], null);
         $this->setIfExists('ImageAssetAutomationOptOut', $data ?? [], null);
+        $this->setIfExists('ImportNCAGoalWithSystemGeneratedAudience', $data ?? [], null);
     }
 
     /**
@@ -5314,6 +5321,43 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
             }
         }
         $this->container['ImageAssetAutomationOptOut'] = $ImageAssetAutomationOptOut;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImportNCAGoalWithSystemGeneratedAudience
+     *
+     * @return bool|null
+     */
+    public function getImportNCAGoalWithSystemGeneratedAudience()
+    {
+        if (!isset($this->container['ImportNCAGoalWithSystemGeneratedAudience']) || is_null($this->container['ImportNCAGoalWithSystemGeneratedAudience'])) {
+            return null;
+        }
+        return $this->container['ImportNCAGoalWithSystemGeneratedAudience'];
+    }
+
+    /**
+     * Sets ImportNCAGoalWithSystemGeneratedAudience
+     *
+     * @param bool|null $ImportNCAGoalWithSystemGeneratedAudience ImportNCAGoalWithSystemGeneratedAudience
+     *
+     * @return self
+     */
+    public function setImportNCAGoalWithSystemGeneratedAudience($ImportNCAGoalWithSystemGeneratedAudience)
+    {
+        if (is_null($ImportNCAGoalWithSystemGeneratedAudience)) {
+            array_push($this->openAPINullablesSetToNull, 'ImportNCAGoalWithSystemGeneratedAudience');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImportNCAGoalWithSystemGeneratedAudience', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImportNCAGoalWithSystemGeneratedAudience'] = $ImportNCAGoalWithSystemGeneratedAudience;
 
         return $this;
     }

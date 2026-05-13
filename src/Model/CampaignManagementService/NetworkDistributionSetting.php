@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateKeywordsResponse
+ * NetworkDistributionSetting
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class NetworkDistributionSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsResponse';
+    protected static string $openAPIModelName = 'NetworkDistributionSetting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'InheritedBidStrategyTypes' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
+        'Type' => 'string',
+        'NetworkOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Network'
     ];
 
     /**
@@ -45,8 +45,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'InheritedBidStrategyTypes' => null,
-        'PartialErrors' => null
+        'Type' => null,
+        'NetworkOption' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'InheritedBidStrategyTypes' => true,
-        'PartialErrors' => true
+        'Type' => true,
+        'NetworkOption' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
-        'PartialErrors' => 'PartialErrors'
+        'Type' => 'Type',
+        'NetworkOption' => 'NetworkOption'
     ];
 
     /**
@@ -155,8 +155,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
-        'PartialErrors' => 'setPartialErrors'
+        'Type' => 'setType',
+        'NetworkOption' => 'setNetworkOption'
     ];
 
     /**
@@ -165,8 +165,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
-        'PartialErrors' => 'getPartialErrors'
+        'Type' => 'getType',
+        'NetworkOption' => 'getNetworkOption'
     ];
 
     /**
@@ -226,8 +226,8 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
-        $this->setIfExists('PartialErrors', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('NetworkOption', $data ?? [], null);
     }
 
     /**
@@ -273,75 +273,74 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets InheritedBidStrategyTypes
+     * Gets Type
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getInheritedBidStrategyTypes()
+    public function getType()
     {
-        if (!isset($this->container['InheritedBidStrategyTypes']) || is_null($this->container['InheritedBidStrategyTypes'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['InheritedBidStrategyTypes'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets InheritedBidStrategyTypes
+     * Sets Type
      *
-     * @param string[]|null $InheritedBidStrategyTypes InheritedBidStrategyTypes
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setInheritedBidStrategyTypes($InheritedBidStrategyTypes)
+    public function setType($Type)
     {
-        if (is_null($InheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'InheritedBidStrategyTypes');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InheritedBidStrategyTypes', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
+        $this->container['Type'] = $Type;
 
         return $this;
     }
 
     /**
-     * Gets PartialErrors
+     * Gets NetworkOption
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network|mixed|null
      */
-    public function getPartialErrors()
+    public function getNetworkOption()
     {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+        if (!isset($this->container['NetworkOption']) || is_null($this->container['NetworkOption'])) {
             return null;
         }
-        return $this->container['PartialErrors'];
+        if ((is_object($this->container['NetworkOption']) || is_string($this->container['NetworkOption'])) && method_exists($this->container['NetworkOption'], 'getValue')) {
+            return $this->container['NetworkOption']->getValue();
+        }
+        return $this->container['NetworkOption'];
     }
 
     /**
-     * Sets PartialErrors
+     * Sets NetworkOption
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network|mixed|null $NetworkOption NetworkOption
      *
      * @return self
      */
-    public function setPartialErrors($PartialErrors)
+    public function setNetworkOption($NetworkOption)
     {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($NetworkOption)) {
+            throw new \InvalidArgumentException('non-nullable NetworkOption cannot be null');
         }
-        $this->container['PartialErrors'] = $PartialErrors;
+        if (!$NetworkOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network) {
+            $NetworkOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network($NetworkOption);
+        }
+        $this->container['NetworkOption'] = $NetworkOption;
 
         return $this;
     }

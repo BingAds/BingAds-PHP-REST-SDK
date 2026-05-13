@@ -35,15 +35,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPITypes = [
         'Id' => 'string',
         'Name' => 'string',
-        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'EndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
         'BaseCampaignId' => 'string',
         'ExperimentCampaignId' => 'string',
         'TrafficSplitPercent' => 'int',
+        'ExperimentArms' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]',
+        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'EndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
         'ExperimentStatus' => 'string',
         'ExperimentType' => 'string',
-        'ExperimentSubType' => 'string',
-        'ExperimentArms' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]'
+        'ExperimentSubType' => 'string'
     ];
 
     /**
@@ -56,15 +56,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPIFormats = [
         'Id' => 'int64',
         'Name' => null,
-        'StartDate' => null,
-        'EndDate' => null,
         'BaseCampaignId' => 'int64',
         'ExperimentCampaignId' => 'int64',
         'TrafficSplitPercent' => 'int32',
+        'ExperimentArms' => null,
+        'StartDate' => null,
+        'EndDate' => null,
         'ExperimentStatus' => null,
         'ExperimentType' => null,
-        'ExperimentSubType' => null,
-        'ExperimentArms' => null
+        'ExperimentSubType' => null
     ];
 
     /**
@@ -75,15 +75,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'Id' => true,
         'Name' => true,
-        'StartDate' => true,
-        'EndDate' => true,
         'BaseCampaignId' => true,
         'ExperimentCampaignId' => true,
         'TrafficSplitPercent' => true,
+        'ExperimentArms' => true,
+        'StartDate' => true,
+        'EndDate' => true,
         'ExperimentStatus' => true,
         'ExperimentType' => true,
-        'ExperimentSubType' => true,
-        'ExperimentArms' => true
+        'ExperimentSubType' => true
     ];
 
     /**
@@ -174,15 +174,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $attributeMap = [
         'Id' => 'Id',
         'Name' => 'Name',
-        'StartDate' => 'StartDate',
-        'EndDate' => 'EndDate',
         'BaseCampaignId' => 'BaseCampaignId',
         'ExperimentCampaignId' => 'ExperimentCampaignId',
         'TrafficSplitPercent' => 'TrafficSplitPercent',
+        'ExperimentArms' => 'ExperimentArms',
+        'StartDate' => 'StartDate',
+        'EndDate' => 'EndDate',
         'ExperimentStatus' => 'ExperimentStatus',
         'ExperimentType' => 'ExperimentType',
-        'ExperimentSubType' => 'ExperimentSubType',
-        'ExperimentArms' => 'ExperimentArms'
+        'ExperimentSubType' => 'ExperimentSubType'
     ];
 
     /**
@@ -193,15 +193,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $setters = [
         'Id' => 'setId',
         'Name' => 'setName',
-        'StartDate' => 'setStartDate',
-        'EndDate' => 'setEndDate',
         'BaseCampaignId' => 'setBaseCampaignId',
         'ExperimentCampaignId' => 'setExperimentCampaignId',
         'TrafficSplitPercent' => 'setTrafficSplitPercent',
+        'ExperimentArms' => 'setExperimentArms',
+        'StartDate' => 'setStartDate',
+        'EndDate' => 'setEndDate',
         'ExperimentStatus' => 'setExperimentStatus',
         'ExperimentType' => 'setExperimentType',
-        'ExperimentSubType' => 'setExperimentSubType',
-        'ExperimentArms' => 'setExperimentArms'
+        'ExperimentSubType' => 'setExperimentSubType'
     ];
 
     /**
@@ -212,15 +212,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $getters = [
         'Id' => 'getId',
         'Name' => 'getName',
-        'StartDate' => 'getStartDate',
-        'EndDate' => 'getEndDate',
         'BaseCampaignId' => 'getBaseCampaignId',
         'ExperimentCampaignId' => 'getExperimentCampaignId',
         'TrafficSplitPercent' => 'getTrafficSplitPercent',
+        'ExperimentArms' => 'getExperimentArms',
+        'StartDate' => 'getStartDate',
+        'EndDate' => 'getEndDate',
         'ExperimentStatus' => 'getExperimentStatus',
         'ExperimentType' => 'getExperimentType',
-        'ExperimentSubType' => 'getExperimentSubType',
-        'ExperimentArms' => 'getExperimentArms'
+        'ExperimentSubType' => 'getExperimentSubType'
     ];
 
     /**
@@ -282,15 +282,15 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
-        $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('BaseCampaignId', $data ?? [], null);
         $this->setIfExists('ExperimentCampaignId', $data ?? [], null);
         $this->setIfExists('TrafficSplitPercent', $data ?? [], null);
+        $this->setIfExists('ExperimentArms', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('ExperimentStatus', $data ?? [], null);
         $this->setIfExists('ExperimentType', $data ?? [], null);
         $this->setIfExists('ExperimentSubType', $data ?? [], null);
-        $this->setIfExists('ExperimentArms', $data ?? [], null);
     }
 
     /**
@@ -410,80 +410,6 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets StartDate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
-     */
-    public function getStartDate()
-    {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
-            return null;
-        }
-        return $this->container['StartDate'];
-    }
-
-    /**
-     * Sets StartDate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
-     *
-     * @return self
-     */
-    public function setStartDate($StartDate)
-    {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StartDate'] = $StartDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets EndDate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
-     */
-    public function getEndDate()
-    {
-        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
-            return null;
-        }
-        return $this->container['EndDate'];
-    }
-
-    /**
-     * Sets EndDate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $EndDate EndDate
-     *
-     * @return self
-     */
-    public function setEndDate($EndDate)
-    {
-        if (is_null($EndDate)) {
-            array_push($this->openAPINullablesSetToNull, 'EndDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EndDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EndDate'] = $EndDate;
-
-        return $this;
-    }
-
-    /**
      * Gets BaseCampaignId
      *
      * @return string|null
@@ -595,6 +521,117 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ExperimentArms
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null
+     */
+    public function getExperimentArms()
+    {
+        if (!isset($this->container['ExperimentArms']) || is_null($this->container['ExperimentArms'])) {
+            return null;
+        }
+        return $this->container['ExperimentArms'];
+    }
+
+    /**
+     * Sets ExperimentArms
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null $ExperimentArms ExperimentArms
+     *
+     * @return self
+     */
+    public function setExperimentArms($ExperimentArms)
+    {
+        if (is_null($ExperimentArms)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentArms');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExperimentArms', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExperimentArms'] = $ExperimentArms;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartDate
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets EndDate
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     */
+    public function getEndDate()
+    {
+        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
+            return null;
+        }
+        return $this->container['EndDate'];
+    }
+
+    /**
+     * Sets EndDate
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $EndDate EndDate
+     *
+     * @return self
+     */
+    public function setEndDate($EndDate)
+    {
+        if (is_null($EndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
+
+    /**
      * Gets ExperimentStatus
      *
      * @return string|null
@@ -701,43 +738,6 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ExperimentSubType'] = $ExperimentSubType;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExperimentArms
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null
-     */
-    public function getExperimentArms()
-    {
-        if (!isset($this->container['ExperimentArms']) || is_null($this->container['ExperimentArms'])) {
-            return null;
-        }
-        return $this->container['ExperimentArms'];
-    }
-
-    /**
-     * Sets ExperimentArms
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null $ExperimentArms ExperimentArms
-     *
-     * @return self
-     */
-    public function setExperimentArms($ExperimentArms)
-    {
-        if (is_null($ExperimentArms)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentArms');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentArms', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExperimentArms'] = $ExperimentArms;
 
         return $this;
     }

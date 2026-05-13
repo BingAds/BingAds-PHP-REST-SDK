@@ -33,8 +33,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PageInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging',
-        'LabelIds' => 'string[]'
+        'LabelIds' => 'string[]',
+        'PageInfo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PageInfo' => null,
-        'LabelIds' => 'int64'
+        'LabelIds' => 'int64',
+        'PageInfo' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PageInfo' => true,
-        'LabelIds' => true
+        'LabelIds' => true,
+        'PageInfo' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PageInfo' => 'PageInfo',
-        'LabelIds' => 'LabelIds'
+        'LabelIds' => 'LabelIds',
+        'PageInfo' => 'PageInfo'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
-        'PageInfo' => 'setPageInfo',
-        'LabelIds' => 'setLabelIds'
+        'LabelIds' => 'setLabelIds',
+        'PageInfo' => 'setPageInfo'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
-        'PageInfo' => 'getPageInfo',
-        'LabelIds' => 'getLabelIds'
+        'LabelIds' => 'getLabelIds',
+        'PageInfo' => 'getPageInfo'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PageInfo', $data ?? [], null);
         $this->setIfExists('LabelIds', $data ?? [], null);
+        $this->setIfExists('PageInfo', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets PageInfo
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null
-     */
-    public function getPageInfo()
-    {
-        if (!isset($this->container['PageInfo']) || is_null($this->container['PageInfo'])) {
-            return null;
-        }
-        return $this->container['PageInfo'];
-    }
-
-    /**
-     * Sets PageInfo
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null $PageInfo PageInfo
-     *
-     * @return self
-     */
-    public function setPageInfo($PageInfo)
-    {
-        if (is_null($PageInfo)) {
-            array_push($this->openAPINullablesSetToNull, 'PageInfo');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PageInfo', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PageInfo'] = $PageInfo;
-
-        return $this;
-    }
-
-    /**
      * Gets LabelIds
      *
      * @return string[]|null
@@ -342,6 +305,43 @@ class GetLabelsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['LabelIds'] = $LabelIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets PageInfo
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null
+     */
+    public function getPageInfo()
+    {
+        if (!isset($this->container['PageInfo']) || is_null($this->container['PageInfo'])) {
+            return null;
+        }
+        return $this->container['PageInfo'];
+    }
+
+    /**
+     * Sets PageInfo
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Paging|null $PageInfo PageInfo
+     *
+     * @return self
+     */
+    public function setPageInfo($PageInfo)
+    {
+        if (is_null($PageInfo)) {
+            array_push($this->openAPINullablesSetToNull, 'PageInfo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PageInfo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PageInfo'] = $PageInfo;
 
         return $this;
     }

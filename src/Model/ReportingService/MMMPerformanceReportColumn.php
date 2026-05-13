@@ -1,43 +1,59 @@
 <?php
 /**
- * CampaignType
- * CampaignManagementService
+ * MMMPerformanceReportColumn
+ * ReportingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\ReportingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\ReportingService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class CampaignType
+class MMMPerformanceReportColumn
 {
     /**
      * Possible values of this enum
      */
-    public const SEARCH = 'Search';
+    public const TIME_PERIOD = 'TimePeriod';
 
-    public const SHOPPING = 'Shopping';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    public const DYNAMIC_SEARCH_ADS = 'DynamicSearchAds';
+    public const CAMPAIGN_NAME = 'CampaignName';
 
-    public const AUDIENCE = 'Audience';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    public const HOTEL = 'Hotel';
+    public const AD_GROUP_NAME = 'AdGroupName';
 
-    public const PERFORMANCE_MAX = 'PerformanceMax';
+    public const ASSET_GROUP_ID = 'AssetGroupId';
 
-    public const APP = 'App';
+    public const ASSET_GROUP_NAME = 'AssetGroupName';
 
-    public const UNIFIED_CAMPAIGN = 'UnifiedCampaign';
+    public const ACCOUNT_ID = 'AccountId';
+
+    public const ACCOUNT_NAME = 'AccountName';
+
+    public const ACCOUNT_NUMBER = 'AccountNumber';
+
+    public const COUNTRY = 'Country';
+
+    public const STATE = 'State';
+
+    public const IMPRESSIONS = 'Impressions';
+
+    public const CLICKS = 'Clicks';
+
+    public const SPEND = 'Spend';
+
+    public const CONVERSIONS_QUALIFIED = 'ConversionsQualified';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
-    private static bool $isFlags = true;
+    private static bool $isFlags = false;
     private $value;
 
     /**
@@ -102,14 +118,22 @@ class CampaignType
     public static function getAllowableEnumValues(): array
     {
         return [
-            self::SEARCH,
-            self::SHOPPING,
-            self::DYNAMIC_SEARCH_ADS,
-            self::AUDIENCE,
-            self::HOTEL,
-            self::PERFORMANCE_MAX,
-            self::APP,
-            self::UNIFIED_CAMPAIGN
+            self::TIME_PERIOD,
+            self::CAMPAIGN_ID,
+            self::CAMPAIGN_NAME,
+            self::AD_GROUP_ID,
+            self::AD_GROUP_NAME,
+            self::ASSET_GROUP_ID,
+            self::ASSET_GROUP_NAME,
+            self::ACCOUNT_ID,
+            self::ACCOUNT_NAME,
+            self::ACCOUNT_NUMBER,
+            self::COUNTRY,
+            self::STATE,
+            self::IMPRESSIONS,
+            self::CLICKS,
+            self::SPEND,
+            self::CONVERSIONS_QUALIFIED
         ];
     }
 }

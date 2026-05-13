@@ -35,6 +35,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'DynamicFeedSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicFeedSetting',
         'DynamicSearchAdsSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSetting',
         'HotelSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelSetting',
+        'NetworkDistributionSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\NetworkDistributionSetting',
         'NewCustomerAcquisitionGoalSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\NewCustomerAcquisitionGoalSetting',
         'PerformanceMaxSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\PerformanceMaxSetting',
         'ResponsiveSearchAdsSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ResponsiveSearchAdsSetting',
@@ -93,7 +94,8 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AdditionalConversionValue' => 'float',
         'BaseDomain' => 'string',
         'SearchTermMatchingOptOut' => 'bool',
-        'AISearchEnabled' => 'bool'
+        'AISearchEnabled' => 'bool',
+        'NetworkOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Network'
     ];
 
     /**
@@ -139,7 +141,8 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AdditionalConversionValue' => 'double',
         'BaseDomain' => null,
         'SearchTermMatchingOptOut' => null,
-        'AISearchEnabled' => null
+        'AISearchEnabled' => null,
+        'NetworkOption' => null
     ];
 
     /**
@@ -183,7 +186,8 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AdditionalConversionValue' => true,
         'BaseDomain' => true,
         'SearchTermMatchingOptOut' => true,
-        'AISearchEnabled' => false
+        'AISearchEnabled' => false,
+        'NetworkOption' => false
     ];
 
     /**
@@ -307,7 +311,8 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AdditionalConversionValue' => 'AdditionalConversionValue',
         'BaseDomain' => 'BaseDomain',
         'SearchTermMatchingOptOut' => 'SearchTermMatchingOptOut',
-        'AISearchEnabled' => 'AISearchEnabled'
+        'AISearchEnabled' => 'AISearchEnabled',
+        'NetworkOption' => 'NetworkOption'
     ];
 
     /**
@@ -351,7 +356,8 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AdditionalConversionValue' => 'setAdditionalConversionValue',
         'BaseDomain' => 'setBaseDomain',
         'SearchTermMatchingOptOut' => 'setSearchTermMatchingOptOut',
-        'AISearchEnabled' => 'setAISearchEnabled'
+        'AISearchEnabled' => 'setAISearchEnabled',
+        'NetworkOption' => 'setNetworkOption'
     ];
 
     /**
@@ -395,7 +401,8 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AdditionalConversionValue' => 'getAdditionalConversionValue',
         'BaseDomain' => 'getBaseDomain',
         'SearchTermMatchingOptOut' => 'getSearchTermMatchingOptOut',
-        'AISearchEnabled' => 'getAISearchEnabled'
+        'AISearchEnabled' => 'getAISearchEnabled',
+        'NetworkOption' => 'getNetworkOption'
     ];
 
     /**
@@ -491,6 +498,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('BaseDomain', $data ?? [], null);
         $this->setIfExists('SearchTermMatchingOptOut', $data ?? [], null);
         $this->setIfExists('AISearchEnabled', $data ?? [], null);
+        $this->setIfExists('NetworkOption', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -1846,6 +1854,42 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable AISearchEnabled cannot be null');
         }
         $this->container['AISearchEnabled'] = $AISearchEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets NetworkOption
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network|mixed|null
+     */
+    public function getNetworkOption()
+    {
+        if (!isset($this->container['NetworkOption']) || is_null($this->container['NetworkOption'])) {
+            return null;
+        }
+        if ((is_object($this->container['NetworkOption']) || is_string($this->container['NetworkOption'])) && method_exists($this->container['NetworkOption'], 'getValue')) {
+            return $this->container['NetworkOption']->getValue();
+        }
+        return $this->container['NetworkOption'];
+    }
+
+    /**
+     * Sets NetworkOption
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network|mixed|null $NetworkOption NetworkOption
+     *
+     * @return self
+     */
+    public function setNetworkOption($NetworkOption)
+    {
+        if (is_null($NetworkOption)) {
+            throw new \InvalidArgumentException('non-nullable NetworkOption cannot be null');
+        }
+        if (!$NetworkOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network) {
+            $NetworkOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network($NetworkOption);
+        }
+        $this->container['NetworkOption'] = $NetworkOption;
 
         return $this;
     }
