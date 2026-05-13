@@ -1,6 +1,6 @@
 <?php
 /**
- * AdGroupAdditionalField
+ * SharedEntityAssociationAdditionalField
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -14,42 +14,14 @@ namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class AdGroupAdditionalField
+class SharedEntityAssociationAdditionalField
 {
     /**
      * Possible values of this enum
      */
     public const NONE = 'None';
 
-    public const AD_SCHEDULE_USE_SEARCHER_TIME_ZONE = 'AdScheduleUseSearcherTimeZone';
-
-    public const AD_GROUP_TYPE = 'AdGroupType';
-
-    public const CPV_BID = 'CpvBid';
-
-    public const CPM_BID = 'CpmBid';
-
-    public const MULTIMEDIA_ADS_BID_ADJUSTMENT = 'MultimediaAdsBidAdjustment';
-
-    public const COMMISSION_RATE = 'CommissionRate';
-
-    public const PERCENT_CPC_BID = 'PercentCpcBid';
-
-    public const MCPA_BID = 'McpaBid';
-
-    public const USE_OPTIMIZED_TARGETING = 'UseOptimizedTargeting';
-
-    public const FREQUENCY_CAP_SETTINGS = 'FrequencyCapSettings';
-
-    public const USE_PREDICTIVE_TARGETING = 'UsePredictiveTargeting';
-
-    public const MAX_CONVERSION_VALUE_WITH_MAX_CPC = 'MaxConversionValueWithMaxCpc';
-
-    public const BASE_DOMAIN = 'BaseDomain';
-
-    public const TARGET_SETTING_FOR_JOB_SENIORITY = 'TargetSettingForJobSeniority';
-
-    public const TARGET_SETTING_FOR_CUSTOM_LINKED_IN = 'TargetSettingForCustomLinkedIn';
+    public const BRAND_LIST_FIELDS = 'BrandListFields';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -119,21 +91,7 @@ class AdGroupAdditionalField
     {
         return [
             self::NONE,
-            self::AD_SCHEDULE_USE_SEARCHER_TIME_ZONE,
-            self::AD_GROUP_TYPE,
-            self::CPV_BID,
-            self::CPM_BID,
-            self::MULTIMEDIA_ADS_BID_ADJUSTMENT,
-            self::COMMISSION_RATE,
-            self::PERCENT_CPC_BID,
-            self::MCPA_BID,
-            self::USE_OPTIMIZED_TARGETING,
-            self::FREQUENCY_CAP_SETTINGS,
-            self::USE_PREDICTIVE_TARGETING,
-            self::MAX_CONVERSION_VALUE_WITH_MAX_CPC,
-            self::BASE_DOMAIN,
-            self::TARGET_SETTING_FOR_JOB_SENIORITY,
-            self::TARGET_SETTING_FOR_CUSTOM_LINKED_IN
+            self::BRAND_LIST_FIELDS
         ];
     }
 }

@@ -1,43 +1,67 @@
 <?php
 /**
- * CriterionTypeGroup
- * CampaignManagementService
+ * MSClickIdPerformanceReportColumn
+ * ReportingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\ReportingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\ReportingService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class CriterionTypeGroup
+class MSClickIdPerformanceReportColumn
 {
     /**
      * Possible values of this enum
      */
-    public const UNKNOWN = 'Unknown';
+    public const TIME_PERIOD = 'TimePeriod';
 
-    public const GENDER = 'Gender';
+    public const ACCOUNT_ID = 'AccountId';
 
-    public const AGE = 'Age';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    public const AUDIENCE = 'Audience';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    public const COMPANY_NAME = 'CompanyName';
+    public const ASSET_GROUP_ID = 'AssetGroupId';
 
-    public const JOB_FUNCTION = 'JobFunction';
+    public const AD_ID = 'AdId';
 
-    public const INDUSTRY = 'Industry';
+    public const MS_CLICK_ID = 'MSClickId';
 
-    public const INCOME_RANGE = 'IncomeRange';
+    public const SEARCH_QUERY = 'SearchQuery';
 
-    public const JOB_SENIORITY = 'JobSeniority';
+    public const KEYWORD = 'Keyword';
 
-    public const CUSTOM_LINKED_IN = 'CustomLinkedIn';
+    public const PAGE_NUMBER = 'PageNumber';
+
+    public const TOP_VS_OTHER = 'TopVsOther';
+
+    public const BID_MATCH_TYPE = 'BidMatchType';
+
+    public const NETWORK = 'Network';
+
+    public const DEVICE_TYPE = 'DeviceType';
+
+    public const COUNTRY = 'Country';
+
+    public const STATE = 'State';
+
+    public const METRO_AREA = 'MetroArea';
+
+    public const CITY = 'City';
+
+    public const CLICKS = 'Clicks';
+
+    public const AVERAGE_CPC = 'AverageCpc';
+
+    public const CONVERSIONS_QUALIFIED = 'ConversionsQualified';
+
+    public const REVENUE = 'Revenue';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -106,16 +130,28 @@ class CriterionTypeGroup
     public static function getAllowableEnumValues(): array
     {
         return [
-            self::UNKNOWN,
-            self::GENDER,
-            self::AGE,
-            self::AUDIENCE,
-            self::COMPANY_NAME,
-            self::JOB_FUNCTION,
-            self::INDUSTRY,
-            self::INCOME_RANGE,
-            self::JOB_SENIORITY,
-            self::CUSTOM_LINKED_IN
+            self::TIME_PERIOD,
+            self::ACCOUNT_ID,
+            self::CAMPAIGN_ID,
+            self::AD_GROUP_ID,
+            self::ASSET_GROUP_ID,
+            self::AD_ID,
+            self::MS_CLICK_ID,
+            self::SEARCH_QUERY,
+            self::KEYWORD,
+            self::PAGE_NUMBER,
+            self::TOP_VS_OTHER,
+            self::BID_MATCH_TYPE,
+            self::NETWORK,
+            self::DEVICE_TYPE,
+            self::COUNTRY,
+            self::STATE,
+            self::METRO_AREA,
+            self::CITY,
+            self::CLICKS,
+            self::AVERAGE_CPC,
+            self::CONVERSIONS_QUALIFIED,
+            self::REVENUE
         ];
     }
 }

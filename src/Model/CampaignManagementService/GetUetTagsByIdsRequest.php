@@ -33,8 +33,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TagIds' => 'string[]',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField',
+        'TagIds' => 'string[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TagIds' => 'int64',
-        'ReturnAdditionalFields' => null
+        'ReturnAdditionalFields' => null,
+        'TagIds' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TagIds' => true,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => false,
+        'TagIds' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TagIds' => 'TagIds',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
+        'TagIds' => 'TagIds'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'TagIds' => 'setTagIds',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
+        'TagIds' => 'setTagIds'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'TagIds' => 'getTagIds',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
+        'TagIds' => 'getTagIds'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TagIds', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('TagIds', $data ?? [], null);
     }
 
     /**
@@ -273,6 +273,42 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        }
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+
+        return $this;
+    }
+
+    /**
      * Gets TagIds
      *
      * @return string[]|null
@@ -305,42 +341,6 @@ class GetUetTagsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['TagIds'] = $TagIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

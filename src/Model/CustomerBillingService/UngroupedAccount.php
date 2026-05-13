@@ -1,22 +1,22 @@
 <?php
 /**
- * UpdateKeywordsResponse
- * CampaignManagementService
+ * UngroupedAccount
+ * CustomerBillingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\CustomerBillingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\CustomerBillingService;
 
 use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UngroupedAccount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsResponse';
+    protected static string $openAPIModelName = 'UngroupedAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'InheritedBidStrategyTypes' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
+        'AccountId' => 'string',
+        'AccountNumber' => 'string',
+        'AccountName' => 'string',
+        'PotentialBillingGroups' => '\Microsoft\MsAds\Rest\Model\CustomerBillingService\KeyValueEntityOflongAndstring[]'
     ];
 
     /**
@@ -45,8 +47,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'InheritedBidStrategyTypes' => null,
-        'PartialErrors' => null
+        'AccountId' => 'int64',
+        'AccountNumber' => null,
+        'AccountName' => null,
+        'PotentialBillingGroups' => null
     ];
 
     /**
@@ -55,8 +59,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'InheritedBidStrategyTypes' => true,
-        'PartialErrors' => true
+        'AccountId' => false,
+        'AccountNumber' => true,
+        'AccountName' => true,
+        'PotentialBillingGroups' => true
     ];
 
     /**
@@ -145,8 +151,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
-        'PartialErrors' => 'PartialErrors'
+        'AccountId' => 'AccountId',
+        'AccountNumber' => 'AccountNumber',
+        'AccountName' => 'AccountName',
+        'PotentialBillingGroups' => 'PotentialBillingGroups'
     ];
 
     /**
@@ -155,8 +163,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
-        'PartialErrors' => 'setPartialErrors'
+        'AccountId' => 'setAccountId',
+        'AccountNumber' => 'setAccountNumber',
+        'AccountName' => 'setAccountName',
+        'PotentialBillingGroups' => 'setPotentialBillingGroups'
     ];
 
     /**
@@ -165,8 +175,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
-        'PartialErrors' => 'getPartialErrors'
+        'AccountId' => 'getAccountId',
+        'AccountNumber' => 'getAccountNumber',
+        'AccountName' => 'getAccountName',
+        'PotentialBillingGroups' => 'getPotentialBillingGroups'
     ];
 
     /**
@@ -226,8 +238,10 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
-        $this->setIfExists('PartialErrors', $data ?? [], null);
+        $this->setIfExists('AccountId', $data ?? [], null);
+        $this->setIfExists('AccountNumber', $data ?? [], null);
+        $this->setIfExists('AccountName', $data ?? [], null);
+        $this->setIfExists('PotentialBillingGroups', $data ?? [], null);
     }
 
     /**
@@ -273,75 +287,142 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets InheritedBidStrategyTypes
+     * Gets AccountId
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getInheritedBidStrategyTypes()
+    public function getAccountId()
     {
-        if (!isset($this->container['InheritedBidStrategyTypes']) || is_null($this->container['InheritedBidStrategyTypes'])) {
+        if (!isset($this->container['AccountId']) || is_null($this->container['AccountId'])) {
             return null;
         }
-        return $this->container['InheritedBidStrategyTypes'];
+        return $this->container['AccountId'];
     }
 
     /**
-     * Sets InheritedBidStrategyTypes
+     * Sets AccountId
      *
-     * @param string[]|null $InheritedBidStrategyTypes InheritedBidStrategyTypes
+     * @param string|null $AccountId AccountId
      *
      * @return self
      */
-    public function setInheritedBidStrategyTypes($InheritedBidStrategyTypes)
+    public function setAccountId($AccountId)
     {
-        if (is_null($InheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'InheritedBidStrategyTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InheritedBidStrategyTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($AccountId)) {
+            throw new \InvalidArgumentException('non-nullable AccountId cannot be null');
         }
-        $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
+        $this->container['AccountId'] = $AccountId;
 
         return $this;
     }
 
     /**
-     * Gets PartialErrors
+     * Gets AccountNumber
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     * @return string|null
      */
-    public function getPartialErrors()
+    public function getAccountNumber()
     {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+        if (!isset($this->container['AccountNumber']) || is_null($this->container['AccountNumber'])) {
             return null;
         }
-        return $this->container['PartialErrors'];
+        return $this->container['AccountNumber'];
     }
 
     /**
-     * Sets PartialErrors
+     * Sets AccountNumber
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     * @param string|null $AccountNumber AccountNumber
      *
      * @return self
      */
-    public function setPartialErrors($PartialErrors)
+    public function setAccountNumber($AccountNumber)
     {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
+        if (is_null($AccountNumber)) {
+            array_push($this->openAPINullablesSetToNull, 'AccountNumber');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
+            $index = array_search('AccountNumber', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PartialErrors'] = $PartialErrors;
+        $this->container['AccountNumber'] = $AccountNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets AccountName
+     *
+     * @return string|null
+     */
+    public function getAccountName()
+    {
+        if (!isset($this->container['AccountName']) || is_null($this->container['AccountName'])) {
+            return null;
+        }
+        return $this->container['AccountName'];
+    }
+
+    /**
+     * Sets AccountName
+     *
+     * @param string|null $AccountName AccountName
+     *
+     * @return self
+     */
+    public function setAccountName($AccountName)
+    {
+        if (is_null($AccountName)) {
+            array_push($this->openAPINullablesSetToNull, 'AccountName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AccountName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AccountName'] = $AccountName;
+
+        return $this;
+    }
+
+    /**
+     * Gets PotentialBillingGroups
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CustomerBillingService\KeyValueEntityOflongAndstring[]|null
+     */
+    public function getPotentialBillingGroups()
+    {
+        if (!isset($this->container['PotentialBillingGroups']) || is_null($this->container['PotentialBillingGroups'])) {
+            return null;
+        }
+        return $this->container['PotentialBillingGroups'];
+    }
+
+    /**
+     * Sets PotentialBillingGroups
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CustomerBillingService\KeyValueEntityOflongAndstring[]|null $PotentialBillingGroups PotentialBillingGroups
+     *
+     * @return self
+     */
+    public function setPotentialBillingGroups($PotentialBillingGroups)
+    {
+        if (is_null($PotentialBillingGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'PotentialBillingGroups');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PotentialBillingGroups', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PotentialBillingGroups'] = $PotentialBillingGroups;
 
         return $this;
     }

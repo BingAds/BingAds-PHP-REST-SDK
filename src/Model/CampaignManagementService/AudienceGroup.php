@@ -33,11 +33,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'Description' => 'string',
         'Dimensions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimension[]',
-        'AssociationCount' => 'int'
+        'AssociationCount' => 'int',
+        'Id' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'Description' => null,
         'Dimensions' => null,
-        'AssociationCount' => 'int32'
+        'AssociationCount' => 'int32',
+        'Id' => 'int64'
     ];
 
     /**
@@ -61,11 +61,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'Description' => true,
         'Dimensions' => true,
-        'AssociationCount' => true
+        'AssociationCount' => true,
+        'Id' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'Description' => 'Description',
         'Dimensions' => 'Dimensions',
-        'AssociationCount' => 'AssociationCount'
+        'AssociationCount' => 'AssociationCount',
+        'Id' => 'Id'
     ];
 
     /**
@@ -167,11 +167,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'Description' => 'setDescription',
         'Dimensions' => 'setDimensions',
-        'AssociationCount' => 'setAssociationCount'
+        'AssociationCount' => 'setAssociationCount',
+        'Id' => 'setId'
     ];
 
     /**
@@ -180,11 +180,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'Description' => 'getDescription',
         'Dimensions' => 'getDimensions',
-        'AssociationCount' => 'getAssociationCount'
+        'AssociationCount' => 'getAssociationCount',
+        'Id' => 'getId'
     ];
 
     /**
@@ -244,11 +244,11 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Dimensions', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
     }
 
     /**
@@ -292,43 +292,6 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -474,6 +437,43 @@ class AudienceGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AssociationCount'] = $AssociationCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

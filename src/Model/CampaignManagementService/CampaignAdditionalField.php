@@ -91,6 +91,10 @@ class CampaignAdditionalField
 
     public const AI_SEARCH_SETTING = 'AISearchSetting';
 
+    public const PMAX_XBOX_CAMPAIGN = 'PmaxXboxCampaign';
+
+    public const NETWORK_DISTRIBUTION_SETTING = 'NetworkDistributionSetting';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -193,7 +197,9 @@ class CampaignAdditionalField
             self::MAX_CONVERSION_VALUE_WITH_MAX_CPC,
             self::PMAX_APP_CAMPAIGN,
             self::CROSS_ACCOUNT_BID_STRATEGY_FIELDS,
-            self::AI_SEARCH_SETTING
+            self::AI_SEARCH_SETTING,
+            self::PMAX_XBOX_CAMPAIGN,
+            self::NETWORK_DISTRIBUTION_SETTING
         ];
     }
 }

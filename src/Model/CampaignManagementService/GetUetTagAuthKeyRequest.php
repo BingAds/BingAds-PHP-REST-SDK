@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateKeywordsResponse
+ * GetUetTagAuthKeyRequest
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetUetTagAuthKeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsResponse';
+    protected static string $openAPIModelName = 'GetUetTagAuthKeyRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'InheritedBidStrategyTypes' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
+        'UetTagId' => 'string'
     ];
 
     /**
@@ -45,8 +44,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'InheritedBidStrategyTypes' => null,
-        'PartialErrors' => null
+        'UetTagId' => 'int64'
     ];
 
     /**
@@ -55,8 +53,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'InheritedBidStrategyTypes' => true,
-        'PartialErrors' => true
+        'UetTagId' => false
     ];
 
     /**
@@ -145,8 +142,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
-        'PartialErrors' => 'PartialErrors'
+        'UetTagId' => 'UetTagId'
     ];
 
     /**
@@ -155,8 +151,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
-        'PartialErrors' => 'setPartialErrors'
+        'UetTagId' => 'setUetTagId'
     ];
 
     /**
@@ -165,8 +160,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
-        'PartialErrors' => 'getPartialErrors'
+        'UetTagId' => 'getUetTagId'
     ];
 
     /**
@@ -226,8 +220,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
-        $this->setIfExists('PartialErrors', $data ?? [], null);
+        $this->setIfExists('UetTagId', $data ?? [], null);
     }
 
     /**
@@ -273,75 +266,31 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets InheritedBidStrategyTypes
+     * Gets UetTagId
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getInheritedBidStrategyTypes()
+    public function getUetTagId()
     {
-        if (!isset($this->container['InheritedBidStrategyTypes']) || is_null($this->container['InheritedBidStrategyTypes'])) {
+        if (!isset($this->container['UetTagId']) || is_null($this->container['UetTagId'])) {
             return null;
         }
-        return $this->container['InheritedBidStrategyTypes'];
+        return $this->container['UetTagId'];
     }
 
     /**
-     * Sets InheritedBidStrategyTypes
+     * Sets UetTagId
      *
-     * @param string[]|null $InheritedBidStrategyTypes InheritedBidStrategyTypes
+     * @param string|null $UetTagId UetTagId
      *
      * @return self
      */
-    public function setInheritedBidStrategyTypes($InheritedBidStrategyTypes)
+    public function setUetTagId($UetTagId)
     {
-        if (is_null($InheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'InheritedBidStrategyTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InheritedBidStrategyTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($UetTagId)) {
+            throw new \InvalidArgumentException('non-nullable UetTagId cannot be null');
         }
-        $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
-
-        return $this;
-    }
-
-    /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
+        $this->container['UetTagId'] = $UetTagId;
 
         return $this;
     }

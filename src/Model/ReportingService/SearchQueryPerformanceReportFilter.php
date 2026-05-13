@@ -42,7 +42,8 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         'AccountStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter',
         'AdGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter',
         'KeywordStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter',
-        'ExcludeZeroClicks' => 'bool'
+        'ExcludeZeroClicks' => 'bool',
+        'AssetGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter'
     ];
 
     /**
@@ -62,7 +63,8 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         'AccountStatus' => null,
         'AdGroupStatus' => null,
         'KeywordStatus' => null,
-        'ExcludeZeroClicks' => null
+        'ExcludeZeroClicks' => null,
+        'AssetGroupStatus' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         'AccountStatus' => false,
         'AdGroupStatus' => false,
         'KeywordStatus' => false,
-        'ExcludeZeroClicks' => false
+        'ExcludeZeroClicks' => false,
+        'AssetGroupStatus' => false
     ];
 
     /**
@@ -178,7 +181,8 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         'AccountStatus' => 'AccountStatus',
         'AdGroupStatus' => 'AdGroupStatus',
         'KeywordStatus' => 'KeywordStatus',
-        'ExcludeZeroClicks' => 'ExcludeZeroClicks'
+        'ExcludeZeroClicks' => 'ExcludeZeroClicks',
+        'AssetGroupStatus' => 'AssetGroupStatus'
     ];
 
     /**
@@ -196,7 +200,8 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         'AccountStatus' => 'setAccountStatus',
         'AdGroupStatus' => 'setAdGroupStatus',
         'KeywordStatus' => 'setKeywordStatus',
-        'ExcludeZeroClicks' => 'setExcludeZeroClicks'
+        'ExcludeZeroClicks' => 'setExcludeZeroClicks',
+        'AssetGroupStatus' => 'setAssetGroupStatus'
     ];
 
     /**
@@ -214,7 +219,8 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         'AccountStatus' => 'getAccountStatus',
         'AdGroupStatus' => 'getAdGroupStatus',
         'KeywordStatus' => 'getKeywordStatus',
-        'ExcludeZeroClicks' => 'getExcludeZeroClicks'
+        'ExcludeZeroClicks' => 'getExcludeZeroClicks',
+        'AssetGroupStatus' => 'getAssetGroupStatus'
     ];
 
     /**
@@ -284,6 +290,7 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
         $this->setIfExists('AdGroupStatus', $data ?? [], null);
         $this->setIfExists('KeywordStatus', $data ?? [], null);
         $this->setIfExists('ExcludeZeroClicks', $data ?? [], null);
+        $this->setIfExists('AssetGroupStatus', $data ?? [], null);
     }
 
     /**
@@ -679,6 +686,42 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
             throw new \InvalidArgumentException('non-nullable ExcludeZeroClicks cannot be null');
         }
         $this->container['ExcludeZeroClicks'] = $ExcludeZeroClicks;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null
+     */
+    public function getAssetGroupStatus()
+    {
+        if (!isset($this->container['AssetGroupStatus']) || is_null($this->container['AssetGroupStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AssetGroupStatus']) || is_string($this->container['AssetGroupStatus'])) && method_exists($this->container['AssetGroupStatus'], 'getValue')) {
+            return $this->container['AssetGroupStatus']->getValue();
+        }
+        return $this->container['AssetGroupStatus'];
+    }
+
+    /**
+     * Sets AssetGroupStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null $AssetGroupStatus AssetGroupStatus
+     *
+     * @return self
+     */
+    public function setAssetGroupStatus($AssetGroupStatus)
+    {
+        if (is_null($AssetGroupStatus)) {
+            throw new \InvalidArgumentException('non-nullable AssetGroupStatus cannot be null');
+        }
+        if (!$AssetGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter) {
+            $AssetGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter($AssetGroupStatus);
+        }
+        $this->container['AssetGroupStatus'] = $AssetGroupStatus;
 
         return $this;
     }

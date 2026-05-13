@@ -65,6 +65,8 @@ class CampaignCriterionType
 
     public const IMPRESSION_BASED_REMARKETING_LIST = 'ImpressionBasedRemarketingList';
 
+    public const JOB_SENIORITY = 'JobSeniority';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -154,7 +156,8 @@ class CampaignCriterionType
             self::STORE,
             self::COMBINED_LIST,
             self::CUSTOMER_LIST,
-            self::IMPRESSION_BASED_REMARKETING_LIST
+            self::IMPRESSION_BASED_REMARKETING_LIST,
+            self::JOB_SENIORITY
         ];
     }
 }

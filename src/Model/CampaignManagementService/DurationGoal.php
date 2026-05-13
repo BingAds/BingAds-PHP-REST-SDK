@@ -33,10 +33,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -49,6 +47,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
         'IsAutoGoal' => 'bool',
+        'Id' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'MinimumDurationInSeconds' => 'int'
     ];
 
@@ -60,10 +60,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'Status' => null,
-        'Type' => null,
         'Scope' => null,
         'CountType' => null,
         'Revenue' => null,
@@ -76,6 +74,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
         'IsAutoGoal' => null,
+        'Id' => 'int64',
+        'Type' => null,
         'MinimumDurationInSeconds' => 'int32'
     ];
 
@@ -85,10 +85,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -101,6 +99,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
         'IsAutoGoal' => true,
+        'Id' => true,
+        'Type' => false,
         'MinimumDurationInSeconds' => true
     ];
 
@@ -190,10 +190,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
-        'Type' => 'Type',
         'Scope' => 'Scope',
         'CountType' => 'CountType',
         'Revenue' => 'Revenue',
@@ -206,6 +204,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
         'IsAutoGoal' => 'IsAutoGoal',
+        'Id' => 'Id',
+        'Type' => 'Type',
         'MinimumDurationInSeconds' => 'MinimumDurationInSeconds'
     ];
 
@@ -215,10 +215,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
-        'Type' => 'setType',
         'Scope' => 'setScope',
         'CountType' => 'setCountType',
         'Revenue' => 'setRevenue',
@@ -231,6 +229,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
         'IsAutoGoal' => 'setIsAutoGoal',
+        'Id' => 'setId',
+        'Type' => 'setType',
         'MinimumDurationInSeconds' => 'setMinimumDurationInSeconds'
     ];
 
@@ -240,10 +240,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
-        'Type' => 'getType',
         'Scope' => 'getScope',
         'CountType' => 'getCountType',
         'Revenue' => 'getRevenue',
@@ -256,6 +254,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
         'IsAutoGoal' => 'getIsAutoGoal',
+        'Id' => 'getId',
+        'Type' => 'getType',
         'MinimumDurationInSeconds' => 'getMinimumDurationInSeconds'
     ];
 
@@ -316,10 +316,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -332,6 +330,8 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('MinimumDurationInSeconds', $data ?? [], null);
     }
 
@@ -376,43 +376,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -483,42 +446,6 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus($Status);
         }
         $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -958,6 +885,79 @@ class DurationGoal extends ConversionGoal implements ModelInterface, ArrayAccess
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

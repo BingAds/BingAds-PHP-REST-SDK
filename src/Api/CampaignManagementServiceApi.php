@@ -475,6 +475,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'getSupportedFonts' => [
             'application/json',
         ],
+        'getUetTagAuthKey' => [
+            'application/json',
+        ],
         'getUetTagsByIds' => [
             'application/json',
         ],
@@ -33457,6 +33460,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForgetSupportedFonts',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation getUetTagAuthKey
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyRequest $GetUetTagAuthKeyRequest GetUetTagAuthKeyRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUetTagAuthKey'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getUetTagAuthKey($GetUetTagAuthKeyRequest, string $contentType = self::contentTypes['getUetTagAuthKey'][0])
+    {
+        list($response) = $this->getUetTagAuthKeyWithHttpInfo($GetUetTagAuthKeyRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getUetTagAuthKeyWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyRequest $GetUetTagAuthKeyRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUetTagAuthKey'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUetTagAuthKeyWithHttpInfo($GetUetTagAuthKeyRequest, string $contentType = self::contentTypes['getUetTagAuthKey'][0])
+    {
+        $request = $this->getUetTagAuthKeyRequest($GetUetTagAuthKeyRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUetTagAuthKeyAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyRequest $GetUetTagAuthKeyRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUetTagAuthKey'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUetTagAuthKeyAsync($GetUetTagAuthKeyRequest, string $contentType = self::contentTypes['getUetTagAuthKey'][0])
+    {
+        return $this->getUetTagAuthKeyAsyncWithHttpInfo($GetUetTagAuthKeyRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getUetTagAuthKeyAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyRequest $GetUetTagAuthKeyRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUetTagAuthKey'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUetTagAuthKeyAsyncWithHttpInfo($GetUetTagAuthKeyRequest, string $contentType = self::contentTypes['getUetTagAuthKey'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyResponse';
+        $request = $this->getUetTagAuthKeyRequest($GetUetTagAuthKeyRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getUetTagAuthKey'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetUetTagAuthKeyRequest $GetUetTagAuthKeyRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUetTagAuthKey'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getUetTagAuthKeyRequest($GetUetTagAuthKeyRequest, string $contentType = self::contentTypes['getUetTagAuthKey'][0])
+    {
+
+        // verify the required parameter 'GetUetTagAuthKeyRequest' is set
+        if ($GetUetTagAuthKeyRequest === null || (is_array($GetUetTagAuthKeyRequest) && count($GetUetTagAuthKeyRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetUetTagAuthKeyRequest when calling getUetTagAuthKey'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/UetTagAuthKey/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetUetTagAuthKeyRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetUetTagAuthKey',
             null,
             [],
             $queryParams

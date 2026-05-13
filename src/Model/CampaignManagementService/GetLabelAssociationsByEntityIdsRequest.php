@@ -33,8 +33,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'EntityIds' => 'string[]',
-        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType'
+        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType',
+        'EntityIds' => 'string[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'EntityIds' => 'int64',
-        'EntityType' => null
+        'EntityType' => null,
+        'EntityIds' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'EntityIds' => true,
-        'EntityType' => false
+        'EntityType' => false,
+        'EntityIds' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'EntityIds' => 'EntityIds',
-        'EntityType' => 'EntityType'
+        'EntityType' => 'EntityType',
+        'EntityIds' => 'EntityIds'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $setters = [
-        'EntityIds' => 'setEntityIds',
-        'EntityType' => 'setEntityType'
+        'EntityType' => 'setEntityType',
+        'EntityIds' => 'setEntityIds'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $getters = [
-        'EntityIds' => 'getEntityIds',
-        'EntityType' => 'getEntityType'
+        'EntityType' => 'getEntityType',
+        'EntityIds' => 'getEntityIds'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('EntityIds', $data ?? [], null);
         $this->setIfExists('EntityType', $data ?? [], null);
+        $this->setIfExists('EntityIds', $data ?? [], null);
     }
 
     /**
@@ -273,6 +273,42 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
 
 
     /**
+     * Gets EntityType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null
+     */
+    public function getEntityType()
+    {
+        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
+            return null;
+        }
+        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
+            return $this->container['EntityType']->getValue();
+        }
+        return $this->container['EntityType'];
+    }
+
+    /**
+     * Sets EntityType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null $EntityType EntityType
+     *
+     * @return self
+     */
+    public function setEntityType($EntityType)
+    {
+        if (is_null($EntityType)) {
+            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
+        }
+        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
+            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
+        }
+        $this->container['EntityType'] = $EntityType;
+
+        return $this;
+    }
+
+    /**
      * Gets EntityIds
      *
      * @return string[]|null
@@ -305,42 +341,6 @@ class GetLabelAssociationsByEntityIdsRequest implements ModelInterface, ArrayAcc
             }
         }
         $this->container['EntityIds'] = $EntityIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets EntityType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null
-     */
-    public function getEntityType()
-    {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
-            return null;
-        }
-        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
-            return $this->container['EntityType']->getValue();
-        }
-        return $this->container['EntityType'];
-    }
-
-    /**
-     * Sets EntityType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null $EntityType EntityType
-     *
-     * @return self
-     */
-    public function setEntityType($EntityType)
-    {
-        if (is_null($EntityType)) {
-            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
-        }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
-            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
-        }
-        $this->container['EntityType'] = $EntityType;
 
         return $this;
     }

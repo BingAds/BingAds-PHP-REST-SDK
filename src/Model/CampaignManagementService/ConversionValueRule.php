@@ -33,7 +33,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'LocationCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition',
         'AudienceCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceCondition',
@@ -41,7 +40,8 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         'Value' => 'float',
         'Operation' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator',
         'CurrencyCode' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus'
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus',
+        'Id' => 'string'
     ];
 
     /**
@@ -52,7 +52,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'LocationCondition' => null,
         'AudienceCondition' => null,
@@ -60,7 +59,8 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         'Value' => 'double',
         'Operation' => null,
         'CurrencyCode' => null,
-        'Status' => null
+        'Status' => null,
+        'Id' => 'int64'
     ];
 
     /**
@@ -69,7 +69,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'LocationCondition' => true,
         'AudienceCondition' => true,
@@ -77,7 +76,8 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         'Value' => true,
         'Operation' => false,
         'CurrencyCode' => true,
-        'Status' => false
+        'Status' => false,
+        'Id' => true
     ];
 
     /**
@@ -166,7 +166,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'LocationCondition' => 'LocationCondition',
         'AudienceCondition' => 'AudienceCondition',
@@ -174,7 +173,8 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         'Value' => 'Value',
         'Operation' => 'Operation',
         'CurrencyCode' => 'CurrencyCode',
-        'Status' => 'Status'
+        'Status' => 'Status',
+        'Id' => 'Id'
     ];
 
     /**
@@ -183,7 +183,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'LocationCondition' => 'setLocationCondition',
         'AudienceCondition' => 'setAudienceCondition',
@@ -191,7 +190,8 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         'Value' => 'setValue',
         'Operation' => 'setOperation',
         'CurrencyCode' => 'setCurrencyCode',
-        'Status' => 'setStatus'
+        'Status' => 'setStatus',
+        'Id' => 'setId'
     ];
 
     /**
@@ -200,7 +200,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'LocationCondition' => 'getLocationCondition',
         'AudienceCondition' => 'getAudienceCondition',
@@ -208,7 +207,8 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         'Value' => 'getValue',
         'Operation' => 'getOperation',
         'CurrencyCode' => 'getCurrencyCode',
-        'Status' => 'getStatus'
+        'Status' => 'getStatus',
+        'Id' => 'getId'
     ];
 
     /**
@@ -268,7 +268,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('LocationCondition', $data ?? [], null);
         $this->setIfExists('AudienceCondition', $data ?? [], null);
@@ -277,6 +276,7 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('Operation', $data ?? [], null);
         $this->setIfExists('CurrencyCode', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
     }
 
     /**
@@ -320,43 +320,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -648,6 +611,43 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus($Status);
         }
         $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

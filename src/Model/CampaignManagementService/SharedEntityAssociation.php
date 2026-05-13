@@ -37,7 +37,9 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         'SharedEntityType' => 'string',
         'EntityId' => 'string',
         'EntityType' => 'string',
-        'SharedEntityCustomerId' => 'string'
+        'SharedEntityCustomerId' => 'string',
+        'IsExclusion' => 'bool',
+        'Status' => 'string'
     ];
 
     /**
@@ -52,7 +54,9 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         'SharedEntityType' => null,
         'EntityId' => 'int64',
         'EntityType' => null,
-        'SharedEntityCustomerId' => 'int64'
+        'SharedEntityCustomerId' => 'int64',
+        'IsExclusion' => null,
+        'Status' => null
     ];
 
     /**
@@ -65,7 +69,9 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         'SharedEntityType' => true,
         'EntityId' => false,
         'EntityType' => true,
-        'SharedEntityCustomerId' => true
+        'SharedEntityCustomerId' => true,
+        'IsExclusion' => true,
+        'Status' => true
     ];
 
     /**
@@ -158,7 +164,9 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         'SharedEntityType' => 'SharedEntityType',
         'EntityId' => 'EntityId',
         'EntityType' => 'EntityType',
-        'SharedEntityCustomerId' => 'SharedEntityCustomerId'
+        'SharedEntityCustomerId' => 'SharedEntityCustomerId',
+        'IsExclusion' => 'IsExclusion',
+        'Status' => 'Status'
     ];
 
     /**
@@ -171,7 +179,9 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         'SharedEntityType' => 'setSharedEntityType',
         'EntityId' => 'setEntityId',
         'EntityType' => 'setEntityType',
-        'SharedEntityCustomerId' => 'setSharedEntityCustomerId'
+        'SharedEntityCustomerId' => 'setSharedEntityCustomerId',
+        'IsExclusion' => 'setIsExclusion',
+        'Status' => 'setStatus'
     ];
 
     /**
@@ -184,7 +194,9 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         'SharedEntityType' => 'getSharedEntityType',
         'EntityId' => 'getEntityId',
         'EntityType' => 'getEntityType',
-        'SharedEntityCustomerId' => 'getSharedEntityCustomerId'
+        'SharedEntityCustomerId' => 'getSharedEntityCustomerId',
+        'IsExclusion' => 'getIsExclusion',
+        'Status' => 'getStatus'
     ];
 
     /**
@@ -249,6 +261,8 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('EntityId', $data ?? [], null);
         $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('SharedEntityCustomerId', $data ?? [], null);
+        $this->setIfExists('IsExclusion', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
     }
 
     /**
@@ -460,6 +474,80 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['SharedEntityCustomerId'] = $SharedEntityCustomerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsExclusion
+     *
+     * @return bool|null
+     */
+    public function getIsExclusion()
+    {
+        if (!isset($this->container['IsExclusion']) || is_null($this->container['IsExclusion'])) {
+            return null;
+        }
+        return $this->container['IsExclusion'];
+    }
+
+    /**
+     * Sets IsExclusion
+     *
+     * @param bool|null $IsExclusion IsExclusion
+     *
+     * @return self
+     */
+    public function setIsExclusion($IsExclusion)
+    {
+        if (is_null($IsExclusion)) {
+            array_push($this->openAPINullablesSetToNull, 'IsExclusion');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsExclusion', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsExclusion'] = $IsExclusion;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param string|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

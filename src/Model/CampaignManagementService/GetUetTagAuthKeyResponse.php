@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateKeywordsResponse
+ * GetUetTagAuthKeyResponse
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetUetTagAuthKeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsResponse';
+    protected static string $openAPIModelName = 'GetUetTagAuthKeyResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,7 +33,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'InheritedBidStrategyTypes' => 'string[]',
+        'UetTagAuthKey' => 'string',
         'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
@@ -45,7 +45,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'InheritedBidStrategyTypes' => null,
+        'UetTagAuthKey' => null,
         'PartialErrors' => null
     ];
 
@@ -55,7 +55,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'InheritedBidStrategyTypes' => true,
+        'UetTagAuthKey' => true,
         'PartialErrors' => true
     ];
 
@@ -145,7 +145,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
+        'UetTagAuthKey' => 'UetTagAuthKey',
         'PartialErrors' => 'PartialErrors'
     ];
 
@@ -155,7 +155,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
+        'UetTagAuthKey' => 'setUetTagAuthKey',
         'PartialErrors' => 'setPartialErrors'
     ];
 
@@ -165,7 +165,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
+        'UetTagAuthKey' => 'getUetTagAuthKey',
         'PartialErrors' => 'getPartialErrors'
     ];
 
@@ -226,7 +226,7 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('UetTagAuthKey', $data ?? [], null);
         $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
@@ -273,38 +273,38 @@ class UpdateKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets InheritedBidStrategyTypes
+     * Gets UetTagAuthKey
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getInheritedBidStrategyTypes()
+    public function getUetTagAuthKey()
     {
-        if (!isset($this->container['InheritedBidStrategyTypes']) || is_null($this->container['InheritedBidStrategyTypes'])) {
+        if (!isset($this->container['UetTagAuthKey']) || is_null($this->container['UetTagAuthKey'])) {
             return null;
         }
-        return $this->container['InheritedBidStrategyTypes'];
+        return $this->container['UetTagAuthKey'];
     }
 
     /**
-     * Sets InheritedBidStrategyTypes
+     * Sets UetTagAuthKey
      *
-     * @param string[]|null $InheritedBidStrategyTypes InheritedBidStrategyTypes
+     * @param string|null $UetTagAuthKey UetTagAuthKey
      *
      * @return self
      */
-    public function setInheritedBidStrategyTypes($InheritedBidStrategyTypes)
+    public function setUetTagAuthKey($UetTagAuthKey)
     {
-        if (is_null($InheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'InheritedBidStrategyTypes');
+        if (is_null($UetTagAuthKey)) {
+            array_push($this->openAPINullablesSetToNull, 'UetTagAuthKey');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InheritedBidStrategyTypes', $nullablesSetToNull);
+            $index = array_search('UetTagAuthKey', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
+        $this->container['UetTagAuthKey'] = $UetTagAuthKey;
 
         return $this;
     }

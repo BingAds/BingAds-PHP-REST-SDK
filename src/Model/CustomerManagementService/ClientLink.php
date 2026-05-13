@@ -53,7 +53,8 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'LastModifiedByUserId' => 'string',
         'Timestamp' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CustomerManagementService\KeyValuePairOfstringAndstring[]',
-        'CustomerLinkPermission' => 'string'
+        'CustomerLinkPermission' => 'string',
+        'ClientEntityCustomerNumber' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'LastModifiedByUserId' => 'int64',
         'Timestamp' => 'byte',
         'ForwardCompatibilityMap' => null,
-        'CustomerLinkPermission' => null
+        'CustomerLinkPermission' => null,
+        'ClientEntityCustomerNumber' => null
     ];
 
     /**
@@ -113,7 +115,8 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'LastModifiedByUserId' => false,
         'Timestamp' => true,
         'ForwardCompatibilityMap' => true,
-        'CustomerLinkPermission' => true
+        'CustomerLinkPermission' => true,
+        'ClientEntityCustomerNumber' => true
     ];
 
     /**
@@ -222,7 +225,8 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'LastModifiedByUserId' => 'LastModifiedByUserId',
         'Timestamp' => 'Timestamp',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'CustomerLinkPermission' => 'CustomerLinkPermission'
+        'CustomerLinkPermission' => 'CustomerLinkPermission',
+        'ClientEntityCustomerNumber' => 'ClientEntityCustomerNumber'
     ];
 
     /**
@@ -251,7 +255,8 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'LastModifiedByUserId' => 'setLastModifiedByUserId',
         'Timestamp' => 'setTimestamp',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'CustomerLinkPermission' => 'setCustomerLinkPermission'
+        'CustomerLinkPermission' => 'setCustomerLinkPermission',
+        'ClientEntityCustomerNumber' => 'setClientEntityCustomerNumber'
     ];
 
     /**
@@ -280,7 +285,8 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         'LastModifiedByUserId' => 'getLastModifiedByUserId',
         'Timestamp' => 'getTimestamp',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'CustomerLinkPermission' => 'getCustomerLinkPermission'
+        'CustomerLinkPermission' => 'getCustomerLinkPermission',
+        'ClientEntityCustomerNumber' => 'getClientEntityCustomerNumber'
     ];
 
     /**
@@ -361,6 +367,7 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Timestamp', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('CustomerLinkPermission', $data ?? [], null);
+        $this->setIfExists('ClientEntityCustomerNumber', $data ?? [], null);
     }
 
     /**
@@ -1156,6 +1163,43 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['CustomerLinkPermission'] = $CustomerLinkPermission;
+
+        return $this;
+    }
+
+    /**
+     * Gets ClientEntityCustomerNumber
+     *
+     * @return string|null
+     */
+    public function getClientEntityCustomerNumber()
+    {
+        if (!isset($this->container['ClientEntityCustomerNumber']) || is_null($this->container['ClientEntityCustomerNumber'])) {
+            return null;
+        }
+        return $this->container['ClientEntityCustomerNumber'];
+    }
+
+    /**
+     * Sets ClientEntityCustomerNumber
+     *
+     * @param string|null $ClientEntityCustomerNumber ClientEntityCustomerNumber
+     *
+     * @return self
+     */
+    public function setClientEntityCustomerNumber($ClientEntityCustomerNumber)
+    {
+        if (is_null($ClientEntityCustomerNumber)) {
+            array_push($this->openAPINullablesSetToNull, 'ClientEntityCustomerNumber');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ClientEntityCustomerNumber', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ClientEntityCustomerNumber'] = $ClientEntityCustomerNumber;
 
         return $this;
     }

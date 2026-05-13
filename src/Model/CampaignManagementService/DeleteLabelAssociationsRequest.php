@@ -33,8 +33,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'LabelAssociations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LabelAssociation[]',
-        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType'
+        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType',
+        'LabelAssociations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LabelAssociation[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'LabelAssociations' => null,
-        'EntityType' => null
+        'EntityType' => null,
+        'LabelAssociations' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'LabelAssociations' => true,
-        'EntityType' => false
+        'EntityType' => false,
+        'LabelAssociations' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
-        'LabelAssociations' => 'LabelAssociations',
-        'EntityType' => 'EntityType'
+        'EntityType' => 'EntityType',
+        'LabelAssociations' => 'LabelAssociations'
     ];
 
     /**
@@ -155,8 +155,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
-        'LabelAssociations' => 'setLabelAssociations',
-        'EntityType' => 'setEntityType'
+        'EntityType' => 'setEntityType',
+        'LabelAssociations' => 'setLabelAssociations'
     ];
 
     /**
@@ -165,8 +165,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
-        'LabelAssociations' => 'getLabelAssociations',
-        'EntityType' => 'getEntityType'
+        'EntityType' => 'getEntityType',
+        'LabelAssociations' => 'getLabelAssociations'
     ];
 
     /**
@@ -226,8 +226,8 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('LabelAssociations', $data ?? [], null);
         $this->setIfExists('EntityType', $data ?? [], null);
+        $this->setIfExists('LabelAssociations', $data ?? [], null);
     }
 
     /**
@@ -273,6 +273,42 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
 
 
     /**
+     * Gets EntityType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null
+     */
+    public function getEntityType()
+    {
+        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
+            return null;
+        }
+        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
+            return $this->container['EntityType']->getValue();
+        }
+        return $this->container['EntityType'];
+    }
+
+    /**
+     * Sets EntityType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null $EntityType EntityType
+     *
+     * @return self
+     */
+    public function setEntityType($EntityType)
+    {
+        if (is_null($EntityType)) {
+            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
+        }
+        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
+            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
+        }
+        $this->container['EntityType'] = $EntityType;
+
+        return $this;
+    }
+
+    /**
      * Gets LabelAssociations
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LabelAssociation[]|null
@@ -305,42 +341,6 @@ class DeleteLabelAssociationsRequest implements ModelInterface, ArrayAccess, \Js
             }
         }
         $this->container['LabelAssociations'] = $LabelAssociations;
-
-        return $this;
-    }
-
-    /**
-     * Gets EntityType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null
-     */
-    public function getEntityType()
-    {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
-            return null;
-        }
-        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
-            return $this->container['EntityType']->getValue();
-        }
-        return $this->container['EntityType'];
-    }
-
-    /**
-     * Sets EntityType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType|mixed|null $EntityType EntityType
-     *
-     * @return self
-     */
-    public function setEntityType($EntityType)
-    {
-        if (is_null($EntityType)) {
-            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
-        }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
-            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
-        }
-        $this->container['EntityType'] = $EntityType;
 
         return $this;
     }

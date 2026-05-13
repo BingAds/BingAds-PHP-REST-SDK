@@ -36,7 +36,8 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         'EntityType' => 'string',
         'SharedEntityIds' => 'string[]',
         'SharedEntityType' => 'string',
-        'SharedEntityScope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope'
+        'SharedEntityScope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField'
     ];
 
     /**
@@ -50,7 +51,8 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         'EntityType' => null,
         'SharedEntityIds' => 'int64',
         'SharedEntityType' => null,
-        'SharedEntityScope' => null
+        'SharedEntityScope' => null,
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -62,7 +64,8 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         'EntityType' => true,
         'SharedEntityIds' => true,
         'SharedEntityType' => true,
-        'SharedEntityScope' => false
+        'SharedEntityScope' => false,
+        'ReturnAdditionalFields' => false
     ];
 
     /**
@@ -154,7 +157,8 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         'EntityType' => 'EntityType',
         'SharedEntityIds' => 'SharedEntityIds',
         'SharedEntityType' => 'SharedEntityType',
-        'SharedEntityScope' => 'SharedEntityScope'
+        'SharedEntityScope' => 'SharedEntityScope',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -166,7 +170,8 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         'EntityType' => 'setEntityType',
         'SharedEntityIds' => 'setSharedEntityIds',
         'SharedEntityType' => 'setSharedEntityType',
-        'SharedEntityScope' => 'setSharedEntityScope'
+        'SharedEntityScope' => 'setSharedEntityScope',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -178,7 +183,8 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         'EntityType' => 'getEntityType',
         'SharedEntityIds' => 'getSharedEntityIds',
         'SharedEntityType' => 'getSharedEntityType',
-        'SharedEntityScope' => 'getSharedEntityScope'
+        'SharedEntityScope' => 'getSharedEntityScope',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -242,6 +248,7 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
         $this->setIfExists('SharedEntityIds', $data ?? [], null);
         $this->setIfExists('SharedEntityType', $data ?? [], null);
         $this->setIfExists('SharedEntityScope', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -429,6 +436,42 @@ class GetSharedEntityAssociationsBySharedEntityIdsRequest implements ModelInterf
             $SharedEntityScope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($SharedEntityScope);
         }
         $this->container['SharedEntityScope'] = $SharedEntityScope;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        }
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

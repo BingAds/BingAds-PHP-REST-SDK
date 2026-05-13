@@ -33,14 +33,14 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'Description' => 'string',
         'TrackingScript' => 'string',
         'TrackingNoScript' => 'string',
         'TrackingStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagTrackingStatus',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
-        'Industry' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry'
+        'Industry' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry',
+        'Id' => 'string'
     ];
 
     /**
@@ -51,14 +51,14 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'Description' => null,
         'TrackingScript' => null,
         'TrackingNoScript' => null,
         'TrackingStatus' => null,
         'CustomerShare' => null,
-        'Industry' => null
+        'Industry' => null,
+        'Id' => 'int64'
     ];
 
     /**
@@ -67,14 +67,14 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'Description' => true,
         'TrackingScript' => true,
         'TrackingNoScript' => true,
         'TrackingStatus' => false,
         'CustomerShare' => true,
-        'Industry' => false
+        'Industry' => false,
+        'Id' => true
     ];
 
     /**
@@ -163,14 +163,14 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'Description' => 'Description',
         'TrackingScript' => 'TrackingScript',
         'TrackingNoScript' => 'TrackingNoScript',
         'TrackingStatus' => 'TrackingStatus',
         'CustomerShare' => 'CustomerShare',
-        'Industry' => 'Industry'
+        'Industry' => 'Industry',
+        'Id' => 'Id'
     ];
 
     /**
@@ -179,14 +179,14 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'Description' => 'setDescription',
         'TrackingScript' => 'setTrackingScript',
         'TrackingNoScript' => 'setTrackingNoScript',
         'TrackingStatus' => 'setTrackingStatus',
         'CustomerShare' => 'setCustomerShare',
-        'Industry' => 'setIndustry'
+        'Industry' => 'setIndustry',
+        'Id' => 'setId'
     ];
 
     /**
@@ -195,14 +195,14 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'Description' => 'getDescription',
         'TrackingScript' => 'getTrackingScript',
         'TrackingNoScript' => 'getTrackingNoScript',
         'TrackingStatus' => 'getTrackingStatus',
         'CustomerShare' => 'getCustomerShare',
-        'Industry' => 'getIndustry'
+        'Industry' => 'getIndustry',
+        'Id' => 'getId'
     ];
 
     /**
@@ -262,7 +262,6 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('TrackingScript', $data ?? [], null);
@@ -270,6 +269,7 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('TrackingStatus', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
         $this->setIfExists('Industry', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
     }
 
     /**
@@ -313,43 +313,6 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -604,6 +567,43 @@ class UetTag implements ModelInterface, ArrayAccess, \JsonSerializable
             $Industry = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\UetTagIndustry($Industry);
         }
         $this->container['Industry'] = $Industry;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

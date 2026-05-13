@@ -33,10 +33,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Name' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
         'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
@@ -49,6 +47,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'bool',
         'IsAutoGoal' => 'bool',
+        'Id' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
         'AppPlatform' => 'string',
         'AppStoreId' => 'string'
     ];
@@ -61,10 +61,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Name' => null,
         'Status' => null,
-        'Type' => null,
         'Scope' => null,
         'CountType' => null,
         'Revenue' => null,
@@ -77,6 +75,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'AttributionModelType' => null,
         'IsEnhancedConversionsEnabled' => null,
         'IsAutoGoal' => null,
+        'Id' => 'int64',
+        'Type' => null,
         'AppPlatform' => null,
         'AppStoreId' => null
     ];
@@ -87,10 +87,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Name' => true,
         'Status' => false,
-        'Type' => false,
         'Scope' => false,
         'CountType' => false,
         'Revenue' => true,
@@ -103,6 +101,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'AttributionModelType' => false,
         'IsEnhancedConversionsEnabled' => true,
         'IsAutoGoal' => true,
+        'Id' => true,
+        'Type' => false,
         'AppPlatform' => true,
         'AppStoreId' => true
     ];
@@ -193,10 +193,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Name' => 'Name',
         'Status' => 'Status',
-        'Type' => 'Type',
         'Scope' => 'Scope',
         'CountType' => 'CountType',
         'Revenue' => 'Revenue',
@@ -209,6 +207,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'AttributionModelType' => 'AttributionModelType',
         'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
         'IsAutoGoal' => 'IsAutoGoal',
+        'Id' => 'Id',
+        'Type' => 'Type',
         'AppPlatform' => 'AppPlatform',
         'AppStoreId' => 'AppStoreId'
     ];
@@ -219,10 +219,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Name' => 'setName',
         'Status' => 'setStatus',
-        'Type' => 'setType',
         'Scope' => 'setScope',
         'CountType' => 'setCountType',
         'Revenue' => 'setRevenue',
@@ -235,6 +233,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'AttributionModelType' => 'setAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
         'IsAutoGoal' => 'setIsAutoGoal',
+        'Id' => 'setId',
+        'Type' => 'setType',
         'AppPlatform' => 'setAppPlatform',
         'AppStoreId' => 'setAppStoreId'
     ];
@@ -245,10 +245,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Name' => 'getName',
         'Status' => 'getStatus',
-        'Type' => 'getType',
         'Scope' => 'getScope',
         'CountType' => 'getCountType',
         'Revenue' => 'getRevenue',
@@ -261,6 +259,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         'AttributionModelType' => 'getAttributionModelType',
         'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
         'IsAutoGoal' => 'getIsAutoGoal',
+        'Id' => 'getId',
+        'Type' => 'getType',
         'AppPlatform' => 'getAppPlatform',
         'AppStoreId' => 'getAppStoreId'
     ];
@@ -322,10 +322,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('CountType', $data ?? [], null);
         $this->setIfExists('Revenue', $data ?? [], null);
@@ -338,6 +336,8 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
         $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AppPlatform', $data ?? [], null);
         $this->setIfExists('AppStoreId', $data ?? [], null);
     }
@@ -383,43 +383,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Name
@@ -490,42 +453,6 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus($Status);
         }
         $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -965,6 +892,79 @@ class AppInstallGoal extends ConversionGoal implements ModelInterface, ArrayAcce
             }
         }
         $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

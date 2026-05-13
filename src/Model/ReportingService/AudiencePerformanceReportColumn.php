@@ -115,6 +115,28 @@ class AudiencePerformanceReportColumn
 
     public const VIEW_THROUGH_REVENUE = 'ViewThroughRevenue';
 
+    public const VIDEO_VIEWS = 'VideoViews';
+
+    public const VIEW_THROUGH_RATE = 'ViewThroughRate';
+
+    public const AVERAGE_CPV = 'AverageCPV';
+
+    public const VIDEO_VIEWS_AT25_PERCENT = 'VideoViewsAt25Percent';
+
+    public const VIDEO_VIEWS_AT50_PERCENT = 'VideoViewsAt50Percent';
+
+    public const VIDEO_VIEWS_AT75_PERCENT = 'VideoViewsAt75Percent';
+
+    public const COMPLETED_VIDEO_VIEWS = 'CompletedVideoViews';
+
+    public const VIDEO_COMPLETION_RATE = 'VideoCompletionRate';
+
+    public const TOTAL_WATCH_TIME_IN_MS = 'TotalWatchTimeInMS';
+
+    public const AVERAGE_WATCH_TIME_PER_VIDEO_VIEW = 'AverageWatchTimePerVideoView';
+
+    public const AVERAGE_WATCH_TIME_PER_IMPRESSION = 'AverageWatchTimePerImpression';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -229,7 +251,18 @@ class AudiencePerformanceReportColumn
             self::CONVERSIONS_QUALIFIED,
             self::ALL_CONVERSIONS_QUALIFIED,
             self::VIEW_THROUGH_CONVERSIONS_QUALIFIED,
-            self::VIEW_THROUGH_REVENUE
+            self::VIEW_THROUGH_REVENUE,
+            self::VIDEO_VIEWS,
+            self::VIEW_THROUGH_RATE,
+            self::AVERAGE_CPV,
+            self::VIDEO_VIEWS_AT25_PERCENT,
+            self::VIDEO_VIEWS_AT50_PERCENT,
+            self::VIDEO_VIEWS_AT75_PERCENT,
+            self::COMPLETED_VIDEO_VIEWS,
+            self::VIDEO_COMPLETION_RATE,
+            self::TOTAL_WATCH_TIME_IN_MS,
+            self::AVERAGE_WATCH_TIME_PER_VIDEO_VIEW,
+            self::AVERAGE_WATCH_TIME_PER_IMPRESSION
         ];
     }
 }

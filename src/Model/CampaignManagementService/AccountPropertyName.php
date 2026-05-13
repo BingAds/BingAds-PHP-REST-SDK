@@ -57,6 +57,10 @@ class AccountPropertyName
 
     public const ACCEPT_NIELSEN_TERMS_AND_CONDITIONS = 'AcceptNielsenTermsAndConditions';
 
+    public const IMAGE_MISSING_WARNING_OPTOUT = 'ImageMissingWarningOptout';
+
+    public const OPT_OUT_FROM_SYSTEM_SOURCED_IMAGES_IN_SWF = 'OptOutFromSystemSourcedImagesInSWF';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -142,7 +146,9 @@ class AccountPropertyName
             self::NETFLIX_TC_ACCEPTED,
             self::BLOCKED_CONTENT_SEGMENTS,
             self::ASSET_AI_ENHANCEMENT_OPTOUT,
-            self::ACCEPT_NIELSEN_TERMS_AND_CONDITIONS
+            self::ACCEPT_NIELSEN_TERMS_AND_CONDITIONS,
+            self::IMAGE_MISSING_WARNING_OPTOUT,
+            self::OPT_OUT_FROM_SYSTEM_SOURCED_IMAGES_IN_SWF
         ];
     }
 }

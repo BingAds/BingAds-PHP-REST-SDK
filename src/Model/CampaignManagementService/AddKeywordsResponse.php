@@ -34,8 +34,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPITypes = [
         'KeywordIds' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
-        'InheritedBidStrategyTypes' => 'string[]'
+        'InheritedBidStrategyTypes' => 'string[]',
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
     /**
@@ -47,8 +47,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPIFormats = [
         'KeywordIds' => 'int64',
-        'PartialErrors' => null,
-        'InheritedBidStrategyTypes' => null
+        'InheritedBidStrategyTypes' => null,
+        'PartialErrors' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'KeywordIds' => true,
-        'PartialErrors' => true,
-        'InheritedBidStrategyTypes' => true
+        'InheritedBidStrategyTypes' => true,
+        'PartialErrors' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $attributeMap = [
         'KeywordIds' => 'KeywordIds',
-        'PartialErrors' => 'PartialErrors',
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes'
+        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
+        'PartialErrors' => 'PartialErrors'
     ];
 
     /**
@@ -160,8 +160,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $setters = [
         'KeywordIds' => 'setKeywordIds',
-        'PartialErrors' => 'setPartialErrors',
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes'
+        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
+        'PartialErrors' => 'setPartialErrors'
     ];
 
     /**
@@ -171,8 +171,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $getters = [
         'KeywordIds' => 'getKeywordIds',
-        'PartialErrors' => 'getPartialErrors',
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes'
+        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
+        'PartialErrors' => 'getPartialErrors'
     ];
 
     /**
@@ -233,8 +233,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('KeywordIds', $data ?? [], null);
-        $this->setIfExists('PartialErrors', $data ?? [], null);
         $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
     /**
@@ -317,43 +317,6 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets InheritedBidStrategyTypes
      *
      * @return string[]|null
@@ -386,6 +349,43 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets PartialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     */
+    public function getPartialErrors()
+    {
+        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+            return null;
+        }
+        return $this->container['PartialErrors'];
+    }
+
+    /**
+     * Sets PartialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     *
+     * @return self
+     */
+    public function setPartialErrors($PartialErrors)
+    {
+        if (is_null($PartialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PartialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PartialErrors'] = $PartialErrors;
 
         return $this;
     }

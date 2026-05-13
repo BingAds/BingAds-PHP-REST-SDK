@@ -33,9 +33,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField',
         'AdGroupId' => 'string',
-        'KeywordIds' => 'string[]',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
+        'KeywordIds' => 'string[]'
     ];
 
     /**
@@ -46,9 +46,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'ReturnAdditionalFields' => null,
         'AdGroupId' => 'int64',
-        'KeywordIds' => 'int64',
-        'ReturnAdditionalFields' => null
+        'KeywordIds' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'ReturnAdditionalFields' => false,
         'AdGroupId' => false,
-        'KeywordIds' => true,
-        'ReturnAdditionalFields' => false
+        'KeywordIds' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
         'AdGroupId' => 'AdGroupId',
-        'KeywordIds' => 'KeywordIds',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'KeywordIds' => 'KeywordIds'
     ];
 
     /**
@@ -159,9 +159,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
         'AdGroupId' => 'setAdGroupId',
-        'KeywordIds' => 'setKeywordIds',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'KeywordIds' => 'setKeywordIds'
     ];
 
     /**
@@ -170,9 +170,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
         'AdGroupId' => 'getAdGroupId',
-        'KeywordIds' => 'getKeywordIds',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'KeywordIds' => 'getKeywordIds'
     ];
 
     /**
@@ -232,9 +232,9 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('KeywordIds', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -278,6 +278,42 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+        }
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+
+        return $this;
+    }
 
     /**
      * Gets AdGroupId
@@ -342,42 +378,6 @@ class GetKeywordsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['KeywordIds'] = $KeywordIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }
