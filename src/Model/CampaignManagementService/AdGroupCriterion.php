@@ -44,9 +44,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'Id' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
+        'Id' => 'string',
         'Type' => 'string',
         'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
         'DestinationUrl' => 'string',
@@ -69,9 +69,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'Id' => 'int64',
         'Status' => null,
         'Criterion' => null,
+        'Id' => 'int64',
         'Type' => null,
         'CriterionBid' => null,
         'DestinationUrl' => null,
@@ -92,9 +92,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'AdGroupId' => false,
-        'Id' => true,
         'Status' => false,
         'Criterion' => true,
+        'Id' => true,
         'Type' => true,
         'CriterionBid' => true,
         'DestinationUrl' => true,
@@ -195,9 +195,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'Id' => 'Id',
         'Status' => 'Status',
         'Criterion' => 'Criterion',
+        'Id' => 'Id',
         'Type' => 'Type',
         'CriterionBid' => 'CriterionBid',
         'DestinationUrl' => 'DestinationUrl',
@@ -218,9 +218,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'Id' => 'setId',
         'Status' => 'setStatus',
         'Criterion' => 'setCriterion',
+        'Id' => 'setId',
         'Type' => 'setType',
         'CriterionBid' => 'setCriterionBid',
         'DestinationUrl' => 'setDestinationUrl',
@@ -241,9 +241,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'Id' => 'getId',
         'Status' => 'getStatus',
         'Criterion' => 'getCriterion',
+        'Id' => 'getId',
         'Type' => 'getType',
         'CriterionBid' => 'getCriterionBid',
         'DestinationUrl' => 'getDestinationUrl',
@@ -315,9 +315,9 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CriterionBid', $data ?? [], null);
         $this->setIfExists('DestinationUrl', $data ?? [], null);
@@ -407,43 +407,6 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
      * Gets Status
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
@@ -512,6 +475,43 @@ class AdGroupCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Criterion'] = $Criterion;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

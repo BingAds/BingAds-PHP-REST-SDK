@@ -33,7 +33,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Description' => 'string',
         'ThumbnailUrl' => 'string',
         'SourceUrl' => 'string',
@@ -43,7 +42,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'Status' => 'string',
         'CreatedDateTimeInUTC' => '\DateTime',
         'ModifiedDateTimeInUTC' => '\DateTime',
-        'FailureCode' => 'string'
+        'FailureCode' => 'string',
+        'Id' => 'string'
     ];
 
     /**
@@ -54,7 +54,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Description' => null,
         'ThumbnailUrl' => null,
         'SourceUrl' => null,
@@ -64,7 +63,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'Status' => null,
         'CreatedDateTimeInUTC' => 'date-time',
         'ModifiedDateTimeInUTC' => 'date-time',
-        'FailureCode' => null
+        'FailureCode' => null,
+        'Id' => 'int64'
     ];
 
     /**
@@ -73,7 +73,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Description' => true,
         'ThumbnailUrl' => true,
         'SourceUrl' => true,
@@ -83,7 +82,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'Status' => true,
         'CreatedDateTimeInUTC' => true,
         'ModifiedDateTimeInUTC' => true,
-        'FailureCode' => true
+        'FailureCode' => true,
+        'Id' => true
     ];
 
     /**
@@ -172,7 +172,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Description' => 'Description',
         'ThumbnailUrl' => 'ThumbnailUrl',
         'SourceUrl' => 'SourceUrl',
@@ -182,7 +181,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'Status' => 'Status',
         'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
         'ModifiedDateTimeInUTC' => 'ModifiedDateTimeInUTC',
-        'FailureCode' => 'FailureCode'
+        'FailureCode' => 'FailureCode',
+        'Id' => 'Id'
     ];
 
     /**
@@ -191,7 +191,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Description' => 'setDescription',
         'ThumbnailUrl' => 'setThumbnailUrl',
         'SourceUrl' => 'setSourceUrl',
@@ -201,7 +200,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'Status' => 'setStatus',
         'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
         'ModifiedDateTimeInUTC' => 'setModifiedDateTimeInUTC',
-        'FailureCode' => 'setFailureCode'
+        'FailureCode' => 'setFailureCode',
+        'Id' => 'setId'
     ];
 
     /**
@@ -210,7 +210,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Description' => 'getDescription',
         'ThumbnailUrl' => 'getThumbnailUrl',
         'SourceUrl' => 'getSourceUrl',
@@ -220,7 +219,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'Status' => 'getStatus',
         'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
         'ModifiedDateTimeInUTC' => 'getModifiedDateTimeInUTC',
-        'FailureCode' => 'getFailureCode'
+        'FailureCode' => 'getFailureCode',
+        'Id' => 'getId'
     ];
 
     /**
@@ -280,7 +280,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('ThumbnailUrl', $data ?? [], null);
         $this->setIfExists('SourceUrl', $data ?? [], null);
@@ -291,6 +290,7 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
         $this->setIfExists('ModifiedDateTimeInUTC', $data ?? [], null);
         $this->setIfExists('FailureCode', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
     }
 
     /**
@@ -334,43 +334,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets Description
@@ -738,6 +701,43 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['FailureCode'] = $FailureCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

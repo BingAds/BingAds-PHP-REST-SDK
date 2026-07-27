@@ -95,6 +95,12 @@ class FeedItemPerformanceReportColumn
 
     public const VIEW_THROUGH_CONVERSION_RATE = 'ViewThroughConversionRate';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -199,7 +205,10 @@ class FeedItemPerformanceReportColumn
             self::VIEW_THROUGH_CONVERSIONS,
             self::VIEW_THROUGH_CONVERSIONS_QUALIFIED,
             self::VIEW_THROUGH_REVENUE,
-            self::VIEW_THROUGH_CONVERSION_RATE
+            self::VIEW_THROUGH_CONVERSION_RATE,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

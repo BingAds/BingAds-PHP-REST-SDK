@@ -49,13 +49,7 @@ class UriOAuthService extends IOAuthService
             'OAuthTokenUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
             'AuthorizationEndpointUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=https%3A%2F%2Fsi.ads.microsoft.com%2Fmsads.manage%20offline_access',
             'Scope' => 'https://si.ads.microsoft.com/msads.manage offline_access'
-        ),
-        OAuthEndpointType::GoogleProduction => array(
-            'RedirectUrl' => 'http://localhost',
-            'OAuthTokenUrl' => 'https://oauth2.googleapis.com/token',
-            'AuthorizationEndpointUrl' => 'https://accounts.google.com/o/oauth2/v2/auth?scope=openid+email+profile&access_type=offline&prompt=consent',
-            'Scope' => 'openid email profile'
-        ),
+        )
     );
 
     private Client $httpClient;
@@ -149,13 +143,7 @@ class UriOAuthService extends IOAuthService
         if (isset($responseArray['access_token'])) {
             $accessToken = $responseArray['access_token'];
             $expiresIn = $responseArray['expires_in'];
-            $refreshToken = $responseArray['refresh_token'] ?? null;
-
-            // Preserve the original refresh token if the response doesn't include a new one
-            // This is specific to Google OAuth which doesn't return refresh_token on refresh
-            if ($refreshToken === null && $oauthRequestParameters->GrantType === 'refresh_token' && $oauthScope === OAuthScope::GOOGLE_OPENID) {
-                $refreshToken = $oauthRequestParameters->GrantValue;
-            }
+            $refreshToken = $responseArray['refresh_token'];
 
             return (new OAuthTokens())
                 ->withAccessToken($accessToken)
@@ -226,18 +214,11 @@ class UriOAuthService extends IOAuthService
                 case OAuthScope::ADS_MANAGE:
                     $endpointType = OAuthEndpointType::PRODUCTION_MS_IDENTITY_V_2;
                     break;
-                case OAuthScope::GOOGLE_OPENID:
-                    $endpointType = OAuthEndpointType::GoogleProduction;
-                    break;
                 default:
                     $endpointType = OAuthEndpointType::PRODUCTION_MS_IDENTITY_V_2_MS_SCOPE;
             }
         } else {
             $endpointType = ($oauthScope == OAuthScope::SANDBOX_PPE) ? OAuthEndpointType::SANDBOX_PPE : OAuthEndpointType::SANDBOX_MSA_PROD;
-            if ($oauthScope == OAuthScope::GOOGLE_OPENID)
-            {
-                $endpointType = OAuthEndpointType::GoogleProduction;
-            }
         }
         return $endpointType;
     }

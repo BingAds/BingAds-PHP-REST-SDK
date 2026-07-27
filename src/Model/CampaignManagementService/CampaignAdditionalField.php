@@ -95,6 +95,8 @@ class CampaignAdditionalField
 
     public const NETWORK_DISTRIBUTION_SETTING = 'NetworkDistributionSetting';
 
+    public const PAGE_FEED_IN_AI_SEARCH_SETTINGS = 'PageFeedInAISearchSettings';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -199,7 +201,8 @@ class CampaignAdditionalField
             self::CROSS_ACCOUNT_BID_STRATEGY_FIELDS,
             self::AI_SEARCH_SETTING,
             self::PMAX_XBOX_CAMPAIGN,
-            self::NETWORK_DISTRIBUTION_SETTING
+            self::NETWORK_DISTRIBUTION_SETTING,
+            self::PAGE_FEED_IN_AI_SEARCH_SETTINGS
         ];
     }
 }

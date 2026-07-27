@@ -113,6 +113,12 @@ class AppsPerformanceReportColumn
 
     public const REVENUE_PER_APP_INSTALL = 'RevenuePerAppInstall';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -226,7 +232,10 @@ class AppsPerformanceReportColumn
             self::REVENUE,
             self::RETURN_ON_AD_SPEND,
             self::REVENUE_PER_DOWNLOAD,
-            self::REVENUE_PER_APP_INSTALL
+            self::REVENUE_PER_APP_INSTALL,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

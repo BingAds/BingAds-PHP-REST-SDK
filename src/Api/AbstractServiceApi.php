@@ -25,6 +25,7 @@ use Microsoft\MsAds\Rest\ApiException;
 use Microsoft\MsAds\Rest\Auth\ApiEnvironment;
 use Microsoft\MsAds\Rest\Configuration;
 use Microsoft\MsAds\Rest\HeaderSelector;
+use Microsoft\MsAds\Rest\Manifest;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use RuntimeException;
 
@@ -302,6 +303,7 @@ abstract class AbstractServiceApi
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
+        $defaultHeaders['Api-Revision'] = Manifest::SDK_API_REVISION;
 
         $headers = array_merge(
             $defaultHeaders,

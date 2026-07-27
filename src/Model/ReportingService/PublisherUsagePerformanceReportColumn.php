@@ -173,6 +173,12 @@ class PublisherUsagePerformanceReportColumn
 
     public const LOW_QUALITY_SOPHISTICATED_CLICKS = 'LowQualitySophisticatedClicks';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -316,7 +322,10 @@ class PublisherUsagePerformanceReportColumn
             self::LOW_QUALITY_IMPRESSIONS,
             self::LOW_QUALITY_IMPRESSIONS_PERCENT,
             self::LOW_QUALITY_GENERAL_CLICKS,
-            self::LOW_QUALITY_SOPHISTICATED_CLICKS
+            self::LOW_QUALITY_SOPHISTICATED_CLICKS,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

@@ -1,22 +1,22 @@
 <?php
 /**
- * GetCampaignCriterionsByIdsRequest
- * CampaignManagementService
+ * SearchTermLandingPageReportFilter
+ * ReportingService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
+ * @package  Microsoft\MsAds\Rest\Model\ReportingService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
+namespace Microsoft\MsAds\Rest\Model\ReportingService;
 
 use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GetCampaignCriterionsByIdsRequest';
+    protected static string $openAPIModelName = 'SearchTermLandingPageReportFilter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,10 +33,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CampaignId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField',
-        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType',
-        'CampaignCriterionIds' => 'string[]'
+        'DeliveredMatchType' => '\Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter',
+        'SearchQueries' => 'string[]',
+        'AdType' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter',
+        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter'
     ];
 
     /**
@@ -47,10 +47,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CampaignId' => 'int64',
-        'ReturnAdditionalFields' => null,
-        'CriterionType' => null,
-        'CampaignCriterionIds' => 'int64'
+        'DeliveredMatchType' => null,
+        'SearchQueries' => null,
+        'AdType' => null,
+        'Language' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CampaignId' => false,
-        'ReturnAdditionalFields' => false,
-        'CriterionType' => false,
-        'CampaignCriterionIds' => true
+        'DeliveredMatchType' => false,
+        'SearchQueries' => true,
+        'AdType' => false,
+        'Language' => false
     ];
 
     /**
@@ -151,10 +151,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CampaignId' => 'CampaignId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
-        'CriterionType' => 'CriterionType',
-        'CampaignCriterionIds' => 'CampaignCriterionIds'
+        'DeliveredMatchType' => 'DeliveredMatchType',
+        'SearchQueries' => 'SearchQueries',
+        'AdType' => 'AdType',
+        'Language' => 'Language'
     ];
 
     /**
@@ -163,10 +163,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'CampaignId' => 'setCampaignId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
-        'CriterionType' => 'setCriterionType',
-        'CampaignCriterionIds' => 'setCampaignCriterionIds'
+        'DeliveredMatchType' => 'setDeliveredMatchType',
+        'SearchQueries' => 'setSearchQueries',
+        'AdType' => 'setAdType',
+        'Language' => 'setLanguage'
     ];
 
     /**
@@ -175,10 +175,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'CampaignId' => 'getCampaignId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
-        'CriterionType' => 'getCriterionType',
-        'CampaignCriterionIds' => 'getCampaignCriterionIds'
+        'DeliveredMatchType' => 'getDeliveredMatchType',
+        'SearchQueries' => 'getSearchQueries',
+        'AdType' => 'getAdType',
+        'Language' => 'getLanguage'
     ];
 
     /**
@@ -238,10 +238,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CampaignId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
-        $this->setIfExists('CriterionType', $data ?? [], null);
-        $this->setIfExists('CampaignCriterionIds', $data ?? [], null);
+        $this->setIfExists('DeliveredMatchType', $data ?? [], null);
+        $this->setIfExists('SearchQueries', $data ?? [], null);
+        $this->setIfExists('AdType', $data ?? [], null);
+        $this->setIfExists('Language', $data ?? [], null);
     }
 
     /**
@@ -287,140 +287,146 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets CampaignId
+     * Gets DeliveredMatchType
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter|mixed|null
      */
-    public function getCampaignId()
+    public function getDeliveredMatchType()
     {
-        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
+        if (!isset($this->container['DeliveredMatchType']) || is_null($this->container['DeliveredMatchType'])) {
             return null;
         }
-        return $this->container['CampaignId'];
+        if ((is_object($this->container['DeliveredMatchType']) || is_string($this->container['DeliveredMatchType'])) && method_exists($this->container['DeliveredMatchType'], 'getValue')) {
+            return $this->container['DeliveredMatchType']->getValue();
+        }
+        return $this->container['DeliveredMatchType'];
     }
 
     /**
-     * Sets CampaignId
+     * Sets DeliveredMatchType
      *
-     * @param string|null $CampaignId CampaignId
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter|mixed|null $DeliveredMatchType DeliveredMatchType
      *
      * @return self
      */
-    public function setCampaignId($CampaignId)
+    public function setDeliveredMatchType($DeliveredMatchType)
     {
-        if (is_null($CampaignId)) {
-            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
+        if (is_null($DeliveredMatchType)) {
+            throw new \InvalidArgumentException('non-nullable DeliveredMatchType cannot be null');
         }
-        $this->container['CampaignId'] = $CampaignId;
+        if (!$DeliveredMatchType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter) {
+            $DeliveredMatchType = new \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter($DeliveredMatchType);
+        }
+        $this->container['DeliveredMatchType'] = $DeliveredMatchType;
 
         return $this;
     }
 
     /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
-
-        return $this;
-    }
-
-    /**
-     * Gets CriterionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null
-     */
-    public function getCriterionType()
-    {
-        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
-            return $this->container['CriterionType']->getValue();
-        }
-        return $this->container['CriterionType'];
-    }
-
-    /**
-     * Sets CriterionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null $CriterionType CriterionType
-     *
-     * @return self
-     */
-    public function setCriterionType($CriterionType)
-    {
-        if (is_null($CriterionType)) {
-            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
-        }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
-            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType($CriterionType);
-        }
-        $this->container['CriterionType'] = $CriterionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignCriterionIds
+     * Gets SearchQueries
      *
      * @return string[]|null
      */
-    public function getCampaignCriterionIds()
+    public function getSearchQueries()
     {
-        if (!isset($this->container['CampaignCriterionIds']) || is_null($this->container['CampaignCriterionIds'])) {
+        if (!isset($this->container['SearchQueries']) || is_null($this->container['SearchQueries'])) {
             return null;
         }
-        return $this->container['CampaignCriterionIds'];
+        return $this->container['SearchQueries'];
     }
 
     /**
-     * Sets CampaignCriterionIds
+     * Sets SearchQueries
      *
-     * @param string[]|null $CampaignCriterionIds CampaignCriterionIds
+     * @param string[]|null $SearchQueries SearchQueries
      *
      * @return self
      */
-    public function setCampaignCriterionIds($CampaignCriterionIds)
+    public function setSearchQueries($SearchQueries)
     {
-        if (is_null($CampaignCriterionIds)) {
-            array_push($this->openAPINullablesSetToNull, 'CampaignCriterionIds');
+        if (is_null($SearchQueries)) {
+            array_push($this->openAPINullablesSetToNull, 'SearchQueries');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CampaignCriterionIds', $nullablesSetToNull);
+            $index = array_search('SearchQueries', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CampaignCriterionIds'] = $CampaignCriterionIds;
+        $this->container['SearchQueries'] = $SearchQueries;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null
+     */
+    public function getAdType()
+    {
+        if (!isset($this->container['AdType']) || is_null($this->container['AdType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdType']) || is_string($this->container['AdType'])) && method_exists($this->container['AdType'], 'getValue')) {
+            return $this->container['AdType']->getValue();
+        }
+        return $this->container['AdType'];
+    }
+
+    /**
+     * Sets AdType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null $AdType AdType
+     *
+     * @return self
+     */
+    public function setAdType($AdType)
+    {
+        if (is_null($AdType)) {
+            throw new \InvalidArgumentException('non-nullable AdType cannot be null');
+        }
+        if (!$AdType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter) {
+            $AdType = new \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter($AdType);
+        }
+        $this->container['AdType'] = $AdType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Language
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null
+     */
+    public function getLanguage()
+    {
+        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
+            return null;
+        }
+        if ((is_object($this->container['Language']) || is_string($this->container['Language'])) && method_exists($this->container['Language'], 'getValue')) {
+            return $this->container['Language']->getValue();
+        }
+        return $this->container['Language'];
+    }
+
+    /**
+     * Sets Language
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null $Language Language
+     *
+     * @return self
+     */
+    public function setLanguage($Language)
+    {
+        if (is_null($Language)) {
+            throw new \InvalidArgumentException('non-nullable Language cannot be null');
+        }
+        if (!$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
+            $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
+        }
+        $this->container['Language'] = $Language;
 
         return $this;
     }

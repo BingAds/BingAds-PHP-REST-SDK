@@ -34,9 +34,4 @@ final class OAuthScope
      * Represents sandbox.ppe OAuth scope
      */
     const SANDBOX_PPE = 'sandbox.ppe';
-
-    /**
-     * Represents google.openid OAuth scope
-     */
-    const GOOGLE_OPENID = 'google.openid';
 }

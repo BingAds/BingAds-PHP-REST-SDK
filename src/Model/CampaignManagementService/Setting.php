@@ -30,18 +30,22 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AppSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AppSetting',
         'BaseDomainSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\BaseDomainSetting',
         'CallToActionSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToActionSetting',
+        'CampaignFrequencyCapSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignFrequencyCapSetting',
         'CoOpSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CoOpSetting',
         'DisclaimerSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DisclaimerSetting',
         'DynamicFeedSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicFeedSetting',
         'DynamicSearchAdsSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSetting',
         'HotelSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelSetting',
+        'ImpressionTrackingSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionTrackingSetting',
         'NetworkDistributionSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\NetworkDistributionSetting',
         'NewCustomerAcquisitionGoalSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\NewCustomerAcquisitionGoalSetting',
         'PerformanceMaxSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\PerformanceMaxSetting',
+        'ReachOptimizationGoalSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoalSetting',
         'ResponsiveSearchAdsSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ResponsiveSearchAdsSetting',
         'ShoppingSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ShoppingSetting',
         'TargetSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\TargetSetting',
         'ThirdPartyMeasurementSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ThirdPartyMeasurementSetting',
+        'UnifiedAutomationSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\UnifiedAutomationSetting',
         'VanityPharmaSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaSetting',
         'VerifiedTrackingSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\VerifiedTrackingSetting',
     ];
@@ -95,7 +99,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'BaseDomain' => 'string',
         'SearchTermMatchingOptOut' => 'bool',
         'AISearchEnabled' => 'bool',
-        'NetworkOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Network'
+        'NetworkOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Network',
+        'ImpressionTrackingUrl' => 'string',
+        'OptimizationGoal' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal',
+        'TimeGranularity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity',
+        'CapValue' => 'int',
+        'ChannelOptimizationOptOut' => 'bool',
+        'AudienceOptimizationOptOut' => 'bool'
     ];
 
     /**
@@ -142,7 +152,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'BaseDomain' => null,
         'SearchTermMatchingOptOut' => null,
         'AISearchEnabled' => null,
-        'NetworkOption' => null
+        'NetworkOption' => null,
+        'ImpressionTrackingUrl' => null,
+        'OptimizationGoal' => null,
+        'TimeGranularity' => null,
+        'CapValue' => 'int32',
+        'ChannelOptimizationOptOut' => null,
+        'AudienceOptimizationOptOut' => null
     ];
 
     /**
@@ -187,7 +203,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'BaseDomain' => true,
         'SearchTermMatchingOptOut' => true,
         'AISearchEnabled' => false,
-        'NetworkOption' => false
+        'NetworkOption' => false,
+        'ImpressionTrackingUrl' => true,
+        'OptimizationGoal' => false,
+        'TimeGranularity' => false,
+        'CapValue' => false,
+        'ChannelOptimizationOptOut' => true,
+        'AudienceOptimizationOptOut' => true
     ];
 
     /**
@@ -312,7 +334,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'BaseDomain' => 'BaseDomain',
         'SearchTermMatchingOptOut' => 'SearchTermMatchingOptOut',
         'AISearchEnabled' => 'AISearchEnabled',
-        'NetworkOption' => 'NetworkOption'
+        'NetworkOption' => 'NetworkOption',
+        'ImpressionTrackingUrl' => 'ImpressionTrackingUrl',
+        'OptimizationGoal' => 'OptimizationGoal',
+        'TimeGranularity' => 'TimeGranularity',
+        'CapValue' => 'CapValue',
+        'ChannelOptimizationOptOut' => 'ChannelOptimizationOptOut',
+        'AudienceOptimizationOptOut' => 'AudienceOptimizationOptOut'
     ];
 
     /**
@@ -357,7 +385,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'BaseDomain' => 'setBaseDomain',
         'SearchTermMatchingOptOut' => 'setSearchTermMatchingOptOut',
         'AISearchEnabled' => 'setAISearchEnabled',
-        'NetworkOption' => 'setNetworkOption'
+        'NetworkOption' => 'setNetworkOption',
+        'ImpressionTrackingUrl' => 'setImpressionTrackingUrl',
+        'OptimizationGoal' => 'setOptimizationGoal',
+        'TimeGranularity' => 'setTimeGranularity',
+        'CapValue' => 'setCapValue',
+        'ChannelOptimizationOptOut' => 'setChannelOptimizationOptOut',
+        'AudienceOptimizationOptOut' => 'setAudienceOptimizationOptOut'
     ];
 
     /**
@@ -402,7 +436,13 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'BaseDomain' => 'getBaseDomain',
         'SearchTermMatchingOptOut' => 'getSearchTermMatchingOptOut',
         'AISearchEnabled' => 'getAISearchEnabled',
-        'NetworkOption' => 'getNetworkOption'
+        'NetworkOption' => 'getNetworkOption',
+        'ImpressionTrackingUrl' => 'getImpressionTrackingUrl',
+        'OptimizationGoal' => 'getOptimizationGoal',
+        'TimeGranularity' => 'getTimeGranularity',
+        'CapValue' => 'getCapValue',
+        'ChannelOptimizationOptOut' => 'getChannelOptimizationOptOut',
+        'AudienceOptimizationOptOut' => 'getAudienceOptimizationOptOut'
     ];
 
     /**
@@ -499,6 +539,12 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('SearchTermMatchingOptOut', $data ?? [], null);
         $this->setIfExists('AISearchEnabled', $data ?? [], null);
         $this->setIfExists('NetworkOption', $data ?? [], null);
+        $this->setIfExists('ImpressionTrackingUrl', $data ?? [], null);
+        $this->setIfExists('OptimizationGoal', $data ?? [], null);
+        $this->setIfExists('TimeGranularity', $data ?? [], null);
+        $this->setIfExists('CapValue', $data ?? [], null);
+        $this->setIfExists('ChannelOptimizationOptOut', $data ?? [], null);
+        $this->setIfExists('AudienceOptimizationOptOut', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -1890,6 +1936,219 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
             $NetworkOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network($NetworkOption);
         }
         $this->container['NetworkOption'] = $NetworkOption;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImpressionTrackingUrl
+     *
+     * @return string|null
+     */
+    public function getImpressionTrackingUrl()
+    {
+        if (!isset($this->container['ImpressionTrackingUrl']) || is_null($this->container['ImpressionTrackingUrl'])) {
+            return null;
+        }
+        return $this->container['ImpressionTrackingUrl'];
+    }
+
+    /**
+     * Sets ImpressionTrackingUrl
+     *
+     * @param string|null $ImpressionTrackingUrl ImpressionTrackingUrl
+     *
+     * @return self
+     */
+    public function setImpressionTrackingUrl($ImpressionTrackingUrl)
+    {
+        if (is_null($ImpressionTrackingUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'ImpressionTrackingUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImpressionTrackingUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImpressionTrackingUrl'] = $ImpressionTrackingUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets OptimizationGoal
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal|mixed|null
+     */
+    public function getOptimizationGoal()
+    {
+        if (!isset($this->container['OptimizationGoal']) || is_null($this->container['OptimizationGoal'])) {
+            return null;
+        }
+        if ((is_object($this->container['OptimizationGoal']) || is_string($this->container['OptimizationGoal'])) && method_exists($this->container['OptimizationGoal'], 'getValue')) {
+            return $this->container['OptimizationGoal']->getValue();
+        }
+        return $this->container['OptimizationGoal'];
+    }
+
+    /**
+     * Sets OptimizationGoal
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal|mixed|null $OptimizationGoal OptimizationGoal
+     *
+     * @return self
+     */
+    public function setOptimizationGoal($OptimizationGoal)
+    {
+        if (is_null($OptimizationGoal)) {
+            throw new \InvalidArgumentException('non-nullable OptimizationGoal cannot be null');
+        }
+        if (!$OptimizationGoal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal) {
+            $OptimizationGoal = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal($OptimizationGoal);
+        }
+        $this->container['OptimizationGoal'] = $OptimizationGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets TimeGranularity
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity|mixed|null
+     */
+    public function getTimeGranularity()
+    {
+        if (!isset($this->container['TimeGranularity']) || is_null($this->container['TimeGranularity'])) {
+            return null;
+        }
+        if ((is_object($this->container['TimeGranularity']) || is_string($this->container['TimeGranularity'])) && method_exists($this->container['TimeGranularity'], 'getValue')) {
+            return $this->container['TimeGranularity']->getValue();
+        }
+        return $this->container['TimeGranularity'];
+    }
+
+    /**
+     * Sets TimeGranularity
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity|mixed|null $TimeGranularity TimeGranularity
+     *
+     * @return self
+     */
+    public function setTimeGranularity($TimeGranularity)
+    {
+        if (is_null($TimeGranularity)) {
+            throw new \InvalidArgumentException('non-nullable TimeGranularity cannot be null');
+        }
+        if (!$TimeGranularity instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity) {
+            $TimeGranularity = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity($TimeGranularity);
+        }
+        $this->container['TimeGranularity'] = $TimeGranularity;
+
+        return $this;
+    }
+
+    /**
+     * Gets CapValue
+     *
+     * @return int|null
+     */
+    public function getCapValue()
+    {
+        if (!isset($this->container['CapValue']) || is_null($this->container['CapValue'])) {
+            return null;
+        }
+        return $this->container['CapValue'];
+    }
+
+    /**
+     * Sets CapValue
+     *
+     * @param int|null $CapValue CapValue
+     *
+     * @return self
+     */
+    public function setCapValue($CapValue)
+    {
+        if (is_null($CapValue)) {
+            throw new \InvalidArgumentException('non-nullable CapValue cannot be null');
+        }
+        $this->container['CapValue'] = $CapValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelOptimizationOptOut
+     *
+     * @return bool|null
+     */
+    public function getChannelOptimizationOptOut()
+    {
+        if (!isset($this->container['ChannelOptimizationOptOut']) || is_null($this->container['ChannelOptimizationOptOut'])) {
+            return null;
+        }
+        return $this->container['ChannelOptimizationOptOut'];
+    }
+
+    /**
+     * Sets ChannelOptimizationOptOut
+     *
+     * @param bool|null $ChannelOptimizationOptOut ChannelOptimizationOptOut
+     *
+     * @return self
+     */
+    public function setChannelOptimizationOptOut($ChannelOptimizationOptOut)
+    {
+        if (is_null($ChannelOptimizationOptOut)) {
+            array_push($this->openAPINullablesSetToNull, 'ChannelOptimizationOptOut');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ChannelOptimizationOptOut', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ChannelOptimizationOptOut'] = $ChannelOptimizationOptOut;
+
+        return $this;
+    }
+
+    /**
+     * Gets AudienceOptimizationOptOut
+     *
+     * @return bool|null
+     */
+    public function getAudienceOptimizationOptOut()
+    {
+        if (!isset($this->container['AudienceOptimizationOptOut']) || is_null($this->container['AudienceOptimizationOptOut'])) {
+            return null;
+        }
+        return $this->container['AudienceOptimizationOptOut'];
+    }
+
+    /**
+     * Sets AudienceOptimizationOptOut
+     *
+     * @param bool|null $AudienceOptimizationOptOut AudienceOptimizationOptOut
+     *
+     * @return self
+     */
+    public function setAudienceOptimizationOptOut($AudienceOptimizationOptOut)
+    {
+        if (is_null($AudienceOptimizationOptOut)) {
+            array_push($this->openAPINullablesSetToNull, 'AudienceOptimizationOptOut');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AudienceOptimizationOptOut', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AudienceOptimizationOptOut'] = $AudienceOptimizationOptOut;
 
         return $this;
     }

@@ -34,8 +34,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'AdGroupCriterionIds' => 'string[]',
-        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType'
+        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType',
+        'AdGroupCriterionIds' => 'string[]'
     ];
 
     /**
@@ -47,8 +47,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'AdGroupCriterionIds' => 'int64',
-        'CriterionType' => null
+        'CriterionType' => null,
+        'AdGroupCriterionIds' => 'int64'
     ];
 
     /**
@@ -58,8 +58,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'AdGroupId' => false,
-        'AdGroupCriterionIds' => true,
-        'CriterionType' => false
+        'CriterionType' => false,
+        'AdGroupCriterionIds' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'AdGroupCriterionIds' => 'AdGroupCriterionIds',
-        'CriterionType' => 'CriterionType'
+        'CriterionType' => 'CriterionType',
+        'AdGroupCriterionIds' => 'AdGroupCriterionIds'
     ];
 
     /**
@@ -160,8 +160,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'AdGroupCriterionIds' => 'setAdGroupCriterionIds',
-        'CriterionType' => 'setCriterionType'
+        'CriterionType' => 'setCriterionType',
+        'AdGroupCriterionIds' => 'setAdGroupCriterionIds'
     ];
 
     /**
@@ -171,8 +171,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'AdGroupCriterionIds' => 'getAdGroupCriterionIds',
-        'CriterionType' => 'getCriterionType'
+        'CriterionType' => 'getCriterionType',
+        'AdGroupCriterionIds' => 'getAdGroupCriterionIds'
     ];
 
     /**
@@ -233,8 +233,8 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('AdGroupCriterionIds', $data ?? [], null);
         $this->setIfExists('CriterionType', $data ?? [], null);
+        $this->setIfExists('AdGroupCriterionIds', $data ?? [], null);
     }
 
     /**
@@ -310,6 +310,42 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Gets CriterionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null
+     */
+    public function getCriterionType()
+    {
+        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
+            return $this->container['CriterionType']->getValue();
+        }
+        return $this->container['CriterionType'];
+    }
+
+    /**
+     * Sets CriterionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null $CriterionType CriterionType
+     *
+     * @return self
+     */
+    public function setCriterionType($CriterionType)
+    {
+        if (is_null($CriterionType)) {
+            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
+        }
+        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType) {
+            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType($CriterionType);
+        }
+        $this->container['CriterionType'] = $CriterionType;
+
+        return $this;
+    }
+
+    /**
      * Gets AdGroupCriterionIds
      *
      * @return string[]|null
@@ -342,42 +378,6 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
             }
         }
         $this->container['AdGroupCriterionIds'] = $AdGroupCriterionIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets CriterionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null
-     */
-    public function getCriterionType()
-    {
-        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
-            return $this->container['CriterionType']->getValue();
-        }
-        return $this->container['CriterionType'];
-    }
-
-    /**
-     * Sets CriterionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null $CriterionType CriterionType
-     *
-     * @return self
-     */
-    public function setCriterionType($CriterionType)
-    {
-        if (is_null($CriterionType)) {
-            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
-        }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType) {
-            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType($CriterionType);
-        }
-        $this->container['CriterionType'] = $CriterionType;
 
         return $this;
     }

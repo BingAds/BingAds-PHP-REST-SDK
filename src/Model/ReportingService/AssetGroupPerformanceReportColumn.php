@@ -59,6 +59,12 @@ class AssetGroupPerformanceReportColumn
 
     public const COST_PER_CONVERSION = 'CostPerConversion';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -145,7 +151,10 @@ class AssetGroupPerformanceReportColumn
             self::REVENUE,
             self::RETURN_ON_AD_SPEND,
             self::CAMPAIGN_TYPE,
-            self::COST_PER_CONVERSION
+            self::COST_PER_CONVERSION,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

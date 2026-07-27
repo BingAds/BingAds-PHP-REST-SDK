@@ -49,6 +49,12 @@ class CallDetailReportColumn
 
     public const AD_GROUP_STATUS = 'AdGroupStatus';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -130,7 +136,10 @@ class CallDetailReportColumn
             self::AD_GROUP_ID,
             self::ACCOUNT_STATUS,
             self::CAMPAIGN_STATUS,
-            self::AD_GROUP_STATUS
+            self::AD_GROUP_STATUS,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

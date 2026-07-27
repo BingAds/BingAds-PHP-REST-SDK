@@ -35,7 +35,8 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
         'Keywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]',
-        'ReturnInheritedBidStrategyTypes' => 'bool'
+        'ReturnInheritedBidStrategyTypes' => 'bool',
+        'AssetGroupId' => 'string'
     ];
 
     /**
@@ -48,7 +49,8 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
         'Keywords' => null,
-        'ReturnInheritedBidStrategyTypes' => null
+        'ReturnInheritedBidStrategyTypes' => null,
+        'AssetGroupId' => 'int64'
     ];
 
     /**
@@ -57,9 +59,10 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => false,
+        'AdGroupId' => true,
         'Keywords' => true,
-        'ReturnInheritedBidStrategyTypes' => true
+        'ReturnInheritedBidStrategyTypes' => true,
+        'AssetGroupId' => true
     ];
 
     /**
@@ -150,7 +153,8 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
         'Keywords' => 'Keywords',
-        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes'
+        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes',
+        'AssetGroupId' => 'AssetGroupId'
     ];
 
     /**
@@ -161,7 +165,8 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
         'Keywords' => 'setKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes'
+        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes',
+        'AssetGroupId' => 'setAssetGroupId'
     ];
 
     /**
@@ -172,7 +177,8 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
         'Keywords' => 'getKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes'
+        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes',
+        'AssetGroupId' => 'getAssetGroupId'
     ];
 
     /**
@@ -235,6 +241,7 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('Keywords', $data ?? [], null);
         $this->setIfExists('ReturnInheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('AssetGroupId', $data ?? [], null);
     }
 
     /**
@@ -302,7 +309,14 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAdGroupId($AdGroupId)
     {
         if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AdGroupId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['AdGroupId'] = $AdGroupId;
 
@@ -379,6 +393,43 @@ class AddKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['ReturnInheritedBidStrategyTypes'] = $ReturnInheritedBidStrategyTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupId
+     *
+     * @return string|null
+     */
+    public function getAssetGroupId()
+    {
+        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
+            return null;
+        }
+        return $this->container['AssetGroupId'];
+    }
+
+    /**
+     * Sets AssetGroupId
+     *
+     * @param string|null $AssetGroupId AssetGroupId
+     *
+     * @return self
+     */
+    public function setAssetGroupId($AssetGroupId)
+    {
+        if (is_null($AssetGroupId)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssetGroupId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AssetGroupId'] = $AssetGroupId;
 
         return $this;
     }

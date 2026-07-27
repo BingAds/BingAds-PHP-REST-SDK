@@ -421,6 +421,8 @@ class DownloadEntity
 
     public const ACCOUNT_CONTENT_NEGATIVE_KEYWORD = 'AccountContentNegativeKeyword';
 
+    public const ASSET_GROUP_NEGATIVE_KEYWORDS = 'AssetGroupNegativeKeywords';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -688,7 +690,8 @@ class DownloadEntity
             self::AD_GROUP_CUSTOM_SEGMENT_ASSOCIATIONS,
             self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST,
             self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST_ASSOCIATION,
-            self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD
+            self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD,
+            self::ASSET_GROUP_NEGATIVE_KEYWORDS
         ];
     }
 }

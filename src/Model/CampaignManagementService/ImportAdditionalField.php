@@ -85,6 +85,16 @@ class ImportAdditionalField
 
     public const IMPORT_NCA_GOAL_WITH_SYSTEM_GENERATED_AUDIENCE = 'ImportNCAGoalWithSystemGeneratedAudience';
 
+    public const UPDATE_ASSET_GROUPS_ASSET = 'UpdateAssetGroupsAsset';
+
+    public const NEW_BRAND_LIST_ASSOCIATIONS = 'NewBrandListAssociations';
+
+    public const UPDATE_BRAND_LIST_ASSOCIATIONS = 'UpdateBrandListAssociations';
+
+    public const CAMPAIGN_TYPES = 'CampaignTypes';
+
+    public const NEW_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS = 'NewSearchThemesForExistingAssetGroups';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -184,7 +194,12 @@ class ImportAdditionalField
             self::NEW_AI_MAX_SETTINGS,
             self::IMAGE_ASSET_AUTOMATION_OPT_OUT,
             self::UPDATE_AI_MAX_SETTINGS,
-            self::IMPORT_NCA_GOAL_WITH_SYSTEM_GENERATED_AUDIENCE
+            self::IMPORT_NCA_GOAL_WITH_SYSTEM_GENERATED_AUDIENCE,
+            self::UPDATE_ASSET_GROUPS_ASSET,
+            self::NEW_BRAND_LIST_ASSOCIATIONS,
+            self::UPDATE_BRAND_LIST_ASSOCIATIONS,
+            self::CAMPAIGN_TYPES,
+            self::NEW_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS
         ];
     }
 }

@@ -29,6 +29,8 @@ class DeliveredMatchTypeReportFilter
 
     public const PHRASE_CLOSE_VARIANT = 'PhraseCloseVariant';
 
+    public const AI_OPTIMIZED = 'AIOptimized';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -100,7 +102,8 @@ class DeliveredMatchTypeReportFilter
             self::PHRASE,
             self::BROAD,
             self::EXACT_CLOSE_VARIANT,
-            self::PHRASE_CLOSE_VARIANT
+            self::PHRASE_CLOSE_VARIANT,
+            self::AI_OPTIMIZED
         ];
     }
 }

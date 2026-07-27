@@ -131,6 +131,12 @@ class ProductSearchQueryPerformanceReportColumn
 
     public const ASSET_GROUP_NAME = 'AssetGroupName';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -253,7 +259,10 @@ class ProductSearchQueryPerformanceReportColumn
             self::ALL_CONVERSIONS_QUALIFIED,
             self::CAMPAIGN_TYPE,
             self::ASSET_GROUP_ID,
-            self::ASSET_GROUP_NAME
+            self::ASSET_GROUP_NAME,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

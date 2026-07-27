@@ -28,6 +28,8 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public const MAPPINGS = [
         'AgeCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeCriterion',
         'AudienceCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceCriterion',
+        'ChannelPlacementCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ChannelPlacementCriterion',
+        'CustomLinkedInCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomLinkedInCriterion',
         'DayTimeCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTimeCriterion',
         'DealCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DealCriterion',
         'DeviceCriterion' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCriterion',
@@ -103,13 +105,20 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'AudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'ProfileId' => 'string',
         'ProfileType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType',
+        'Profile' => 'string',
         'StoreId' => 'string',
         'DealId' => 'string',
         'GenreId' => 'string',
         'PlacementId' => 'string',
         'PlacementName' => 'string',
         'TopicId' => 'string',
-        'TopicName' => 'string'
+        'TopicName' => 'string',
+        'ChannelPlacementId' => 'string',
+        'ChannelPlacementName' => 'string',
+        'ChannelId' => 'int',
+        'ChannelName' => 'string',
+        'SubChannelId' => 'int',
+        'SubChannelName' => 'string'
     ];
 
     /**
@@ -159,13 +168,20 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'AudienceType' => null,
         'ProfileId' => 'int64',
         'ProfileType' => null,
+        'Profile' => null,
         'StoreId' => 'int64',
         'DealId' => 'int64',
         'GenreId' => 'int64',
         'PlacementId' => 'int64',
         'PlacementName' => null,
         'TopicId' => 'int64',
-        'TopicName' => null
+        'TopicName' => null,
+        'ChannelPlacementId' => 'int64',
+        'ChannelPlacementName' => null,
+        'ChannelId' => 'int32',
+        'ChannelName' => null,
+        'SubChannelId' => 'int32',
+        'SubChannelName' => null
     ];
 
     /**
@@ -213,13 +229,20 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'AudienceType' => false,
         'ProfileId' => false,
         'ProfileType' => false,
+        'Profile' => true,
         'StoreId' => true,
         'DealId' => false,
         'GenreId' => false,
         'PlacementId' => false,
         'PlacementName' => true,
         'TopicId' => false,
-        'TopicName' => true
+        'TopicName' => true,
+        'ChannelPlacementId' => false,
+        'ChannelPlacementName' => true,
+        'ChannelId' => false,
+        'ChannelName' => true,
+        'SubChannelId' => true,
+        'SubChannelName' => true
     ];
 
     /**
@@ -347,13 +370,20 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'AudienceType' => 'AudienceType',
         'ProfileId' => 'ProfileId',
         'ProfileType' => 'ProfileType',
+        'Profile' => 'Profile',
         'StoreId' => 'StoreId',
         'DealId' => 'DealId',
         'GenreId' => 'GenreId',
         'PlacementId' => 'PlacementId',
         'PlacementName' => 'PlacementName',
         'TopicId' => 'TopicId',
-        'TopicName' => 'TopicName'
+        'TopicName' => 'TopicName',
+        'ChannelPlacementId' => 'ChannelPlacementId',
+        'ChannelPlacementName' => 'ChannelPlacementName',
+        'ChannelId' => 'ChannelId',
+        'ChannelName' => 'ChannelName',
+        'SubChannelId' => 'SubChannelId',
+        'SubChannelName' => 'SubChannelName'
     ];
 
     /**
@@ -401,13 +431,20 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'AudienceType' => 'setAudienceType',
         'ProfileId' => 'setProfileId',
         'ProfileType' => 'setProfileType',
+        'Profile' => 'setProfile',
         'StoreId' => 'setStoreId',
         'DealId' => 'setDealId',
         'GenreId' => 'setGenreId',
         'PlacementId' => 'setPlacementId',
         'PlacementName' => 'setPlacementName',
         'TopicId' => 'setTopicId',
-        'TopicName' => 'setTopicName'
+        'TopicName' => 'setTopicName',
+        'ChannelPlacementId' => 'setChannelPlacementId',
+        'ChannelPlacementName' => 'setChannelPlacementName',
+        'ChannelId' => 'setChannelId',
+        'ChannelName' => 'setChannelName',
+        'SubChannelId' => 'setSubChannelId',
+        'SubChannelName' => 'setSubChannelName'
     ];
 
     /**
@@ -455,13 +492,20 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'AudienceType' => 'getAudienceType',
         'ProfileId' => 'getProfileId',
         'ProfileType' => 'getProfileType',
+        'Profile' => 'getProfile',
         'StoreId' => 'getStoreId',
         'DealId' => 'getDealId',
         'GenreId' => 'getGenreId',
         'PlacementId' => 'getPlacementId',
         'PlacementName' => 'getPlacementName',
         'TopicId' => 'getTopicId',
-        'TopicName' => 'getTopicName'
+        'TopicName' => 'getTopicName',
+        'ChannelPlacementId' => 'getChannelPlacementId',
+        'ChannelPlacementName' => 'getChannelPlacementName',
+        'ChannelId' => 'getChannelId',
+        'ChannelName' => 'getChannelName',
+        'SubChannelId' => 'getSubChannelId',
+        'SubChannelName' => 'getSubChannelName'
     ];
 
     /**
@@ -560,6 +604,7 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('AudienceType', $data ?? [], null);
         $this->setIfExists('ProfileId', $data ?? [], null);
         $this->setIfExists('ProfileType', $data ?? [], null);
+        $this->setIfExists('Profile', $data ?? [], null);
         $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('DealId', $data ?? [], null);
         $this->setIfExists('GenreId', $data ?? [], null);
@@ -567,6 +612,12 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('PlacementName', $data ?? [], null);
         $this->setIfExists('TopicId', $data ?? [], null);
         $this->setIfExists('TopicName', $data ?? [], null);
+        $this->setIfExists('ChannelPlacementId', $data ?? [], null);
+        $this->setIfExists('ChannelPlacementName', $data ?? [], null);
+        $this->setIfExists('ChannelId', $data ?? [], null);
+        $this->setIfExists('ChannelName', $data ?? [], null);
+        $this->setIfExists('SubChannelId', $data ?? [], null);
+        $this->setIfExists('SubChannelName', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -2038,6 +2089,43 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets Profile
+     *
+     * @return string|null
+     */
+    public function getProfile()
+    {
+        if (!isset($this->container['Profile']) || is_null($this->container['Profile'])) {
+            return null;
+        }
+        return $this->container['Profile'];
+    }
+
+    /**
+     * Sets Profile
+     *
+     * @param string|null $Profile Profile
+     *
+     * @return self
+     */
+    public function setProfile($Profile)
+    {
+        if (is_null($Profile)) {
+            array_push($this->openAPINullablesSetToNull, 'Profile');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Profile', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Profile'] = $Profile;
+
+        return $this;
+    }
+
+    /**
      * Gets StoreId
      *
      * @return string|null
@@ -2264,6 +2352,214 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['TopicName'] = $TopicName;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacementId
+     *
+     * @return string|null
+     */
+    public function getChannelPlacementId()
+    {
+        if (!isset($this->container['ChannelPlacementId']) || is_null($this->container['ChannelPlacementId'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacementId'];
+    }
+
+    /**
+     * Sets ChannelPlacementId
+     *
+     * @param string|null $ChannelPlacementId ChannelPlacementId
+     *
+     * @return self
+     */
+    public function setChannelPlacementId($ChannelPlacementId)
+    {
+        if (is_null($ChannelPlacementId)) {
+            throw new \InvalidArgumentException('non-nullable ChannelPlacementId cannot be null');
+        }
+        $this->container['ChannelPlacementId'] = $ChannelPlacementId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacementName
+     *
+     * @return string|null
+     */
+    public function getChannelPlacementName()
+    {
+        if (!isset($this->container['ChannelPlacementName']) || is_null($this->container['ChannelPlacementName'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacementName'];
+    }
+
+    /**
+     * Sets ChannelPlacementName
+     *
+     * @param string|null $ChannelPlacementName ChannelPlacementName
+     *
+     * @return self
+     */
+    public function setChannelPlacementName($ChannelPlacementName)
+    {
+        if (is_null($ChannelPlacementName)) {
+            array_push($this->openAPINullablesSetToNull, 'ChannelPlacementName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ChannelPlacementName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ChannelPlacementName'] = $ChannelPlacementName;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelId
+     *
+     * @return int|null
+     */
+    public function getChannelId()
+    {
+        if (!isset($this->container['ChannelId']) || is_null($this->container['ChannelId'])) {
+            return null;
+        }
+        return $this->container['ChannelId'];
+    }
+
+    /**
+     * Sets ChannelId
+     *
+     * @param int|null $ChannelId ChannelId
+     *
+     * @return self
+     */
+    public function setChannelId($ChannelId)
+    {
+        if (is_null($ChannelId)) {
+            throw new \InvalidArgumentException('non-nullable ChannelId cannot be null');
+        }
+        $this->container['ChannelId'] = $ChannelId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelName
+     *
+     * @return string|null
+     */
+    public function getChannelName()
+    {
+        if (!isset($this->container['ChannelName']) || is_null($this->container['ChannelName'])) {
+            return null;
+        }
+        return $this->container['ChannelName'];
+    }
+
+    /**
+     * Sets ChannelName
+     *
+     * @param string|null $ChannelName ChannelName
+     *
+     * @return self
+     */
+    public function setChannelName($ChannelName)
+    {
+        if (is_null($ChannelName)) {
+            array_push($this->openAPINullablesSetToNull, 'ChannelName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ChannelName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ChannelName'] = $ChannelName;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubChannelId
+     *
+     * @return int|null
+     */
+    public function getSubChannelId()
+    {
+        if (!isset($this->container['SubChannelId']) || is_null($this->container['SubChannelId'])) {
+            return null;
+        }
+        return $this->container['SubChannelId'];
+    }
+
+    /**
+     * Sets SubChannelId
+     *
+     * @param int|null $SubChannelId SubChannelId
+     *
+     * @return self
+     */
+    public function setSubChannelId($SubChannelId)
+    {
+        if (is_null($SubChannelId)) {
+            array_push($this->openAPINullablesSetToNull, 'SubChannelId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubChannelId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SubChannelId'] = $SubChannelId;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubChannelName
+     *
+     * @return string|null
+     */
+    public function getSubChannelName()
+    {
+        if (!isset($this->container['SubChannelName']) || is_null($this->container['SubChannelName'])) {
+            return null;
+        }
+        return $this->container['SubChannelName'];
+    }
+
+    /**
+     * Sets SubChannelName
+     *
+     * @param string|null $SubChannelName SubChannelName
+     *
+     * @return self
+     */
+    public function setSubChannelName($SubChannelName)
+    {
+        if (is_null($SubChannelName)) {
+            array_push($this->openAPINullablesSetToNull, 'SubChannelName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubChannelName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SubChannelName'] = $SubChannelName;
 
         return $this;
     }

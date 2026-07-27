@@ -85,6 +85,12 @@ class BidStrategyReportColumn
 
     public const CURRENCY = 'Currency';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -184,7 +190,10 @@ class BidStrategyReportColumn
             self::IMPRESSION_SHARE_PERCENT,
             self::OWNER,
             self::TIME_ZONE,
-            self::CURRENCY
+            self::CURRENCY,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

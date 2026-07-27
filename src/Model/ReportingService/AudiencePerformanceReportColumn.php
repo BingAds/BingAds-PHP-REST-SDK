@@ -35,6 +35,10 @@ class AudiencePerformanceReportColumn
 
     public const AD_GROUP_ID = 'AdGroupId';
 
+    public const ASSET_GROUP_NAME = 'AssetGroupName';
+
+    public const ASSET_GROUP_ID = 'AssetGroupId';
+
     public const AUDIENCE_ID = 'AudienceId';
 
     public const AUDIENCE_NAME = 'AudienceName';
@@ -137,6 +141,12 @@ class AudiencePerformanceReportColumn
 
     public const AVERAGE_WATCH_TIME_PER_IMPRESSION = 'AverageWatchTimePerImpression';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -212,6 +222,8 @@ class AudiencePerformanceReportColumn
             self::CAMPAIGN_ID,
             self::AD_GROUP_NAME,
             self::AD_GROUP_ID,
+            self::ASSET_GROUP_NAME,
+            self::ASSET_GROUP_ID,
             self::AUDIENCE_ID,
             self::AUDIENCE_NAME,
             self::ASSOCIATION_STATUS,
@@ -262,7 +274,10 @@ class AudiencePerformanceReportColumn
             self::VIDEO_COMPLETION_RATE,
             self::TOTAL_WATCH_TIME_IN_MS,
             self::AVERAGE_WATCH_TIME_PER_VIDEO_VIEW,
-            self::AVERAGE_WATCH_TIME_PER_IMPRESSION
+            self::AVERAGE_WATCH_TIME_PER_IMPRESSION,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

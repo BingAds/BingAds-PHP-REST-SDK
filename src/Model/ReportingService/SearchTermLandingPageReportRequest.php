@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportRequest
+ * SearchTermLandingPageReportRequest
  * ReportingService
  *
  * PHP version 7.4
@@ -16,72 +16,16 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class SearchTermLandingPageReportRequest extends ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = 'Type';
-
-    /**
-     * Associative array for mapping discriminator values to model class names
-     *
-     * @var string[]
-     */
-    public const MAPPINGS = [
-        'AccountPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AccountPerformanceReportRequest',
-        'AdDynamicTextPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AdDynamicTextPerformanceReportRequest',
-        'AdExtensionByAdReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AdExtensionByAdReportRequest',
-        'AdExtensionByKeywordReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AdExtensionByKeywordReportRequest',
-        'AdExtensionDetailReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AdExtensionDetailReportRequest',
-        'AdGroupPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AdGroupPerformanceReportRequest',
-        'AdPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AdPerformanceReportRequest',
-        'AgeGenderAudienceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AgeGenderAudienceReportRequest',
-        'AppsPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AppsPerformanceReportRequest',
-        'AssetGroupPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupPerformanceReportRequest',
-        'AssetPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AssetPerformanceReportRequest',
-        'AudiencePerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\AudiencePerformanceReportRequest',
-        'BidStrategyReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyReportRequest',
-        'BudgetSummaryReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportRequest',
-        'CallDetailReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\CallDetailReportRequest',
-        'CampaignPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\CampaignPerformanceReportRequest',
-        'CategoryClickCoverageReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\CategoryClickCoverageReportRequest',
-        'CategoryInsightsReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\CategoryInsightsReportRequest',
-        'CombinationPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\CombinationPerformanceReportRequest',
-        'ConversionPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ConversionPerformanceReportRequest',
-        'DSAAutoTargetPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\DSAAutoTargetPerformanceReportRequest',
-        'DSACategoryPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\DSACategoryPerformanceReportRequest',
-        'DSASearchQueryPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\DSASearchQueryPerformanceReportRequest',
-        'DestinationUrlPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\DestinationUrlPerformanceReportRequest',
-        'FeedItemPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\FeedItemPerformanceReportRequest',
-        'GeographicPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\GeographicPerformanceReportRequest',
-        'GoalsAndFunnelsReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\GoalsAndFunnelsReportRequest',
-        'HotelDimensionPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\HotelDimensionPerformanceReportRequest',
-        'HotelGroupPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\HotelGroupPerformanceReportRequest',
-        'KeywordPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportRequest',
-        'MMMPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\MMMPerformanceReportRequest',
-        'MSClickIdPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\MSClickIdPerformanceReportRequest',
-        'NegativeKeywordConflictReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\NegativeKeywordConflictReportRequest',
-        'ProductDimensionPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProductDimensionPerformanceReportRequest',
-        'ProductMatchCountReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProductMatchCountReportRequest',
-        'ProductNegativeKeywordConflictReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProductNegativeKeywordConflictReportRequest',
-        'ProductPartitionPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProductPartitionPerformanceReportRequest',
-        'ProductPartitionUnitPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProductPartitionUnitPerformanceReportRequest',
-        'ProductSearchQueryPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProductSearchQueryPerformanceReportRequest',
-        'ProfessionalDemographicsAudienceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ProfessionalDemographicsAudienceReportRequest',
-        'PublisherUsagePerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\PublisherUsagePerformanceReportRequest',
-        'SearchCampaignChangeHistoryReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\SearchCampaignChangeHistoryReportRequest',
-        'SearchInsightPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\SearchInsightPerformanceReportRequest',
-        'SearchQueryPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\SearchQueryPerformanceReportRequest',
-        'SearchTermLandingPageReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\SearchTermLandingPageReportRequest',
-        'ShareOfVoiceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\ShareOfVoiceReportRequest',
-        'TravelQueryInsightReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\TravelQueryInsightReportRequest',
-        'UserLocationPerformanceReportRequest' => 'Microsoft\MsAds\Rest\Model\ReportingService\UserLocationPerformanceReportRequest',
-    ];
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ReportRequest';
+    protected static string $openAPIModelName = 'SearchTermLandingPageReportRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -101,9 +45,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
         'Aggregation' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportAggregation',
         'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\SearchTermLandingPageReportColumn[]',
-        'Type' => 'string',
-        'Sort' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportSort[]',
-        'MaxRows' => 'int'
+        'Type' => 'string'
     ];
 
     /**
@@ -126,9 +68,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'Time' => null,
         'Aggregation' => null,
         'Columns' => null,
-        'Type' => null,
-        'Sort' => null,
-        'MaxRows' => 'int32'
+        'Type' => null
     ];
 
     /**
@@ -149,9 +89,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'Time' => true,
         'Aggregation' => false,
         'Columns' => true,
-        'Type' => true,
-        'Sort' => true,
-        'MaxRows' => false
+        'Type' => true
     ];
 
     /**
@@ -252,9 +190,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'Time' => 'Time',
         'Aggregation' => 'Aggregation',
         'Columns' => 'Columns',
-        'Type' => 'Type',
-        'Sort' => 'Sort',
-        'MaxRows' => 'MaxRows'
+        'Type' => 'Type'
     ];
 
     /**
@@ -275,9 +211,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'Time' => 'setTime',
         'Aggregation' => 'setAggregation',
         'Columns' => 'setColumns',
-        'Type' => 'setType',
-        'Sort' => 'setSort',
-        'MaxRows' => 'setMaxRows'
+        'Type' => 'setType'
     ];
 
     /**
@@ -298,9 +232,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'Time' => 'getTime',
         'Aggregation' => 'getAggregation',
         'Columns' => 'getColumns',
-        'Type' => 'getType',
-        'Sort' => 'getSort',
-        'MaxRows' => 'getMaxRows'
+        'Type' => 'getType'
     ];
 
     /**
@@ -373,11 +305,6 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Aggregation', $data ?? [], null);
         $this->setIfExists('Columns', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'SearchTermLandingPageReportRequest');
-        $this->setIfExists('Sort', $data ?? [], null);
-        $this->setIfExists('MaxRows', $data ?? [], null);
-
-        // Initialize discriminator property with the model name.
-        $this->container['Type'] = static::$openAPIModelName;
     }
 
     /**
@@ -916,73 +843,6 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets Sort
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportSort[]|null
-     */
-    public function getSort()
-    {
-        if (!isset($this->container['Sort']) || is_null($this->container['Sort'])) {
-            return null;
-        }
-        return $this->container['Sort'];
-    }
-
-    /**
-     * Sets Sort
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportSort[]|null $Sort Sort
-     *
-     * @return self
-     */
-    public function setSort($Sort)
-    {
-        if (is_null($Sort)) {
-            array_push($this->openAPINullablesSetToNull, 'Sort');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Sort', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Sort'] = $Sort;
-
-        return $this;
-    }
-
-    /**
-     * Gets MaxRows
-     *
-     * @return int|null
-     */
-    public function getMaxRows()
-    {
-        if (!isset($this->container['MaxRows']) || is_null($this->container['MaxRows'])) {
-            return null;
-        }
-        return $this->container['MaxRows'];
-    }
-
-    /**
-     * Sets MaxRows
-     *
-     * @param int|null $MaxRows MaxRows
-     *
-     * @return self
-     */
-    public function setMaxRows($MaxRows)
-    {
-        if (is_null($MaxRows)) {
-            throw new \InvalidArgumentException('non-nullable MaxRows cannot be null');
-        }
-        $this->container['MaxRows'] = $MaxRows;
 
         return $this;
     }
