@@ -33,10 +33,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupCriterionIds' => 'string[]',
-        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType',
         'AdGroupId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField',
+        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType',
+        'AdGroupCriterionIds' => 'string[]'
     ];
 
     /**
@@ -47,10 +47,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupCriterionIds' => 'int64',
-        'CriterionType' => null,
         'AdGroupId' => 'int64',
-        'ReturnAdditionalFields' => null
+        'ReturnAdditionalFields' => null,
+        'CriterionType' => null,
+        'AdGroupCriterionIds' => 'int64'
     ];
 
     /**
@@ -59,10 +59,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupCriterionIds' => true,
-        'CriterionType' => false,
         'AdGroupId' => false,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => false,
+        'CriterionType' => false,
+        'AdGroupCriterionIds' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupCriterionIds' => 'AdGroupCriterionIds',
-        'CriterionType' => 'CriterionType',
         'AdGroupId' => 'AdGroupId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
+        'CriterionType' => 'CriterionType',
+        'AdGroupCriterionIds' => 'AdGroupCriterionIds'
     ];
 
     /**
@@ -163,10 +163,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupCriterionIds' => 'setAdGroupCriterionIds',
-        'CriterionType' => 'setCriterionType',
         'AdGroupId' => 'setAdGroupId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
+        'CriterionType' => 'setCriterionType',
+        'AdGroupCriterionIds' => 'setAdGroupCriterionIds'
     ];
 
     /**
@@ -175,10 +175,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupCriterionIds' => 'getAdGroupCriterionIds',
-        'CriterionType' => 'getCriterionType',
         'AdGroupId' => 'getAdGroupId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
+        'CriterionType' => 'getCriterionType',
+        'AdGroupCriterionIds' => 'getAdGroupCriterionIds'
     ];
 
     /**
@@ -238,10 +238,10 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupCriterionIds', $data ?? [], null);
-        $this->setIfExists('CriterionType', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('CriterionType', $data ?? [], null);
+        $this->setIfExists('AdGroupCriterionIds', $data ?? [], null);
     }
 
     /**
@@ -285,79 +285,6 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets AdGroupCriterionIds
-     *
-     * @return string[]|null
-     */
-    public function getAdGroupCriterionIds()
-    {
-        if (!isset($this->container['AdGroupCriterionIds']) || is_null($this->container['AdGroupCriterionIds'])) {
-            return null;
-        }
-        return $this->container['AdGroupCriterionIds'];
-    }
-
-    /**
-     * Sets AdGroupCriterionIds
-     *
-     * @param string[]|null $AdGroupCriterionIds AdGroupCriterionIds
-     *
-     * @return self
-     */
-    public function setAdGroupCriterionIds($AdGroupCriterionIds)
-    {
-        if (is_null($AdGroupCriterionIds)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupCriterionIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupCriterionIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AdGroupCriterionIds'] = $AdGroupCriterionIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets CriterionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null
-     */
-    public function getCriterionType()
-    {
-        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
-            return $this->container['CriterionType']->getValue();
-        }
-        return $this->container['CriterionType'];
-    }
-
-    /**
-     * Sets CriterionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null $CriterionType CriterionType
-     *
-     * @return self
-     */
-    public function setCriterionType($CriterionType)
-    {
-        if (is_null($CriterionType)) {
-            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
-        }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType) {
-            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType($CriterionType);
-        }
-        $this->container['CriterionType'] = $CriterionType;
-
-        return $this;
-    }
 
     /**
      * Gets AdGroupId
@@ -421,6 +348,79 @@ class GetAdGroupCriterionsByIdsRequest implements ModelInterface, ArrayAccess, \
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+
+        return $this;
+    }
+
+    /**
+     * Gets CriterionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null
+     */
+    public function getCriterionType()
+    {
+        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
+            return $this->container['CriterionType']->getValue();
+        }
+        return $this->container['CriterionType'];
+    }
+
+    /**
+     * Sets CriterionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType|mixed|null $CriterionType CriterionType
+     *
+     * @return self
+     */
+    public function setCriterionType($CriterionType)
+    {
+        if (is_null($CriterionType)) {
+            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
+        }
+        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType) {
+            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType($CriterionType);
+        }
+        $this->container['CriterionType'] = $CriterionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdGroupCriterionIds
+     *
+     * @return string[]|null
+     */
+    public function getAdGroupCriterionIds()
+    {
+        if (!isset($this->container['AdGroupCriterionIds']) || is_null($this->container['AdGroupCriterionIds'])) {
+            return null;
+        }
+        return $this->container['AdGroupCriterionIds'];
+    }
+
+    /**
+     * Sets AdGroupCriterionIds
+     *
+     * @param string[]|null $AdGroupCriterionIds AdGroupCriterionIds
+     *
+     * @return self
+     */
+    public function setAdGroupCriterionIds($AdGroupCriterionIds)
+    {
+        if (is_null($AdGroupCriterionIds)) {
+            array_push($this->openAPINullablesSetToNull, 'AdGroupCriterionIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupCriterionIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdGroupCriterionIds'] = $AdGroupCriterionIds;
 
         return $this;
     }

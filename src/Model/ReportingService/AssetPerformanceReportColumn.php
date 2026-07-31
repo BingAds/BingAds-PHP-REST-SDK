@@ -65,6 +65,12 @@ class AssetPerformanceReportColumn
 
     public const REVENUE = 'Revenue';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -154,7 +160,10 @@ class AssetPerformanceReportColumn
             self::COMPLETED_VIDEO_VIEWS,
             self::VIDEO_COMPLETION_RATE,
             self::CONVERSIONS,
-            self::REVENUE
+            self::REVENUE,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

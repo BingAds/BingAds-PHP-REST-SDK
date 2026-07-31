@@ -133,6 +133,12 @@ class DSAAutoTargetPerformanceReportColumn
 
     public const GOAL_ID = 'GoalId';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -256,7 +262,10 @@ class DSAAutoTargetPerformanceReportColumn
             self::VIEW_THROUGH_CONVERSIONS_QUALIFIED,
             self::AD_ID,
             self::VIEW_THROUGH_REVENUE,
-            self::GOAL_ID
+            self::GOAL_ID,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

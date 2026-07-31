@@ -127,6 +127,12 @@ class AdExtensionByAdReportColumn
 
     public const GOAL_ID = 'GoalId';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -247,7 +253,10 @@ class AdExtensionByAdReportColumn
             self::AVERAGE_CPM,
             self::CONVERSIONS_QUALIFIED,
             self::ALL_CONVERSIONS_QUALIFIED,
-            self::GOAL_ID
+            self::GOAL_ID,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

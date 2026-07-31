@@ -43,11 +43,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'CampaignId' => 'string',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus',
+        'Id' => 'string',
         'Type' => 'string',
         'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
         'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback'
@@ -61,11 +61,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'CampaignId' => 'int64',
         'Criterion' => null,
         'ForwardCompatibilityMap' => null,
         'Status' => null,
+        'Id' => 'int64',
         'Type' => null,
         'CriterionBid' => null,
         'CriterionCashback' => null
@@ -77,11 +77,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'CampaignId' => false,
         'Criterion' => true,
         'ForwardCompatibilityMap' => true,
         'Status' => false,
+        'Id' => true,
         'Type' => true,
         'CriterionBid' => true,
         'CriterionCashback' => true
@@ -173,11 +173,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'CampaignId' => 'CampaignId',
         'Criterion' => 'Criterion',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Status' => 'Status',
+        'Id' => 'Id',
         'Type' => 'Type',
         'CriterionBid' => 'CriterionBid',
         'CriterionCashback' => 'CriterionCashback'
@@ -189,11 +189,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'CampaignId' => 'setCampaignId',
         'Criterion' => 'setCriterion',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Status' => 'setStatus',
+        'Id' => 'setId',
         'Type' => 'setType',
         'CriterionBid' => 'setCriterionBid',
         'CriterionCashback' => 'setCriterionCashback'
@@ -205,11 +205,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'CampaignId' => 'getCampaignId',
         'Criterion' => 'getCriterion',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Status' => 'getStatus',
+        'Id' => 'getId',
         'Type' => 'getType',
         'CriterionBid' => 'getCriterionBid',
         'CriterionCashback' => 'getCriterionCashback'
@@ -272,11 +272,11 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CriterionBid', $data ?? [], null);
         $this->setIfExists('CriterionCashback', $data ?? [], null);
@@ -326,43 +326,6 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets CampaignId
@@ -500,6 +463,43 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus($Status);
         }
         $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

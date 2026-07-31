@@ -223,6 +223,12 @@ class ProductDimensionPerformanceReportColumn
 
     public const FEED_LABEL = 'FeedLabel';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -391,7 +397,10 @@ class ProductDimensionPerformanceReportColumn
             self::ASSET_GROUP_NAME,
             self::ASSET_GROUP_STATUS,
             self::COLLECTION_ID,
-            self::FEED_LABEL
+            self::FEED_LABEL,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

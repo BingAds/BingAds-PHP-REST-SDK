@@ -45,6 +45,12 @@ class ProfessionalDemographicsAudienceReportColumn
 
     public const CUSTOM_LINKED_IN_NAME = 'CustomLinkedInName';
 
+    public const LINKED_IN_SEGMENT_NAME = 'LinkedInSegmentName';
+
+    public const LINKED_IN_SEGMENT_ID = 'LinkedInSegmentId';
+
+    public const LINKED_IN_SEGMENT_TYPE = 'LinkedInSegmentType';
+
     public const AD_DISTRIBUTION = 'AdDistribution';
 
     public const IMPRESSIONS = 'Impressions';
@@ -98,6 +104,12 @@ class ProfessionalDemographicsAudienceReportColumn
     public const ASSET_GROUP_NAME = 'AssetGroupName';
 
     public const ASSET_GROUP_STATUS = 'AssetGroupStatus';
+
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -179,6 +191,9 @@ class ProfessionalDemographicsAudienceReportColumn
             self::JOB_FUNCTION_NAME,
             self::JOB_SENIORITY_NAME,
             self::CUSTOM_LINKED_IN_NAME,
+            self::LINKED_IN_SEGMENT_NAME,
+            self::LINKED_IN_SEGMENT_ID,
+            self::LINKED_IN_SEGMENT_TYPE,
             self::AD_DISTRIBUTION,
             self::IMPRESSIONS,
             self::CLICKS,
@@ -205,7 +220,10 @@ class ProfessionalDemographicsAudienceReportColumn
             self::CAMPAIGN_TYPE,
             self::ASSET_GROUP_ID,
             self::ASSET_GROUP_NAME,
-            self::ASSET_GROUP_STATUS
+            self::ASSET_GROUP_STATUS,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }

@@ -1,57 +1,29 @@
 <?php
 /**
- * MMMPerformanceReportColumn
- * ReportingService
+ * ReachOptimizationGoal
+ * CampaignManagementService
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  Microsoft\MsAds\Rest\Model\ReportingService
+ * @package  Microsoft\MsAds\Rest\Model\CampaignManagementService
  * @author   Microsoft Advertising
  */
 
-namespace Microsoft\MsAds\Rest\Model\ReportingService;
+namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class MMMPerformanceReportColumn
+class ReachOptimizationGoal
 {
     /**
      * Possible values of this enum
      */
-    public const TIME_PERIOD = 'TimePeriod';
+    public const UNSPECIFIED = 'Unspecified';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const MAX_IMPRESSIONS = 'MaxImpressions';
 
-    public const CAMPAIGN_NAME = 'CampaignName';
-
-    public const AD_GROUP_ID = 'AdGroupId';
-
-    public const AD_GROUP_NAME = 'AdGroupName';
-
-    public const ASSET_GROUP_ID = 'AssetGroupId';
-
-    public const ASSET_GROUP_NAME = 'AssetGroupName';
-
-    public const ACCOUNT_ID = 'AccountId';
-
-    public const ACCOUNT_NAME = 'AccountName';
-
-    public const ACCOUNT_NUMBER = 'AccountNumber';
-
-    public const COUNTRY = 'Country';
-
-    public const STATE = 'State';
-
-    public const IMPRESSIONS = 'Impressions';
-
-    public const CLICKS = 'Clicks';
-
-    public const SPEND = 'Spend';
-
-    public const CONVERSIONS_QUALIFIED = 'ConversionsQualified';
-
-    public const METRO_AREA = 'MetroArea';
+    public const MAX_UNIQUE_REACH = 'MaxUniqueReach';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -120,23 +92,9 @@ class MMMPerformanceReportColumn
     public static function getAllowableEnumValues(): array
     {
         return [
-            self::TIME_PERIOD,
-            self::CAMPAIGN_ID,
-            self::CAMPAIGN_NAME,
-            self::AD_GROUP_ID,
-            self::AD_GROUP_NAME,
-            self::ASSET_GROUP_ID,
-            self::ASSET_GROUP_NAME,
-            self::ACCOUNT_ID,
-            self::ACCOUNT_NAME,
-            self::ACCOUNT_NUMBER,
-            self::COUNTRY,
-            self::STATE,
-            self::IMPRESSIONS,
-            self::CLICKS,
-            self::SPEND,
-            self::CONVERSIONS_QUALIFIED,
-            self::METRO_AREA
+            self::UNSPECIFIED,
+            self::MAX_IMPRESSIONS,
+            self::MAX_UNIQUE_REACH
         ];
     }
 }

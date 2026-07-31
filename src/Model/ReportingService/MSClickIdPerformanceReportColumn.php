@@ -57,7 +57,7 @@ class MSClickIdPerformanceReportColumn
 
     public const CLICKS = 'Clicks';
 
-    public const AVERAGE_CPC = 'AverageCpc';
+    public const CPC = 'Cpc';
 
     public const CONVERSIONS_QUALIFIED = 'ConversionsQualified';
 
@@ -149,7 +149,7 @@ class MSClickIdPerformanceReportColumn
             self::METRO_AREA,
             self::CITY,
             self::CLICKS,
-            self::AVERAGE_CPC,
+            self::CPC,
             self::CONVERSIONS_QUALIFIED,
             self::REVENUE
         ];

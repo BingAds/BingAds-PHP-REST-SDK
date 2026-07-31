@@ -48,6 +48,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'CredentialId' => 'string',
         'GoogleAccountId' => 'string',
         'CampaignAdGroupIds' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdGroupIds[]',
+        'CampaignTypes' => 'string[]',
         'GoogleUserName' => 'string'
     ];
 
@@ -74,6 +75,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'CredentialId' => null,
         'GoogleAccountId' => 'int64',
         'CampaignAdGroupIds' => null,
+        'CampaignTypes' => null,
         'GoogleUserName' => null
     ];
 
@@ -98,6 +100,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'CredentialId' => true,
         'GoogleAccountId' => true,
         'CampaignAdGroupIds' => true,
+        'CampaignTypes' => true,
         'GoogleUserName' => true
     ];
 
@@ -202,6 +205,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'CredentialId' => 'CredentialId',
         'GoogleAccountId' => 'GoogleAccountId',
         'CampaignAdGroupIds' => 'CampaignAdGroupIds',
+        'CampaignTypes' => 'CampaignTypes',
         'GoogleUserName' => 'GoogleUserName'
     ];
 
@@ -226,6 +230,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'CredentialId' => 'setCredentialId',
         'GoogleAccountId' => 'setGoogleAccountId',
         'CampaignAdGroupIds' => 'setCampaignAdGroupIds',
+        'CampaignTypes' => 'setCampaignTypes',
         'GoogleUserName' => 'setGoogleUserName'
     ];
 
@@ -250,6 +255,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         'CredentialId' => 'getCredentialId',
         'GoogleAccountId' => 'getGoogleAccountId',
         'CampaignAdGroupIds' => 'getCampaignAdGroupIds',
+        'CampaignTypes' => 'getCampaignTypes',
         'GoogleUserName' => 'getGoogleUserName'
     ];
 
@@ -325,6 +331,7 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
         $this->setIfExists('CredentialId', $data ?? [], null);
         $this->setIfExists('GoogleAccountId', $data ?? [], null);
         $this->setIfExists('CampaignAdGroupIds', $data ?? [], null);
+        $this->setIfExists('CampaignTypes', $data ?? [], null);
         $this->setIfExists('GoogleUserName', $data ?? [], null);
     }
 
@@ -921,6 +928,43 @@ class GoogleImportJob extends ImportJob implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['CampaignAdGroupIds'] = $CampaignAdGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignTypes
+     *
+     * @return string[]|null
+     */
+    public function getCampaignTypes()
+    {
+        if (!isset($this->container['CampaignTypes']) || is_null($this->container['CampaignTypes'])) {
+            return null;
+        }
+        return $this->container['CampaignTypes'];
+    }
+
+    /**
+     * Sets CampaignTypes
+     *
+     * @param string[]|null $CampaignTypes CampaignTypes
+     *
+     * @return self
+     */
+    public function setCampaignTypes($CampaignTypes)
+    {
+        if (is_null($CampaignTypes)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignTypes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignTypes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignTypes'] = $CampaignTypes;
 
         return $this;
     }

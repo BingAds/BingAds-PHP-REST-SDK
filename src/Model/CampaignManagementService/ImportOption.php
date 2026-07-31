@@ -82,10 +82,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewPageFeeds' => 'bool',
         'NewAdCustomizerFeeds' => 'bool',
         'NewBrandSuitability' => 'bool',
+        'NewBrandListAssociations' => 'bool',
         'NewConversionGoals' => 'bool',
         'NewCarouselAd' => 'bool',
         'NewPortfolioBidStrategy' => 'bool',
         'NewAIMaxSettings' => 'bool',
+        'NewSearchThemesForExistingAssetGroups' => 'bool',
         'UpdateEntities' => 'bool',
         'UpdateCampaignBudgets' => 'bool',
         'UpdateBids' => 'bool',
@@ -125,8 +127,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdatePageFeeds' => 'bool',
         'UpdateAdCustomizerFeeds' => 'bool',
         'UpdateBrandSuitability' => 'bool',
+        'UpdateBrandListAssociations' => 'bool',
         'UpdateAdCustomizerAttributes' => 'bool',
         'UpdateAIMaxSettings' => 'bool',
+        'UpdateAssetGroupsAsset' => 'bool',
         'EnableCopilot' => 'bool',
         'DeleteRemovedEntities' => 'bool',
         'RaiseBidsToMinimum' => 'bool',
@@ -208,10 +212,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewPageFeeds' => null,
         'NewAdCustomizerFeeds' => null,
         'NewBrandSuitability' => null,
+        'NewBrandListAssociations' => null,
         'NewConversionGoals' => null,
         'NewCarouselAd' => null,
         'NewPortfolioBidStrategy' => null,
         'NewAIMaxSettings' => null,
+        'NewSearchThemesForExistingAssetGroups' => null,
         'UpdateEntities' => null,
         'UpdateCampaignBudgets' => null,
         'UpdateBids' => null,
@@ -251,8 +257,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdatePageFeeds' => null,
         'UpdateAdCustomizerFeeds' => null,
         'UpdateBrandSuitability' => null,
+        'UpdateBrandListAssociations' => null,
         'UpdateAdCustomizerAttributes' => null,
         'UpdateAIMaxSettings' => null,
+        'UpdateAssetGroupsAsset' => null,
         'EnableCopilot' => null,
         'DeleteRemovedEntities' => null,
         'RaiseBidsToMinimum' => null,
@@ -332,10 +340,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewPageFeeds' => true,
         'NewAdCustomizerFeeds' => true,
         'NewBrandSuitability' => true,
+        'NewBrandListAssociations' => true,
         'NewConversionGoals' => true,
         'NewCarouselAd' => true,
         'NewPortfolioBidStrategy' => true,
         'NewAIMaxSettings' => true,
+        'NewSearchThemesForExistingAssetGroups' => true,
         'UpdateEntities' => true,
         'UpdateCampaignBudgets' => true,
         'UpdateBids' => true,
@@ -375,8 +385,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdatePageFeeds' => true,
         'UpdateAdCustomizerFeeds' => true,
         'UpdateBrandSuitability' => true,
+        'UpdateBrandListAssociations' => true,
         'UpdateAdCustomizerAttributes' => true,
         'UpdateAIMaxSettings' => true,
+        'UpdateAssetGroupsAsset' => true,
         'EnableCopilot' => true,
         'DeleteRemovedEntities' => true,
         'RaiseBidsToMinimum' => true,
@@ -536,10 +548,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewPageFeeds' => 'NewPageFeeds',
         'NewAdCustomizerFeeds' => 'NewAdCustomizerFeeds',
         'NewBrandSuitability' => 'NewBrandSuitability',
+        'NewBrandListAssociations' => 'NewBrandListAssociations',
         'NewConversionGoals' => 'NewConversionGoals',
         'NewCarouselAd' => 'NewCarouselAd',
         'NewPortfolioBidStrategy' => 'NewPortfolioBidStrategy',
         'NewAIMaxSettings' => 'NewAIMaxSettings',
+        'NewSearchThemesForExistingAssetGroups' => 'NewSearchThemesForExistingAssetGroups',
         'UpdateEntities' => 'UpdateEntities',
         'UpdateCampaignBudgets' => 'UpdateCampaignBudgets',
         'UpdateBids' => 'UpdateBids',
@@ -579,8 +593,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdatePageFeeds' => 'UpdatePageFeeds',
         'UpdateAdCustomizerFeeds' => 'UpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'UpdateBrandSuitability',
+        'UpdateBrandListAssociations' => 'UpdateBrandListAssociations',
         'UpdateAdCustomizerAttributes' => 'UpdateAdCustomizerAttributes',
         'UpdateAIMaxSettings' => 'UpdateAIMaxSettings',
+        'UpdateAssetGroupsAsset' => 'UpdateAssetGroupsAsset',
         'EnableCopilot' => 'EnableCopilot',
         'DeleteRemovedEntities' => 'DeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'RaiseBidsToMinimum',
@@ -660,10 +676,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewPageFeeds' => 'setNewPageFeeds',
         'NewAdCustomizerFeeds' => 'setNewAdCustomizerFeeds',
         'NewBrandSuitability' => 'setNewBrandSuitability',
+        'NewBrandListAssociations' => 'setNewBrandListAssociations',
         'NewConversionGoals' => 'setNewConversionGoals',
         'NewCarouselAd' => 'setNewCarouselAd',
         'NewPortfolioBidStrategy' => 'setNewPortfolioBidStrategy',
         'NewAIMaxSettings' => 'setNewAIMaxSettings',
+        'NewSearchThemesForExistingAssetGroups' => 'setNewSearchThemesForExistingAssetGroups',
         'UpdateEntities' => 'setUpdateEntities',
         'UpdateCampaignBudgets' => 'setUpdateCampaignBudgets',
         'UpdateBids' => 'setUpdateBids',
@@ -703,8 +721,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdatePageFeeds' => 'setUpdatePageFeeds',
         'UpdateAdCustomizerFeeds' => 'setUpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'setUpdateBrandSuitability',
+        'UpdateBrandListAssociations' => 'setUpdateBrandListAssociations',
         'UpdateAdCustomizerAttributes' => 'setUpdateAdCustomizerAttributes',
         'UpdateAIMaxSettings' => 'setUpdateAIMaxSettings',
+        'UpdateAssetGroupsAsset' => 'setUpdateAssetGroupsAsset',
         'EnableCopilot' => 'setEnableCopilot',
         'DeleteRemovedEntities' => 'setDeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'setRaiseBidsToMinimum',
@@ -784,10 +804,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'NewPageFeeds' => 'getNewPageFeeds',
         'NewAdCustomizerFeeds' => 'getNewAdCustomizerFeeds',
         'NewBrandSuitability' => 'getNewBrandSuitability',
+        'NewBrandListAssociations' => 'getNewBrandListAssociations',
         'NewConversionGoals' => 'getNewConversionGoals',
         'NewCarouselAd' => 'getNewCarouselAd',
         'NewPortfolioBidStrategy' => 'getNewPortfolioBidStrategy',
         'NewAIMaxSettings' => 'getNewAIMaxSettings',
+        'NewSearchThemesForExistingAssetGroups' => 'getNewSearchThemesForExistingAssetGroups',
         'UpdateEntities' => 'getUpdateEntities',
         'UpdateCampaignBudgets' => 'getUpdateCampaignBudgets',
         'UpdateBids' => 'getUpdateBids',
@@ -827,8 +849,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         'UpdatePageFeeds' => 'getUpdatePageFeeds',
         'UpdateAdCustomizerFeeds' => 'getUpdateAdCustomizerFeeds',
         'UpdateBrandSuitability' => 'getUpdateBrandSuitability',
+        'UpdateBrandListAssociations' => 'getUpdateBrandListAssociations',
         'UpdateAdCustomizerAttributes' => 'getUpdateAdCustomizerAttributes',
         'UpdateAIMaxSettings' => 'getUpdateAIMaxSettings',
+        'UpdateAssetGroupsAsset' => 'getUpdateAssetGroupsAsset',
         'EnableCopilot' => 'getEnableCopilot',
         'DeleteRemovedEntities' => 'getDeleteRemovedEntities',
         'RaiseBidsToMinimum' => 'getRaiseBidsToMinimum',
@@ -959,10 +983,12 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('NewPageFeeds', $data ?? [], null);
         $this->setIfExists('NewAdCustomizerFeeds', $data ?? [], null);
         $this->setIfExists('NewBrandSuitability', $data ?? [], null);
+        $this->setIfExists('NewBrandListAssociations', $data ?? [], null);
         $this->setIfExists('NewConversionGoals', $data ?? [], null);
         $this->setIfExists('NewCarouselAd', $data ?? [], null);
         $this->setIfExists('NewPortfolioBidStrategy', $data ?? [], null);
         $this->setIfExists('NewAIMaxSettings', $data ?? [], null);
+        $this->setIfExists('NewSearchThemesForExistingAssetGroups', $data ?? [], null);
         $this->setIfExists('UpdateEntities', $data ?? [], null);
         $this->setIfExists('UpdateCampaignBudgets', $data ?? [], null);
         $this->setIfExists('UpdateBids', $data ?? [], null);
@@ -1002,8 +1028,10 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('UpdatePageFeeds', $data ?? [], null);
         $this->setIfExists('UpdateAdCustomizerFeeds', $data ?? [], null);
         $this->setIfExists('UpdateBrandSuitability', $data ?? [], null);
+        $this->setIfExists('UpdateBrandListAssociations', $data ?? [], null);
         $this->setIfExists('UpdateAdCustomizerAttributes', $data ?? [], null);
         $this->setIfExists('UpdateAIMaxSettings', $data ?? [], null);
+        $this->setIfExists('UpdateAssetGroupsAsset', $data ?? [], null);
         $this->setIfExists('EnableCopilot', $data ?? [], null);
         $this->setIfExists('DeleteRemovedEntities', $data ?? [], null);
         $this->setIfExists('RaiseBidsToMinimum', $data ?? [], null);
@@ -2527,6 +2555,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets NewBrandListAssociations
+     *
+     * @return bool|null
+     */
+    public function getNewBrandListAssociations()
+    {
+        if (!isset($this->container['NewBrandListAssociations']) || is_null($this->container['NewBrandListAssociations'])) {
+            return null;
+        }
+        return $this->container['NewBrandListAssociations'];
+    }
+
+    /**
+     * Sets NewBrandListAssociations
+     *
+     * @param bool|null $NewBrandListAssociations NewBrandListAssociations
+     *
+     * @return self
+     */
+    public function setNewBrandListAssociations($NewBrandListAssociations)
+    {
+        if (is_null($NewBrandListAssociations)) {
+            array_push($this->openAPINullablesSetToNull, 'NewBrandListAssociations');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NewBrandListAssociations', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NewBrandListAssociations'] = $NewBrandListAssociations;
+
+        return $this;
+    }
+
+    /**
      * Gets NewConversionGoals
      *
      * @return bool|null
@@ -2670,6 +2735,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['NewAIMaxSettings'] = $NewAIMaxSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets NewSearchThemesForExistingAssetGroups
+     *
+     * @return bool|null
+     */
+    public function getNewSearchThemesForExistingAssetGroups()
+    {
+        if (!isset($this->container['NewSearchThemesForExistingAssetGroups']) || is_null($this->container['NewSearchThemesForExistingAssetGroups'])) {
+            return null;
+        }
+        return $this->container['NewSearchThemesForExistingAssetGroups'];
+    }
+
+    /**
+     * Sets NewSearchThemesForExistingAssetGroups
+     *
+     * @param bool|null $NewSearchThemesForExistingAssetGroups NewSearchThemesForExistingAssetGroups
+     *
+     * @return self
+     */
+    public function setNewSearchThemesForExistingAssetGroups($NewSearchThemesForExistingAssetGroups)
+    {
+        if (is_null($NewSearchThemesForExistingAssetGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'NewSearchThemesForExistingAssetGroups');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NewSearchThemesForExistingAssetGroups', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NewSearchThemesForExistingAssetGroups'] = $NewSearchThemesForExistingAssetGroups;
 
         return $this;
     }
@@ -4118,6 +4220,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets UpdateBrandListAssociations
+     *
+     * @return bool|null
+     */
+    public function getUpdateBrandListAssociations()
+    {
+        if (!isset($this->container['UpdateBrandListAssociations']) || is_null($this->container['UpdateBrandListAssociations'])) {
+            return null;
+        }
+        return $this->container['UpdateBrandListAssociations'];
+    }
+
+    /**
+     * Sets UpdateBrandListAssociations
+     *
+     * @param bool|null $UpdateBrandListAssociations UpdateBrandListAssociations
+     *
+     * @return self
+     */
+    public function setUpdateBrandListAssociations($UpdateBrandListAssociations)
+    {
+        if (is_null($UpdateBrandListAssociations)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateBrandListAssociations');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateBrandListAssociations', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateBrandListAssociations'] = $UpdateBrandListAssociations;
+
+        return $this;
+    }
+
+    /**
      * Gets UpdateAdCustomizerAttributes
      *
      * @return bool|null
@@ -4187,6 +4326,43 @@ class ImportOption implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UpdateAIMaxSettings'] = $UpdateAIMaxSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets UpdateAssetGroupsAsset
+     *
+     * @return bool|null
+     */
+    public function getUpdateAssetGroupsAsset()
+    {
+        if (!isset($this->container['UpdateAssetGroupsAsset']) || is_null($this->container['UpdateAssetGroupsAsset'])) {
+            return null;
+        }
+        return $this->container['UpdateAssetGroupsAsset'];
+    }
+
+    /**
+     * Sets UpdateAssetGroupsAsset
+     *
+     * @param bool|null $UpdateAssetGroupsAsset UpdateAssetGroupsAsset
+     *
+     * @return self
+     */
+    public function setUpdateAssetGroupsAsset($UpdateAssetGroupsAsset)
+    {
+        if (is_null($UpdateAssetGroupsAsset)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateAssetGroupsAsset');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateAssetGroupsAsset', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateAssetGroupsAsset'] = $UpdateAssetGroupsAsset;
 
         return $this;
     }

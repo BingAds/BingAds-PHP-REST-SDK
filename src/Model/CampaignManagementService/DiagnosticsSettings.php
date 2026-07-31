@@ -34,7 +34,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPITypes = [
         'EnableCache' => 'bool',
-        'LastCheckTimeUTC' => 'string'
+        'LastCheckTimeUTC' => 'string',
+        'EnablePilot' => 'bool'
     ];
 
     /**
@@ -46,7 +47,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPIFormats = [
         'EnableCache' => null,
-        'LastCheckTimeUTC' => null
+        'LastCheckTimeUTC' => null,
+        'EnablePilot' => null
     ];
 
     /**
@@ -56,7 +58,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'EnableCache' => false,
-        'LastCheckTimeUTC' => true
+        'LastCheckTimeUTC' => true,
+        'EnablePilot' => false
     ];
 
     /**
@@ -146,7 +149,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $attributeMap = [
         'EnableCache' => 'EnableCache',
-        'LastCheckTimeUTC' => 'LastCheckTimeUTC'
+        'LastCheckTimeUTC' => 'LastCheckTimeUTC',
+        'EnablePilot' => 'EnablePilot'
     ];
 
     /**
@@ -156,7 +160,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $setters = [
         'EnableCache' => 'setEnableCache',
-        'LastCheckTimeUTC' => 'setLastCheckTimeUTC'
+        'LastCheckTimeUTC' => 'setLastCheckTimeUTC',
+        'EnablePilot' => 'setEnablePilot'
     ];
 
     /**
@@ -166,7 +171,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $getters = [
         'EnableCache' => 'getEnableCache',
-        'LastCheckTimeUTC' => 'getLastCheckTimeUTC'
+        'LastCheckTimeUTC' => 'getLastCheckTimeUTC',
+        'EnablePilot' => 'getEnablePilot'
     ];
 
     /**
@@ -228,6 +234,7 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->setIfExists('EnableCache', $data ?? [], null);
         $this->setIfExists('LastCheckTimeUTC', $data ?? [], null);
+        $this->setIfExists('EnablePilot', $data ?? [], null);
     }
 
     /**
@@ -335,6 +342,36 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['LastCheckTimeUTC'] = $LastCheckTimeUTC;
+
+        return $this;
+    }
+
+    /**
+     * Gets EnablePilot
+     *
+     * @return bool|null
+     */
+    public function getEnablePilot()
+    {
+        if (!isset($this->container['EnablePilot']) || is_null($this->container['EnablePilot'])) {
+            return null;
+        }
+        return $this->container['EnablePilot'];
+    }
+
+    /**
+     * Sets EnablePilot
+     *
+     * @param bool|null $EnablePilot EnablePilot
+     *
+     * @return self
+     */
+    public function setEnablePilot($EnablePilot)
+    {
+        if (is_null($EnablePilot)) {
+            throw new \InvalidArgumentException('non-nullable EnablePilot cannot be null');
+        }
+        $this->container['EnablePilot'] = $EnablePilot;
 
         return $this;
     }

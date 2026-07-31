@@ -1,6 +1,6 @@
 <?php
 /**
- * ConversionPerformanceReportColumn
+ * SearchTermLandingPageReportColumn
  * ReportingService
  *
  * PHP version 7.4
@@ -14,18 +14,14 @@ namespace Microsoft\MsAds\Rest\Model\ReportingService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class ConversionPerformanceReportColumn
+class SearchTermLandingPageReportColumn
 {
     /**
      * Possible values of this enum
      */
     public const ACCOUNT_NAME = 'AccountName';
 
-    public const ACCOUNT_NUMBER = 'AccountNumber';
-
     public const ACCOUNT_ID = 'AccountId';
-
-    public const TIME_PERIOD = 'TimePeriod';
 
     public const CAMPAIGN_NAME = 'CampaignName';
 
@@ -35,9 +31,27 @@ class ConversionPerformanceReportColumn
 
     public const AD_GROUP_ID = 'AdGroupId';
 
+    public const AD_ID = 'AdId';
+
+    public const AD_TYPE = 'AdType';
+
+    public const CAMPAIGN_TYPE = 'CampaignType';
+
+    public const LANGUAGE = 'Language';
+
+    public const SEARCH_QUERY = 'SearchQuery';
+
     public const KEYWORD = 'Keyword';
 
-    public const KEYWORD_ID = 'KeywordId';
+    public const BID_MATCH_TYPE = 'BidMatchType';
+
+    public const DELIVERED_MATCH_TYPE = 'DeliveredMatchType';
+
+    public const HEADLINE = 'Headline';
+
+    public const FINAL_URL = 'FinalUrl';
+
+    public const FINAL_URL_SOURCE = 'FinalUrlSource';
 
     public const IMPRESSIONS = 'Impressions';
 
@@ -45,63 +59,27 @@ class ConversionPerformanceReportColumn
 
     public const CTR = 'Ctr';
 
-    public const ASSISTS = 'Assists';
+    public const AVERAGE_CPC = 'AverageCpc';
+
+    public const SPEND = 'Spend';
 
     public const CONVERSIONS = 'Conversions';
 
     public const CONVERSION_RATE = 'ConversionRate';
 
-    public const SPEND = 'Spend';
+    public const COST_PER_CONVERSION = 'CostPerConversion';
+
+    public const ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT = 'AbsoluteTopImpressionRatePercent';
+
+    public const TOP_IMPRESSION_RATE_PERCENT = 'TopImpressionRatePercent';
 
     public const REVENUE = 'Revenue';
 
     public const RETURN_ON_AD_SPEND = 'ReturnOnAdSpend';
 
-    public const COST_PER_CONVERSION = 'CostPerConversion';
-
-    public const COST_PER_ASSIST = 'CostPerAssist';
-
-    public const REVENUE_PER_CONVERSION = 'RevenuePerConversion';
-
-    public const REVENUE_PER_ASSIST = 'RevenuePerAssist';
-
-    public const DEVICE_TYPE = 'DeviceType';
-
-    public const ACCOUNT_STATUS = 'AccountStatus';
-
-    public const CAMPAIGN_STATUS = 'CampaignStatus';
-
-    public const AD_GROUP_STATUS = 'AdGroupStatus';
-
-    public const KEYWORD_STATUS = 'KeywordStatus';
-
-    public const ALL_CONVERSIONS = 'AllConversions';
-
-    public const ALL_REVENUE = 'AllRevenue';
-
-    public const ALL_CONVERSION_RATE = 'AllConversionRate';
-
-    public const ALL_COST_PER_CONVERSION = 'AllCostPerConversion';
-
-    public const ALL_RETURN_ON_AD_SPEND = 'AllReturnOnAdSpend';
-
-    public const ALL_REVENUE_PER_CONVERSION = 'AllRevenuePerConversion';
-
-    public const VIEW_THROUGH_CONVERSIONS = 'ViewThroughConversions';
-
-    public const GOAL = 'Goal';
-
-    public const GOAL_TYPE = 'GoalType';
+    public const TIME_PERIOD = 'TimePeriod';
 
     public const CONVERSIONS_QUALIFIED = 'ConversionsQualified';
-
-    public const ALL_CONVERSIONS_QUALIFIED = 'AllConversionsQualified';
-
-    public const VIEW_THROUGH_CONVERSIONS_QUALIFIED = 'ViewThroughConversionsQualified';
-
-    public const VIEW_THROUGH_REVENUE = 'ViewThroughRevenue';
-
-    public const GOAL_ID = 'GoalId';
 
     public const MARKETING_OBJECTIVE = 'MarketingObjective';
 
@@ -177,47 +155,36 @@ class ConversionPerformanceReportColumn
     {
         return [
             self::ACCOUNT_NAME,
-            self::ACCOUNT_NUMBER,
             self::ACCOUNT_ID,
-            self::TIME_PERIOD,
             self::CAMPAIGN_NAME,
             self::CAMPAIGN_ID,
             self::AD_GROUP_NAME,
             self::AD_GROUP_ID,
+            self::AD_ID,
+            self::AD_TYPE,
+            self::CAMPAIGN_TYPE,
+            self::LANGUAGE,
+            self::SEARCH_QUERY,
             self::KEYWORD,
-            self::KEYWORD_ID,
+            self::BID_MATCH_TYPE,
+            self::DELIVERED_MATCH_TYPE,
+            self::HEADLINE,
+            self::FINAL_URL,
+            self::FINAL_URL_SOURCE,
             self::IMPRESSIONS,
             self::CLICKS,
             self::CTR,
-            self::ASSISTS,
+            self::AVERAGE_CPC,
+            self::SPEND,
             self::CONVERSIONS,
             self::CONVERSION_RATE,
-            self::SPEND,
+            self::COST_PER_CONVERSION,
+            self::ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT,
+            self::TOP_IMPRESSION_RATE_PERCENT,
             self::REVENUE,
             self::RETURN_ON_AD_SPEND,
-            self::COST_PER_CONVERSION,
-            self::COST_PER_ASSIST,
-            self::REVENUE_PER_CONVERSION,
-            self::REVENUE_PER_ASSIST,
-            self::DEVICE_TYPE,
-            self::ACCOUNT_STATUS,
-            self::CAMPAIGN_STATUS,
-            self::AD_GROUP_STATUS,
-            self::KEYWORD_STATUS,
-            self::ALL_CONVERSIONS,
-            self::ALL_REVENUE,
-            self::ALL_CONVERSION_RATE,
-            self::ALL_COST_PER_CONVERSION,
-            self::ALL_RETURN_ON_AD_SPEND,
-            self::ALL_REVENUE_PER_CONVERSION,
-            self::VIEW_THROUGH_CONVERSIONS,
-            self::GOAL,
-            self::GOAL_TYPE,
+            self::TIME_PERIOD,
             self::CONVERSIONS_QUALIFIED,
-            self::ALL_CONVERSIONS_QUALIFIED,
-            self::VIEW_THROUGH_CONVERSIONS_QUALIFIED,
-            self::VIEW_THROUGH_REVENUE,
-            self::GOAL_ID,
             self::MARKETING_OBJECTIVE,
             self::CHANNEL,
             self::SUB_CHANNEL

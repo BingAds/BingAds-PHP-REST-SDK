@@ -181,6 +181,12 @@ class UserLocationPerformanceReportColumn
 
     public const CPS = 'CPS';
 
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
+    public const CHANNEL = 'Channel';
+
+    public const SUB_CHANNEL = 'SubChannel';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -328,7 +334,10 @@ class UserLocationPerformanceReportColumn
             self::CPP,
             self::SUBSCRIPTIONS,
             self::POST_INSTALL_SUBSCRIPTION_RATE,
-            self::CPS
+            self::CPS,
+            self::MARKETING_OBJECTIVE,
+            self::CHANNEL,
+            self::SUB_CHANNEL
         ];
     }
 }
