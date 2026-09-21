@@ -29,8 +29,10 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'AISearchSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AISearchSetting',
         'AppSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AppSetting',
         'BaseDomainSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\BaseDomainSetting',
+        'BrandExclusionSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandExclusionSetting',
         'CallToActionSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToActionSetting',
         'CampaignFrequencyCapSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignFrequencyCapSetting',
+        'CampaignPageFeedSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPageFeedSetting',
         'CoOpSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CoOpSetting',
         'DisclaimerSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DisclaimerSetting',
         'DynamicFeedSetting' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicFeedSetting',
@@ -100,6 +102,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'SearchTermMatchingOptOut' => 'bool',
         'AISearchEnabled' => 'bool',
         'NetworkOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Network',
+        'ProductAdsOptOut' => 'bool',
         'ImpressionTrackingUrl' => 'string',
         'OptimizationGoal' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal',
         'TimeGranularity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity',
@@ -153,6 +156,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'SearchTermMatchingOptOut' => null,
         'AISearchEnabled' => null,
         'NetworkOption' => null,
+        'ProductAdsOptOut' => null,
         'ImpressionTrackingUrl' => null,
         'OptimizationGoal' => null,
         'TimeGranularity' => null,
@@ -204,6 +208,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'SearchTermMatchingOptOut' => true,
         'AISearchEnabled' => false,
         'NetworkOption' => false,
+        'ProductAdsOptOut' => true,
         'ImpressionTrackingUrl' => true,
         'OptimizationGoal' => false,
         'TimeGranularity' => false,
@@ -335,6 +340,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'SearchTermMatchingOptOut' => 'SearchTermMatchingOptOut',
         'AISearchEnabled' => 'AISearchEnabled',
         'NetworkOption' => 'NetworkOption',
+        'ProductAdsOptOut' => 'ProductAdsOptOut',
         'ImpressionTrackingUrl' => 'ImpressionTrackingUrl',
         'OptimizationGoal' => 'OptimizationGoal',
         'TimeGranularity' => 'TimeGranularity',
@@ -386,6 +392,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'SearchTermMatchingOptOut' => 'setSearchTermMatchingOptOut',
         'AISearchEnabled' => 'setAISearchEnabled',
         'NetworkOption' => 'setNetworkOption',
+        'ProductAdsOptOut' => 'setProductAdsOptOut',
         'ImpressionTrackingUrl' => 'setImpressionTrackingUrl',
         'OptimizationGoal' => 'setOptimizationGoal',
         'TimeGranularity' => 'setTimeGranularity',
@@ -437,6 +444,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         'SearchTermMatchingOptOut' => 'getSearchTermMatchingOptOut',
         'AISearchEnabled' => 'getAISearchEnabled',
         'NetworkOption' => 'getNetworkOption',
+        'ProductAdsOptOut' => 'getProductAdsOptOut',
         'ImpressionTrackingUrl' => 'getImpressionTrackingUrl',
         'OptimizationGoal' => 'getOptimizationGoal',
         'TimeGranularity' => 'getTimeGranularity',
@@ -539,6 +547,7 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('SearchTermMatchingOptOut', $data ?? [], null);
         $this->setIfExists('AISearchEnabled', $data ?? [], null);
         $this->setIfExists('NetworkOption', $data ?? [], null);
+        $this->setIfExists('ProductAdsOptOut', $data ?? [], null);
         $this->setIfExists('ImpressionTrackingUrl', $data ?? [], null);
         $this->setIfExists('OptimizationGoal', $data ?? [], null);
         $this->setIfExists('TimeGranularity', $data ?? [], null);
@@ -1936,6 +1945,43 @@ class Setting implements ModelInterface, ArrayAccess, \JsonSerializable
             $NetworkOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network($NetworkOption);
         }
         $this->container['NetworkOption'] = $NetworkOption;
+
+        return $this;
+    }
+
+    /**
+     * Gets ProductAdsOptOut
+     *
+     * @return bool|null
+     */
+    public function getProductAdsOptOut()
+    {
+        if (!isset($this->container['ProductAdsOptOut']) || is_null($this->container['ProductAdsOptOut'])) {
+            return null;
+        }
+        return $this->container['ProductAdsOptOut'];
+    }
+
+    /**
+     * Sets ProductAdsOptOut
+     *
+     * @param bool|null $ProductAdsOptOut ProductAdsOptOut
+     *
+     * @return self
+     */
+    public function setProductAdsOptOut($ProductAdsOptOut)
+    {
+        if (is_null($ProductAdsOptOut)) {
+            array_push($this->openAPINullablesSetToNull, 'ProductAdsOptOut');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ProductAdsOptOut', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ProductAdsOptOut'] = $ProductAdsOptOut;
 
         return $this;
     }

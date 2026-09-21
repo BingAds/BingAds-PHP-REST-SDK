@@ -87,6 +87,8 @@ class SearchTermLandingPageReportColumn
 
     public const SUB_CHANNEL = 'SubChannel';
 
+    public const HEADLINE_SOURCE = 'HeadlineSource';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -187,7 +189,8 @@ class SearchTermLandingPageReportColumn
             self::CONVERSIONS_QUALIFIED,
             self::MARKETING_OBJECTIVE,
             self::CHANNEL,
-            self::SUB_CHANNEL
+            self::SUB_CHANNEL,
+            self::HEADLINE_SOURCE
         ];
     }
 }

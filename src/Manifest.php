@@ -22,5 +22,5 @@ class Manifest
      * Update this constant in lockstep with the SDK release version. The format is strict
      * yyyy-MM-dd; the server validates with DateTime::TryParseExact(DateTimeStyles.None).
      */
-    public const SDK_API_REVISION = '2026-05-20';
+    public const SDK_API_REVISION = '2026-09-14';
 }

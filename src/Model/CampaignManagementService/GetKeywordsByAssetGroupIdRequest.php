@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateKeywordsRequest
+ * GetKeywordsByAssetGroupIdRequest
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsRequest';
+    protected static string $openAPIModelName = 'GetKeywordsByAssetGroupIdRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,10 +33,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'AssetGroupId' => 'string',
-        'Keywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]',
-        'ReturnInheritedBidStrategyTypes' => 'bool'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField',
+        'AssetGroupId' => 'string'
     ];
 
     /**
@@ -47,10 +45,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'AssetGroupId' => 'int64',
-        'Keywords' => null,
-        'ReturnInheritedBidStrategyTypes' => null
+        'ReturnAdditionalFields' => null,
+        'AssetGroupId' => 'int64'
     ];
 
     /**
@@ -59,10 +55,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => true,
-        'AssetGroupId' => true,
-        'Keywords' => true,
-        'ReturnInheritedBidStrategyTypes' => true
+        'ReturnAdditionalFields' => false,
+        'AssetGroupId' => false
     ];
 
     /**
@@ -151,10 +145,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'AssetGroupId' => 'AssetGroupId',
-        'Keywords' => 'Keywords',
-        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
+        'AssetGroupId' => 'AssetGroupId'
     ];
 
     /**
@@ -163,10 +155,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'AssetGroupId' => 'setAssetGroupId',
-        'Keywords' => 'setKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
+        'AssetGroupId' => 'setAssetGroupId'
     ];
 
     /**
@@ -175,10 +165,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'AssetGroupId' => 'getAssetGroupId',
-        'Keywords' => 'getKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
+        'AssetGroupId' => 'getAssetGroupId'
     ];
 
     /**
@@ -238,10 +226,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
         $this->setIfExists('AssetGroupId', $data ?? [], null);
-        $this->setIfExists('Keywords', $data ?? [], null);
-        $this->setIfExists('ReturnInheritedBidStrategyTypes', $data ?? [], null);
     }
 
     /**
@@ -287,38 +273,37 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets AdGroupId
+     * Gets ReturnAdditionalFields
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
      */
-    public function getAdGroupId()
+    public function getReturnAdditionalFields()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets ReturnAdditionalFields
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
-        if (is_null($AdGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($ReturnAdditionalFields)) {
+            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }
@@ -346,90 +331,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAssetGroupId($AssetGroupId)
     {
         if (is_null($AssetGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable AssetGroupId cannot be null');
         }
         $this->container['AssetGroupId'] = $AssetGroupId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Keywords
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null
-     */
-    public function getKeywords()
-    {
-        if (!isset($this->container['Keywords']) || is_null($this->container['Keywords'])) {
-            return null;
-        }
-        return $this->container['Keywords'];
-    }
-
-    /**
-     * Sets Keywords
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null $Keywords Keywords
-     *
-     * @return self
-     */
-    public function setKeywords($Keywords)
-    {
-        if (is_null($Keywords)) {
-            array_push($this->openAPINullablesSetToNull, 'Keywords');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Keywords', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Keywords'] = $Keywords;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnInheritedBidStrategyTypes
-     *
-     * @return bool|null
-     */
-    public function getReturnInheritedBidStrategyTypes()
-    {
-        if (!isset($this->container['ReturnInheritedBidStrategyTypes']) || is_null($this->container['ReturnInheritedBidStrategyTypes'])) {
-            return null;
-        }
-        return $this->container['ReturnInheritedBidStrategyTypes'];
-    }
-
-    /**
-     * Sets ReturnInheritedBidStrategyTypes
-     *
-     * @param bool|null $ReturnInheritedBidStrategyTypes ReturnInheritedBidStrategyTypes
-     *
-     * @return self
-     */
-    public function setReturnInheritedBidStrategyTypes($ReturnInheritedBidStrategyTypes)
-    {
-        if (is_null($ReturnInheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'ReturnInheritedBidStrategyTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReturnInheritedBidStrategyTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ReturnInheritedBidStrategyTypes'] = $ReturnInheritedBidStrategyTypes;
 
         return $this;
     }

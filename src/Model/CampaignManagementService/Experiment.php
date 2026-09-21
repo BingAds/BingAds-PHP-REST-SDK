@@ -43,7 +43,9 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
         'ExperimentStatus' => 'string',
         'ExperimentType' => 'string',
-        'ExperimentSubType' => 'string'
+        'ExperimentSubType' => 'string',
+        'ExperimentCampaignType' => 'string',
+        'MarketingObjective' => 'string'
     ];
 
     /**
@@ -64,7 +66,9 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => null,
         'ExperimentStatus' => null,
         'ExperimentType' => null,
-        'ExperimentSubType' => null
+        'ExperimentSubType' => null,
+        'ExperimentCampaignType' => null,
+        'MarketingObjective' => null
     ];
 
     /**
@@ -83,7 +87,9 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => true,
         'ExperimentStatus' => true,
         'ExperimentType' => true,
-        'ExperimentSubType' => true
+        'ExperimentSubType' => true,
+        'ExperimentCampaignType' => true,
+        'MarketingObjective' => true
     ];
 
     /**
@@ -182,7 +188,9 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'EndDate',
         'ExperimentStatus' => 'ExperimentStatus',
         'ExperimentType' => 'ExperimentType',
-        'ExperimentSubType' => 'ExperimentSubType'
+        'ExperimentSubType' => 'ExperimentSubType',
+        'ExperimentCampaignType' => 'ExperimentCampaignType',
+        'MarketingObjective' => 'MarketingObjective'
     ];
 
     /**
@@ -201,7 +209,9 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'setEndDate',
         'ExperimentStatus' => 'setExperimentStatus',
         'ExperimentType' => 'setExperimentType',
-        'ExperimentSubType' => 'setExperimentSubType'
+        'ExperimentSubType' => 'setExperimentSubType',
+        'ExperimentCampaignType' => 'setExperimentCampaignType',
+        'MarketingObjective' => 'setMarketingObjective'
     ];
 
     /**
@@ -220,7 +230,9 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'getEndDate',
         'ExperimentStatus' => 'getExperimentStatus',
         'ExperimentType' => 'getExperimentType',
-        'ExperimentSubType' => 'getExperimentSubType'
+        'ExperimentSubType' => 'getExperimentSubType',
+        'ExperimentCampaignType' => 'getExperimentCampaignType',
+        'MarketingObjective' => 'getMarketingObjective'
     ];
 
     /**
@@ -291,6 +303,8 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ExperimentStatus', $data ?? [], null);
         $this->setIfExists('ExperimentType', $data ?? [], null);
         $this->setIfExists('ExperimentSubType', $data ?? [], null);
+        $this->setIfExists('ExperimentCampaignType', $data ?? [], null);
+        $this->setIfExists('MarketingObjective', $data ?? [], null);
     }
 
     /**
@@ -738,6 +752,80 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ExperimentSubType'] = $ExperimentSubType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExperimentCampaignType
+     *
+     * @return string|null
+     */
+    public function getExperimentCampaignType()
+    {
+        if (!isset($this->container['ExperimentCampaignType']) || is_null($this->container['ExperimentCampaignType'])) {
+            return null;
+        }
+        return $this->container['ExperimentCampaignType'];
+    }
+
+    /**
+     * Sets ExperimentCampaignType
+     *
+     * @param string|null $ExperimentCampaignType ExperimentCampaignType
+     *
+     * @return self
+     */
+    public function setExperimentCampaignType($ExperimentCampaignType)
+    {
+        if (is_null($ExperimentCampaignType)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentCampaignType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExperimentCampaignType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExperimentCampaignType'] = $ExperimentCampaignType;
+
+        return $this;
+    }
+
+    /**
+     * Gets MarketingObjective
+     *
+     * @return string|null
+     */
+    public function getMarketingObjective()
+    {
+        if (!isset($this->container['MarketingObjective']) || is_null($this->container['MarketingObjective'])) {
+            return null;
+        }
+        return $this->container['MarketingObjective'];
+    }
+
+    /**
+     * Sets MarketingObjective
+     *
+     * @param string|null $MarketingObjective MarketingObjective
+     *
+     * @return self
+     */
+    public function setMarketingObjective($MarketingObjective)
+    {
+        if (is_null($MarketingObjective)) {
+            array_push($this->openAPINullablesSetToNull, 'MarketingObjective');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MarketingObjective', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MarketingObjective'] = $MarketingObjective;
 
         return $this;
     }

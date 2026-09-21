@@ -25,6 +25,10 @@ class ExperimentAdditionalField
 
     public const EXPERIMENT_ARMS = 'ExperimentArms';
 
+    public const EXPERIMENT_CAMPAIGN_TYPE = 'ExperimentCampaignType';
+
+    public const MARKETING_OBJECTIVE = 'MarketingObjective';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -94,7 +98,9 @@ class ExperimentAdditionalField
         return [
             self::NONE,
             self::EXPERIMENT_SUB_TYPE,
-            self::EXPERIMENT_ARMS
+            self::EXPERIMENT_ARMS,
+            self::EXPERIMENT_CAMPAIGN_TYPE,
+            self::MARKETING_OBJECTIVE
         ];
     }
 }

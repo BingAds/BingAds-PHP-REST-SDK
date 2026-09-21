@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateKeywordsRequest
+ * GetLinkedInSegmentsRequest
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsRequest';
+    protected static string $openAPIModelName = 'GetLinkedInSegmentsRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,10 +33,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'AssetGroupId' => 'string',
-        'Keywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]',
-        'ReturnInheritedBidStrategyTypes' => 'bool'
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType',
+        'LinkedInSegmentIds' => 'string[]'
     ];
 
     /**
@@ -47,10 +45,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'AssetGroupId' => 'int64',
-        'Keywords' => null,
-        'ReturnInheritedBidStrategyTypes' => null
+        'Type' => null,
+        'LinkedInSegmentIds' => 'int64'
     ];
 
     /**
@@ -59,10 +55,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => true,
-        'AssetGroupId' => true,
-        'Keywords' => true,
-        'ReturnInheritedBidStrategyTypes' => true
+        'Type' => false,
+        'LinkedInSegmentIds' => true
     ];
 
     /**
@@ -151,10 +145,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'AssetGroupId' => 'AssetGroupId',
-        'Keywords' => 'Keywords',
-        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes'
+        'Type' => 'Type',
+        'LinkedInSegmentIds' => 'LinkedInSegmentIds'
     ];
 
     /**
@@ -163,10 +155,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'AssetGroupId' => 'setAssetGroupId',
-        'Keywords' => 'setKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes'
+        'Type' => 'setType',
+        'LinkedInSegmentIds' => 'setLinkedInSegmentIds'
     ];
 
     /**
@@ -175,10 +165,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'AssetGroupId' => 'getAssetGroupId',
-        'Keywords' => 'getKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes'
+        'Type' => 'getType',
+        'LinkedInSegmentIds' => 'getLinkedInSegmentIds'
     ];
 
     /**
@@ -238,10 +226,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('AssetGroupId', $data ?? [], null);
-        $this->setIfExists('Keywords', $data ?? [], null);
-        $this->setIfExists('ReturnInheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('LinkedInSegmentIds', $data ?? [], null);
     }
 
     /**
@@ -287,149 +273,74 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets AdGroupId
+     * Gets Type
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType|mixed|null
      */
-    public function getAdGroupId()
+    public function getType()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets Type
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType|mixed|null $Type Type
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setType($Type)
     {
-        if (is_null($AdGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }
 
     /**
-     * Gets AssetGroupId
+     * Gets LinkedInSegmentIds
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getAssetGroupId()
+    public function getLinkedInSegmentIds()
     {
-        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
+        if (!isset($this->container['LinkedInSegmentIds']) || is_null($this->container['LinkedInSegmentIds'])) {
             return null;
         }
-        return $this->container['AssetGroupId'];
+        return $this->container['LinkedInSegmentIds'];
     }
 
     /**
-     * Sets AssetGroupId
+     * Sets LinkedInSegmentIds
      *
-     * @param string|null $AssetGroupId AssetGroupId
+     * @param string[]|null $LinkedInSegmentIds LinkedInSegmentIds
      *
      * @return self
      */
-    public function setAssetGroupId($AssetGroupId)
+    public function setLinkedInSegmentIds($LinkedInSegmentIds)
     {
-        if (is_null($AssetGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
+        if (is_null($LinkedInSegmentIds)) {
+            array_push($this->openAPINullablesSetToNull, 'LinkedInSegmentIds');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupId', $nullablesSetToNull);
+            $index = array_search('LinkedInSegmentIds', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AssetGroupId'] = $AssetGroupId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Keywords
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null
-     */
-    public function getKeywords()
-    {
-        if (!isset($this->container['Keywords']) || is_null($this->container['Keywords'])) {
-            return null;
-        }
-        return $this->container['Keywords'];
-    }
-
-    /**
-     * Sets Keywords
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null $Keywords Keywords
-     *
-     * @return self
-     */
-    public function setKeywords($Keywords)
-    {
-        if (is_null($Keywords)) {
-            array_push($this->openAPINullablesSetToNull, 'Keywords');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Keywords', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Keywords'] = $Keywords;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnInheritedBidStrategyTypes
-     *
-     * @return bool|null
-     */
-    public function getReturnInheritedBidStrategyTypes()
-    {
-        if (!isset($this->container['ReturnInheritedBidStrategyTypes']) || is_null($this->container['ReturnInheritedBidStrategyTypes'])) {
-            return null;
-        }
-        return $this->container['ReturnInheritedBidStrategyTypes'];
-    }
-
-    /**
-     * Sets ReturnInheritedBidStrategyTypes
-     *
-     * @param bool|null $ReturnInheritedBidStrategyTypes ReturnInheritedBidStrategyTypes
-     *
-     * @return self
-     */
-    public function setReturnInheritedBidStrategyTypes($ReturnInheritedBidStrategyTypes)
-    {
-        if (is_null($ReturnInheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'ReturnInheritedBidStrategyTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReturnInheritedBidStrategyTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ReturnInheritedBidStrategyTypes'] = $ReturnInheritedBidStrategyTypes;
+        $this->container['LinkedInSegmentIds'] = $LinkedInSegmentIds;
 
         return $this;
     }

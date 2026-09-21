@@ -87,6 +87,8 @@ class AdGroupCriterionType
 
     public const JOB_SENIORITY = 'JobSeniority';
 
+    public const CUSTOM_LINKED_IN = 'CustomLinkedIn';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -187,7 +189,8 @@ class AdGroupCriterionType
             self::PLACEMENT,
             self::TOPIC,
             self::CUSTOM_SEGMENT,
-            self::JOB_SENIORITY
+            self::JOB_SENIORITY,
+            self::CUSTOM_LINKED_IN
         ];
     }
 }

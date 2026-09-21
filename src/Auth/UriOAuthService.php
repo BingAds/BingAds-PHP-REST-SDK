@@ -58,7 +58,10 @@ class UriOAuthService extends IOAuthService
     {
         if ($httpClient === null) {
             $this->httpClient = new Client([
-                'verify' => false, // For SSL verification, adjust as needed
+                'verify' => true,
+                'allow_redirects' => [
+                    'protocols' => ['https'],
+                ],
             ]);
         } else {
             $this->httpClient = $httpClient;
@@ -259,4 +262,3 @@ class UriOAuthService extends IOAuthService
         return $authorizationEndpointUrl;
     }
 }
-

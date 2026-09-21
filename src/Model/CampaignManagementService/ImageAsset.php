@@ -43,7 +43,8 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         'CropHeight' => 'int',
         'TargetWidth' => 'int',
         'TargetHeight' => 'int',
-        'CroppingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType'
+        'CroppingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType',
+        'Excluded' => 'bool'
     ];
 
     /**
@@ -64,7 +65,8 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         'CropHeight' => 'int32',
         'TargetWidth' => 'int32',
         'TargetHeight' => 'int32',
-        'CroppingType' => null
+        'CroppingType' => null,
+        'Excluded' => null
     ];
 
     /**
@@ -83,7 +85,8 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         'CropHeight' => true,
         'TargetWidth' => true,
         'TargetHeight' => true,
-        'CroppingType' => false
+        'CroppingType' => false,
+        'Excluded' => true
     ];
 
     /**
@@ -182,7 +185,8 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         'CropHeight' => 'CropHeight',
         'TargetWidth' => 'TargetWidth',
         'TargetHeight' => 'TargetHeight',
-        'CroppingType' => 'CroppingType'
+        'CroppingType' => 'CroppingType',
+        'Excluded' => 'Excluded'
     ];
 
     /**
@@ -201,7 +205,8 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         'CropHeight' => 'setCropHeight',
         'TargetWidth' => 'setTargetWidth',
         'TargetHeight' => 'setTargetHeight',
-        'CroppingType' => 'setCroppingType'
+        'CroppingType' => 'setCroppingType',
+        'Excluded' => 'setExcluded'
     ];
 
     /**
@@ -220,7 +225,8 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         'CropHeight' => 'getCropHeight',
         'TargetWidth' => 'getTargetWidth',
         'TargetHeight' => 'getTargetHeight',
-        'CroppingType' => 'getCroppingType'
+        'CroppingType' => 'getCroppingType',
+        'Excluded' => 'getExcluded'
     ];
 
     /**
@@ -291,6 +297,7 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('TargetWidth', $data ?? [], null);
         $this->setIfExists('TargetHeight', $data ?? [], null);
         $this->setIfExists('CroppingType', $data ?? [], null);
+        $this->setIfExists('Excluded', $data ?? [], null);
     }
 
     /**
@@ -737,6 +744,43 @@ class ImageAsset extends Asset implements ModelInterface, ArrayAccess, \JsonSeri
             $CroppingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType($CroppingType);
         }
         $this->container['CroppingType'] = $CroppingType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Excluded
+     *
+     * @return bool|null
+     */
+    public function getExcluded()
+    {
+        if (!isset($this->container['Excluded']) || is_null($this->container['Excluded'])) {
+            return null;
+        }
+        return $this->container['Excluded'];
+    }
+
+    /**
+     * Sets Excluded
+     *
+     * @param bool|null $Excluded Excluded
+     *
+     * @return self
+     */
+    public function setExcluded($Excluded)
+    {
+        if (is_null($Excluded)) {
+            array_push($this->openAPINullablesSetToNull, 'Excluded');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Excluded', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Excluded'] = $Excluded;
 
         return $this;
     }

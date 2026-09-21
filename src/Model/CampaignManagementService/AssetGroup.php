@@ -40,6 +40,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'Path1' => 'string',
         'Path2' => 'string',
         'BusinessName' => 'string',
+        'AssetContext' => 'string',
         'Headlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
         'LongHeadlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
         'Descriptions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
@@ -73,6 +74,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'Path1' => null,
         'Path2' => null,
         'BusinessName' => null,
+        'AssetContext' => null,
         'Headlines' => null,
         'LongHeadlines' => null,
         'Descriptions' => null,
@@ -104,6 +106,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'Path1' => true,
         'Path2' => true,
         'BusinessName' => true,
+        'AssetContext' => true,
         'Headlines' => true,
         'LongHeadlines' => true,
         'Descriptions' => true,
@@ -215,6 +218,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'Path1' => 'Path1',
         'Path2' => 'Path2',
         'BusinessName' => 'BusinessName',
+        'AssetContext' => 'AssetContext',
         'Headlines' => 'Headlines',
         'LongHeadlines' => 'LongHeadlines',
         'Descriptions' => 'Descriptions',
@@ -246,6 +250,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'Path1' => 'setPath1',
         'Path2' => 'setPath2',
         'BusinessName' => 'setBusinessName',
+        'AssetContext' => 'setAssetContext',
         'Headlines' => 'setHeadlines',
         'LongHeadlines' => 'setLongHeadlines',
         'Descriptions' => 'setDescriptions',
@@ -277,6 +282,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         'Path1' => 'getPath1',
         'Path2' => 'getPath2',
         'BusinessName' => 'getBusinessName',
+        'AssetContext' => 'getAssetContext',
         'Headlines' => 'getHeadlines',
         'LongHeadlines' => 'getLongHeadlines',
         'Descriptions' => 'getDescriptions',
@@ -359,6 +365,7 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Path1', $data ?? [], null);
         $this->setIfExists('Path2', $data ?? [], null);
         $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('AssetContext', $data ?? [], null);
         $this->setIfExists('Headlines', $data ?? [], null);
         $this->setIfExists('LongHeadlines', $data ?? [], null);
         $this->setIfExists('Descriptions', $data ?? [], null);
@@ -673,6 +680,43 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BusinessName'] = $BusinessName;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetContext
+     *
+     * @return string|null
+     */
+    public function getAssetContext()
+    {
+        if (!isset($this->container['AssetContext']) || is_null($this->container['AssetContext'])) {
+            return null;
+        }
+        return $this->container['AssetContext'];
+    }
+
+    /**
+     * Sets AssetContext
+     *
+     * @param string|null $AssetContext AssetContext
+     *
+     * @return self
+     */
+    public function setAssetContext($AssetContext)
+    {
+        if (is_null($AssetContext)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetContext');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssetContext', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AssetContext'] = $AssetContext;
 
         return $this;
     }

@@ -30,15 +30,12 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AppAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AppAdExtension',
         'CallAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CallAdExtension',
         'CalloutAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CalloutAdExtension',
-        'DataTableAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DataTableAdExtension',
         'DisclaimerAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\DisclaimerAdExtension',
         'FilterLinkAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\FilterLinkAdExtension',
         'FlyerAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\FlyerAdExtension',
         'ImageAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAdExtension',
-        'LeadFormAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormAdExtension',
         'LocationAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationAdExtension',
         'LogoAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\LogoAdExtension',
-        'NewsAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\NewsAdExtension',
         'PriceAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceAdExtension',
         'PromotionAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionAdExtension',
         'ReviewAdExtension' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\ReviewAdExtension',
@@ -92,15 +89,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'SourceType' => 'string',
         'AppPlatform' => 'string',
         'AppStoreId' => 'string',
-        'Name' => 'string',
-        'SourceUrl' => 'string',
-        'Filter' => 'string',
-        'Priority' => 'int',
         'IsExact' => 'bool',
         'Text' => 'string',
         'Source' => 'string',
         'Url' => 'string',
-        'NameUrl' => 'string',
         'Description1' => 'string',
         'Description2' => 'string',
         'ActionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ActionAdExtensionActionType',
@@ -124,6 +116,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'FlyerName' => 'string',
         'StoreId' => 'string',
         'ImageMediaUrls' => 'string[]',
+        'Name' => 'string',
         'ActionText' => 'string',
         'VideoId' => 'string',
         'ThumbnailId' => 'string',
@@ -135,25 +128,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'string',
         'BusinessLogo' => 'string',
         'BusinessLogoUrl' => 'string',
-        'DomainName' => 'string',
-        'CallToAction' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormCallToAction',
-        'ActionName' => 'string',
-        'ActionDescription' => 'string',
-        'CorporateImage' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset',
-        'CorporateImageInternalUrl' => 'string',
-        'FormHeadline' => 'string',
-        'FormBusinessName' => 'string',
-        'FormDescription' => 'string',
-        'FormPolicyUrl' => 'string',
-        'FormQuestions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormQuestionDefinition[]',
-        'ConfirmationMessage' => 'string',
-        'ConfirmationDescription' => 'string',
-        'ConfirmationAction' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConfirmationAction',
-        'ConfirmationUrl' => 'string',
-        'LeadDelivery' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadDelivery',
-        'LeadEmails' => 'string',
-        'LeadWebhookUrl' => 'string',
-        'LeadWebhookKey' => 'string'
+        'DomainName' => 'string'
     ];
 
     /**
@@ -196,15 +171,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'SourceType' => null,
         'AppPlatform' => null,
         'AppStoreId' => null,
-        'Name' => null,
-        'SourceUrl' => null,
-        'Filter' => null,
-        'Priority' => 'int32',
         'IsExact' => null,
         'Text' => null,
         'Source' => null,
         'Url' => null,
-        'NameUrl' => null,
         'Description1' => null,
         'Description2' => null,
         'ActionType' => null,
@@ -228,6 +198,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'FlyerName' => null,
         'StoreId' => 'int64',
         'ImageMediaUrls' => null,
+        'Name' => null,
         'ActionText' => null,
         'VideoId' => 'int64',
         'ThumbnailId' => 'int64',
@@ -239,25 +210,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => null,
         'BusinessLogo' => 'int64',
         'BusinessLogoUrl' => null,
-        'DomainName' => null,
-        'CallToAction' => null,
-        'ActionName' => null,
-        'ActionDescription' => null,
-        'CorporateImage' => null,
-        'CorporateImageInternalUrl' => null,
-        'FormHeadline' => null,
-        'FormBusinessName' => null,
-        'FormDescription' => null,
-        'FormPolicyUrl' => null,
-        'FormQuestions' => null,
-        'ConfirmationMessage' => null,
-        'ConfirmationDescription' => null,
-        'ConfirmationAction' => null,
-        'ConfirmationUrl' => null,
-        'LeadDelivery' => null,
-        'LeadEmails' => null,
-        'LeadWebhookUrl' => null,
-        'LeadWebhookKey' => null
+        'DomainName' => null
     ];
 
     /**
@@ -298,15 +251,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'SourceType' => true,
         'AppPlatform' => true,
         'AppStoreId' => true,
-        'Name' => true,
-        'SourceUrl' => true,
-        'Filter' => true,
-        'Priority' => false,
         'IsExact' => false,
         'Text' => true,
         'Source' => true,
         'Url' => true,
-        'NameUrl' => true,
         'Description1' => true,
         'Description2' => true,
         'ActionType' => false,
@@ -330,6 +278,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'FlyerName' => true,
         'StoreId' => true,
         'ImageMediaUrls' => true,
+        'Name' => true,
         'ActionText' => true,
         'VideoId' => true,
         'ThumbnailId' => true,
@@ -341,25 +290,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => true,
         'BusinessLogo' => true,
         'BusinessLogoUrl' => true,
-        'DomainName' => true,
-        'CallToAction' => false,
-        'ActionName' => true,
-        'ActionDescription' => true,
-        'CorporateImage' => true,
-        'CorporateImageInternalUrl' => true,
-        'FormHeadline' => true,
-        'FormBusinessName' => true,
-        'FormDescription' => true,
-        'FormPolicyUrl' => true,
-        'FormQuestions' => true,
-        'ConfirmationMessage' => true,
-        'ConfirmationDescription' => true,
-        'ConfirmationAction' => false,
-        'ConfirmationUrl' => true,
-        'LeadDelivery' => false,
-        'LeadEmails' => true,
-        'LeadWebhookUrl' => true,
-        'LeadWebhookKey' => true
+        'DomainName' => true
     ];
 
     /**
@@ -480,15 +411,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'SourceType' => 'SourceType',
         'AppPlatform' => 'AppPlatform',
         'AppStoreId' => 'AppStoreId',
-        'Name' => 'Name',
-        'SourceUrl' => 'SourceUrl',
-        'Filter' => 'Filter',
-        'Priority' => 'Priority',
         'IsExact' => 'IsExact',
         'Text' => 'Text',
         'Source' => 'Source',
         'Url' => 'Url',
-        'NameUrl' => 'NameUrl',
         'Description1' => 'Description1',
         'Description2' => 'Description2',
         'ActionType' => 'ActionType',
@@ -512,6 +438,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'FlyerName' => 'FlyerName',
         'StoreId' => 'StoreId',
         'ImageMediaUrls' => 'ImageMediaUrls',
+        'Name' => 'Name',
         'ActionText' => 'ActionText',
         'VideoId' => 'VideoId',
         'ThumbnailId' => 'ThumbnailId',
@@ -523,25 +450,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'BusinessName',
         'BusinessLogo' => 'BusinessLogo',
         'BusinessLogoUrl' => 'BusinessLogoUrl',
-        'DomainName' => 'DomainName',
-        'CallToAction' => 'CallToAction',
-        'ActionName' => 'ActionName',
-        'ActionDescription' => 'ActionDescription',
-        'CorporateImage' => 'CorporateImage',
-        'CorporateImageInternalUrl' => 'CorporateImageInternalUrl',
-        'FormHeadline' => 'FormHeadline',
-        'FormBusinessName' => 'FormBusinessName',
-        'FormDescription' => 'FormDescription',
-        'FormPolicyUrl' => 'FormPolicyUrl',
-        'FormQuestions' => 'FormQuestions',
-        'ConfirmationMessage' => 'ConfirmationMessage',
-        'ConfirmationDescription' => 'ConfirmationDescription',
-        'ConfirmationAction' => 'ConfirmationAction',
-        'ConfirmationUrl' => 'ConfirmationUrl',
-        'LeadDelivery' => 'LeadDelivery',
-        'LeadEmails' => 'LeadEmails',
-        'LeadWebhookUrl' => 'LeadWebhookUrl',
-        'LeadWebhookKey' => 'LeadWebhookKey'
+        'DomainName' => 'DomainName'
     ];
 
     /**
@@ -582,15 +491,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'SourceType' => 'setSourceType',
         'AppPlatform' => 'setAppPlatform',
         'AppStoreId' => 'setAppStoreId',
-        'Name' => 'setName',
-        'SourceUrl' => 'setSourceUrl',
-        'Filter' => 'setFilter',
-        'Priority' => 'setPriority',
         'IsExact' => 'setIsExact',
         'Text' => 'setText',
         'Source' => 'setSource',
         'Url' => 'setUrl',
-        'NameUrl' => 'setNameUrl',
         'Description1' => 'setDescription1',
         'Description2' => 'setDescription2',
         'ActionType' => 'setActionType',
@@ -614,6 +518,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'FlyerName' => 'setFlyerName',
         'StoreId' => 'setStoreId',
         'ImageMediaUrls' => 'setImageMediaUrls',
+        'Name' => 'setName',
         'ActionText' => 'setActionText',
         'VideoId' => 'setVideoId',
         'ThumbnailId' => 'setThumbnailId',
@@ -625,25 +530,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'setBusinessName',
         'BusinessLogo' => 'setBusinessLogo',
         'BusinessLogoUrl' => 'setBusinessLogoUrl',
-        'DomainName' => 'setDomainName',
-        'CallToAction' => 'setCallToAction',
-        'ActionName' => 'setActionName',
-        'ActionDescription' => 'setActionDescription',
-        'CorporateImage' => 'setCorporateImage',
-        'CorporateImageInternalUrl' => 'setCorporateImageInternalUrl',
-        'FormHeadline' => 'setFormHeadline',
-        'FormBusinessName' => 'setFormBusinessName',
-        'FormDescription' => 'setFormDescription',
-        'FormPolicyUrl' => 'setFormPolicyUrl',
-        'FormQuestions' => 'setFormQuestions',
-        'ConfirmationMessage' => 'setConfirmationMessage',
-        'ConfirmationDescription' => 'setConfirmationDescription',
-        'ConfirmationAction' => 'setConfirmationAction',
-        'ConfirmationUrl' => 'setConfirmationUrl',
-        'LeadDelivery' => 'setLeadDelivery',
-        'LeadEmails' => 'setLeadEmails',
-        'LeadWebhookUrl' => 'setLeadWebhookUrl',
-        'LeadWebhookKey' => 'setLeadWebhookKey'
+        'DomainName' => 'setDomainName'
     ];
 
     /**
@@ -684,15 +571,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'SourceType' => 'getSourceType',
         'AppPlatform' => 'getAppPlatform',
         'AppStoreId' => 'getAppStoreId',
-        'Name' => 'getName',
-        'SourceUrl' => 'getSourceUrl',
-        'Filter' => 'getFilter',
-        'Priority' => 'getPriority',
         'IsExact' => 'getIsExact',
         'Text' => 'getText',
         'Source' => 'getSource',
         'Url' => 'getUrl',
-        'NameUrl' => 'getNameUrl',
         'Description1' => 'getDescription1',
         'Description2' => 'getDescription2',
         'ActionType' => 'getActionType',
@@ -716,6 +598,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'FlyerName' => 'getFlyerName',
         'StoreId' => 'getStoreId',
         'ImageMediaUrls' => 'getImageMediaUrls',
+        'Name' => 'getName',
         'ActionText' => 'getActionText',
         'VideoId' => 'getVideoId',
         'ThumbnailId' => 'getThumbnailId',
@@ -727,25 +610,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'getBusinessName',
         'BusinessLogo' => 'getBusinessLogo',
         'BusinessLogoUrl' => 'getBusinessLogoUrl',
-        'DomainName' => 'getDomainName',
-        'CallToAction' => 'getCallToAction',
-        'ActionName' => 'getActionName',
-        'ActionDescription' => 'getActionDescription',
-        'CorporateImage' => 'getCorporateImage',
-        'CorporateImageInternalUrl' => 'getCorporateImageInternalUrl',
-        'FormHeadline' => 'getFormHeadline',
-        'FormBusinessName' => 'getFormBusinessName',
-        'FormDescription' => 'getFormDescription',
-        'FormPolicyUrl' => 'getFormPolicyUrl',
-        'FormQuestions' => 'getFormQuestions',
-        'ConfirmationMessage' => 'getConfirmationMessage',
-        'ConfirmationDescription' => 'getConfirmationDescription',
-        'ConfirmationAction' => 'getConfirmationAction',
-        'ConfirmationUrl' => 'getConfirmationUrl',
-        'LeadDelivery' => 'getLeadDelivery',
-        'LeadEmails' => 'getLeadEmails',
-        'LeadWebhookUrl' => 'getLeadWebhookUrl',
-        'LeadWebhookKey' => 'getLeadWebhookKey'
+        'DomainName' => 'getDomainName'
     ];
 
     /**
@@ -837,15 +702,10 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('SourceType', $data ?? [], null);
         $this->setIfExists('AppPlatform', $data ?? [], null);
         $this->setIfExists('AppStoreId', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('SourceUrl', $data ?? [], null);
-        $this->setIfExists('Filter', $data ?? [], null);
-        $this->setIfExists('Priority', $data ?? [], null);
         $this->setIfExists('IsExact', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Source', $data ?? [], null);
         $this->setIfExists('Url', $data ?? [], null);
-        $this->setIfExists('NameUrl', $data ?? [], null);
         $this->setIfExists('Description1', $data ?? [], null);
         $this->setIfExists('Description2', $data ?? [], null);
         $this->setIfExists('ActionType', $data ?? [], null);
@@ -869,6 +729,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('FlyerName', $data ?? [], null);
         $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('ImageMediaUrls', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('ActionText', $data ?? [], null);
         $this->setIfExists('VideoId', $data ?? [], null);
         $this->setIfExists('ThumbnailId', $data ?? [], null);
@@ -881,24 +742,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('BusinessLogo', $data ?? [], null);
         $this->setIfExists('BusinessLogoUrl', $data ?? [], null);
         $this->setIfExists('DomainName', $data ?? [], null);
-        $this->setIfExists('CallToAction', $data ?? [], null);
-        $this->setIfExists('ActionName', $data ?? [], null);
-        $this->setIfExists('ActionDescription', $data ?? [], null);
-        $this->setIfExists('CorporateImage', $data ?? [], null);
-        $this->setIfExists('CorporateImageInternalUrl', $data ?? [], null);
-        $this->setIfExists('FormHeadline', $data ?? [], null);
-        $this->setIfExists('FormBusinessName', $data ?? [], null);
-        $this->setIfExists('FormDescription', $data ?? [], null);
-        $this->setIfExists('FormPolicyUrl', $data ?? [], null);
-        $this->setIfExists('FormQuestions', $data ?? [], null);
-        $this->setIfExists('ConfirmationMessage', $data ?? [], null);
-        $this->setIfExists('ConfirmationDescription', $data ?? [], null);
-        $this->setIfExists('ConfirmationAction', $data ?? [], null);
-        $this->setIfExists('ConfirmationUrl', $data ?? [], null);
-        $this->setIfExists('LeadDelivery', $data ?? [], null);
-        $this->setIfExists('LeadEmails', $data ?? [], null);
-        $this->setIfExists('LeadWebhookUrl', $data ?? [], null);
-        $this->setIfExists('LeadWebhookKey', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -2129,147 +1972,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets SourceUrl
-     *
-     * @return string|null
-     */
-    public function getSourceUrl()
-    {
-        if (!isset($this->container['SourceUrl']) || is_null($this->container['SourceUrl'])) {
-            return null;
-        }
-        return $this->container['SourceUrl'];
-    }
-
-    /**
-     * Sets SourceUrl
-     *
-     * @param string|null $SourceUrl SourceUrl
-     *
-     * @return self
-     */
-    public function setSourceUrl($SourceUrl)
-    {
-        if (is_null($SourceUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'SourceUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SourceUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SourceUrl'] = $SourceUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets Filter
-     *
-     * @return string|null
-     */
-    public function getFilter()
-    {
-        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
-            return null;
-        }
-        return $this->container['Filter'];
-    }
-
-    /**
-     * Sets Filter
-     *
-     * @param string|null $Filter Filter
-     *
-     * @return self
-     */
-    public function setFilter($Filter)
-    {
-        if (is_null($Filter)) {
-            array_push($this->openAPINullablesSetToNull, 'Filter');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Filter', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Filter'] = $Filter;
-
-        return $this;
-    }
-
-    /**
-     * Gets Priority
-     *
-     * @return int|null
-     */
-    public function getPriority()
-    {
-        if (!isset($this->container['Priority']) || is_null($this->container['Priority'])) {
-            return null;
-        }
-        return $this->container['Priority'];
-    }
-
-    /**
-     * Sets Priority
-     *
-     * @param int|null $Priority Priority
-     *
-     * @return self
-     */
-    public function setPriority($Priority)
-    {
-        if (is_null($Priority)) {
-            throw new \InvalidArgumentException('non-nullable Priority cannot be null');
-        }
-        $this->container['Priority'] = $Priority;
-
-        return $this;
-    }
-
-    /**
      * Gets IsExact
      *
      * @return bool|null
@@ -2406,43 +2108,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Url'] = $Url;
-
-        return $this;
-    }
-
-    /**
-     * Gets NameUrl
-     *
-     * @return string|null
-     */
-    public function getNameUrl()
-    {
-        if (!isset($this->container['NameUrl']) || is_null($this->container['NameUrl'])) {
-            return null;
-        }
-        return $this->container['NameUrl'];
-    }
-
-    /**
-     * Sets NameUrl
-     *
-     * @param string|null $NameUrl NameUrl
-     *
-     * @return self
-     */
-    public function setNameUrl($NameUrl)
-    {
-        if (is_null($NameUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'NameUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NameUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NameUrl'] = $NameUrl;
 
         return $this;
     }
@@ -3294,6 +2959,43 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
      * Gets ActionText
      *
      * @return string|null
@@ -3733,669 +3435,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['DomainName'] = $DomainName;
-
-        return $this;
-    }
-
-    /**
-     * Gets CallToAction
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormCallToAction|mixed|null
-     */
-    public function getCallToAction()
-    {
-        if (!isset($this->container['CallToAction']) || is_null($this->container['CallToAction'])) {
-            return null;
-        }
-        if ((is_object($this->container['CallToAction']) || is_string($this->container['CallToAction'])) && method_exists($this->container['CallToAction'], 'getValue')) {
-            return $this->container['CallToAction']->getValue();
-        }
-        return $this->container['CallToAction'];
-    }
-
-    /**
-     * Sets CallToAction
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormCallToAction|mixed|null $CallToAction CallToAction
-     *
-     * @return self
-     */
-    public function setCallToAction($CallToAction)
-    {
-        if (is_null($CallToAction)) {
-            throw new \InvalidArgumentException('non-nullable CallToAction cannot be null');
-        }
-        if (!$CallToAction instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormCallToAction) {
-            $CallToAction = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormCallToAction($CallToAction);
-        }
-        $this->container['CallToAction'] = $CallToAction;
-
-        return $this;
-    }
-
-    /**
-     * Gets ActionName
-     *
-     * @return string|null
-     */
-    public function getActionName()
-    {
-        if (!isset($this->container['ActionName']) || is_null($this->container['ActionName'])) {
-            return null;
-        }
-        return $this->container['ActionName'];
-    }
-
-    /**
-     * Sets ActionName
-     *
-     * @param string|null $ActionName ActionName
-     *
-     * @return self
-     */
-    public function setActionName($ActionName)
-    {
-        if (is_null($ActionName)) {
-            array_push($this->openAPINullablesSetToNull, 'ActionName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ActionName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ActionName'] = $ActionName;
-
-        return $this;
-    }
-
-    /**
-     * Gets ActionDescription
-     *
-     * @return string|null
-     */
-    public function getActionDescription()
-    {
-        if (!isset($this->container['ActionDescription']) || is_null($this->container['ActionDescription'])) {
-            return null;
-        }
-        return $this->container['ActionDescription'];
-    }
-
-    /**
-     * Sets ActionDescription
-     *
-     * @param string|null $ActionDescription ActionDescription
-     *
-     * @return self
-     */
-    public function setActionDescription($ActionDescription)
-    {
-        if (is_null($ActionDescription)) {
-            array_push($this->openAPINullablesSetToNull, 'ActionDescription');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ActionDescription', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ActionDescription'] = $ActionDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets CorporateImage
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset|null
-     */
-    public function getCorporateImage()
-    {
-        if (!isset($this->container['CorporateImage']) || is_null($this->container['CorporateImage'])) {
-            return null;
-        }
-        return $this->container['CorporateImage'];
-    }
-
-    /**
-     * Sets CorporateImage
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset|null $CorporateImage CorporateImage
-     *
-     * @return self
-     */
-    public function setCorporateImage($CorporateImage)
-    {
-        if (is_null($CorporateImage)) {
-            array_push($this->openAPINullablesSetToNull, 'CorporateImage');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CorporateImage', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CorporateImage'] = $CorporateImage;
-
-        return $this;
-    }
-
-    /**
-     * Gets CorporateImageInternalUrl
-     *
-     * @return string|null
-     */
-    public function getCorporateImageInternalUrl()
-    {
-        if (!isset($this->container['CorporateImageInternalUrl']) || is_null($this->container['CorporateImageInternalUrl'])) {
-            return null;
-        }
-        return $this->container['CorporateImageInternalUrl'];
-    }
-
-    /**
-     * Sets CorporateImageInternalUrl
-     *
-     * @param string|null $CorporateImageInternalUrl CorporateImageInternalUrl
-     *
-     * @return self
-     */
-    public function setCorporateImageInternalUrl($CorporateImageInternalUrl)
-    {
-        if (is_null($CorporateImageInternalUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'CorporateImageInternalUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CorporateImageInternalUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CorporateImageInternalUrl'] = $CorporateImageInternalUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets FormHeadline
-     *
-     * @return string|null
-     */
-    public function getFormHeadline()
-    {
-        if (!isset($this->container['FormHeadline']) || is_null($this->container['FormHeadline'])) {
-            return null;
-        }
-        return $this->container['FormHeadline'];
-    }
-
-    /**
-     * Sets FormHeadline
-     *
-     * @param string|null $FormHeadline FormHeadline
-     *
-     * @return self
-     */
-    public function setFormHeadline($FormHeadline)
-    {
-        if (is_null($FormHeadline)) {
-            array_push($this->openAPINullablesSetToNull, 'FormHeadline');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FormHeadline', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FormHeadline'] = $FormHeadline;
-
-        return $this;
-    }
-
-    /**
-     * Gets FormBusinessName
-     *
-     * @return string|null
-     */
-    public function getFormBusinessName()
-    {
-        if (!isset($this->container['FormBusinessName']) || is_null($this->container['FormBusinessName'])) {
-            return null;
-        }
-        return $this->container['FormBusinessName'];
-    }
-
-    /**
-     * Sets FormBusinessName
-     *
-     * @param string|null $FormBusinessName FormBusinessName
-     *
-     * @return self
-     */
-    public function setFormBusinessName($FormBusinessName)
-    {
-        if (is_null($FormBusinessName)) {
-            array_push($this->openAPINullablesSetToNull, 'FormBusinessName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FormBusinessName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FormBusinessName'] = $FormBusinessName;
-
-        return $this;
-    }
-
-    /**
-     * Gets FormDescription
-     *
-     * @return string|null
-     */
-    public function getFormDescription()
-    {
-        if (!isset($this->container['FormDescription']) || is_null($this->container['FormDescription'])) {
-            return null;
-        }
-        return $this->container['FormDescription'];
-    }
-
-    /**
-     * Sets FormDescription
-     *
-     * @param string|null $FormDescription FormDescription
-     *
-     * @return self
-     */
-    public function setFormDescription($FormDescription)
-    {
-        if (is_null($FormDescription)) {
-            array_push($this->openAPINullablesSetToNull, 'FormDescription');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FormDescription', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FormDescription'] = $FormDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets FormPolicyUrl
-     *
-     * @return string|null
-     */
-    public function getFormPolicyUrl()
-    {
-        if (!isset($this->container['FormPolicyUrl']) || is_null($this->container['FormPolicyUrl'])) {
-            return null;
-        }
-        return $this->container['FormPolicyUrl'];
-    }
-
-    /**
-     * Sets FormPolicyUrl
-     *
-     * @param string|null $FormPolicyUrl FormPolicyUrl
-     *
-     * @return self
-     */
-    public function setFormPolicyUrl($FormPolicyUrl)
-    {
-        if (is_null($FormPolicyUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'FormPolicyUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FormPolicyUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FormPolicyUrl'] = $FormPolicyUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets FormQuestions
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormQuestionDefinition[]|null
-     */
-    public function getFormQuestions()
-    {
-        if (!isset($this->container['FormQuestions']) || is_null($this->container['FormQuestions'])) {
-            return null;
-        }
-        return $this->container['FormQuestions'];
-    }
-
-    /**
-     * Sets FormQuestions
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadFormQuestionDefinition[]|null $FormQuestions FormQuestions
-     *
-     * @return self
-     */
-    public function setFormQuestions($FormQuestions)
-    {
-        if (is_null($FormQuestions)) {
-            array_push($this->openAPINullablesSetToNull, 'FormQuestions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FormQuestions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FormQuestions'] = $FormQuestions;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConfirmationMessage
-     *
-     * @return string|null
-     */
-    public function getConfirmationMessage()
-    {
-        if (!isset($this->container['ConfirmationMessage']) || is_null($this->container['ConfirmationMessage'])) {
-            return null;
-        }
-        return $this->container['ConfirmationMessage'];
-    }
-
-    /**
-     * Sets ConfirmationMessage
-     *
-     * @param string|null $ConfirmationMessage ConfirmationMessage
-     *
-     * @return self
-     */
-    public function setConfirmationMessage($ConfirmationMessage)
-    {
-        if (is_null($ConfirmationMessage)) {
-            array_push($this->openAPINullablesSetToNull, 'ConfirmationMessage');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConfirmationMessage', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ConfirmationMessage'] = $ConfirmationMessage;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConfirmationDescription
-     *
-     * @return string|null
-     */
-    public function getConfirmationDescription()
-    {
-        if (!isset($this->container['ConfirmationDescription']) || is_null($this->container['ConfirmationDescription'])) {
-            return null;
-        }
-        return $this->container['ConfirmationDescription'];
-    }
-
-    /**
-     * Sets ConfirmationDescription
-     *
-     * @param string|null $ConfirmationDescription ConfirmationDescription
-     *
-     * @return self
-     */
-    public function setConfirmationDescription($ConfirmationDescription)
-    {
-        if (is_null($ConfirmationDescription)) {
-            array_push($this->openAPINullablesSetToNull, 'ConfirmationDescription');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConfirmationDescription', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ConfirmationDescription'] = $ConfirmationDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConfirmationAction
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConfirmationAction|mixed|null
-     */
-    public function getConfirmationAction()
-    {
-        if (!isset($this->container['ConfirmationAction']) || is_null($this->container['ConfirmationAction'])) {
-            return null;
-        }
-        if ((is_object($this->container['ConfirmationAction']) || is_string($this->container['ConfirmationAction'])) && method_exists($this->container['ConfirmationAction'], 'getValue')) {
-            return $this->container['ConfirmationAction']->getValue();
-        }
-        return $this->container['ConfirmationAction'];
-    }
-
-    /**
-     * Sets ConfirmationAction
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConfirmationAction|mixed|null $ConfirmationAction ConfirmationAction
-     *
-     * @return self
-     */
-    public function setConfirmationAction($ConfirmationAction)
-    {
-        if (is_null($ConfirmationAction)) {
-            throw new \InvalidArgumentException('non-nullable ConfirmationAction cannot be null');
-        }
-        if (!$ConfirmationAction instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConfirmationAction) {
-            $ConfirmationAction = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConfirmationAction($ConfirmationAction);
-        }
-        $this->container['ConfirmationAction'] = $ConfirmationAction;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConfirmationUrl
-     *
-     * @return string|null
-     */
-    public function getConfirmationUrl()
-    {
-        if (!isset($this->container['ConfirmationUrl']) || is_null($this->container['ConfirmationUrl'])) {
-            return null;
-        }
-        return $this->container['ConfirmationUrl'];
-    }
-
-    /**
-     * Sets ConfirmationUrl
-     *
-     * @param string|null $ConfirmationUrl ConfirmationUrl
-     *
-     * @return self
-     */
-    public function setConfirmationUrl($ConfirmationUrl)
-    {
-        if (is_null($ConfirmationUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'ConfirmationUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConfirmationUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ConfirmationUrl'] = $ConfirmationUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets LeadDelivery
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadDelivery|mixed|null
-     */
-    public function getLeadDelivery()
-    {
-        if (!isset($this->container['LeadDelivery']) || is_null($this->container['LeadDelivery'])) {
-            return null;
-        }
-        if ((is_object($this->container['LeadDelivery']) || is_string($this->container['LeadDelivery'])) && method_exists($this->container['LeadDelivery'], 'getValue')) {
-            return $this->container['LeadDelivery']->getValue();
-        }
-        return $this->container['LeadDelivery'];
-    }
-
-    /**
-     * Sets LeadDelivery
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadDelivery|mixed|null $LeadDelivery LeadDelivery
-     *
-     * @return self
-     */
-    public function setLeadDelivery($LeadDelivery)
-    {
-        if (is_null($LeadDelivery)) {
-            throw new \InvalidArgumentException('non-nullable LeadDelivery cannot be null');
-        }
-        if (!$LeadDelivery instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadDelivery) {
-            $LeadDelivery = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LeadDelivery($LeadDelivery);
-        }
-        $this->container['LeadDelivery'] = $LeadDelivery;
-
-        return $this;
-    }
-
-    /**
-     * Gets LeadEmails
-     *
-     * @return string|null
-     */
-    public function getLeadEmails()
-    {
-        if (!isset($this->container['LeadEmails']) || is_null($this->container['LeadEmails'])) {
-            return null;
-        }
-        return $this->container['LeadEmails'];
-    }
-
-    /**
-     * Sets LeadEmails
-     *
-     * @param string|null $LeadEmails LeadEmails
-     *
-     * @return self
-     */
-    public function setLeadEmails($LeadEmails)
-    {
-        if (is_null($LeadEmails)) {
-            array_push($this->openAPINullablesSetToNull, 'LeadEmails');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LeadEmails', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LeadEmails'] = $LeadEmails;
-
-        return $this;
-    }
-
-    /**
-     * Gets LeadWebhookUrl
-     *
-     * @return string|null
-     */
-    public function getLeadWebhookUrl()
-    {
-        if (!isset($this->container['LeadWebhookUrl']) || is_null($this->container['LeadWebhookUrl'])) {
-            return null;
-        }
-        return $this->container['LeadWebhookUrl'];
-    }
-
-    /**
-     * Sets LeadWebhookUrl
-     *
-     * @param string|null $LeadWebhookUrl LeadWebhookUrl
-     *
-     * @return self
-     */
-    public function setLeadWebhookUrl($LeadWebhookUrl)
-    {
-        if (is_null($LeadWebhookUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'LeadWebhookUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LeadWebhookUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LeadWebhookUrl'] = $LeadWebhookUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets LeadWebhookKey
-     *
-     * @return string|null
-     */
-    public function getLeadWebhookKey()
-    {
-        if (!isset($this->container['LeadWebhookKey']) || is_null($this->container['LeadWebhookKey'])) {
-            return null;
-        }
-        return $this->container['LeadWebhookKey'];
-    }
-
-    /**
-     * Sets LeadWebhookKey
-     *
-     * @param string|null $LeadWebhookKey LeadWebhookKey
-     *
-     * @return self
-     */
-    public function setLeadWebhookKey($LeadWebhookKey)
-    {
-        if (is_null($LeadWebhookKey)) {
-            array_push($this->openAPINullablesSetToNull, 'LeadWebhookKey');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LeadWebhookKey', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LeadWebhookKey'] = $LeadWebhookKey;
 
         return $this;
     }

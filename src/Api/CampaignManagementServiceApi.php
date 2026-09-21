@@ -346,6 +346,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'getClipchampTemplates' => [
             'application/json',
         ],
+        'getCompanyListDetails' => [
+            'application/json',
+        ],
         'getConfigValue' => [
             'application/json',
         ],
@@ -400,6 +403,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'getKeywordsByAdGroupId' => [
             'application/json',
         ],
+        'getKeywordsByAssetGroupId' => [
+            'application/json',
+        ],
         'getKeywordsByEditorialStatus' => [
             'application/json',
         ],
@@ -413,6 +419,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             'application/json',
         ],
         'getLabelsByIds' => [
+            'application/json',
+        ],
+        'getLinkedInSegments' => [
             'application/json',
         ],
         'getListItemsBySharedList' => [
@@ -24050,6 +24059,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
     }
 
     /**
+     * Operation getCompanyListDetails
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsRequest $GetCompanyListDetailsRequest GetCompanyListDetailsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompanyListDetails'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getCompanyListDetails($GetCompanyListDetailsRequest, string $contentType = self::contentTypes['getCompanyListDetails'][0])
+    {
+        list($response) = $this->getCompanyListDetailsWithHttpInfo($GetCompanyListDetailsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCompanyListDetailsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsRequest $GetCompanyListDetailsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompanyListDetails'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCompanyListDetailsWithHttpInfo($GetCompanyListDetailsRequest, string $contentType = self::contentTypes['getCompanyListDetails'][0])
+    {
+        $request = $this->getCompanyListDetailsRequest($GetCompanyListDetailsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCompanyListDetailsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsRequest $GetCompanyListDetailsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompanyListDetails'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCompanyListDetailsAsync($GetCompanyListDetailsRequest, string $contentType = self::contentTypes['getCompanyListDetails'][0])
+    {
+        return $this->getCompanyListDetailsAsyncWithHttpInfo($GetCompanyListDetailsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCompanyListDetailsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsRequest $GetCompanyListDetailsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompanyListDetails'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCompanyListDetailsAsyncWithHttpInfo($GetCompanyListDetailsRequest, string $contentType = self::contentTypes['getCompanyListDetails'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsResponse';
+        $request = $this->getCompanyListDetailsRequest($GetCompanyListDetailsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCompanyListDetails'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetCompanyListDetailsRequest $GetCompanyListDetailsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompanyListDetails'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCompanyListDetailsRequest($GetCompanyListDetailsRequest, string $contentType = self::contentTypes['getCompanyListDetails'][0])
+    {
+
+        // verify the required parameter 'GetCompanyListDetailsRequest' is set
+        if ($GetCompanyListDetailsRequest === null || (is_array($GetCompanyListDetailsRequest) && count($GetCompanyListDetailsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetCompanyListDetailsRequest when calling getCompanyListDetails'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/CompanyListDetails/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetCompanyListDetailsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetCompanyListDetails',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
      * Operation getConfigValue
      *
      * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetConfigValueRequest $GetConfigValueRequest GetConfigValueRequest (required)
@@ -27992,6 +28220,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
     }
 
     /**
+     * Operation getKeywordsByAssetGroupId
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdRequest $GetKeywordsByAssetGroupIdRequest GetKeywordsByAssetGroupIdRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getKeywordsByAssetGroupId'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getKeywordsByAssetGroupId($GetKeywordsByAssetGroupIdRequest, string $contentType = self::contentTypes['getKeywordsByAssetGroupId'][0])
+    {
+        list($response) = $this->getKeywordsByAssetGroupIdWithHttpInfo($GetKeywordsByAssetGroupIdRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getKeywordsByAssetGroupIdWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdRequest $GetKeywordsByAssetGroupIdRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getKeywordsByAssetGroupId'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getKeywordsByAssetGroupIdWithHttpInfo($GetKeywordsByAssetGroupIdRequest, string $contentType = self::contentTypes['getKeywordsByAssetGroupId'][0])
+    {
+        $request = $this->getKeywordsByAssetGroupIdRequest($GetKeywordsByAssetGroupIdRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getKeywordsByAssetGroupIdAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdRequest $GetKeywordsByAssetGroupIdRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getKeywordsByAssetGroupId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getKeywordsByAssetGroupIdAsync($GetKeywordsByAssetGroupIdRequest, string $contentType = self::contentTypes['getKeywordsByAssetGroupId'][0])
+    {
+        return $this->getKeywordsByAssetGroupIdAsyncWithHttpInfo($GetKeywordsByAssetGroupIdRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getKeywordsByAssetGroupIdAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdRequest $GetKeywordsByAssetGroupIdRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getKeywordsByAssetGroupId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getKeywordsByAssetGroupIdAsyncWithHttpInfo($GetKeywordsByAssetGroupIdRequest, string $contentType = self::contentTypes['getKeywordsByAssetGroupId'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdResponse';
+        $request = $this->getKeywordsByAssetGroupIdRequest($GetKeywordsByAssetGroupIdRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getKeywordsByAssetGroupId'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByAssetGroupIdRequest $GetKeywordsByAssetGroupIdRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getKeywordsByAssetGroupId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getKeywordsByAssetGroupIdRequest($GetKeywordsByAssetGroupIdRequest, string $contentType = self::contentTypes['getKeywordsByAssetGroupId'][0])
+    {
+
+        // verify the required parameter 'GetKeywordsByAssetGroupIdRequest' is set
+        if ($GetKeywordsByAssetGroupIdRequest === null || (is_array($GetKeywordsByAssetGroupIdRequest) && count($GetKeywordsByAssetGroupIdRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetKeywordsByAssetGroupIdRequest when calling getKeywordsByAssetGroupId'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/Keywords/QueryByAssetGroupId';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetKeywordsByAssetGroupIdRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetKeywordsByAssetGroupId',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
      * Operation getKeywordsByEditorialStatus
      *
      * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetKeywordsByEditorialStatusRequest $GetKeywordsByEditorialStatusRequest GetKeywordsByEditorialStatusRequest (required)
@@ -29080,6 +29527,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForgetLabelsByIds',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation getLinkedInSegments
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsRequest $GetLinkedInSegmentsRequest GetLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function getLinkedInSegments($GetLinkedInSegmentsRequest, string $contentType = self::contentTypes['getLinkedInSegments'][0])
+    {
+        list($response) = $this->getLinkedInSegmentsWithHttpInfo($GetLinkedInSegmentsRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getLinkedInSegmentsWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsRequest $GetLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getLinkedInSegmentsWithHttpInfo($GetLinkedInSegmentsRequest, string $contentType = self::contentTypes['getLinkedInSegments'][0])
+    {
+        $request = $this->getLinkedInSegmentsRequest($GetLinkedInSegmentsRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getLinkedInSegmentsAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsRequest $GetLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLinkedInSegmentsAsync($GetLinkedInSegmentsRequest, string $contentType = self::contentTypes['getLinkedInSegments'][0])
+    {
+        return $this->getLinkedInSegmentsAsyncWithHttpInfo($GetLinkedInSegmentsRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getLinkedInSegmentsAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsRequest $GetLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLinkedInSegmentsAsyncWithHttpInfo($GetLinkedInSegmentsRequest, string $contentType = self::contentTypes['getLinkedInSegments'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsResponse';
+        $request = $this->getLinkedInSegmentsRequest($GetLinkedInSegmentsRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getLinkedInSegments'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\GetLinkedInSegmentsRequest $GetLinkedInSegmentsRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLinkedInSegments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getLinkedInSegmentsRequest($GetLinkedInSegmentsRequest, string $contentType = self::contentTypes['getLinkedInSegments'][0])
+    {
+
+        // verify the required parameter 'GetLinkedInSegmentsRequest' is set
+        if ($GetLinkedInSegmentsRequest === null || (is_array($GetLinkedInSegmentsRequest) && count($GetLinkedInSegmentsRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $GetLinkedInSegmentsRequest when calling getLinkedInSegments'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/LinkedInSegments/Query';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'POST',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $GetLinkedInSegmentsRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForgetLinkedInSegments',
             null,
             [],
             $queryParams
