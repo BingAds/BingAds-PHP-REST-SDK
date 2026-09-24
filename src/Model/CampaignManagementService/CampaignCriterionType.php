@@ -67,6 +67,10 @@ class CampaignCriterionType
 
     public const JOB_SENIORITY = 'JobSeniority';
 
+    public const CUSTOM_LINKED_IN = 'CustomLinkedIn';
+
+    public const JOB_TITLE = 'JobTitle';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -157,7 +161,9 @@ class CampaignCriterionType
             self::COMBINED_LIST,
             self::CUSTOMER_LIST,
             self::IMPRESSION_BASED_REMARKETING_LIST,
-            self::JOB_SENIORITY
+            self::JOB_SENIORITY,
+            self::CUSTOM_LINKED_IN,
+            self::JOB_TITLE
         ];
     }
 }

@@ -71,6 +71,10 @@ class AssetPerformanceReportColumn
 
     public const SUB_CHANNEL = 'SubChannel';
 
+    public const ASSET_GROUP_ID = 'AssetGroupId';
+
+    public const AD_ID = 'AdId';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -163,7 +167,9 @@ class AssetPerformanceReportColumn
             self::REVENUE,
             self::MARKETING_OBJECTIVE,
             self::CHANNEL,
-            self::SUB_CHANNEL
+            self::SUB_CHANNEL,
+            self::ASSET_GROUP_ID,
+            self::AD_ID
         ];
     }
 }

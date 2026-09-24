@@ -33,6 +33,8 @@ class AssetGroupAdditionalField
 
     public const CROPPING_TYPE = 'CroppingType';
 
+    public const UNIFIED_CAMPAIGN_FIELDS = 'UnifiedCampaignFields';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -106,7 +108,8 @@ class AssetGroupAdditionalField
             self::TRACKING_URL_TEMPLATE,
             self::FINAL_URL_SUFFIX,
             self::URL_CUSTOM_PARAMETERS,
-            self::CROPPING_TYPE
+            self::CROPPING_TYPE,
+            self::UNIFIED_CAMPAIGN_FIELDS
         ];
     }
 }

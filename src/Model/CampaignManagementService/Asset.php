@@ -56,6 +56,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'TargetWidth' => 'int',
         'TargetHeight' => 'int',
         'CroppingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType',
+        'Excluded' => 'bool',
         'ThumbnailImage' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset'
     ];
 
@@ -79,6 +80,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'TargetWidth' => 'int32',
         'TargetHeight' => 'int32',
         'CroppingType' => null,
+        'Excluded' => null,
         'ThumbnailImage' => null
     ];
 
@@ -100,6 +102,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'TargetWidth' => true,
         'TargetHeight' => true,
         'CroppingType' => false,
+        'Excluded' => true,
         'ThumbnailImage' => true
     ];
 
@@ -201,6 +204,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'TargetWidth' => 'TargetWidth',
         'TargetHeight' => 'TargetHeight',
         'CroppingType' => 'CroppingType',
+        'Excluded' => 'Excluded',
         'ThumbnailImage' => 'ThumbnailImage'
     ];
 
@@ -222,6 +226,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'TargetWidth' => 'setTargetWidth',
         'TargetHeight' => 'setTargetHeight',
         'CroppingType' => 'setCroppingType',
+        'Excluded' => 'setExcluded',
         'ThumbnailImage' => 'setThumbnailImage'
     ];
 
@@ -243,6 +248,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'TargetWidth' => 'getTargetWidth',
         'TargetHeight' => 'getTargetHeight',
         'CroppingType' => 'getCroppingType',
+        'Excluded' => 'getExcluded',
         'ThumbnailImage' => 'getThumbnailImage'
     ];
 
@@ -315,6 +321,7 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('TargetWidth', $data ?? [], null);
         $this->setIfExists('TargetHeight', $data ?? [], null);
         $this->setIfExists('CroppingType', $data ?? [], null);
+        $this->setIfExists('Excluded', $data ?? [], null);
         $this->setIfExists('ThumbnailImage', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
@@ -802,6 +809,43 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
             $CroppingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType($CroppingType);
         }
         $this->container['CroppingType'] = $CroppingType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Excluded
+     *
+     * @return bool|null
+     */
+    public function getExcluded()
+    {
+        if (!isset($this->container['Excluded']) || is_null($this->container['Excluded'])) {
+            return null;
+        }
+        return $this->container['Excluded'];
+    }
+
+    /**
+     * Sets Excluded
+     *
+     * @param bool|null $Excluded Excluded
+     *
+     * @return self
+     */
+    public function setExcluded($Excluded)
+    {
+        if (is_null($Excluded)) {
+            array_push($this->openAPINullablesSetToNull, 'Excluded');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Excluded', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Excluded'] = $Excluded;
 
         return $this;
     }

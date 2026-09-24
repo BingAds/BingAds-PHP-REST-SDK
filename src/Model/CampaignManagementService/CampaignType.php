@@ -33,6 +33,8 @@ class CampaignType
 
     public const APP = 'App';
 
+    public const OBJECTIVE_BASED = 'ObjectiveBased';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -106,7 +108,8 @@ class CampaignType
             self::AUDIENCE,
             self::HOTEL,
             self::PERFORMANCE_MAX,
-            self::APP
+            self::APP,
+            self::OBJECTIVE_BASED
         ];
     }
 }

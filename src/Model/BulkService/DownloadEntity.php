@@ -423,6 +423,14 @@ class DownloadEntity
 
     public const ASSET_GROUP_NEGATIVE_KEYWORDS = 'AssetGroupNegativeKeywords';
 
+    public const COMPANY_LIST = 'CompanyList';
+
+    public const COMPANY_ITEM = 'CompanyItem';
+
+    public const AD_GROUP_URL_TARGETS = 'AdGroupUrlTargets';
+
+    public const AD_GROUP_AI_PROMPT_ASSOCIATIONS = 'AdGroupAIPromptAssociations';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -691,7 +699,11 @@ class DownloadEntity
             self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST,
             self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD_LIST_ASSOCIATION,
             self::ACCOUNT_CONTENT_NEGATIVE_KEYWORD,
-            self::ASSET_GROUP_NEGATIVE_KEYWORDS
+            self::ASSET_GROUP_NEGATIVE_KEYWORDS,
+            self::COMPANY_LIST,
+            self::COMPANY_ITEM,
+            self::AD_GROUP_URL_TARGETS,
+            self::AD_GROUP_AI_PROMPT_ASSOCIATIONS
         ];
     }
 }

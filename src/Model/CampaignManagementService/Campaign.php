@@ -42,6 +42,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'Settings' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]',
         'CampaignType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
         'SubType' => 'string',
+        'MarketingObjective' => 'string',
         'AudienceAdsBidAdjustment' => 'int',
         'TrackingUrlTemplate' => 'string',
         'FinalUrlSuffix' => 'string',
@@ -61,6 +62,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => '\DateTime',
         'UseCampaignLevelDates' => 'bool',
         'IsPolitical' => 'bool',
+        'BusinessName' => 'string',
+        'BrandLogo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'BrandColor' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'PrivacyStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
 
@@ -81,6 +86,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'Settings' => null,
         'CampaignType' => null,
         'SubType' => null,
+        'MarketingObjective' => null,
         'AudienceAdsBidAdjustment' => 'int32',
         'TrackingUrlTemplate' => null,
         'FinalUrlSuffix' => null,
@@ -100,6 +106,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'date-time',
         'UseCampaignLevelDates' => null,
         'IsPolitical' => null,
+        'BusinessName' => null,
+        'BrandLogo' => null,
+        'BrandColor' => null,
+        'PrivacyStatus' => null,
         'ForwardCompatibilityMap' => null
     ];
 
@@ -118,6 +128,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'Settings' => true,
         'CampaignType' => false,
         'SubType' => true,
+        'MarketingObjective' => true,
         'AudienceAdsBidAdjustment' => true,
         'TrackingUrlTemplate' => true,
         'FinalUrlSuffix' => true,
@@ -137,6 +148,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => true,
         'UseCampaignLevelDates' => true,
         'IsPolitical' => false,
+        'BusinessName' => true,
+        'BrandLogo' => true,
+        'BrandColor' => true,
+        'PrivacyStatus' => false,
         'ForwardCompatibilityMap' => true
     ];
 
@@ -235,6 +250,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'Settings' => 'Settings',
         'CampaignType' => 'CampaignType',
         'SubType' => 'SubType',
+        'MarketingObjective' => 'MarketingObjective',
         'AudienceAdsBidAdjustment' => 'AudienceAdsBidAdjustment',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
         'FinalUrlSuffix' => 'FinalUrlSuffix',
@@ -254,6 +270,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'EndDate',
         'UseCampaignLevelDates' => 'UseCampaignLevelDates',
         'IsPolitical' => 'IsPolitical',
+        'BusinessName' => 'BusinessName',
+        'BrandLogo' => 'BrandLogo',
+        'BrandColor' => 'BrandColor',
+        'PrivacyStatus' => 'PrivacyStatus',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
 
@@ -272,6 +292,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'Settings' => 'setSettings',
         'CampaignType' => 'setCampaignType',
         'SubType' => 'setSubType',
+        'MarketingObjective' => 'setMarketingObjective',
         'AudienceAdsBidAdjustment' => 'setAudienceAdsBidAdjustment',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
         'FinalUrlSuffix' => 'setFinalUrlSuffix',
@@ -291,6 +312,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'setEndDate',
         'UseCampaignLevelDates' => 'setUseCampaignLevelDates',
         'IsPolitical' => 'setIsPolitical',
+        'BusinessName' => 'setBusinessName',
+        'BrandLogo' => 'setBrandLogo',
+        'BrandColor' => 'setBrandColor',
+        'PrivacyStatus' => 'setPrivacyStatus',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
 
@@ -309,6 +334,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'Settings' => 'getSettings',
         'CampaignType' => 'getCampaignType',
         'SubType' => 'getSubType',
+        'MarketingObjective' => 'getMarketingObjective',
         'AudienceAdsBidAdjustment' => 'getAudienceAdsBidAdjustment',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
         'FinalUrlSuffix' => 'getFinalUrlSuffix',
@@ -328,6 +354,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'EndDate' => 'getEndDate',
         'UseCampaignLevelDates' => 'getUseCampaignLevelDates',
         'IsPolitical' => 'getIsPolitical',
+        'BusinessName' => 'getBusinessName',
+        'BrandLogo' => 'getBrandLogo',
+        'BrandColor' => 'getBrandColor',
+        'PrivacyStatus' => 'getPrivacyStatus',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
 
@@ -397,6 +427,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Settings', $data ?? [], null);
         $this->setIfExists('CampaignType', $data ?? [], null);
         $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('MarketingObjective', $data ?? [], null);
         $this->setIfExists('AudienceAdsBidAdjustment', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
         $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
@@ -416,6 +447,10 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('UseCampaignLevelDates', $data ?? [], null);
         $this->setIfExists('IsPolitical', $data ?? [], null);
+        $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('BrandLogo', $data ?? [], null);
+        $this->setIfExists('BrandColor', $data ?? [], null);
+        $this->setIfExists('PrivacyStatus', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
@@ -787,6 +822,43 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['SubType'] = $SubType;
+
+        return $this;
+    }
+
+    /**
+     * Gets MarketingObjective
+     *
+     * @return string|null
+     */
+    public function getMarketingObjective()
+    {
+        if (!isset($this->container['MarketingObjective']) || is_null($this->container['MarketingObjective'])) {
+            return null;
+        }
+        return $this->container['MarketingObjective'];
+    }
+
+    /**
+     * Sets MarketingObjective
+     *
+     * @param string|null $MarketingObjective MarketingObjective
+     *
+     * @return self
+     */
+    public function setMarketingObjective($MarketingObjective)
+    {
+        if (is_null($MarketingObjective)) {
+            array_push($this->openAPINullablesSetToNull, 'MarketingObjective');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MarketingObjective', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MarketingObjective'] = $MarketingObjective;
 
         return $this;
     }
@@ -1482,6 +1554,153 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable IsPolitical cannot be null');
         }
         $this->container['IsPolitical'] = $IsPolitical;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessName
+     *
+     * @return string|null
+     */
+    public function getBusinessName()
+    {
+        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+            return null;
+        }
+        return $this->container['BusinessName'];
+    }
+
+    /**
+     * Sets BusinessName
+     *
+     * @param string|null $BusinessName BusinessName
+     *
+     * @return self
+     */
+    public function setBusinessName($BusinessName)
+    {
+        if (is_null($BusinessName)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessName'] = $BusinessName;
+
+        return $this;
+    }
+
+    /**
+     * Gets BrandLogo
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getBrandLogo()
+    {
+        if (!isset($this->container['BrandLogo']) || is_null($this->container['BrandLogo'])) {
+            return null;
+        }
+        return $this->container['BrandLogo'];
+    }
+
+    /**
+     * Sets BrandLogo
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $BrandLogo BrandLogo
+     *
+     * @return self
+     */
+    public function setBrandLogo($BrandLogo)
+    {
+        if (is_null($BrandLogo)) {
+            array_push($this->openAPINullablesSetToNull, 'BrandLogo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BrandLogo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BrandLogo'] = $BrandLogo;
+
+        return $this;
+    }
+
+    /**
+     * Gets BrandColor
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getBrandColor()
+    {
+        if (!isset($this->container['BrandColor']) || is_null($this->container['BrandColor'])) {
+            return null;
+        }
+        return $this->container['BrandColor'];
+    }
+
+    /**
+     * Sets BrandColor
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $BrandColor BrandColor
+     *
+     * @return self
+     */
+    public function setBrandColor($BrandColor)
+    {
+        if (is_null($BrandColor)) {
+            array_push($this->openAPINullablesSetToNull, 'BrandColor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BrandColor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BrandColor'] = $BrandColor;
+
+        return $this;
+    }
+
+    /**
+     * Gets PrivacyStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus|mixed|null
+     */
+    public function getPrivacyStatus()
+    {
+        if (!isset($this->container['PrivacyStatus']) || is_null($this->container['PrivacyStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['PrivacyStatus']) || is_string($this->container['PrivacyStatus'])) && method_exists($this->container['PrivacyStatus'], 'getValue')) {
+            return $this->container['PrivacyStatus']->getValue();
+        }
+        return $this->container['PrivacyStatus'];
+    }
+
+    /**
+     * Sets PrivacyStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus|mixed|null $PrivacyStatus PrivacyStatus
+     *
+     * @return self
+     */
+    public function setPrivacyStatus($PrivacyStatus)
+    {
+        if (is_null($PrivacyStatus)) {
+            throw new \InvalidArgumentException('non-nullable PrivacyStatus cannot be null');
+        }
+        if (!$PrivacyStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus) {
+            $PrivacyStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus($PrivacyStatus);
+        }
+        $this->container['PrivacyStatus'] = $PrivacyStatus;
 
         return $this;
     }

@@ -29,11 +29,7 @@ class AdExtensionsTypeFilter
 
     public const APP_AD_EXTENSION = 'AppAdExtension';
 
-    public const NEWS_AD_EXTENSION = 'NewsAdExtension';
-
     public const REVIEW_AD_EXTENSION = 'ReviewAdExtension';
-
-    public const DATA_TABLE_AD_EXTENSION = 'DataTableAdExtension';
 
     public const CALLOUT_AD_EXTENSION = 'CalloutAdExtension';
 
@@ -56,8 +52,6 @@ class AdExtensionsTypeFilter
     public const DISCLAIMER_AD_EXTENSION = 'DisclaimerAdExtension';
 
     public const LOGO_AD_EXTENSION = 'LogoAdExtension';
-
-    public const LEAD_FORM_AD_EXTENSION = 'LeadFormAdExtension';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -131,9 +125,7 @@ class AdExtensionsTypeFilter
             self::CALL_AD_EXTENSION,
             self::IMAGE_AD_EXTENSION,
             self::APP_AD_EXTENSION,
-            self::NEWS_AD_EXTENSION,
             self::REVIEW_AD_EXTENSION,
-            self::DATA_TABLE_AD_EXTENSION,
             self::CALLOUT_AD_EXTENSION,
             self::SITELINK_AD_EXTENSION,
             self::STRUCTURED_SNIPPET_AD_EXTENSION,
@@ -144,8 +136,7 @@ class AdExtensionsTypeFilter
             self::FLYER_AD_EXTENSION,
             self::VIDEO_AD_EXTENSION,
             self::DISCLAIMER_AD_EXTENSION,
-            self::LOGO_AD_EXTENSION,
-            self::LEAD_FORM_AD_EXTENSION
+            self::LOGO_AD_EXTENSION
         ];
     }
 }

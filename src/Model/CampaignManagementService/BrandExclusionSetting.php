@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateKeywordsRequest
+ * BrandExclusionSetting
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class BrandExclusionSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'UpdateKeywordsRequest';
+    protected static string $openAPIModelName = 'BrandExclusionSetting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,10 +33,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdGroupId' => 'string',
-        'AssetGroupId' => 'string',
-        'Keywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]',
-        'ReturnInheritedBidStrategyTypes' => 'bool'
+        'Type' => 'string',
+        'ProductAdsOptOut' => 'bool'
     ];
 
     /**
@@ -47,10 +45,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdGroupId' => 'int64',
-        'AssetGroupId' => 'int64',
-        'Keywords' => null,
-        'ReturnInheritedBidStrategyTypes' => null
+        'Type' => null,
+        'ProductAdsOptOut' => null
     ];
 
     /**
@@ -59,10 +55,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdGroupId' => true,
-        'AssetGroupId' => true,
-        'Keywords' => true,
-        'ReturnInheritedBidStrategyTypes' => true
+        'Type' => true,
+        'ProductAdsOptOut' => true
     ];
 
     /**
@@ -151,10 +145,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdGroupId' => 'AdGroupId',
-        'AssetGroupId' => 'AssetGroupId',
-        'Keywords' => 'Keywords',
-        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes'
+        'Type' => 'Type',
+        'ProductAdsOptOut' => 'ProductAdsOptOut'
     ];
 
     /**
@@ -163,10 +155,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
-        'AdGroupId' => 'setAdGroupId',
-        'AssetGroupId' => 'setAssetGroupId',
-        'Keywords' => 'setKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes'
+        'Type' => 'setType',
+        'ProductAdsOptOut' => 'setProductAdsOptOut'
     ];
 
     /**
@@ -175,10 +165,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
-        'AdGroupId' => 'getAdGroupId',
-        'AssetGroupId' => 'getAssetGroupId',
-        'Keywords' => 'getKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes'
+        'Type' => 'getType',
+        'ProductAdsOptOut' => 'getProductAdsOptOut'
     ];
 
     /**
@@ -238,10 +226,8 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('AssetGroupId', $data ?? [], null);
-        $this->setIfExists('Keywords', $data ?? [], null);
-        $this->setIfExists('ReturnInheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('ProductAdsOptOut', $data ?? [], null);
     }
 
     /**
@@ -287,149 +273,75 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets AdGroupId
+     * Gets Type
      *
      * @return string|null
      */
-    public function getAdGroupId()
+    public function getType()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets Type
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setType($Type)
     {
-        if (is_null($AdGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupId');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupId', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        $this->container['Type'] = $Type;
 
         return $this;
     }
 
     /**
-     * Gets AssetGroupId
-     *
-     * @return string|null
-     */
-    public function getAssetGroupId()
-    {
-        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
-            return null;
-        }
-        return $this->container['AssetGroupId'];
-    }
-
-    /**
-     * Sets AssetGroupId
-     *
-     * @param string|null $AssetGroupId AssetGroupId
-     *
-     * @return self
-     */
-    public function setAssetGroupId($AssetGroupId)
-    {
-        if (is_null($AssetGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AssetGroupId'] = $AssetGroupId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Keywords
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null
-     */
-    public function getKeywords()
-    {
-        if (!isset($this->container['Keywords']) || is_null($this->container['Keywords'])) {
-            return null;
-        }
-        return $this->container['Keywords'];
-    }
-
-    /**
-     * Sets Keywords
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null $Keywords Keywords
-     *
-     * @return self
-     */
-    public function setKeywords($Keywords)
-    {
-        if (is_null($Keywords)) {
-            array_push($this->openAPINullablesSetToNull, 'Keywords');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Keywords', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Keywords'] = $Keywords;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnInheritedBidStrategyTypes
+     * Gets ProductAdsOptOut
      *
      * @return bool|null
      */
-    public function getReturnInheritedBidStrategyTypes()
+    public function getProductAdsOptOut()
     {
-        if (!isset($this->container['ReturnInheritedBidStrategyTypes']) || is_null($this->container['ReturnInheritedBidStrategyTypes'])) {
+        if (!isset($this->container['ProductAdsOptOut']) || is_null($this->container['ProductAdsOptOut'])) {
             return null;
         }
-        return $this->container['ReturnInheritedBidStrategyTypes'];
+        return $this->container['ProductAdsOptOut'];
     }
 
     /**
-     * Sets ReturnInheritedBidStrategyTypes
+     * Sets ProductAdsOptOut
      *
-     * @param bool|null $ReturnInheritedBidStrategyTypes ReturnInheritedBidStrategyTypes
+     * @param bool|null $ProductAdsOptOut ProductAdsOptOut
      *
      * @return self
      */
-    public function setReturnInheritedBidStrategyTypes($ReturnInheritedBidStrategyTypes)
+    public function setProductAdsOptOut($ProductAdsOptOut)
     {
-        if (is_null($ReturnInheritedBidStrategyTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'ReturnInheritedBidStrategyTypes');
+        if (is_null($ProductAdsOptOut)) {
+            array_push($this->openAPINullablesSetToNull, 'ProductAdsOptOut');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReturnInheritedBidStrategyTypes', $nullablesSetToNull);
+            $index = array_search('ProductAdsOptOut', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ReturnInheritedBidStrategyTypes'] = $ReturnInheritedBidStrategyTypes;
+        $this->container['ProductAdsOptOut'] = $ProductAdsOptOut;
 
         return $this;
     }

@@ -61,6 +61,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
         'TargetCpa' => 'float',
         'ManualCpc' => 'float',
+        'MaxCpm' => 'float',
         'InheritedBidStrategyType' => 'string',
         'TargetRoas' => 'float',
         'TargetImpressionShare' => 'float',
@@ -83,6 +84,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpc' => null,
         'TargetCpa' => 'double',
         'ManualCpc' => 'double',
+        'MaxCpm' => 'double',
         'InheritedBidStrategyType' => null,
         'TargetRoas' => 'double',
         'TargetImpressionShare' => 'double',
@@ -103,6 +105,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpc' => true,
         'TargetCpa' => true,
         'ManualCpc' => true,
+        'MaxCpm' => true,
         'InheritedBidStrategyType' => true,
         'TargetRoas' => true,
         'TargetImpressionShare' => true,
@@ -203,6 +206,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpc' => 'MaxCpc',
         'TargetCpa' => 'TargetCpa',
         'ManualCpc' => 'ManualCpc',
+        'MaxCpm' => 'MaxCpm',
         'InheritedBidStrategyType' => 'InheritedBidStrategyType',
         'TargetRoas' => 'TargetRoas',
         'TargetImpressionShare' => 'TargetImpressionShare',
@@ -223,6 +227,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpc' => 'setMaxCpc',
         'TargetCpa' => 'setTargetCpa',
         'ManualCpc' => 'setManualCpc',
+        'MaxCpm' => 'setMaxCpm',
         'InheritedBidStrategyType' => 'setInheritedBidStrategyType',
         'TargetRoas' => 'setTargetRoas',
         'TargetImpressionShare' => 'setTargetImpressionShare',
@@ -243,6 +248,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpc' => 'getMaxCpc',
         'TargetCpa' => 'getTargetCpa',
         'ManualCpc' => 'getManualCpc',
+        'MaxCpm' => 'getMaxCpm',
         'InheritedBidStrategyType' => 'getInheritedBidStrategyType',
         'TargetRoas' => 'getTargetRoas',
         'TargetImpressionShare' => 'getTargetImpressionShare',
@@ -314,6 +320,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('MaxCpc', $data ?? [], null);
         $this->setIfExists('TargetCpa', $data ?? [], null);
         $this->setIfExists('ManualCpc', $data ?? [], null);
+        $this->setIfExists('MaxCpm', $data ?? [], null);
         $this->setIfExists('InheritedBidStrategyType', $data ?? [], null);
         $this->setIfExists('TargetRoas', $data ?? [], null);
         $this->setIfExists('TargetImpressionShare', $data ?? [], null);
@@ -513,6 +520,43 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ManualCpc'] = $ManualCpc;
+
+        return $this;
+    }
+
+    /**
+     * Gets MaxCpm
+     *
+     * @return float|null
+     */
+    public function getMaxCpm()
+    {
+        if (!isset($this->container['MaxCpm']) || is_null($this->container['MaxCpm'])) {
+            return null;
+        }
+        return $this->container['MaxCpm'];
+    }
+
+    /**
+     * Sets MaxCpm
+     *
+     * @param float|null $MaxCpm MaxCpm
+     *
+     * @return self
+     */
+    public function setMaxCpm($MaxCpm)
+    {
+        if (is_null($MaxCpm)) {
+            array_push($this->openAPINullablesSetToNull, 'MaxCpm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MaxCpm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MaxCpm'] = $MaxCpm;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * DataTableAdExtension
+ * LinkedInCompanyData
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
+class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'DataTableAdExtension';
+    protected static string $openAPIModelName = 'LinkedInCompanyData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,15 +33,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
-        'DevicePreference' => 'string',
-        'Id' => 'string',
-        'Type' => 'string',
-        'Version' => 'int',
-        'Name' => 'string',
-        'NameUrl' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'CompanyId' => 'string',
+        'CompanyName' => 'string',
+        'CompanyLogo' => 'string',
+        'Industry' => 'string',
+        'CompanySize' => 'string',
+        'CompanySizeCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory',
+        'CompanyUrl' => 'string'
     ];
 
     /**
@@ -52,15 +50,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
-        'DevicePreference' => 'int64',
-        'Id' => 'int64',
-        'Type' => null,
-        'Version' => 'int32',
-        'Name' => null,
-        'NameUrl' => null,
-        'ForwardCompatibilityMap' => null
+        'CompanyId' => 'int64',
+        'CompanyName' => null,
+        'CompanyLogo' => null,
+        'Industry' => null,
+        'CompanySize' => null,
+        'CompanySizeCategory' => null,
+        'CompanyUrl' => null
     ];
 
     /**
@@ -69,15 +65,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
-        'DevicePreference' => true,
-        'Id' => true,
-        'Type' => true,
-        'Version' => true,
-        'Name' => true,
-        'NameUrl' => true,
-        'ForwardCompatibilityMap' => true
+        'CompanyId' => false,
+        'CompanyName' => true,
+        'CompanyLogo' => true,
+        'Industry' => true,
+        'CompanySize' => true,
+        'CompanySizeCategory' => false,
+        'CompanyUrl' => true
     ];
 
     /**
@@ -166,15 +160,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
-        'DevicePreference' => 'DevicePreference',
-        'Id' => 'Id',
-        'Type' => 'Type',
-        'Version' => 'Version',
-        'Name' => 'Name',
-        'NameUrl' => 'NameUrl',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'CompanyId' => 'CompanyId',
+        'CompanyName' => 'CompanyName',
+        'CompanyLogo' => 'CompanyLogo',
+        'Industry' => 'Industry',
+        'CompanySize' => 'CompanySize',
+        'CompanySizeCategory' => 'CompanySizeCategory',
+        'CompanyUrl' => 'CompanyUrl'
     ];
 
     /**
@@ -183,15 +175,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
-        'DevicePreference' => 'setDevicePreference',
-        'Id' => 'setId',
-        'Type' => 'setType',
-        'Version' => 'setVersion',
-        'Name' => 'setName',
-        'NameUrl' => 'setNameUrl',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'CompanyId' => 'setCompanyId',
+        'CompanyName' => 'setCompanyName',
+        'CompanyLogo' => 'setCompanyLogo',
+        'Industry' => 'setIndustry',
+        'CompanySize' => 'setCompanySize',
+        'CompanySizeCategory' => 'setCompanySizeCategory',
+        'CompanyUrl' => 'setCompanyUrl'
     ];
 
     /**
@@ -200,15 +190,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
-        'DevicePreference' => 'getDevicePreference',
-        'Id' => 'getId',
-        'Type' => 'getType',
-        'Version' => 'getVersion',
-        'Name' => 'getName',
-        'NameUrl' => 'getNameUrl',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'CompanyId' => 'getCompanyId',
+        'CompanyName' => 'getCompanyName',
+        'CompanyLogo' => 'getCompanyLogo',
+        'Industry' => 'getIndustry',
+        'CompanySize' => 'getCompanySize',
+        'CompanySizeCategory' => 'getCompanySizeCategory',
+        'CompanyUrl' => 'getCompanyUrl'
     ];
 
     /**
@@ -268,15 +256,13 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
-        $this->setIfExists('DevicePreference', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('NameUrl', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('CompanyId', $data ?? [], null);
+        $this->setIfExists('CompanyName', $data ?? [], null);
+        $this->setIfExists('CompanyLogo', $data ?? [], null);
+        $this->setIfExists('Industry', $data ?? [], null);
+        $this->setIfExists('CompanySize', $data ?? [], null);
+        $this->setIfExists('CompanySizeCategory', $data ?? [], null);
+        $this->setIfExists('CompanyUrl', $data ?? [], null);
     }
 
     /**
@@ -322,333 +308,252 @@ class DataTableAdExtension extends AdExtension implements ModelInterface, ArrayA
 
 
     /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
-
-    /**
-     * Gets DevicePreference
+     * Gets CompanyId
      *
      * @return string|null
      */
-    public function getDevicePreference()
+    public function getCompanyId()
     {
-        if (!isset($this->container['DevicePreference']) || is_null($this->container['DevicePreference'])) {
+        if (!isset($this->container['CompanyId']) || is_null($this->container['CompanyId'])) {
             return null;
         }
-        return $this->container['DevicePreference'];
+        return $this->container['CompanyId'];
     }
 
     /**
-     * Sets DevicePreference
+     * Sets CompanyId
      *
-     * @param string|null $DevicePreference DevicePreference
+     * @param string|null $CompanyId CompanyId
      *
      * @return self
      */
-    public function setDevicePreference($DevicePreference)
+    public function setCompanyId($CompanyId)
     {
-        if (is_null($DevicePreference)) {
-            array_push($this->openAPINullablesSetToNull, 'DevicePreference');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DevicePreference', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($CompanyId)) {
+            throw new \InvalidArgumentException('non-nullable CompanyId cannot be null');
         }
-        $this->container['DevicePreference'] = $DevicePreference;
+        $this->container['CompanyId'] = $CompanyId;
 
         return $this;
     }
 
     /**
-     * Gets Id
+     * Gets CompanyName
      *
      * @return string|null
      */
-    public function getId()
+    public function getCompanyName()
     {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+        if (!isset($this->container['CompanyName']) || is_null($this->container['CompanyName'])) {
             return null;
         }
-        return $this->container['Id'];
+        return $this->container['CompanyName'];
     }
 
     /**
-     * Sets Id
+     * Sets CompanyName
      *
-     * @param string|null $Id Id
+     * @param string|null $CompanyName CompanyName
      *
      * @return self
      */
-    public function setId($Id)
+    public function setCompanyName($CompanyName)
     {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
+        if (is_null($CompanyName)) {
+            array_push($this->openAPINullablesSetToNull, 'CompanyName');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
+            $index = array_search('CompanyName', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Id'] = $Id;
+        $this->container['CompanyName'] = $CompanyName;
 
         return $this;
     }
 
     /**
-     * Gets Type
+     * Gets CompanyLogo
      *
      * @return string|null
      */
-    public function getType()
+    public function getCompanyLogo()
     {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+        if (!isset($this->container['CompanyLogo']) || is_null($this->container['CompanyLogo'])) {
             return null;
         }
-        return $this->container['Type'];
+        return $this->container['CompanyLogo'];
     }
 
     /**
-     * Sets Type
+     * Sets CompanyLogo
      *
-     * @param string|null $Type Type
+     * @param string|null $CompanyLogo CompanyLogo
      *
      * @return self
      */
-    public function setType($Type)
+    public function setCompanyLogo($CompanyLogo)
     {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
+        if (is_null($CompanyLogo)) {
+            array_push($this->openAPINullablesSetToNull, 'CompanyLogo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
+            $index = array_search('CompanyLogo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Type'] = $Type;
+        $this->container['CompanyLogo'] = $CompanyLogo;
 
         return $this;
     }
 
     /**
-     * Gets Version
-     *
-     * @return int|null
-     */
-    public function getVersion()
-    {
-        if (!isset($this->container['Version']) || is_null($this->container['Version'])) {
-            return null;
-        }
-        return $this->container['Version'];
-    }
-
-    /**
-     * Sets Version
-     *
-     * @param int|null $Version Version
-     *
-     * @return self
-     */
-    public function setVersion($Version)
-    {
-        if (is_null($Version)) {
-            array_push($this->openAPINullablesSetToNull, 'Version');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Version', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Version'] = $Version;
-
-        return $this;
-    }
-
-    /**
-     * Gets Name
+     * Gets Industry
      *
      * @return string|null
      */
-    public function getName()
+    public function getIndustry()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['Industry']) || is_null($this->container['Industry'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['Industry'];
     }
 
     /**
-     * Sets Name
+     * Sets Industry
      *
-     * @param string|null $Name Name
+     * @param string|null $Industry Industry
      *
      * @return self
      */
-    public function setName($Name)
+    public function setIndustry($Industry)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($Industry)) {
+            array_push($this->openAPINullablesSetToNull, 'Industry');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('Industry', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
+        $this->container['Industry'] = $Industry;
 
         return $this;
     }
 
     /**
-     * Gets NameUrl
+     * Gets CompanySize
      *
      * @return string|null
      */
-    public function getNameUrl()
+    public function getCompanySize()
     {
-        if (!isset($this->container['NameUrl']) || is_null($this->container['NameUrl'])) {
+        if (!isset($this->container['CompanySize']) || is_null($this->container['CompanySize'])) {
             return null;
         }
-        return $this->container['NameUrl'];
+        return $this->container['CompanySize'];
     }
 
     /**
-     * Sets NameUrl
+     * Sets CompanySize
      *
-     * @param string|null $NameUrl NameUrl
+     * @param string|null $CompanySize CompanySize
      *
      * @return self
      */
-    public function setNameUrl($NameUrl)
+    public function setCompanySize($CompanySize)
     {
-        if (is_null($NameUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'NameUrl');
+        if (is_null($CompanySize)) {
+            array_push($this->openAPINullablesSetToNull, 'CompanySize');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NameUrl', $nullablesSetToNull);
+            $index = array_search('CompanySize', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['NameUrl'] = $NameUrl;
+        $this->container['CompanySize'] = $CompanySize;
 
         return $this;
     }
 
     /**
-     * Gets ForwardCompatibilityMap
+     * Gets CompanySizeCategory
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory|mixed|null
      */
-    public function getForwardCompatibilityMap()
+    public function getCompanySizeCategory()
     {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+        if (!isset($this->container['CompanySizeCategory']) || is_null($this->container['CompanySizeCategory'])) {
             return null;
         }
-        return $this->container['ForwardCompatibilityMap'];
+        if ((is_object($this->container['CompanySizeCategory']) || is_string($this->container['CompanySizeCategory'])) && method_exists($this->container['CompanySizeCategory'], 'getValue')) {
+            return $this->container['CompanySizeCategory']->getValue();
+        }
+        return $this->container['CompanySizeCategory'];
     }
 
     /**
-     * Sets ForwardCompatibilityMap
+     * Sets CompanySizeCategory
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory|mixed|null $CompanySizeCategory CompanySizeCategory
      *
      * @return self
      */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    public function setCompanySizeCategory($CompanySizeCategory)
     {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        if (is_null($CompanySizeCategory)) {
+            throw new \InvalidArgumentException('non-nullable CompanySizeCategory cannot be null');
+        }
+        if (!$CompanySizeCategory instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory) {
+            $CompanySizeCategory = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory($CompanySizeCategory);
+        }
+        $this->container['CompanySizeCategory'] = $CompanySizeCategory;
+
+        return $this;
+    }
+
+    /**
+     * Gets CompanyUrl
+     *
+     * @return string|null
+     */
+    public function getCompanyUrl()
+    {
+        if (!isset($this->container['CompanyUrl']) || is_null($this->container['CompanyUrl'])) {
+            return null;
+        }
+        return $this->container['CompanyUrl'];
+    }
+
+    /**
+     * Sets CompanyUrl
+     *
+     * @param string|null $CompanyUrl CompanyUrl
+     *
+     * @return self
+     */
+    public function setCompanyUrl($CompanyUrl)
+    {
+        if (is_null($CompanyUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'CompanyUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            $index = array_search('CompanyUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['CompanyUrl'] = $CompanyUrl;
 
         return $this;
     }

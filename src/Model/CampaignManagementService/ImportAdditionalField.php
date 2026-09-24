@@ -95,6 +95,14 @@ class ImportAdditionalField
 
     public const NEW_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS = 'NewSearchThemesForExistingAssetGroups';
 
+    public const UPDATE_ASSET_GROUPS = 'UpdateAssetGroups';
+
+    public const UPDATE_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS = 'UpdateSearchThemesForExistingAssetGroups';
+
+    public const IMPORT_NCA_SETTINGS = 'ImportNCASettings';
+
+    public const UPDATE_NCA_SETTINGS = 'UpdateNCASettings';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -199,7 +207,11 @@ class ImportAdditionalField
             self::NEW_BRAND_LIST_ASSOCIATIONS,
             self::UPDATE_BRAND_LIST_ASSOCIATIONS,
             self::CAMPAIGN_TYPES,
-            self::NEW_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS
+            self::NEW_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS,
+            self::UPDATE_ASSET_GROUPS,
+            self::UPDATE_SEARCH_THEMES_FOR_EXISTING_ASSET_GROUPS,
+            self::IMPORT_NCA_SETTINGS,
+            self::UPDATE_NCA_SETTINGS
         ];
     }
 }

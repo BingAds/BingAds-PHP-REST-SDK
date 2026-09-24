@@ -1,6 +1,6 @@
 <?php
 /**
- * LeadFormQuestionDefinition
+ * GetKeywordsByAssetGroupIdResponse
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetKeywordsByAssetGroupIdResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'LeadFormQuestionDefinition';
+    protected static string $openAPIModelName = 'GetKeywordsByAssetGroupIdResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,8 +33,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'UniqueQuestionId' => 'int',
-        'Answers' => 'string[]'
+        'Keywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]'
     ];
 
     /**
@@ -45,8 +44,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'UniqueQuestionId' => 'int32',
-        'Answers' => null
+        'Keywords' => null
     ];
 
     /**
@@ -55,8 +53,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'UniqueQuestionId' => false,
-        'Answers' => true
+        'Keywords' => true
     ];
 
     /**
@@ -145,8 +142,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'UniqueQuestionId' => 'UniqueQuestionId',
-        'Answers' => 'Answers'
+        'Keywords' => 'Keywords'
     ];
 
     /**
@@ -155,8 +151,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'UniqueQuestionId' => 'setUniqueQuestionId',
-        'Answers' => 'setAnswers'
+        'Keywords' => 'setKeywords'
     ];
 
     /**
@@ -165,8 +160,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'UniqueQuestionId' => 'getUniqueQuestionId',
-        'Answers' => 'getAnswers'
+        'Keywords' => 'getKeywords'
     ];
 
     /**
@@ -226,8 +220,7 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('UniqueQuestionId', $data ?? [], null);
-        $this->setIfExists('Answers', $data ?? [], null);
+        $this->setIfExists('Keywords', $data ?? [], null);
     }
 
     /**
@@ -273,68 +266,38 @@ class LeadFormQuestionDefinition implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets UniqueQuestionId
+     * Gets Keywords
      *
-     * @return int|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null
      */
-    public function getUniqueQuestionId()
+    public function getKeywords()
     {
-        if (!isset($this->container['UniqueQuestionId']) || is_null($this->container['UniqueQuestionId'])) {
+        if (!isset($this->container['Keywords']) || is_null($this->container['Keywords'])) {
             return null;
         }
-        return $this->container['UniqueQuestionId'];
+        return $this->container['Keywords'];
     }
 
     /**
-     * Sets UniqueQuestionId
+     * Sets Keywords
      *
-     * @param int|null $UniqueQuestionId UniqueQuestionId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null $Keywords Keywords
      *
      * @return self
      */
-    public function setUniqueQuestionId($UniqueQuestionId)
+    public function setKeywords($Keywords)
     {
-        if (is_null($UniqueQuestionId)) {
-            throw new \InvalidArgumentException('non-nullable UniqueQuestionId cannot be null');
-        }
-        $this->container['UniqueQuestionId'] = $UniqueQuestionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Answers
-     *
-     * @return string[]|null
-     */
-    public function getAnswers()
-    {
-        if (!isset($this->container['Answers']) || is_null($this->container['Answers'])) {
-            return null;
-        }
-        return $this->container['Answers'];
-    }
-
-    /**
-     * Sets Answers
-     *
-     * @param string[]|null $Answers Answers
-     *
-     * @return self
-     */
-    public function setAnswers($Answers)
-    {
-        if (is_null($Answers)) {
-            array_push($this->openAPINullablesSetToNull, 'Answers');
+        if (is_null($Keywords)) {
+            array_push($this->openAPINullablesSetToNull, 'Keywords');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Answers', $nullablesSetToNull);
+            $index = array_search('Keywords', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Answers'] = $Answers;
+        $this->container['Keywords'] = $Keywords;
 
         return $this;
     }

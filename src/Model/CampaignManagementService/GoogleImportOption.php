@@ -77,6 +77,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'NewCarouselAd' => 'bool',
         'NewPortfolioBidStrategy' => 'bool',
         'NewAIMaxSettings' => 'bool',
+        'ImportNCASettings' => 'bool',
+        'UpdateSearchThemesForExistingAssetGroups' => 'bool',
         'NewSearchThemesForExistingAssetGroups' => 'bool',
         'UpdateEntities' => 'bool',
         'UpdateCampaignBudgets' => 'bool',
@@ -120,6 +122,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateBrandListAssociations' => 'bool',
         'UpdateAdCustomizerAttributes' => 'bool',
         'UpdateAIMaxSettings' => 'bool',
+        'UpdateNCASettings' => 'bool',
+        'UpdateAssetGroups' => 'bool',
         'UpdateAssetGroupsAsset' => 'bool',
         'EnableCopilot' => 'bool',
         'DeleteRemovedEntities' => 'bool',
@@ -207,6 +211,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'NewCarouselAd' => null,
         'NewPortfolioBidStrategy' => null,
         'NewAIMaxSettings' => null,
+        'ImportNCASettings' => null,
+        'UpdateSearchThemesForExistingAssetGroups' => null,
         'NewSearchThemesForExistingAssetGroups' => null,
         'UpdateEntities' => null,
         'UpdateCampaignBudgets' => null,
@@ -250,6 +256,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateBrandListAssociations' => null,
         'UpdateAdCustomizerAttributes' => null,
         'UpdateAIMaxSettings' => null,
+        'UpdateNCASettings' => null,
+        'UpdateAssetGroups' => null,
         'UpdateAssetGroupsAsset' => null,
         'EnableCopilot' => null,
         'DeleteRemovedEntities' => null,
@@ -335,6 +343,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'NewCarouselAd' => true,
         'NewPortfolioBidStrategy' => true,
         'NewAIMaxSettings' => true,
+        'ImportNCASettings' => true,
+        'UpdateSearchThemesForExistingAssetGroups' => true,
         'NewSearchThemesForExistingAssetGroups' => true,
         'UpdateEntities' => true,
         'UpdateCampaignBudgets' => true,
@@ -378,6 +388,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateBrandListAssociations' => true,
         'UpdateAdCustomizerAttributes' => true,
         'UpdateAIMaxSettings' => true,
+        'UpdateNCASettings' => true,
+        'UpdateAssetGroups' => true,
         'UpdateAssetGroupsAsset' => true,
         'EnableCopilot' => true,
         'DeleteRemovedEntities' => true,
@@ -543,6 +555,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'NewCarouselAd' => 'NewCarouselAd',
         'NewPortfolioBidStrategy' => 'NewPortfolioBidStrategy',
         'NewAIMaxSettings' => 'NewAIMaxSettings',
+        'ImportNCASettings' => 'ImportNCASettings',
+        'UpdateSearchThemesForExistingAssetGroups' => 'UpdateSearchThemesForExistingAssetGroups',
         'NewSearchThemesForExistingAssetGroups' => 'NewSearchThemesForExistingAssetGroups',
         'UpdateEntities' => 'UpdateEntities',
         'UpdateCampaignBudgets' => 'UpdateCampaignBudgets',
@@ -586,6 +600,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateBrandListAssociations' => 'UpdateBrandListAssociations',
         'UpdateAdCustomizerAttributes' => 'UpdateAdCustomizerAttributes',
         'UpdateAIMaxSettings' => 'UpdateAIMaxSettings',
+        'UpdateNCASettings' => 'UpdateNCASettings',
+        'UpdateAssetGroups' => 'UpdateAssetGroups',
         'UpdateAssetGroupsAsset' => 'UpdateAssetGroupsAsset',
         'EnableCopilot' => 'EnableCopilot',
         'DeleteRemovedEntities' => 'DeleteRemovedEntities',
@@ -671,6 +687,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'NewCarouselAd' => 'setNewCarouselAd',
         'NewPortfolioBidStrategy' => 'setNewPortfolioBidStrategy',
         'NewAIMaxSettings' => 'setNewAIMaxSettings',
+        'ImportNCASettings' => 'setImportNCASettings',
+        'UpdateSearchThemesForExistingAssetGroups' => 'setUpdateSearchThemesForExistingAssetGroups',
         'NewSearchThemesForExistingAssetGroups' => 'setNewSearchThemesForExistingAssetGroups',
         'UpdateEntities' => 'setUpdateEntities',
         'UpdateCampaignBudgets' => 'setUpdateCampaignBudgets',
@@ -714,6 +732,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateBrandListAssociations' => 'setUpdateBrandListAssociations',
         'UpdateAdCustomizerAttributes' => 'setUpdateAdCustomizerAttributes',
         'UpdateAIMaxSettings' => 'setUpdateAIMaxSettings',
+        'UpdateNCASettings' => 'setUpdateNCASettings',
+        'UpdateAssetGroups' => 'setUpdateAssetGroups',
         'UpdateAssetGroupsAsset' => 'setUpdateAssetGroupsAsset',
         'EnableCopilot' => 'setEnableCopilot',
         'DeleteRemovedEntities' => 'setDeleteRemovedEntities',
@@ -799,6 +819,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'NewCarouselAd' => 'getNewCarouselAd',
         'NewPortfolioBidStrategy' => 'getNewPortfolioBidStrategy',
         'NewAIMaxSettings' => 'getNewAIMaxSettings',
+        'ImportNCASettings' => 'getImportNCASettings',
+        'UpdateSearchThemesForExistingAssetGroups' => 'getUpdateSearchThemesForExistingAssetGroups',
         'NewSearchThemesForExistingAssetGroups' => 'getNewSearchThemesForExistingAssetGroups',
         'UpdateEntities' => 'getUpdateEntities',
         'UpdateCampaignBudgets' => 'getUpdateCampaignBudgets',
@@ -842,6 +864,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         'UpdateBrandListAssociations' => 'getUpdateBrandListAssociations',
         'UpdateAdCustomizerAttributes' => 'getUpdateAdCustomizerAttributes',
         'UpdateAIMaxSettings' => 'getUpdateAIMaxSettings',
+        'UpdateNCASettings' => 'getUpdateNCASettings',
+        'UpdateAssetGroups' => 'getUpdateAssetGroups',
         'UpdateAssetGroupsAsset' => 'getUpdateAssetGroupsAsset',
         'EnableCopilot' => 'getEnableCopilot',
         'DeleteRemovedEntities' => 'getDeleteRemovedEntities',
@@ -978,6 +1002,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         $this->setIfExists('NewCarouselAd', $data ?? [], null);
         $this->setIfExists('NewPortfolioBidStrategy', $data ?? [], null);
         $this->setIfExists('NewAIMaxSettings', $data ?? [], null);
+        $this->setIfExists('ImportNCASettings', $data ?? [], null);
+        $this->setIfExists('UpdateSearchThemesForExistingAssetGroups', $data ?? [], null);
         $this->setIfExists('NewSearchThemesForExistingAssetGroups', $data ?? [], null);
         $this->setIfExists('UpdateEntities', $data ?? [], null);
         $this->setIfExists('UpdateCampaignBudgets', $data ?? [], null);
@@ -1021,6 +1047,8 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
         $this->setIfExists('UpdateBrandListAssociations', $data ?? [], null);
         $this->setIfExists('UpdateAdCustomizerAttributes', $data ?? [], null);
         $this->setIfExists('UpdateAIMaxSettings', $data ?? [], null);
+        $this->setIfExists('UpdateNCASettings', $data ?? [], null);
+        $this->setIfExists('UpdateAssetGroups', $data ?? [], null);
         $this->setIfExists('UpdateAssetGroupsAsset', $data ?? [], null);
         $this->setIfExists('EnableCopilot', $data ?? [], null);
         $this->setIfExists('DeleteRemovedEntities', $data ?? [], null);
@@ -2727,6 +2755,80 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
     }
 
     /**
+     * Gets ImportNCASettings
+     *
+     * @return bool|null
+     */
+    public function getImportNCASettings()
+    {
+        if (!isset($this->container['ImportNCASettings']) || is_null($this->container['ImportNCASettings'])) {
+            return null;
+        }
+        return $this->container['ImportNCASettings'];
+    }
+
+    /**
+     * Sets ImportNCASettings
+     *
+     * @param bool|null $ImportNCASettings ImportNCASettings
+     *
+     * @return self
+     */
+    public function setImportNCASettings($ImportNCASettings)
+    {
+        if (is_null($ImportNCASettings)) {
+            array_push($this->openAPINullablesSetToNull, 'ImportNCASettings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImportNCASettings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImportNCASettings'] = $ImportNCASettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets UpdateSearchThemesForExistingAssetGroups
+     *
+     * @return bool|null
+     */
+    public function getUpdateSearchThemesForExistingAssetGroups()
+    {
+        if (!isset($this->container['UpdateSearchThemesForExistingAssetGroups']) || is_null($this->container['UpdateSearchThemesForExistingAssetGroups'])) {
+            return null;
+        }
+        return $this->container['UpdateSearchThemesForExistingAssetGroups'];
+    }
+
+    /**
+     * Sets UpdateSearchThemesForExistingAssetGroups
+     *
+     * @param bool|null $UpdateSearchThemesForExistingAssetGroups UpdateSearchThemesForExistingAssetGroups
+     *
+     * @return self
+     */
+    public function setUpdateSearchThemesForExistingAssetGroups($UpdateSearchThemesForExistingAssetGroups)
+    {
+        if (is_null($UpdateSearchThemesForExistingAssetGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateSearchThemesForExistingAssetGroups');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateSearchThemesForExistingAssetGroups', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateSearchThemesForExistingAssetGroups'] = $UpdateSearchThemesForExistingAssetGroups;
+
+        return $this;
+    }
+
+    /**
      * Gets NewSearchThemesForExistingAssetGroups
      *
      * @return bool|null
@@ -4313,6 +4415,80 @@ class GoogleImportOption extends ImportOption implements ModelInterface, ArrayAc
             }
         }
         $this->container['UpdateAIMaxSettings'] = $UpdateAIMaxSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets UpdateNCASettings
+     *
+     * @return bool|null
+     */
+    public function getUpdateNCASettings()
+    {
+        if (!isset($this->container['UpdateNCASettings']) || is_null($this->container['UpdateNCASettings'])) {
+            return null;
+        }
+        return $this->container['UpdateNCASettings'];
+    }
+
+    /**
+     * Sets UpdateNCASettings
+     *
+     * @param bool|null $UpdateNCASettings UpdateNCASettings
+     *
+     * @return self
+     */
+    public function setUpdateNCASettings($UpdateNCASettings)
+    {
+        if (is_null($UpdateNCASettings)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateNCASettings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateNCASettings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateNCASettings'] = $UpdateNCASettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets UpdateAssetGroups
+     *
+     * @return bool|null
+     */
+    public function getUpdateAssetGroups()
+    {
+        if (!isset($this->container['UpdateAssetGroups']) || is_null($this->container['UpdateAssetGroups'])) {
+            return null;
+        }
+        return $this->container['UpdateAssetGroups'];
+    }
+
+    /**
+     * Sets UpdateAssetGroups
+     *
+     * @param bool|null $UpdateAssetGroups UpdateAssetGroups
+     *
+     * @return self
+     */
+    public function setUpdateAssetGroups($UpdateAssetGroups)
+    {
+        if (is_null($UpdateAssetGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'UpdateAssetGroups');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UpdateAssetGroups', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UpdateAssetGroups'] = $UpdateAssetGroups;
 
         return $this;
     }

@@ -33,7 +33,8 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Type' => 'string'
+        'Type' => 'string',
+        'MaxCpm' => 'float'
     ];
 
     /**
@@ -44,7 +45,8 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Type' => null
+        'Type' => null,
+        'MaxCpm' => 'double'
     ];
 
     /**
@@ -53,7 +55,8 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => true
+        'Type' => true,
+        'MaxCpm' => true
     ];
 
     /**
@@ -142,7 +145,8 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'MaxCpm' => 'MaxCpm'
     ];
 
     /**
@@ -151,7 +155,8 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $setters = [
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'MaxCpm' => 'setMaxCpm'
     ];
 
     /**
@@ -160,7 +165,8 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
      * @var string[]
      */
     protected static array $getters = [
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'MaxCpm' => 'getMaxCpm'
     ];
 
     /**
@@ -221,6 +227,7 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('MaxCpm', $data ?? [], null);
     }
 
     /**
@@ -298,6 +305,43 @@ class ManualCpmBiddingScheme extends BiddingScheme implements ModelInterface, Ar
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets MaxCpm
+     *
+     * @return float|null
+     */
+    public function getMaxCpm()
+    {
+        if (!isset($this->container['MaxCpm']) || is_null($this->container['MaxCpm'])) {
+            return null;
+        }
+        return $this->container['MaxCpm'];
+    }
+
+    /**
+     * Sets MaxCpm
+     *
+     * @param float|null $MaxCpm MaxCpm
+     *
+     * @return self
+     */
+    public function setMaxCpm($MaxCpm)
+    {
+        if (is_null($MaxCpm)) {
+            array_push($this->openAPINullablesSetToNull, 'MaxCpm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MaxCpm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MaxCpm'] = $MaxCpm;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfirmationAction
+ * CampaignPrivacyStatus
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -14,18 +14,18 @@ namespace Microsoft\MsAds\Rest\Model\CampaignManagementService;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class ConfirmationAction
+class CampaignPrivacyStatus
 {
     /**
      * Possible values of this enum
      */
     public const UNKNOWN = 'Unknown';
 
-    public const NONE = 'None';
+    public const ACTIVE = 'Active';
 
-    public const VISIT_WEBSITE = 'VisitWebsite';
+    public const TARGETING_TOO_NARROW = 'TargetingTooNarrow';
 
-    public const DOWNLOAD_FILE = 'DownloadFile';
+    public const PENDING = 'Pending';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -95,9 +95,9 @@ class ConfirmationAction
     {
         return [
             self::UNKNOWN,
-            self::NONE,
-            self::VISIT_WEBSITE,
-            self::DOWNLOAD_FILE
+            self::ACTIVE,
+            self::TARGETING_TOO_NARROW,
+            self::PENDING
         ];
     }
 }

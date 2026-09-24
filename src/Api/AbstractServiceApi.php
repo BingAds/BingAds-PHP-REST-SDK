@@ -68,7 +68,12 @@ abstract class AbstractServiceApi
         ?HeaderSelector $selector = null,
         string $hostEnv = ApiEnvironment::SANDBOX
     ) {
-        $this->client = $client ?: new Client(['verify' => false]);
+        $this->client = $client ?: new Client([
+            'verify' => true,
+            'allow_redirects' => [
+                'protocols' => ['https'],
+            ],
+        ]);
         $this->config = $config ?: Configuration::getDefaultConfiguration();
         $this->headerSelector = $selector ?: new HeaderSelector();
         $this->hostEnv = $hostEnv;
@@ -303,7 +308,6 @@ abstract class AbstractServiceApi
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
-        $defaultHeaders['Api-Revision'] = Manifest::SDK_API_REVISION;
 
         $headers = array_merge(
             $defaultHeaders,
@@ -323,11 +327,13 @@ abstract class AbstractServiceApi
 
 
         $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
+        $request = new Request(
             $httpMethod,
             $operationHost.$resourcePath.($query ? "?$query" : ''),
             $headers,
             $httpBody
         );
+
+        return $request->withHeader('Api-Revision', Manifest::SDK_API_REVISION);
     }
 }

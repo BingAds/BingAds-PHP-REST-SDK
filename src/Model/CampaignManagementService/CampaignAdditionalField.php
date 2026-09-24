@@ -95,7 +95,11 @@ class CampaignAdditionalField
 
     public const NETWORK_DISTRIBUTION_SETTING = 'NetworkDistributionSetting';
 
+    public const UNIFIED_CAMPAIGN_FIELDS = 'UnifiedCampaignFields';
+
     public const PAGE_FEED_IN_AI_SEARCH_SETTINGS = 'PageFeedInAISearchSettings';
+
+    public const BRAND_EXCLUSION_SETTING = 'BrandExclusionSetting';
 
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
@@ -202,7 +206,9 @@ class CampaignAdditionalField
             self::AI_SEARCH_SETTING,
             self::PMAX_XBOX_CAMPAIGN,
             self::NETWORK_DISTRIBUTION_SETTING,
-            self::PAGE_FEED_IN_AI_SEARCH_SETTINGS
+            self::UNIFIED_CAMPAIGN_FIELDS,
+            self::PAGE_FEED_IN_AI_SEARCH_SETTINGS,
+            self::BRAND_EXCLUSION_SETTING
         ];
     }
 }
