@@ -27,6 +27,8 @@ class AccountAdditionalField
 
     public const COUPON_CLAIM_INFO = 'CouponClaimInfo';
 
+    public const PARENT_CUSTOMER_NUMBER = 'ParentCustomerNumber';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -97,7 +99,8 @@ class AccountAdditionalField
             self::NONE,
             self::TAX_CERTIFICATE,
             self::ACCOUNT_MODE,
-            self::COUPON_CLAIM_INFO
+            self::COUPON_CLAIM_INFO,
+            self::PARENT_CUSTOMER_NUMBER
         ];
     }
 }

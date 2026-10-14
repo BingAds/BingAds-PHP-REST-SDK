@@ -65,6 +65,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'string',
         'BrandLogo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
         'BrandColor' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'TermExclusions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
         'PrivacyStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
     ];
@@ -109,6 +110,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => null,
         'BrandLogo' => null,
         'BrandColor' => null,
+        'TermExclusions' => null,
         'PrivacyStatus' => null,
         'ForwardCompatibilityMap' => null
     ];
@@ -151,6 +153,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => true,
         'BrandLogo' => true,
         'BrandColor' => true,
+        'TermExclusions' => true,
         'PrivacyStatus' => false,
         'ForwardCompatibilityMap' => true
     ];
@@ -273,6 +276,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'BusinessName',
         'BrandLogo' => 'BrandLogo',
         'BrandColor' => 'BrandColor',
+        'TermExclusions' => 'TermExclusions',
         'PrivacyStatus' => 'PrivacyStatus',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
     ];
@@ -315,6 +319,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'setBusinessName',
         'BrandLogo' => 'setBrandLogo',
         'BrandColor' => 'setBrandColor',
+        'TermExclusions' => 'setTermExclusions',
         'PrivacyStatus' => 'setPrivacyStatus',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
     ];
@@ -357,6 +362,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'BusinessName' => 'getBusinessName',
         'BrandLogo' => 'getBrandLogo',
         'BrandColor' => 'getBrandColor',
+        'TermExclusions' => 'getTermExclusions',
         'PrivacyStatus' => 'getPrivacyStatus',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
     ];
@@ -450,6 +456,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('BusinessName', $data ?? [], null);
         $this->setIfExists('BrandLogo', $data ?? [], null);
         $this->setIfExists('BrandColor', $data ?? [], null);
+        $this->setIfExists('TermExclusions', $data ?? [], null);
         $this->setIfExists('PrivacyStatus', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
@@ -1665,6 +1672,43 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BrandColor'] = $BrandColor;
+
+        return $this;
+    }
+
+    /**
+     * Gets TermExclusions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getTermExclusions()
+    {
+        if (!isset($this->container['TermExclusions']) || is_null($this->container['TermExclusions'])) {
+            return null;
+        }
+        return $this->container['TermExclusions'];
+    }
+
+    /**
+     * Sets TermExclusions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $TermExclusions TermExclusions
+     *
+     * @return self
+     */
+    public function setTermExclusions($TermExclusions)
+    {
+        if (is_null($TermExclusions)) {
+            array_push($this->openAPINullablesSetToNull, 'TermExclusions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TermExclusions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TermExclusions'] = $TermExclusions;
 
         return $this;
     }

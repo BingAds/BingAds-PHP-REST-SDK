@@ -592,6 +592,9 @@ class CampaignManagementServiceApi extends AbstractServiceApi
         'updateLinkedInSegments' => [
             'application/json',
         ],
+        'updateMedia' => [
+            'application/json',
+        ],
         'updateNewCustomerAcquisitionGoals' => [
             'application/json',
         ],
@@ -42010,6 +42013,225 @@ class CampaignManagementServiceApi extends AbstractServiceApi
             true,
             false,
             'getHostSettingsForupdateLinkedInSegments',
+            null,
+            [],
+            $queryParams
+        );
+    }
+
+    /**
+     * Operation updateMedia
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaRequest $UpdateMediaRequest UpdateMediaRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMedia'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault
+     */
+    public function updateMedia($UpdateMediaRequest, string $contentType = self::contentTypes['updateMedia'][0])
+    {
+        list($response) = $this->updateMediaWithHttpInfo($UpdateMediaRequest, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateMediaWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaRequest $UpdateMediaRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMedia'] to see the possible values for this operation
+     *
+     * @throws \Microsoft\MsAds\Rest\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaResponse|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault|\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateMediaWithHttpInfo($UpdateMediaRequest, string $contentType = self::contentTypes['updateMedia'][0])
+    {
+        $request = $this->updateMediaRequest($UpdateMediaRequest, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaResponse');
+                case 400:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 500:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 401:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+                case 403:
+                    return $this->getResponseContent($request, $response, '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault');
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaResponse';
+            return $this->getResponseContent($request, $response, $returnType);
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ApplicationFault',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateMediaAsync
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaRequest $UpdateMediaRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMedia'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateMediaAsync($UpdateMediaRequest, string $contentType = self::contentTypes['updateMedia'][0])
+    {
+        return $this->updateMediaAsyncWithHttpInfo($UpdateMediaRequest, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateMediaAsyncWithHttpInfo
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaRequest $UpdateMediaRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMedia'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateMediaAsyncWithHttpInfo($UpdateMediaRequest, string $contentType = self::contentTypes['updateMedia'][0])
+    {
+        $returnType = '\Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaResponse';
+        $request = $this->updateMediaRequest($UpdateMediaRequest, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->onFulfilledResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->onRejectedResponse($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateMedia'
+     *
+     * @param  \Microsoft\MsAds\Rest\Model\CampaignManagementService\UpdateMediaRequest $UpdateMediaRequest (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMedia'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateMediaRequest($UpdateMediaRequest, string $contentType = self::contentTypes['updateMedia'][0])
+    {
+
+        // verify the required parameter 'UpdateMediaRequest' is set
+        if ($UpdateMediaRequest === null || (is_array($UpdateMediaRequest) && count($UpdateMediaRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $UpdateMediaRequest when calling updateMedia'
+            );
+        }
+
+
+        $resourcePath = '/CampaignManagement/v13/Media';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        return $this->setupAndSendRequest(
+            'PUT',
+            $resourcePath,
+            $headers,
+            $headerParams,
+            $UpdateMediaRequest,
+            $formParams,
+            $multipart,
+            true,
+            true,
+            false,
+            'getHostSettingsForupdateMedia',
             null,
             [],
             $queryParams

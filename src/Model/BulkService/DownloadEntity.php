@@ -431,6 +431,8 @@ class DownloadEntity
 
     public const AD_GROUP_AI_PROMPT_ASSOCIATIONS = 'AdGroupAIPromptAssociations';
 
+    public const AI_PROMPT_AUDIENCES = 'AIPromptAudiences';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -703,7 +705,8 @@ class DownloadEntity
             self::COMPANY_LIST,
             self::COMPANY_ITEM,
             self::AD_GROUP_URL_TARGETS,
-            self::AD_GROUP_AI_PROMPT_ASSOCIATIONS
+            self::AD_GROUP_AI_PROMPT_ASSOCIATIONS,
+            self::AI_PROMPT_AUDIENCES
         ];
     }
 }

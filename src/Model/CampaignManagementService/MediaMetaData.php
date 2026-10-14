@@ -37,7 +37,9 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'string',
         'Type' => 'string',
         'Representations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaRepresentation[]',
-        'Text' => 'string'
+        'Text' => 'string',
+        'AdvertiserAILabel' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel',
+        'SystemAIDetectionSignal' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal'
     ];
 
     /**
@@ -52,7 +54,9 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => null,
         'Type' => null,
         'Representations' => null,
-        'Text' => null
+        'Text' => null,
+        'AdvertiserAILabel' => null,
+        'SystemAIDetectionSignal' => null
     ];
 
     /**
@@ -65,7 +69,9 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => true,
         'Type' => true,
         'Representations' => true,
-        'Text' => true
+        'Text' => true,
+        'AdvertiserAILabel' => false,
+        'SystemAIDetectionSignal' => false
     ];
 
     /**
@@ -158,7 +164,9 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'MediaType',
         'Type' => 'Type',
         'Representations' => 'Representations',
-        'Text' => 'Text'
+        'Text' => 'Text',
+        'AdvertiserAILabel' => 'AdvertiserAILabel',
+        'SystemAIDetectionSignal' => 'SystemAIDetectionSignal'
     ];
 
     /**
@@ -171,7 +179,9 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'setMediaType',
         'Type' => 'setType',
         'Representations' => 'setRepresentations',
-        'Text' => 'setText'
+        'Text' => 'setText',
+        'AdvertiserAILabel' => 'setAdvertiserAILabel',
+        'SystemAIDetectionSignal' => 'setSystemAIDetectionSignal'
     ];
 
     /**
@@ -184,7 +194,9 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'getMediaType',
         'Type' => 'getType',
         'Representations' => 'getRepresentations',
-        'Text' => 'getText'
+        'Text' => 'getText',
+        'AdvertiserAILabel' => 'getAdvertiserAILabel',
+        'SystemAIDetectionSignal' => 'getSystemAIDetectionSignal'
     ];
 
     /**
@@ -249,6 +261,8 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Representations', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('AdvertiserAILabel', $data ?? [], null);
+        $this->setIfExists('SystemAIDetectionSignal', $data ?? [], null);
     }
 
     /**
@@ -467,6 +481,78 @@ class MediaMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdvertiserAILabel
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
+     */
+    public function getAdvertiserAILabel()
+    {
+        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
+            return $this->container['AdvertiserAILabel']->getValue();
+        }
+        return $this->container['AdvertiserAILabel'];
+    }
+
+    /**
+     * Sets AdvertiserAILabel
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
+     *
+     * @return self
+     */
+    public function setAdvertiserAILabel($AdvertiserAILabel)
+    {
+        if (is_null($AdvertiserAILabel)) {
+            throw new \InvalidArgumentException('non-nullable AdvertiserAILabel cannot be null');
+        }
+        if (!$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
+            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
+        }
+        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
+
+        return $this;
+    }
+
+    /**
+     * Gets SystemAIDetectionSignal
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null
+     */
+    public function getSystemAIDetectionSignal()
+    {
+        if (!isset($this->container['SystemAIDetectionSignal']) || is_null($this->container['SystemAIDetectionSignal'])) {
+            return null;
+        }
+        if ((is_object($this->container['SystemAIDetectionSignal']) || is_string($this->container['SystemAIDetectionSignal'])) && method_exists($this->container['SystemAIDetectionSignal'], 'getValue')) {
+            return $this->container['SystemAIDetectionSignal']->getValue();
+        }
+        return $this->container['SystemAIDetectionSignal'];
+    }
+
+    /**
+     * Sets SystemAIDetectionSignal
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null $SystemAIDetectionSignal SystemAIDetectionSignal
+     *
+     * @return self
+     */
+    public function setSystemAIDetectionSignal($SystemAIDetectionSignal)
+    {
+        if (is_null($SystemAIDetectionSignal)) {
+            throw new \InvalidArgumentException('non-nullable SystemAIDetectionSignal cannot be null');
+        }
+        if (!$SystemAIDetectionSignal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal) {
+            $SystemAIDetectionSignal = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal($SystemAIDetectionSignal);
+        }
+        $this->container['SystemAIDetectionSignal'] = $SystemAIDetectionSignal;
 
         return $this;
     }

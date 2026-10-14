@@ -175,4 +175,4 @@ Logs will be generated in the base directory of the project with the request and
 
 ## About this package
 
-- SDK Package version: `13.0.30`
+- SDK Package version: `13.0.30.1`

@@ -46,6 +46,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'string',
         'Type' => 'string',
         'Text' => 'string',
+        'AdvertiserAILabel' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel',
         'Data' => 'string'
     ];
 
@@ -61,6 +62,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => null,
         'Type' => null,
         'Text' => null,
+        'AdvertiserAILabel' => null,
         'Data' => null
     ];
 
@@ -74,6 +76,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => true,
         'Type' => true,
         'Text' => true,
+        'AdvertiserAILabel' => false,
         'Data' => true
     ];
 
@@ -167,6 +170,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'MediaType',
         'Type' => 'Type',
         'Text' => 'Text',
+        'AdvertiserAILabel' => 'AdvertiserAILabel',
         'Data' => 'Data'
     ];
 
@@ -180,6 +184,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'setMediaType',
         'Type' => 'setType',
         'Text' => 'setText',
+        'AdvertiserAILabel' => 'setAdvertiserAILabel',
         'Data' => 'setData'
     ];
 
@@ -193,6 +198,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         'MediaType' => 'getMediaType',
         'Type' => 'getType',
         'Text' => 'getText',
+        'AdvertiserAILabel' => 'getAdvertiserAILabel',
         'Data' => 'getData'
     ];
 
@@ -257,6 +263,7 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('MediaType', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('AdvertiserAILabel', $data ?? [], null);
         $this->setIfExists('Data', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
@@ -449,6 +456,42 @@ class Media implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdvertiserAILabel
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
+     */
+    public function getAdvertiserAILabel()
+    {
+        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
+            return $this->container['AdvertiserAILabel']->getValue();
+        }
+        return $this->container['AdvertiserAILabel'];
+    }
+
+    /**
+     * Sets AdvertiserAILabel
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
+     *
+     * @return self
+     */
+    public function setAdvertiserAILabel($AdvertiserAILabel)
+    {
+        if (is_null($AdvertiserAILabel)) {
+            throw new \InvalidArgumentException('non-nullable AdvertiserAILabel cannot be null');
+        }
+        if (!$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
+            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
+        }
+        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
 
         return $this;
     }
