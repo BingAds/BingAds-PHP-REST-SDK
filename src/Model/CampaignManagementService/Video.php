@@ -43,6 +43,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'CreatedDateTimeInUTC' => '\DateTime',
         'ModifiedDateTimeInUTC' => '\DateTime',
         'FailureCode' => 'string',
+        'AdvertiserAILabel' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel',
+        'SystemAIDetectionSignal' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal',
         'Id' => 'string'
     ];
 
@@ -64,6 +66,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'CreatedDateTimeInUTC' => 'date-time',
         'ModifiedDateTimeInUTC' => 'date-time',
         'FailureCode' => null,
+        'AdvertiserAILabel' => null,
+        'SystemAIDetectionSignal' => null,
         'Id' => 'int64'
     ];
 
@@ -83,6 +87,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'CreatedDateTimeInUTC' => true,
         'ModifiedDateTimeInUTC' => true,
         'FailureCode' => true,
+        'AdvertiserAILabel' => false,
+        'SystemAIDetectionSignal' => false,
         'Id' => true
     ];
 
@@ -182,6 +188,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
         'ModifiedDateTimeInUTC' => 'ModifiedDateTimeInUTC',
         'FailureCode' => 'FailureCode',
+        'AdvertiserAILabel' => 'AdvertiserAILabel',
+        'SystemAIDetectionSignal' => 'SystemAIDetectionSignal',
         'Id' => 'Id'
     ];
 
@@ -201,6 +209,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
         'ModifiedDateTimeInUTC' => 'setModifiedDateTimeInUTC',
         'FailureCode' => 'setFailureCode',
+        'AdvertiserAILabel' => 'setAdvertiserAILabel',
+        'SystemAIDetectionSignal' => 'setSystemAIDetectionSignal',
         'Id' => 'setId'
     ];
 
@@ -220,6 +230,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
         'ModifiedDateTimeInUTC' => 'getModifiedDateTimeInUTC',
         'FailureCode' => 'getFailureCode',
+        'AdvertiserAILabel' => 'getAdvertiserAILabel',
+        'SystemAIDetectionSignal' => 'getSystemAIDetectionSignal',
         'Id' => 'getId'
     ];
 
@@ -290,6 +302,8 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
         $this->setIfExists('ModifiedDateTimeInUTC', $data ?? [], null);
         $this->setIfExists('FailureCode', $data ?? [], null);
+        $this->setIfExists('AdvertiserAILabel', $data ?? [], null);
+        $this->setIfExists('SystemAIDetectionSignal', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
     }
 
@@ -701,6 +715,78 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['FailureCode'] = $FailureCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdvertiserAILabel
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
+     */
+    public function getAdvertiserAILabel()
+    {
+        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
+            return $this->container['AdvertiserAILabel']->getValue();
+        }
+        return $this->container['AdvertiserAILabel'];
+    }
+
+    /**
+     * Sets AdvertiserAILabel
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
+     *
+     * @return self
+     */
+    public function setAdvertiserAILabel($AdvertiserAILabel)
+    {
+        if (is_null($AdvertiserAILabel)) {
+            throw new \InvalidArgumentException('non-nullable AdvertiserAILabel cannot be null');
+        }
+        if (!$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
+            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
+        }
+        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
+
+        return $this;
+    }
+
+    /**
+     * Gets SystemAIDetectionSignal
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null
+     */
+    public function getSystemAIDetectionSignal()
+    {
+        if (!isset($this->container['SystemAIDetectionSignal']) || is_null($this->container['SystemAIDetectionSignal'])) {
+            return null;
+        }
+        if ((is_object($this->container['SystemAIDetectionSignal']) || is_string($this->container['SystemAIDetectionSignal'])) && method_exists($this->container['SystemAIDetectionSignal'], 'getValue')) {
+            return $this->container['SystemAIDetectionSignal']->getValue();
+        }
+        return $this->container['SystemAIDetectionSignal'];
+    }
+
+    /**
+     * Sets SystemAIDetectionSignal
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null $SystemAIDetectionSignal SystemAIDetectionSignal
+     *
+     * @return self
+     */
+    public function setSystemAIDetectionSignal($SystemAIDetectionSignal)
+    {
+        if (is_null($SystemAIDetectionSignal)) {
+            throw new \InvalidArgumentException('non-nullable SystemAIDetectionSignal cannot be null');
+        }
+        if (!$SystemAIDetectionSignal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal) {
+            $SystemAIDetectionSignal = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal($SystemAIDetectionSignal);
+        }
+        $this->container['SystemAIDetectionSignal'] = $SystemAIDetectionSignal;
 
         return $this;
     }

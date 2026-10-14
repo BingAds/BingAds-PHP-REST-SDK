@@ -89,6 +89,8 @@ class AdGroupCriterionType
 
     public const CUSTOM_LINKED_IN = 'CustomLinkedIn';
 
+    public const AI_PROMPT = 'AIPrompt';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = true;
@@ -190,7 +192,8 @@ class AdGroupCriterionType
             self::TOPIC,
             self::CUSTOM_SEGMENT,
             self::JOB_SENIORITY,
-            self::CUSTOM_LINKED_IN
+            self::CUSTOM_LINKED_IN,
+            self::AI_PROMPT
         ];
     }
 }

@@ -60,7 +60,8 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         'AutoTagType' => '\Microsoft\MsAds\Rest\Model\CustomerManagementService\AutoTagType',
         'SoldToPaymentInstrumentId' => 'string',
         'TaxCertificate' => '\Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountTaxCertificate',
-        'AccountMode' => 'string'
+        'AccountMode' => 'string',
+        'ParentCustomerNumber' => 'string'
     ];
 
     /**
@@ -98,7 +99,8 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         'AutoTagType' => null,
         'SoldToPaymentInstrumentId' => 'int64',
         'TaxCertificate' => null,
-        'AccountMode' => null
+        'AccountMode' => null,
+        'ParentCustomerNumber' => null
     ];
 
     /**
@@ -134,7 +136,8 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         'AutoTagType' => false,
         'SoldToPaymentInstrumentId' => true,
         'TaxCertificate' => true,
-        'AccountMode' => true
+        'AccountMode' => true,
+        'ParentCustomerNumber' => true
     ];
 
     /**
@@ -250,7 +253,8 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         'AutoTagType' => 'AutoTagType',
         'SoldToPaymentInstrumentId' => 'SoldToPaymentInstrumentId',
         'TaxCertificate' => 'TaxCertificate',
-        'AccountMode' => 'AccountMode'
+        'AccountMode' => 'AccountMode',
+        'ParentCustomerNumber' => 'ParentCustomerNumber'
     ];
 
     /**
@@ -286,7 +290,8 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         'AutoTagType' => 'setAutoTagType',
         'SoldToPaymentInstrumentId' => 'setSoldToPaymentInstrumentId',
         'TaxCertificate' => 'setTaxCertificate',
-        'AccountMode' => 'setAccountMode'
+        'AccountMode' => 'setAccountMode',
+        'ParentCustomerNumber' => 'setParentCustomerNumber'
     ];
 
     /**
@@ -322,7 +327,8 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         'AutoTagType' => 'getAutoTagType',
         'SoldToPaymentInstrumentId' => 'getSoldToPaymentInstrumentId',
         'TaxCertificate' => 'getTaxCertificate',
-        'AccountMode' => 'getAccountMode'
+        'AccountMode' => 'getAccountMode',
+        'ParentCustomerNumber' => 'getParentCustomerNumber'
     ];
 
     /**
@@ -410,6 +416,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('SoldToPaymentInstrumentId', $data ?? [], null);
         $this->setIfExists('TaxCertificate', $data ?? [], null);
         $this->setIfExists('AccountMode', $data ?? [], null);
+        $this->setIfExists('ParentCustomerNumber', $data ?? [], null);
     }
 
     /**
@@ -1472,6 +1479,43 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['AccountMode'] = $AccountMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets ParentCustomerNumber
+     *
+     * @return string|null
+     */
+    public function getParentCustomerNumber()
+    {
+        if (!isset($this->container['ParentCustomerNumber']) || is_null($this->container['ParentCustomerNumber'])) {
+            return null;
+        }
+        return $this->container['ParentCustomerNumber'];
+    }
+
+    /**
+     * Sets ParentCustomerNumber
+     *
+     * @param string|null $ParentCustomerNumber ParentCustomerNumber
+     *
+     * @return self
+     */
+    public function setParentCustomerNumber($ParentCustomerNumber)
+    {
+        if (is_null($ParentCustomerNumber)) {
+            array_push($this->openAPINullablesSetToNull, 'ParentCustomerNumber');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ParentCustomerNumber', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ParentCustomerNumber'] = $ParentCustomerNumber;
 
         return $this;
     }
