@@ -34,9 +34,9 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPITypes = [
         'AccountId' => 'string',
-        'EntityIds' => 'string[]',
         'AdExtensionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter',
         'AssociationType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType',
+        'EntityIds' => 'string[]',
         'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField'
     ];
 
@@ -49,9 +49,9 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPIFormats = [
         'AccountId' => 'int64',
-        'EntityIds' => 'int64',
         'AdExtensionType' => null,
         'AssociationType' => null,
+        'EntityIds' => 'int64',
         'ReturnAdditionalFields' => null
     ];
 
@@ -62,10 +62,10 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPINullables = [
         'AccountId' => false,
-        'EntityIds' => true,
         'AdExtensionType' => false,
         'AssociationType' => false,
-        'ReturnAdditionalFields' => false
+        'EntityIds' => true,
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -155,9 +155,9 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
      */
     protected static array $attributeMap = [
         'AccountId' => 'AccountId',
-        'EntityIds' => 'EntityIds',
         'AdExtensionType' => 'AdExtensionType',
         'AssociationType' => 'AssociationType',
+        'EntityIds' => 'EntityIds',
         'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
@@ -168,9 +168,9 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
      */
     protected static array $setters = [
         'AccountId' => 'setAccountId',
-        'EntityIds' => 'setEntityIds',
         'AdExtensionType' => 'setAdExtensionType',
         'AssociationType' => 'setAssociationType',
+        'EntityIds' => 'setEntityIds',
         'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
@@ -181,9 +181,9 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
      */
     protected static array $getters = [
         'AccountId' => 'getAccountId',
-        'EntityIds' => 'getEntityIds',
         'AdExtensionType' => 'getAdExtensionType',
         'AssociationType' => 'getAssociationType',
+        'EntityIds' => 'getEntityIds',
         'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
@@ -245,9 +245,9 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountId', $data ?? [], null);
-        $this->setIfExists('EntityIds', $data ?? [], null);
         $this->setIfExists('AdExtensionType', $data ?? [], null);
         $this->setIfExists('AssociationType', $data ?? [], null);
+        $this->setIfExists('EntityIds', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
@@ -324,6 +324,78 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Gets AdExtensionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter|mixed|null
+     */
+    public function getAdExtensionType()
+    {
+        if (!isset($this->container['AdExtensionType']) || is_null($this->container['AdExtensionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdExtensionType']) || is_string($this->container['AdExtensionType'])) && method_exists($this->container['AdExtensionType'], 'getValue')) {
+            return $this->container['AdExtensionType']->getValue();
+        }
+        return $this->container['AdExtensionType'];
+    }
+
+    /**
+     * Sets AdExtensionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter|mixed|null $AdExtensionType AdExtensionType
+     *
+     * @return self
+     */
+    public function setAdExtensionType($AdExtensionType)
+    {
+        if (is_null($AdExtensionType)) {
+            throw new \InvalidArgumentException('non-nullable AdExtensionType cannot be null');
+        }
+        if (!is_null($AdExtensionType) && !$AdExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter) {
+            $AdExtensionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter($AdExtensionType);
+        }
+        $this->container['AdExtensionType'] = $AdExtensionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssociationType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null
+     */
+    public function getAssociationType()
+    {
+        if (!isset($this->container['AssociationType']) || is_null($this->container['AssociationType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AssociationType']) || is_string($this->container['AssociationType'])) && method_exists($this->container['AssociationType'], 'getValue')) {
+            return $this->container['AssociationType']->getValue();
+        }
+        return $this->container['AssociationType'];
+    }
+
+    /**
+     * Sets AssociationType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null $AssociationType AssociationType
+     *
+     * @return self
+     */
+    public function setAssociationType($AssociationType)
+    {
+        if (is_null($AssociationType)) {
+            throw new \InvalidArgumentException('non-nullable AssociationType cannot be null');
+        }
+        if (!is_null($AssociationType) && !$AssociationType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType) {
+            $AssociationType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType($AssociationType);
+        }
+        $this->container['AssociationType'] = $AssociationType;
+
+        return $this;
+    }
+
+    /**
      * Gets EntityIds
      *
      * @return string[]|null
@@ -361,78 +433,6 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets AdExtensionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter|mixed|null
-     */
-    public function getAdExtensionType()
-    {
-        if (!isset($this->container['AdExtensionType']) || is_null($this->container['AdExtensionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AdExtensionType']) || is_string($this->container['AdExtensionType'])) && method_exists($this->container['AdExtensionType'], 'getValue')) {
-            return $this->container['AdExtensionType']->getValue();
-        }
-        return $this->container['AdExtensionType'];
-    }
-
-    /**
-     * Sets AdExtensionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter|mixed|null $AdExtensionType AdExtensionType
-     *
-     * @return self
-     */
-    public function setAdExtensionType($AdExtensionType)
-    {
-        if (is_null($AdExtensionType)) {
-            throw new \InvalidArgumentException('non-nullable AdExtensionType cannot be null');
-        }
-        if (!$AdExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter) {
-            $AdExtensionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter($AdExtensionType);
-        }
-        $this->container['AdExtensionType'] = $AdExtensionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets AssociationType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null
-     */
-    public function getAssociationType()
-    {
-        if (!isset($this->container['AssociationType']) || is_null($this->container['AssociationType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AssociationType']) || is_string($this->container['AssociationType'])) && method_exists($this->container['AssociationType'], 'getValue')) {
-            return $this->container['AssociationType']->getValue();
-        }
-        return $this->container['AssociationType'];
-    }
-
-    /**
-     * Sets AssociationType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null $AssociationType AssociationType
-     *
-     * @return self
-     */
-    public function setAssociationType($AssociationType)
-    {
-        if (is_null($AssociationType)) {
-            throw new \InvalidArgumentException('non-nullable AssociationType cannot be null');
-        }
-        if (!$AssociationType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType) {
-            $AssociationType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType($AssociationType);
-        }
-        $this->container['AssociationType'] = $AssociationType;
-
-        return $this;
-    }
-
-    /**
      * Gets ReturnAdditionalFields
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField|mixed|null
@@ -458,9 +458,16 @@ class GetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

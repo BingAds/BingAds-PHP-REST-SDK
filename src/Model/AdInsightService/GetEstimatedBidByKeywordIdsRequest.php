@@ -337,7 +337,7 @@ class GetEstimatedBidByKeywordIdsRequest implements ModelInterface, ArrayAccess,
         if (is_null($TargetPositionForAds)) {
             throw new \InvalidArgumentException('non-nullable TargetPositionForAds cannot be null');
         }
-        if (!$TargetPositionForAds instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\TargetAdPosition) {
+        if (!is_null($TargetPositionForAds) && !$TargetPositionForAds instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\TargetAdPosition) {
             $TargetPositionForAds = new \Microsoft\MsAds\Rest\Model\AdInsightService\TargetAdPosition($TargetPositionForAds);
         }
         $this->container['TargetPositionForAds'] = $TargetPositionForAds;

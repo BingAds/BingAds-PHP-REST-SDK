@@ -33,10 +33,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ReasonCode' => 'int',
         'Location' => 'string',
-        'Term' => 'string',
-        'PublisherCountries' => 'string[]'
+        'PublisherCountries' => 'string[]',
+        'ReasonCode' => 'int',
+        'Term' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ReasonCode' => 'int32',
         'Location' => null,
-        'Term' => null,
-        'PublisherCountries' => null
+        'PublisherCountries' => null,
+        'ReasonCode' => 'int32',
+        'Term' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ReasonCode' => false,
         'Location' => true,
-        'Term' => true,
-        'PublisherCountries' => true
+        'PublisherCountries' => true,
+        'ReasonCode' => false,
+        'Term' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ReasonCode' => 'ReasonCode',
         'Location' => 'Location',
-        'Term' => 'Term',
-        'PublisherCountries' => 'PublisherCountries'
+        'PublisherCountries' => 'PublisherCountries',
+        'ReasonCode' => 'ReasonCode',
+        'Term' => 'Term'
     ];
 
     /**
@@ -163,10 +163,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'ReasonCode' => 'setReasonCode',
         'Location' => 'setLocation',
-        'Term' => 'setTerm',
-        'PublisherCountries' => 'setPublisherCountries'
+        'PublisherCountries' => 'setPublisherCountries',
+        'ReasonCode' => 'setReasonCode',
+        'Term' => 'setTerm'
     ];
 
     /**
@@ -175,10 +175,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'ReasonCode' => 'getReasonCode',
         'Location' => 'getLocation',
-        'Term' => 'getTerm',
-        'PublisherCountries' => 'getPublisherCountries'
+        'PublisherCountries' => 'getPublisherCountries',
+        'ReasonCode' => 'getReasonCode',
+        'Term' => 'getTerm'
     ];
 
     /**
@@ -238,10 +238,10 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ReasonCode', $data ?? [], null);
         $this->setIfExists('Location', $data ?? [], null);
-        $this->setIfExists('Term', $data ?? [], null);
         $this->setIfExists('PublisherCountries', $data ?? [], null);
+        $this->setIfExists('ReasonCode', $data ?? [], null);
+        $this->setIfExists('Term', $data ?? [], null);
     }
 
     /**
@@ -287,36 +287,6 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets ReasonCode
-     *
-     * @return int|null
-     */
-    public function getReasonCode()
-    {
-        if (!isset($this->container['ReasonCode']) || is_null($this->container['ReasonCode'])) {
-            return null;
-        }
-        return $this->container['ReasonCode'];
-    }
-
-    /**
-     * Sets ReasonCode
-     *
-     * @param int|null $ReasonCode ReasonCode
-     *
-     * @return self
-     */
-    public function setReasonCode($ReasonCode)
-    {
-        if (is_null($ReasonCode)) {
-            throw new \InvalidArgumentException('non-nullable ReasonCode cannot be null');
-        }
-        $this->container['ReasonCode'] = $ReasonCode;
-
-        return $this;
-    }
-
-    /**
      * Gets Location
      *
      * @return string|null
@@ -354,43 +324,6 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets Term
-     *
-     * @return string|null
-     */
-    public function getTerm()
-    {
-        if (!isset($this->container['Term']) || is_null($this->container['Term'])) {
-            return null;
-        }
-        return $this->container['Term'];
-    }
-
-    /**
-     * Sets Term
-     *
-     * @param string|null $Term Term
-     *
-     * @return self
-     */
-    public function setTerm($Term)
-    {
-        if (is_null($Term)) {
-            array_push($this->openAPINullablesSetToNull, 'Term');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Term', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Term'] = $Term;
-
-        return $this;
-    }
-
-    /**
      * Gets PublisherCountries
      *
      * @return string[]|null
@@ -423,6 +356,73 @@ class AdExtensionEditorialReason implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['PublisherCountries'] = $PublisherCountries;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReasonCode
+     *
+     * @return int|null
+     */
+    public function getReasonCode()
+    {
+        if (!isset($this->container['ReasonCode']) || is_null($this->container['ReasonCode'])) {
+            return null;
+        }
+        return $this->container['ReasonCode'];
+    }
+
+    /**
+     * Sets ReasonCode
+     *
+     * @param int|null $ReasonCode ReasonCode
+     *
+     * @return self
+     */
+    public function setReasonCode($ReasonCode)
+    {
+        if (is_null($ReasonCode)) {
+            throw new \InvalidArgumentException('non-nullable ReasonCode cannot be null');
+        }
+        $this->container['ReasonCode'] = $ReasonCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets Term
+     *
+     * @return string|null
+     */
+    public function getTerm()
+    {
+        if (!isset($this->container['Term']) || is_null($this->container['Term'])) {
+            return null;
+        }
+        return $this->container['Term'];
+    }
+
+    /**
+     * Sets Term
+     *
+     * @param string|null $Term Term
+     *
+     * @return self
+     */
+    public function setTerm($Term)
+    {
+        if (is_null($Term)) {
+            array_push($this->openAPINullablesSetToNull, 'Term');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Term', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Term'] = $Term;
 
         return $this;
     }

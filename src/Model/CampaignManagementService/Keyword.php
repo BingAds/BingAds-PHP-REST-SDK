@@ -33,24 +33,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'Bid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
+        'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
+        'DestinationUrl' => 'string',
+        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus',
+        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Id' => 'string',
         'MatchType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType',
         'Param1' => 'string',
         'Param2' => 'string',
         'Param3' => 'string',
-        'Text' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus',
-        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus',
-        'DestinationUrl' => 'string',
+        'Text' => 'string',
         'TrackingUrlTemplate' => 'string',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'FinalUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
-        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
-        'FinalUrlSuffix' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters'
     ];
 
     /**
@@ -61,24 +61,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'Bid' => null,
+        'BiddingScheme' => null,
+        'DestinationUrl' => null,
+        'EditorialStatus' => null,
+        'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'ForwardCompatibilityMap' => null,
+        'Id' => 'int64',
         'MatchType' => null,
         'Param1' => null,
         'Param2' => null,
         'Param3' => null,
-        'Text' => null,
         'Status' => null,
-        'EditorialStatus' => null,
-        'DestinationUrl' => null,
+        'Text' => null,
         'TrackingUrlTemplate' => null,
-        'UrlCustomParameters' => null,
-        'FinalUrls' => null,
-        'FinalMobileUrls' => null,
-        'FinalAppUrls' => null,
-        'BiddingScheme' => null,
-        'FinalUrlSuffix' => null,
-        'ForwardCompatibilityMap' => null
+        'UrlCustomParameters' => null
     ];
 
     /**
@@ -87,24 +87,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'Bid' => true,
-        'MatchType' => false,
+        'BiddingScheme' => true,
+        'DestinationUrl' => true,
+        'EditorialStatus' => true,
+        'FinalAppUrls' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'ForwardCompatibilityMap' => true,
+        'Id' => true,
+        'MatchType' => true,
         'Param1' => true,
         'Param2' => true,
         'Param3' => true,
+        'Status' => true,
         'Text' => true,
-        'Status' => false,
-        'EditorialStatus' => false,
-        'DestinationUrl' => true,
         'TrackingUrlTemplate' => true,
-        'UrlCustomParameters' => true,
-        'FinalUrls' => true,
-        'FinalMobileUrls' => true,
-        'FinalAppUrls' => true,
-        'BiddingScheme' => true,
-        'FinalUrlSuffix' => true,
-        'ForwardCompatibilityMap' => true
+        'UrlCustomParameters' => true
     ];
 
     /**
@@ -193,24 +193,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'Bid' => 'Bid',
+        'BiddingScheme' => 'BiddingScheme',
+        'DestinationUrl' => 'DestinationUrl',
+        'EditorialStatus' => 'EditorialStatus',
+        'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Id' => 'Id',
         'MatchType' => 'MatchType',
         'Param1' => 'Param1',
         'Param2' => 'Param2',
         'Param3' => 'Param3',
-        'Text' => 'Text',
         'Status' => 'Status',
-        'EditorialStatus' => 'EditorialStatus',
-        'DestinationUrl' => 'DestinationUrl',
+        'Text' => 'Text',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'UrlCustomParameters' => 'UrlCustomParameters',
-        'FinalUrls' => 'FinalUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalAppUrls' => 'FinalAppUrls',
-        'BiddingScheme' => 'BiddingScheme',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'UrlCustomParameters' => 'UrlCustomParameters'
     ];
 
     /**
@@ -219,24 +219,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'Bid' => 'setBid',
+        'BiddingScheme' => 'setBiddingScheme',
+        'DestinationUrl' => 'setDestinationUrl',
+        'EditorialStatus' => 'setEditorialStatus',
+        'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Id' => 'setId',
         'MatchType' => 'setMatchType',
         'Param1' => 'setParam1',
         'Param2' => 'setParam2',
         'Param3' => 'setParam3',
-        'Text' => 'setText',
         'Status' => 'setStatus',
-        'EditorialStatus' => 'setEditorialStatus',
-        'DestinationUrl' => 'setDestinationUrl',
+        'Text' => 'setText',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
-        'FinalUrls' => 'setFinalUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalAppUrls' => 'setFinalAppUrls',
-        'BiddingScheme' => 'setBiddingScheme',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'UrlCustomParameters' => 'setUrlCustomParameters'
     ];
 
     /**
@@ -245,24 +245,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'Bid' => 'getBid',
+        'BiddingScheme' => 'getBiddingScheme',
+        'DestinationUrl' => 'getDestinationUrl',
+        'EditorialStatus' => 'getEditorialStatus',
+        'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Id' => 'getId',
         'MatchType' => 'getMatchType',
         'Param1' => 'getParam1',
         'Param2' => 'getParam2',
         'Param3' => 'getParam3',
-        'Text' => 'getText',
         'Status' => 'getStatus',
-        'EditorialStatus' => 'getEditorialStatus',
-        'DestinationUrl' => 'getDestinationUrl',
+        'Text' => 'getText',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
-        'FinalUrls' => 'getFinalUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalAppUrls' => 'getFinalAppUrls',
-        'BiddingScheme' => 'getBiddingScheme',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'UrlCustomParameters' => 'getUrlCustomParameters'
     ];
 
     /**
@@ -322,24 +322,24 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Bid', $data ?? [], null);
+        $this->setIfExists('BiddingScheme', $data ?? [], null);
+        $this->setIfExists('DestinationUrl', $data ?? [], null);
+        $this->setIfExists('EditorialStatus', $data ?? [], null);
+        $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('MatchType', $data ?? [], null);
         $this->setIfExists('Param1', $data ?? [], null);
         $this->setIfExists('Param2', $data ?? [], null);
         $this->setIfExists('Param3', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('EditorialStatus', $data ?? [], null);
-        $this->setIfExists('DestinationUrl', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
         $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalAppUrls', $data ?? [], null);
-        $this->setIfExists('BiddingScheme', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
     /**
@@ -385,43 +385,6 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
      * Gets Bid
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
@@ -459,6 +422,345 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets BiddingScheme
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null
+     */
+    public function getBiddingScheme()
+    {
+        if (!isset($this->container['BiddingScheme']) || is_null($this->container['BiddingScheme'])) {
+            return null;
+        }
+        return $this->container['BiddingScheme'];
+    }
+
+    /**
+     * Sets BiddingScheme
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null $BiddingScheme BiddingScheme
+     *
+     * @return self
+     */
+    public function setBiddingScheme($BiddingScheme)
+    {
+        if (is_null($BiddingScheme)) {
+            array_push($this->openAPINullablesSetToNull, 'BiddingScheme');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BiddingScheme', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BiddingScheme'] = $BiddingScheme;
+
+        return $this;
+    }
+
+    /**
+     * Gets DestinationUrl
+     *
+     * @return string|null
+     */
+    public function getDestinationUrl()
+    {
+        if (!isset($this->container['DestinationUrl']) || is_null($this->container['DestinationUrl'])) {
+            return null;
+        }
+        return $this->container['DestinationUrl'];
+    }
+
+    /**
+     * Sets DestinationUrl
+     *
+     * @param string|null $DestinationUrl DestinationUrl
+     *
+     * @return self
+     */
+    public function setDestinationUrl($DestinationUrl)
+    {
+        if (is_null($DestinationUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'DestinationUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DestinationUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DestinationUrl'] = $DestinationUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets EditorialStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus|mixed|null
+     */
+    public function getEditorialStatus()
+    {
+        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
+            return $this->container['EditorialStatus']->getValue();
+        }
+        return $this->container['EditorialStatus'];
+    }
+
+    /**
+     * Sets EditorialStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus|mixed|null $EditorialStatus EditorialStatus
+     *
+     * @return self
+     */
+    public function setEditorialStatus($EditorialStatus)
+    {
+        if (is_null($EditorialStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus) {
+            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus($EditorialStatus);
+        }
+        $this->container['EditorialStatus'] = $EditorialStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalAppUrls
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
+     */
+    public function getFinalAppUrls()
+    {
+        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
+            return null;
+        }
+        return $this->container['FinalAppUrls'];
+    }
+
+    /**
+     * Sets FinalAppUrls
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
+     *
+     * @return self
+     */
+    public function setFinalAppUrls($FinalAppUrls)
+    {
+        if (is_null($FinalAppUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalAppUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalAppUrls'] = $FinalAppUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalMobileUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalMobileUrls()
+    {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+            return null;
+        }
+        return $this->container['FinalMobileUrls'];
+    }
+
+    /**
+     * Sets FinalMobileUrls
+     *
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     *
+     * @return self
+     */
+    public function setFinalMobileUrls($FinalMobileUrls)
+    {
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
      * Gets MatchType
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType|mixed|null
@@ -484,9 +786,16 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMatchType($MatchType)
     {
         if (is_null($MatchType)) {
-            throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'MatchType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MatchType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$MatchType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType) {
+        if (!is_null($MatchType) && !$MatchType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType) {
             $MatchType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType($MatchType);
         }
         $this->container['MatchType'] = $MatchType;
@@ -606,6 +915,49 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
      * Gets Text
      *
      * @return string|null
@@ -638,115 +990,6 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets EditorialStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus|mixed|null
-     */
-    public function getEditorialStatus()
-    {
-        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
-            return $this->container['EditorialStatus']->getValue();
-        }
-        return $this->container['EditorialStatus'];
-    }
-
-    /**
-     * Sets EditorialStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus|mixed|null $EditorialStatus EditorialStatus
-     *
-     * @return self
-     */
-    public function setEditorialStatus($EditorialStatus)
-    {
-        if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
-        }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus) {
-            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus($EditorialStatus);
-        }
-        $this->container['EditorialStatus'] = $EditorialStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets DestinationUrl
-     *
-     * @return string|null
-     */
-    public function getDestinationUrl()
-    {
-        if (!isset($this->container['DestinationUrl']) || is_null($this->container['DestinationUrl'])) {
-            return null;
-        }
-        return $this->container['DestinationUrl'];
-    }
-
-    /**
-     * Sets DestinationUrl
-     *
-     * @param string|null $DestinationUrl DestinationUrl
-     *
-     * @return self
-     */
-    public function setDestinationUrl($DestinationUrl)
-    {
-        if (is_null($DestinationUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'DestinationUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DestinationUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DestinationUrl'] = $DestinationUrl;
 
         return $this;
     }
@@ -821,228 +1064,6 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UrlCustomParameters'] = $UrlCustomParameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalMobileUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalMobileUrls()
-    {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
-            return null;
-        }
-        return $this->container['FinalMobileUrls'];
-    }
-
-    /**
-     * Sets FinalMobileUrls
-     *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
-     *
-     * @return self
-     */
-    public function setFinalMobileUrls($FinalMobileUrls)
-    {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalAppUrls
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
-     */
-    public function getFinalAppUrls()
-    {
-        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
-            return null;
-        }
-        return $this->container['FinalAppUrls'];
-    }
-
-    /**
-     * Sets FinalAppUrls
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
-     *
-     * @return self
-     */
-    public function setFinalAppUrls($FinalAppUrls)
-    {
-        if (is_null($FinalAppUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalAppUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalAppUrls'] = $FinalAppUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets BiddingScheme
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null
-     */
-    public function getBiddingScheme()
-    {
-        if (!isset($this->container['BiddingScheme']) || is_null($this->container['BiddingScheme'])) {
-            return null;
-        }
-        return $this->container['BiddingScheme'];
-    }
-
-    /**
-     * Sets BiddingScheme
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null $BiddingScheme BiddingScheme
-     *
-     * @return self
-     */
-    public function setBiddingScheme($BiddingScheme)
-    {
-        if (is_null($BiddingScheme)) {
-            array_push($this->openAPINullablesSetToNull, 'BiddingScheme');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BiddingScheme', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BiddingScheme'] = $BiddingScheme;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }

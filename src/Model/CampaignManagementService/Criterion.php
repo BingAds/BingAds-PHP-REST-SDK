@@ -67,19 +67,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'ParentCriterionId' => 'string',
         'Condition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition',
+        'ParentCriterionId' => 'string',
         'PartitionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType',
         'Listing' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListing',
         'ListingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType',
-        'MinDays' => 'int',
         'MaxDays' => 'int',
-        'StartDate' => '\DateTime',
+        'MinDays' => 'int',
         'EndDate' => '\DateTime',
+        'StartDate' => '\DateTime',
         'CheckInDay' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Day',
         'HotelDateSelectionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType',
-        'MinNights' => 'int',
         'MaxNights' => 'int',
+        'MinNights' => 'int',
         'Conditions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition[]',
         'Parameter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageParameter',
         'AgeRange' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange',
@@ -91,15 +91,15 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'ToHour' => 'int',
         'ToMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute',
         'GenderType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType',
+        'LatitudeDegrees' => 'float',
+        'LongitudeDegrees' => 'float',
         'Name' => 'string',
         'Radius' => 'string',
         'RadiusUnit' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit',
-        'LatitudeDegrees' => 'float',
-        'LongitudeDegrees' => 'float',
-        'LocationId' => 'string',
-        'LocationType' => 'string',
         'DisplayName' => 'string',
         'EnclosedLocationIds' => 'string[]',
+        'LocationId' => 'string',
+        'LocationType' => 'string',
         'IntentOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption',
         'AudienceId' => 'string',
         'AudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
@@ -113,10 +113,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'PlacementName' => 'string',
         'TopicId' => 'string',
         'TopicName' => 'string',
-        'ChannelPlacementId' => 'string',
-        'ChannelPlacementName' => 'string',
         'ChannelId' => 'int',
         'ChannelName' => 'string',
+        'ChannelPlacementId' => 'string',
+        'ChannelPlacementName' => 'string',
         'SubChannelId' => 'int',
         'SubChannelName' => 'string'
     ];
@@ -130,19 +130,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'ParentCriterionId' => 'int64',
         'Condition' => null,
+        'ParentCriterionId' => 'int64',
         'PartitionType' => null,
         'Listing' => null,
         'ListingType' => null,
-        'MinDays' => 'int32',
         'MaxDays' => 'int32',
-        'StartDate' => 'date-time',
+        'MinDays' => 'int32',
         'EndDate' => 'date-time',
+        'StartDate' => 'date-time',
         'CheckInDay' => null,
         'HotelDateSelectionType' => null,
-        'MinNights' => 'int32',
         'MaxNights' => 'int32',
+        'MinNights' => 'int32',
         'Conditions' => null,
         'Parameter' => null,
         'AgeRange' => null,
@@ -154,15 +154,15 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'ToHour' => 'int32',
         'ToMinute' => null,
         'GenderType' => null,
+        'LatitudeDegrees' => 'double',
+        'LongitudeDegrees' => 'double',
         'Name' => null,
         'Radius' => 'int64',
         'RadiusUnit' => null,
-        'LatitudeDegrees' => 'double',
-        'LongitudeDegrees' => 'double',
-        'LocationId' => 'int64',
-        'LocationType' => null,
         'DisplayName' => null,
         'EnclosedLocationIds' => 'int64',
+        'LocationId' => 'int64',
+        'LocationType' => null,
         'IntentOption' => null,
         'AudienceId' => 'int64',
         'AudienceType' => null,
@@ -176,10 +176,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'PlacementName' => null,
         'TopicId' => 'int64',
         'TopicName' => null,
-        'ChannelPlacementId' => 'int64',
-        'ChannelPlacementName' => null,
         'ChannelId' => 'int32',
         'ChannelName' => null,
+        'ChannelPlacementId' => 'int64',
+        'ChannelPlacementName' => null,
         'SubChannelId' => 'int32',
         'SubChannelName' => null
     ];
@@ -191,42 +191,42 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'ParentCriterionId' => true,
         'Condition' => true,
+        'ParentCriterionId' => true,
         'PartitionType' => false,
         'Listing' => true,
         'ListingType' => false,
-        'MinDays' => true,
         'MaxDays' => true,
-        'StartDate' => true,
+        'MinDays' => true,
         'EndDate' => true,
-        'CheckInDay' => false,
-        'HotelDateSelectionType' => false,
-        'MinNights' => true,
+        'StartDate' => true,
+        'CheckInDay' => true,
+        'HotelDateSelectionType' => true,
         'MaxNights' => true,
+        'MinNights' => true,
         'Conditions' => true,
         'Parameter' => true,
-        'AgeRange' => false,
+        'AgeRange' => true,
         'DeviceName' => true,
         'OSName' => true,
-        'Day' => false,
+        'Day' => true,
         'FromHour' => true,
-        'FromMinute' => false,
+        'FromMinute' => true,
         'ToHour' => true,
-        'ToMinute' => false,
-        'GenderType' => false,
-        'Name' => true,
-        'Radius' => true,
-        'RadiusUnit' => false,
+        'ToMinute' => true,
+        'GenderType' => true,
         'LatitudeDegrees' => true,
         'LongitudeDegrees' => true,
-        'LocationId' => true,
-        'LocationType' => true,
+        'Name' => true,
+        'Radius' => true,
+        'RadiusUnit' => true,
         'DisplayName' => true,
         'EnclosedLocationIds' => true,
-        'IntentOption' => false,
+        'LocationId' => true,
+        'LocationType' => true,
+        'IntentOption' => true,
         'AudienceId' => true,
-        'AudienceType' => false,
+        'AudienceType' => true,
         'ProfileId' => false,
         'ProfileType' => false,
         'Profile' => true,
@@ -237,10 +237,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'PlacementName' => true,
         'TopicId' => false,
         'TopicName' => true,
-        'ChannelPlacementId' => false,
-        'ChannelPlacementName' => true,
         'ChannelId' => false,
         'ChannelName' => true,
+        'ChannelPlacementId' => false,
+        'ChannelPlacementName' => true,
         'SubChannelId' => true,
         'SubChannelName' => true
     ];
@@ -332,19 +332,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'ParentCriterionId' => 'ParentCriterionId',
         'Condition' => 'Condition',
+        'ParentCriterionId' => 'ParentCriterionId',
         'PartitionType' => 'PartitionType',
         'Listing' => 'Listing',
         'ListingType' => 'ListingType',
-        'MinDays' => 'MinDays',
         'MaxDays' => 'MaxDays',
-        'StartDate' => 'StartDate',
+        'MinDays' => 'MinDays',
         'EndDate' => 'EndDate',
+        'StartDate' => 'StartDate',
         'CheckInDay' => 'CheckInDay',
         'HotelDateSelectionType' => 'HotelDateSelectionType',
-        'MinNights' => 'MinNights',
         'MaxNights' => 'MaxNights',
+        'MinNights' => 'MinNights',
         'Conditions' => 'Conditions',
         'Parameter' => 'Parameter',
         'AgeRange' => 'AgeRange',
@@ -356,15 +356,15 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'ToHour' => 'ToHour',
         'ToMinute' => 'ToMinute',
         'GenderType' => 'GenderType',
+        'LatitudeDegrees' => 'LatitudeDegrees',
+        'LongitudeDegrees' => 'LongitudeDegrees',
         'Name' => 'Name',
         'Radius' => 'Radius',
         'RadiusUnit' => 'RadiusUnit',
-        'LatitudeDegrees' => 'LatitudeDegrees',
-        'LongitudeDegrees' => 'LongitudeDegrees',
-        'LocationId' => 'LocationId',
-        'LocationType' => 'LocationType',
         'DisplayName' => 'DisplayName',
         'EnclosedLocationIds' => 'EnclosedLocationIds',
+        'LocationId' => 'LocationId',
+        'LocationType' => 'LocationType',
         'IntentOption' => 'IntentOption',
         'AudienceId' => 'AudienceId',
         'AudienceType' => 'AudienceType',
@@ -378,10 +378,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'PlacementName' => 'PlacementName',
         'TopicId' => 'TopicId',
         'TopicName' => 'TopicName',
-        'ChannelPlacementId' => 'ChannelPlacementId',
-        'ChannelPlacementName' => 'ChannelPlacementName',
         'ChannelId' => 'ChannelId',
         'ChannelName' => 'ChannelName',
+        'ChannelPlacementId' => 'ChannelPlacementId',
+        'ChannelPlacementName' => 'ChannelPlacementName',
         'SubChannelId' => 'SubChannelId',
         'SubChannelName' => 'SubChannelName'
     ];
@@ -393,19 +393,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'ParentCriterionId' => 'setParentCriterionId',
         'Condition' => 'setCondition',
+        'ParentCriterionId' => 'setParentCriterionId',
         'PartitionType' => 'setPartitionType',
         'Listing' => 'setListing',
         'ListingType' => 'setListingType',
-        'MinDays' => 'setMinDays',
         'MaxDays' => 'setMaxDays',
-        'StartDate' => 'setStartDate',
+        'MinDays' => 'setMinDays',
         'EndDate' => 'setEndDate',
+        'StartDate' => 'setStartDate',
         'CheckInDay' => 'setCheckInDay',
         'HotelDateSelectionType' => 'setHotelDateSelectionType',
-        'MinNights' => 'setMinNights',
         'MaxNights' => 'setMaxNights',
+        'MinNights' => 'setMinNights',
         'Conditions' => 'setConditions',
         'Parameter' => 'setParameter',
         'AgeRange' => 'setAgeRange',
@@ -417,15 +417,15 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'ToHour' => 'setToHour',
         'ToMinute' => 'setToMinute',
         'GenderType' => 'setGenderType',
+        'LatitudeDegrees' => 'setLatitudeDegrees',
+        'LongitudeDegrees' => 'setLongitudeDegrees',
         'Name' => 'setName',
         'Radius' => 'setRadius',
         'RadiusUnit' => 'setRadiusUnit',
-        'LatitudeDegrees' => 'setLatitudeDegrees',
-        'LongitudeDegrees' => 'setLongitudeDegrees',
-        'LocationId' => 'setLocationId',
-        'LocationType' => 'setLocationType',
         'DisplayName' => 'setDisplayName',
         'EnclosedLocationIds' => 'setEnclosedLocationIds',
+        'LocationId' => 'setLocationId',
+        'LocationType' => 'setLocationType',
         'IntentOption' => 'setIntentOption',
         'AudienceId' => 'setAudienceId',
         'AudienceType' => 'setAudienceType',
@@ -439,10 +439,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'PlacementName' => 'setPlacementName',
         'TopicId' => 'setTopicId',
         'TopicName' => 'setTopicName',
-        'ChannelPlacementId' => 'setChannelPlacementId',
-        'ChannelPlacementName' => 'setChannelPlacementName',
         'ChannelId' => 'setChannelId',
         'ChannelName' => 'setChannelName',
+        'ChannelPlacementId' => 'setChannelPlacementId',
+        'ChannelPlacementName' => 'setChannelPlacementName',
         'SubChannelId' => 'setSubChannelId',
         'SubChannelName' => 'setSubChannelName'
     ];
@@ -454,19 +454,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'ParentCriterionId' => 'getParentCriterionId',
         'Condition' => 'getCondition',
+        'ParentCriterionId' => 'getParentCriterionId',
         'PartitionType' => 'getPartitionType',
         'Listing' => 'getListing',
         'ListingType' => 'getListingType',
-        'MinDays' => 'getMinDays',
         'MaxDays' => 'getMaxDays',
-        'StartDate' => 'getStartDate',
+        'MinDays' => 'getMinDays',
         'EndDate' => 'getEndDate',
+        'StartDate' => 'getStartDate',
         'CheckInDay' => 'getCheckInDay',
         'HotelDateSelectionType' => 'getHotelDateSelectionType',
-        'MinNights' => 'getMinNights',
         'MaxNights' => 'getMaxNights',
+        'MinNights' => 'getMinNights',
         'Conditions' => 'getConditions',
         'Parameter' => 'getParameter',
         'AgeRange' => 'getAgeRange',
@@ -478,15 +478,15 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'ToHour' => 'getToHour',
         'ToMinute' => 'getToMinute',
         'GenderType' => 'getGenderType',
+        'LatitudeDegrees' => 'getLatitudeDegrees',
+        'LongitudeDegrees' => 'getLongitudeDegrees',
         'Name' => 'getName',
         'Radius' => 'getRadius',
         'RadiusUnit' => 'getRadiusUnit',
-        'LatitudeDegrees' => 'getLatitudeDegrees',
-        'LongitudeDegrees' => 'getLongitudeDegrees',
-        'LocationId' => 'getLocationId',
-        'LocationType' => 'getLocationType',
         'DisplayName' => 'getDisplayName',
         'EnclosedLocationIds' => 'getEnclosedLocationIds',
+        'LocationId' => 'getLocationId',
+        'LocationType' => 'getLocationType',
         'IntentOption' => 'getIntentOption',
         'AudienceId' => 'getAudienceId',
         'AudienceType' => 'getAudienceType',
@@ -500,10 +500,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         'PlacementName' => 'getPlacementName',
         'TopicId' => 'getTopicId',
         'TopicName' => 'getTopicName',
-        'ChannelPlacementId' => 'getChannelPlacementId',
-        'ChannelPlacementName' => 'getChannelPlacementName',
         'ChannelId' => 'getChannelId',
         'ChannelName' => 'getChannelName',
+        'ChannelPlacementId' => 'getChannelPlacementId',
+        'ChannelPlacementName' => 'getChannelPlacementName',
         'SubChannelId' => 'getSubChannelId',
         'SubChannelName' => 'getSubChannelName'
     ];
@@ -566,19 +566,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('ParentCriterionId', $data ?? [], null);
         $this->setIfExists('Condition', $data ?? [], null);
+        $this->setIfExists('ParentCriterionId', $data ?? [], null);
         $this->setIfExists('PartitionType', $data ?? [], null);
         $this->setIfExists('Listing', $data ?? [], null);
         $this->setIfExists('ListingType', $data ?? [], null);
-        $this->setIfExists('MinDays', $data ?? [], null);
         $this->setIfExists('MaxDays', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('MinDays', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
         $this->setIfExists('CheckInDay', $data ?? [], null);
         $this->setIfExists('HotelDateSelectionType', $data ?? [], null);
-        $this->setIfExists('MinNights', $data ?? [], null);
         $this->setIfExists('MaxNights', $data ?? [], null);
+        $this->setIfExists('MinNights', $data ?? [], null);
         $this->setIfExists('Conditions', $data ?? [], null);
         $this->setIfExists('Parameter', $data ?? [], null);
         $this->setIfExists('AgeRange', $data ?? [], null);
@@ -590,15 +590,15 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ToHour', $data ?? [], null);
         $this->setIfExists('ToMinute', $data ?? [], null);
         $this->setIfExists('GenderType', $data ?? [], null);
+        $this->setIfExists('LatitudeDegrees', $data ?? [], null);
+        $this->setIfExists('LongitudeDegrees', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Radius', $data ?? [], null);
         $this->setIfExists('RadiusUnit', $data ?? [], null);
-        $this->setIfExists('LatitudeDegrees', $data ?? [], null);
-        $this->setIfExists('LongitudeDegrees', $data ?? [], null);
-        $this->setIfExists('LocationId', $data ?? [], null);
-        $this->setIfExists('LocationType', $data ?? [], null);
         $this->setIfExists('DisplayName', $data ?? [], null);
         $this->setIfExists('EnclosedLocationIds', $data ?? [], null);
+        $this->setIfExists('LocationId', $data ?? [], null);
+        $this->setIfExists('LocationType', $data ?? [], null);
         $this->setIfExists('IntentOption', $data ?? [], null);
         $this->setIfExists('AudienceId', $data ?? [], null);
         $this->setIfExists('AudienceType', $data ?? [], null);
@@ -612,10 +612,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('PlacementName', $data ?? [], null);
         $this->setIfExists('TopicId', $data ?? [], null);
         $this->setIfExists('TopicName', $data ?? [], null);
-        $this->setIfExists('ChannelPlacementId', $data ?? [], null);
-        $this->setIfExists('ChannelPlacementName', $data ?? [], null);
         $this->setIfExists('ChannelId', $data ?? [], null);
         $this->setIfExists('ChannelName', $data ?? [], null);
+        $this->setIfExists('ChannelPlacementId', $data ?? [], null);
+        $this->setIfExists('ChannelPlacementName', $data ?? [], null);
         $this->setIfExists('SubChannelId', $data ?? [], null);
         $this->setIfExists('SubChannelName', $data ?? [], null);
 
@@ -703,43 +703,6 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ParentCriterionId
-     *
-     * @return string|null
-     */
-    public function getParentCriterionId()
-    {
-        if (!isset($this->container['ParentCriterionId']) || is_null($this->container['ParentCriterionId'])) {
-            return null;
-        }
-        return $this->container['ParentCriterionId'];
-    }
-
-    /**
-     * Sets ParentCriterionId
-     *
-     * @param string|null $ParentCriterionId ParentCriterionId
-     *
-     * @return self
-     */
-    public function setParentCriterionId($ParentCriterionId)
-    {
-        if (is_null($ParentCriterionId)) {
-            array_push($this->openAPINullablesSetToNull, 'ParentCriterionId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ParentCriterionId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ParentCriterionId'] = $ParentCriterionId;
-
-        return $this;
-    }
-
-    /**
      * Gets Condition
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition|null
@@ -777,6 +740,43 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ParentCriterionId
+     *
+     * @return string|null
+     */
+    public function getParentCriterionId()
+    {
+        if (!isset($this->container['ParentCriterionId']) || is_null($this->container['ParentCriterionId'])) {
+            return null;
+        }
+        return $this->container['ParentCriterionId'];
+    }
+
+    /**
+     * Sets ParentCriterionId
+     *
+     * @param string|null $ParentCriterionId ParentCriterionId
+     *
+     * @return self
+     */
+    public function setParentCriterionId($ParentCriterionId)
+    {
+        if (is_null($ParentCriterionId)) {
+            array_push($this->openAPINullablesSetToNull, 'ParentCriterionId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ParentCriterionId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ParentCriterionId'] = $ParentCriterionId;
+
+        return $this;
+    }
+
+    /**
      * Gets PartitionType
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType|mixed|null
@@ -804,7 +804,7 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($PartitionType)) {
             throw new \InvalidArgumentException('non-nullable PartitionType cannot be null');
         }
-        if (!$PartitionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType) {
+        if (!is_null($PartitionType) && !$PartitionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType) {
             $PartitionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductPartitionType($PartitionType);
         }
         $this->container['PartitionType'] = $PartitionType;
@@ -877,47 +877,10 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($ListingType)) {
             throw new \InvalidArgumentException('non-nullable ListingType cannot be null');
         }
-        if (!$ListingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType) {
+        if (!is_null($ListingType) && !$ListingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType) {
             $ListingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType($ListingType);
         }
         $this->container['ListingType'] = $ListingType;
-
-        return $this;
-    }
-
-    /**
-     * Gets MinDays
-     *
-     * @return int|null
-     */
-    public function getMinDays()
-    {
-        if (!isset($this->container['MinDays']) || is_null($this->container['MinDays'])) {
-            return null;
-        }
-        return $this->container['MinDays'];
-    }
-
-    /**
-     * Sets MinDays
-     *
-     * @param int|null $MinDays MinDays
-     *
-     * @return self
-     */
-    public function setMinDays($MinDays)
-    {
-        if (is_null($MinDays)) {
-            array_push($this->openAPINullablesSetToNull, 'MinDays');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MinDays', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MinDays'] = $MinDays;
 
         return $this;
     }
@@ -960,38 +923,38 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets StartDate
+     * Gets MinDays
      *
-     * @return \DateTime|null
+     * @return int|null
      */
-    public function getStartDate()
+    public function getMinDays()
     {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+        if (!isset($this->container['MinDays']) || is_null($this->container['MinDays'])) {
             return null;
         }
-        return $this->container['StartDate'];
+        return $this->container['MinDays'];
     }
 
     /**
-     * Sets StartDate
+     * Sets MinDays
      *
-     * @param \DateTime|null $StartDate StartDate
+     * @param int|null $MinDays MinDays
      *
      * @return self
      */
-    public function setStartDate($StartDate)
+    public function setMinDays($MinDays)
     {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        if (is_null($MinDays)) {
+            array_push($this->openAPINullablesSetToNull, 'MinDays');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
+            $index = array_search('MinDays', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['StartDate'] = $StartDate;
+        $this->container['MinDays'] = $MinDays;
 
         return $this;
     }
@@ -1034,6 +997,43 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets StartDate
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \DateTime|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
      * Gets CheckInDay
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day|mixed|null
@@ -1059,9 +1059,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCheckInDay($CheckInDay)
     {
         if (is_null($CheckInDay)) {
-            throw new \InvalidArgumentException('non-nullable CheckInDay cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'CheckInDay');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CheckInDay', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$CheckInDay instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
+        if (!is_null($CheckInDay) && !$CheckInDay instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
             $CheckInDay = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($CheckInDay);
         }
         $this->container['CheckInDay'] = $CheckInDay;
@@ -1095,49 +1102,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHotelDateSelectionType($HotelDateSelectionType)
     {
         if (is_null($HotelDateSelectionType)) {
-            throw new \InvalidArgumentException('non-nullable HotelDateSelectionType cannot be null');
-        }
-        if (!$HotelDateSelectionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType) {
-            $HotelDateSelectionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType($HotelDateSelectionType);
-        }
-        $this->container['HotelDateSelectionType'] = $HotelDateSelectionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets MinNights
-     *
-     * @return int|null
-     */
-    public function getMinNights()
-    {
-        if (!isset($this->container['MinNights']) || is_null($this->container['MinNights'])) {
-            return null;
-        }
-        return $this->container['MinNights'];
-    }
-
-    /**
-     * Sets MinNights
-     *
-     * @param int|null $MinNights MinNights
-     *
-     * @return self
-     */
-    public function setMinNights($MinNights)
-    {
-        if (is_null($MinNights)) {
-            array_push($this->openAPINullablesSetToNull, 'MinNights');
+            array_push($this->openAPINullablesSetToNull, 'HotelDateSelectionType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MinNights', $nullablesSetToNull);
+            $index = array_search('HotelDateSelectionType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['MinNights'] = $MinNights;
+        if (!is_null($HotelDateSelectionType) && !$HotelDateSelectionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType) {
+            $HotelDateSelectionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType($HotelDateSelectionType);
+        }
+        $this->container['HotelDateSelectionType'] = $HotelDateSelectionType;
 
         return $this;
     }
@@ -1175,6 +1152,43 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['MaxNights'] = $MaxNights;
+
+        return $this;
+    }
+
+    /**
+     * Gets MinNights
+     *
+     * @return int|null
+     */
+    public function getMinNights()
+    {
+        if (!isset($this->container['MinNights']) || is_null($this->container['MinNights'])) {
+            return null;
+        }
+        return $this->container['MinNights'];
+    }
+
+    /**
+     * Sets MinNights
+     *
+     * @param int|null $MinNights MinNights
+     *
+     * @return self
+     */
+    public function setMinNights($MinNights)
+    {
+        if (is_null($MinNights)) {
+            array_push($this->openAPINullablesSetToNull, 'MinNights');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MinNights', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MinNights'] = $MinNights;
 
         return $this;
     }
@@ -1279,9 +1293,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAgeRange($AgeRange)
     {
         if (is_null($AgeRange)) {
-            throw new \InvalidArgumentException('non-nullable AgeRange cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AgeRange');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AgeRange', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AgeRange instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange) {
+        if (!is_null($AgeRange) && !$AgeRange instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange) {
             $AgeRange = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange($AgeRange);
         }
         $this->container['AgeRange'] = $AgeRange;
@@ -1389,9 +1410,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDay($Day)
     {
         if (is_null($Day)) {
-            throw new \InvalidArgumentException('non-nullable Day cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Day');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Day', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Day instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
+        if (!is_null($Day) && !$Day instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
             $Day = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($Day);
         }
         $this->container['Day'] = $Day;
@@ -1462,9 +1490,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFromMinute($FromMinute)
     {
         if (is_null($FromMinute)) {
-            throw new \InvalidArgumentException('non-nullable FromMinute cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'FromMinute');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FromMinute', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$FromMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
+        if (!is_null($FromMinute) && !$FromMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
             $FromMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($FromMinute);
         }
         $this->container['FromMinute'] = $FromMinute;
@@ -1535,9 +1570,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setToMinute($ToMinute)
     {
         if (is_null($ToMinute)) {
-            throw new \InvalidArgumentException('non-nullable ToMinute cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ToMinute');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ToMinute', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ToMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
+        if (!is_null($ToMinute) && !$ToMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
             $ToMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($ToMinute);
         }
         $this->container['ToMinute'] = $ToMinute;
@@ -1571,12 +1613,93 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGenderType($GenderType)
     {
         if (is_null($GenderType)) {
-            throw new \InvalidArgumentException('non-nullable GenderType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'GenderType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GenderType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$GenderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType) {
+        if (!is_null($GenderType) && !$GenderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType) {
             $GenderType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType($GenderType);
         }
         $this->container['GenderType'] = $GenderType;
+
+        return $this;
+    }
+
+    /**
+     * Gets LatitudeDegrees
+     *
+     * @return float|null
+     */
+    public function getLatitudeDegrees()
+    {
+        if (!isset($this->container['LatitudeDegrees']) || is_null($this->container['LatitudeDegrees'])) {
+            return null;
+        }
+        return $this->container['LatitudeDegrees'];
+    }
+
+    /**
+     * Sets LatitudeDegrees
+     *
+     * @param float|null $LatitudeDegrees LatitudeDegrees
+     *
+     * @return self
+     */
+    public function setLatitudeDegrees($LatitudeDegrees)
+    {
+        if (is_null($LatitudeDegrees)) {
+            array_push($this->openAPINullablesSetToNull, 'LatitudeDegrees');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LatitudeDegrees', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LatitudeDegrees'] = $LatitudeDegrees;
+
+        return $this;
+    }
+
+    /**
+     * Gets LongitudeDegrees
+     *
+     * @return float|null
+     */
+    public function getLongitudeDegrees()
+    {
+        if (!isset($this->container['LongitudeDegrees']) || is_null($this->container['LongitudeDegrees'])) {
+            return null;
+        }
+        return $this->container['LongitudeDegrees'];
+    }
+
+    /**
+     * Sets LongitudeDegrees
+     *
+     * @param float|null $LongitudeDegrees LongitudeDegrees
+     *
+     * @return self
+     */
+    public function setLongitudeDegrees($LongitudeDegrees)
+    {
+        if (is_null($LongitudeDegrees)) {
+            array_push($this->openAPINullablesSetToNull, 'LongitudeDegrees');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LongitudeDegrees', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LongitudeDegrees'] = $LongitudeDegrees;
 
         return $this;
     }
@@ -1681,160 +1804,19 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRadiusUnit($RadiusUnit)
     {
         if (is_null($RadiusUnit)) {
-            throw new \InvalidArgumentException('non-nullable RadiusUnit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'RadiusUnit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('RadiusUnit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$RadiusUnit instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit) {
+        if (!is_null($RadiusUnit) && !$RadiusUnit instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit) {
             $RadiusUnit = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit($RadiusUnit);
         }
         $this->container['RadiusUnit'] = $RadiusUnit;
-
-        return $this;
-    }
-
-    /**
-     * Gets LatitudeDegrees
-     *
-     * @return float|null
-     */
-    public function getLatitudeDegrees()
-    {
-        if (!isset($this->container['LatitudeDegrees']) || is_null($this->container['LatitudeDegrees'])) {
-            return null;
-        }
-        return $this->container['LatitudeDegrees'];
-    }
-
-    /**
-     * Sets LatitudeDegrees
-     *
-     * @param float|null $LatitudeDegrees LatitudeDegrees
-     *
-     * @return self
-     */
-    public function setLatitudeDegrees($LatitudeDegrees)
-    {
-        if (is_null($LatitudeDegrees)) {
-            array_push($this->openAPINullablesSetToNull, 'LatitudeDegrees');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LatitudeDegrees', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LatitudeDegrees'] = $LatitudeDegrees;
-
-        return $this;
-    }
-
-    /**
-     * Gets LongitudeDegrees
-     *
-     * @return float|null
-     */
-    public function getLongitudeDegrees()
-    {
-        if (!isset($this->container['LongitudeDegrees']) || is_null($this->container['LongitudeDegrees'])) {
-            return null;
-        }
-        return $this->container['LongitudeDegrees'];
-    }
-
-    /**
-     * Sets LongitudeDegrees
-     *
-     * @param float|null $LongitudeDegrees LongitudeDegrees
-     *
-     * @return self
-     */
-    public function setLongitudeDegrees($LongitudeDegrees)
-    {
-        if (is_null($LongitudeDegrees)) {
-            array_push($this->openAPINullablesSetToNull, 'LongitudeDegrees');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LongitudeDegrees', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LongitudeDegrees'] = $LongitudeDegrees;
-
-        return $this;
-    }
-
-    /**
-     * Gets LocationId
-     *
-     * @return string|null
-     */
-    public function getLocationId()
-    {
-        if (!isset($this->container['LocationId']) || is_null($this->container['LocationId'])) {
-            return null;
-        }
-        return $this->container['LocationId'];
-    }
-
-    /**
-     * Sets LocationId
-     *
-     * @param string|null $LocationId LocationId
-     *
-     * @return self
-     */
-    public function setLocationId($LocationId)
-    {
-        if (is_null($LocationId)) {
-            array_push($this->openAPINullablesSetToNull, 'LocationId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LocationId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LocationId'] = $LocationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets LocationType
-     *
-     * @return string|null
-     */
-    public function getLocationType()
-    {
-        if (!isset($this->container['LocationType']) || is_null($this->container['LocationType'])) {
-            return null;
-        }
-        return $this->container['LocationType'];
-    }
-
-    /**
-     * Sets LocationType
-     *
-     * @param string|null $LocationType LocationType
-     *
-     * @return self
-     */
-    public function setLocationType($LocationType)
-    {
-        if (is_null($LocationType)) {
-            array_push($this->openAPINullablesSetToNull, 'LocationType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LocationType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LocationType'] = $LocationType;
 
         return $this;
     }
@@ -1914,6 +1896,80 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets LocationId
+     *
+     * @return string|null
+     */
+    public function getLocationId()
+    {
+        if (!isset($this->container['LocationId']) || is_null($this->container['LocationId'])) {
+            return null;
+        }
+        return $this->container['LocationId'];
+    }
+
+    /**
+     * Sets LocationId
+     *
+     * @param string|null $LocationId LocationId
+     *
+     * @return self
+     */
+    public function setLocationId($LocationId)
+    {
+        if (is_null($LocationId)) {
+            array_push($this->openAPINullablesSetToNull, 'LocationId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LocationId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LocationId'] = $LocationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets LocationType
+     *
+     * @return string|null
+     */
+    public function getLocationType()
+    {
+        if (!isset($this->container['LocationType']) || is_null($this->container['LocationType'])) {
+            return null;
+        }
+        return $this->container['LocationType'];
+    }
+
+    /**
+     * Sets LocationType
+     *
+     * @param string|null $LocationType LocationType
+     *
+     * @return self
+     */
+    public function setLocationType($LocationType)
+    {
+        if (is_null($LocationType)) {
+            array_push($this->openAPINullablesSetToNull, 'LocationType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LocationType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LocationType'] = $LocationType;
+
+        return $this;
+    }
+
+    /**
      * Gets IntentOption
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null
@@ -1939,9 +1995,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIntentOption($IntentOption)
     {
         if (is_null($IntentOption)) {
-            throw new \InvalidArgumentException('non-nullable IntentOption cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'IntentOption');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IntentOption', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$IntentOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
+        if (!is_null($IntentOption) && !$IntentOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
             $IntentOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($IntentOption);
         }
         $this->container['IntentOption'] = $IntentOption;
@@ -2012,9 +2075,16 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAudienceType($AudienceType)
     {
         if (is_null($AudienceType)) {
-            throw new \InvalidArgumentException('non-nullable AudienceType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AudienceType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AudienceType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+        if (!is_null($AudienceType) && !$AudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
             $AudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($AudienceType);
         }
         $this->container['AudienceType'] = $AudienceType;
@@ -2080,7 +2150,7 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($ProfileType)) {
             throw new \InvalidArgumentException('non-nullable ProfileType cannot be null');
         }
-        if (!$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+        if (!is_null($ProfileType) && !$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
             $ProfileType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($ProfileType);
         }
         $this->container['ProfileType'] = $ProfileType;
@@ -2357,73 +2427,6 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ChannelPlacementId
-     *
-     * @return string|null
-     */
-    public function getChannelPlacementId()
-    {
-        if (!isset($this->container['ChannelPlacementId']) || is_null($this->container['ChannelPlacementId'])) {
-            return null;
-        }
-        return $this->container['ChannelPlacementId'];
-    }
-
-    /**
-     * Sets ChannelPlacementId
-     *
-     * @param string|null $ChannelPlacementId ChannelPlacementId
-     *
-     * @return self
-     */
-    public function setChannelPlacementId($ChannelPlacementId)
-    {
-        if (is_null($ChannelPlacementId)) {
-            throw new \InvalidArgumentException('non-nullable ChannelPlacementId cannot be null');
-        }
-        $this->container['ChannelPlacementId'] = $ChannelPlacementId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ChannelPlacementName
-     *
-     * @return string|null
-     */
-    public function getChannelPlacementName()
-    {
-        if (!isset($this->container['ChannelPlacementName']) || is_null($this->container['ChannelPlacementName'])) {
-            return null;
-        }
-        return $this->container['ChannelPlacementName'];
-    }
-
-    /**
-     * Sets ChannelPlacementName
-     *
-     * @param string|null $ChannelPlacementName ChannelPlacementName
-     *
-     * @return self
-     */
-    public function setChannelPlacementName($ChannelPlacementName)
-    {
-        if (is_null($ChannelPlacementName)) {
-            array_push($this->openAPINullablesSetToNull, 'ChannelPlacementName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ChannelPlacementName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ChannelPlacementName'] = $ChannelPlacementName;
-
-        return $this;
-    }
-
-    /**
      * Gets ChannelId
      *
      * @return int|null
@@ -2486,6 +2489,73 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ChannelName'] = $ChannelName;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacementId
+     *
+     * @return string|null
+     */
+    public function getChannelPlacementId()
+    {
+        if (!isset($this->container['ChannelPlacementId']) || is_null($this->container['ChannelPlacementId'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacementId'];
+    }
+
+    /**
+     * Sets ChannelPlacementId
+     *
+     * @param string|null $ChannelPlacementId ChannelPlacementId
+     *
+     * @return self
+     */
+    public function setChannelPlacementId($ChannelPlacementId)
+    {
+        if (is_null($ChannelPlacementId)) {
+            throw new \InvalidArgumentException('non-nullable ChannelPlacementId cannot be null');
+        }
+        $this->container['ChannelPlacementId'] = $ChannelPlacementId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacementName
+     *
+     * @return string|null
+     */
+    public function getChannelPlacementName()
+    {
+        if (!isset($this->container['ChannelPlacementName']) || is_null($this->container['ChannelPlacementName'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacementName'];
+    }
+
+    /**
+     * Sets ChannelPlacementName
+     *
+     * @param string|null $ChannelPlacementName ChannelPlacementName
+     *
+     * @return self
+     */
+    public function setChannelPlacementName($ChannelPlacementName)
+    {
+        if (is_null($ChannelPlacementName)) {
+            array_push($this->openAPINullablesSetToNull, 'ChannelPlacementName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ChannelPlacementName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ChannelPlacementName'] = $ChannelPlacementName;
 
         return $this;
     }

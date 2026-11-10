@@ -33,9 +33,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SharedEntityId' => 'string',
         'ListItemIds' => 'string[]',
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
+        'SharedEntityId' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SharedEntityId' => 'int64',
         'ListItemIds' => 'int64',
-        'PartialErrors' => null
+        'PartialErrors' => null,
+        'SharedEntityId' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SharedEntityId' => false,
         'ListItemIds' => true,
-        'PartialErrors' => true
+        'PartialErrors' => true,
+        'SharedEntityId' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SharedEntityId' => 'SharedEntityId',
         'ListItemIds' => 'ListItemIds',
-        'PartialErrors' => 'PartialErrors'
+        'PartialErrors' => 'PartialErrors',
+        'SharedEntityId' => 'SharedEntityId'
     ];
 
     /**
@@ -159,9 +159,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
-        'SharedEntityId' => 'setSharedEntityId',
         'ListItemIds' => 'setListItemIds',
-        'PartialErrors' => 'setPartialErrors'
+        'PartialErrors' => 'setPartialErrors',
+        'SharedEntityId' => 'setSharedEntityId'
     ];
 
     /**
@@ -170,9 +170,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
-        'SharedEntityId' => 'getSharedEntityId',
         'ListItemIds' => 'getListItemIds',
-        'PartialErrors' => 'getPartialErrors'
+        'PartialErrors' => 'getPartialErrors',
+        'SharedEntityId' => 'getSharedEntityId'
     ];
 
     /**
@@ -232,9 +232,9 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SharedEntityId', $data ?? [], null);
         $this->setIfExists('ListItemIds', $data ?? [], null);
         $this->setIfExists('PartialErrors', $data ?? [], null);
+        $this->setIfExists('SharedEntityId', $data ?? [], null);
     }
 
     /**
@@ -278,36 +278,6 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SharedEntityId
-     *
-     * @return string|null
-     */
-    public function getSharedEntityId()
-    {
-        if (!isset($this->container['SharedEntityId']) || is_null($this->container['SharedEntityId'])) {
-            return null;
-        }
-        return $this->container['SharedEntityId'];
-    }
-
-    /**
-     * Sets SharedEntityId
-     *
-     * @param string|null $SharedEntityId SharedEntityId
-     *
-     * @return self
-     */
-    public function setSharedEntityId($SharedEntityId)
-    {
-        if (is_null($SharedEntityId)) {
-            throw new \InvalidArgumentException('non-nullable SharedEntityId cannot be null');
-        }
-        $this->container['SharedEntityId'] = $SharedEntityId;
-
-        return $this;
-    }
 
     /**
      * Gets ListItemIds
@@ -379,6 +349,36 @@ class AddSharedEntityResponse implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['PartialErrors'] = $PartialErrors;
+
+        return $this;
+    }
+
+    /**
+     * Gets SharedEntityId
+     *
+     * @return string|null
+     */
+    public function getSharedEntityId()
+    {
+        if (!isset($this->container['SharedEntityId']) || is_null($this->container['SharedEntityId'])) {
+            return null;
+        }
+        return $this->container['SharedEntityId'];
+    }
+
+    /**
+     * Sets SharedEntityId
+     *
+     * @param string|null $SharedEntityId SharedEntityId
+     *
+     * @return self
+     */
+    public function setSharedEntityId($SharedEntityId)
+    {
+        if (is_null($SharedEntityId)) {
+            throw new \InvalidArgumentException('non-nullable SharedEntityId cannot be null');
+        }
+        $this->container['SharedEntityId'] = $SharedEntityId;
 
         return $this;
     }

@@ -56,7 +56,7 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'CheckInDay' => false
+        'CheckInDay' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CheckInDay', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class HotelCheckInDayCriterion extends Criterion implements ModelInterface, Arra
     public function setCheckInDay($CheckInDay)
     {
         if (is_null($CheckInDay)) {
-            throw new \InvalidArgumentException('non-nullable CheckInDay cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'CheckInDay');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CheckInDay', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$CheckInDay instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
+        if (!is_null($CheckInDay) && !$CheckInDay instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
             $CheckInDay = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($CheckInDay);
         }
         $this->container['CheckInDay'] = $CheckInDay;

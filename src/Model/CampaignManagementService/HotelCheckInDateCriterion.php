@@ -34,8 +34,8 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'StartDate' => '\DateTime',
-        'EndDate' => '\DateTime'
+        'EndDate' => '\DateTime',
+        'StartDate' => '\DateTime'
     ];
 
     /**
@@ -47,8 +47,8 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'StartDate' => 'date-time',
-        'EndDate' => 'date-time'
+        'EndDate' => 'date-time',
+        'StartDate' => 'date-time'
     ];
 
     /**
@@ -58,8 +58,8 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'StartDate' => true,
-        'EndDate' => true
+        'EndDate' => true,
+        'StartDate' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'StartDate' => 'StartDate',
-        'EndDate' => 'EndDate'
+        'EndDate' => 'EndDate',
+        'StartDate' => 'StartDate'
     ];
 
     /**
@@ -160,8 +160,8 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'StartDate' => 'setStartDate',
-        'EndDate' => 'setEndDate'
+        'EndDate' => 'setEndDate',
+        'StartDate' => 'setStartDate'
     ];
 
     /**
@@ -171,8 +171,8 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'StartDate' => 'getStartDate',
-        'EndDate' => 'getEndDate'
+        'EndDate' => 'getEndDate',
+        'StartDate' => 'getStartDate'
     ];
 
     /**
@@ -233,8 +233,13 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,43 +322,6 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
     }
 
     /**
-     * Gets StartDate
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
-            return null;
-        }
-        return $this->container['StartDate'];
-    }
-
-    /**
-     * Sets StartDate
-     *
-     * @param \DateTime|null $StartDate StartDate
-     *
-     * @return self
-     */
-    public function setStartDate($StartDate)
-    {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StartDate'] = $StartDate;
-
-        return $this;
-    }
-
-    /**
      * Gets EndDate
      *
      * @return \DateTime|null
@@ -386,6 +354,43 @@ class HotelCheckInDateCriterion extends Criterion implements ModelInterface, Arr
             }
         }
         $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartDate
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \DateTime|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
 
         return $this;
     }

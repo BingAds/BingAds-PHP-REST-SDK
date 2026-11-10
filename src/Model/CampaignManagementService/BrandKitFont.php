@@ -33,9 +33,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'TextAssetType' => 'string',
         'Typeface' => 'string',
-        'Weight' => 'string',
-        'TextAssetType' => 'string'
+        'Weight' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'TextAssetType' => null,
         'Typeface' => null,
-        'Weight' => null,
-        'TextAssetType' => null
+        'Weight' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'TextAssetType' => true,
         'Typeface' => true,
-        'Weight' => true,
-        'TextAssetType' => true
+        'Weight' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'TextAssetType' => 'TextAssetType',
         'Typeface' => 'Typeface',
-        'Weight' => 'Weight',
-        'TextAssetType' => 'TextAssetType'
+        'Weight' => 'Weight'
     ];
 
     /**
@@ -159,9 +159,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'TextAssetType' => 'setTextAssetType',
         'Typeface' => 'setTypeface',
-        'Weight' => 'setWeight',
-        'TextAssetType' => 'setTextAssetType'
+        'Weight' => 'setWeight'
     ];
 
     /**
@@ -170,9 +170,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'TextAssetType' => 'getTextAssetType',
         'Typeface' => 'getTypeface',
-        'Weight' => 'getWeight',
-        'TextAssetType' => 'getTextAssetType'
+        'Weight' => 'getWeight'
     ];
 
     /**
@@ -232,9 +232,9 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('TextAssetType', $data ?? [], null);
         $this->setIfExists('Typeface', $data ?? [], null);
         $this->setIfExists('Weight', $data ?? [], null);
-        $this->setIfExists('TextAssetType', $data ?? [], null);
     }
 
     /**
@@ -278,6 +278,43 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets TextAssetType
+     *
+     * @return string|null
+     */
+    public function getTextAssetType()
+    {
+        if (!isset($this->container['TextAssetType']) || is_null($this->container['TextAssetType'])) {
+            return null;
+        }
+        return $this->container['TextAssetType'];
+    }
+
+    /**
+     * Sets TextAssetType
+     *
+     * @param string|null $TextAssetType TextAssetType
+     *
+     * @return self
+     */
+    public function setTextAssetType($TextAssetType)
+    {
+        if (is_null($TextAssetType)) {
+            array_push($this->openAPINullablesSetToNull, 'TextAssetType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextAssetType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TextAssetType'] = $TextAssetType;
+
+        return $this;
+    }
 
     /**
      * Gets Typeface
@@ -349,43 +386,6 @@ class BrandKitFont implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Weight'] = $Weight;
-
-        return $this;
-    }
-
-    /**
-     * Gets TextAssetType
-     *
-     * @return string|null
-     */
-    public function getTextAssetType()
-    {
-        if (!isset($this->container['TextAssetType']) || is_null($this->container['TextAssetType'])) {
-            return null;
-        }
-        return $this->container['TextAssetType'];
-    }
-
-    /**
-     * Sets TextAssetType
-     *
-     * @param string|null $TextAssetType TextAssetType
-     *
-     * @return self
-     */
-    public function setTextAssetType($TextAssetType)
-    {
-        if (is_null($TextAssetType)) {
-            array_push($this->openAPINullablesSetToNull, 'TextAssetType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TextAssetType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TextAssetType'] = $TextAssetType;
 
         return $this;
     }

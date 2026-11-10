@@ -33,8 +33,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'OwnerCustomerId' => 'string',
-        'CustomerAccountShares' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerAccountShare[]'
+        'CustomerAccountShares' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerAccountShare[]',
+        'OwnerCustomerId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'OwnerCustomerId' => 'int64',
-        'CustomerAccountShares' => null
+        'CustomerAccountShares' => null,
+        'OwnerCustomerId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'OwnerCustomerId' => true,
-        'CustomerAccountShares' => true
+        'CustomerAccountShares' => true,
+        'OwnerCustomerId' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'OwnerCustomerId' => 'OwnerCustomerId',
-        'CustomerAccountShares' => 'CustomerAccountShares'
+        'CustomerAccountShares' => 'CustomerAccountShares',
+        'OwnerCustomerId' => 'OwnerCustomerId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'OwnerCustomerId' => 'setOwnerCustomerId',
-        'CustomerAccountShares' => 'setCustomerAccountShares'
+        'CustomerAccountShares' => 'setCustomerAccountShares',
+        'OwnerCustomerId' => 'setOwnerCustomerId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'OwnerCustomerId' => 'getOwnerCustomerId',
-        'CustomerAccountShares' => 'getCustomerAccountShares'
+        'CustomerAccountShares' => 'getCustomerAccountShares',
+        'OwnerCustomerId' => 'getOwnerCustomerId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('OwnerCustomerId', $data ?? [], null);
         $this->setIfExists('CustomerAccountShares', $data ?? [], null);
+        $this->setIfExists('OwnerCustomerId', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets OwnerCustomerId
-     *
-     * @return string|null
-     */
-    public function getOwnerCustomerId()
-    {
-        if (!isset($this->container['OwnerCustomerId']) || is_null($this->container['OwnerCustomerId'])) {
-            return null;
-        }
-        return $this->container['OwnerCustomerId'];
-    }
-
-    /**
-     * Sets OwnerCustomerId
-     *
-     * @param string|null $OwnerCustomerId OwnerCustomerId
-     *
-     * @return self
-     */
-    public function setOwnerCustomerId($OwnerCustomerId)
-    {
-        if (is_null($OwnerCustomerId)) {
-            array_push($this->openAPINullablesSetToNull, 'OwnerCustomerId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('OwnerCustomerId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['OwnerCustomerId'] = $OwnerCustomerId;
-
-        return $this;
-    }
-
-    /**
      * Gets CustomerAccountShares
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerAccountShare[]|null
@@ -342,6 +305,43 @@ class CustomerShare implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['CustomerAccountShares'] = $CustomerAccountShares;
+
+        return $this;
+    }
+
+    /**
+     * Gets OwnerCustomerId
+     *
+     * @return string|null
+     */
+    public function getOwnerCustomerId()
+    {
+        if (!isset($this->container['OwnerCustomerId']) || is_null($this->container['OwnerCustomerId'])) {
+            return null;
+        }
+        return $this->container['OwnerCustomerId'];
+    }
+
+    /**
+     * Sets OwnerCustomerId
+     *
+     * @param string|null $OwnerCustomerId OwnerCustomerId
+     *
+     * @return self
+     */
+    public function setOwnerCustomerId($OwnerCustomerId)
+    {
+        if (is_null($OwnerCustomerId)) {
+            array_push($this->openAPINullablesSetToNull, 'OwnerCustomerId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('OwnerCustomerId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['OwnerCustomerId'] = $OwnerCustomerId;
 
         return $this;
     }

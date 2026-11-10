@@ -898,7 +898,7 @@ class InsertionOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Status)) {
             throw new \InvalidArgumentException('non-nullable Status cannot be null');
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderStatus) {
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderStatus) {
             $Status = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderStatus($Status);
         }
         $this->container['Status'] = $Status;

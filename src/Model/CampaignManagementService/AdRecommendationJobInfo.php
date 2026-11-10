@@ -33,10 +33,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'JobId' => 'string',
-        'JobStatus' => 'string',
         'ErrorCode' => 'string',
-        'ErrorMessage' => 'string'
+        'ErrorMessage' => 'string',
+        'JobId' => 'string',
+        'JobStatus' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'JobId' => 'int64',
-        'JobStatus' => null,
         'ErrorCode' => null,
-        'ErrorMessage' => null
+        'ErrorMessage' => null,
+        'JobId' => 'int64',
+        'JobStatus' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'JobId' => false,
-        'JobStatus' => true,
         'ErrorCode' => true,
-        'ErrorMessage' => true
+        'ErrorMessage' => true,
+        'JobId' => false,
+        'JobStatus' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
-        'JobId' => 'JobId',
-        'JobStatus' => 'JobStatus',
         'ErrorCode' => 'ErrorCode',
-        'ErrorMessage' => 'ErrorMessage'
+        'ErrorMessage' => 'ErrorMessage',
+        'JobId' => 'JobId',
+        'JobStatus' => 'JobStatus'
     ];
 
     /**
@@ -163,10 +163,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
-        'JobId' => 'setJobId',
-        'JobStatus' => 'setJobStatus',
         'ErrorCode' => 'setErrorCode',
-        'ErrorMessage' => 'setErrorMessage'
+        'ErrorMessage' => 'setErrorMessage',
+        'JobId' => 'setJobId',
+        'JobStatus' => 'setJobStatus'
     ];
 
     /**
@@ -175,10 +175,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
-        'JobId' => 'getJobId',
-        'JobStatus' => 'getJobStatus',
         'ErrorCode' => 'getErrorCode',
-        'ErrorMessage' => 'getErrorMessage'
+        'ErrorMessage' => 'getErrorMessage',
+        'JobId' => 'getJobId',
+        'JobStatus' => 'getJobStatus'
     ];
 
     /**
@@ -238,10 +238,10 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('JobId', $data ?? [], null);
-        $this->setIfExists('JobStatus', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('ErrorMessage', $data ?? [], null);
+        $this->setIfExists('JobId', $data ?? [], null);
+        $this->setIfExists('JobStatus', $data ?? [], null);
     }
 
     /**
@@ -285,73 +285,6 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets JobId
-     *
-     * @return string|null
-     */
-    public function getJobId()
-    {
-        if (!isset($this->container['JobId']) || is_null($this->container['JobId'])) {
-            return null;
-        }
-        return $this->container['JobId'];
-    }
-
-    /**
-     * Sets JobId
-     *
-     * @param string|null $JobId JobId
-     *
-     * @return self
-     */
-    public function setJobId($JobId)
-    {
-        if (is_null($JobId)) {
-            throw new \InvalidArgumentException('non-nullable JobId cannot be null');
-        }
-        $this->container['JobId'] = $JobId;
-
-        return $this;
-    }
-
-    /**
-     * Gets JobStatus
-     *
-     * @return string|null
-     */
-    public function getJobStatus()
-    {
-        if (!isset($this->container['JobStatus']) || is_null($this->container['JobStatus'])) {
-            return null;
-        }
-        return $this->container['JobStatus'];
-    }
-
-    /**
-     * Sets JobStatus
-     *
-     * @param string|null $JobStatus JobStatus
-     *
-     * @return self
-     */
-    public function setJobStatus($JobStatus)
-    {
-        if (is_null($JobStatus)) {
-            array_push($this->openAPINullablesSetToNull, 'JobStatus');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('JobStatus', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['JobStatus'] = $JobStatus;
-
-        return $this;
-    }
 
     /**
      * Gets ErrorCode
@@ -423,6 +356,73 @@ class AdRecommendationJobInfo implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['ErrorMessage'] = $ErrorMessage;
+
+        return $this;
+    }
+
+    /**
+     * Gets JobId
+     *
+     * @return string|null
+     */
+    public function getJobId()
+    {
+        if (!isset($this->container['JobId']) || is_null($this->container['JobId'])) {
+            return null;
+        }
+        return $this->container['JobId'];
+    }
+
+    /**
+     * Sets JobId
+     *
+     * @param string|null $JobId JobId
+     *
+     * @return self
+     */
+    public function setJobId($JobId)
+    {
+        if (is_null($JobId)) {
+            throw new \InvalidArgumentException('non-nullable JobId cannot be null');
+        }
+        $this->container['JobId'] = $JobId;
+
+        return $this;
+    }
+
+    /**
+     * Gets JobStatus
+     *
+     * @return string|null
+     */
+    public function getJobStatus()
+    {
+        if (!isset($this->container['JobStatus']) || is_null($this->container['JobStatus'])) {
+            return null;
+        }
+        return $this->container['JobStatus'];
+    }
+
+    /**
+     * Sets JobStatus
+     *
+     * @param string|null $JobStatus JobStatus
+     *
+     * @return self
+     */
+    public function setJobStatus($JobStatus)
+    {
+        if (is_null($JobStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'JobStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('JobStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['JobStatus'] = $JobStatus;
 
         return $this;
     }

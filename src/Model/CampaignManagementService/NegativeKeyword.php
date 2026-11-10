@@ -33,11 +33,11 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Type' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Type' => 'string',
         'Id' => 'string',
-        'Text' => 'string',
-        'MatchType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType'
+        'MatchType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType',
+        'Text' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Type' => null,
         'ForwardCompatibilityMap' => null,
+        'Type' => null,
         'Id' => 'int64',
-        'Text' => null,
-        'MatchType' => null
+        'MatchType' => null,
+        'Text' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => true,
         'ForwardCompatibilityMap' => true,
+        'Type' => true,
         'Id' => true,
-        'Text' => true,
-        'MatchType' => false
+        'MatchType' => true,
+        'Text' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Type' => 'Type',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Type' => 'Type',
         'Id' => 'Id',
-        'Text' => 'Text',
-        'MatchType' => 'MatchType'
+        'MatchType' => 'MatchType',
+        'Text' => 'Text'
     ];
 
     /**
@@ -167,11 +167,11 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $setters = [
-        'Type' => 'setType',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Type' => 'setType',
         'Id' => 'setId',
-        'Text' => 'setText',
-        'MatchType' => 'setMatchType'
+        'MatchType' => 'setMatchType',
+        'Text' => 'setText'
     ];
 
     /**
@@ -180,11 +180,11 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $getters = [
-        'Type' => 'getType',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Type' => 'getType',
         'Id' => 'getId',
-        'Text' => 'getText',
-        'MatchType' => 'getMatchType'
+        'MatchType' => 'getMatchType',
+        'Text' => 'getText'
     ];
 
     /**
@@ -244,11 +244,16 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('MatchType', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -294,43 +299,6 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets ForwardCompatibilityMap
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
@@ -363,6 +331,43 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -405,6 +410,49 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets MatchType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType|mixed|null
+     */
+    public function getMatchType()
+    {
+        if (!isset($this->container['MatchType']) || is_null($this->container['MatchType'])) {
+            return null;
+        }
+        if ((is_object($this->container['MatchType']) || is_string($this->container['MatchType'])) && method_exists($this->container['MatchType'], 'getValue')) {
+            return $this->container['MatchType']->getValue();
+        }
+        return $this->container['MatchType'];
+    }
+
+    /**
+     * Sets MatchType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType|mixed|null $MatchType MatchType
+     *
+     * @return self
+     */
+    public function setMatchType($MatchType)
+    {
+        if (is_null($MatchType)) {
+            array_push($this->openAPINullablesSetToNull, 'MatchType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MatchType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($MatchType) && !$MatchType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType) {
+            $MatchType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType($MatchType);
+        }
+        $this->container['MatchType'] = $MatchType;
+
+        return $this;
+    }
+
+    /**
      * Gets Text
      *
      * @return string|null
@@ -437,42 +485,6 @@ class NegativeKeyword extends SharedListItem implements ModelInterface, ArrayAcc
             }
         }
         $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
-     * Gets MatchType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType|mixed|null
-     */
-    public function getMatchType()
-    {
-        if (!isset($this->container['MatchType']) || is_null($this->container['MatchType'])) {
-            return null;
-        }
-        if ((is_object($this->container['MatchType']) || is_string($this->container['MatchType'])) && method_exists($this->container['MatchType'], 'getValue')) {
-            return $this->container['MatchType']->getValue();
-        }
-        return $this->container['MatchType'];
-    }
-
-    /**
-     * Sets MatchType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType|mixed|null $MatchType MatchType
-     *
-     * @return self
-     */
-    public function setMatchType($MatchType)
-    {
-        if (is_null($MatchType)) {
-            throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
-        }
-        if (!$MatchType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType) {
-            $MatchType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MatchType($MatchType);
-        }
-        $this->container['MatchType'] = $MatchType;
 
         return $this;
     }

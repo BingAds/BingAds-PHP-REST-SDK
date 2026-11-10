@@ -34,8 +34,8 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'MinDays' => 'int',
-        'MaxDays' => 'int'
+        'MaxDays' => 'int',
+        'MinDays' => 'int'
     ];
 
     /**
@@ -47,8 +47,8 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'MinDays' => 'int32',
-        'MaxDays' => 'int32'
+        'MaxDays' => 'int32',
+        'MinDays' => 'int32'
     ];
 
     /**
@@ -58,8 +58,8 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'MinDays' => true,
-        'MaxDays' => true
+        'MaxDays' => true,
+        'MinDays' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'MinDays' => 'MinDays',
-        'MaxDays' => 'MaxDays'
+        'MaxDays' => 'MaxDays',
+        'MinDays' => 'MinDays'
     ];
 
     /**
@@ -160,8 +160,8 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'MinDays' => 'setMinDays',
-        'MaxDays' => 'setMaxDays'
+        'MaxDays' => 'setMaxDays',
+        'MinDays' => 'setMinDays'
     ];
 
     /**
@@ -171,8 +171,8 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'MinDays' => 'getMinDays',
-        'MaxDays' => 'getMaxDays'
+        'MaxDays' => 'getMaxDays',
+        'MinDays' => 'getMinDays'
     ];
 
     /**
@@ -233,8 +233,13 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('MinDays', $data ?? [], null);
         $this->setIfExists('MaxDays', $data ?? [], null);
+        $this->setIfExists('MinDays', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,43 +322,6 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
     }
 
     /**
-     * Gets MinDays
-     *
-     * @return int|null
-     */
-    public function getMinDays()
-    {
-        if (!isset($this->container['MinDays']) || is_null($this->container['MinDays'])) {
-            return null;
-        }
-        return $this->container['MinDays'];
-    }
-
-    /**
-     * Sets MinDays
-     *
-     * @param int|null $MinDays MinDays
-     *
-     * @return self
-     */
-    public function setMinDays($MinDays)
-    {
-        if (is_null($MinDays)) {
-            array_push($this->openAPINullablesSetToNull, 'MinDays');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MinDays', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MinDays'] = $MinDays;
-
-        return $this;
-    }
-
-    /**
      * Gets MaxDays
      *
      * @return int|null
@@ -386,6 +354,43 @@ class HotelAdvanceBookingWindowCriterion extends Criterion implements ModelInter
             }
         }
         $this->container['MaxDays'] = $MaxDays;
+
+        return $this;
+    }
+
+    /**
+     * Gets MinDays
+     *
+     * @return int|null
+     */
+    public function getMinDays()
+    {
+        if (!isset($this->container['MinDays']) || is_null($this->container['MinDays'])) {
+            return null;
+        }
+        return $this->container['MinDays'];
+    }
+
+    /**
+     * Sets MinDays
+     *
+     * @param int|null $MinDays MinDays
+     *
+     * @return self
+     */
+    public function setMinDays($MinDays)
+    {
+        if (is_null($MinDays)) {
+            array_push($this->openAPINullablesSetToNull, 'MinDays');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MinDays', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MinDays'] = $MinDays;
 
         return $this;
     }

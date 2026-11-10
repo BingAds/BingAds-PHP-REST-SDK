@@ -33,10 +33,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AppealStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus',
         'AssetGroupId' => 'string',
         'CampaignId' => 'string',
-        'Reasons' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialReason[]',
-        'AppealStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus'
+        'Reasons' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialReason[]'
     ];
 
     /**
@@ -47,10 +47,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AppealStatus' => null,
         'AssetGroupId' => 'int64',
         'CampaignId' => 'int64',
-        'Reasons' => null,
-        'AppealStatus' => null
+        'Reasons' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AppealStatus' => false,
         'AssetGroupId' => false,
         'CampaignId' => false,
-        'Reasons' => true,
-        'AppealStatus' => false
+        'Reasons' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AppealStatus' => 'AppealStatus',
         'AssetGroupId' => 'AssetGroupId',
         'CampaignId' => 'CampaignId',
-        'Reasons' => 'Reasons',
-        'AppealStatus' => 'AppealStatus'
+        'Reasons' => 'Reasons'
     ];
 
     /**
@@ -163,10 +163,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
+        'AppealStatus' => 'setAppealStatus',
         'AssetGroupId' => 'setAssetGroupId',
         'CampaignId' => 'setCampaignId',
-        'Reasons' => 'setReasons',
-        'AppealStatus' => 'setAppealStatus'
+        'Reasons' => 'setReasons'
     ];
 
     /**
@@ -175,10 +175,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
+        'AppealStatus' => 'getAppealStatus',
         'AssetGroupId' => 'getAssetGroupId',
         'CampaignId' => 'getCampaignId',
-        'Reasons' => 'getReasons',
-        'AppealStatus' => 'getAppealStatus'
+        'Reasons' => 'getReasons'
     ];
 
     /**
@@ -238,10 +238,10 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AppealStatus', $data ?? [], null);
         $this->setIfExists('AssetGroupId', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('Reasons', $data ?? [], null);
-        $this->setIfExists('AppealStatus', $data ?? [], null);
     }
 
     /**
@@ -285,6 +285,42 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AppealStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null
+     */
+    public function getAppealStatus()
+    {
+        if (!isset($this->container['AppealStatus']) || is_null($this->container['AppealStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AppealStatus']) || is_string($this->container['AppealStatus'])) && method_exists($this->container['AppealStatus'], 'getValue')) {
+            return $this->container['AppealStatus']->getValue();
+        }
+        return $this->container['AppealStatus'];
+    }
+
+    /**
+     * Sets AppealStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null $AppealStatus AppealStatus
+     *
+     * @return self
+     */
+    public function setAppealStatus($AppealStatus)
+    {
+        if (is_null($AppealStatus)) {
+            throw new \InvalidArgumentException('non-nullable AppealStatus cannot be null');
+        }
+        if (!is_null($AppealStatus) && !$AppealStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus) {
+            $AppealStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus($AppealStatus);
+        }
+        $this->container['AppealStatus'] = $AppealStatus;
+
+        return $this;
+    }
 
     /**
      * Gets AssetGroupId
@@ -379,42 +415,6 @@ class AssetGroupEditorialReasonCollection implements ModelInterface, ArrayAccess
             }
         }
         $this->container['Reasons'] = $Reasons;
-
-        return $this;
-    }
-
-    /**
-     * Gets AppealStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null
-     */
-    public function getAppealStatus()
-    {
-        if (!isset($this->container['AppealStatus']) || is_null($this->container['AppealStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['AppealStatus']) || is_string($this->container['AppealStatus'])) && method_exists($this->container['AppealStatus'], 'getValue')) {
-            return $this->container['AppealStatus']->getValue();
-        }
-        return $this->container['AppealStatus'];
-    }
-
-    /**
-     * Sets AppealStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null $AppealStatus AppealStatus
-     *
-     * @return self
-     */
-    public function setAppealStatus($AppealStatus)
-    {
-        if (is_null($AppealStatus)) {
-            throw new \InvalidArgumentException('non-nullable AppealStatus cannot be null');
-        }
-        if (!$AppealStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus) {
-            $AppealStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus($AppealStatus);
-        }
-        $this->container['AppealStatus'] = $AppealStatus;
 
         return $this;
     }

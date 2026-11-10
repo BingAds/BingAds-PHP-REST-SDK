@@ -56,7 +56,7 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'AgeRange' => false
+        'AgeRange' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AgeRange', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class AgeCriterion extends Criterion implements ModelInterface, ArrayAccess, \Js
     public function setAgeRange($AgeRange)
     {
         if (is_null($AgeRange)) {
-            throw new \InvalidArgumentException('non-nullable AgeRange cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AgeRange');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AgeRange', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AgeRange instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange) {
+        if (!is_null($AgeRange) && !$AgeRange instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange) {
             $AgeRange = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AgeRange($AgeRange);
         }
         $this->container['AgeRange'] = $AgeRange;

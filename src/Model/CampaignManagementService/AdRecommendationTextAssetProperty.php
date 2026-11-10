@@ -33,8 +33,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TextField' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField',
-        'Text' => 'string'
+        'Text' => 'string',
+        'TextField' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TextField' => null,
-        'Text' => null
+        'Text' => null,
+        'TextField' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TextField' => false,
-        'Text' => true
+        'Text' => true,
+        'TextField' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TextField' => 'TextField',
-        'Text' => 'Text'
+        'Text' => 'Text',
+        'TextField' => 'TextField'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'TextField' => 'setTextField',
-        'Text' => 'setText'
+        'Text' => 'setText',
+        'TextField' => 'setTextField'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'TextField' => 'getTextField',
-        'Text' => 'getText'
+        'Text' => 'getText',
+        'TextField' => 'getTextField'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TextField', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('TextField', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets TextField
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField|mixed|null
-     */
-    public function getTextField()
-    {
-        if (!isset($this->container['TextField']) || is_null($this->container['TextField'])) {
-            return null;
-        }
-        if ((is_object($this->container['TextField']) || is_string($this->container['TextField'])) && method_exists($this->container['TextField'], 'getValue')) {
-            return $this->container['TextField']->getValue();
-        }
-        return $this->container['TextField'];
-    }
-
-    /**
-     * Sets TextField
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField|mixed|null $TextField TextField
-     *
-     * @return self
-     */
-    public function setTextField($TextField)
-    {
-        if (is_null($TextField)) {
-            throw new \InvalidArgumentException('non-nullable TextField cannot be null');
-        }
-        if (!$TextField instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField) {
-            $TextField = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField($TextField);
-        }
-        $this->container['TextField'] = $TextField;
-
-        return $this;
-    }
-
-    /**
      * Gets Text
      *
      * @return string|null
@@ -341,6 +305,42 @@ class AdRecommendationTextAssetProperty implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextField
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField|mixed|null
+     */
+    public function getTextField()
+    {
+        if (!isset($this->container['TextField']) || is_null($this->container['TextField'])) {
+            return null;
+        }
+        if ((is_object($this->container['TextField']) || is_string($this->container['TextField'])) && method_exists($this->container['TextField'], 'getValue')) {
+            return $this->container['TextField']->getValue();
+        }
+        return $this->container['TextField'];
+    }
+
+    /**
+     * Sets TextField
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField|mixed|null $TextField TextField
+     *
+     * @return self
+     */
+    public function setTextField($TextField)
+    {
+        if (is_null($TextField)) {
+            throw new \InvalidArgumentException('non-nullable TextField cannot be null');
+        }
+        if (!is_null($TextField) && !$TextField instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField) {
+            $TextField = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField($TextField);
+        }
+        $this->container['TextField'] = $TextField;
 
         return $this;
     }

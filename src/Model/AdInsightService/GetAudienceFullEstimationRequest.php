@@ -55,7 +55,12 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'EndDate' => '\DateTime',
         'TotalBudget' => 'float',
         'IncludeImpressionsBreakdown' => 'bool',
-        'AutoTargeting' => 'bool'
+        'AutoTargeting' => 'bool',
+        'JobSeniority' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
+        'Genre' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
+        'Channel' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
+        'ChannelPlacement' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong',
+        'SubChannel' => '\Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong'
     ];
 
     /**
@@ -88,7 +93,12 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'EndDate' => 'date-time',
         'TotalBudget' => 'double',
         'IncludeImpressionsBreakdown' => null,
-        'AutoTargeting' => null
+        'AutoTargeting' => null,
+        'JobSeniority' => null,
+        'Genre' => null,
+        'Channel' => null,
+        'ChannelPlacement' => null,
+        'SubChannel' => null
     ];
 
     /**
@@ -119,7 +129,12 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'EndDate' => true,
         'TotalBudget' => true,
         'IncludeImpressionsBreakdown' => true,
-        'AutoTargeting' => true
+        'AutoTargeting' => true,
+        'JobSeniority' => true,
+        'Genre' => true,
+        'Channel' => true,
+        'ChannelPlacement' => true,
+        'SubChannel' => true
     ];
 
     /**
@@ -230,7 +245,12 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'EndDate' => 'EndDate',
         'TotalBudget' => 'TotalBudget',
         'IncludeImpressionsBreakdown' => 'IncludeImpressionsBreakdown',
-        'AutoTargeting' => 'AutoTargeting'
+        'AutoTargeting' => 'AutoTargeting',
+        'JobSeniority' => 'JobSeniority',
+        'Genre' => 'Genre',
+        'Channel' => 'Channel',
+        'ChannelPlacement' => 'ChannelPlacement',
+        'SubChannel' => 'SubChannel'
     ];
 
     /**
@@ -261,7 +281,12 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'EndDate' => 'setEndDate',
         'TotalBudget' => 'setTotalBudget',
         'IncludeImpressionsBreakdown' => 'setIncludeImpressionsBreakdown',
-        'AutoTargeting' => 'setAutoTargeting'
+        'AutoTargeting' => 'setAutoTargeting',
+        'JobSeniority' => 'setJobSeniority',
+        'Genre' => 'setGenre',
+        'Channel' => 'setChannel',
+        'ChannelPlacement' => 'setChannelPlacement',
+        'SubChannel' => 'setSubChannel'
     ];
 
     /**
@@ -292,7 +317,12 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         'EndDate' => 'getEndDate',
         'TotalBudget' => 'getTotalBudget',
         'IncludeImpressionsBreakdown' => 'getIncludeImpressionsBreakdown',
-        'AutoTargeting' => 'getAutoTargeting'
+        'AutoTargeting' => 'getAutoTargeting',
+        'JobSeniority' => 'getJobSeniority',
+        'Genre' => 'getGenre',
+        'Channel' => 'getChannel',
+        'ChannelPlacement' => 'getChannelPlacement',
+        'SubChannel' => 'getSubChannel'
     ];
 
     /**
@@ -375,6 +405,11 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         $this->setIfExists('TotalBudget', $data ?? [], null);
         $this->setIfExists('IncludeImpressionsBreakdown', $data ?? [], null);
         $this->setIfExists('AutoTargeting', $data ?? [], null);
+        $this->setIfExists('JobSeniority', $data ?? [], null);
+        $this->setIfExists('Genre', $data ?? [], null);
+        $this->setIfExists('Channel', $data ?? [], null);
+        $this->setIfExists('ChannelPlacement', $data ?? [], null);
+        $this->setIfExists('SubChannel', $data ?? [], null);
     }
 
     /**
@@ -1039,7 +1074,7 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
         if (is_null($Currency)) {
             throw new \InvalidArgumentException('non-nullable Currency cannot be null');
         }
-        if (!$Currency instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\Currency) {
+        if (!is_null($Currency) && !$Currency instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\Currency) {
             $Currency = new \Microsoft\MsAds\Rest\Model\AdInsightService\Currency($Currency);
         }
         $this->container['Currency'] = $Currency;
@@ -1265,6 +1300,191 @@ class GetAudienceFullEstimationRequest implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['AutoTargeting'] = $AutoTargeting;
+
+        return $this;
+    }
+
+    /**
+     * Gets JobSeniority
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getJobSeniority()
+    {
+        if (!isset($this->container['JobSeniority']) || is_null($this->container['JobSeniority'])) {
+            return null;
+        }
+        return $this->container['JobSeniority'];
+    }
+
+    /**
+     * Sets JobSeniority
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $JobSeniority JobSeniority
+     *
+     * @return self
+     */
+    public function setJobSeniority($JobSeniority)
+    {
+        if (is_null($JobSeniority)) {
+            array_push($this->openAPINullablesSetToNull, 'JobSeniority');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('JobSeniority', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['JobSeniority'] = $JobSeniority;
+
+        return $this;
+    }
+
+    /**
+     * Gets Genre
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getGenre()
+    {
+        if (!isset($this->container['Genre']) || is_null($this->container['Genre'])) {
+            return null;
+        }
+        return $this->container['Genre'];
+    }
+
+    /**
+     * Sets Genre
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $Genre Genre
+     *
+     * @return self
+     */
+    public function setGenre($Genre)
+    {
+        if (is_null($Genre)) {
+            array_push($this->openAPINullablesSetToNull, 'Genre');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Genre', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Genre'] = $Genre;
+
+        return $this;
+    }
+
+    /**
+     * Gets Channel
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getChannel()
+    {
+        if (!isset($this->container['Channel']) || is_null($this->container['Channel'])) {
+            return null;
+        }
+        return $this->container['Channel'];
+    }
+
+    /**
+     * Sets Channel
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $Channel Channel
+     *
+     * @return self
+     */
+    public function setChannel($Channel)
+    {
+        if (is_null($Channel)) {
+            array_push($this->openAPINullablesSetToNull, 'Channel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Channel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Channel'] = $Channel;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacement
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getChannelPlacement()
+    {
+        if (!isset($this->container['ChannelPlacement']) || is_null($this->container['ChannelPlacement'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacement'];
+    }
+
+    /**
+     * Sets ChannelPlacement
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $ChannelPlacement ChannelPlacement
+     *
+     * @return self
+     */
+    public function setChannelPlacement($ChannelPlacement)
+    {
+        if (is_null($ChannelPlacement)) {
+            array_push($this->openAPINullablesSetToNull, 'ChannelPlacement');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ChannelPlacement', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ChannelPlacement'] = $ChannelPlacement;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubChannel
+     *
+     * @return \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null
+     */
+    public function getSubChannel()
+    {
+        if (!isset($this->container['SubChannel']) || is_null($this->container['SubChannel'])) {
+            return null;
+        }
+        return $this->container['SubChannel'];
+    }
+
+    /**
+     * Sets SubChannel
+     *
+     * @param \Microsoft\MsAds\Rest\Model\AdInsightService\SelectionOflong|null $SubChannel SubChannel
+     *
+     * @return self
+     */
+    public function setSubChannel($SubChannel)
+    {
+        if (is_null($SubChannel)) {
+            array_push($this->openAPINullablesSetToNull, 'SubChannel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubChannel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SubChannel'] = $SubChannel;
 
         return $this;
     }

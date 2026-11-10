@@ -65,13 +65,13 @@ class CreateResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdSubType' => false,
+        'AdSubType' => true,
         'FinalUrls' => true,
         'Prompt' => true,
-        'TextTone' => false,
-        'VideoType' => false,
+        'TextTone' => true,
+        'VideoType' => true,
         'BrandKitId' => true,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -333,9 +333,16 @@ class CreateResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
     public function setAdSubType($AdSubType)
     {
         if (is_null($AdSubType)) {
-            throw new \InvalidArgumentException('non-nullable AdSubType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AdSubType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdSubType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdSubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdSubType) {
+        if (!is_null($AdSubType) && !$AdSubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdSubType) {
             $AdSubType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdSubType($AdSubType);
         }
         $this->container['AdSubType'] = $AdSubType;
@@ -443,9 +450,16 @@ class CreateResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
     public function setTextTone($TextTone)
     {
         if (is_null($TextTone)) {
-            throw new \InvalidArgumentException('non-nullable TextTone cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'TextTone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextTone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$TextTone instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone) {
+        if (!is_null($TextTone) && !$TextTone instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone) {
             $TextTone = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone($TextTone);
         }
         $this->container['TextTone'] = $TextTone;
@@ -479,9 +493,16 @@ class CreateResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
     public function setVideoType($VideoType)
     {
         if (is_null($VideoType)) {
-            throw new \InvalidArgumentException('non-nullable VideoType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'VideoType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('VideoType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$VideoType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoType) {
+        if (!is_null($VideoType) && !$VideoType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoType) {
             $VideoType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationVideoType($VideoType);
         }
         $this->container['VideoType'] = $VideoType;
@@ -552,9 +573,16 @@ class CreateResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

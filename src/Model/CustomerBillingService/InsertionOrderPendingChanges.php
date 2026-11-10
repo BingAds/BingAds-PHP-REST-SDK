@@ -733,7 +733,7 @@ class InsertionOrderPendingChanges implements ModelInterface, ArrayAccess, \Json
         if (is_null($ChangeStatus)) {
             throw new \InvalidArgumentException('non-nullable ChangeStatus cannot be null');
         }
-        if (!$ChangeStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderPendingChangesStatus) {
+        if (!is_null($ChangeStatus) && !$ChangeStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderPendingChangesStatus) {
             $ChangeStatus = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderPendingChangesStatus($ChangeStatus);
         }
         $this->container['ChangeStatus'] = $ChangeStatus;

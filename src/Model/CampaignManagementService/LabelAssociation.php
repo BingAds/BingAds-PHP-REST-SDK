@@ -33,8 +33,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'LabelId' => 'string',
-        'EntityId' => 'string'
+        'EntityId' => 'string',
+        'LabelId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'LabelId' => 'int64',
-        'EntityId' => 'int64'
+        'EntityId' => 'int64',
+        'LabelId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'LabelId' => false,
-        'EntityId' => false
+        'EntityId' => false,
+        'LabelId' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'LabelId' => 'LabelId',
-        'EntityId' => 'EntityId'
+        'EntityId' => 'EntityId',
+        'LabelId' => 'LabelId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'LabelId' => 'setLabelId',
-        'EntityId' => 'setEntityId'
+        'EntityId' => 'setEntityId',
+        'LabelId' => 'setLabelId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'LabelId' => 'getLabelId',
-        'EntityId' => 'getEntityId'
+        'EntityId' => 'getEntityId',
+        'LabelId' => 'getLabelId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('LabelId', $data ?? [], null);
         $this->setIfExists('EntityId', $data ?? [], null);
+        $this->setIfExists('LabelId', $data ?? [], null);
     }
 
     /**
@@ -273,36 +273,6 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets LabelId
-     *
-     * @return string|null
-     */
-    public function getLabelId()
-    {
-        if (!isset($this->container['LabelId']) || is_null($this->container['LabelId'])) {
-            return null;
-        }
-        return $this->container['LabelId'];
-    }
-
-    /**
-     * Sets LabelId
-     *
-     * @param string|null $LabelId LabelId
-     *
-     * @return self
-     */
-    public function setLabelId($LabelId)
-    {
-        if (is_null($LabelId)) {
-            throw new \InvalidArgumentException('non-nullable LabelId cannot be null');
-        }
-        $this->container['LabelId'] = $LabelId;
-
-        return $this;
-    }
-
-    /**
      * Gets EntityId
      *
      * @return string|null
@@ -328,6 +298,36 @@ class LabelAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable EntityId cannot be null');
         }
         $this->container['EntityId'] = $EntityId;
+
+        return $this;
+    }
+
+    /**
+     * Gets LabelId
+     *
+     * @return string|null
+     */
+    public function getLabelId()
+    {
+        if (!isset($this->container['LabelId']) || is_null($this->container['LabelId'])) {
+            return null;
+        }
+        return $this->container['LabelId'];
+    }
+
+    /**
+     * Sets LabelId
+     *
+     * @param string|null $LabelId LabelId
+     *
+     * @return self
+     */
+    public function setLabelId($LabelId)
+    {
+        if (is_null($LabelId)) {
+            throw new \InvalidArgumentException('non-nullable LabelId cannot be null');
+        }
+        $this->container['LabelId'] = $LabelId;
 
         return $this;
     }

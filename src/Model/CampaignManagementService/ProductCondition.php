@@ -33,8 +33,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Operand' => 'string',
         'Attribute' => 'string',
+        'Operand' => 'string',
         'Operator' => 'string'
     ];
 
@@ -46,8 +46,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Operand' => null,
         'Attribute' => null,
+        'Operand' => null,
         'Operator' => null
     ];
 
@@ -57,8 +57,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Operand' => true,
         'Attribute' => true,
+        'Operand' => true,
         'Operator' => true
     ];
 
@@ -148,8 +148,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Operand' => 'Operand',
         'Attribute' => 'Attribute',
+        'Operand' => 'Operand',
         'Operator' => 'Operator'
     ];
 
@@ -159,8 +159,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Operand' => 'setOperand',
         'Attribute' => 'setAttribute',
+        'Operand' => 'setOperand',
         'Operator' => 'setOperator'
     ];
 
@@ -170,8 +170,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Operand' => 'getOperand',
         'Attribute' => 'getAttribute',
+        'Operand' => 'getOperand',
         'Operator' => 'getOperator'
     ];
 
@@ -232,8 +232,8 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Attribute', $data ?? [], null);
+        $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Operator', $data ?? [], null);
     }
 
@@ -280,43 +280,6 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Operand
-     *
-     * @return string|null
-     */
-    public function getOperand()
-    {
-        if (!isset($this->container['Operand']) || is_null($this->container['Operand'])) {
-            return null;
-        }
-        return $this->container['Operand'];
-    }
-
-    /**
-     * Sets Operand
-     *
-     * @param string|null $Operand Operand
-     *
-     * @return self
-     */
-    public function setOperand($Operand)
-    {
-        if (is_null($Operand)) {
-            array_push($this->openAPINullablesSetToNull, 'Operand');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Operand', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Operand'] = $Operand;
-
-        return $this;
-    }
-
-    /**
      * Gets Attribute
      *
      * @return string|null
@@ -349,6 +312,43 @@ class ProductCondition implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Attribute'] = $Attribute;
+
+        return $this;
+    }
+
+    /**
+     * Gets Operand
+     *
+     * @return string|null
+     */
+    public function getOperand()
+    {
+        if (!isset($this->container['Operand']) || is_null($this->container['Operand'])) {
+            return null;
+        }
+        return $this->container['Operand'];
+    }
+
+    /**
+     * Sets Operand
+     *
+     * @param string|null $Operand Operand
+     *
+     * @return self
+     */
+    public function setOperand($Operand)
+    {
+        if (is_null($Operand)) {
+            array_push($this->openAPINullablesSetToNull, 'Operand');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Operand', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Operand'] = $Operand;
 
         return $this;
     }

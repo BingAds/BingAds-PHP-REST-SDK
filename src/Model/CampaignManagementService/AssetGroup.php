@@ -33,30 +33,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus',
-        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'AssetContext' => 'string',
+        'AssetGroupSearchThemes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]',
+        'AssetGroupUrlTargets' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]',
+        'BusinessName' => 'string',
+        'CallToAction' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction',
+        'Descriptions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus',
         'EndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Headlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'Id' => 'string',
+        'Images' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'LongHeadlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'Name' => 'string',
         'Path1' => 'string',
         'Path2' => 'string',
-        'BusinessName' => 'string',
-        'AssetContext' => 'string',
-        'Headlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'LongHeadlines' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'Descriptions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'Images' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'Videos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'CallToAction' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction',
-        'FinalUrls' => 'string[]',
-        'AssetGroupSearchThemes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]',
-        'FinalMobileUrls' => 'string[]',
+        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus',
         'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
         'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus',
-        'AssetGroupUrlTargets' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]',
-        'Id' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'Videos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]'
     ];
 
     /**
@@ -67,30 +67,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'Status' => null,
-        'StartDate' => null,
+        'AssetContext' => null,
+        'AssetGroupSearchThemes' => null,
+        'AssetGroupUrlTargets' => null,
+        'BusinessName' => null,
+        'CallToAction' => null,
+        'Descriptions' => null,
+        'EditorialStatus' => null,
         'EndDate' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'ForwardCompatibilityMap' => null,
+        'Headlines' => null,
+        'Id' => 'int64',
+        'Images' => null,
+        'LongHeadlines' => null,
+        'Name' => null,
         'Path1' => null,
         'Path2' => null,
-        'BusinessName' => null,
-        'AssetContext' => null,
-        'Headlines' => null,
-        'LongHeadlines' => null,
-        'Descriptions' => null,
-        'Images' => null,
-        'Videos' => null,
-        'CallToAction' => null,
-        'FinalUrls' => null,
-        'AssetGroupSearchThemes' => null,
-        'FinalMobileUrls' => null,
+        'StartDate' => null,
+        'Status' => null,
         'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
         'UrlCustomParameters' => null,
-        'EditorialStatus' => null,
-        'AssetGroupUrlTargets' => null,
-        'Id' => 'int64',
-        'ForwardCompatibilityMap' => null
+        'Videos' => null
     ];
 
     /**
@@ -99,30 +99,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'Status' => false,
-        'StartDate' => true,
+        'AssetContext' => true,
+        'AssetGroupSearchThemes' => true,
+        'AssetGroupUrlTargets' => true,
+        'BusinessName' => true,
+        'CallToAction' => true,
+        'Descriptions' => true,
+        'EditorialStatus' => true,
         'EndDate' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'ForwardCompatibilityMap' => true,
+        'Headlines' => true,
+        'Id' => true,
+        'Images' => true,
+        'LongHeadlines' => true,
+        'Name' => true,
         'Path1' => true,
         'Path2' => true,
-        'BusinessName' => true,
-        'AssetContext' => true,
-        'Headlines' => true,
-        'LongHeadlines' => true,
-        'Descriptions' => true,
-        'Images' => true,
-        'Videos' => true,
-        'CallToAction' => false,
-        'FinalUrls' => true,
-        'AssetGroupSearchThemes' => true,
-        'FinalMobileUrls' => true,
+        'StartDate' => true,
+        'Status' => true,
         'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
         'UrlCustomParameters' => true,
-        'EditorialStatus' => false,
-        'AssetGroupUrlTargets' => true,
-        'Id' => true,
-        'ForwardCompatibilityMap' => true
+        'Videos' => true
     ];
 
     /**
@@ -211,30 +211,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'Status' => 'Status',
-        'StartDate' => 'StartDate',
+        'AssetContext' => 'AssetContext',
+        'AssetGroupSearchThemes' => 'AssetGroupSearchThemes',
+        'AssetGroupUrlTargets' => 'AssetGroupUrlTargets',
+        'BusinessName' => 'BusinessName',
+        'CallToAction' => 'CallToAction',
+        'Descriptions' => 'Descriptions',
+        'EditorialStatus' => 'EditorialStatus',
         'EndDate' => 'EndDate',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Headlines' => 'Headlines',
+        'Id' => 'Id',
+        'Images' => 'Images',
+        'LongHeadlines' => 'LongHeadlines',
+        'Name' => 'Name',
         'Path1' => 'Path1',
         'Path2' => 'Path2',
-        'BusinessName' => 'BusinessName',
-        'AssetContext' => 'AssetContext',
-        'Headlines' => 'Headlines',
-        'LongHeadlines' => 'LongHeadlines',
-        'Descriptions' => 'Descriptions',
-        'Images' => 'Images',
-        'Videos' => 'Videos',
-        'CallToAction' => 'CallToAction',
-        'FinalUrls' => 'FinalUrls',
-        'AssetGroupSearchThemes' => 'AssetGroupSearchThemes',
-        'FinalMobileUrls' => 'FinalMobileUrls',
+        'StartDate' => 'StartDate',
+        'Status' => 'Status',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
         'UrlCustomParameters' => 'UrlCustomParameters',
-        'EditorialStatus' => 'EditorialStatus',
-        'AssetGroupUrlTargets' => 'AssetGroupUrlTargets',
-        'Id' => 'Id',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'Videos' => 'Videos'
     ];
 
     /**
@@ -243,30 +243,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'Status' => 'setStatus',
-        'StartDate' => 'setStartDate',
+        'AssetContext' => 'setAssetContext',
+        'AssetGroupSearchThemes' => 'setAssetGroupSearchThemes',
+        'AssetGroupUrlTargets' => 'setAssetGroupUrlTargets',
+        'BusinessName' => 'setBusinessName',
+        'CallToAction' => 'setCallToAction',
+        'Descriptions' => 'setDescriptions',
+        'EditorialStatus' => 'setEditorialStatus',
         'EndDate' => 'setEndDate',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Headlines' => 'setHeadlines',
+        'Id' => 'setId',
+        'Images' => 'setImages',
+        'LongHeadlines' => 'setLongHeadlines',
+        'Name' => 'setName',
         'Path1' => 'setPath1',
         'Path2' => 'setPath2',
-        'BusinessName' => 'setBusinessName',
-        'AssetContext' => 'setAssetContext',
-        'Headlines' => 'setHeadlines',
-        'LongHeadlines' => 'setLongHeadlines',
-        'Descriptions' => 'setDescriptions',
-        'Images' => 'setImages',
-        'Videos' => 'setVideos',
-        'CallToAction' => 'setCallToAction',
-        'FinalUrls' => 'setFinalUrls',
-        'AssetGroupSearchThemes' => 'setAssetGroupSearchThemes',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'StartDate' => 'setStartDate',
+        'Status' => 'setStatus',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
         'UrlCustomParameters' => 'setUrlCustomParameters',
-        'EditorialStatus' => 'setEditorialStatus',
-        'AssetGroupUrlTargets' => 'setAssetGroupUrlTargets',
-        'Id' => 'setId',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'Videos' => 'setVideos'
     ];
 
     /**
@@ -275,30 +275,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'Status' => 'getStatus',
-        'StartDate' => 'getStartDate',
+        'AssetContext' => 'getAssetContext',
+        'AssetGroupSearchThemes' => 'getAssetGroupSearchThemes',
+        'AssetGroupUrlTargets' => 'getAssetGroupUrlTargets',
+        'BusinessName' => 'getBusinessName',
+        'CallToAction' => 'getCallToAction',
+        'Descriptions' => 'getDescriptions',
+        'EditorialStatus' => 'getEditorialStatus',
         'EndDate' => 'getEndDate',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Headlines' => 'getHeadlines',
+        'Id' => 'getId',
+        'Images' => 'getImages',
+        'LongHeadlines' => 'getLongHeadlines',
+        'Name' => 'getName',
         'Path1' => 'getPath1',
         'Path2' => 'getPath2',
-        'BusinessName' => 'getBusinessName',
-        'AssetContext' => 'getAssetContext',
-        'Headlines' => 'getHeadlines',
-        'LongHeadlines' => 'getLongHeadlines',
-        'Descriptions' => 'getDescriptions',
-        'Images' => 'getImages',
-        'Videos' => 'getVideos',
-        'CallToAction' => 'getCallToAction',
-        'FinalUrls' => 'getFinalUrls',
-        'AssetGroupSearchThemes' => 'getAssetGroupSearchThemes',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'StartDate' => 'getStartDate',
+        'Status' => 'getStatus',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
         'UrlCustomParameters' => 'getUrlCustomParameters',
-        'EditorialStatus' => 'getEditorialStatus',
-        'AssetGroupUrlTargets' => 'getAssetGroupUrlTargets',
-        'Id' => 'getId',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'Videos' => 'getVideos'
     ];
 
     /**
@@ -358,30 +358,30 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('AssetContext', $data ?? [], null);
+        $this->setIfExists('AssetGroupSearchThemes', $data ?? [], null);
+        $this->setIfExists('AssetGroupUrlTargets', $data ?? [], null);
+        $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('CallToAction', $data ?? [], null);
+        $this->setIfExists('Descriptions', $data ?? [], null);
+        $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Headlines', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Images', $data ?? [], null);
+        $this->setIfExists('LongHeadlines', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Path1', $data ?? [], null);
         $this->setIfExists('Path2', $data ?? [], null);
-        $this->setIfExists('BusinessName', $data ?? [], null);
-        $this->setIfExists('AssetContext', $data ?? [], null);
-        $this->setIfExists('Headlines', $data ?? [], null);
-        $this->setIfExists('LongHeadlines', $data ?? [], null);
-        $this->setIfExists('Descriptions', $data ?? [], null);
-        $this->setIfExists('Images', $data ?? [], null);
-        $this->setIfExists('Videos', $data ?? [], null);
-        $this->setIfExists('CallToAction', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('AssetGroupSearchThemes', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
         $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('EditorialStatus', $data ?? [], null);
-        $this->setIfExists('AssetGroupUrlTargets', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Videos', $data ?? [], null);
     }
 
     /**
@@ -427,111 +427,272 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Name
+     * Gets AssetContext
      *
      * @return string|null
      */
-    public function getName()
+    public function getAssetContext()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['AssetContext']) || is_null($this->container['AssetContext'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['AssetContext'];
     }
 
     /**
-     * Sets Name
+     * Sets AssetContext
      *
-     * @param string|null $Name Name
+     * @param string|null $AssetContext AssetContext
      *
      * @return self
      */
-    public function setName($Name)
+    public function setAssetContext($AssetContext)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($AssetContext)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetContext');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('AssetContext', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
+        $this->container['AssetContext'] = $AssetContext;
 
         return $this;
     }
 
     /**
-     * Gets Status
+     * Gets AssetGroupSearchThemes
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]|null
      */
-    public function getStatus()
+    public function getAssetGroupSearchThemes()
     {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+        if (!isset($this->container['AssetGroupSearchThemes']) || is_null($this->container['AssetGroupSearchThemes'])) {
             return null;
         }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
+        return $this->container['AssetGroupSearchThemes'];
     }
 
     /**
-     * Sets Status
+     * Sets AssetGroupSearchThemes
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus|mixed|null $Status Status
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]|null $AssetGroupSearchThemes AssetGroupSearchThemes
      *
      * @return self
      */
-    public function setStatus($Status)
+    public function setAssetGroupSearchThemes($AssetGroupSearchThemes)
     {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets StartDate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
-     */
-    public function getStartDate()
-    {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
-            return null;
-        }
-        return $this->container['StartDate'];
-    }
-
-    /**
-     * Sets StartDate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
-     *
-     * @return self
-     */
-    public function setStartDate($StartDate)
-    {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        if (is_null($AssetGroupSearchThemes)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetGroupSearchThemes');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
+            $index = array_search('AssetGroupSearchThemes', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['StartDate'] = $StartDate;
+        $this->container['AssetGroupSearchThemes'] = $AssetGroupSearchThemes;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupUrlTargets
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]|null
+     */
+    public function getAssetGroupUrlTargets()
+    {
+        if (!isset($this->container['AssetGroupUrlTargets']) || is_null($this->container['AssetGroupUrlTargets'])) {
+            return null;
+        }
+        return $this->container['AssetGroupUrlTargets'];
+    }
+
+    /**
+     * Sets AssetGroupUrlTargets
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]|null $AssetGroupUrlTargets AssetGroupUrlTargets
+     *
+     * @return self
+     */
+    public function setAssetGroupUrlTargets($AssetGroupUrlTargets)
+    {
+        if (is_null($AssetGroupUrlTargets)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetGroupUrlTargets');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssetGroupUrlTargets', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AssetGroupUrlTargets'] = $AssetGroupUrlTargets;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessName
+     *
+     * @return string|null
+     */
+    public function getBusinessName()
+    {
+        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+            return null;
+        }
+        return $this->container['BusinessName'];
+    }
+
+    /**
+     * Sets BusinessName
+     *
+     * @param string|null $BusinessName BusinessName
+     *
+     * @return self
+     */
+    public function setBusinessName($BusinessName)
+    {
+        if (is_null($BusinessName)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessName'] = $BusinessName;
+
+        return $this;
+    }
+
+    /**
+     * Gets CallToAction
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction|mixed|null
+     */
+    public function getCallToAction()
+    {
+        if (!isset($this->container['CallToAction']) || is_null($this->container['CallToAction'])) {
+            return null;
+        }
+        if ((is_object($this->container['CallToAction']) || is_string($this->container['CallToAction'])) && method_exists($this->container['CallToAction'], 'getValue')) {
+            return $this->container['CallToAction']->getValue();
+        }
+        return $this->container['CallToAction'];
+    }
+
+    /**
+     * Sets CallToAction
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction|mixed|null $CallToAction CallToAction
+     *
+     * @return self
+     */
+    public function setCallToAction($CallToAction)
+    {
+        if (is_null($CallToAction)) {
+            array_push($this->openAPINullablesSetToNull, 'CallToAction');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CallToAction', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CallToAction) && !$CallToAction instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction) {
+            $CallToAction = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction($CallToAction);
+        }
+        $this->container['CallToAction'] = $CallToAction;
+
+        return $this;
+    }
+
+    /**
+     * Gets Descriptions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getDescriptions()
+    {
+        if (!isset($this->container['Descriptions']) || is_null($this->container['Descriptions'])) {
+            return null;
+        }
+        return $this->container['Descriptions'];
+    }
+
+    /**
+     * Sets Descriptions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Descriptions Descriptions
+     *
+     * @return self
+     */
+    public function setDescriptions($Descriptions)
+    {
+        if (is_null($Descriptions)) {
+            array_push($this->openAPINullablesSetToNull, 'Descriptions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Descriptions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Descriptions'] = $Descriptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets EditorialStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus|mixed|null
+     */
+    public function getEditorialStatus()
+    {
+        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
+            return $this->container['EditorialStatus']->getValue();
+        }
+        return $this->container['EditorialStatus'];
+    }
+
+    /**
+     * Sets EditorialStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus|mixed|null $EditorialStatus EditorialStatus
+     *
+     * @return self
+     */
+    public function setEditorialStatus($EditorialStatus)
+    {
+        if (is_null($EditorialStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus) {
+            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus($EditorialStatus);
+        }
+        $this->container['EditorialStatus'] = $EditorialStatus;
 
         return $this;
     }
@@ -569,6 +730,339 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalMobileUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalMobileUrls()
+    {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+            return null;
+        }
+        return $this->container['FinalMobileUrls'];
+    }
+
+    /**
+     * Sets FinalMobileUrls
+     *
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     *
+     * @return self
+     */
+    public function setFinalMobileUrls($FinalMobileUrls)
+    {
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Headlines
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getHeadlines()
+    {
+        if (!isset($this->container['Headlines']) || is_null($this->container['Headlines'])) {
+            return null;
+        }
+        return $this->container['Headlines'];
+    }
+
+    /**
+     * Sets Headlines
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Headlines Headlines
+     *
+     * @return self
+     */
+    public function setHeadlines($Headlines)
+    {
+        if (is_null($Headlines)) {
+            array_push($this->openAPINullablesSetToNull, 'Headlines');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Headlines', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Headlines'] = $Headlines;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Images
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getImages()
+    {
+        if (!isset($this->container['Images']) || is_null($this->container['Images'])) {
+            return null;
+        }
+        return $this->container['Images'];
+    }
+
+    /**
+     * Sets Images
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Images Images
+     *
+     * @return self
+     */
+    public function setImages($Images)
+    {
+        if (is_null($Images)) {
+            array_push($this->openAPINullablesSetToNull, 'Images');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Images', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Images'] = $Images;
+
+        return $this;
+    }
+
+    /**
+     * Gets LongHeadlines
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getLongHeadlines()
+    {
+        if (!isset($this->container['LongHeadlines']) || is_null($this->container['LongHeadlines'])) {
+            return null;
+        }
+        return $this->container['LongHeadlines'];
+    }
+
+    /**
+     * Sets LongHeadlines
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $LongHeadlines LongHeadlines
+     *
+     * @return self
+     */
+    public function setLongHeadlines($LongHeadlines)
+    {
+        if (is_null($LongHeadlines)) {
+            array_push($this->openAPINullablesSetToNull, 'LongHeadlines');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LongHeadlines', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LongHeadlines'] = $LongHeadlines;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
 
         return $this;
     }
@@ -648,407 +1142,81 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets BusinessName
+     * Gets StartDate
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
      */
-    public function getBusinessName()
+    public function getStartDate()
     {
-        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
             return null;
         }
-        return $this->container['BusinessName'];
+        return $this->container['StartDate'];
     }
 
     /**
-     * Sets BusinessName
+     * Sets StartDate
      *
-     * @param string|null $BusinessName BusinessName
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
      *
      * @return self
      */
-    public function setBusinessName($BusinessName)
+    public function setStartDate($StartDate)
     {
-        if (is_null($BusinessName)) {
-            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BusinessName', $nullablesSetToNull);
+            $index = array_search('StartDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['BusinessName'] = $BusinessName;
+        $this->container['StartDate'] = $StartDate;
 
         return $this;
     }
 
     /**
-     * Gets AssetContext
+     * Gets Status
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus|mixed|null
      */
-    public function getAssetContext()
+    public function getStatus()
     {
-        if (!isset($this->container['AssetContext']) || is_null($this->container['AssetContext'])) {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
             return null;
         }
-        return $this->container['AssetContext'];
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
     }
 
     /**
-     * Sets AssetContext
+     * Sets Status
      *
-     * @param string|null $AssetContext AssetContext
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus|mixed|null $Status Status
      *
      * @return self
      */
-    public function setAssetContext($AssetContext)
+    public function setStatus($Status)
     {
-        if (is_null($AssetContext)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetContext');
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetContext', $nullablesSetToNull);
+            $index = array_search('Status', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AssetContext'] = $AssetContext;
-
-        return $this;
-    }
-
-    /**
-     * Gets Headlines
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getHeadlines()
-    {
-        if (!isset($this->container['Headlines']) || is_null($this->container['Headlines'])) {
-            return null;
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupStatus($Status);
         }
-        return $this->container['Headlines'];
-    }
-
-    /**
-     * Sets Headlines
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Headlines Headlines
-     *
-     * @return self
-     */
-    public function setHeadlines($Headlines)
-    {
-        if (is_null($Headlines)) {
-            array_push($this->openAPINullablesSetToNull, 'Headlines');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Headlines', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Headlines'] = $Headlines;
-
-        return $this;
-    }
-
-    /**
-     * Gets LongHeadlines
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getLongHeadlines()
-    {
-        if (!isset($this->container['LongHeadlines']) || is_null($this->container['LongHeadlines'])) {
-            return null;
-        }
-        return $this->container['LongHeadlines'];
-    }
-
-    /**
-     * Sets LongHeadlines
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $LongHeadlines LongHeadlines
-     *
-     * @return self
-     */
-    public function setLongHeadlines($LongHeadlines)
-    {
-        if (is_null($LongHeadlines)) {
-            array_push($this->openAPINullablesSetToNull, 'LongHeadlines');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LongHeadlines', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LongHeadlines'] = $LongHeadlines;
-
-        return $this;
-    }
-
-    /**
-     * Gets Descriptions
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getDescriptions()
-    {
-        if (!isset($this->container['Descriptions']) || is_null($this->container['Descriptions'])) {
-            return null;
-        }
-        return $this->container['Descriptions'];
-    }
-
-    /**
-     * Sets Descriptions
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Descriptions Descriptions
-     *
-     * @return self
-     */
-    public function setDescriptions($Descriptions)
-    {
-        if (is_null($Descriptions)) {
-            array_push($this->openAPINullablesSetToNull, 'Descriptions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Descriptions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Descriptions'] = $Descriptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets Images
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getImages()
-    {
-        if (!isset($this->container['Images']) || is_null($this->container['Images'])) {
-            return null;
-        }
-        return $this->container['Images'];
-    }
-
-    /**
-     * Sets Images
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Images Images
-     *
-     * @return self
-     */
-    public function setImages($Images)
-    {
-        if (is_null($Images)) {
-            array_push($this->openAPINullablesSetToNull, 'Images');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Images', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Images'] = $Images;
-
-        return $this;
-    }
-
-    /**
-     * Gets Videos
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getVideos()
-    {
-        if (!isset($this->container['Videos']) || is_null($this->container['Videos'])) {
-            return null;
-        }
-        return $this->container['Videos'];
-    }
-
-    /**
-     * Sets Videos
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Videos Videos
-     *
-     * @return self
-     */
-    public function setVideos($Videos)
-    {
-        if (is_null($Videos)) {
-            array_push($this->openAPINullablesSetToNull, 'Videos');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Videos', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Videos'] = $Videos;
-
-        return $this;
-    }
-
-    /**
-     * Gets CallToAction
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction|mixed|null
-     */
-    public function getCallToAction()
-    {
-        if (!isset($this->container['CallToAction']) || is_null($this->container['CallToAction'])) {
-            return null;
-        }
-        if ((is_object($this->container['CallToAction']) || is_string($this->container['CallToAction'])) && method_exists($this->container['CallToAction'], 'getValue')) {
-            return $this->container['CallToAction']->getValue();
-        }
-        return $this->container['CallToAction'];
-    }
-
-    /**
-     * Sets CallToAction
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction|mixed|null $CallToAction CallToAction
-     *
-     * @return self
-     */
-    public function setCallToAction($CallToAction)
-    {
-        if (is_null($CallToAction)) {
-            throw new \InvalidArgumentException('non-nullable CallToAction cannot be null');
-        }
-        if (!$CallToAction instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction) {
-            $CallToAction = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CallToAction($CallToAction);
-        }
-        $this->container['CallToAction'] = $CallToAction;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets AssetGroupSearchThemes
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]|null
-     */
-    public function getAssetGroupSearchThemes()
-    {
-        if (!isset($this->container['AssetGroupSearchThemes']) || is_null($this->container['AssetGroupSearchThemes'])) {
-            return null;
-        }
-        return $this->container['AssetGroupSearchThemes'];
-    }
-
-    /**
-     * Sets AssetGroupSearchThemes
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupSearchTheme[]|null $AssetGroupSearchThemes AssetGroupSearchThemes
-     *
-     * @return self
-     */
-    public function setAssetGroupSearchThemes($AssetGroupSearchThemes)
-    {
-        if (is_null($AssetGroupSearchThemes)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupSearchThemes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupSearchThemes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AssetGroupSearchThemes'] = $AssetGroupSearchThemes;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalMobileUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalMobileUrls()
-    {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
-            return null;
-        }
-        return $this->container['FinalMobileUrls'];
-    }
-
-    /**
-     * Sets FinalMobileUrls
-     *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
-     *
-     * @return self
-     */
-    public function setFinalMobileUrls($FinalMobileUrls)
-    {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -1091,43 +1259,6 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
      * Gets UrlCustomParameters
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
@@ -1165,148 +1296,38 @@ class AssetGroup implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets EditorialStatus
+     * Gets Videos
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
      */
-    public function getEditorialStatus()
+    public function getVideos()
     {
-        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
+        if (!isset($this->container['Videos']) || is_null($this->container['Videos'])) {
             return null;
         }
-        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
-            return $this->container['EditorialStatus']->getValue();
-        }
-        return $this->container['EditorialStatus'];
+        return $this->container['Videos'];
     }
 
     /**
-     * Sets EditorialStatus
+     * Sets Videos
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus|mixed|null $EditorialStatus EditorialStatus
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $Videos Videos
      *
      * @return self
      */
-    public function setEditorialStatus($EditorialStatus)
+    public function setVideos($Videos)
     {
-        if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
-        }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus) {
-            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupEditorialStatus($EditorialStatus);
-        }
-        $this->container['EditorialStatus'] = $EditorialStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets AssetGroupUrlTargets
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]|null
-     */
-    public function getAssetGroupUrlTargets()
-    {
-        if (!isset($this->container['AssetGroupUrlTargets']) || is_null($this->container['AssetGroupUrlTargets'])) {
-            return null;
-        }
-        return $this->container['AssetGroupUrlTargets'];
-    }
-
-    /**
-     * Sets AssetGroupUrlTargets
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupUrlTarget[]|null $AssetGroupUrlTargets AssetGroupUrlTargets
-     *
-     * @return self
-     */
-    public function setAssetGroupUrlTargets($AssetGroupUrlTargets)
-    {
-        if (is_null($AssetGroupUrlTargets)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupUrlTargets');
+        if (is_null($Videos)) {
+            array_push($this->openAPINullablesSetToNull, 'Videos');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupUrlTargets', $nullablesSetToNull);
+            $index = array_search('Videos', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AssetGroupUrlTargets'] = $AssetGroupUrlTargets;
-
-        return $this;
-    }
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['Videos'] = $Videos;
 
         return $this;
     }

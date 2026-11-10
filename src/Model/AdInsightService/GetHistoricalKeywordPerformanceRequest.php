@@ -372,7 +372,7 @@ class GetHistoricalKeywordPerformanceRequest implements ModelInterface, ArrayAcc
         if (is_null($TimeInterval)) {
             throw new \InvalidArgumentException('non-nullable TimeInterval cannot be null');
         }
-        if (!$TimeInterval instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\TimeInterval) {
+        if (!is_null($TimeInterval) && !$TimeInterval instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\TimeInterval) {
             $TimeInterval = new \Microsoft\MsAds\Rest\Model\AdInsightService\TimeInterval($TimeInterval);
         }
         $this->container['TimeInterval'] = $TimeInterval;
@@ -408,7 +408,7 @@ class GetHistoricalKeywordPerformanceRequest implements ModelInterface, ArrayAcc
         if (is_null($TargetAdPosition)) {
             throw new \InvalidArgumentException('non-nullable TargetAdPosition cannot be null');
         }
-        if (!$TargetAdPosition instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AdPosition) {
+        if (!is_null($TargetAdPosition) && !$TargetAdPosition instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AdPosition) {
             $TargetAdPosition = new \Microsoft\MsAds\Rest\Model\AdInsightService\AdPosition($TargetAdPosition);
         }
         $this->container['TargetAdPosition'] = $TargetAdPosition;

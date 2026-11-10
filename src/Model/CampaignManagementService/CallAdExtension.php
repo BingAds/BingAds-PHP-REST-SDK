@@ -33,18 +33,18 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
-        'PhoneNumber' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'CountryCode' => 'string',
         'IsCallOnly' => 'bool',
         'IsCallTrackingEnabled' => 'bool',
-        'RequireTollFreeTrackingNumber' => 'bool',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'PhoneNumber' => 'string',
+        'RequireTollFreeTrackingNumber' => 'bool'
     ];
 
     /**
@@ -55,18 +55,18 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
-        'PhoneNumber' => null,
+        'ForwardCompatibilityMap' => null,
         'CountryCode' => null,
         'IsCallOnly' => null,
         'IsCallTrackingEnabled' => null,
-        'RequireTollFreeTrackingNumber' => null,
-        'ForwardCompatibilityMap' => null
+        'PhoneNumber' => null,
+        'RequireTollFreeTrackingNumber' => null
     ];
 
     /**
@@ -75,18 +75,18 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
-        'PhoneNumber' => true,
+        'ForwardCompatibilityMap' => true,
         'CountryCode' => true,
         'IsCallOnly' => true,
         'IsCallTrackingEnabled' => true,
-        'RequireTollFreeTrackingNumber' => true,
-        'ForwardCompatibilityMap' => true
+        'PhoneNumber' => true,
+        'RequireTollFreeTrackingNumber' => true
     ];
 
     /**
@@ -175,18 +175,18 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
-        'PhoneNumber' => 'PhoneNumber',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'CountryCode' => 'CountryCode',
         'IsCallOnly' => 'IsCallOnly',
         'IsCallTrackingEnabled' => 'IsCallTrackingEnabled',
-        'RequireTollFreeTrackingNumber' => 'RequireTollFreeTrackingNumber',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'PhoneNumber' => 'PhoneNumber',
+        'RequireTollFreeTrackingNumber' => 'RequireTollFreeTrackingNumber'
     ];
 
     /**
@@ -195,18 +195,18 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
-        'PhoneNumber' => 'setPhoneNumber',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'CountryCode' => 'setCountryCode',
         'IsCallOnly' => 'setIsCallOnly',
         'IsCallTrackingEnabled' => 'setIsCallTrackingEnabled',
-        'RequireTollFreeTrackingNumber' => 'setRequireTollFreeTrackingNumber',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'PhoneNumber' => 'setPhoneNumber',
+        'RequireTollFreeTrackingNumber' => 'setRequireTollFreeTrackingNumber'
     ];
 
     /**
@@ -215,18 +215,18 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
-        'PhoneNumber' => 'getPhoneNumber',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'CountryCode' => 'getCountryCode',
         'IsCallOnly' => 'getIsCallOnly',
         'IsCallTrackingEnabled' => 'getIsCallTrackingEnabled',
-        'RequireTollFreeTrackingNumber' => 'getRequireTollFreeTrackingNumber',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'PhoneNumber' => 'getPhoneNumber',
+        'RequireTollFreeTrackingNumber' => 'getRequireTollFreeTrackingNumber'
     ];
 
     /**
@@ -286,18 +286,23 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('PhoneNumber', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('CountryCode', $data ?? [], null);
         $this->setIfExists('IsCallOnly', $data ?? [], null);
         $this->setIfExists('IsCallTrackingEnabled', $data ?? [], null);
+        $this->setIfExists('PhoneNumber', $data ?? [], null);
         $this->setIfExists('RequireTollFreeTrackingNumber', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -341,79 +346,6 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -485,6 +417,86 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -564,38 +576,38 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets PhoneNumber
+     * Gets ForwardCompatibilityMap
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
      */
-    public function getPhoneNumber()
+    public function getForwardCompatibilityMap()
     {
-        if (!isset($this->container['PhoneNumber']) || is_null($this->container['PhoneNumber'])) {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
             return null;
         }
-        return $this->container['PhoneNumber'];
+        return $this->container['ForwardCompatibilityMap'];
     }
 
     /**
-     * Sets PhoneNumber
+     * Sets ForwardCompatibilityMap
      *
-     * @param string|null $PhoneNumber PhoneNumber
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
      *
      * @return self
      */
-    public function setPhoneNumber($PhoneNumber)
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
     {
-        if (is_null($PhoneNumber)) {
-            array_push($this->openAPINullablesSetToNull, 'PhoneNumber');
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PhoneNumber', $nullablesSetToNull);
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PhoneNumber'] = $PhoneNumber;
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -712,6 +724,43 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets PhoneNumber
+     *
+     * @return string|null
+     */
+    public function getPhoneNumber()
+    {
+        if (!isset($this->container['PhoneNumber']) || is_null($this->container['PhoneNumber'])) {
+            return null;
+        }
+        return $this->container['PhoneNumber'];
+    }
+
+    /**
+     * Sets PhoneNumber
+     *
+     * @param string|null $PhoneNumber PhoneNumber
+     *
+     * @return self
+     */
+    public function setPhoneNumber($PhoneNumber)
+    {
+        if (is_null($PhoneNumber)) {
+            array_push($this->openAPINullablesSetToNull, 'PhoneNumber');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PhoneNumber', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PhoneNumber'] = $PhoneNumber;
+
+        return $this;
+    }
+
+    /**
      * Gets RequireTollFreeTrackingNumber
      *
      * @return bool|null
@@ -744,43 +793,6 @@ class CallAdExtension extends AdExtension implements ModelInterface, ArrayAccess
             }
         }
         $this->container['RequireTollFreeTrackingNumber'] = $RequireTollFreeTrackingNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }

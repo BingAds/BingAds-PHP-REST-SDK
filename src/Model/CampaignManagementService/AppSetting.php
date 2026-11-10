@@ -34,8 +34,8 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'AppStore' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore',
-        'AppId' => 'string'
+        'AppId' => 'string',
+        'AppStore' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore'
     ];
 
     /**
@@ -47,8 +47,8 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'AppStore' => null,
-        'AppId' => null
+        'AppId' => null,
+        'AppStore' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'AppStore' => false,
-        'AppId' => true
+        'AppId' => true,
+        'AppStore' => false
     ];
 
     /**
@@ -149,8 +149,8 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'AppStore' => 'AppStore',
-        'AppId' => 'AppId'
+        'AppId' => 'AppId',
+        'AppStore' => 'AppStore'
     ];
 
     /**
@@ -160,8 +160,8 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'AppStore' => 'setAppStore',
-        'AppId' => 'setAppId'
+        'AppId' => 'setAppId',
+        'AppStore' => 'setAppStore'
     ];
 
     /**
@@ -171,8 +171,8 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'AppStore' => 'getAppStore',
-        'AppId' => 'getAppId'
+        'AppId' => 'getAppId',
+        'AppStore' => 'getAppStore'
     ];
 
     /**
@@ -233,8 +233,13 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('AppStore', $data ?? [], null);
         $this->setIfExists('AppId', $data ?? [], null);
+        $this->setIfExists('AppStore', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,42 +322,6 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets AppStore
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore|mixed|null
-     */
-    public function getAppStore()
-    {
-        if (!isset($this->container['AppStore']) || is_null($this->container['AppStore'])) {
-            return null;
-        }
-        if ((is_object($this->container['AppStore']) || is_string($this->container['AppStore'])) && method_exists($this->container['AppStore'], 'getValue')) {
-            return $this->container['AppStore']->getValue();
-        }
-        return $this->container['AppStore'];
-    }
-
-    /**
-     * Sets AppStore
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore|mixed|null $AppStore AppStore
-     *
-     * @return self
-     */
-    public function setAppStore($AppStore)
-    {
-        if (is_null($AppStore)) {
-            throw new \InvalidArgumentException('non-nullable AppStore cannot be null');
-        }
-        if (!$AppStore instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore) {
-            $AppStore = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore($AppStore);
-        }
-        $this->container['AppStore'] = $AppStore;
-
-        return $this;
-    }
-
-    /**
      * Gets AppId
      *
      * @return string|null
@@ -385,6 +354,42 @@ class AppSetting extends Setting implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['AppId'] = $AppId;
+
+        return $this;
+    }
+
+    /**
+     * Gets AppStore
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore|mixed|null
+     */
+    public function getAppStore()
+    {
+        if (!isset($this->container['AppStore']) || is_null($this->container['AppStore'])) {
+            return null;
+        }
+        if ((is_object($this->container['AppStore']) || is_string($this->container['AppStore'])) && method_exists($this->container['AppStore'], 'getValue')) {
+            return $this->container['AppStore']->getValue();
+        }
+        return $this->container['AppStore'];
+    }
+
+    /**
+     * Sets AppStore
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore|mixed|null $AppStore AppStore
+     *
+     * @return self
+     */
+    public function setAppStore($AppStore)
+    {
+        if (is_null($AppStore)) {
+            throw new \InvalidArgumentException('non-nullable AppStore cannot be null');
+        }
+        if (!is_null($AppStore) && !$AppStore instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore) {
+            $AppStore = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppStore($AppStore);
+        }
+        $this->container['AppStore'] = $AppStore;
 
         return $this;
     }

@@ -33,9 +33,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AdGroupId' => 'string',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField',
-        'AdGroupId' => 'string'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
     ];
 
     /**
@@ -46,9 +46,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AdGroupId' => 'int64',
         'EditorialStatus' => null,
-        'ReturnAdditionalFields' => null,
-        'AdGroupId' => 'int64'
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AdGroupId' => false,
         'EditorialStatus' => false,
-        'ReturnAdditionalFields' => false,
-        'AdGroupId' => false
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AdGroupId' => 'AdGroupId',
         'EditorialStatus' => 'EditorialStatus',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
-        'AdGroupId' => 'AdGroupId'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -159,9 +159,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $setters = [
+        'AdGroupId' => 'setAdGroupId',
         'EditorialStatus' => 'setEditorialStatus',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
-        'AdGroupId' => 'setAdGroupId'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -170,9 +170,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static array $getters = [
+        'AdGroupId' => 'getAdGroupId',
         'EditorialStatus' => 'getEditorialStatus',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
-        'AdGroupId' => 'getAdGroupId'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -232,9 +232,9 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
-        $this->setIfExists('AdGroupId', $data ?? [], null);
     }
 
     /**
@@ -280,6 +280,36 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets AdGroupId
+     *
+     * @return string|null
+     */
+    public function getAdGroupId()
+    {
+        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+            return null;
+        }
+        return $this->container['AdGroupId'];
+    }
+
+    /**
+     * Sets AdGroupId
+     *
+     * @param string|null $AdGroupId AdGroupId
+     *
+     * @return self
+     */
+    public function setAdGroupId($AdGroupId)
+    {
+        if (is_null($AdGroupId)) {
+            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        }
+        $this->container['AdGroupId'] = $AdGroupId;
+
+        return $this;
+    }
+
+    /**
      * Gets EditorialStatus
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus|mixed|null
@@ -307,7 +337,7 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
         if (is_null($EditorialStatus)) {
             throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
         }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus) {
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus) {
             $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordEditorialStatus($EditorialStatus);
         }
         $this->container['EditorialStatus'] = $EditorialStatus;
@@ -341,42 +371,19 @@ class GetKeywordsByEditorialStatusRequest implements ModelInterface, ArrayAccess
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdGroupId
-     *
-     * @return string|null
-     */
-    public function getAdGroupId()
-    {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
-            return null;
-        }
-        return $this->container['AdGroupId'];
-    }
-
-    /**
-     * Sets AdGroupId
-     *
-     * @param string|null $AdGroupId AdGroupId
-     *
-     * @return self
-     */
-    public function setAdGroupId($AdGroupId)
-    {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
-        }
-        $this->container['AdGroupId'] = $AdGroupId;
 
         return $this;
     }

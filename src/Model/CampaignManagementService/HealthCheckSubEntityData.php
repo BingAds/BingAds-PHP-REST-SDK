@@ -34,8 +34,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPITypes = [
         'SubEntityHealthIssueCount' => 'int',
-        'SubEntityLevel' => 'string',
-        'SubEntityIds' => 'string[]'
+        'SubEntityIds' => 'string[]',
+        'SubEntityLevel' => 'string'
     ];
 
     /**
@@ -47,8 +47,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPIFormats = [
         'SubEntityHealthIssueCount' => 'int32',
-        'SubEntityLevel' => null,
-        'SubEntityIds' => 'int64'
+        'SubEntityIds' => 'int64',
+        'SubEntityLevel' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'SubEntityHealthIssueCount' => false,
-        'SubEntityLevel' => true,
-        'SubEntityIds' => true
+        'SubEntityIds' => true,
+        'SubEntityLevel' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static array $attributeMap = [
         'SubEntityHealthIssueCount' => 'SubEntityHealthIssueCount',
-        'SubEntityLevel' => 'SubEntityLevel',
-        'SubEntityIds' => 'SubEntityIds'
+        'SubEntityIds' => 'SubEntityIds',
+        'SubEntityLevel' => 'SubEntityLevel'
     ];
 
     /**
@@ -160,8 +160,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static array $setters = [
         'SubEntityHealthIssueCount' => 'setSubEntityHealthIssueCount',
-        'SubEntityLevel' => 'setSubEntityLevel',
-        'SubEntityIds' => 'setSubEntityIds'
+        'SubEntityIds' => 'setSubEntityIds',
+        'SubEntityLevel' => 'setSubEntityLevel'
     ];
 
     /**
@@ -171,8 +171,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static array $getters = [
         'SubEntityHealthIssueCount' => 'getSubEntityHealthIssueCount',
-        'SubEntityLevel' => 'getSubEntityLevel',
-        'SubEntityIds' => 'getSubEntityIds'
+        'SubEntityIds' => 'getSubEntityIds',
+        'SubEntityLevel' => 'getSubEntityLevel'
     ];
 
     /**
@@ -233,8 +233,8 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(?array $data = null)
     {
         $this->setIfExists('SubEntityHealthIssueCount', $data ?? [], null);
-        $this->setIfExists('SubEntityLevel', $data ?? [], null);
         $this->setIfExists('SubEntityIds', $data ?? [], null);
+        $this->setIfExists('SubEntityLevel', $data ?? [], null);
     }
 
     /**
@@ -310,43 +310,6 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets SubEntityLevel
-     *
-     * @return string|null
-     */
-    public function getSubEntityLevel()
-    {
-        if (!isset($this->container['SubEntityLevel']) || is_null($this->container['SubEntityLevel'])) {
-            return null;
-        }
-        return $this->container['SubEntityLevel'];
-    }
-
-    /**
-     * Sets SubEntityLevel
-     *
-     * @param string|null $SubEntityLevel SubEntityLevel
-     *
-     * @return self
-     */
-    public function setSubEntityLevel($SubEntityLevel)
-    {
-        if (is_null($SubEntityLevel)) {
-            array_push($this->openAPINullablesSetToNull, 'SubEntityLevel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SubEntityLevel', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SubEntityLevel'] = $SubEntityLevel;
-
-        return $this;
-    }
-
-    /**
      * Gets SubEntityIds
      *
      * @return string[]|null
@@ -379,6 +342,43 @@ class HealthCheckSubEntityData implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['SubEntityIds'] = $SubEntityIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubEntityLevel
+     *
+     * @return string|null
+     */
+    public function getSubEntityLevel()
+    {
+        if (!isset($this->container['SubEntityLevel']) || is_null($this->container['SubEntityLevel'])) {
+            return null;
+        }
+        return $this->container['SubEntityLevel'];
+    }
+
+    /**
+     * Sets SubEntityLevel
+     *
+     * @param string|null $SubEntityLevel SubEntityLevel
+     *
+     * @return self
+     */
+    public function setSubEntityLevel($SubEntityLevel)
+    {
+        if (is_null($SubEntityLevel)) {
+            array_push($this->openAPINullablesSetToNull, 'SubEntityLevel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubEntityLevel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SubEntityLevel'] = $SubEntityLevel;
 
         return $this;
     }

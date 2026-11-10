@@ -33,11 +33,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'EntityType' => 'string',
         'Additions' => 'int',
         'Changes' => 'int',
-        'Errors' => 'int',
         'Deletions' => 'int',
+        'EntityType' => 'string',
+        'Errors' => 'int',
         'Total' => 'int'
     ];
 
@@ -49,11 +49,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'EntityType' => null,
         'Additions' => 'int32',
         'Changes' => 'int32',
-        'Errors' => 'int32',
         'Deletions' => 'int32',
+        'EntityType' => null,
+        'Errors' => 'int32',
         'Total' => 'int32'
     ];
 
@@ -63,11 +63,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'EntityType' => true,
         'Additions' => true,
         'Changes' => true,
-        'Errors' => true,
         'Deletions' => true,
+        'EntityType' => true,
+        'Errors' => true,
         'Total' => true
     ];
 
@@ -157,11 +157,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'EntityType' => 'EntityType',
         'Additions' => 'Additions',
         'Changes' => 'Changes',
-        'Errors' => 'Errors',
         'Deletions' => 'Deletions',
+        'EntityType' => 'EntityType',
+        'Errors' => 'Errors',
         'Total' => 'Total'
     ];
 
@@ -171,11 +171,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'EntityType' => 'setEntityType',
         'Additions' => 'setAdditions',
         'Changes' => 'setChanges',
-        'Errors' => 'setErrors',
         'Deletions' => 'setDeletions',
+        'EntityType' => 'setEntityType',
+        'Errors' => 'setErrors',
         'Total' => 'setTotal'
     ];
 
@@ -185,11 +185,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'EntityType' => 'getEntityType',
         'Additions' => 'getAdditions',
         'Changes' => 'getChanges',
-        'Errors' => 'getErrors',
         'Deletions' => 'getDeletions',
+        'EntityType' => 'getEntityType',
+        'Errors' => 'getErrors',
         'Total' => 'getTotal'
     ];
 
@@ -250,11 +250,11 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('Additions', $data ?? [], null);
         $this->setIfExists('Changes', $data ?? [], null);
-        $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('Deletions', $data ?? [], null);
+        $this->setIfExists('EntityType', $data ?? [], null);
+        $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('Total', $data ?? [], null);
     }
 
@@ -299,43 +299,6 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets EntityType
-     *
-     * @return string|null
-     */
-    public function getEntityType()
-    {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
-            return null;
-        }
-        return $this->container['EntityType'];
-    }
-
-    /**
-     * Sets EntityType
-     *
-     * @param string|null $EntityType EntityType
-     *
-     * @return self
-     */
-    public function setEntityType($EntityType)
-    {
-        if (is_null($EntityType)) {
-            array_push($this->openAPINullablesSetToNull, 'EntityType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EntityType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EntityType'] = $EntityType;
-
-        return $this;
-    }
 
     /**
      * Gets Additions
@@ -412,43 +375,6 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets Errors
-     *
-     * @return int|null
-     */
-    public function getErrors()
-    {
-        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
-            return null;
-        }
-        return $this->container['Errors'];
-    }
-
-    /**
-     * Sets Errors
-     *
-     * @param int|null $Errors Errors
-     *
-     * @return self
-     */
-    public function setErrors($Errors)
-    {
-        if (is_null($Errors)) {
-            array_push($this->openAPINullablesSetToNull, 'Errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Errors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Errors'] = $Errors;
-
-        return $this;
-    }
-
-    /**
      * Gets Deletions
      *
      * @return int|null
@@ -481,6 +407,80 @@ class ImportEntityStatistics implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['Deletions'] = $Deletions;
+
+        return $this;
+    }
+
+    /**
+     * Gets EntityType
+     *
+     * @return string|null
+     */
+    public function getEntityType()
+    {
+        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
+            return null;
+        }
+        return $this->container['EntityType'];
+    }
+
+    /**
+     * Sets EntityType
+     *
+     * @param string|null $EntityType EntityType
+     *
+     * @return self
+     */
+    public function setEntityType($EntityType)
+    {
+        if (is_null($EntityType)) {
+            array_push($this->openAPINullablesSetToNull, 'EntityType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EntityType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EntityType'] = $EntityType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Errors
+     *
+     * @return int|null
+     */
+    public function getErrors()
+    {
+        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
+            return null;
+        }
+        return $this->container['Errors'];
+    }
+
+    /**
+     * Sets Errors
+     *
+     * @param int|null $Errors Errors
+     *
+     * @return self
+     */
+    public function setErrors($Errors)
+    {
+        if (is_null($Errors)) {
+            array_push($this->openAPINullablesSetToNull, 'Errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Errors'] = $Errors;
 
         return $this;
     }

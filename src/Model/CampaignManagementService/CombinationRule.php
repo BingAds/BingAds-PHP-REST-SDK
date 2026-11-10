@@ -337,7 +337,7 @@ class CombinationRule implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Operator)) {
             throw new \InvalidArgumentException('non-nullable Operator cannot be null');
         }
-        if (!$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LogicalOperator) {
+        if (!is_null($Operator) && !$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LogicalOperator) {
             $Operator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LogicalOperator($Operator);
         }
         $this->container['Operator'] = $Operator;

@@ -33,18 +33,18 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Address' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Address',
-        'GeoPoint' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint',
-        'GeoCodeStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus',
         'CompanyName' => 'string',
-        'PhoneNumber' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'GeoCodeStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus',
+        'GeoPoint' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint',
+        'PhoneNumber' => 'string'
     ];
 
     /**
@@ -55,18 +55,18 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
+        'ForwardCompatibilityMap' => null,
         'Address' => null,
-        'GeoPoint' => null,
-        'GeoCodeStatus' => null,
         'CompanyName' => null,
-        'PhoneNumber' => null,
-        'ForwardCompatibilityMap' => null
+        'GeoCodeStatus' => null,
+        'GeoPoint' => null,
+        'PhoneNumber' => null
     ];
 
     /**
@@ -75,18 +75,18 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
+        'ForwardCompatibilityMap' => true,
         'Address' => true,
-        'GeoPoint' => true,
-        'GeoCodeStatus' => false,
         'CompanyName' => true,
-        'PhoneNumber' => true,
-        'ForwardCompatibilityMap' => true
+        'GeoCodeStatus' => true,
+        'GeoPoint' => true,
+        'PhoneNumber' => true
     ];
 
     /**
@@ -175,18 +175,18 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Address' => 'Address',
-        'GeoPoint' => 'GeoPoint',
-        'GeoCodeStatus' => 'GeoCodeStatus',
         'CompanyName' => 'CompanyName',
-        'PhoneNumber' => 'PhoneNumber',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'GeoCodeStatus' => 'GeoCodeStatus',
+        'GeoPoint' => 'GeoPoint',
+        'PhoneNumber' => 'PhoneNumber'
     ];
 
     /**
@@ -195,18 +195,18 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Address' => 'setAddress',
-        'GeoPoint' => 'setGeoPoint',
-        'GeoCodeStatus' => 'setGeoCodeStatus',
         'CompanyName' => 'setCompanyName',
-        'PhoneNumber' => 'setPhoneNumber',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'GeoCodeStatus' => 'setGeoCodeStatus',
+        'GeoPoint' => 'setGeoPoint',
+        'PhoneNumber' => 'setPhoneNumber'
     ];
 
     /**
@@ -215,18 +215,18 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Address' => 'getAddress',
-        'GeoPoint' => 'getGeoPoint',
-        'GeoCodeStatus' => 'getGeoCodeStatus',
         'CompanyName' => 'getCompanyName',
-        'PhoneNumber' => 'getPhoneNumber',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'GeoCodeStatus' => 'getGeoCodeStatus',
+        'GeoPoint' => 'getGeoPoint',
+        'PhoneNumber' => 'getPhoneNumber'
     ];
 
     /**
@@ -286,18 +286,23 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('Address', $data ?? [], null);
-        $this->setIfExists('GeoPoint', $data ?? [], null);
-        $this->setIfExists('GeoCodeStatus', $data ?? [], null);
-        $this->setIfExists('CompanyName', $data ?? [], null);
-        $this->setIfExists('PhoneNumber', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Address', $data ?? [], null);
+        $this->setIfExists('CompanyName', $data ?? [], null);
+        $this->setIfExists('GeoCodeStatus', $data ?? [], null);
+        $this->setIfExists('GeoPoint', $data ?? [], null);
+        $this->setIfExists('PhoneNumber', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -341,79 +346,6 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -485,6 +417,86 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -564,6 +576,43 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
     }
 
     /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
      * Gets Address
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Address|null
@@ -596,79 +645,6 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
             }
         }
         $this->container['Address'] = $Address;
-
-        return $this;
-    }
-
-    /**
-     * Gets GeoPoint
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null
-     */
-    public function getGeoPoint()
-    {
-        if (!isset($this->container['GeoPoint']) || is_null($this->container['GeoPoint'])) {
-            return null;
-        }
-        return $this->container['GeoPoint'];
-    }
-
-    /**
-     * Sets GeoPoint
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null $GeoPoint GeoPoint
-     *
-     * @return self
-     */
-    public function setGeoPoint($GeoPoint)
-    {
-        if (is_null($GeoPoint)) {
-            array_push($this->openAPINullablesSetToNull, 'GeoPoint');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('GeoPoint', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['GeoPoint'] = $GeoPoint;
-
-        return $this;
-    }
-
-    /**
-     * Gets GeoCodeStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null
-     */
-    public function getGeoCodeStatus()
-    {
-        if (!isset($this->container['GeoCodeStatus']) || is_null($this->container['GeoCodeStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['GeoCodeStatus']) || is_string($this->container['GeoCodeStatus'])) && method_exists($this->container['GeoCodeStatus'], 'getValue')) {
-            return $this->container['GeoCodeStatus']->getValue();
-        }
-        return $this->container['GeoCodeStatus'];
-    }
-
-    /**
-     * Sets GeoCodeStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null $GeoCodeStatus GeoCodeStatus
-     *
-     * @return self
-     */
-    public function setGeoCodeStatus($GeoCodeStatus)
-    {
-        if (is_null($GeoCodeStatus)) {
-            throw new \InvalidArgumentException('non-nullable GeoCodeStatus cannot be null');
-        }
-        if (!$GeoCodeStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus) {
-            $GeoCodeStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus($GeoCodeStatus);
-        }
-        $this->container['GeoCodeStatus'] = $GeoCodeStatus;
 
         return $this;
     }
@@ -711,6 +687,86 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
     }
 
     /**
+     * Gets GeoCodeStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null
+     */
+    public function getGeoCodeStatus()
+    {
+        if (!isset($this->container['GeoCodeStatus']) || is_null($this->container['GeoCodeStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['GeoCodeStatus']) || is_string($this->container['GeoCodeStatus'])) && method_exists($this->container['GeoCodeStatus'], 'getValue')) {
+            return $this->container['GeoCodeStatus']->getValue();
+        }
+        return $this->container['GeoCodeStatus'];
+    }
+
+    /**
+     * Sets GeoCodeStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null $GeoCodeStatus GeoCodeStatus
+     *
+     * @return self
+     */
+    public function setGeoCodeStatus($GeoCodeStatus)
+    {
+        if (is_null($GeoCodeStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'GeoCodeStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GeoCodeStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($GeoCodeStatus) && !$GeoCodeStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus) {
+            $GeoCodeStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus($GeoCodeStatus);
+        }
+        $this->container['GeoCodeStatus'] = $GeoCodeStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets GeoPoint
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null
+     */
+    public function getGeoPoint()
+    {
+        if (!isset($this->container['GeoPoint']) || is_null($this->container['GeoPoint'])) {
+            return null;
+        }
+        return $this->container['GeoPoint'];
+    }
+
+    /**
+     * Sets GeoPoint
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null $GeoPoint GeoPoint
+     *
+     * @return self
+     */
+    public function setGeoPoint($GeoPoint)
+    {
+        if (is_null($GeoPoint)) {
+            array_push($this->openAPINullablesSetToNull, 'GeoPoint');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GeoPoint', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['GeoPoint'] = $GeoPoint;
+
+        return $this;
+    }
+
+    /**
      * Gets PhoneNumber
      *
      * @return string|null
@@ -743,43 +799,6 @@ class LocationAdExtension extends AdExtension implements ModelInterface, ArrayAc
             }
         }
         $this->container['PhoneNumber'] = $PhoneNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'HexCode' => 'string'
+        'HexCode' => 'string',
+        'Name' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'HexCode' => null
+        'HexCode' => null,
+        'Name' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'HexCode' => true
+        'HexCode' => true,
+        'Name' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'HexCode' => 'HexCode'
+        'HexCode' => 'HexCode',
+        'Name' => 'Name'
     ];
 
     /**
@@ -155,8 +155,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'HexCode' => 'setHexCode'
+        'HexCode' => 'setHexCode',
+        'Name' => 'setName'
     ];
 
     /**
@@ -165,8 +165,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'HexCode' => 'getHexCode'
+        'HexCode' => 'getHexCode',
+        'Name' => 'getName'
     ];
 
     /**
@@ -226,8 +226,8 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('HexCode', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
      * Gets HexCode
      *
      * @return string|null
@@ -342,6 +305,43 @@ class BrandKitColor implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['HexCode'] = $HexCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
 
         return $this;
     }

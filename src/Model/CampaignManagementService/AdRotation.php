@@ -33,9 +33,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType',
+        'EndDate' => '\DateTime',
         'StartDate' => '\DateTime',
-        'EndDate' => '\DateTime'
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType'
     ];
 
     /**
@@ -46,9 +46,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Type' => null,
+        'EndDate' => 'date-time',
         'StartDate' => 'date-time',
-        'EndDate' => 'date-time'
+        'Type' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => false,
+        'EndDate' => true,
         'StartDate' => true,
-        'EndDate' => true
+        'Type' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Type' => 'Type',
+        'EndDate' => 'EndDate',
         'StartDate' => 'StartDate',
-        'EndDate' => 'EndDate'
+        'Type' => 'Type'
     ];
 
     /**
@@ -159,9 +159,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Type' => 'setType',
+        'EndDate' => 'setEndDate',
         'StartDate' => 'setStartDate',
-        'EndDate' => 'setEndDate'
+        'Type' => 'setType'
     ];
 
     /**
@@ -170,9 +170,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Type' => 'getType',
+        'EndDate' => 'getEndDate',
         'StartDate' => 'getStartDate',
-        'EndDate' => 'getEndDate'
+        'Type' => 'getType'
     ];
 
     /**
@@ -232,9 +232,9 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -280,37 +280,38 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Type
+     * Gets EndDate
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType|mixed|null
+     * @return \DateTime|null
      */
-    public function getType()
+    public function getEndDate()
     {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
             return null;
         }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
+        return $this->container['EndDate'];
     }
 
     /**
-     * Sets Type
+     * Sets EndDate
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType|mixed|null $Type Type
+     * @param \DateTime|null $EndDate EndDate
      *
      * @return self
      */
-    public function setType($Type)
+    public function setEndDate($EndDate)
     {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        if (is_null($EndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType($Type);
-        }
-        $this->container['Type'] = $Type;
+        $this->container['EndDate'] = $EndDate;
 
         return $this;
     }
@@ -353,38 +354,44 @@ class AdRotation implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets EndDate
+     * Gets Type
      *
-     * @return \DateTime|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType|mixed|null
      */
-    public function getEndDate()
+    public function getType()
     {
-        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['EndDate'];
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
     }
 
     /**
-     * Sets EndDate
+     * Sets Type
      *
-     * @param \DateTime|null $EndDate EndDate
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType|mixed|null $Type Type
      *
      * @return self
      */
-    public function setEndDate($EndDate)
+    public function setType($Type)
     {
-        if (is_null($EndDate)) {
-            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EndDate', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['EndDate'] = $EndDate;
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRotationType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

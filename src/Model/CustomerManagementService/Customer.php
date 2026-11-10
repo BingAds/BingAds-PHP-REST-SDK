@@ -384,7 +384,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($CustomerFinancialStatus)) {
             throw new \InvalidArgumentException('non-nullable CustomerFinancialStatus cannot be null');
         }
-        if (!$CustomerFinancialStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\CustomerFinancialStatus) {
+        if (!is_null($CustomerFinancialStatus) && !$CustomerFinancialStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\CustomerFinancialStatus) {
             $CustomerFinancialStatus = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\CustomerFinancialStatus($CustomerFinancialStatus);
         }
         $this->container['CustomerFinancialStatus'] = $CustomerFinancialStatus;
@@ -457,7 +457,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Industry)) {
             throw new \InvalidArgumentException('non-nullable Industry cannot be null');
         }
-        if (!$Industry instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\Industry) {
+        if (!is_null($Industry) && !$Industry instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\Industry) {
             $Industry = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\Industry($Industry);
         }
         $this->container['Industry'] = $Industry;
@@ -604,7 +604,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($MarketLanguage)) {
             throw new \InvalidArgumentException('non-nullable MarketLanguage cannot be null');
         }
-        if (!$MarketLanguage instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LanguageType) {
+        if (!is_null($MarketLanguage) && !$MarketLanguage instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LanguageType) {
             $MarketLanguage = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\LanguageType($MarketLanguage);
         }
         $this->container['MarketLanguage'] = $MarketLanguage;
@@ -677,7 +677,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($ServiceLevel)) {
             throw new \InvalidArgumentException('non-nullable ServiceLevel cannot be null');
         }
-        if (!$ServiceLevel instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\ServiceLevel) {
+        if (!is_null($ServiceLevel) && !$ServiceLevel instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\ServiceLevel) {
             $ServiceLevel = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\ServiceLevel($ServiceLevel);
         }
         $this->container['ServiceLevel'] = $ServiceLevel;
@@ -713,7 +713,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($CustomerLifeCycleStatus)) {
             throw new \InvalidArgumentException('non-nullable CustomerLifeCycleStatus cannot be null');
         }
-        if (!$CustomerLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\CustomerLifeCycleStatus) {
+        if (!is_null($CustomerLifeCycleStatus) && !$CustomerLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\CustomerLifeCycleStatus) {
             $CustomerLifeCycleStatus = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\CustomerLifeCycleStatus($CustomerLifeCycleStatus);
         }
         $this->container['CustomerLifeCycleStatus'] = $CustomerLifeCycleStatus;

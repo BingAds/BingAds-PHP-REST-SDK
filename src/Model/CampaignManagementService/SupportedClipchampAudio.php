@@ -33,8 +33,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Category' => 'string',
         'AudioName' => 'string',
+        'Category' => 'string',
         'Url' => 'string'
     ];
 
@@ -46,8 +46,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Category' => null,
         'AudioName' => null,
+        'Category' => null,
         'Url' => null
     ];
 
@@ -57,8 +57,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Category' => true,
         'AudioName' => true,
+        'Category' => true,
         'Url' => true
     ];
 
@@ -148,8 +148,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Category' => 'Category',
         'AudioName' => 'AudioName',
+        'Category' => 'Category',
         'Url' => 'Url'
     ];
 
@@ -159,8 +159,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
-        'Category' => 'setCategory',
         'AudioName' => 'setAudioName',
+        'Category' => 'setCategory',
         'Url' => 'setUrl'
     ];
 
@@ -170,8 +170,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
-        'Category' => 'getCategory',
         'AudioName' => 'getAudioName',
+        'Category' => 'getCategory',
         'Url' => 'getUrl'
     ];
 
@@ -232,8 +232,8 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Category', $data ?? [], null);
         $this->setIfExists('AudioName', $data ?? [], null);
+        $this->setIfExists('Category', $data ?? [], null);
         $this->setIfExists('Url', $data ?? [], null);
     }
 
@@ -280,43 +280,6 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets Category
-     *
-     * @return string|null
-     */
-    public function getCategory()
-    {
-        if (!isset($this->container['Category']) || is_null($this->container['Category'])) {
-            return null;
-        }
-        return $this->container['Category'];
-    }
-
-    /**
-     * Sets Category
-     *
-     * @param string|null $Category Category
-     *
-     * @return self
-     */
-    public function setCategory($Category)
-    {
-        if (is_null($Category)) {
-            array_push($this->openAPINullablesSetToNull, 'Category');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Category', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Category'] = $Category;
-
-        return $this;
-    }
-
-    /**
      * Gets AudioName
      *
      * @return string|null
@@ -349,6 +312,43 @@ class SupportedClipchampAudio implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['AudioName'] = $AudioName;
+
+        return $this;
+    }
+
+    /**
+     * Gets Category
+     *
+     * @return string|null
+     */
+    public function getCategory()
+    {
+        if (!isset($this->container['Category']) || is_null($this->container['Category'])) {
+            return null;
+        }
+        return $this->container['Category'];
+    }
+
+    /**
+     * Sets Category
+     *
+     * @param string|null $Category Category
+     *
+     * @return self
+     */
+    public function setCategory($Category)
+    {
+        if (is_null($Category)) {
+            array_push($this->openAPINullablesSetToNull, 'Category');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Category', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Category'] = $Category;
 
         return $this;
     }

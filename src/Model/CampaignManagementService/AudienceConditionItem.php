@@ -59,7 +59,7 @@ class AudienceConditionItem implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static array $openAPINullables = [
         'Id' => false,
         'Name' => true,
-        'Type' => false
+        'Type' => true
     ];
 
     /**
@@ -372,9 +372,16 @@ class AudienceConditionItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setType($Type)
     {
         if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
             $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
         }
         $this->container['Type'] = $Type;

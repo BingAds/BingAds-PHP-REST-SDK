@@ -44,12 +44,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPITypes = [
         'Id' => 'string',
         'Name' => 'string',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus',
         'Reach' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType',
         'CompanyNames' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyName[]',
-        'Total' => 'int',
-        'Matched' => 'int'
+        'Matched' => 'int',
+        'Total' => 'int'
     ];
 
     /**
@@ -62,12 +62,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPIFormats = [
         'Id' => 'int64',
         'Name' => null,
-        'Type' => null,
-        'Status' => null,
         'Reach' => 'int64',
+        'Status' => null,
+        'Type' => null,
         'CompanyNames' => null,
-        'Total' => 'int32',
-        'Matched' => 'int32'
+        'Matched' => 'int32',
+        'Total' => 'int32'
     ];
 
     /**
@@ -78,12 +78,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'Id' => true,
         'Name' => true,
-        'Type' => false,
-        'Status' => false,
         'Reach' => true,
+        'Status' => true,
+        'Type' => false,
         'CompanyNames' => true,
-        'Total' => true,
-        'Matched' => true
+        'Matched' => true,
+        'Total' => true
     ];
 
     /**
@@ -174,12 +174,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $attributeMap = [
         'Id' => 'Id',
         'Name' => 'Name',
-        'Type' => 'Type',
-        'Status' => 'Status',
         'Reach' => 'Reach',
+        'Status' => 'Status',
+        'Type' => 'Type',
         'CompanyNames' => 'CompanyNames',
-        'Total' => 'Total',
-        'Matched' => 'Matched'
+        'Matched' => 'Matched',
+        'Total' => 'Total'
     ];
 
     /**
@@ -190,12 +190,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $setters = [
         'Id' => 'setId',
         'Name' => 'setName',
-        'Type' => 'setType',
-        'Status' => 'setStatus',
         'Reach' => 'setReach',
+        'Status' => 'setStatus',
+        'Type' => 'setType',
         'CompanyNames' => 'setCompanyNames',
-        'Total' => 'setTotal',
-        'Matched' => 'setMatched'
+        'Matched' => 'setMatched',
+        'Total' => 'setTotal'
     ];
 
     /**
@@ -206,12 +206,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $getters = [
         'Id' => 'getId',
         'Name' => 'getName',
-        'Type' => 'getType',
-        'Status' => 'getStatus',
         'Reach' => 'getReach',
+        'Status' => 'getStatus',
+        'Type' => 'getType',
         'CompanyNames' => 'getCompanyNames',
-        'Total' => 'getTotal',
-        'Matched' => 'getMatched'
+        'Matched' => 'getMatched',
+        'Total' => 'getTotal'
     ];
 
     /**
@@ -273,12 +273,12 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Reach', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CompanyNames', $data ?? [], null);
-        $this->setIfExists('Total', $data ?? [], null);
         $this->setIfExists('Matched', $data ?? [], null);
+        $this->setIfExists('Total', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -401,78 +401,6 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Reach
      *
      * @return string|null
@@ -505,6 +433,85 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Reach'] = $Reach;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -547,43 +554,6 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Total
-     *
-     * @return int|null
-     */
-    public function getTotal()
-    {
-        if (!isset($this->container['Total']) || is_null($this->container['Total'])) {
-            return null;
-        }
-        return $this->container['Total'];
-    }
-
-    /**
-     * Sets Total
-     *
-     * @param int|null $Total Total
-     *
-     * @return self
-     */
-    public function setTotal($Total)
-    {
-        if (is_null($Total)) {
-            array_push($this->openAPINullablesSetToNull, 'Total');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Total', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Total'] = $Total;
-
-        return $this;
-    }
-
-    /**
      * Gets Matched
      *
      * @return int|null
@@ -616,6 +586,43 @@ class LinkedInSegment implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Matched'] = $Matched;
+
+        return $this;
+    }
+
+    /**
+     * Gets Total
+     *
+     * @return int|null
+     */
+    public function getTotal()
+    {
+        if (!isset($this->container['Total']) || is_null($this->container['Total'])) {
+            return null;
+        }
+        return $this->container['Total'];
+    }
+
+    /**
+     * Sets Total
+     *
+     * @param int|null $Total Total
+     *
+     * @return self
+     */
+    public function setTotal($Total)
+    {
+        if (is_null($Total)) {
+            array_push($this->openAPINullablesSetToNull, 'Total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Total'] = $Total;
 
         return $this;
     }

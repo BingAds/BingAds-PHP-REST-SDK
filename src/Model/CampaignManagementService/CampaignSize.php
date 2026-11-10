@@ -33,8 +33,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Size' => 'string',
-        'CampaignId' => 'string'
+        'CampaignId' => 'string',
+        'Size' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Size' => 'int64',
-        'CampaignId' => 'int64'
+        'CampaignId' => 'int64',
+        'Size' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Size' => false,
-        'CampaignId' => false
+        'CampaignId' => false,
+        'Size' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Size' => 'Size',
-        'CampaignId' => 'CampaignId'
+        'CampaignId' => 'CampaignId',
+        'Size' => 'Size'
     ];
 
     /**
@@ -155,8 +155,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Size' => 'setSize',
-        'CampaignId' => 'setCampaignId'
+        'CampaignId' => 'setCampaignId',
+        'Size' => 'setSize'
     ];
 
     /**
@@ -165,8 +165,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Size' => 'getSize',
-        'CampaignId' => 'getCampaignId'
+        'CampaignId' => 'getCampaignId',
+        'Size' => 'getSize'
     ];
 
     /**
@@ -226,8 +226,8 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Size', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
+        $this->setIfExists('Size', $data ?? [], null);
     }
 
     /**
@@ -273,36 +273,6 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Size
-     *
-     * @return string|null
-     */
-    public function getSize()
-    {
-        if (!isset($this->container['Size']) || is_null($this->container['Size'])) {
-            return null;
-        }
-        return $this->container['Size'];
-    }
-
-    /**
-     * Sets Size
-     *
-     * @param string|null $Size Size
-     *
-     * @return self
-     */
-    public function setSize($Size)
-    {
-        if (is_null($Size)) {
-            throw new \InvalidArgumentException('non-nullable Size cannot be null');
-        }
-        $this->container['Size'] = $Size;
-
-        return $this;
-    }
-
-    /**
      * Gets CampaignId
      *
      * @return string|null
@@ -328,6 +298,36 @@ class CampaignSize implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
         }
         $this->container['CampaignId'] = $CampaignId;
+
+        return $this;
+    }
+
+    /**
+     * Gets Size
+     *
+     * @return string|null
+     */
+    public function getSize()
+    {
+        if (!isset($this->container['Size']) || is_null($this->container['Size'])) {
+            return null;
+        }
+        return $this->container['Size'];
+    }
+
+    /**
+     * Sets Size
+     *
+     * @param string|null $Size Size
+     *
+     * @return self
+     */
+    public function setSize($Size)
+    {
+        if (is_null($Size)) {
+            throw new \InvalidArgumentException('non-nullable Size cannot be null');
+        }
+        $this->container['Size'] = $Size;
 
         return $this;
     }

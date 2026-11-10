@@ -56,7 +56,7 @@ class ReachOptimizationGoalSetting extends Setting implements ModelInterface, Ar
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'OptimizationGoal' => false
+        'OptimizationGoal' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class ReachOptimizationGoalSetting extends Setting implements ModelInterface, Ar
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('OptimizationGoal', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class ReachOptimizationGoalSetting extends Setting implements ModelInterface, Ar
     public function setOptimizationGoal($OptimizationGoal)
     {
         if (is_null($OptimizationGoal)) {
-            throw new \InvalidArgumentException('non-nullable OptimizationGoal cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'OptimizationGoal');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('OptimizationGoal', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$OptimizationGoal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal) {
+        if (!is_null($OptimizationGoal) && !$OptimizationGoal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal) {
             $OptimizationGoal = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ReachOptimizationGoal($OptimizationGoal);
         }
         $this->container['OptimizationGoal'] = $OptimizationGoal;

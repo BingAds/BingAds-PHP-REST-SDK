@@ -33,13 +33,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'HasCatalog' => 'bool',
         'Id' => 'string',
-        'Name' => 'string',
         'IsActive' => 'bool',
         'IsProductAdsEnabled' => 'bool',
-        'HasCatalog' => 'bool',
-        'SubType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType',
-        'StoreUrl' => 'string'
+        'Name' => 'string',
+        'StoreUrl' => 'string',
+        'SubType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType'
     ];
 
     /**
@@ -50,13 +50,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'HasCatalog' => null,
         'Id' => 'int64',
-        'Name' => null,
         'IsActive' => null,
         'IsProductAdsEnabled' => null,
-        'HasCatalog' => null,
-        'SubType' => null,
-        'StoreUrl' => null
+        'Name' => null,
+        'StoreUrl' => null,
+        'SubType' => null
     ];
 
     /**
@@ -65,13 +65,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'HasCatalog' => false,
         'Id' => false,
-        'Name' => true,
         'IsActive' => false,
         'IsProductAdsEnabled' => false,
-        'HasCatalog' => false,
-        'SubType' => false,
-        'StoreUrl' => true
+        'Name' => true,
+        'StoreUrl' => true,
+        'SubType' => true
     ];
 
     /**
@@ -160,13 +160,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'HasCatalog' => 'HasCatalog',
         'Id' => 'Id',
-        'Name' => 'Name',
         'IsActive' => 'IsActive',
         'IsProductAdsEnabled' => 'IsProductAdsEnabled',
-        'HasCatalog' => 'HasCatalog',
-        'SubType' => 'SubType',
-        'StoreUrl' => 'StoreUrl'
+        'Name' => 'Name',
+        'StoreUrl' => 'StoreUrl',
+        'SubType' => 'SubType'
     ];
 
     /**
@@ -175,13 +175,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'HasCatalog' => 'setHasCatalog',
         'Id' => 'setId',
-        'Name' => 'setName',
         'IsActive' => 'setIsActive',
         'IsProductAdsEnabled' => 'setIsProductAdsEnabled',
-        'HasCatalog' => 'setHasCatalog',
-        'SubType' => 'setSubType',
-        'StoreUrl' => 'setStoreUrl'
+        'Name' => 'setName',
+        'StoreUrl' => 'setStoreUrl',
+        'SubType' => 'setSubType'
     ];
 
     /**
@@ -190,13 +190,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'HasCatalog' => 'getHasCatalog',
         'Id' => 'getId',
-        'Name' => 'getName',
         'IsActive' => 'getIsActive',
         'IsProductAdsEnabled' => 'getIsProductAdsEnabled',
-        'HasCatalog' => 'getHasCatalog',
-        'SubType' => 'getSubType',
-        'StoreUrl' => 'getStoreUrl'
+        'Name' => 'getName',
+        'StoreUrl' => 'getStoreUrl',
+        'SubType' => 'getSubType'
     ];
 
     /**
@@ -256,13 +256,13 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('HasCatalog', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('IsActive', $data ?? [], null);
         $this->setIfExists('IsProductAdsEnabled', $data ?? [], null);
-        $this->setIfExists('HasCatalog', $data ?? [], null);
-        $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('StoreUrl', $data ?? [], null);
+        $this->setIfExists('SubType', $data ?? [], null);
     }
 
     /**
@@ -308,6 +308,36 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets HasCatalog
+     *
+     * @return bool|null
+     */
+    public function getHasCatalog()
+    {
+        if (!isset($this->container['HasCatalog']) || is_null($this->container['HasCatalog'])) {
+            return null;
+        }
+        return $this->container['HasCatalog'];
+    }
+
+    /**
+     * Sets HasCatalog
+     *
+     * @param bool|null $HasCatalog HasCatalog
+     *
+     * @return self
+     */
+    public function setHasCatalog($HasCatalog)
+    {
+        if (is_null($HasCatalog)) {
+            throw new \InvalidArgumentException('non-nullable HasCatalog cannot be null');
+        }
+        $this->container['HasCatalog'] = $HasCatalog;
+
+        return $this;
+    }
+
+    /**
      * Gets Id
      *
      * @return string|null
@@ -333,43 +363,6 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable Id cannot be null');
         }
         $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
 
         return $this;
     }
@@ -435,67 +428,38 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets HasCatalog
+     * Gets Name
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getHasCatalog()
+    public function getName()
     {
-        if (!isset($this->container['HasCatalog']) || is_null($this->container['HasCatalog'])) {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
             return null;
         }
-        return $this->container['HasCatalog'];
+        return $this->container['Name'];
     }
 
     /**
-     * Sets HasCatalog
+     * Sets Name
      *
-     * @param bool|null $HasCatalog HasCatalog
+     * @param string|null $Name Name
      *
      * @return self
      */
-    public function setHasCatalog($HasCatalog)
+    public function setName($Name)
     {
-        if (is_null($HasCatalog)) {
-            throw new \InvalidArgumentException('non-nullable HasCatalog cannot be null');
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['HasCatalog'] = $HasCatalog;
-
-        return $this;
-    }
-
-    /**
-     * Gets SubType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType|mixed|null
-     */
-    public function getSubType()
-    {
-        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
-            return null;
-        }
-        if ((is_object($this->container['SubType']) || is_string($this->container['SubType'])) && method_exists($this->container['SubType'], 'getValue')) {
-            return $this->container['SubType']->getValue();
-        }
-        return $this->container['SubType'];
-    }
-
-    /**
-     * Sets SubType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType|mixed|null $SubType SubType
-     *
-     * @return self
-     */
-    public function setSubType($SubType)
-    {
-        if (is_null($SubType)) {
-            throw new \InvalidArgumentException('non-nullable SubType cannot be null');
-        }
-        if (!$SubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType) {
-            $SubType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType($SubType);
-        }
-        $this->container['SubType'] = $SubType;
+        $this->container['Name'] = $Name;
 
         return $this;
     }
@@ -533,6 +497,49 @@ class BMCStore implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['StoreUrl'] = $StoreUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType|mixed|null
+     */
+    public function getSubType()
+    {
+        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
+            return null;
+        }
+        if ((is_object($this->container['SubType']) || is_string($this->container['SubType'])) && method_exists($this->container['SubType'], 'getValue')) {
+            return $this->container['SubType']->getValue();
+        }
+        return $this->container['SubType'];
+    }
+
+    /**
+     * Sets SubType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType|mixed|null $SubType SubType
+     *
+     * @return self
+     */
+    public function setSubType($SubType)
+    {
+        if (is_null($SubType)) {
+            array_push($this->openAPINullablesSetToNull, 'SubType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($SubType) && !$SubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType) {
+            $SubType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BMCStoreSubType($SubType);
+        }
+        $this->container['SubType'] = $SubType;
 
         return $this;
     }

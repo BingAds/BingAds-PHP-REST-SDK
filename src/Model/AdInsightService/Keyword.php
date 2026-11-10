@@ -381,7 +381,7 @@ class Keyword implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($MatchType)) {
             throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
         }
-        if (!$MatchType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType) {
+        if (!is_null($MatchType) && !$MatchType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType) {
             $MatchType = new \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType($MatchType);
         }
         $this->container['MatchType'] = $MatchType;

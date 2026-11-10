@@ -33,8 +33,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'UploadUrl' => 'string',
-        'RequestId' => 'string'
+        'RequestId' => 'string',
+        'UploadUrl' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'UploadUrl' => null,
-        'RequestId' => null
+        'RequestId' => null,
+        'UploadUrl' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'UploadUrl' => true,
-        'RequestId' => true
+        'RequestId' => true,
+        'UploadUrl' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $attributeMap = [
-        'UploadUrl' => 'UploadUrl',
-        'RequestId' => 'RequestId'
+        'RequestId' => 'RequestId',
+        'UploadUrl' => 'UploadUrl'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $setters = [
-        'UploadUrl' => 'setUploadUrl',
-        'RequestId' => 'setRequestId'
+        'RequestId' => 'setRequestId',
+        'UploadUrl' => 'setUploadUrl'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $getters = [
-        'UploadUrl' => 'getUploadUrl',
-        'RequestId' => 'getRequestId'
+        'RequestId' => 'getRequestId',
+        'UploadUrl' => 'getUploadUrl'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('UploadUrl', $data ?? [], null);
         $this->setIfExists('RequestId', $data ?? [], null);
+        $this->setIfExists('UploadUrl', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets UploadUrl
-     *
-     * @return string|null
-     */
-    public function getUploadUrl()
-    {
-        if (!isset($this->container['UploadUrl']) || is_null($this->container['UploadUrl'])) {
-            return null;
-        }
-        return $this->container['UploadUrl'];
-    }
-
-    /**
-     * Sets UploadUrl
-     *
-     * @param string|null $UploadUrl UploadUrl
-     *
-     * @return self
-     */
-    public function setUploadUrl($UploadUrl)
-    {
-        if (is_null($UploadUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'UploadUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UploadUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UploadUrl'] = $UploadUrl;
-
-        return $this;
-    }
-
-    /**
      * Gets RequestId
      *
      * @return string|null
@@ -342,6 +305,43 @@ class GetBulkUploadUrlResponse implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['RequestId'] = $RequestId;
+
+        return $this;
+    }
+
+    /**
+     * Gets UploadUrl
+     *
+     * @return string|null
+     */
+    public function getUploadUrl()
+    {
+        if (!isset($this->container['UploadUrl']) || is_null($this->container['UploadUrl'])) {
+            return null;
+        }
+        return $this->container['UploadUrl'];
+    }
+
+    /**
+     * Sets UploadUrl
+     *
+     * @param string|null $UploadUrl UploadUrl
+     *
+     * @return self
+     */
+    public function setUploadUrl($UploadUrl)
+    {
+        if (is_null($UploadUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'UploadUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UploadUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UploadUrl'] = $UploadUrl;
 
         return $this;
     }

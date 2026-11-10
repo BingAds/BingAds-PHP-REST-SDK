@@ -56,7 +56,7 @@ class GetMediaMetaDataByIdsRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'MediaIds' => true,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -335,9 +335,16 @@ class GetMediaMetaDataByIdsRequest implements ModelInterface, ArrayAccess, \Json
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

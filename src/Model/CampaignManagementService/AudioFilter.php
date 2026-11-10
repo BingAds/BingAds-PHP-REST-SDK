@@ -33,8 +33,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Categories' => 'string[]',
-        'AudioNames' => 'string[]'
+        'AudioNames' => 'string[]',
+        'Categories' => 'string[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Categories' => null,
-        'AudioNames' => null
+        'AudioNames' => null,
+        'Categories' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Categories' => true,
-        'AudioNames' => true
+        'AudioNames' => true,
+        'Categories' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Categories' => 'Categories',
-        'AudioNames' => 'AudioNames'
+        'AudioNames' => 'AudioNames',
+        'Categories' => 'Categories'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Categories' => 'setCategories',
-        'AudioNames' => 'setAudioNames'
+        'AudioNames' => 'setAudioNames',
+        'Categories' => 'setCategories'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Categories' => 'getCategories',
-        'AudioNames' => 'getAudioNames'
+        'AudioNames' => 'getAudioNames',
+        'Categories' => 'getCategories'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Categories', $data ?? [], null);
         $this->setIfExists('AudioNames', $data ?? [], null);
+        $this->setIfExists('Categories', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Categories
-     *
-     * @return string[]|null
-     */
-    public function getCategories()
-    {
-        if (!isset($this->container['Categories']) || is_null($this->container['Categories'])) {
-            return null;
-        }
-        return $this->container['Categories'];
-    }
-
-    /**
-     * Sets Categories
-     *
-     * @param string[]|null $Categories Categories
-     *
-     * @return self
-     */
-    public function setCategories($Categories)
-    {
-        if (is_null($Categories)) {
-            array_push($this->openAPINullablesSetToNull, 'Categories');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Categories', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Categories'] = $Categories;
-
-        return $this;
-    }
-
-    /**
      * Gets AudioNames
      *
      * @return string[]|null
@@ -342,6 +305,43 @@ class AudioFilter implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AudioNames'] = $AudioNames;
+
+        return $this;
+    }
+
+    /**
+     * Gets Categories
+     *
+     * @return string[]|null
+     */
+    public function getCategories()
+    {
+        if (!isset($this->container['Categories']) || is_null($this->container['Categories'])) {
+            return null;
+        }
+        return $this->container['Categories'];
+    }
+
+    /**
+     * Sets Categories
+     *
+     * @param string[]|null $Categories Categories
+     *
+     * @return self
+     */
+    public function setCategories($Categories)
+    {
+        if (is_null($Categories)) {
+            array_push($this->openAPINullablesSetToNull, 'Categories');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Categories', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Categories'] = $Categories;
 
         return $this;
     }

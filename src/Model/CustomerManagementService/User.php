@@ -620,7 +620,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Lcid)) {
             throw new \InvalidArgumentException('non-nullable Lcid cannot be null');
         }
-        if (!$Lcid instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LCID) {
+        if (!is_null($Lcid) && !$Lcid instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LCID) {
             $Lcid = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\LCID($Lcid);
         }
         $this->container['Lcid'] = $Lcid;
@@ -767,7 +767,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($SecretQuestion)) {
             throw new \InvalidArgumentException('non-nullable SecretQuestion cannot be null');
         }
-        if (!$SecretQuestion instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\SecretQuestion) {
+        if (!is_null($SecretQuestion) && !$SecretQuestion instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\SecretQuestion) {
             $SecretQuestion = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\SecretQuestion($SecretQuestion);
         }
         $this->container['SecretQuestion'] = $SecretQuestion;
@@ -803,7 +803,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($UserLifeCycleStatus)) {
             throw new \InvalidArgumentException('non-nullable UserLifeCycleStatus cannot be null');
         }
-        if (!$UserLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\UserLifeCycleStatus) {
+        if (!is_null($UserLifeCycleStatus) && !$UserLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\UserLifeCycleStatus) {
             $UserLifeCycleStatus = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\UserLifeCycleStatus($UserLifeCycleStatus);
         }
         $this->container['UserLifeCycleStatus'] = $UserLifeCycleStatus;

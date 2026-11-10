@@ -33,12 +33,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ImageField' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField',
-        'ImageUrl' => 'string',
+        'CropHeight' => 'int',
+        'CropWidth' => 'int',
         'CropX' => 'int',
         'CropY' => 'int',
-        'CropWidth' => 'int',
-        'CropHeight' => 'int'
+        'ImageField' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField',
+        'ImageUrl' => 'string'
     ];
 
     /**
@@ -49,12 +49,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ImageField' => null,
-        'ImageUrl' => null,
+        'CropHeight' => 'int32',
+        'CropWidth' => 'int32',
         'CropX' => 'int32',
         'CropY' => 'int32',
-        'CropWidth' => 'int32',
-        'CropHeight' => 'int32'
+        'ImageField' => null,
+        'ImageUrl' => null
     ];
 
     /**
@@ -63,12 +63,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ImageField' => false,
-        'ImageUrl' => true,
+        'CropHeight' => true,
+        'CropWidth' => true,
         'CropX' => true,
         'CropY' => true,
-        'CropWidth' => true,
-        'CropHeight' => true
+        'ImageField' => false,
+        'ImageUrl' => true
     ];
 
     /**
@@ -157,12 +157,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ImageField' => 'ImageField',
-        'ImageUrl' => 'ImageUrl',
+        'CropHeight' => 'CropHeight',
+        'CropWidth' => 'CropWidth',
         'CropX' => 'CropX',
         'CropY' => 'CropY',
-        'CropWidth' => 'CropWidth',
-        'CropHeight' => 'CropHeight'
+        'ImageField' => 'ImageField',
+        'ImageUrl' => 'ImageUrl'
     ];
 
     /**
@@ -171,12 +171,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
-        'ImageField' => 'setImageField',
-        'ImageUrl' => 'setImageUrl',
+        'CropHeight' => 'setCropHeight',
+        'CropWidth' => 'setCropWidth',
         'CropX' => 'setCropX',
         'CropY' => 'setCropY',
-        'CropWidth' => 'setCropWidth',
-        'CropHeight' => 'setCropHeight'
+        'ImageField' => 'setImageField',
+        'ImageUrl' => 'setImageUrl'
     ];
 
     /**
@@ -185,12 +185,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
-        'ImageField' => 'getImageField',
-        'ImageUrl' => 'getImageUrl',
+        'CropHeight' => 'getCropHeight',
+        'CropWidth' => 'getCropWidth',
         'CropX' => 'getCropX',
         'CropY' => 'getCropY',
-        'CropWidth' => 'getCropWidth',
-        'CropHeight' => 'getCropHeight'
+        'ImageField' => 'getImageField',
+        'ImageUrl' => 'getImageUrl'
     ];
 
     /**
@@ -250,12 +250,12 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ImageField', $data ?? [], null);
-        $this->setIfExists('ImageUrl', $data ?? [], null);
+        $this->setIfExists('CropHeight', $data ?? [], null);
+        $this->setIfExists('CropWidth', $data ?? [], null);
         $this->setIfExists('CropX', $data ?? [], null);
         $this->setIfExists('CropY', $data ?? [], null);
-        $this->setIfExists('CropWidth', $data ?? [], null);
-        $this->setIfExists('CropHeight', $data ?? [], null);
+        $this->setIfExists('ImageField', $data ?? [], null);
+        $this->setIfExists('ImageUrl', $data ?? [], null);
     }
 
     /**
@@ -301,74 +301,75 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets ImageField
+     * Gets CropHeight
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField|mixed|null
+     * @return int|null
      */
-    public function getImageField()
+    public function getCropHeight()
     {
-        if (!isset($this->container['ImageField']) || is_null($this->container['ImageField'])) {
+        if (!isset($this->container['CropHeight']) || is_null($this->container['CropHeight'])) {
             return null;
         }
-        if ((is_object($this->container['ImageField']) || is_string($this->container['ImageField'])) && method_exists($this->container['ImageField'], 'getValue')) {
-            return $this->container['ImageField']->getValue();
-        }
-        return $this->container['ImageField'];
+        return $this->container['CropHeight'];
     }
 
     /**
-     * Sets ImageField
+     * Sets CropHeight
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField|mixed|null $ImageField ImageField
+     * @param int|null $CropHeight CropHeight
      *
      * @return self
      */
-    public function setImageField($ImageField)
+    public function setCropHeight($CropHeight)
     {
-        if (is_null($ImageField)) {
-            throw new \InvalidArgumentException('non-nullable ImageField cannot be null');
-        }
-        if (!$ImageField instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField) {
-            $ImageField = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField($ImageField);
-        }
-        $this->container['ImageField'] = $ImageField;
-
-        return $this;
-    }
-
-    /**
-     * Gets ImageUrl
-     *
-     * @return string|null
-     */
-    public function getImageUrl()
-    {
-        if (!isset($this->container['ImageUrl']) || is_null($this->container['ImageUrl'])) {
-            return null;
-        }
-        return $this->container['ImageUrl'];
-    }
-
-    /**
-     * Sets ImageUrl
-     *
-     * @param string|null $ImageUrl ImageUrl
-     *
-     * @return self
-     */
-    public function setImageUrl($ImageUrl)
-    {
-        if (is_null($ImageUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'ImageUrl');
+        if (is_null($CropHeight)) {
+            array_push($this->openAPINullablesSetToNull, 'CropHeight');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ImageUrl', $nullablesSetToNull);
+            $index = array_search('CropHeight', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ImageUrl'] = $ImageUrl;
+        $this->container['CropHeight'] = $CropHeight;
+
+        return $this;
+    }
+
+    /**
+     * Gets CropWidth
+     *
+     * @return int|null
+     */
+    public function getCropWidth()
+    {
+        if (!isset($this->container['CropWidth']) || is_null($this->container['CropWidth'])) {
+            return null;
+        }
+        return $this->container['CropWidth'];
+    }
+
+    /**
+     * Sets CropWidth
+     *
+     * @param int|null $CropWidth CropWidth
+     *
+     * @return self
+     */
+    public function setCropWidth($CropWidth)
+    {
+        if (is_null($CropWidth)) {
+            array_push($this->openAPINullablesSetToNull, 'CropWidth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CropWidth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CropWidth'] = $CropWidth;
 
         return $this;
     }
@@ -448,75 +449,74 @@ class AdRecommendationImageAssetProperty implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets CropWidth
+     * Gets ImageField
      *
-     * @return int|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField|mixed|null
      */
-    public function getCropWidth()
+    public function getImageField()
     {
-        if (!isset($this->container['CropWidth']) || is_null($this->container['CropWidth'])) {
+        if (!isset($this->container['ImageField']) || is_null($this->container['ImageField'])) {
             return null;
         }
-        return $this->container['CropWidth'];
+        if ((is_object($this->container['ImageField']) || is_string($this->container['ImageField'])) && method_exists($this->container['ImageField'], 'getValue')) {
+            return $this->container['ImageField']->getValue();
+        }
+        return $this->container['ImageField'];
     }
 
     /**
-     * Sets CropWidth
+     * Sets ImageField
      *
-     * @param int|null $CropWidth CropWidth
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField|mixed|null $ImageField ImageField
      *
      * @return self
      */
-    public function setCropWidth($CropWidth)
+    public function setImageField($ImageField)
     {
-        if (is_null($CropWidth)) {
-            array_push($this->openAPINullablesSetToNull, 'CropWidth');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CropWidth', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($ImageField)) {
+            throw new \InvalidArgumentException('non-nullable ImageField cannot be null');
         }
-        $this->container['CropWidth'] = $CropWidth;
+        if (!is_null($ImageField) && !$ImageField instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField) {
+            $ImageField = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageField($ImageField);
+        }
+        $this->container['ImageField'] = $ImageField;
 
         return $this;
     }
 
     /**
-     * Gets CropHeight
+     * Gets ImageUrl
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getCropHeight()
+    public function getImageUrl()
     {
-        if (!isset($this->container['CropHeight']) || is_null($this->container['CropHeight'])) {
+        if (!isset($this->container['ImageUrl']) || is_null($this->container['ImageUrl'])) {
             return null;
         }
-        return $this->container['CropHeight'];
+        return $this->container['ImageUrl'];
     }
 
     /**
-     * Sets CropHeight
+     * Sets ImageUrl
      *
-     * @param int|null $CropHeight CropHeight
+     * @param string|null $ImageUrl ImageUrl
      *
      * @return self
      */
-    public function setCropHeight($CropHeight)
+    public function setImageUrl($ImageUrl)
     {
-        if (is_null($CropHeight)) {
-            array_push($this->openAPINullablesSetToNull, 'CropHeight');
+        if (is_null($ImageUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'ImageUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CropHeight', $nullablesSetToNull);
+            $index = array_search('ImageUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CropHeight'] = $CropHeight;
+        $this->container['ImageUrl'] = $ImageUrl;
 
         return $this;
     }

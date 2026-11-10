@@ -33,30 +33,30 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
-        'PromotionItem' => 'string',
-        'DiscountModifier' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier',
-        'PercentOff' => 'float',
-        'MoneyAmountOff' => 'float',
-        'PromotionCode' => 'string',
-        'OrdersOverAmount' => 'float',
-        'PromotionStartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'PromotionEndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'PromotionOccasion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion',
-        'Language' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'CurrencyCode' => 'string',
+        'DiscountModifier' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
         'FinalMobileUrls' => 'string[]',
-        'FinalUrls' => 'string[]',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'TrackingUrlTemplate' => 'string',
         'FinalUrlSuffix' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'FinalUrls' => 'string[]',
+        'Language' => 'string',
+        'MoneyAmountOff' => 'float',
+        'OrdersOverAmount' => 'float',
+        'PercentOff' => 'float',
+        'PromotionCode' => 'string',
+        'PromotionEndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'PromotionItem' => 'string',
+        'PromotionOccasion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion',
+        'PromotionStartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'TrackingUrlTemplate' => 'string',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters'
     ];
 
     /**
@@ -67,30 +67,30 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
-        'PromotionItem' => null,
-        'DiscountModifier' => null,
-        'PercentOff' => 'double',
-        'MoneyAmountOff' => 'double',
-        'PromotionCode' => null,
-        'OrdersOverAmount' => 'double',
-        'PromotionStartDate' => null,
-        'PromotionEndDate' => null,
-        'PromotionOccasion' => null,
-        'Language' => null,
+        'ForwardCompatibilityMap' => null,
         'CurrencyCode' => null,
+        'DiscountModifier' => null,
         'FinalAppUrls' => null,
         'FinalMobileUrls' => null,
-        'FinalUrls' => null,
-        'UrlCustomParameters' => null,
-        'TrackingUrlTemplate' => null,
         'FinalUrlSuffix' => null,
-        'ForwardCompatibilityMap' => null
+        'FinalUrls' => null,
+        'Language' => null,
+        'MoneyAmountOff' => 'double',
+        'OrdersOverAmount' => 'double',
+        'PercentOff' => 'double',
+        'PromotionCode' => null,
+        'PromotionEndDate' => null,
+        'PromotionItem' => null,
+        'PromotionOccasion' => null,
+        'PromotionStartDate' => null,
+        'TrackingUrlTemplate' => null,
+        'UrlCustomParameters' => null
     ];
 
     /**
@@ -99,30 +99,30 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
-        'PromotionItem' => true,
-        'DiscountModifier' => false,
-        'PercentOff' => true,
-        'MoneyAmountOff' => true,
-        'PromotionCode' => true,
-        'OrdersOverAmount' => true,
-        'PromotionStartDate' => true,
-        'PromotionEndDate' => true,
-        'PromotionOccasion' => false,
-        'Language' => true,
+        'ForwardCompatibilityMap' => true,
         'CurrencyCode' => true,
+        'DiscountModifier' => true,
         'FinalAppUrls' => true,
         'FinalMobileUrls' => true,
-        'FinalUrls' => true,
-        'UrlCustomParameters' => true,
-        'TrackingUrlTemplate' => true,
         'FinalUrlSuffix' => true,
-        'ForwardCompatibilityMap' => true
+        'FinalUrls' => true,
+        'Language' => true,
+        'MoneyAmountOff' => true,
+        'OrdersOverAmount' => true,
+        'PercentOff' => true,
+        'PromotionCode' => true,
+        'PromotionEndDate' => true,
+        'PromotionItem' => true,
+        'PromotionOccasion' => true,
+        'PromotionStartDate' => true,
+        'TrackingUrlTemplate' => true,
+        'UrlCustomParameters' => true
     ];
 
     /**
@@ -211,30 +211,30 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
-        'PromotionItem' => 'PromotionItem',
-        'DiscountModifier' => 'DiscountModifier',
-        'PercentOff' => 'PercentOff',
-        'MoneyAmountOff' => 'MoneyAmountOff',
-        'PromotionCode' => 'PromotionCode',
-        'OrdersOverAmount' => 'OrdersOverAmount',
-        'PromotionStartDate' => 'PromotionStartDate',
-        'PromotionEndDate' => 'PromotionEndDate',
-        'PromotionOccasion' => 'PromotionOccasion',
-        'Language' => 'Language',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'CurrencyCode' => 'CurrencyCode',
+        'DiscountModifier' => 'DiscountModifier',
         'FinalAppUrls' => 'FinalAppUrls',
         'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalUrls' => 'FinalUrls',
-        'UrlCustomParameters' => 'UrlCustomParameters',
-        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
         'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'FinalUrls' => 'FinalUrls',
+        'Language' => 'Language',
+        'MoneyAmountOff' => 'MoneyAmountOff',
+        'OrdersOverAmount' => 'OrdersOverAmount',
+        'PercentOff' => 'PercentOff',
+        'PromotionCode' => 'PromotionCode',
+        'PromotionEndDate' => 'PromotionEndDate',
+        'PromotionItem' => 'PromotionItem',
+        'PromotionOccasion' => 'PromotionOccasion',
+        'PromotionStartDate' => 'PromotionStartDate',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'UrlCustomParameters' => 'UrlCustomParameters'
     ];
 
     /**
@@ -243,30 +243,30 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
-        'PromotionItem' => 'setPromotionItem',
-        'DiscountModifier' => 'setDiscountModifier',
-        'PercentOff' => 'setPercentOff',
-        'MoneyAmountOff' => 'setMoneyAmountOff',
-        'PromotionCode' => 'setPromotionCode',
-        'OrdersOverAmount' => 'setOrdersOverAmount',
-        'PromotionStartDate' => 'setPromotionStartDate',
-        'PromotionEndDate' => 'setPromotionEndDate',
-        'PromotionOccasion' => 'setPromotionOccasion',
-        'Language' => 'setLanguage',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'CurrencyCode' => 'setCurrencyCode',
+        'DiscountModifier' => 'setDiscountModifier',
         'FinalAppUrls' => 'setFinalAppUrls',
         'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalUrls' => 'setFinalUrls',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
-        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
         'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'FinalUrls' => 'setFinalUrls',
+        'Language' => 'setLanguage',
+        'MoneyAmountOff' => 'setMoneyAmountOff',
+        'OrdersOverAmount' => 'setOrdersOverAmount',
+        'PercentOff' => 'setPercentOff',
+        'PromotionCode' => 'setPromotionCode',
+        'PromotionEndDate' => 'setPromotionEndDate',
+        'PromotionItem' => 'setPromotionItem',
+        'PromotionOccasion' => 'setPromotionOccasion',
+        'PromotionStartDate' => 'setPromotionStartDate',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'UrlCustomParameters' => 'setUrlCustomParameters'
     ];
 
     /**
@@ -275,30 +275,30 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
-        'PromotionItem' => 'getPromotionItem',
-        'DiscountModifier' => 'getDiscountModifier',
-        'PercentOff' => 'getPercentOff',
-        'MoneyAmountOff' => 'getMoneyAmountOff',
-        'PromotionCode' => 'getPromotionCode',
-        'OrdersOverAmount' => 'getOrdersOverAmount',
-        'PromotionStartDate' => 'getPromotionStartDate',
-        'PromotionEndDate' => 'getPromotionEndDate',
-        'PromotionOccasion' => 'getPromotionOccasion',
-        'Language' => 'getLanguage',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'CurrencyCode' => 'getCurrencyCode',
+        'DiscountModifier' => 'getDiscountModifier',
         'FinalAppUrls' => 'getFinalAppUrls',
         'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalUrls' => 'getFinalUrls',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
-        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
         'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'FinalUrls' => 'getFinalUrls',
+        'Language' => 'getLanguage',
+        'MoneyAmountOff' => 'getMoneyAmountOff',
+        'OrdersOverAmount' => 'getOrdersOverAmount',
+        'PercentOff' => 'getPercentOff',
+        'PromotionCode' => 'getPromotionCode',
+        'PromotionEndDate' => 'getPromotionEndDate',
+        'PromotionItem' => 'getPromotionItem',
+        'PromotionOccasion' => 'getPromotionOccasion',
+        'PromotionStartDate' => 'getPromotionStartDate',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'UrlCustomParameters' => 'getUrlCustomParameters'
     ];
 
     /**
@@ -358,30 +358,35 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('PromotionItem', $data ?? [], null);
-        $this->setIfExists('DiscountModifier', $data ?? [], null);
-        $this->setIfExists('PercentOff', $data ?? [], null);
-        $this->setIfExists('MoneyAmountOff', $data ?? [], null);
-        $this->setIfExists('PromotionCode', $data ?? [], null);
-        $this->setIfExists('OrdersOverAmount', $data ?? [], null);
-        $this->setIfExists('PromotionStartDate', $data ?? [], null);
-        $this->setIfExists('PromotionEndDate', $data ?? [], null);
-        $this->setIfExists('PromotionOccasion', $data ?? [], null);
-        $this->setIfExists('Language', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('CurrencyCode', $data ?? [], null);
+        $this->setIfExists('DiscountModifier', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
         $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('Language', $data ?? [], null);
+        $this->setIfExists('MoneyAmountOff', $data ?? [], null);
+        $this->setIfExists('OrdersOverAmount', $data ?? [], null);
+        $this->setIfExists('PercentOff', $data ?? [], null);
+        $this->setIfExists('PromotionCode', $data ?? [], null);
+        $this->setIfExists('PromotionEndDate', $data ?? [], null);
+        $this->setIfExists('PromotionItem', $data ?? [], null);
+        $this->setIfExists('PromotionOccasion', $data ?? [], null);
+        $this->setIfExists('PromotionStartDate', $data ?? [], null);
+        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -425,79 +430,6 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -569,6 +501,86 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -648,369 +660,38 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets PromotionItem
+     * Gets ForwardCompatibilityMap
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
      */
-    public function getPromotionItem()
+    public function getForwardCompatibilityMap()
     {
-        if (!isset($this->container['PromotionItem']) || is_null($this->container['PromotionItem'])) {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
             return null;
         }
-        return $this->container['PromotionItem'];
+        return $this->container['ForwardCompatibilityMap'];
     }
 
     /**
-     * Sets PromotionItem
+     * Sets ForwardCompatibilityMap
      *
-     * @param string|null $PromotionItem PromotionItem
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
      *
      * @return self
      */
-    public function setPromotionItem($PromotionItem)
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
     {
-        if (is_null($PromotionItem)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionItem');
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionItem', $nullablesSetToNull);
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PromotionItem'] = $PromotionItem;
-
-        return $this;
-    }
-
-    /**
-     * Gets DiscountModifier
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier|mixed|null
-     */
-    public function getDiscountModifier()
-    {
-        if (!isset($this->container['DiscountModifier']) || is_null($this->container['DiscountModifier'])) {
-            return null;
-        }
-        if ((is_object($this->container['DiscountModifier']) || is_string($this->container['DiscountModifier'])) && method_exists($this->container['DiscountModifier'], 'getValue')) {
-            return $this->container['DiscountModifier']->getValue();
-        }
-        return $this->container['DiscountModifier'];
-    }
-
-    /**
-     * Sets DiscountModifier
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier|mixed|null $DiscountModifier DiscountModifier
-     *
-     * @return self
-     */
-    public function setDiscountModifier($DiscountModifier)
-    {
-        if (is_null($DiscountModifier)) {
-            throw new \InvalidArgumentException('non-nullable DiscountModifier cannot be null');
-        }
-        if (!$DiscountModifier instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier) {
-            $DiscountModifier = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier($DiscountModifier);
-        }
-        $this->container['DiscountModifier'] = $DiscountModifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets PercentOff
-     *
-     * @return float|null
-     */
-    public function getPercentOff()
-    {
-        if (!isset($this->container['PercentOff']) || is_null($this->container['PercentOff'])) {
-            return null;
-        }
-        return $this->container['PercentOff'];
-    }
-
-    /**
-     * Sets PercentOff
-     *
-     * @param float|null $PercentOff PercentOff
-     *
-     * @return self
-     */
-    public function setPercentOff($PercentOff)
-    {
-        if (is_null($PercentOff)) {
-            array_push($this->openAPINullablesSetToNull, 'PercentOff');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PercentOff', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PercentOff'] = $PercentOff;
-
-        return $this;
-    }
-
-    /**
-     * Gets MoneyAmountOff
-     *
-     * @return float|null
-     */
-    public function getMoneyAmountOff()
-    {
-        if (!isset($this->container['MoneyAmountOff']) || is_null($this->container['MoneyAmountOff'])) {
-            return null;
-        }
-        return $this->container['MoneyAmountOff'];
-    }
-
-    /**
-     * Sets MoneyAmountOff
-     *
-     * @param float|null $MoneyAmountOff MoneyAmountOff
-     *
-     * @return self
-     */
-    public function setMoneyAmountOff($MoneyAmountOff)
-    {
-        if (is_null($MoneyAmountOff)) {
-            array_push($this->openAPINullablesSetToNull, 'MoneyAmountOff');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MoneyAmountOff', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MoneyAmountOff'] = $MoneyAmountOff;
-
-        return $this;
-    }
-
-    /**
-     * Gets PromotionCode
-     *
-     * @return string|null
-     */
-    public function getPromotionCode()
-    {
-        if (!isset($this->container['PromotionCode']) || is_null($this->container['PromotionCode'])) {
-            return null;
-        }
-        return $this->container['PromotionCode'];
-    }
-
-    /**
-     * Sets PromotionCode
-     *
-     * @param string|null $PromotionCode PromotionCode
-     *
-     * @return self
-     */
-    public function setPromotionCode($PromotionCode)
-    {
-        if (is_null($PromotionCode)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PromotionCode'] = $PromotionCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets OrdersOverAmount
-     *
-     * @return float|null
-     */
-    public function getOrdersOverAmount()
-    {
-        if (!isset($this->container['OrdersOverAmount']) || is_null($this->container['OrdersOverAmount'])) {
-            return null;
-        }
-        return $this->container['OrdersOverAmount'];
-    }
-
-    /**
-     * Sets OrdersOverAmount
-     *
-     * @param float|null $OrdersOverAmount OrdersOverAmount
-     *
-     * @return self
-     */
-    public function setOrdersOverAmount($OrdersOverAmount)
-    {
-        if (is_null($OrdersOverAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'OrdersOverAmount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('OrdersOverAmount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['OrdersOverAmount'] = $OrdersOverAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets PromotionStartDate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
-     */
-    public function getPromotionStartDate()
-    {
-        if (!isset($this->container['PromotionStartDate']) || is_null($this->container['PromotionStartDate'])) {
-            return null;
-        }
-        return $this->container['PromotionStartDate'];
-    }
-
-    /**
-     * Sets PromotionStartDate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $PromotionStartDate PromotionStartDate
-     *
-     * @return self
-     */
-    public function setPromotionStartDate($PromotionStartDate)
-    {
-        if (is_null($PromotionStartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionStartDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionStartDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PromotionStartDate'] = $PromotionStartDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets PromotionEndDate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
-     */
-    public function getPromotionEndDate()
-    {
-        if (!isset($this->container['PromotionEndDate']) || is_null($this->container['PromotionEndDate'])) {
-            return null;
-        }
-        return $this->container['PromotionEndDate'];
-    }
-
-    /**
-     * Sets PromotionEndDate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $PromotionEndDate PromotionEndDate
-     *
-     * @return self
-     */
-    public function setPromotionEndDate($PromotionEndDate)
-    {
-        if (is_null($PromotionEndDate)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionEndDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionEndDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PromotionEndDate'] = $PromotionEndDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets PromotionOccasion
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion|mixed|null
-     */
-    public function getPromotionOccasion()
-    {
-        if (!isset($this->container['PromotionOccasion']) || is_null($this->container['PromotionOccasion'])) {
-            return null;
-        }
-        if ((is_object($this->container['PromotionOccasion']) || is_string($this->container['PromotionOccasion'])) && method_exists($this->container['PromotionOccasion'], 'getValue')) {
-            return $this->container['PromotionOccasion']->getValue();
-        }
-        return $this->container['PromotionOccasion'];
-    }
-
-    /**
-     * Sets PromotionOccasion
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion|mixed|null $PromotionOccasion PromotionOccasion
-     *
-     * @return self
-     */
-    public function setPromotionOccasion($PromotionOccasion)
-    {
-        if (is_null($PromotionOccasion)) {
-            throw new \InvalidArgumentException('non-nullable PromotionOccasion cannot be null');
-        }
-        if (!$PromotionOccasion instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion) {
-            $PromotionOccasion = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion($PromotionOccasion);
-        }
-        $this->container['PromotionOccasion'] = $PromotionOccasion;
-
-        return $this;
-    }
-
-    /**
-     * Gets Language
-     *
-     * @return string|null
-     */
-    public function getLanguage()
-    {
-        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
-            return null;
-        }
-        return $this->container['Language'];
-    }
-
-    /**
-     * Sets Language
-     *
-     * @param string|null $Language Language
-     *
-     * @return self
-     */
-    public function setLanguage($Language)
-    {
-        if (is_null($Language)) {
-            array_push($this->openAPINullablesSetToNull, 'Language');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Language', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Language'] = $Language;
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -1048,6 +729,49 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
             }
         }
         $this->container['CurrencyCode'] = $CurrencyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets DiscountModifier
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier|mixed|null
+     */
+    public function getDiscountModifier()
+    {
+        if (!isset($this->container['DiscountModifier']) || is_null($this->container['DiscountModifier'])) {
+            return null;
+        }
+        if ((is_object($this->container['DiscountModifier']) || is_string($this->container['DiscountModifier'])) && method_exists($this->container['DiscountModifier'], 'getValue')) {
+            return $this->container['DiscountModifier']->getValue();
+        }
+        return $this->container['DiscountModifier'];
+    }
+
+    /**
+     * Sets DiscountModifier
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier|mixed|null $DiscountModifier DiscountModifier
+     *
+     * @return self
+     */
+    public function setDiscountModifier($DiscountModifier)
+    {
+        if (is_null($DiscountModifier)) {
+            array_push($this->openAPINullablesSetToNull, 'DiscountModifier');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DiscountModifier', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($DiscountModifier) && !$DiscountModifier instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier) {
+            $DiscountModifier = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier($DiscountModifier);
+        }
+        $this->container['DiscountModifier'] = $DiscountModifier;
 
         return $this;
     }
@@ -1127,6 +851,43 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
     }
 
     /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
      * Gets FinalUrls
      *
      * @return string[]|null
@@ -1164,38 +925,340 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets UrlCustomParameters
+     * Gets Language
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     * @return string|null
      */
-    public function getUrlCustomParameters()
+    public function getLanguage()
     {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
             return null;
         }
-        return $this->container['UrlCustomParameters'];
+        return $this->container['Language'];
     }
 
     /**
-     * Sets UrlCustomParameters
+     * Sets Language
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     * @param string|null $Language Language
      *
      * @return self
      */
-    public function setUrlCustomParameters($UrlCustomParameters)
+    public function setLanguage($Language)
     {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        if (is_null($Language)) {
+            array_push($this->openAPINullablesSetToNull, 'Language');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            $index = array_search('Language', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
+        $this->container['Language'] = $Language;
+
+        return $this;
+    }
+
+    /**
+     * Gets MoneyAmountOff
+     *
+     * @return float|null
+     */
+    public function getMoneyAmountOff()
+    {
+        if (!isset($this->container['MoneyAmountOff']) || is_null($this->container['MoneyAmountOff'])) {
+            return null;
+        }
+        return $this->container['MoneyAmountOff'];
+    }
+
+    /**
+     * Sets MoneyAmountOff
+     *
+     * @param float|null $MoneyAmountOff MoneyAmountOff
+     *
+     * @return self
+     */
+    public function setMoneyAmountOff($MoneyAmountOff)
+    {
+        if (is_null($MoneyAmountOff)) {
+            array_push($this->openAPINullablesSetToNull, 'MoneyAmountOff');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MoneyAmountOff', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MoneyAmountOff'] = $MoneyAmountOff;
+
+        return $this;
+    }
+
+    /**
+     * Gets OrdersOverAmount
+     *
+     * @return float|null
+     */
+    public function getOrdersOverAmount()
+    {
+        if (!isset($this->container['OrdersOverAmount']) || is_null($this->container['OrdersOverAmount'])) {
+            return null;
+        }
+        return $this->container['OrdersOverAmount'];
+    }
+
+    /**
+     * Sets OrdersOverAmount
+     *
+     * @param float|null $OrdersOverAmount OrdersOverAmount
+     *
+     * @return self
+     */
+    public function setOrdersOverAmount($OrdersOverAmount)
+    {
+        if (is_null($OrdersOverAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'OrdersOverAmount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('OrdersOverAmount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['OrdersOverAmount'] = $OrdersOverAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets PercentOff
+     *
+     * @return float|null
+     */
+    public function getPercentOff()
+    {
+        if (!isset($this->container['PercentOff']) || is_null($this->container['PercentOff'])) {
+            return null;
+        }
+        return $this->container['PercentOff'];
+    }
+
+    /**
+     * Sets PercentOff
+     *
+     * @param float|null $PercentOff PercentOff
+     *
+     * @return self
+     */
+    public function setPercentOff($PercentOff)
+    {
+        if (is_null($PercentOff)) {
+            array_push($this->openAPINullablesSetToNull, 'PercentOff');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PercentOff', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PercentOff'] = $PercentOff;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionCode
+     *
+     * @return string|null
+     */
+    public function getPromotionCode()
+    {
+        if (!isset($this->container['PromotionCode']) || is_null($this->container['PromotionCode'])) {
+            return null;
+        }
+        return $this->container['PromotionCode'];
+    }
+
+    /**
+     * Sets PromotionCode
+     *
+     * @param string|null $PromotionCode PromotionCode
+     *
+     * @return self
+     */
+    public function setPromotionCode($PromotionCode)
+    {
+        if (is_null($PromotionCode)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionCode'] = $PromotionCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionEndDate
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     */
+    public function getPromotionEndDate()
+    {
+        if (!isset($this->container['PromotionEndDate']) || is_null($this->container['PromotionEndDate'])) {
+            return null;
+        }
+        return $this->container['PromotionEndDate'];
+    }
+
+    /**
+     * Sets PromotionEndDate
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $PromotionEndDate PromotionEndDate
+     *
+     * @return self
+     */
+    public function setPromotionEndDate($PromotionEndDate)
+    {
+        if (is_null($PromotionEndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionEndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionEndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionEndDate'] = $PromotionEndDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionItem
+     *
+     * @return string|null
+     */
+    public function getPromotionItem()
+    {
+        if (!isset($this->container['PromotionItem']) || is_null($this->container['PromotionItem'])) {
+            return null;
+        }
+        return $this->container['PromotionItem'];
+    }
+
+    /**
+     * Sets PromotionItem
+     *
+     * @param string|null $PromotionItem PromotionItem
+     *
+     * @return self
+     */
+    public function setPromotionItem($PromotionItem)
+    {
+        if (is_null($PromotionItem)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionItem');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionItem', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionItem'] = $PromotionItem;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionOccasion
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion|mixed|null
+     */
+    public function getPromotionOccasion()
+    {
+        if (!isset($this->container['PromotionOccasion']) || is_null($this->container['PromotionOccasion'])) {
+            return null;
+        }
+        if ((is_object($this->container['PromotionOccasion']) || is_string($this->container['PromotionOccasion'])) && method_exists($this->container['PromotionOccasion'], 'getValue')) {
+            return $this->container['PromotionOccasion']->getValue();
+        }
+        return $this->container['PromotionOccasion'];
+    }
+
+    /**
+     * Sets PromotionOccasion
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion|mixed|null $PromotionOccasion PromotionOccasion
+     *
+     * @return self
+     */
+    public function setPromotionOccasion($PromotionOccasion)
+    {
+        if (is_null($PromotionOccasion)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionOccasion');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionOccasion', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($PromotionOccasion) && !$PromotionOccasion instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion) {
+            $PromotionOccasion = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion($PromotionOccasion);
+        }
+        $this->container['PromotionOccasion'] = $PromotionOccasion;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionStartDate
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     */
+    public function getPromotionStartDate()
+    {
+        if (!isset($this->container['PromotionStartDate']) || is_null($this->container['PromotionStartDate'])) {
+            return null;
+        }
+        return $this->container['PromotionStartDate'];
+    }
+
+    /**
+     * Sets PromotionStartDate
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $PromotionStartDate PromotionStartDate
+     *
+     * @return self
+     */
+    public function setPromotionStartDate($PromotionStartDate)
+    {
+        if (is_null($PromotionStartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionStartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionStartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionStartDate'] = $PromotionStartDate;
 
         return $this;
     }
@@ -1238,75 +1301,38 @@ class PromotionAdExtension extends AdExtension implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets FinalUrlSuffix
+     * Gets UrlCustomParameters
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
      */
-    public function getFinalUrlSuffix()
+    public function getUrlCustomParameters()
     {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
             return null;
         }
-        return $this->container['FinalUrlSuffix'];
+        return $this->container['UrlCustomParameters'];
     }
 
     /**
-     * Sets FinalUrlSuffix
+     * Sets UrlCustomParameters
      *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
      *
      * @return self
      */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
+    public function setUrlCustomParameters($UrlCustomParameters)
     {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }

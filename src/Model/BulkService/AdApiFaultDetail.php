@@ -235,6 +235,11 @@ class AdApiFaultDetail extends ApplicationFault implements ModelInterface, Array
         $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AdApiFaultDetail');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -264,9 +269,6 @@ class AdApiFaultDetail extends ApplicationFault implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['TrackingId'] === null) {
-            $invalidProperties[] = "'TrackingId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -285,7 +287,7 @@ class AdApiFaultDetail extends ApplicationFault implements ModelInterface, Array
     /**
      * Gets TrackingId
      *
-     * @return string
+     * @return string|null
      */
     public function getTrackingId()
     {
@@ -298,7 +300,7 @@ class AdApiFaultDetail extends ApplicationFault implements ModelInterface, Array
     /**
      * Sets TrackingId
      *
-     * @param string $TrackingId TrackingId
+     * @param string|null $TrackingId TrackingId
      *
      * @return self
      */

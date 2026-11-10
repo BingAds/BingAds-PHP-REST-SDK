@@ -520,7 +520,7 @@ class AccountInfoWithCustomerData implements ModelInterface, ArrayAccess, \JsonS
         if (is_null($AccountLifeCycleStatus)) {
             throw new \InvalidArgumentException('non-nullable AccountLifeCycleStatus cannot be null');
         }
-        if (!$AccountLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountLifeCycleStatus) {
+        if (!is_null($AccountLifeCycleStatus) && !$AccountLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountLifeCycleStatus) {
             $AccountLifeCycleStatus = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountLifeCycleStatus($AccountLifeCycleStatus);
         }
         $this->container['AccountLifeCycleStatus'] = $AccountLifeCycleStatus;

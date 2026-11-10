@@ -34,8 +34,8 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'ProfileId' => 'string',
         'Profile' => 'string',
+        'ProfileId' => 'string',
         'ProfileType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType'
     ];
 
@@ -48,8 +48,8 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'ProfileId' => 'int64',
         'Profile' => null,
+        'ProfileId' => 'int64',
         'ProfileType' => null
     ];
 
@@ -60,8 +60,8 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'ProfileId' => false,
         'Profile' => true,
+        'ProfileId' => false,
         'ProfileType' => false
     ];
 
@@ -152,8 +152,8 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'ProfileId' => 'ProfileId',
         'Profile' => 'Profile',
+        'ProfileId' => 'ProfileId',
         'ProfileType' => 'ProfileType'
     ];
 
@@ -164,8 +164,8 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'ProfileId' => 'setProfileId',
         'Profile' => 'setProfile',
+        'ProfileId' => 'setProfileId',
         'ProfileType' => 'setProfileType'
     ];
 
@@ -176,8 +176,8 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'ProfileId' => 'getProfileId',
         'Profile' => 'getProfile',
+        'ProfileId' => 'getProfileId',
         'ProfileType' => 'getProfileType'
     ];
 
@@ -239,9 +239,14 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('ProfileId', $data ?? [], null);
         $this->setIfExists('Profile', $data ?? [], null);
+        $this->setIfExists('ProfileId', $data ?? [], null);
         $this->setIfExists('ProfileType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -324,36 +329,6 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
     }
 
     /**
-     * Gets ProfileId
-     *
-     * @return string|null
-     */
-    public function getProfileId()
-    {
-        if (!isset($this->container['ProfileId']) || is_null($this->container['ProfileId'])) {
-            return null;
-        }
-        return $this->container['ProfileId'];
-    }
-
-    /**
-     * Sets ProfileId
-     *
-     * @param string|null $ProfileId ProfileId
-     *
-     * @return self
-     */
-    public function setProfileId($ProfileId)
-    {
-        if (is_null($ProfileId)) {
-            throw new \InvalidArgumentException('non-nullable ProfileId cannot be null');
-        }
-        $this->container['ProfileId'] = $ProfileId;
-
-        return $this;
-    }
-
-    /**
      * Gets Profile
      *
      * @return string|null
@@ -391,6 +366,36 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
     }
 
     /**
+     * Gets ProfileId
+     *
+     * @return string|null
+     */
+    public function getProfileId()
+    {
+        if (!isset($this->container['ProfileId']) || is_null($this->container['ProfileId'])) {
+            return null;
+        }
+        return $this->container['ProfileId'];
+    }
+
+    /**
+     * Sets ProfileId
+     *
+     * @param string|null $ProfileId ProfileId
+     *
+     * @return self
+     */
+    public function setProfileId($ProfileId)
+    {
+        if (is_null($ProfileId)) {
+            throw new \InvalidArgumentException('non-nullable ProfileId cannot be null');
+        }
+        $this->container['ProfileId'] = $ProfileId;
+
+        return $this;
+    }
+
+    /**
      * Gets ProfileType
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
@@ -418,7 +423,7 @@ class CustomLinkedInCriterion extends Criterion implements ModelInterface, Array
         if (is_null($ProfileType)) {
             throw new \InvalidArgumentException('non-nullable ProfileType cannot be null');
         }
-        if (!$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+        if (!is_null($ProfileType) && !$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
             $ProfileType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($ProfileType);
         }
         $this->container['ProfileType'] = $ProfileType;

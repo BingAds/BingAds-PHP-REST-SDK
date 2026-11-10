@@ -33,17 +33,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AspectRatio' => 'string',
+        'Duration' => 'int',
+        'NumberOfImages' => 'int',
+        'NumberOfLogos' => 'int',
+        'NumberOfText' => 'int',
+        'TemplateDescription' => 'string',
         'TemplateId' => 'string',
         'TemplateName' => 'string',
-        'TemplateDescription' => 'string',
-        'Duration' => 'int',
-        'AspectRatio' => 'string',
-        'Themes' => 'string[]',
-        'NumberOfImages' => 'int',
-        'NumberOfText' => 'int',
-        'NumberOfLogos' => 'int',
+        'TemplatePreviewUrl' => 'string',
         'TemplateThumbnailUrl' => 'string',
-        'TemplatePreviewUrl' => 'string'
+        'Themes' => 'string[]'
     ];
 
     /**
@@ -54,17 +54,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AspectRatio' => null,
+        'Duration' => 'int32',
+        'NumberOfImages' => 'int32',
+        'NumberOfLogos' => 'int32',
+        'NumberOfText' => 'int32',
+        'TemplateDescription' => null,
         'TemplateId' => null,
         'TemplateName' => null,
-        'TemplateDescription' => null,
-        'Duration' => 'int32',
-        'AspectRatio' => null,
-        'Themes' => null,
-        'NumberOfImages' => 'int32',
-        'NumberOfText' => 'int32',
-        'NumberOfLogos' => 'int32',
+        'TemplatePreviewUrl' => null,
         'TemplateThumbnailUrl' => null,
-        'TemplatePreviewUrl' => null
+        'Themes' => null
     ];
 
     /**
@@ -73,17 +73,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AspectRatio' => true,
+        'Duration' => false,
+        'NumberOfImages' => false,
+        'NumberOfLogos' => false,
+        'NumberOfText' => false,
+        'TemplateDescription' => true,
         'TemplateId' => true,
         'TemplateName' => true,
-        'TemplateDescription' => true,
-        'Duration' => false,
-        'AspectRatio' => true,
-        'Themes' => true,
-        'NumberOfImages' => false,
-        'NumberOfText' => false,
-        'NumberOfLogos' => false,
+        'TemplatePreviewUrl' => true,
         'TemplateThumbnailUrl' => true,
-        'TemplatePreviewUrl' => true
+        'Themes' => true
     ];
 
     /**
@@ -172,17 +172,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AspectRatio' => 'AspectRatio',
+        'Duration' => 'Duration',
+        'NumberOfImages' => 'NumberOfImages',
+        'NumberOfLogos' => 'NumberOfLogos',
+        'NumberOfText' => 'NumberOfText',
+        'TemplateDescription' => 'TemplateDescription',
         'TemplateId' => 'TemplateId',
         'TemplateName' => 'TemplateName',
-        'TemplateDescription' => 'TemplateDescription',
-        'Duration' => 'Duration',
-        'AspectRatio' => 'AspectRatio',
-        'Themes' => 'Themes',
-        'NumberOfImages' => 'NumberOfImages',
-        'NumberOfText' => 'NumberOfText',
-        'NumberOfLogos' => 'NumberOfLogos',
+        'TemplatePreviewUrl' => 'TemplatePreviewUrl',
         'TemplateThumbnailUrl' => 'TemplateThumbnailUrl',
-        'TemplatePreviewUrl' => 'TemplatePreviewUrl'
+        'Themes' => 'Themes'
     ];
 
     /**
@@ -191,17 +191,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
+        'AspectRatio' => 'setAspectRatio',
+        'Duration' => 'setDuration',
+        'NumberOfImages' => 'setNumberOfImages',
+        'NumberOfLogos' => 'setNumberOfLogos',
+        'NumberOfText' => 'setNumberOfText',
+        'TemplateDescription' => 'setTemplateDescription',
         'TemplateId' => 'setTemplateId',
         'TemplateName' => 'setTemplateName',
-        'TemplateDescription' => 'setTemplateDescription',
-        'Duration' => 'setDuration',
-        'AspectRatio' => 'setAspectRatio',
-        'Themes' => 'setThemes',
-        'NumberOfImages' => 'setNumberOfImages',
-        'NumberOfText' => 'setNumberOfText',
-        'NumberOfLogos' => 'setNumberOfLogos',
+        'TemplatePreviewUrl' => 'setTemplatePreviewUrl',
         'TemplateThumbnailUrl' => 'setTemplateThumbnailUrl',
-        'TemplatePreviewUrl' => 'setTemplatePreviewUrl'
+        'Themes' => 'setThemes'
     ];
 
     /**
@@ -210,17 +210,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
+        'AspectRatio' => 'getAspectRatio',
+        'Duration' => 'getDuration',
+        'NumberOfImages' => 'getNumberOfImages',
+        'NumberOfLogos' => 'getNumberOfLogos',
+        'NumberOfText' => 'getNumberOfText',
+        'TemplateDescription' => 'getTemplateDescription',
         'TemplateId' => 'getTemplateId',
         'TemplateName' => 'getTemplateName',
-        'TemplateDescription' => 'getTemplateDescription',
-        'Duration' => 'getDuration',
-        'AspectRatio' => 'getAspectRatio',
-        'Themes' => 'getThemes',
-        'NumberOfImages' => 'getNumberOfImages',
-        'NumberOfText' => 'getNumberOfText',
-        'NumberOfLogos' => 'getNumberOfLogos',
+        'TemplatePreviewUrl' => 'getTemplatePreviewUrl',
         'TemplateThumbnailUrl' => 'getTemplateThumbnailUrl',
-        'TemplatePreviewUrl' => 'getTemplatePreviewUrl'
+        'Themes' => 'getThemes'
     ];
 
     /**
@@ -280,17 +280,17 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AspectRatio', $data ?? [], null);
+        $this->setIfExists('Duration', $data ?? [], null);
+        $this->setIfExists('NumberOfImages', $data ?? [], null);
+        $this->setIfExists('NumberOfLogos', $data ?? [], null);
+        $this->setIfExists('NumberOfText', $data ?? [], null);
+        $this->setIfExists('TemplateDescription', $data ?? [], null);
         $this->setIfExists('TemplateId', $data ?? [], null);
         $this->setIfExists('TemplateName', $data ?? [], null);
-        $this->setIfExists('TemplateDescription', $data ?? [], null);
-        $this->setIfExists('Duration', $data ?? [], null);
-        $this->setIfExists('AspectRatio', $data ?? [], null);
-        $this->setIfExists('Themes', $data ?? [], null);
-        $this->setIfExists('NumberOfImages', $data ?? [], null);
-        $this->setIfExists('NumberOfText', $data ?? [], null);
-        $this->setIfExists('NumberOfLogos', $data ?? [], null);
-        $this->setIfExists('TemplateThumbnailUrl', $data ?? [], null);
         $this->setIfExists('TemplatePreviewUrl', $data ?? [], null);
+        $this->setIfExists('TemplateThumbnailUrl', $data ?? [], null);
+        $this->setIfExists('Themes', $data ?? [], null);
     }
 
     /**
@@ -334,6 +334,200 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AspectRatio
+     *
+     * @return string|null
+     */
+    public function getAspectRatio()
+    {
+        if (!isset($this->container['AspectRatio']) || is_null($this->container['AspectRatio'])) {
+            return null;
+        }
+        return $this->container['AspectRatio'];
+    }
+
+    /**
+     * Sets AspectRatio
+     *
+     * @param string|null $AspectRatio AspectRatio
+     *
+     * @return self
+     */
+    public function setAspectRatio($AspectRatio)
+    {
+        if (is_null($AspectRatio)) {
+            array_push($this->openAPINullablesSetToNull, 'AspectRatio');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AspectRatio', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AspectRatio'] = $AspectRatio;
+
+        return $this;
+    }
+
+    /**
+     * Gets Duration
+     *
+     * @return int|null
+     */
+    public function getDuration()
+    {
+        if (!isset($this->container['Duration']) || is_null($this->container['Duration'])) {
+            return null;
+        }
+        return $this->container['Duration'];
+    }
+
+    /**
+     * Sets Duration
+     *
+     * @param int|null $Duration Duration
+     *
+     * @return self
+     */
+    public function setDuration($Duration)
+    {
+        if (is_null($Duration)) {
+            throw new \InvalidArgumentException('non-nullable Duration cannot be null');
+        }
+        $this->container['Duration'] = $Duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets NumberOfImages
+     *
+     * @return int|null
+     */
+    public function getNumberOfImages()
+    {
+        if (!isset($this->container['NumberOfImages']) || is_null($this->container['NumberOfImages'])) {
+            return null;
+        }
+        return $this->container['NumberOfImages'];
+    }
+
+    /**
+     * Sets NumberOfImages
+     *
+     * @param int|null $NumberOfImages NumberOfImages
+     *
+     * @return self
+     */
+    public function setNumberOfImages($NumberOfImages)
+    {
+        if (is_null($NumberOfImages)) {
+            throw new \InvalidArgumentException('non-nullable NumberOfImages cannot be null');
+        }
+        $this->container['NumberOfImages'] = $NumberOfImages;
+
+        return $this;
+    }
+
+    /**
+     * Gets NumberOfLogos
+     *
+     * @return int|null
+     */
+    public function getNumberOfLogos()
+    {
+        if (!isset($this->container['NumberOfLogos']) || is_null($this->container['NumberOfLogos'])) {
+            return null;
+        }
+        return $this->container['NumberOfLogos'];
+    }
+
+    /**
+     * Sets NumberOfLogos
+     *
+     * @param int|null $NumberOfLogos NumberOfLogos
+     *
+     * @return self
+     */
+    public function setNumberOfLogos($NumberOfLogos)
+    {
+        if (is_null($NumberOfLogos)) {
+            throw new \InvalidArgumentException('non-nullable NumberOfLogos cannot be null');
+        }
+        $this->container['NumberOfLogos'] = $NumberOfLogos;
+
+        return $this;
+    }
+
+    /**
+     * Gets NumberOfText
+     *
+     * @return int|null
+     */
+    public function getNumberOfText()
+    {
+        if (!isset($this->container['NumberOfText']) || is_null($this->container['NumberOfText'])) {
+            return null;
+        }
+        return $this->container['NumberOfText'];
+    }
+
+    /**
+     * Sets NumberOfText
+     *
+     * @param int|null $NumberOfText NumberOfText
+     *
+     * @return self
+     */
+    public function setNumberOfText($NumberOfText)
+    {
+        if (is_null($NumberOfText)) {
+            throw new \InvalidArgumentException('non-nullable NumberOfText cannot be null');
+        }
+        $this->container['NumberOfText'] = $NumberOfText;
+
+        return $this;
+    }
+
+    /**
+     * Gets TemplateDescription
+     *
+     * @return string|null
+     */
+    public function getTemplateDescription()
+    {
+        if (!isset($this->container['TemplateDescription']) || is_null($this->container['TemplateDescription'])) {
+            return null;
+        }
+        return $this->container['TemplateDescription'];
+    }
+
+    /**
+     * Sets TemplateDescription
+     *
+     * @param string|null $TemplateDescription TemplateDescription
+     *
+     * @return self
+     */
+    public function setTemplateDescription($TemplateDescription)
+    {
+        if (is_null($TemplateDescription)) {
+            array_push($this->openAPINullablesSetToNull, 'TemplateDescription');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TemplateDescription', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TemplateDescription'] = $TemplateDescription;
+
+        return $this;
+    }
 
     /**
      * Gets TemplateId
@@ -410,232 +604,38 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets TemplateDescription
+     * Gets TemplatePreviewUrl
      *
      * @return string|null
      */
-    public function getTemplateDescription()
+    public function getTemplatePreviewUrl()
     {
-        if (!isset($this->container['TemplateDescription']) || is_null($this->container['TemplateDescription'])) {
+        if (!isset($this->container['TemplatePreviewUrl']) || is_null($this->container['TemplatePreviewUrl'])) {
             return null;
         }
-        return $this->container['TemplateDescription'];
+        return $this->container['TemplatePreviewUrl'];
     }
 
     /**
-     * Sets TemplateDescription
+     * Sets TemplatePreviewUrl
      *
-     * @param string|null $TemplateDescription TemplateDescription
+     * @param string|null $TemplatePreviewUrl TemplatePreviewUrl
      *
      * @return self
      */
-    public function setTemplateDescription($TemplateDescription)
+    public function setTemplatePreviewUrl($TemplatePreviewUrl)
     {
-        if (is_null($TemplateDescription)) {
-            array_push($this->openAPINullablesSetToNull, 'TemplateDescription');
+        if (is_null($TemplatePreviewUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'TemplatePreviewUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TemplateDescription', $nullablesSetToNull);
+            $index = array_search('TemplatePreviewUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TemplateDescription'] = $TemplateDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets Duration
-     *
-     * @return int|null
-     */
-    public function getDuration()
-    {
-        if (!isset($this->container['Duration']) || is_null($this->container['Duration'])) {
-            return null;
-        }
-        return $this->container['Duration'];
-    }
-
-    /**
-     * Sets Duration
-     *
-     * @param int|null $Duration Duration
-     *
-     * @return self
-     */
-    public function setDuration($Duration)
-    {
-        if (is_null($Duration)) {
-            throw new \InvalidArgumentException('non-nullable Duration cannot be null');
-        }
-        $this->container['Duration'] = $Duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets AspectRatio
-     *
-     * @return string|null
-     */
-    public function getAspectRatio()
-    {
-        if (!isset($this->container['AspectRatio']) || is_null($this->container['AspectRatio'])) {
-            return null;
-        }
-        return $this->container['AspectRatio'];
-    }
-
-    /**
-     * Sets AspectRatio
-     *
-     * @param string|null $AspectRatio AspectRatio
-     *
-     * @return self
-     */
-    public function setAspectRatio($AspectRatio)
-    {
-        if (is_null($AspectRatio)) {
-            array_push($this->openAPINullablesSetToNull, 'AspectRatio');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AspectRatio', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AspectRatio'] = $AspectRatio;
-
-        return $this;
-    }
-
-    /**
-     * Gets Themes
-     *
-     * @return string[]|null
-     */
-    public function getThemes()
-    {
-        if (!isset($this->container['Themes']) || is_null($this->container['Themes'])) {
-            return null;
-        }
-        return $this->container['Themes'];
-    }
-
-    /**
-     * Sets Themes
-     *
-     * @param string[]|null $Themes Themes
-     *
-     * @return self
-     */
-    public function setThemes($Themes)
-    {
-        if (is_null($Themes)) {
-            array_push($this->openAPINullablesSetToNull, 'Themes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Themes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Themes'] = $Themes;
-
-        return $this;
-    }
-
-    /**
-     * Gets NumberOfImages
-     *
-     * @return int|null
-     */
-    public function getNumberOfImages()
-    {
-        if (!isset($this->container['NumberOfImages']) || is_null($this->container['NumberOfImages'])) {
-            return null;
-        }
-        return $this->container['NumberOfImages'];
-    }
-
-    /**
-     * Sets NumberOfImages
-     *
-     * @param int|null $NumberOfImages NumberOfImages
-     *
-     * @return self
-     */
-    public function setNumberOfImages($NumberOfImages)
-    {
-        if (is_null($NumberOfImages)) {
-            throw new \InvalidArgumentException('non-nullable NumberOfImages cannot be null');
-        }
-        $this->container['NumberOfImages'] = $NumberOfImages;
-
-        return $this;
-    }
-
-    /**
-     * Gets NumberOfText
-     *
-     * @return int|null
-     */
-    public function getNumberOfText()
-    {
-        if (!isset($this->container['NumberOfText']) || is_null($this->container['NumberOfText'])) {
-            return null;
-        }
-        return $this->container['NumberOfText'];
-    }
-
-    /**
-     * Sets NumberOfText
-     *
-     * @param int|null $NumberOfText NumberOfText
-     *
-     * @return self
-     */
-    public function setNumberOfText($NumberOfText)
-    {
-        if (is_null($NumberOfText)) {
-            throw new \InvalidArgumentException('non-nullable NumberOfText cannot be null');
-        }
-        $this->container['NumberOfText'] = $NumberOfText;
-
-        return $this;
-    }
-
-    /**
-     * Gets NumberOfLogos
-     *
-     * @return int|null
-     */
-    public function getNumberOfLogos()
-    {
-        if (!isset($this->container['NumberOfLogos']) || is_null($this->container['NumberOfLogos'])) {
-            return null;
-        }
-        return $this->container['NumberOfLogos'];
-    }
-
-    /**
-     * Sets NumberOfLogos
-     *
-     * @param int|null $NumberOfLogos NumberOfLogos
-     *
-     * @return self
-     */
-    public function setNumberOfLogos($NumberOfLogos)
-    {
-        if (is_null($NumberOfLogos)) {
-            throw new \InvalidArgumentException('non-nullable NumberOfLogos cannot be null');
-        }
-        $this->container['NumberOfLogos'] = $NumberOfLogos;
+        $this->container['TemplatePreviewUrl'] = $TemplatePreviewUrl;
 
         return $this;
     }
@@ -678,38 +678,38 @@ class ClipchampTemplateInfo implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets TemplatePreviewUrl
+     * Gets Themes
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getTemplatePreviewUrl()
+    public function getThemes()
     {
-        if (!isset($this->container['TemplatePreviewUrl']) || is_null($this->container['TemplatePreviewUrl'])) {
+        if (!isset($this->container['Themes']) || is_null($this->container['Themes'])) {
             return null;
         }
-        return $this->container['TemplatePreviewUrl'];
+        return $this->container['Themes'];
     }
 
     /**
-     * Sets TemplatePreviewUrl
+     * Sets Themes
      *
-     * @param string|null $TemplatePreviewUrl TemplatePreviewUrl
+     * @param string[]|null $Themes Themes
      *
      * @return self
      */
-    public function setTemplatePreviewUrl($TemplatePreviewUrl)
+    public function setThemes($Themes)
     {
-        if (is_null($TemplatePreviewUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'TemplatePreviewUrl');
+        if (is_null($Themes)) {
+            array_push($this->openAPINullablesSetToNull, 'Themes');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TemplatePreviewUrl', $nullablesSetToNull);
+            $index = array_search('Themes', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TemplatePreviewUrl'] = $TemplatePreviewUrl;
+        $this->container['Themes'] = $Themes;
 
         return $this;
     }

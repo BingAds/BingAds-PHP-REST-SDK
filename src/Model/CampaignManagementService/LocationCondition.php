@@ -33,10 +33,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'IncludedLocations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]',
+        'ExcludedLocationIntent' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption',
         'ExcludedLocations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]',
         'IncludedLocationIntent' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption',
-        'ExcludedLocationIntent' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption',
+        'IncludedLocations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]',
         'IsPrimary' => 'bool'
     ];
 
@@ -48,10 +48,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'IncludedLocations' => null,
+        'ExcludedLocationIntent' => null,
         'ExcludedLocations' => null,
         'IncludedLocationIntent' => null,
-        'ExcludedLocationIntent' => null,
+        'IncludedLocations' => null,
         'IsPrimary' => null
     ];
 
@@ -61,10 +61,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'IncludedLocations' => true,
+        'ExcludedLocationIntent' => true,
         'ExcludedLocations' => true,
-        'IncludedLocationIntent' => false,
-        'ExcludedLocationIntent' => false,
+        'IncludedLocationIntent' => true,
+        'IncludedLocations' => true,
         'IsPrimary' => false
     ];
 
@@ -154,10 +154,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'IncludedLocations' => 'IncludedLocations',
+        'ExcludedLocationIntent' => 'ExcludedLocationIntent',
         'ExcludedLocations' => 'ExcludedLocations',
         'IncludedLocationIntent' => 'IncludedLocationIntent',
-        'ExcludedLocationIntent' => 'ExcludedLocationIntent',
+        'IncludedLocations' => 'IncludedLocations',
         'IsPrimary' => 'IsPrimary'
     ];
 
@@ -167,10 +167,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $setters = [
-        'IncludedLocations' => 'setIncludedLocations',
+        'ExcludedLocationIntent' => 'setExcludedLocationIntent',
         'ExcludedLocations' => 'setExcludedLocations',
         'IncludedLocationIntent' => 'setIncludedLocationIntent',
-        'ExcludedLocationIntent' => 'setExcludedLocationIntent',
+        'IncludedLocations' => 'setIncludedLocations',
         'IsPrimary' => 'setIsPrimary'
     ];
 
@@ -180,10 +180,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $getters = [
-        'IncludedLocations' => 'getIncludedLocations',
+        'ExcludedLocationIntent' => 'getExcludedLocationIntent',
         'ExcludedLocations' => 'getExcludedLocations',
         'IncludedLocationIntent' => 'getIncludedLocationIntent',
-        'ExcludedLocationIntent' => 'getExcludedLocationIntent',
+        'IncludedLocations' => 'getIncludedLocations',
         'IsPrimary' => 'getIsPrimary'
     ];
 
@@ -244,10 +244,10 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('IncludedLocations', $data ?? [], null);
+        $this->setIfExists('ExcludedLocationIntent', $data ?? [], null);
         $this->setIfExists('ExcludedLocations', $data ?? [], null);
         $this->setIfExists('IncludedLocationIntent', $data ?? [], null);
-        $this->setIfExists('ExcludedLocationIntent', $data ?? [], null);
+        $this->setIfExists('IncludedLocations', $data ?? [], null);
         $this->setIfExists('IsPrimary', $data ?? [], null);
     }
 
@@ -294,38 +294,44 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets IncludedLocations
+     * Gets ExcludedLocationIntent
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null
      */
-    public function getIncludedLocations()
+    public function getExcludedLocationIntent()
     {
-        if (!isset($this->container['IncludedLocations']) || is_null($this->container['IncludedLocations'])) {
+        if (!isset($this->container['ExcludedLocationIntent']) || is_null($this->container['ExcludedLocationIntent'])) {
             return null;
         }
-        return $this->container['IncludedLocations'];
+        if ((is_object($this->container['ExcludedLocationIntent']) || is_string($this->container['ExcludedLocationIntent'])) && method_exists($this->container['ExcludedLocationIntent'], 'getValue')) {
+            return $this->container['ExcludedLocationIntent']->getValue();
+        }
+        return $this->container['ExcludedLocationIntent'];
     }
 
     /**
-     * Sets IncludedLocations
+     * Sets ExcludedLocationIntent
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]|null $IncludedLocations IncludedLocations
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null $ExcludedLocationIntent ExcludedLocationIntent
      *
      * @return self
      */
-    public function setIncludedLocations($IncludedLocations)
+    public function setExcludedLocationIntent($ExcludedLocationIntent)
     {
-        if (is_null($IncludedLocations)) {
-            array_push($this->openAPINullablesSetToNull, 'IncludedLocations');
+        if (is_null($ExcludedLocationIntent)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludedLocationIntent');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IncludedLocations', $nullablesSetToNull);
+            $index = array_search('ExcludedLocationIntent', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['IncludedLocations'] = $IncludedLocations;
+        if (!is_null($ExcludedLocationIntent) && !$ExcludedLocationIntent instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
+            $ExcludedLocationIntent = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($ExcludedLocationIntent);
+        }
+        $this->container['ExcludedLocationIntent'] = $ExcludedLocationIntent;
 
         return $this;
     }
@@ -393,9 +399,16 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setIncludedLocationIntent($IncludedLocationIntent)
     {
         if (is_null($IncludedLocationIntent)) {
-            throw new \InvalidArgumentException('non-nullable IncludedLocationIntent cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'IncludedLocationIntent');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IncludedLocationIntent', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$IncludedLocationIntent instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
+        if (!is_null($IncludedLocationIntent) && !$IncludedLocationIntent instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
             $IncludedLocationIntent = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($IncludedLocationIntent);
         }
         $this->container['IncludedLocationIntent'] = $IncludedLocationIntent;
@@ -404,37 +417,38 @@ class LocationCondition implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets ExcludedLocationIntent
+     * Gets IncludedLocations
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]|null
      */
-    public function getExcludedLocationIntent()
+    public function getIncludedLocations()
     {
-        if (!isset($this->container['ExcludedLocationIntent']) || is_null($this->container['ExcludedLocationIntent'])) {
+        if (!isset($this->container['IncludedLocations']) || is_null($this->container['IncludedLocations'])) {
             return null;
         }
-        if ((is_object($this->container['ExcludedLocationIntent']) || is_string($this->container['ExcludedLocationIntent'])) && method_exists($this->container['ExcludedLocationIntent'], 'getValue')) {
-            return $this->container['ExcludedLocationIntent']->getValue();
-        }
-        return $this->container['ExcludedLocationIntent'];
+        return $this->container['IncludedLocations'];
     }
 
     /**
-     * Sets ExcludedLocationIntent
+     * Sets IncludedLocations
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption|mixed|null $ExcludedLocationIntent ExcludedLocationIntent
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationConditionItem[]|null $IncludedLocations IncludedLocations
      *
      * @return self
      */
-    public function setExcludedLocationIntent($ExcludedLocationIntent)
+    public function setIncludedLocations($IncludedLocations)
     {
-        if (is_null($ExcludedLocationIntent)) {
-            throw new \InvalidArgumentException('non-nullable ExcludedLocationIntent cannot be null');
+        if (is_null($IncludedLocations)) {
+            array_push($this->openAPINullablesSetToNull, 'IncludedLocations');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IncludedLocations', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ExcludedLocationIntent instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
-            $ExcludedLocationIntent = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($ExcludedLocationIntent);
-        }
-        $this->container['ExcludedLocationIntent'] = $ExcludedLocationIntent;
+        $this->container['IncludedLocations'] = $IncludedLocations;
 
         return $this;
     }

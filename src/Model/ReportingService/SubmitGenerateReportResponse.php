@@ -53,7 +53,7 @@ class SubmitGenerateReportResponse implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ReportRequestId' => false
+        'ReportRequestId' => true
     ];
 
     /**
@@ -288,7 +288,14 @@ class SubmitGenerateReportResponse implements ModelInterface, ArrayAccess, \Json
     public function setReportRequestId($ReportRequestId)
     {
         if (is_null($ReportRequestId)) {
-            throw new \InvalidArgumentException('non-nullable ReportRequestId cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReportRequestId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReportRequestId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['ReportRequestId'] = $ReportRequestId;
 

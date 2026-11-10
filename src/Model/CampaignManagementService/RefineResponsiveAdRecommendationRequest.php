@@ -65,7 +65,7 @@ class RefineResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
         'TextRefineOperations' => true,
         'ImageRefineOperations' => true,
         'ImageSuggestions' => true,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -467,9 +467,16 @@ class RefineResponsiveAdRecommendationRequest implements ModelInterface, ArrayAc
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

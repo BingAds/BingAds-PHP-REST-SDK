@@ -34,12 +34,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPITypes = [
         'CompanyId' => 'string',
-        'CompanyName' => 'string',
         'CompanyLogo' => 'string',
-        'Industry' => 'string',
+        'CompanyName' => 'string',
         'CompanySize' => 'string',
         'CompanySizeCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory',
-        'CompanyUrl' => 'string'
+        'CompanyUrl' => 'string',
+        'Industry' => 'string'
     ];
 
     /**
@@ -51,12 +51,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPIFormats = [
         'CompanyId' => 'int64',
-        'CompanyName' => null,
         'CompanyLogo' => null,
-        'Industry' => null,
+        'CompanyName' => null,
         'CompanySize' => null,
         'CompanySizeCategory' => null,
-        'CompanyUrl' => null
+        'CompanyUrl' => null,
+        'Industry' => null
     ];
 
     /**
@@ -66,12 +66,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'CompanyId' => false,
-        'CompanyName' => true,
         'CompanyLogo' => true,
-        'Industry' => true,
+        'CompanyName' => true,
         'CompanySize' => true,
         'CompanySizeCategory' => false,
-        'CompanyUrl' => true
+        'CompanyUrl' => true,
+        'Industry' => true
     ];
 
     /**
@@ -161,12 +161,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $attributeMap = [
         'CompanyId' => 'CompanyId',
-        'CompanyName' => 'CompanyName',
         'CompanyLogo' => 'CompanyLogo',
-        'Industry' => 'Industry',
+        'CompanyName' => 'CompanyName',
         'CompanySize' => 'CompanySize',
         'CompanySizeCategory' => 'CompanySizeCategory',
-        'CompanyUrl' => 'CompanyUrl'
+        'CompanyUrl' => 'CompanyUrl',
+        'Industry' => 'Industry'
     ];
 
     /**
@@ -176,12 +176,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $setters = [
         'CompanyId' => 'setCompanyId',
-        'CompanyName' => 'setCompanyName',
         'CompanyLogo' => 'setCompanyLogo',
-        'Industry' => 'setIndustry',
+        'CompanyName' => 'setCompanyName',
         'CompanySize' => 'setCompanySize',
         'CompanySizeCategory' => 'setCompanySizeCategory',
-        'CompanyUrl' => 'setCompanyUrl'
+        'CompanyUrl' => 'setCompanyUrl',
+        'Industry' => 'setIndustry'
     ];
 
     /**
@@ -191,12 +191,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $getters = [
         'CompanyId' => 'getCompanyId',
-        'CompanyName' => 'getCompanyName',
         'CompanyLogo' => 'getCompanyLogo',
-        'Industry' => 'getIndustry',
+        'CompanyName' => 'getCompanyName',
         'CompanySize' => 'getCompanySize',
         'CompanySizeCategory' => 'getCompanySizeCategory',
-        'CompanyUrl' => 'getCompanyUrl'
+        'CompanyUrl' => 'getCompanyUrl',
+        'Industry' => 'getIndustry'
     ];
 
     /**
@@ -257,12 +257,12 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('CompanyId', $data ?? [], null);
-        $this->setIfExists('CompanyName', $data ?? [], null);
         $this->setIfExists('CompanyLogo', $data ?? [], null);
-        $this->setIfExists('Industry', $data ?? [], null);
+        $this->setIfExists('CompanyName', $data ?? [], null);
         $this->setIfExists('CompanySize', $data ?? [], null);
         $this->setIfExists('CompanySizeCategory', $data ?? [], null);
         $this->setIfExists('CompanyUrl', $data ?? [], null);
+        $this->setIfExists('Industry', $data ?? [], null);
     }
 
     /**
@@ -338,43 +338,6 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets CompanyName
-     *
-     * @return string|null
-     */
-    public function getCompanyName()
-    {
-        if (!isset($this->container['CompanyName']) || is_null($this->container['CompanyName'])) {
-            return null;
-        }
-        return $this->container['CompanyName'];
-    }
-
-    /**
-     * Sets CompanyName
-     *
-     * @param string|null $CompanyName CompanyName
-     *
-     * @return self
-     */
-    public function setCompanyName($CompanyName)
-    {
-        if (is_null($CompanyName)) {
-            array_push($this->openAPINullablesSetToNull, 'CompanyName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CompanyName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CompanyName'] = $CompanyName;
-
-        return $this;
-    }
-
-    /**
      * Gets CompanyLogo
      *
      * @return string|null
@@ -412,38 +375,38 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets Industry
+     * Gets CompanyName
      *
      * @return string|null
      */
-    public function getIndustry()
+    public function getCompanyName()
     {
-        if (!isset($this->container['Industry']) || is_null($this->container['Industry'])) {
+        if (!isset($this->container['CompanyName']) || is_null($this->container['CompanyName'])) {
             return null;
         }
-        return $this->container['Industry'];
+        return $this->container['CompanyName'];
     }
 
     /**
-     * Sets Industry
+     * Sets CompanyName
      *
-     * @param string|null $Industry Industry
+     * @param string|null $CompanyName CompanyName
      *
      * @return self
      */
-    public function setIndustry($Industry)
+    public function setCompanyName($CompanyName)
     {
-        if (is_null($Industry)) {
-            array_push($this->openAPINullablesSetToNull, 'Industry');
+        if (is_null($CompanyName)) {
+            array_push($this->openAPINullablesSetToNull, 'CompanyName');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Industry', $nullablesSetToNull);
+            $index = array_search('CompanyName', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Industry'] = $Industry;
+        $this->container['CompanyName'] = $CompanyName;
 
         return $this;
     }
@@ -513,7 +476,7 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
         if (is_null($CompanySizeCategory)) {
             throw new \InvalidArgumentException('non-nullable CompanySizeCategory cannot be null');
         }
-        if (!$CompanySizeCategory instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory) {
+        if (!is_null($CompanySizeCategory) && !$CompanySizeCategory instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory) {
             $CompanySizeCategory = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanySizeCategory($CompanySizeCategory);
         }
         $this->container['CompanySizeCategory'] = $CompanySizeCategory;
@@ -554,6 +517,43 @@ class LinkedInCompanyData implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['CompanyUrl'] = $CompanyUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Industry
+     *
+     * @return string|null
+     */
+    public function getIndustry()
+    {
+        if (!isset($this->container['Industry']) || is_null($this->container['Industry'])) {
+            return null;
+        }
+        return $this->container['Industry'];
+    }
+
+    /**
+     * Sets Industry
+     *
+     * @param string|null $Industry Industry
+     *
+     * @return self
+     */
+    public function setIndustry($Industry)
+    {
+        if (is_null($Industry)) {
+            array_push($this->openAPINullablesSetToNull, 'Industry');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Industry', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Industry'] = $Industry;
 
         return $this;
     }

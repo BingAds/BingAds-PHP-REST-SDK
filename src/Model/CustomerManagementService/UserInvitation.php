@@ -617,7 +617,7 @@ class UserInvitation implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Lcid)) {
             throw new \InvalidArgumentException('non-nullable Lcid cannot be null');
         }
-        if (!$Lcid instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LCID) {
+        if (!is_null($Lcid) && !$Lcid instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LCID) {
             $Lcid = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\LCID($Lcid);
         }
         $this->container['Lcid'] = $Lcid;

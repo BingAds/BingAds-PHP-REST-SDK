@@ -33,10 +33,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Categories' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CategoryResult[]',
         'Id' => 'string',
-        'Type' => 'string',
         'SubType' => 'string',
-        'Categories' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CategoryResult[]'
+        'Type' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Categories' => null,
         'Id' => 'int64',
-        'Type' => null,
         'SubType' => null,
-        'Categories' => null
+        'Type' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Categories' => true,
         'Id' => false,
-        'Type' => true,
         'SubType' => true,
-        'Categories' => true
+        'Type' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Categories' => 'Categories',
         'Id' => 'Id',
-        'Type' => 'Type',
         'SubType' => 'SubType',
-        'Categories' => 'Categories'
+        'Type' => 'Type'
     ];
 
     /**
@@ -163,10 +163,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Categories' => 'setCategories',
         'Id' => 'setId',
-        'Type' => 'setType',
         'SubType' => 'setSubType',
-        'Categories' => 'setCategories'
+        'Type' => 'setType'
     ];
 
     /**
@@ -175,10 +175,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Categories' => 'getCategories',
         'Id' => 'getId',
-        'Type' => 'getType',
         'SubType' => 'getSubType',
-        'Categories' => 'getCategories'
+        'Type' => 'getType'
     ];
 
     /**
@@ -238,10 +238,10 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('SubType', $data ?? [], null);
         $this->setIfExists('Categories', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -287,6 +287,43 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets Categories
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CategoryResult[]|null
+     */
+    public function getCategories()
+    {
+        if (!isset($this->container['Categories']) || is_null($this->container['Categories'])) {
+            return null;
+        }
+        return $this->container['Categories'];
+    }
+
+    /**
+     * Sets Categories
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CategoryResult[]|null $Categories Categories
+     *
+     * @return self
+     */
+    public function setCategories($Categories)
+    {
+        if (is_null($Categories)) {
+            array_push($this->openAPINullablesSetToNull, 'Categories');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Categories', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Categories'] = $Categories;
+
+        return $this;
+    }
+
+    /**
      * Gets Id
      *
      * @return string|null
@@ -312,43 +349,6 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable Id cannot be null');
         }
         $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -391,38 +391,38 @@ class EntityResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Categories
+     * Gets Type
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CategoryResult[]|null
+     * @return string|null
      */
-    public function getCategories()
+    public function getType()
     {
-        if (!isset($this->container['Categories']) || is_null($this->container['Categories'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['Categories'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets Categories
+     * Sets Type
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CategoryResult[]|null $Categories Categories
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setCategories($Categories)
+    public function setType($Type)
     {
-        if (is_null($Categories)) {
-            array_push($this->openAPINullablesSetToNull, 'Categories');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Categories', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Categories'] = $Categories;
+        $this->container['Type'] = $Type;
 
         return $this;
     }

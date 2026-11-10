@@ -33,8 +33,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
-        'EntityNegativeKeywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityNegativeKeyword[]'
+        'EntityNegativeKeywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityNegativeKeyword[]',
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PartialErrors' => null,
-        'EntityNegativeKeywords' => null
+        'EntityNegativeKeywords' => null,
+        'PartialErrors' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PartialErrors' => true,
-        'EntityNegativeKeywords' => true
+        'EntityNegativeKeywords' => true,
+        'PartialErrors' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PartialErrors' => 'PartialErrors',
-        'EntityNegativeKeywords' => 'EntityNegativeKeywords'
+        'EntityNegativeKeywords' => 'EntityNegativeKeywords',
+        'PartialErrors' => 'PartialErrors'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $setters = [
-        'PartialErrors' => 'setPartialErrors',
-        'EntityNegativeKeywords' => 'setEntityNegativeKeywords'
+        'EntityNegativeKeywords' => 'setEntityNegativeKeywords',
+        'PartialErrors' => 'setPartialErrors'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $getters = [
-        'PartialErrors' => 'getPartialErrors',
-        'EntityNegativeKeywords' => 'getEntityNegativeKeywords'
+        'EntityNegativeKeywords' => 'getEntityNegativeKeywords',
+        'PartialErrors' => 'getPartialErrors'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PartialErrors', $data ?? [], null);
         $this->setIfExists('EntityNegativeKeywords', $data ?? [], null);
+        $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets EntityNegativeKeywords
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityNegativeKeyword[]|null
@@ -342,6 +305,43 @@ class GetNegativeKeywordsByEntityIdsResponse implements ModelInterface, ArrayAcc
             }
         }
         $this->container['EntityNegativeKeywords'] = $EntityNegativeKeywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets PartialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     */
+    public function getPartialErrors()
+    {
+        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+            return null;
+        }
+        return $this->container['PartialErrors'];
+    }
+
+    /**
+     * Sets PartialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     *
+     * @return self
+     */
+    public function setPartialErrors($PartialErrors)
+    {
+        if (is_null($PartialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PartialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PartialErrors'] = $PartialErrors;
 
         return $this;
     }

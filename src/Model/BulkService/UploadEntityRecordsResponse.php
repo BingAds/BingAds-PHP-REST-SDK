@@ -34,9 +34,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPITypes = [
         'EntityRecords' => 'string[]',
+        'Errors' => '\Microsoft\MsAds\Rest\Model\BulkService\OperationError[]',
         'RequestId' => 'string',
-        'RequestStatus' => 'string',
-        'Errors' => '\Microsoft\MsAds\Rest\Model\BulkService\OperationError[]'
+        'RequestStatus' => 'string'
     ];
 
     /**
@@ -48,9 +48,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPIFormats = [
         'EntityRecords' => null,
+        'Errors' => null,
         'RequestId' => null,
-        'RequestStatus' => null,
-        'Errors' => null
+        'RequestStatus' => null
     ];
 
     /**
@@ -60,9 +60,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'EntityRecords' => true,
+        'Errors' => true,
         'RequestId' => true,
-        'RequestStatus' => true,
-        'Errors' => true
+        'RequestStatus' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $attributeMap = [
         'EntityRecords' => 'EntityRecords',
+        'Errors' => 'Errors',
         'RequestId' => 'RequestId',
-        'RequestStatus' => 'RequestStatus',
-        'Errors' => 'Errors'
+        'RequestStatus' => 'RequestStatus'
     ];
 
     /**
@@ -164,9 +164,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $setters = [
         'EntityRecords' => 'setEntityRecords',
+        'Errors' => 'setErrors',
         'RequestId' => 'setRequestId',
-        'RequestStatus' => 'setRequestStatus',
-        'Errors' => 'setErrors'
+        'RequestStatus' => 'setRequestStatus'
     ];
 
     /**
@@ -176,9 +176,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $getters = [
         'EntityRecords' => 'getEntityRecords',
+        'Errors' => 'getErrors',
         'RequestId' => 'getRequestId',
-        'RequestStatus' => 'getRequestStatus',
-        'Errors' => 'getErrors'
+        'RequestStatus' => 'getRequestStatus'
     ];
 
     /**
@@ -239,9 +239,9 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(?array $data = null)
     {
         $this->setIfExists('EntityRecords', $data ?? [], null);
+        $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('RequestId', $data ?? [], null);
         $this->setIfExists('RequestStatus', $data ?? [], null);
-        $this->setIfExists('Errors', $data ?? [], null);
     }
 
     /**
@@ -324,6 +324,43 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets Errors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null
+     */
+    public function getErrors()
+    {
+        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
+            return null;
+        }
+        return $this->container['Errors'];
+    }
+
+    /**
+     * Sets Errors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null $Errors Errors
+     *
+     * @return self
+     */
+    public function setErrors($Errors)
+    {
+        if (is_null($Errors)) {
+            array_push($this->openAPINullablesSetToNull, 'Errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Errors'] = $Errors;
+
+        return $this;
+    }
+
+    /**
      * Gets RequestId
      *
      * @return string|null
@@ -393,43 +430,6 @@ class UploadEntityRecordsResponse implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['RequestStatus'] = $RequestStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets Errors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null
-     */
-    public function getErrors()
-    {
-        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
-            return null;
-        }
-        return $this->container['Errors'];
-    }
-
-    /**
-     * Sets Errors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null $Errors Errors
-     *
-     * @return self
-     */
-    public function setErrors($Errors)
-    {
-        if (is_null($Errors)) {
-            array_push($this->openAPINullablesSetToNull, 'Errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Errors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Errors'] = $Errors;
 
         return $this;
     }

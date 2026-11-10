@@ -1,6 +1,6 @@
 <?php
 /**
- * VideoRecommendationTextData
+ * TargetCpmBiddingScheme
  * CampaignManagementService
  *
  * PHP version 7.4
@@ -16,7 +16,7 @@ use ArrayAccess;
 use Microsoft\MsAds\Rest\ObjectSerializer;
 use Microsoft\MsAds\Rest\ModelInterface;
 
-class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonSerializable
+class TargetCpmBiddingScheme extends BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -25,7 +25,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'VideoRecommendationTextData';
+    protected static string $openAPIModelName = 'TargetCpmBiddingScheme';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -33,12 +33,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Font' => 'string',
-        'FontWeight' => 'string',
-        'Color' => 'string',
-        'MaxLength' => 'int',
-        'ItemId' => 'string',
-        'Hint' => 'string'
+        'Type' => 'string'
     ];
 
     /**
@@ -49,12 +44,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Font' => null,
-        'FontWeight' => null,
-        'Color' => null,
-        'MaxLength' => 'int32',
-        'ItemId' => null,
-        'Hint' => null
+        'Type' => null
     ];
 
     /**
@@ -63,12 +53,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Font' => true,
-        'FontWeight' => true,
-        'Color' => true,
-        'MaxLength' => false,
-        'ItemId' => true,
-        'Hint' => true
+        'Type' => true
     ];
 
     /**
@@ -157,12 +142,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Font' => 'font',
-        'FontWeight' => 'fontWeight',
-        'Color' => 'color',
-        'MaxLength' => 'maxLength',
-        'ItemId' => 'itemId',
-        'Hint' => 'hint'
+        'Type' => 'Type'
     ];
 
     /**
@@ -171,12 +151,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $setters = [
-        'Font' => 'setFont',
-        'FontWeight' => 'setFontWeight',
-        'Color' => 'setColor',
-        'MaxLength' => 'setMaxLength',
-        'ItemId' => 'setItemId',
-        'Hint' => 'setHint'
+        'Type' => 'setType'
     ];
 
     /**
@@ -185,12 +160,7 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $getters = [
-        'Font' => 'getFont',
-        'FontWeight' => 'getFontWeight',
-        'Color' => 'getColor',
-        'MaxLength' => 'getMaxLength',
-        'ItemId' => 'getItemId',
-        'Hint' => 'getHint'
+        'Type' => 'getType'
     ];
 
     /**
@@ -250,12 +220,12 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Font', $data ?? [], null);
-        $this->setIfExists('FontWeight', $data ?? [], null);
-        $this->setIfExists('Color', $data ?? [], null);
-        $this->setIfExists('MaxLength', $data ?? [], null);
-        $this->setIfExists('ItemId', $data ?? [], null);
-        $this->setIfExists('Hint', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -301,216 +271,38 @@ class VideoRecommendationTextData implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets Font
+     * Gets Type
      *
      * @return string|null
      */
-    public function getFont()
+    public function getType()
     {
-        if (!isset($this->container['Font']) || is_null($this->container['Font'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['Font'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets Font
+     * Sets Type
      *
-     * @param string|null $Font Font
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setFont($Font)
+    public function setType($Type)
     {
-        if (is_null($Font)) {
-            array_push($this->openAPINullablesSetToNull, 'Font');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Font', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Font'] = $Font;
-
-        return $this;
-    }
-
-    /**
-     * Gets FontWeight
-     *
-     * @return string|null
-     */
-    public function getFontWeight()
-    {
-        if (!isset($this->container['FontWeight']) || is_null($this->container['FontWeight'])) {
-            return null;
-        }
-        return $this->container['FontWeight'];
-    }
-
-    /**
-     * Sets FontWeight
-     *
-     * @param string|null $FontWeight FontWeight
-     *
-     * @return self
-     */
-    public function setFontWeight($FontWeight)
-    {
-        if (is_null($FontWeight)) {
-            array_push($this->openAPINullablesSetToNull, 'FontWeight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FontWeight', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FontWeight'] = $FontWeight;
-
-        return $this;
-    }
-
-    /**
-     * Gets Color
-     *
-     * @return string|null
-     */
-    public function getColor()
-    {
-        if (!isset($this->container['Color']) || is_null($this->container['Color'])) {
-            return null;
-        }
-        return $this->container['Color'];
-    }
-
-    /**
-     * Sets Color
-     *
-     * @param string|null $Color Color
-     *
-     * @return self
-     */
-    public function setColor($Color)
-    {
-        if (is_null($Color)) {
-            array_push($this->openAPINullablesSetToNull, 'Color');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Color', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Color'] = $Color;
-
-        return $this;
-    }
-
-    /**
-     * Gets MaxLength
-     *
-     * @return int|null
-     */
-    public function getMaxLength()
-    {
-        if (!isset($this->container['MaxLength']) || is_null($this->container['MaxLength'])) {
-            return null;
-        }
-        return $this->container['MaxLength'];
-    }
-
-    /**
-     * Sets MaxLength
-     *
-     * @param int|null $MaxLength MaxLength
-     *
-     * @return self
-     */
-    public function setMaxLength($MaxLength)
-    {
-        if (is_null($MaxLength)) {
-            throw new \InvalidArgumentException('non-nullable MaxLength cannot be null');
-        }
-        $this->container['MaxLength'] = $MaxLength;
-
-        return $this;
-    }
-
-    /**
-     * Gets ItemId
-     *
-     * @return string|null
-     */
-    public function getItemId()
-    {
-        if (!isset($this->container['ItemId']) || is_null($this->container['ItemId'])) {
-            return null;
-        }
-        return $this->container['ItemId'];
-    }
-
-    /**
-     * Sets ItemId
-     *
-     * @param string|null $ItemId ItemId
-     *
-     * @return self
-     */
-    public function setItemId($ItemId)
-    {
-        if (is_null($ItemId)) {
-            array_push($this->openAPINullablesSetToNull, 'ItemId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ItemId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ItemId'] = $ItemId;
-
-        return $this;
-    }
-
-    /**
-     * Gets Hint
-     *
-     * @return string|null
-     */
-    public function getHint()
-    {
-        if (!isset($this->container['Hint']) || is_null($this->container['Hint'])) {
-            return null;
-        }
-        return $this->container['Hint'];
-    }
-
-    /**
-     * Sets Hint
-     *
-     * @param string|null $Hint Hint
-     *
-     * @return self
-     */
-    public function setHint($Hint)
-    {
-        if (is_null($Hint)) {
-            array_push($this->openAPINullablesSetToNull, 'Hint');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Hint', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Hint'] = $Hint;
+        $this->container['Type'] = $Type;
 
         return $this;
     }

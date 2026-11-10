@@ -520,7 +520,7 @@ class GetAudienceBreakdownResponse implements ModelInterface, ArrayAccess, \Json
         if (is_null($Currency)) {
             throw new \InvalidArgumentException('non-nullable Currency cannot be null');
         }
-        if (!$Currency instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\Currency) {
+        if (!is_null($Currency) && !$Currency instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\Currency) {
             $Currency = new \Microsoft\MsAds\Rest\Model\AdInsightService\Currency($Currency);
         }
         $this->container['Currency'] = $Currency;

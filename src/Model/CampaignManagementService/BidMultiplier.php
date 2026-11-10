@@ -228,6 +228,11 @@ class BidMultiplier extends CriterionBid implements ModelInterface, ArrayAccess,
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Multiplier', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**

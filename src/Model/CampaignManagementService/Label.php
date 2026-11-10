@@ -33,10 +33,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'Description' => 'string',
         'ColorCode' => 'string',
-        'Id' => 'string'
+        'Description' => 'string',
+        'Id' => 'string',
+        'Name' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'Description' => null,
         'ColorCode' => null,
-        'Id' => 'int64'
+        'Description' => null,
+        'Id' => 'int64',
+        'Name' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'Description' => true,
         'ColorCode' => true,
-        'Id' => true
+        'Description' => true,
+        'Id' => true,
+        'Name' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'Description' => 'Description',
         'ColorCode' => 'ColorCode',
-        'Id' => 'Id'
+        'Description' => 'Description',
+        'Id' => 'Id',
+        'Name' => 'Name'
     ];
 
     /**
@@ -163,10 +163,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'Description' => 'setDescription',
         'ColorCode' => 'setColorCode',
-        'Id' => 'setId'
+        'Description' => 'setDescription',
+        'Id' => 'setId',
+        'Name' => 'setName'
     ];
 
     /**
@@ -175,10 +175,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'Description' => 'getDescription',
         'ColorCode' => 'getColorCode',
-        'Id' => 'getId'
+        'Description' => 'getDescription',
+        'Id' => 'getId',
+        'Name' => 'getName'
     ];
 
     /**
@@ -238,10 +238,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('ColorCode', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
     }
 
     /**
@@ -287,38 +287,38 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Name
+     * Gets ColorCode
      *
      * @return string|null
      */
-    public function getName()
+    public function getColorCode()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['ColorCode']) || is_null($this->container['ColorCode'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['ColorCode'];
     }
 
     /**
-     * Sets Name
+     * Sets ColorCode
      *
-     * @param string|null $Name Name
+     * @param string|null $ColorCode ColorCode
      *
      * @return self
      */
-    public function setName($Name)
+    public function setColorCode($ColorCode)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($ColorCode)) {
+            array_push($this->openAPINullablesSetToNull, 'ColorCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('ColorCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
+        $this->container['ColorCode'] = $ColorCode;
 
         return $this;
     }
@@ -361,43 +361,6 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ColorCode
-     *
-     * @return string|null
-     */
-    public function getColorCode()
-    {
-        if (!isset($this->container['ColorCode']) || is_null($this->container['ColorCode'])) {
-            return null;
-        }
-        return $this->container['ColorCode'];
-    }
-
-    /**
-     * Sets ColorCode
-     *
-     * @param string|null $ColorCode ColorCode
-     *
-     * @return self
-     */
-    public function setColorCode($ColorCode)
-    {
-        if (is_null($ColorCode)) {
-            array_push($this->openAPINullablesSetToNull, 'ColorCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ColorCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ColorCode'] = $ColorCode;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -430,6 +393,43 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
 
         return $this;
     }

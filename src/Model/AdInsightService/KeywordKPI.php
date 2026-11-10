@@ -386,7 +386,7 @@ class KeywordKPI implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($MatchType)) {
             throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
         }
-        if (!$MatchType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType) {
+        if (!is_null($MatchType) && !$MatchType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType) {
             $MatchType = new \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType($MatchType);
         }
         $this->container['MatchType'] = $MatchType;
@@ -422,7 +422,7 @@ class KeywordKPI implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($AdPosition)) {
             throw new \InvalidArgumentException('non-nullable AdPosition cannot be null');
         }
-        if (!$AdPosition instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AdPosition) {
+        if (!is_null($AdPosition) && !$AdPosition instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AdPosition) {
             $AdPosition = new \Microsoft\MsAds\Rest\Model\AdInsightService\AdPosition($AdPosition);
         }
         $this->container['AdPosition'] = $AdPosition;

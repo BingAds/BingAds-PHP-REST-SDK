@@ -33,23 +33,23 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
-        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
-        'DevicePreference' => 'string',
         'AdFormatPreference' => 'string',
-        'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'FinalUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
+        'DevicePreference' => 'string',
+        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus',
         'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus',
+        'TrackingUrlTemplate' => 'string',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'AppPlatform' => 'string',
         'AppStoreId' => 'string',
-        'Title' => 'string',
-        'Text' => 'string'
+        'Text' => 'string',
+        'Title' => 'string'
     ];
 
     /**
@@ -60,23 +60,23 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
-        'Type' => null,
-        'Status' => null,
-        'EditorialStatus' => null,
-        'DevicePreference' => 'int64',
         'AdFormatPreference' => null,
-        'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'UrlCustomParameters' => null,
-        'FinalUrls' => null,
-        'FinalMobileUrls' => null,
+        'DevicePreference' => 'int64',
+        'EditorialStatus' => null,
         'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'Id' => 'int64',
+        'Status' => null,
+        'TrackingUrlTemplate' => null,
+        'Type' => null,
+        'UrlCustomParameters' => null,
         'ForwardCompatibilityMap' => null,
         'AppPlatform' => null,
         'AppStoreId' => null,
-        'Title' => null,
-        'Text' => null
+        'Text' => null,
+        'Title' => null
     ];
 
     /**
@@ -85,23 +85,23 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
-        'Type' => false,
-        'Status' => false,
-        'EditorialStatus' => false,
-        'DevicePreference' => true,
         'AdFormatPreference' => true,
-        'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'UrlCustomParameters' => true,
-        'FinalUrls' => true,
-        'FinalMobileUrls' => true,
+        'DevicePreference' => true,
+        'EditorialStatus' => true,
         'FinalAppUrls' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'Id' => true,
+        'Status' => true,
+        'TrackingUrlTemplate' => true,
+        'Type' => true,
+        'UrlCustomParameters' => true,
         'ForwardCompatibilityMap' => true,
         'AppPlatform' => true,
         'AppStoreId' => true,
-        'Title' => true,
-        'Text' => true
+        'Text' => true,
+        'Title' => true
     ];
 
     /**
@@ -190,23 +190,23 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'Type' => 'Type',
-        'Status' => 'Status',
-        'EditorialStatus' => 'EditorialStatus',
-        'DevicePreference' => 'DevicePreference',
         'AdFormatPreference' => 'AdFormatPreference',
-        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'UrlCustomParameters' => 'UrlCustomParameters',
-        'FinalUrls' => 'FinalUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
+        'DevicePreference' => 'DevicePreference',
+        'EditorialStatus' => 'EditorialStatus',
         'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'Id' => 'Id',
+        'Status' => 'Status',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'Type' => 'Type',
+        'UrlCustomParameters' => 'UrlCustomParameters',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'AppPlatform' => 'AppPlatform',
         'AppStoreId' => 'AppStoreId',
-        'Title' => 'Title',
-        'Text' => 'Text'
+        'Text' => 'Text',
+        'Title' => 'Title'
     ];
 
     /**
@@ -215,23 +215,23 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'Type' => 'setType',
-        'Status' => 'setStatus',
-        'EditorialStatus' => 'setEditorialStatus',
-        'DevicePreference' => 'setDevicePreference',
         'AdFormatPreference' => 'setAdFormatPreference',
-        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
-        'FinalUrls' => 'setFinalUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'DevicePreference' => 'setDevicePreference',
+        'EditorialStatus' => 'setEditorialStatus',
         'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'Id' => 'setId',
+        'Status' => 'setStatus',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'Type' => 'setType',
+        'UrlCustomParameters' => 'setUrlCustomParameters',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'AppPlatform' => 'setAppPlatform',
         'AppStoreId' => 'setAppStoreId',
-        'Title' => 'setTitle',
-        'Text' => 'setText'
+        'Text' => 'setText',
+        'Title' => 'setTitle'
     ];
 
     /**
@@ -240,23 +240,23 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'Type' => 'getType',
-        'Status' => 'getStatus',
-        'EditorialStatus' => 'getEditorialStatus',
-        'DevicePreference' => 'getDevicePreference',
         'AdFormatPreference' => 'getAdFormatPreference',
-        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
-        'FinalUrls' => 'getFinalUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'DevicePreference' => 'getDevicePreference',
+        'EditorialStatus' => 'getEditorialStatus',
         'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'Id' => 'getId',
+        'Status' => 'getStatus',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'Type' => 'getType',
+        'UrlCustomParameters' => 'getUrlCustomParameters',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'AppPlatform' => 'getAppPlatform',
         'AppStoreId' => 'getAppStoreId',
-        'Title' => 'getTitle',
-        'Text' => 'getText'
+        'Text' => 'getText',
+        'Title' => 'getTitle'
     ];
 
     /**
@@ -316,23 +316,28 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('EditorialStatus', $data ?? [], null);
-        $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('AdFormatPreference', $data ?? [], null);
-        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('DevicePreference', $data ?? [], null);
+        $this->setIfExists('EditorialStatus', $data ?? [], null);
         $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('AppPlatform', $data ?? [], null);
         $this->setIfExists('AppStoreId', $data ?? [], null);
-        $this->setIfExists('Title', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('Title', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -378,146 +383,38 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets Id
+     * Gets AdFormatPreference
      *
      * @return string|null
      */
-    public function getId()
+    public function getAdFormatPreference()
     {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+        if (!isset($this->container['AdFormatPreference']) || is_null($this->container['AdFormatPreference'])) {
             return null;
         }
-        return $this->container['Id'];
+        return $this->container['AdFormatPreference'];
     }
 
     /**
-     * Sets Id
+     * Sets AdFormatPreference
      *
-     * @param string|null $Id Id
+     * @param string|null $AdFormatPreference AdFormatPreference
      *
      * @return self
      */
-    public function setId($Id)
+    public function setAdFormatPreference($AdFormatPreference)
     {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
+        if (is_null($AdFormatPreference)) {
+            array_push($this->openAPINullablesSetToNull, 'AdFormatPreference');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
+            $index = array_search('AdFormatPreference', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets EditorialStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus|mixed|null
-     */
-    public function getEditorialStatus()
-    {
-        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
-            return $this->container['EditorialStatus']->getValue();
-        }
-        return $this->container['EditorialStatus'];
-    }
-
-    /**
-     * Sets EditorialStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus|mixed|null $EditorialStatus EditorialStatus
-     *
-     * @return self
-     */
-    public function setEditorialStatus($EditorialStatus)
-    {
-        if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
-        }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus) {
-            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus($EditorialStatus);
-        }
-        $this->container['EditorialStatus'] = $EditorialStatus;
+        $this->container['AdFormatPreference'] = $AdFormatPreference;
 
         return $this;
     }
@@ -560,186 +457,81 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets AdFormatPreference
+     * Gets EditorialStatus
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus|mixed|null
      */
-    public function getAdFormatPreference()
+    public function getEditorialStatus()
     {
-        if (!isset($this->container['AdFormatPreference']) || is_null($this->container['AdFormatPreference'])) {
+        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
             return null;
         }
-        return $this->container['AdFormatPreference'];
+        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
+            return $this->container['EditorialStatus']->getValue();
+        }
+        return $this->container['EditorialStatus'];
     }
 
     /**
-     * Sets AdFormatPreference
+     * Sets EditorialStatus
      *
-     * @param string|null $AdFormatPreference AdFormatPreference
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus|mixed|null $EditorialStatus EditorialStatus
      *
      * @return self
      */
-    public function setAdFormatPreference($AdFormatPreference)
+    public function setEditorialStatus($EditorialStatus)
     {
-        if (is_null($AdFormatPreference)) {
-            array_push($this->openAPINullablesSetToNull, 'AdFormatPreference');
+        if (is_null($EditorialStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdFormatPreference', $nullablesSetToNull);
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AdFormatPreference'] = $AdFormatPreference;
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus) {
+            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdEditorialStatus($EditorialStatus);
+        }
+        $this->container['EditorialStatus'] = $EditorialStatus;
 
         return $this;
     }
 
     /**
-     * Gets TrackingUrlTemplate
+     * Gets FinalAppUrls
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
      */
-    public function getTrackingUrlTemplate()
+    public function getFinalAppUrls()
     {
-        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
             return null;
         }
-        return $this->container['TrackingUrlTemplate'];
+        return $this->container['FinalAppUrls'];
     }
 
     /**
-     * Sets TrackingUrlTemplate
+     * Sets FinalAppUrls
      *
-     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
      *
      * @return self
      */
-    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    public function setFinalAppUrls($FinalAppUrls)
     {
-        if (is_null($TrackingUrlTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        if (is_null($FinalAppUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            $index = array_search('FinalAppUrls', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlCustomParameters
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
-     */
-    public function getUrlCustomParameters()
-    {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
-            return null;
-        }
-        return $this->container['UrlCustomParameters'];
-    }
-
-    /**
-     * Sets UrlCustomParameters
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
-     *
-     * @return self
-     */
-    public function setUrlCustomParameters($UrlCustomParameters)
-    {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
+        $this->container['FinalAppUrls'] = $FinalAppUrls;
 
         return $this;
     }
@@ -782,38 +574,272 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets FinalAppUrls
+     * Gets FinalUrlSuffix
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
+     * @return string|null
      */
-    public function getFinalAppUrls()
+    public function getFinalUrlSuffix()
     {
-        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
             return null;
         }
-        return $this->container['FinalAppUrls'];
+        return $this->container['FinalUrlSuffix'];
     }
 
     /**
-     * Sets FinalAppUrls
+     * Sets FinalUrlSuffix
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
      *
      * @return self
      */
-    public function setFinalAppUrls($FinalAppUrls)
+    public function setFinalUrlSuffix($FinalUrlSuffix)
     {
-        if (is_null($FinalAppUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalAppUrls', $nullablesSetToNull);
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalAppUrls'] = $FinalAppUrls;
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingUrlTemplate
+     *
+     * @return string|null
+     */
+    public function getTrackingUrlTemplate()
+    {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+            return null;
+        }
+        return $this->container['TrackingUrlTemplate'];
+    }
+
+    /**
+     * Sets TrackingUrlTemplate
+     *
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     *
+     * @return self
+     */
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    {
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdType($Type);
+        }
+        $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlCustomParameters
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     */
+    public function getUrlCustomParameters()
+    {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+            return null;
+        }
+        return $this->container['UrlCustomParameters'];
+    }
+
+    /**
+     * Sets UrlCustomParameters
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     *
+     * @return self
+     */
+    public function setUrlCustomParameters($UrlCustomParameters)
+    {
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }
@@ -930,43 +956,6 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets Title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
-            return null;
-        }
-        return $this->container['Title'];
-    }
-
-    /**
-     * Sets Title
-     *
-     * @param string|null $Title Title
-     *
-     * @return self
-     */
-    public function setTitle($Title)
-    {
-        if (is_null($Title)) {
-            array_push($this->openAPINullablesSetToNull, 'Title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Title'] = $Title;
-
-        return $this;
-    }
-
-    /**
      * Gets Text
      *
      * @return string|null
@@ -999,6 +988,43 @@ class AppInstallAd extends Ad implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
+            return null;
+        }
+        return $this->container['Title'];
+    }
+
+    /**
+     * Sets Title
+     *
+     * @param string|null $Title Title
+     *
+     * @return self
+     */
+    public function setTitle($Title)
+    {
+        if (is_null($Title)) {
+            array_push($this->openAPINullablesSetToNull, 'Title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Title'] = $Title;
 
         return $this;
     }

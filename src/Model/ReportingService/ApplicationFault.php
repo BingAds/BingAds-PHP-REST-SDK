@@ -46,8 +46,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'string',
         'Errors' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdApiError[]',
         'Type' => 'string',
-        'OperationErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]',
-        'BatchErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\BatchError[]'
+        'BatchErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\BatchError[]',
+        'OperationErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]'
     ];
 
     /**
@@ -61,8 +61,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => null,
         'Errors' => null,
         'Type' => null,
-        'OperationErrors' => null,
-        'BatchErrors' => null
+        'BatchErrors' => null,
+        'OperationErrors' => null
     ];
 
     /**
@@ -74,8 +74,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => true,
         'Errors' => true,
         'Type' => true,
-        'OperationErrors' => false,
-        'BatchErrors' => false
+        'BatchErrors' => true,
+        'OperationErrors' => true
     ];
 
     /**
@@ -167,8 +167,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'TrackingId',
         'Errors' => 'Errors',
         'Type' => 'Type',
-        'OperationErrors' => 'OperationErrors',
-        'BatchErrors' => 'BatchErrors'
+        'BatchErrors' => 'BatchErrors',
+        'OperationErrors' => 'OperationErrors'
     ];
 
     /**
@@ -180,8 +180,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'setTrackingId',
         'Errors' => 'setErrors',
         'Type' => 'setType',
-        'OperationErrors' => 'setOperationErrors',
-        'BatchErrors' => 'setBatchErrors'
+        'BatchErrors' => 'setBatchErrors',
+        'OperationErrors' => 'setOperationErrors'
     ];
 
     /**
@@ -193,8 +193,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'getTrackingId',
         'Errors' => 'getErrors',
         'Type' => 'getType',
-        'OperationErrors' => 'getOperationErrors',
-        'BatchErrors' => 'getBatchErrors'
+        'BatchErrors' => 'getBatchErrors',
+        'OperationErrors' => 'getOperationErrors'
     ];
 
     /**
@@ -257,8 +257,8 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'ApiFaultDetail');
-        $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
+        $this->setIfExists('OperationErrors', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -291,9 +291,6 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['TrackingId'] === null) {
-            $invalidProperties[] = "'TrackingId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -312,7 +309,7 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets TrackingId
      *
-     * @return string
+     * @return string|null
      */
     public function getTrackingId()
     {
@@ -325,7 +322,7 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets TrackingId
      *
-     * @param string $TrackingId TrackingId
+     * @param string|null $TrackingId TrackingId
      *
      * @return self
      */
@@ -421,36 +418,6 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets OperationErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null
-     */
-    public function getOperationErrors()
-    {
-        if (!isset($this->container['OperationErrors']) || is_null($this->container['OperationErrors'])) {
-            return null;
-        }
-        return $this->container['OperationErrors'];
-    }
-
-    /**
-     * Sets OperationErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null $OperationErrors OperationErrors
-     *
-     * @return self
-     */
-    public function setOperationErrors($OperationErrors)
-    {
-        if (is_null($OperationErrors)) {
-            throw new \InvalidArgumentException('non-nullable OperationErrors cannot be null');
-        }
-        $this->container['OperationErrors'] = $OperationErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets BatchErrors
      *
      * @return \Microsoft\MsAds\Rest\Model\ReportingService\BatchError[]|null
@@ -473,9 +440,53 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBatchErrors($BatchErrors)
     {
         if (is_null($BatchErrors)) {
-            throw new \InvalidArgumentException('non-nullable BatchErrors cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'BatchErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BatchErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['BatchErrors'] = $BatchErrors;
+
+        return $this;
+    }
+
+    /**
+     * Gets OperationErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null
+     */
+    public function getOperationErrors()
+    {
+        if (!isset($this->container['OperationErrors']) || is_null($this->container['OperationErrors'])) {
+            return null;
+        }
+        return $this->container['OperationErrors'];
+    }
+
+    /**
+     * Sets OperationErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null $OperationErrors OperationErrors
+     *
+     * @return self
+     */
+    public function setOperationErrors($OperationErrors)
+    {
+        if (is_null($OperationErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'OperationErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('OperationErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['OperationErrors'] = $OperationErrors;
 
         return $this;
     }

@@ -34,10 +34,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Day' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Day',
-        'StartHour' => 'int',
-        'StartMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute',
         'EndHour' => 'int',
-        'EndMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute'
+        'EndMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute',
+        'StartHour' => 'int',
+        'StartMinute' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute'
     ];
 
     /**
@@ -49,10 +49,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Day' => null,
-        'StartHour' => 'int32',
-        'StartMinute' => null,
         'EndHour' => 'int32',
-        'EndMinute' => null
+        'EndMinute' => null,
+        'StartHour' => 'int32',
+        'StartMinute' => null
     ];
 
     /**
@@ -62,10 +62,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Day' => false,
-        'StartHour' => false,
-        'StartMinute' => false,
         'EndHour' => false,
-        'EndMinute' => false
+        'EndMinute' => false,
+        'StartHour' => false,
+        'StartMinute' => false
     ];
 
     /**
@@ -155,10 +155,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Day' => 'Day',
-        'StartHour' => 'StartHour',
-        'StartMinute' => 'StartMinute',
         'EndHour' => 'EndHour',
-        'EndMinute' => 'EndMinute'
+        'EndMinute' => 'EndMinute',
+        'StartHour' => 'StartHour',
+        'StartMinute' => 'StartMinute'
     ];
 
     /**
@@ -168,10 +168,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Day' => 'setDay',
-        'StartHour' => 'setStartHour',
-        'StartMinute' => 'setStartMinute',
         'EndHour' => 'setEndHour',
-        'EndMinute' => 'setEndMinute'
+        'EndMinute' => 'setEndMinute',
+        'StartHour' => 'setStartHour',
+        'StartMinute' => 'setStartMinute'
     ];
 
     /**
@@ -181,10 +181,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Day' => 'getDay',
-        'StartHour' => 'getStartHour',
-        'StartMinute' => 'getStartMinute',
         'EndHour' => 'getEndHour',
-        'EndMinute' => 'getEndMinute'
+        'EndMinute' => 'getEndMinute',
+        'StartHour' => 'getStartHour',
+        'StartMinute' => 'getStartMinute'
     ];
 
     /**
@@ -245,10 +245,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Day', $data ?? [], null);
-        $this->setIfExists('StartHour', $data ?? [], null);
-        $this->setIfExists('StartMinute', $data ?? [], null);
         $this->setIfExists('EndHour', $data ?? [], null);
         $this->setIfExists('EndMinute', $data ?? [], null);
+        $this->setIfExists('StartHour', $data ?? [], null);
+        $this->setIfExists('StartMinute', $data ?? [], null);
     }
 
     /**
@@ -321,76 +321,10 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Day)) {
             throw new \InvalidArgumentException('non-nullable Day cannot be null');
         }
-        if (!$Day instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
+        if (!is_null($Day) && !$Day instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
             $Day = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($Day);
         }
         $this->container['Day'] = $Day;
-
-        return $this;
-    }
-
-    /**
-     * Gets StartHour
-     *
-     * @return int|null
-     */
-    public function getStartHour()
-    {
-        if (!isset($this->container['StartHour']) || is_null($this->container['StartHour'])) {
-            return null;
-        }
-        return $this->container['StartHour'];
-    }
-
-    /**
-     * Sets StartHour
-     *
-     * @param int|null $StartHour StartHour
-     *
-     * @return self
-     */
-    public function setStartHour($StartHour)
-    {
-        if (is_null($StartHour)) {
-            throw new \InvalidArgumentException('non-nullable StartHour cannot be null');
-        }
-        $this->container['StartHour'] = $StartHour;
-
-        return $this;
-    }
-
-    /**
-     * Gets StartMinute
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute|mixed|null
-     */
-    public function getStartMinute()
-    {
-        if (!isset($this->container['StartMinute']) || is_null($this->container['StartMinute'])) {
-            return null;
-        }
-        if ((is_object($this->container['StartMinute']) || is_string($this->container['StartMinute'])) && method_exists($this->container['StartMinute'], 'getValue')) {
-            return $this->container['StartMinute']->getValue();
-        }
-        return $this->container['StartMinute'];
-    }
-
-    /**
-     * Sets StartMinute
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute|mixed|null $StartMinute StartMinute
-     *
-     * @return self
-     */
-    public function setStartMinute($StartMinute)
-    {
-        if (is_null($StartMinute)) {
-            throw new \InvalidArgumentException('non-nullable StartMinute cannot be null');
-        }
-        if (!$StartMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
-            $StartMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($StartMinute);
-        }
-        $this->container['StartMinute'] = $StartMinute;
 
         return $this;
     }
@@ -453,10 +387,76 @@ class DayTime implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($EndMinute)) {
             throw new \InvalidArgumentException('non-nullable EndMinute cannot be null');
         }
-        if (!$EndMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
+        if (!is_null($EndMinute) && !$EndMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
             $EndMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($EndMinute);
         }
         $this->container['EndMinute'] = $EndMinute;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartHour
+     *
+     * @return int|null
+     */
+    public function getStartHour()
+    {
+        if (!isset($this->container['StartHour']) || is_null($this->container['StartHour'])) {
+            return null;
+        }
+        return $this->container['StartHour'];
+    }
+
+    /**
+     * Sets StartHour
+     *
+     * @param int|null $StartHour StartHour
+     *
+     * @return self
+     */
+    public function setStartHour($StartHour)
+    {
+        if (is_null($StartHour)) {
+            throw new \InvalidArgumentException('non-nullable StartHour cannot be null');
+        }
+        $this->container['StartHour'] = $StartHour;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartMinute
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute|mixed|null
+     */
+    public function getStartMinute()
+    {
+        if (!isset($this->container['StartMinute']) || is_null($this->container['StartMinute'])) {
+            return null;
+        }
+        if ((is_object($this->container['StartMinute']) || is_string($this->container['StartMinute'])) && method_exists($this->container['StartMinute'], 'getValue')) {
+            return $this->container['StartMinute']->getValue();
+        }
+        return $this->container['StartMinute'];
+    }
+
+    /**
+     * Sets StartMinute
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute|mixed|null $StartMinute StartMinute
+     *
+     * @return self
+     */
+    public function setStartMinute($StartMinute)
+    {
+        if (is_null($StartMinute)) {
+            throw new \InvalidArgumentException('non-nullable StartMinute cannot be null');
+        }
+        if (!is_null($StartMinute) && !$StartMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
+            $StartMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($StartMinute);
+        }
+        $this->container['StartMinute'] = $StartMinute;
 
         return $this;
     }

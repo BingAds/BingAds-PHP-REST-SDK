@@ -34,8 +34,8 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'TargetRoas' => 'float',
-        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid'
+        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
+        'TargetRoas' => 'float'
     ];
 
     /**
@@ -47,8 +47,8 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'TargetRoas' => 'double',
-        'MaxCpc' => null
+        'MaxCpc' => null,
+        'TargetRoas' => 'double'
     ];
 
     /**
@@ -58,8 +58,8 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'TargetRoas' => true,
-        'MaxCpc' => true
+        'MaxCpc' => true,
+        'TargetRoas' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'TargetRoas' => 'TargetRoas',
-        'MaxCpc' => 'MaxCpc'
+        'MaxCpc' => 'MaxCpc',
+        'TargetRoas' => 'TargetRoas'
     ];
 
     /**
@@ -160,8 +160,8 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'TargetRoas' => 'setTargetRoas',
-        'MaxCpc' => 'setMaxCpc'
+        'MaxCpc' => 'setMaxCpc',
+        'TargetRoas' => 'setTargetRoas'
     ];
 
     /**
@@ -171,8 +171,8 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'TargetRoas' => 'getTargetRoas',
-        'MaxCpc' => 'getMaxCpc'
+        'MaxCpc' => 'getMaxCpc',
+        'TargetRoas' => 'getTargetRoas'
     ];
 
     /**
@@ -233,8 +233,13 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('TargetRoas', $data ?? [], null);
         $this->setIfExists('MaxCpc', $data ?? [], null);
+        $this->setIfExists('TargetRoas', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,43 +322,6 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
     }
 
     /**
-     * Gets TargetRoas
-     *
-     * @return float|null
-     */
-    public function getTargetRoas()
-    {
-        if (!isset($this->container['TargetRoas']) || is_null($this->container['TargetRoas'])) {
-            return null;
-        }
-        return $this->container['TargetRoas'];
-    }
-
-    /**
-     * Sets TargetRoas
-     *
-     * @param float|null $TargetRoas TargetRoas
-     *
-     * @return self
-     */
-    public function setTargetRoas($TargetRoas)
-    {
-        if (is_null($TargetRoas)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetRoas');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetRoas', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TargetRoas'] = $TargetRoas;
-
-        return $this;
-    }
-
-    /**
      * Gets MaxCpc
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
@@ -386,6 +354,43 @@ class MaxConversionValueBiddingScheme extends BiddingScheme implements ModelInte
             }
         }
         $this->container['MaxCpc'] = $MaxCpc;
+
+        return $this;
+    }
+
+    /**
+     * Gets TargetRoas
+     *
+     * @return float|null
+     */
+    public function getTargetRoas()
+    {
+        if (!isset($this->container['TargetRoas']) || is_null($this->container['TargetRoas'])) {
+            return null;
+        }
+        return $this->container['TargetRoas'];
+    }
+
+    /**
+     * Sets TargetRoas
+     *
+     * @param float|null $TargetRoas TargetRoas
+     *
+     * @return self
+     */
+    public function setTargetRoas($TargetRoas)
+    {
+        if (is_null($TargetRoas)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetRoas');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TargetRoas', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TargetRoas'] = $TargetRoas;
 
         return $this;
     }

@@ -330,7 +330,7 @@ class GetUsersInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         if (is_null($StatusFilter)) {
             throw new \InvalidArgumentException('non-nullable StatusFilter cannot be null');
         }
-        if (!$StatusFilter instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\UserLifeCycleStatus) {
+        if (!is_null($StatusFilter) && !$StatusFilter instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\UserLifeCycleStatus) {
             $StatusFilter = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\UserLifeCycleStatus($StatusFilter);
         }
         $this->container['StatusFilter'] = $StatusFilter;

@@ -300,7 +300,7 @@ class OfflineConversionAlert implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($UnattributedReason)) {
             throw new \InvalidArgumentException('non-nullable UnattributedReason cannot be null');
         }
-        if (!$UnattributedReason instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\OfflineConversionUnattributedReason) {
+        if (!is_null($UnattributedReason) && !$UnattributedReason instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\OfflineConversionUnattributedReason) {
             $UnattributedReason = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\OfflineConversionUnattributedReason($UnattributedReason);
         }
         $this->container['UnattributedReason'] = $UnattributedReason;

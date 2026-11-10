@@ -460,7 +460,7 @@ class KeywordIdea implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Source)) {
             throw new \InvalidArgumentException('non-nullable Source cannot be null');
         }
-        if (!$Source instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\SourceType) {
+        if (!is_null($Source) && !$Source instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\SourceType) {
             $Source = new \Microsoft\MsAds\Rest\Model\AdInsightService\SourceType($Source);
         }
         $this->container['Source'] = $Source;
@@ -570,7 +570,7 @@ class KeywordIdea implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Competition)) {
             throw new \InvalidArgumentException('non-nullable Competition cannot be null');
         }
-        if (!$Competition instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CompetitionLevel) {
+        if (!is_null($Competition) && !$Competition instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CompetitionLevel) {
             $Competition = new \Microsoft\MsAds\Rest\Model\AdInsightService\CompetitionLevel($Competition);
         }
         $this->container['Competition'] = $Competition;

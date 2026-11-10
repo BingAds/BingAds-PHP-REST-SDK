@@ -33,9 +33,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ItemChanged' => '\Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter',
+        'AdDistribution' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter',
         'HowChanged' => '\Microsoft\MsAds\Rest\Model\ReportingService\ChangeTypeReportFilter',
-        'AdDistribution' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter'
+        'ItemChanged' => '\Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter'
     ];
 
     /**
@@ -46,9 +46,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ItemChanged' => null,
+        'AdDistribution' => null,
         'HowChanged' => null,
-        'AdDistribution' => null
+        'ItemChanged' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ItemChanged' => false,
-        'HowChanged' => false,
-        'AdDistribution' => false
+        'AdDistribution' => true,
+        'HowChanged' => true,
+        'ItemChanged' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ItemChanged' => 'ItemChanged',
+        'AdDistribution' => 'AdDistribution',
         'HowChanged' => 'HowChanged',
-        'AdDistribution' => 'AdDistribution'
+        'ItemChanged' => 'ItemChanged'
     ];
 
     /**
@@ -159,9 +159,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
-        'ItemChanged' => 'setItemChanged',
+        'AdDistribution' => 'setAdDistribution',
         'HowChanged' => 'setHowChanged',
-        'AdDistribution' => 'setAdDistribution'
+        'ItemChanged' => 'setItemChanged'
     ];
 
     /**
@@ -170,9 +170,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
-        'ItemChanged' => 'getItemChanged',
+        'AdDistribution' => 'getAdDistribution',
         'HowChanged' => 'getHowChanged',
-        'AdDistribution' => 'getAdDistribution'
+        'ItemChanged' => 'getItemChanged'
     ];
 
     /**
@@ -232,9 +232,9 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ItemChanged', $data ?? [], null);
-        $this->setIfExists('HowChanged', $data ?? [], null);
         $this->setIfExists('AdDistribution', $data ?? [], null);
+        $this->setIfExists('HowChanged', $data ?? [], null);
+        $this->setIfExists('ItemChanged', $data ?? [], null);
     }
 
     /**
@@ -280,37 +280,44 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets ItemChanged
+     * Gets AdDistribution
      *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter|mixed|null
      */
-    public function getItemChanged()
+    public function getAdDistribution()
     {
-        if (!isset($this->container['ItemChanged']) || is_null($this->container['ItemChanged'])) {
+        if (!isset($this->container['AdDistribution']) || is_null($this->container['AdDistribution'])) {
             return null;
         }
-        if ((is_object($this->container['ItemChanged']) || is_string($this->container['ItemChanged'])) && method_exists($this->container['ItemChanged'], 'getValue')) {
-            return $this->container['ItemChanged']->getValue();
+        if ((is_object($this->container['AdDistribution']) || is_string($this->container['AdDistribution'])) && method_exists($this->container['AdDistribution'], 'getValue')) {
+            return $this->container['AdDistribution']->getValue();
         }
-        return $this->container['ItemChanged'];
+        return $this->container['AdDistribution'];
     }
 
     /**
-     * Sets ItemChanged
+     * Sets AdDistribution
      *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter|mixed|null $ItemChanged ItemChanged
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter|mixed|null $AdDistribution AdDistribution
      *
      * @return self
      */
-    public function setItemChanged($ItemChanged)
+    public function setAdDistribution($AdDistribution)
     {
-        if (is_null($ItemChanged)) {
-            throw new \InvalidArgumentException('non-nullable ItemChanged cannot be null');
+        if (is_null($AdDistribution)) {
+            array_push($this->openAPINullablesSetToNull, 'AdDistribution');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdDistribution', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ItemChanged instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter) {
-            $ItemChanged = new \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter($ItemChanged);
+        if (!is_null($AdDistribution) && !$AdDistribution instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter) {
+            $AdDistribution = new \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter($AdDistribution);
         }
-        $this->container['ItemChanged'] = $ItemChanged;
+        $this->container['AdDistribution'] = $AdDistribution;
 
         return $this;
     }
@@ -341,9 +348,16 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
     public function setHowChanged($HowChanged)
     {
         if (is_null($HowChanged)) {
-            throw new \InvalidArgumentException('non-nullable HowChanged cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'HowChanged');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HowChanged', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$HowChanged instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ChangeTypeReportFilter) {
+        if (!is_null($HowChanged) && !$HowChanged instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ChangeTypeReportFilter) {
             $HowChanged = new \Microsoft\MsAds\Rest\Model\ReportingService\ChangeTypeReportFilter($HowChanged);
         }
         $this->container['HowChanged'] = $HowChanged;
@@ -352,37 +366,44 @@ class SearchCampaignChangeHistoryReportFilter implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets AdDistribution
+     * Gets ItemChanged
      *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter|mixed|null
      */
-    public function getAdDistribution()
+    public function getItemChanged()
     {
-        if (!isset($this->container['AdDistribution']) || is_null($this->container['AdDistribution'])) {
+        if (!isset($this->container['ItemChanged']) || is_null($this->container['ItemChanged'])) {
             return null;
         }
-        if ((is_object($this->container['AdDistribution']) || is_string($this->container['AdDistribution'])) && method_exists($this->container['AdDistribution'], 'getValue')) {
-            return $this->container['AdDistribution']->getValue();
+        if ((is_object($this->container['ItemChanged']) || is_string($this->container['ItemChanged'])) && method_exists($this->container['ItemChanged'], 'getValue')) {
+            return $this->container['ItemChanged']->getValue();
         }
-        return $this->container['AdDistribution'];
+        return $this->container['ItemChanged'];
     }
 
     /**
-     * Sets AdDistribution
+     * Sets ItemChanged
      *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter|mixed|null $AdDistribution AdDistribution
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter|mixed|null $ItemChanged ItemChanged
      *
      * @return self
      */
-    public function setAdDistribution($AdDistribution)
+    public function setItemChanged($ItemChanged)
     {
-        if (is_null($AdDistribution)) {
-            throw new \InvalidArgumentException('non-nullable AdDistribution cannot be null');
+        if (is_null($ItemChanged)) {
+            array_push($this->openAPINullablesSetToNull, 'ItemChanged');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ItemChanged', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdDistribution instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter) {
-            $AdDistribution = new \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter($AdDistribution);
+        if (!is_null($ItemChanged) && !$ItemChanged instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter) {
+            $ItemChanged = new \Microsoft\MsAds\Rest\Model\ReportingService\ChangeEntityReportFilter($ItemChanged);
         }
-        $this->container['AdDistribution'] = $AdDistribution;
+        $this->container['ItemChanged'] = $ItemChanged;
 
         return $this;
     }

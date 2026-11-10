@@ -64,11 +64,11 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'Day' => false,
+        'Day' => true,
         'FromHour' => true,
-        'FromMinute' => false,
+        'FromMinute' => true,
         'ToHour' => true,
-        'ToMinute' => false
+        'ToMinute' => true
     ];
 
     /**
@@ -256,6 +256,11 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
         $this->setIfExists('FromMinute', $data ?? [], null);
         $this->setIfExists('ToHour', $data ?? [], null);
         $this->setIfExists('ToMinute', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -363,9 +368,16 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
     public function setDay($Day)
     {
         if (is_null($Day)) {
-            throw new \InvalidArgumentException('non-nullable Day cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Day');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Day', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Day instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
+        if (!is_null($Day) && !$Day instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day) {
             $Day = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Day($Day);
         }
         $this->container['Day'] = $Day;
@@ -436,9 +448,16 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
     public function setFromMinute($FromMinute)
     {
         if (is_null($FromMinute)) {
-            throw new \InvalidArgumentException('non-nullable FromMinute cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'FromMinute');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FromMinute', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$FromMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
+        if (!is_null($FromMinute) && !$FromMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
             $FromMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($FromMinute);
         }
         $this->container['FromMinute'] = $FromMinute;
@@ -509,9 +528,16 @@ class DayTimeCriterion extends Criterion implements ModelInterface, ArrayAccess,
     public function setToMinute($ToMinute)
     {
         if (is_null($ToMinute)) {
-            throw new \InvalidArgumentException('non-nullable ToMinute cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ToMinute');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ToMinute', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ToMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
+        if (!is_null($ToMinute) && !$ToMinute instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute) {
             $ToMinute = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Minute($ToMinute);
         }
         $this->container['ToMinute'] = $ToMinute;

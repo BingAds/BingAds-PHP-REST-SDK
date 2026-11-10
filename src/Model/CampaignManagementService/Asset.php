@@ -48,15 +48,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'string',
         'Type' => 'string',
         'Text' => 'string',
-        'SubType' => 'string',
+        'CropHeight' => 'int',
+        'CropWidth' => 'int',
         'CropX' => 'int',
         'CropY' => 'int',
-        'CropWidth' => 'int',
-        'CropHeight' => 'int',
-        'TargetWidth' => 'int',
-        'TargetHeight' => 'int',
         'CroppingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType',
         'Excluded' => 'bool',
+        'SubType' => 'string',
+        'TargetHeight' => 'int',
+        'TargetWidth' => 'int',
         'ThumbnailImage' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImageAsset'
     ];
 
@@ -72,15 +72,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => null,
         'Type' => null,
         'Text' => null,
-        'SubType' => null,
+        'CropHeight' => 'int32',
+        'CropWidth' => 'int32',
         'CropX' => 'int32',
         'CropY' => 'int32',
-        'CropWidth' => 'int32',
-        'CropHeight' => 'int32',
-        'TargetWidth' => 'int32',
-        'TargetHeight' => 'int32',
         'CroppingType' => null,
         'Excluded' => null,
+        'SubType' => null,
+        'TargetHeight' => 'int32',
+        'TargetWidth' => 'int32',
         'ThumbnailImage' => null
     ];
 
@@ -94,15 +94,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => true,
         'Type' => true,
         'Text' => true,
-        'SubType' => true,
+        'CropHeight' => true,
+        'CropWidth' => true,
         'CropX' => true,
         'CropY' => true,
-        'CropWidth' => true,
-        'CropHeight' => true,
-        'TargetWidth' => true,
-        'TargetHeight' => true,
-        'CroppingType' => false,
+        'CroppingType' => true,
         'Excluded' => true,
+        'SubType' => true,
+        'TargetHeight' => true,
+        'TargetWidth' => true,
         'ThumbnailImage' => true
     ];
 
@@ -196,15 +196,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'Name',
         'Type' => 'Type',
         'Text' => 'Text',
-        'SubType' => 'SubType',
+        'CropHeight' => 'CropHeight',
+        'CropWidth' => 'CropWidth',
         'CropX' => 'CropX',
         'CropY' => 'CropY',
-        'CropWidth' => 'CropWidth',
-        'CropHeight' => 'CropHeight',
-        'TargetWidth' => 'TargetWidth',
-        'TargetHeight' => 'TargetHeight',
         'CroppingType' => 'CroppingType',
         'Excluded' => 'Excluded',
+        'SubType' => 'SubType',
+        'TargetHeight' => 'TargetHeight',
+        'TargetWidth' => 'TargetWidth',
         'ThumbnailImage' => 'ThumbnailImage'
     ];
 
@@ -218,15 +218,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'setName',
         'Type' => 'setType',
         'Text' => 'setText',
-        'SubType' => 'setSubType',
+        'CropHeight' => 'setCropHeight',
+        'CropWidth' => 'setCropWidth',
         'CropX' => 'setCropX',
         'CropY' => 'setCropY',
-        'CropWidth' => 'setCropWidth',
-        'CropHeight' => 'setCropHeight',
-        'TargetWidth' => 'setTargetWidth',
-        'TargetHeight' => 'setTargetHeight',
         'CroppingType' => 'setCroppingType',
         'Excluded' => 'setExcluded',
+        'SubType' => 'setSubType',
+        'TargetHeight' => 'setTargetHeight',
+        'TargetWidth' => 'setTargetWidth',
         'ThumbnailImage' => 'setThumbnailImage'
     ];
 
@@ -240,15 +240,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         'Name' => 'getName',
         'Type' => 'getType',
         'Text' => 'getText',
-        'SubType' => 'getSubType',
+        'CropHeight' => 'getCropHeight',
+        'CropWidth' => 'getCropWidth',
         'CropX' => 'getCropX',
         'CropY' => 'getCropY',
-        'CropWidth' => 'getCropWidth',
-        'CropHeight' => 'getCropHeight',
-        'TargetWidth' => 'getTargetWidth',
-        'TargetHeight' => 'getTargetHeight',
         'CroppingType' => 'getCroppingType',
         'Excluded' => 'getExcluded',
+        'SubType' => 'getSubType',
+        'TargetHeight' => 'getTargetHeight',
+        'TargetWidth' => 'getTargetWidth',
         'ThumbnailImage' => 'getThumbnailImage'
     ];
 
@@ -313,15 +313,15 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('CropHeight', $data ?? [], null);
+        $this->setIfExists('CropWidth', $data ?? [], null);
         $this->setIfExists('CropX', $data ?? [], null);
         $this->setIfExists('CropY', $data ?? [], null);
-        $this->setIfExists('CropWidth', $data ?? [], null);
-        $this->setIfExists('CropHeight', $data ?? [], null);
-        $this->setIfExists('TargetWidth', $data ?? [], null);
-        $this->setIfExists('TargetHeight', $data ?? [], null);
         $this->setIfExists('CroppingType', $data ?? [], null);
         $this->setIfExists('Excluded', $data ?? [], null);
+        $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('TargetHeight', $data ?? [], null);
+        $this->setIfExists('TargetWidth', $data ?? [], null);
         $this->setIfExists('ThumbnailImage', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
@@ -519,38 +519,75 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets SubType
+     * Gets CropHeight
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getSubType()
+    public function getCropHeight()
     {
-        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
+        if (!isset($this->container['CropHeight']) || is_null($this->container['CropHeight'])) {
             return null;
         }
-        return $this->container['SubType'];
+        return $this->container['CropHeight'];
     }
 
     /**
-     * Sets SubType
+     * Sets CropHeight
      *
-     * @param string|null $SubType SubType
+     * @param int|null $CropHeight CropHeight
      *
      * @return self
      */
-    public function setSubType($SubType)
+    public function setCropHeight($CropHeight)
     {
-        if (is_null($SubType)) {
-            array_push($this->openAPINullablesSetToNull, 'SubType');
+        if (is_null($CropHeight)) {
+            array_push($this->openAPINullablesSetToNull, 'CropHeight');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SubType', $nullablesSetToNull);
+            $index = array_search('CropHeight', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['SubType'] = $SubType;
+        $this->container['CropHeight'] = $CropHeight;
+
+        return $this;
+    }
+
+    /**
+     * Gets CropWidth
+     *
+     * @return int|null
+     */
+    public function getCropWidth()
+    {
+        if (!isset($this->container['CropWidth']) || is_null($this->container['CropWidth'])) {
+            return null;
+        }
+        return $this->container['CropWidth'];
+    }
+
+    /**
+     * Sets CropWidth
+     *
+     * @param int|null $CropWidth CropWidth
+     *
+     * @return self
+     */
+    public function setCropWidth($CropWidth)
+    {
+        if (is_null($CropWidth)) {
+            array_push($this->openAPINullablesSetToNull, 'CropWidth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CropWidth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CropWidth'] = $CropWidth;
 
         return $this;
     }
@@ -630,112 +667,118 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets CropWidth
+     * Gets CroppingType
      *
-     * @return int|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType|mixed|null
      */
-    public function getCropWidth()
+    public function getCroppingType()
     {
-        if (!isset($this->container['CropWidth']) || is_null($this->container['CropWidth'])) {
+        if (!isset($this->container['CroppingType']) || is_null($this->container['CroppingType'])) {
             return null;
         }
-        return $this->container['CropWidth'];
+        if ((is_object($this->container['CroppingType']) || is_string($this->container['CroppingType'])) && method_exists($this->container['CroppingType'], 'getValue')) {
+            return $this->container['CroppingType']->getValue();
+        }
+        return $this->container['CroppingType'];
     }
 
     /**
-     * Sets CropWidth
+     * Sets CroppingType
      *
-     * @param int|null $CropWidth CropWidth
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType|mixed|null $CroppingType CroppingType
      *
      * @return self
      */
-    public function setCropWidth($CropWidth)
+    public function setCroppingType($CroppingType)
     {
-        if (is_null($CropWidth)) {
-            array_push($this->openAPINullablesSetToNull, 'CropWidth');
+        if (is_null($CroppingType)) {
+            array_push($this->openAPINullablesSetToNull, 'CroppingType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CropWidth', $nullablesSetToNull);
+            $index = array_search('CroppingType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CropWidth'] = $CropWidth;
+        if (!is_null($CroppingType) && !$CroppingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType) {
+            $CroppingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType($CroppingType);
+        }
+        $this->container['CroppingType'] = $CroppingType;
 
         return $this;
     }
 
     /**
-     * Gets CropHeight
+     * Gets Excluded
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getCropHeight()
+    public function getExcluded()
     {
-        if (!isset($this->container['CropHeight']) || is_null($this->container['CropHeight'])) {
+        if (!isset($this->container['Excluded']) || is_null($this->container['Excluded'])) {
             return null;
         }
-        return $this->container['CropHeight'];
+        return $this->container['Excluded'];
     }
 
     /**
-     * Sets CropHeight
+     * Sets Excluded
      *
-     * @param int|null $CropHeight CropHeight
+     * @param bool|null $Excluded Excluded
      *
      * @return self
      */
-    public function setCropHeight($CropHeight)
+    public function setExcluded($Excluded)
     {
-        if (is_null($CropHeight)) {
-            array_push($this->openAPINullablesSetToNull, 'CropHeight');
+        if (is_null($Excluded)) {
+            array_push($this->openAPINullablesSetToNull, 'Excluded');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CropHeight', $nullablesSetToNull);
+            $index = array_search('Excluded', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CropHeight'] = $CropHeight;
+        $this->container['Excluded'] = $Excluded;
 
         return $this;
     }
 
     /**
-     * Gets TargetWidth
+     * Gets SubType
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getTargetWidth()
+    public function getSubType()
     {
-        if (!isset($this->container['TargetWidth']) || is_null($this->container['TargetWidth'])) {
+        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
             return null;
         }
-        return $this->container['TargetWidth'];
+        return $this->container['SubType'];
     }
 
     /**
-     * Sets TargetWidth
+     * Sets SubType
      *
-     * @param int|null $TargetWidth TargetWidth
+     * @param string|null $SubType SubType
      *
      * @return self
      */
-    public function setTargetWidth($TargetWidth)
+    public function setSubType($SubType)
     {
-        if (is_null($TargetWidth)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetWidth');
+        if (is_null($SubType)) {
+            array_push($this->openAPINullablesSetToNull, 'SubType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetWidth', $nullablesSetToNull);
+            $index = array_search('SubType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TargetWidth'] = $TargetWidth;
+        $this->container['SubType'] = $SubType;
 
         return $this;
     }
@@ -778,74 +821,38 @@ class Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets CroppingType
+     * Gets TargetWidth
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType|mixed|null
+     * @return int|null
      */
-    public function getCroppingType()
+    public function getTargetWidth()
     {
-        if (!isset($this->container['CroppingType']) || is_null($this->container['CroppingType'])) {
+        if (!isset($this->container['TargetWidth']) || is_null($this->container['TargetWidth'])) {
             return null;
         }
-        if ((is_object($this->container['CroppingType']) || is_string($this->container['CroppingType'])) && method_exists($this->container['CroppingType'], 'getValue')) {
-            return $this->container['CroppingType']->getValue();
-        }
-        return $this->container['CroppingType'];
+        return $this->container['TargetWidth'];
     }
 
     /**
-     * Sets CroppingType
+     * Sets TargetWidth
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType|mixed|null $CroppingType CroppingType
+     * @param int|null $TargetWidth TargetWidth
      *
      * @return self
      */
-    public function setCroppingType($CroppingType)
+    public function setTargetWidth($TargetWidth)
     {
-        if (is_null($CroppingType)) {
-            throw new \InvalidArgumentException('non-nullable CroppingType cannot be null');
-        }
-        if (!$CroppingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType) {
-            $CroppingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CropType($CroppingType);
-        }
-        $this->container['CroppingType'] = $CroppingType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Excluded
-     *
-     * @return bool|null
-     */
-    public function getExcluded()
-    {
-        if (!isset($this->container['Excluded']) || is_null($this->container['Excluded'])) {
-            return null;
-        }
-        return $this->container['Excluded'];
-    }
-
-    /**
-     * Sets Excluded
-     *
-     * @param bool|null $Excluded Excluded
-     *
-     * @return self
-     */
-    public function setExcluded($Excluded)
-    {
-        if (is_null($Excluded)) {
-            array_push($this->openAPINullablesSetToNull, 'Excluded');
+        if (is_null($TargetWidth)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetWidth');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Excluded', $nullablesSetToNull);
+            $index = array_search('TargetWidth', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Excluded'] = $Excluded;
+        $this->container['TargetWidth'] = $TargetWidth;
 
         return $this;
     }

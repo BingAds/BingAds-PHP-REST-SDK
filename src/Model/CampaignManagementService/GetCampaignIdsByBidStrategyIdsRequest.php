@@ -56,7 +56,7 @@ class GetCampaignIdsByBidStrategyIdsRequest implements ModelInterface, ArrayAcce
       */
     protected static array $openAPINullables = [
         'BidStrategyIds' => true,
-        'Scope' => false
+        'Scope' => true
     ];
 
     /**
@@ -335,9 +335,16 @@ class GetCampaignIdsByBidStrategyIdsRequest implements ModelInterface, ArrayAcce
     public function setScope($Scope)
     {
         if (is_null($Scope)) {
-            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+        if (!is_null($Scope) && !$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
             $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
         }
         $this->container['Scope'] = $Scope;

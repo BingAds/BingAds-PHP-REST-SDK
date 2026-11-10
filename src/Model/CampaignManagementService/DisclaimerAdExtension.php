@@ -33,24 +33,24 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
-        'Name' => 'string',
-        'Title' => 'string',
-        'PopupText' => 'string',
-        'LineText' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'DisclaimerLayout' => 'string',
+        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
         'FinalUrlSuffix' => 'string',
         'FinalUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
-        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
+        'LineText' => 'string',
+        'Name' => 'string',
+        'PopupText' => 'string',
+        'Title' => 'string',
         'TrackingUrlTemplate' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters'
     ];
 
     /**
@@ -61,24 +61,24 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
-        'Name' => null,
-        'Title' => null,
-        'PopupText' => null,
-        'LineText' => null,
+        'ForwardCompatibilityMap' => null,
         'DisclaimerLayout' => null,
+        'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
         'FinalUrlSuffix' => null,
         'FinalUrls' => null,
-        'FinalMobileUrls' => null,
-        'FinalAppUrls' => null,
-        'UrlCustomParameters' => null,
+        'LineText' => null,
+        'Name' => null,
+        'PopupText' => null,
+        'Title' => null,
         'TrackingUrlTemplate' => null,
-        'ForwardCompatibilityMap' => null
+        'UrlCustomParameters' => null
     ];
 
     /**
@@ -87,24 +87,24 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
-        'Name' => true,
-        'Title' => true,
-        'PopupText' => true,
-        'LineText' => true,
+        'ForwardCompatibilityMap' => true,
         'DisclaimerLayout' => true,
+        'FinalAppUrls' => true,
+        'FinalMobileUrls' => true,
         'FinalUrlSuffix' => true,
         'FinalUrls' => true,
-        'FinalMobileUrls' => true,
-        'FinalAppUrls' => true,
-        'UrlCustomParameters' => true,
+        'LineText' => true,
+        'Name' => true,
+        'PopupText' => true,
+        'Title' => true,
         'TrackingUrlTemplate' => true,
-        'ForwardCompatibilityMap' => true
+        'UrlCustomParameters' => true
     ];
 
     /**
@@ -193,24 +193,24 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
-        'Name' => 'Name',
-        'Title' => 'Title',
-        'PopupText' => 'PopupText',
-        'LineText' => 'LineText',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'DisclaimerLayout' => 'DisclaimerLayout',
+        'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
         'FinalUrlSuffix' => 'FinalUrlSuffix',
         'FinalUrls' => 'FinalUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalAppUrls' => 'FinalAppUrls',
-        'UrlCustomParameters' => 'UrlCustomParameters',
+        'LineText' => 'LineText',
+        'Name' => 'Name',
+        'PopupText' => 'PopupText',
+        'Title' => 'Title',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'UrlCustomParameters' => 'UrlCustomParameters'
     ];
 
     /**
@@ -219,24 +219,24 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
-        'Name' => 'setName',
-        'Title' => 'setTitle',
-        'PopupText' => 'setPopupText',
-        'LineText' => 'setLineText',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'DisclaimerLayout' => 'setDisclaimerLayout',
+        'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
         'FinalUrlSuffix' => 'setFinalUrlSuffix',
         'FinalUrls' => 'setFinalUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalAppUrls' => 'setFinalAppUrls',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
+        'LineText' => 'setLineText',
+        'Name' => 'setName',
+        'PopupText' => 'setPopupText',
+        'Title' => 'setTitle',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'UrlCustomParameters' => 'setUrlCustomParameters'
     ];
 
     /**
@@ -245,24 +245,24 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
-        'Name' => 'getName',
-        'Title' => 'getTitle',
-        'PopupText' => 'getPopupText',
-        'LineText' => 'getLineText',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'DisclaimerLayout' => 'getDisclaimerLayout',
+        'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
         'FinalUrlSuffix' => 'getFinalUrlSuffix',
         'FinalUrls' => 'getFinalUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalAppUrls' => 'getFinalAppUrls',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
+        'LineText' => 'getLineText',
+        'Name' => 'getName',
+        'PopupText' => 'getPopupText',
+        'Title' => 'getTitle',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'UrlCustomParameters' => 'getUrlCustomParameters'
     ];
 
     /**
@@ -322,24 +322,29 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Title', $data ?? [], null);
-        $this->setIfExists('PopupText', $data ?? [], null);
-        $this->setIfExists('LineText', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('DisclaimerLayout', $data ?? [], null);
+        $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
         $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
         $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalAppUrls', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+        $this->setIfExists('LineText', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('PopupText', $data ?? [], null);
+        $this->setIfExists('Title', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -383,79 +388,6 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -527,6 +459,86 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -606,149 +618,38 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
     }
 
     /**
-     * Gets Name
+     * Gets ForwardCompatibilityMap
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
      */
-    public function getName()
+    public function getForwardCompatibilityMap()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['ForwardCompatibilityMap'];
     }
 
     /**
-     * Sets Name
+     * Sets ForwardCompatibilityMap
      *
-     * @param string|null $Name Name
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
      *
      * @return self
      */
-    public function setName($Name)
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets Title
-     *
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
-            return null;
-        }
-        return $this->container['Title'];
-    }
-
-    /**
-     * Sets Title
-     *
-     * @param string|null $Title Title
-     *
-     * @return self
-     */
-    public function setTitle($Title)
-    {
-        if (is_null($Title)) {
-            array_push($this->openAPINullablesSetToNull, 'Title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Title', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Title'] = $Title;
-
-        return $this;
-    }
-
-    /**
-     * Gets PopupText
-     *
-     * @return string|null
-     */
-    public function getPopupText()
-    {
-        if (!isset($this->container['PopupText']) || is_null($this->container['PopupText'])) {
-            return null;
-        }
-        return $this->container['PopupText'];
-    }
-
-    /**
-     * Sets PopupText
-     *
-     * @param string|null $PopupText PopupText
-     *
-     * @return self
-     */
-    public function setPopupText($PopupText)
-    {
-        if (is_null($PopupText)) {
-            array_push($this->openAPINullablesSetToNull, 'PopupText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PopupText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PopupText'] = $PopupText;
-
-        return $this;
-    }
-
-    /**
-     * Gets LineText
-     *
-     * @return string|null
-     */
-    public function getLineText()
-    {
-        if (!isset($this->container['LineText']) || is_null($this->container['LineText'])) {
-            return null;
-        }
-        return $this->container['LineText'];
-    }
-
-    /**
-     * Sets LineText
-     *
-     * @param string|null $LineText LineText
-     *
-     * @return self
-     */
-    public function setLineText($LineText)
-    {
-        if (is_null($LineText)) {
-            array_push($this->openAPINullablesSetToNull, 'LineText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LineText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LineText'] = $LineText;
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -786,6 +687,80 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
             }
         }
         $this->container['DisclaimerLayout'] = $DisclaimerLayout;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalAppUrls
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
+     */
+    public function getFinalAppUrls()
+    {
+        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
+            return null;
+        }
+        return $this->container['FinalAppUrls'];
+    }
+
+    /**
+     * Sets FinalAppUrls
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
+     *
+     * @return self
+     */
+    public function setFinalAppUrls($FinalAppUrls)
+    {
+        if (is_null($FinalAppUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalAppUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalAppUrls'] = $FinalAppUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalMobileUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalMobileUrls()
+    {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+            return null;
+        }
+        return $this->container['FinalMobileUrls'];
+    }
+
+    /**
+     * Sets FinalMobileUrls
+     *
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     *
+     * @return self
+     */
+    public function setFinalMobileUrls($FinalMobileUrls)
+    {
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
 
         return $this;
     }
@@ -865,112 +840,149 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
     }
 
     /**
-     * Gets FinalMobileUrls
+     * Gets LineText
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getFinalMobileUrls()
+    public function getLineText()
     {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+        if (!isset($this->container['LineText']) || is_null($this->container['LineText'])) {
             return null;
         }
-        return $this->container['FinalMobileUrls'];
+        return $this->container['LineText'];
     }
 
     /**
-     * Sets FinalMobileUrls
+     * Sets LineText
      *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     * @param string|null $LineText LineText
      *
      * @return self
      */
-    public function setFinalMobileUrls($FinalMobileUrls)
+    public function setLineText($LineText)
     {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        if (is_null($LineText)) {
+            array_push($this->openAPINullablesSetToNull, 'LineText');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            $index = array_search('LineText', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+        $this->container['LineText'] = $LineText;
 
         return $this;
     }
 
     /**
-     * Gets FinalAppUrls
+     * Gets Name
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
+     * @return string|null
      */
-    public function getFinalAppUrls()
+    public function getName()
     {
-        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
             return null;
         }
-        return $this->container['FinalAppUrls'];
+        return $this->container['Name'];
     }
 
     /**
-     * Sets FinalAppUrls
+     * Sets Name
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
+     * @param string|null $Name Name
      *
      * @return self
      */
-    public function setFinalAppUrls($FinalAppUrls)
+    public function setName($Name)
     {
-        if (is_null($FinalAppUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalAppUrls', $nullablesSetToNull);
+            $index = array_search('Name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalAppUrls'] = $FinalAppUrls;
+        $this->container['Name'] = $Name;
 
         return $this;
     }
 
     /**
-     * Gets UrlCustomParameters
+     * Gets PopupText
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     * @return string|null
      */
-    public function getUrlCustomParameters()
+    public function getPopupText()
     {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+        if (!isset($this->container['PopupText']) || is_null($this->container['PopupText'])) {
             return null;
         }
-        return $this->container['UrlCustomParameters'];
+        return $this->container['PopupText'];
     }
 
     /**
-     * Sets UrlCustomParameters
+     * Sets PopupText
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     * @param string|null $PopupText PopupText
      *
      * @return self
      */
-    public function setUrlCustomParameters($UrlCustomParameters)
+    public function setPopupText($PopupText)
     {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        if (is_null($PopupText)) {
+            array_push($this->openAPINullablesSetToNull, 'PopupText');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            $index = array_search('PopupText', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
+        $this->container['PopupText'] = $PopupText;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
+            return null;
+        }
+        return $this->container['Title'];
+    }
+
+    /**
+     * Sets Title
+     *
+     * @param string|null $Title Title
+     *
+     * @return self
+     */
+    public function setTitle($Title)
+    {
+        if (is_null($Title)) {
+            array_push($this->openAPINullablesSetToNull, 'Title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Title'] = $Title;
 
         return $this;
     }
@@ -1013,38 +1025,38 @@ class DisclaimerAdExtension extends AdExtension implements ModelInterface, Array
     }
 
     /**
-     * Gets ForwardCompatibilityMap
+     * Gets UrlCustomParameters
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
      */
-    public function getForwardCompatibilityMap()
+    public function getUrlCustomParameters()
     {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
             return null;
         }
-        return $this->container['ForwardCompatibilityMap'];
+        return $this->container['UrlCustomParameters'];
     }
 
     /**
-     * Sets ForwardCompatibilityMap
+     * Sets UrlCustomParameters
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
      *
      * @return self
      */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    public function setUrlCustomParameters($UrlCustomParameters)
     {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }

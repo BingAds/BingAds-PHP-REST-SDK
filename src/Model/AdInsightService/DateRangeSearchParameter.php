@@ -235,6 +235,11 @@ class DateRangeSearchParameter extends SearchParameter implements ModelInterface
         $this->setIfExists('StartDate', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'DateRangeSearchParameter');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**

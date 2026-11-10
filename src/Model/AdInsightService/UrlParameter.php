@@ -249,6 +249,11 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
         $this->setIfExists('UrlCategory', $data ?? [], null);
         $this->setIfExists('UrlId', $data ?? [], null);
         $this->setIfExists('SuggestedUrl', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -321,7 +326,7 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
             $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
         }
         $this->container['Type'] = $Type;
@@ -394,7 +399,7 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
         if (is_null($UrlCategory)) {
             throw new \InvalidArgumentException('non-nullable UrlCategory cannot be null');
         }
-        if (!$UrlCategory instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory) {
+        if (!is_null($UrlCategory) && !$UrlCategory instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory) {
             $UrlCategory = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory($UrlCategory);
         }
         $this->container['UrlCategory'] = $UrlCategory;
@@ -430,7 +435,7 @@ class UrlParameter extends PerformanceInsightsMessageParameter implements ModelI
         if (is_null($UrlId)) {
             throw new \InvalidArgumentException('non-nullable UrlId cannot be null');
         }
-        if (!$UrlId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId) {
+        if (!is_null($UrlId) && !$UrlId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId) {
             $UrlId = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId($UrlId);
         }
         $this->container['UrlId'] = $UrlId;

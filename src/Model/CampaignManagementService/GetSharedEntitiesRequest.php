@@ -56,7 +56,7 @@ class GetSharedEntitiesRequest implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'SharedEntityType' => true,
-        'SharedEntityScope' => false
+        'SharedEntityScope' => true
     ];
 
     /**
@@ -335,9 +335,16 @@ class GetSharedEntitiesRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setSharedEntityScope($SharedEntityScope)
     {
         if (is_null($SharedEntityScope)) {
-            throw new \InvalidArgumentException('non-nullable SharedEntityScope cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'SharedEntityScope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SharedEntityScope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$SharedEntityScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+        if (!is_null($SharedEntityScope) && !$SharedEntityScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
             $SharedEntityScope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($SharedEntityScope);
         }
         $this->container['SharedEntityScope'] = $SharedEntityScope;

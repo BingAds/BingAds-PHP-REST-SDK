@@ -33,10 +33,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'CampaignIds' => 'string[]',
-        'TrafficSplit' => 'int',
-        'IsControlArm' => 'bool'
+        'Id' => 'string',
+        'IsControlArm' => 'bool',
+        'TrafficSplit' => 'int'
     ];
 
     /**
@@ -47,10 +47,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'CampaignIds' => 'int64',
-        'TrafficSplit' => 'int32',
-        'IsControlArm' => null
+        'Id' => 'int64',
+        'IsControlArm' => null,
+        'TrafficSplit' => 'int32'
     ];
 
     /**
@@ -59,10 +59,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'CampaignIds' => true,
-        'TrafficSplit' => false,
-        'IsControlArm' => false
+        'Id' => true,
+        'IsControlArm' => false,
+        'TrafficSplit' => false
     ];
 
     /**
@@ -151,10 +151,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'CampaignIds' => 'CampaignIds',
-        'TrafficSplit' => 'TrafficSplit',
-        'IsControlArm' => 'IsControlArm'
+        'Id' => 'Id',
+        'IsControlArm' => 'IsControlArm',
+        'TrafficSplit' => 'TrafficSplit'
     ];
 
     /**
@@ -163,10 +163,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'CampaignIds' => 'setCampaignIds',
-        'TrafficSplit' => 'setTrafficSplit',
-        'IsControlArm' => 'setIsControlArm'
+        'Id' => 'setId',
+        'IsControlArm' => 'setIsControlArm',
+        'TrafficSplit' => 'setTrafficSplit'
     ];
 
     /**
@@ -175,10 +175,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'CampaignIds' => 'getCampaignIds',
-        'TrafficSplit' => 'getTrafficSplit',
-        'IsControlArm' => 'getIsControlArm'
+        'Id' => 'getId',
+        'IsControlArm' => 'getIsControlArm',
+        'TrafficSplit' => 'getTrafficSplit'
     ];
 
     /**
@@ -238,10 +238,10 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('CampaignIds', $data ?? [], null);
-        $this->setIfExists('TrafficSplit', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('IsControlArm', $data ?? [], null);
+        $this->setIfExists('TrafficSplit', $data ?? [], null);
     }
 
     /**
@@ -287,43 +287,6 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
      * Gets CampaignIds
      *
      * @return string[]|null
@@ -361,31 +324,38 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets TrafficSplit
+     * Gets Id
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getTrafficSplit()
+    public function getId()
     {
-        if (!isset($this->container['TrafficSplit']) || is_null($this->container['TrafficSplit'])) {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
             return null;
         }
-        return $this->container['TrafficSplit'];
+        return $this->container['Id'];
     }
 
     /**
-     * Sets TrafficSplit
+     * Sets Id
      *
-     * @param int|null $TrafficSplit TrafficSplit
+     * @param string|null $Id Id
      *
      * @return self
      */
-    public function setTrafficSplit($TrafficSplit)
+    public function setId($Id)
     {
-        if (is_null($TrafficSplit)) {
-            throw new \InvalidArgumentException('non-nullable TrafficSplit cannot be null');
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['TrafficSplit'] = $TrafficSplit;
+        $this->container['Id'] = $Id;
 
         return $this;
     }
@@ -416,6 +386,36 @@ class ExperimentArm implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable IsControlArm cannot be null');
         }
         $this->container['IsControlArm'] = $IsControlArm;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrafficSplit
+     *
+     * @return int|null
+     */
+    public function getTrafficSplit()
+    {
+        if (!isset($this->container['TrafficSplit']) || is_null($this->container['TrafficSplit'])) {
+            return null;
+        }
+        return $this->container['TrafficSplit'];
+    }
+
+    /**
+     * Sets TrafficSplit
+     *
+     * @param int|null $TrafficSplit TrafficSplit
+     *
+     * @return self
+     */
+    public function setTrafficSplit($TrafficSplit)
+    {
+        if (is_null($TrafficSplit)) {
+            throw new \InvalidArgumentException('non-nullable TrafficSplit cannot be null');
+        }
+        $this->container['TrafficSplit'] = $TrafficSplit;
 
         return $this;
     }

@@ -33,12 +33,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TransactionId' => 'string',
-        'ConversionName' => 'string',
+        'AdjustmentCurrencyCode' => 'string',
         'AdjustmentTime' => '\DateTime',
         'AdjustmentType' => 'string',
         'AdjustmentValue' => 'float',
-        'AdjustmentCurrencyCode' => 'string'
+        'ConversionName' => 'string',
+        'TransactionId' => 'string'
     ];
 
     /**
@@ -49,12 +49,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TransactionId' => null,
-        'ConversionName' => null,
+        'AdjustmentCurrencyCode' => null,
         'AdjustmentTime' => 'date-time',
         'AdjustmentType' => null,
         'AdjustmentValue' => 'double',
-        'AdjustmentCurrencyCode' => null
+        'ConversionName' => null,
+        'TransactionId' => null
     ];
 
     /**
@@ -63,12 +63,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TransactionId' => true,
-        'ConversionName' => true,
+        'AdjustmentCurrencyCode' => true,
         'AdjustmentTime' => false,
         'AdjustmentType' => true,
         'AdjustmentValue' => true,
-        'AdjustmentCurrencyCode' => true
+        'ConversionName' => true,
+        'TransactionId' => true
     ];
 
     /**
@@ -157,12 +157,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TransactionId' => 'TransactionId',
-        'ConversionName' => 'ConversionName',
+        'AdjustmentCurrencyCode' => 'AdjustmentCurrencyCode',
         'AdjustmentTime' => 'AdjustmentTime',
         'AdjustmentType' => 'AdjustmentType',
         'AdjustmentValue' => 'AdjustmentValue',
-        'AdjustmentCurrencyCode' => 'AdjustmentCurrencyCode'
+        'ConversionName' => 'ConversionName',
+        'TransactionId' => 'TransactionId'
     ];
 
     /**
@@ -171,12 +171,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'TransactionId' => 'setTransactionId',
-        'ConversionName' => 'setConversionName',
+        'AdjustmentCurrencyCode' => 'setAdjustmentCurrencyCode',
         'AdjustmentTime' => 'setAdjustmentTime',
         'AdjustmentType' => 'setAdjustmentType',
         'AdjustmentValue' => 'setAdjustmentValue',
-        'AdjustmentCurrencyCode' => 'setAdjustmentCurrencyCode'
+        'ConversionName' => 'setConversionName',
+        'TransactionId' => 'setTransactionId'
     ];
 
     /**
@@ -185,12 +185,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'TransactionId' => 'getTransactionId',
-        'ConversionName' => 'getConversionName',
+        'AdjustmentCurrencyCode' => 'getAdjustmentCurrencyCode',
         'AdjustmentTime' => 'getAdjustmentTime',
         'AdjustmentType' => 'getAdjustmentType',
         'AdjustmentValue' => 'getAdjustmentValue',
-        'AdjustmentCurrencyCode' => 'getAdjustmentCurrencyCode'
+        'ConversionName' => 'getConversionName',
+        'TransactionId' => 'getTransactionId'
     ];
 
     /**
@@ -250,12 +250,12 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TransactionId', $data ?? [], null);
-        $this->setIfExists('ConversionName', $data ?? [], null);
+        $this->setIfExists('AdjustmentCurrencyCode', $data ?? [], null);
         $this->setIfExists('AdjustmentTime', $data ?? [], null);
         $this->setIfExists('AdjustmentType', $data ?? [], null);
         $this->setIfExists('AdjustmentValue', $data ?? [], null);
-        $this->setIfExists('AdjustmentCurrencyCode', $data ?? [], null);
+        $this->setIfExists('ConversionName', $data ?? [], null);
+        $this->setIfExists('TransactionId', $data ?? [], null);
     }
 
     /**
@@ -301,75 +301,38 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets TransactionId
+     * Gets AdjustmentCurrencyCode
      *
      * @return string|null
      */
-    public function getTransactionId()
+    public function getAdjustmentCurrencyCode()
     {
-        if (!isset($this->container['TransactionId']) || is_null($this->container['TransactionId'])) {
+        if (!isset($this->container['AdjustmentCurrencyCode']) || is_null($this->container['AdjustmentCurrencyCode'])) {
             return null;
         }
-        return $this->container['TransactionId'];
+        return $this->container['AdjustmentCurrencyCode'];
     }
 
     /**
-     * Sets TransactionId
+     * Sets AdjustmentCurrencyCode
      *
-     * @param string|null $TransactionId TransactionId
+     * @param string|null $AdjustmentCurrencyCode AdjustmentCurrencyCode
      *
      * @return self
      */
-    public function setTransactionId($TransactionId)
+    public function setAdjustmentCurrencyCode($AdjustmentCurrencyCode)
     {
-        if (is_null($TransactionId)) {
-            array_push($this->openAPINullablesSetToNull, 'TransactionId');
+        if (is_null($AdjustmentCurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'AdjustmentCurrencyCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TransactionId', $nullablesSetToNull);
+            $index = array_search('AdjustmentCurrencyCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TransactionId'] = $TransactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConversionName
-     *
-     * @return string|null
-     */
-    public function getConversionName()
-    {
-        if (!isset($this->container['ConversionName']) || is_null($this->container['ConversionName'])) {
-            return null;
-        }
-        return $this->container['ConversionName'];
-    }
-
-    /**
-     * Sets ConversionName
-     *
-     * @param string|null $ConversionName ConversionName
-     *
-     * @return self
-     */
-    public function setConversionName($ConversionName)
-    {
-        if (is_null($ConversionName)) {
-            array_push($this->openAPINullablesSetToNull, 'ConversionName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConversionName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ConversionName'] = $ConversionName;
+        $this->container['AdjustmentCurrencyCode'] = $AdjustmentCurrencyCode;
 
         return $this;
     }
@@ -479,38 +442,75 @@ class OnlineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets AdjustmentCurrencyCode
+     * Gets ConversionName
      *
      * @return string|null
      */
-    public function getAdjustmentCurrencyCode()
+    public function getConversionName()
     {
-        if (!isset($this->container['AdjustmentCurrencyCode']) || is_null($this->container['AdjustmentCurrencyCode'])) {
+        if (!isset($this->container['ConversionName']) || is_null($this->container['ConversionName'])) {
             return null;
         }
-        return $this->container['AdjustmentCurrencyCode'];
+        return $this->container['ConversionName'];
     }
 
     /**
-     * Sets AdjustmentCurrencyCode
+     * Sets ConversionName
      *
-     * @param string|null $AdjustmentCurrencyCode AdjustmentCurrencyCode
+     * @param string|null $ConversionName ConversionName
      *
      * @return self
      */
-    public function setAdjustmentCurrencyCode($AdjustmentCurrencyCode)
+    public function setConversionName($ConversionName)
     {
-        if (is_null($AdjustmentCurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'AdjustmentCurrencyCode');
+        if (is_null($ConversionName)) {
+            array_push($this->openAPINullablesSetToNull, 'ConversionName');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdjustmentCurrencyCode', $nullablesSetToNull);
+            $index = array_search('ConversionName', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AdjustmentCurrencyCode'] = $AdjustmentCurrencyCode;
+        $this->container['ConversionName'] = $ConversionName;
+
+        return $this;
+    }
+
+    /**
+     * Gets TransactionId
+     *
+     * @return string|null
+     */
+    public function getTransactionId()
+    {
+        if (!isset($this->container['TransactionId']) || is_null($this->container['TransactionId'])) {
+            return null;
+        }
+        return $this->container['TransactionId'];
+    }
+
+    /**
+     * Sets TransactionId
+     *
+     * @param string|null $TransactionId TransactionId
+     *
+     * @return self
+     */
+    public function setTransactionId($TransactionId)
+    {
+        if (is_null($TransactionId)) {
+            array_push($this->openAPINullablesSetToNull, 'TransactionId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TransactionId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TransactionId'] = $TransactionId;
 
         return $this;
     }

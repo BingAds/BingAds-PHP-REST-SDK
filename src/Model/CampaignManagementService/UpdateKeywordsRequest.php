@@ -34,9 +34,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'AssetGroupId' => 'string',
         'Keywords' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]',
-        'ReturnInheritedBidStrategyTypes' => 'bool'
+        'ReturnInheritedBidStrategyTypes' => 'bool',
+        'AssetGroupId' => 'string'
     ];
 
     /**
@@ -48,9 +48,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'AssetGroupId' => 'int64',
         'Keywords' => null,
-        'ReturnInheritedBidStrategyTypes' => null
+        'ReturnInheritedBidStrategyTypes' => null,
+        'AssetGroupId' => 'int64'
     ];
 
     /**
@@ -60,9 +60,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPINullables = [
         'AdGroupId' => true,
-        'AssetGroupId' => true,
         'Keywords' => true,
-        'ReturnInheritedBidStrategyTypes' => true
+        'ReturnInheritedBidStrategyTypes' => true,
+        'AssetGroupId' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'AssetGroupId' => 'AssetGroupId',
         'Keywords' => 'Keywords',
-        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes'
+        'ReturnInheritedBidStrategyTypes' => 'ReturnInheritedBidStrategyTypes',
+        'AssetGroupId' => 'AssetGroupId'
     ];
 
     /**
@@ -164,9 +164,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'AssetGroupId' => 'setAssetGroupId',
         'Keywords' => 'setKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes'
+        'ReturnInheritedBidStrategyTypes' => 'setReturnInheritedBidStrategyTypes',
+        'AssetGroupId' => 'setAssetGroupId'
     ];
 
     /**
@@ -176,9 +176,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'AssetGroupId' => 'getAssetGroupId',
         'Keywords' => 'getKeywords',
-        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes'
+        'ReturnInheritedBidStrategyTypes' => 'getReturnInheritedBidStrategyTypes',
+        'AssetGroupId' => 'getAssetGroupId'
     ];
 
     /**
@@ -239,9 +239,9 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('AssetGroupId', $data ?? [], null);
         $this->setIfExists('Keywords', $data ?? [], null);
         $this->setIfExists('ReturnInheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('AssetGroupId', $data ?? [], null);
     }
 
     /**
@@ -324,43 +324,6 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets AssetGroupId
-     *
-     * @return string|null
-     */
-    public function getAssetGroupId()
-    {
-        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
-            return null;
-        }
-        return $this->container['AssetGroupId'];
-    }
-
-    /**
-     * Sets AssetGroupId
-     *
-     * @param string|null $AssetGroupId AssetGroupId
-     *
-     * @return self
-     */
-    public function setAssetGroupId($AssetGroupId)
-    {
-        if (is_null($AssetGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AssetGroupId'] = $AssetGroupId;
-
-        return $this;
-    }
-
-    /**
      * Gets Keywords
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Keyword[]|null
@@ -430,6 +393,43 @@ class UpdateKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['ReturnInheritedBidStrategyTypes'] = $ReturnInheritedBidStrategyTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupId
+     *
+     * @return string|null
+     */
+    public function getAssetGroupId()
+    {
+        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
+            return null;
+        }
+        return $this->container['AssetGroupId'];
+    }
+
+    /**
+     * Sets AssetGroupId
+     *
+     * @param string|null $AssetGroupId AssetGroupId
+     *
+     * @return self
+     */
+    public function setAssetGroupId($AssetGroupId)
+    {
+        if (is_null($AssetGroupId)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssetGroupId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AssetGroupId'] = $AssetGroupId;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType',
-        'LinkedInSegmentIds' => 'string[]'
+        'LinkedInSegmentIds' => 'string[]',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Type' => null,
-        'LinkedInSegmentIds' => 'int64'
+        'LinkedInSegmentIds' => 'int64',
+        'Type' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => false,
-        'LinkedInSegmentIds' => true
+        'LinkedInSegmentIds' => true,
+        'Type' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Type' => 'Type',
-        'LinkedInSegmentIds' => 'LinkedInSegmentIds'
+        'LinkedInSegmentIds' => 'LinkedInSegmentIds',
+        'Type' => 'Type'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'Type' => 'setType',
-        'LinkedInSegmentIds' => 'setLinkedInSegmentIds'
+        'LinkedInSegmentIds' => 'setLinkedInSegmentIds',
+        'Type' => 'setType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'Type' => 'getType',
-        'LinkedInSegmentIds' => 'getLinkedInSegmentIds'
+        'LinkedInSegmentIds' => 'getLinkedInSegmentIds',
+        'Type' => 'getType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('LinkedInSegmentIds', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets LinkedInSegmentIds
      *
      * @return string[]|null
@@ -341,6 +305,42 @@ class GetLinkedInSegmentsRequest implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['LinkedInSegmentIds'] = $LinkedInSegmentIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

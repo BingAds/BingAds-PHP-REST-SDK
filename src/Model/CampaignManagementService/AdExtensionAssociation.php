@@ -33,10 +33,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'EntityId' => 'string',
-        'AssociationType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType',
         'AdExtension' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtension',
-        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionEditorialStatus'
+        'AssociationType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType',
+        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionEditorialStatus',
+        'EntityId' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'EntityId' => 'int64',
-        'AssociationType' => null,
         'AdExtension' => null,
-        'EditorialStatus' => null
+        'AssociationType' => null,
+        'EditorialStatus' => null,
+        'EntityId' => 'int64'
     ];
 
     /**
@@ -59,10 +59,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'EntityId' => false,
-        'AssociationType' => false,
         'AdExtension' => true,
-        'EditorialStatus' => false
+        'AssociationType' => false,
+        'EditorialStatus' => true,
+        'EntityId' => false
     ];
 
     /**
@@ -151,10 +151,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'EntityId' => 'EntityId',
-        'AssociationType' => 'AssociationType',
         'AdExtension' => 'AdExtension',
-        'EditorialStatus' => 'EditorialStatus'
+        'AssociationType' => 'AssociationType',
+        'EditorialStatus' => 'EditorialStatus',
+        'EntityId' => 'EntityId'
     ];
 
     /**
@@ -163,10 +163,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'EntityId' => 'setEntityId',
-        'AssociationType' => 'setAssociationType',
         'AdExtension' => 'setAdExtension',
-        'EditorialStatus' => 'setEditorialStatus'
+        'AssociationType' => 'setAssociationType',
+        'EditorialStatus' => 'setEditorialStatus',
+        'EntityId' => 'setEntityId'
     ];
 
     /**
@@ -175,10 +175,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'EntityId' => 'getEntityId',
-        'AssociationType' => 'getAssociationType',
         'AdExtension' => 'getAdExtension',
-        'EditorialStatus' => 'getEditorialStatus'
+        'AssociationType' => 'getAssociationType',
+        'EditorialStatus' => 'getEditorialStatus',
+        'EntityId' => 'getEntityId'
     ];
 
     /**
@@ -238,10 +238,10 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('EntityId', $data ?? [], null);
-        $this->setIfExists('AssociationType', $data ?? [], null);
         $this->setIfExists('AdExtension', $data ?? [], null);
+        $this->setIfExists('AssociationType', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
+        $this->setIfExists('EntityId', $data ?? [], null);
     }
 
     /**
@@ -287,72 +287,6 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets EntityId
-     *
-     * @return string|null
-     */
-    public function getEntityId()
-    {
-        if (!isset($this->container['EntityId']) || is_null($this->container['EntityId'])) {
-            return null;
-        }
-        return $this->container['EntityId'];
-    }
-
-    /**
-     * Sets EntityId
-     *
-     * @param string|null $EntityId EntityId
-     *
-     * @return self
-     */
-    public function setEntityId($EntityId)
-    {
-        if (is_null($EntityId)) {
-            throw new \InvalidArgumentException('non-nullable EntityId cannot be null');
-        }
-        $this->container['EntityId'] = $EntityId;
-
-        return $this;
-    }
-
-    /**
-     * Gets AssociationType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null
-     */
-    public function getAssociationType()
-    {
-        if (!isset($this->container['AssociationType']) || is_null($this->container['AssociationType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AssociationType']) || is_string($this->container['AssociationType'])) && method_exists($this->container['AssociationType'], 'getValue')) {
-            return $this->container['AssociationType']->getValue();
-        }
-        return $this->container['AssociationType'];
-    }
-
-    /**
-     * Sets AssociationType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null $AssociationType AssociationType
-     *
-     * @return self
-     */
-    public function setAssociationType($AssociationType)
-    {
-        if (is_null($AssociationType)) {
-            throw new \InvalidArgumentException('non-nullable AssociationType cannot be null');
-        }
-        if (!$AssociationType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType) {
-            $AssociationType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType($AssociationType);
-        }
-        $this->container['AssociationType'] = $AssociationType;
-
-        return $this;
-    }
-
-    /**
      * Gets AdExtension
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtension|null
@@ -390,6 +324,42 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets AssociationType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null
+     */
+    public function getAssociationType()
+    {
+        if (!isset($this->container['AssociationType']) || is_null($this->container['AssociationType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AssociationType']) || is_string($this->container['AssociationType'])) && method_exists($this->container['AssociationType'], 'getValue')) {
+            return $this->container['AssociationType']->getValue();
+        }
+        return $this->container['AssociationType'];
+    }
+
+    /**
+     * Sets AssociationType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType|mixed|null $AssociationType AssociationType
+     *
+     * @return self
+     */
+    public function setAssociationType($AssociationType)
+    {
+        if (is_null($AssociationType)) {
+            throw new \InvalidArgumentException('non-nullable AssociationType cannot be null');
+        }
+        if (!is_null($AssociationType) && !$AssociationType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType) {
+            $AssociationType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType($AssociationType);
+        }
+        $this->container['AssociationType'] = $AssociationType;
+
+        return $this;
+    }
+
+    /**
      * Gets EditorialStatus
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionEditorialStatus|mixed|null
@@ -415,12 +385,49 @@ class AdExtensionAssociation implements ModelInterface, ArrayAccess, \JsonSerial
     public function setEditorialStatus($EditorialStatus)
     {
         if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionEditorialStatus) {
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionEditorialStatus) {
             $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionEditorialStatus($EditorialStatus);
         }
         $this->container['EditorialStatus'] = $EditorialStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets EntityId
+     *
+     * @return string|null
+     */
+    public function getEntityId()
+    {
+        if (!isset($this->container['EntityId']) || is_null($this->container['EntityId'])) {
+            return null;
+        }
+        return $this->container['EntityId'];
+    }
+
+    /**
+     * Sets EntityId
+     *
+     * @param string|null $EntityId EntityId
+     *
+     * @return self
+     */
+    public function setEntityId($EntityId)
+    {
+        if (is_null($EntityId)) {
+            throw new \InvalidArgumentException('non-nullable EntityId cannot be null');
+        }
+        $this->container['EntityId'] = $EntityId;
 
         return $this;
     }

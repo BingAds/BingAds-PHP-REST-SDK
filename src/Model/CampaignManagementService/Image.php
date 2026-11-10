@@ -33,11 +33,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AdvertiserAILabel' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel',
         'Id' => 'string',
         'MediaType' => 'string',
-        'Type' => 'string',
         'Text' => 'string',
-        'AdvertiserAILabel' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel',
+        'Type' => 'string',
         'Data' => 'string'
     ];
 
@@ -49,11 +49,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AdvertiserAILabel' => null,
         'Id' => 'int64',
         'MediaType' => null,
-        'Type' => null,
         'Text' => null,
-        'AdvertiserAILabel' => null,
+        'Type' => null,
         'Data' => null
     ];
 
@@ -63,11 +63,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AdvertiserAILabel' => true,
         'Id' => true,
         'MediaType' => true,
-        'Type' => true,
         'Text' => true,
-        'AdvertiserAILabel' => false,
+        'Type' => true,
         'Data' => true
     ];
 
@@ -157,11 +157,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AdvertiserAILabel' => 'AdvertiserAILabel',
         'Id' => 'Id',
         'MediaType' => 'MediaType',
-        'Type' => 'Type',
         'Text' => 'Text',
-        'AdvertiserAILabel' => 'AdvertiserAILabel',
+        'Type' => 'Type',
         'Data' => 'Data'
     ];
 
@@ -171,11 +171,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
+        'AdvertiserAILabel' => 'setAdvertiserAILabel',
         'Id' => 'setId',
         'MediaType' => 'setMediaType',
-        'Type' => 'setType',
         'Text' => 'setText',
-        'AdvertiserAILabel' => 'setAdvertiserAILabel',
+        'Type' => 'setType',
         'Data' => 'setData'
     ];
 
@@ -185,11 +185,11 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
+        'AdvertiserAILabel' => 'getAdvertiserAILabel',
         'Id' => 'getId',
         'MediaType' => 'getMediaType',
-        'Type' => 'getType',
         'Text' => 'getText',
-        'AdvertiserAILabel' => 'getAdvertiserAILabel',
+        'Type' => 'getType',
         'Data' => 'getData'
     ];
 
@@ -250,12 +250,17 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AdvertiserAILabel', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('MediaType', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('AdvertiserAILabel', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Data', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -299,6 +304,49 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AdvertiserAILabel
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
+     */
+    public function getAdvertiserAILabel()
+    {
+        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
+            return $this->container['AdvertiserAILabel']->getValue();
+        }
+        return $this->container['AdvertiserAILabel'];
+    }
+
+    /**
+     * Sets AdvertiserAILabel
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
+     *
+     * @return self
+     */
+    public function setAdvertiserAILabel($AdvertiserAILabel)
+    {
+        if (is_null($AdvertiserAILabel)) {
+            array_push($this->openAPINullablesSetToNull, 'AdvertiserAILabel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdvertiserAILabel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AdvertiserAILabel) && !$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
+            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
+        }
+        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
+
+        return $this;
+    }
 
     /**
      * Gets Id
@@ -375,43 +423,6 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets Text
      *
      * @return string|null
@@ -449,37 +460,38 @@ class Image extends Media implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets AdvertiserAILabel
+     * Gets Type
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
+     * @return string|null
      */
-    public function getAdvertiserAILabel()
+    public function getType()
     {
-        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
-            return $this->container['AdvertiserAILabel']->getValue();
-        }
-        return $this->container['AdvertiserAILabel'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets AdvertiserAILabel
+     * Sets Type
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setAdvertiserAILabel($AdvertiserAILabel)
+    public function setType($Type)
     {
-        if (is_null($AdvertiserAILabel)) {
-            throw new \InvalidArgumentException('non-nullable AdvertiserAILabel cannot be null');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
-            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
-        }
-        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
+        $this->container['Type'] = $Type;
 
         return $this;
     }

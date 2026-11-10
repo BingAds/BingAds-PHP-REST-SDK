@@ -62,7 +62,7 @@ class GetOfflineConversionReportByGoalIdsRequest implements ModelInterface, Arra
         'StartDateUtc' => false,
         'EndDateUtc' => false,
         'GoalIds' => true,
-        'UploadChannelFilter' => false
+        'UploadChannelFilter' => true
     ];
 
     /**
@@ -409,9 +409,16 @@ class GetOfflineConversionReportByGoalIdsRequest implements ModelInterface, Arra
     public function setUploadChannelFilter($UploadChannelFilter)
     {
         if (is_null($UploadChannelFilter)) {
-            throw new \InvalidArgumentException('non-nullable UploadChannelFilter cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'UploadChannelFilter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UploadChannelFilter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$UploadChannelFilter instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\OfflineConversionUploadChannel) {
+        if (!is_null($UploadChannelFilter) && !$UploadChannelFilter instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\OfflineConversionUploadChannel) {
             $UploadChannelFilter = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\OfflineConversionUploadChannel($UploadChannelFilter);
         }
         $this->container['UploadChannelFilter'] = $UploadChannelFilter;

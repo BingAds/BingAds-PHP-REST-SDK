@@ -33,15 +33,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'LocationCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition',
         'AudienceCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceCondition',
-        'DeviceCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCondition',
-        'Value' => 'float',
-        'Operation' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator',
         'CurrencyCode' => 'string',
+        'DeviceCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCondition',
+        'Id' => 'string',
+        'LocationCondition' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition',
+        'Name' => 'string',
+        'Operation' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus',
-        'Id' => 'string'
+        'Value' => 'float'
     ];
 
     /**
@@ -52,15 +52,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'LocationCondition' => null,
         'AudienceCondition' => null,
-        'DeviceCondition' => null,
-        'Value' => 'double',
-        'Operation' => null,
         'CurrencyCode' => null,
+        'DeviceCondition' => null,
+        'Id' => 'int64',
+        'LocationCondition' => null,
+        'Name' => null,
+        'Operation' => null,
         'Status' => null,
-        'Id' => 'int64'
+        'Value' => 'double'
     ];
 
     /**
@@ -69,15 +69,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'LocationCondition' => true,
         'AudienceCondition' => true,
-        'DeviceCondition' => true,
-        'Value' => true,
-        'Operation' => false,
         'CurrencyCode' => true,
-        'Status' => false,
-        'Id' => true
+        'DeviceCondition' => true,
+        'Id' => true,
+        'LocationCondition' => true,
+        'Name' => true,
+        'Operation' => true,
+        'Status' => true,
+        'Value' => true
     ];
 
     /**
@@ -166,15 +166,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'LocationCondition' => 'LocationCondition',
         'AudienceCondition' => 'AudienceCondition',
-        'DeviceCondition' => 'DeviceCondition',
-        'Value' => 'Value',
-        'Operation' => 'Operation',
         'CurrencyCode' => 'CurrencyCode',
+        'DeviceCondition' => 'DeviceCondition',
+        'Id' => 'Id',
+        'LocationCondition' => 'LocationCondition',
+        'Name' => 'Name',
+        'Operation' => 'Operation',
         'Status' => 'Status',
-        'Id' => 'Id'
+        'Value' => 'Value'
     ];
 
     /**
@@ -183,15 +183,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'LocationCondition' => 'setLocationCondition',
         'AudienceCondition' => 'setAudienceCondition',
-        'DeviceCondition' => 'setDeviceCondition',
-        'Value' => 'setValue',
-        'Operation' => 'setOperation',
         'CurrencyCode' => 'setCurrencyCode',
+        'DeviceCondition' => 'setDeviceCondition',
+        'Id' => 'setId',
+        'LocationCondition' => 'setLocationCondition',
+        'Name' => 'setName',
+        'Operation' => 'setOperation',
         'Status' => 'setStatus',
-        'Id' => 'setId'
+        'Value' => 'setValue'
     ];
 
     /**
@@ -200,15 +200,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'LocationCondition' => 'getLocationCondition',
         'AudienceCondition' => 'getAudienceCondition',
-        'DeviceCondition' => 'getDeviceCondition',
-        'Value' => 'getValue',
-        'Operation' => 'getOperation',
         'CurrencyCode' => 'getCurrencyCode',
+        'DeviceCondition' => 'getDeviceCondition',
+        'Id' => 'getId',
+        'LocationCondition' => 'getLocationCondition',
+        'Name' => 'getName',
+        'Operation' => 'getOperation',
         'Status' => 'getStatus',
-        'Id' => 'getId'
+        'Value' => 'getValue'
     ];
 
     /**
@@ -268,15 +268,15 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('LocationCondition', $data ?? [], null);
         $this->setIfExists('AudienceCondition', $data ?? [], null);
-        $this->setIfExists('DeviceCondition', $data ?? [], null);
-        $this->setIfExists('Value', $data ?? [], null);
-        $this->setIfExists('Operation', $data ?? [], null);
         $this->setIfExists('CurrencyCode', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('DeviceCondition', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('LocationCondition', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('Operation', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Value', $data ?? [], null);
     }
 
     /**
@@ -322,80 +322,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets LocationCondition
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition|null
-     */
-    public function getLocationCondition()
-    {
-        if (!isset($this->container['LocationCondition']) || is_null($this->container['LocationCondition'])) {
-            return null;
-        }
-        return $this->container['LocationCondition'];
-    }
-
-    /**
-     * Sets LocationCondition
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition|null $LocationCondition LocationCondition
-     *
-     * @return self
-     */
-    public function setLocationCondition($LocationCondition)
-    {
-        if (is_null($LocationCondition)) {
-            array_push($this->openAPINullablesSetToNull, 'LocationCondition');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LocationCondition', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LocationCondition'] = $LocationCondition;
-
-        return $this;
-    }
-
-    /**
      * Gets AudienceCondition
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceCondition|null
@@ -428,116 +354,6 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['AudienceCondition'] = $AudienceCondition;
-
-        return $this;
-    }
-
-    /**
-     * Gets DeviceCondition
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCondition|null
-     */
-    public function getDeviceCondition()
-    {
-        if (!isset($this->container['DeviceCondition']) || is_null($this->container['DeviceCondition'])) {
-            return null;
-        }
-        return $this->container['DeviceCondition'];
-    }
-
-    /**
-     * Sets DeviceCondition
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCondition|null $DeviceCondition DeviceCondition
-     *
-     * @return self
-     */
-    public function setDeviceCondition($DeviceCondition)
-    {
-        if (is_null($DeviceCondition)) {
-            array_push($this->openAPINullablesSetToNull, 'DeviceCondition');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DeviceCondition', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DeviceCondition'] = $DeviceCondition;
-
-        return $this;
-    }
-
-    /**
-     * Gets Value
-     *
-     * @return float|null
-     */
-    public function getValue()
-    {
-        if (!isset($this->container['Value']) || is_null($this->container['Value'])) {
-            return null;
-        }
-        return $this->container['Value'];
-    }
-
-    /**
-     * Sets Value
-     *
-     * @param float|null $Value Value
-     *
-     * @return self
-     */
-    public function setValue($Value)
-    {
-        if (is_null($Value)) {
-            array_push($this->openAPINullablesSetToNull, 'Value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Value', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Value'] = $Value;
-
-        return $this;
-    }
-
-    /**
-     * Gets Operation
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator|mixed|null
-     */
-    public function getOperation()
-    {
-        if (!isset($this->container['Operation']) || is_null($this->container['Operation'])) {
-            return null;
-        }
-        if ((is_object($this->container['Operation']) || is_string($this->container['Operation'])) && method_exists($this->container['Operation'], 'getValue')) {
-            return $this->container['Operation']->getValue();
-        }
-        return $this->container['Operation'];
-    }
-
-    /**
-     * Sets Operation
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator|mixed|null $Operation Operation
-     *
-     * @return self
-     */
-    public function setOperation($Operation)
-    {
-        if (is_null($Operation)) {
-            throw new \InvalidArgumentException('non-nullable Operation cannot be null');
-        }
-        if (!$Operation instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator) {
-            $Operation = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator($Operation);
-        }
-        $this->container['Operation'] = $Operation;
 
         return $this;
     }
@@ -580,37 +396,38 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets Status
+     * Gets DeviceCondition
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCondition|null
      */
-    public function getStatus()
+    public function getDeviceCondition()
     {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+        if (!isset($this->container['DeviceCondition']) || is_null($this->container['DeviceCondition'])) {
             return null;
         }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
+        return $this->container['DeviceCondition'];
     }
 
     /**
-     * Sets Status
+     * Sets DeviceCondition
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus|mixed|null $Status Status
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceCondition|null $DeviceCondition DeviceCondition
      *
      * @return self
      */
-    public function setStatus($Status)
+    public function setDeviceCondition($DeviceCondition)
     {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
+        if (is_null($DeviceCondition)) {
+            array_push($this->openAPINullablesSetToNull, 'DeviceCondition');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DeviceCondition', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus($Status);
-        }
-        $this->container['Status'] = $Status;
+        $this->container['DeviceCondition'] = $DeviceCondition;
 
         return $this;
     }
@@ -648,6 +465,203 @@ class ConversionValueRule implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets LocationCondition
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition|null
+     */
+    public function getLocationCondition()
+    {
+        if (!isset($this->container['LocationCondition']) || is_null($this->container['LocationCondition'])) {
+            return null;
+        }
+        return $this->container['LocationCondition'];
+    }
+
+    /**
+     * Sets LocationCondition
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LocationCondition|null $LocationCondition LocationCondition
+     *
+     * @return self
+     */
+    public function setLocationCondition($LocationCondition)
+    {
+        if (is_null($LocationCondition)) {
+            array_push($this->openAPINullablesSetToNull, 'LocationCondition');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LocationCondition', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LocationCondition'] = $LocationCondition;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets Operation
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator|mixed|null
+     */
+    public function getOperation()
+    {
+        if (!isset($this->container['Operation']) || is_null($this->container['Operation'])) {
+            return null;
+        }
+        if ((is_object($this->container['Operation']) || is_string($this->container['Operation'])) && method_exists($this->container['Operation'], 'getValue')) {
+            return $this->container['Operation']->getValue();
+        }
+        return $this->container['Operation'];
+    }
+
+    /**
+     * Sets Operation
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator|mixed|null $Operation Operation
+     *
+     * @return self
+     */
+    public function setOperation($Operation)
+    {
+        if (is_null($Operation)) {
+            array_push($this->openAPINullablesSetToNull, 'Operation');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Operation', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Operation) && !$Operation instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator) {
+            $Operation = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleOperator($Operation);
+        }
+        $this->container['Operation'] = $Operation;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Value
+     *
+     * @return float|null
+     */
+    public function getValue()
+    {
+        if (!isset($this->container['Value']) || is_null($this->container['Value'])) {
+            return null;
+        }
+        return $this->container['Value'];
+    }
+
+    /**
+     * Sets Value
+     *
+     * @param float|null $Value Value
+     *
+     * @return self
+     */
+    public function setValue($Value)
+    {
+        if (is_null($Value)) {
+            array_push($this->openAPINullablesSetToNull, 'Value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Value'] = $Value;
 
         return $this;
     }

@@ -35,9 +35,9 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     protected static array $openAPITypes = [
         'TrackingId' => 'string',
         'ErrorMessage' => 'string',
-        'MTServerName' => 'string',
-        'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\BulkService\FaultSource',
         'ErrorSourceSystem' => 'string',
+        'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\BulkService\FaultSource',
+        'MTServerName' => 'string',
         'Type' => 'string'
     ];
 
@@ -51,9 +51,9 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     protected static array $openAPIFormats = [
         'TrackingId' => null,
         'ErrorMessage' => null,
-        'MTServerName' => null,
-        'FaultingLayer' => null,
         'ErrorSourceSystem' => null,
+        'FaultingLayer' => null,
+        'MTServerName' => null,
         'Type' => null
     ];
 
@@ -65,9 +65,9 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     protected static array $openAPINullables = [
         'TrackingId' => true,
         'ErrorMessage' => true,
-        'MTServerName' => true,
-        'FaultingLayer' => false,
         'ErrorSourceSystem' => true,
+        'FaultingLayer' => false,
+        'MTServerName' => true,
         'Type' => true
     ];
 
@@ -159,9 +159,9 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     protected static array $attributeMap = [
         'TrackingId' => 'TrackingId',
         'ErrorMessage' => 'ErrorMessage',
-        'MTServerName' => 'MTServerName',
-        'FaultingLayer' => 'FaultingLayer',
         'ErrorSourceSystem' => 'ErrorSourceSystem',
+        'FaultingLayer' => 'FaultingLayer',
+        'MTServerName' => 'MTServerName',
         'Type' => 'Type'
     ];
 
@@ -173,9 +173,9 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     protected static array $setters = [
         'TrackingId' => 'setTrackingId',
         'ErrorMessage' => 'setErrorMessage',
-        'MTServerName' => 'setMTServerName',
-        'FaultingLayer' => 'setFaultingLayer',
         'ErrorSourceSystem' => 'setErrorSourceSystem',
+        'FaultingLayer' => 'setFaultingLayer',
+        'MTServerName' => 'setMTServerName',
         'Type' => 'setType'
     ];
 
@@ -187,9 +187,9 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     protected static array $getters = [
         'TrackingId' => 'getTrackingId',
         'ErrorMessage' => 'getErrorMessage',
-        'MTServerName' => 'getMTServerName',
-        'FaultingLayer' => 'getFaultingLayer',
         'ErrorSourceSystem' => 'getErrorSourceSystem',
+        'FaultingLayer' => 'getFaultingLayer',
+        'MTServerName' => 'getMTServerName',
         'Type' => 'getType'
     ];
 
@@ -252,10 +252,15 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     {
         $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('ErrorMessage', $data ?? [], null);
-        $this->setIfExists('MTServerName', $data ?? [], null);
-        $this->setIfExists('FaultingLayer', $data ?? [], null);
         $this->setIfExists('ErrorSourceSystem', $data ?? [], null);
+        $this->setIfExists('FaultingLayer', $data ?? [], null);
+        $this->setIfExists('MTServerName', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AdCenterAuthorizationFault');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -375,79 +380,6 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
     }
 
     /**
-     * Gets MTServerName
-     *
-     * @return string|null
-     */
-    public function getMTServerName()
-    {
-        if (!isset($this->container['MTServerName']) || is_null($this->container['MTServerName'])) {
-            return null;
-        }
-        return $this->container['MTServerName'];
-    }
-
-    /**
-     * Sets MTServerName
-     *
-     * @param string|null $MTServerName MTServerName
-     *
-     * @return self
-     */
-    public function setMTServerName($MTServerName)
-    {
-        if (is_null($MTServerName)) {
-            array_push($this->openAPINullablesSetToNull, 'MTServerName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MTServerName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MTServerName'] = $MTServerName;
-
-        return $this;
-    }
-
-    /**
-     * Gets FaultingLayer
-     *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\FaultSource|mixed|null
-     */
-    public function getFaultingLayer()
-    {
-        if (!isset($this->container['FaultingLayer']) || is_null($this->container['FaultingLayer'])) {
-            return null;
-        }
-        if ((is_object($this->container['FaultingLayer']) || is_string($this->container['FaultingLayer'])) && method_exists($this->container['FaultingLayer'], 'getValue')) {
-            return $this->container['FaultingLayer']->getValue();
-        }
-        return $this->container['FaultingLayer'];
-    }
-
-    /**
-     * Sets FaultingLayer
-     *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\FaultSource|mixed|null $FaultingLayer FaultingLayer
-     *
-     * @return self
-     */
-    public function setFaultingLayer($FaultingLayer)
-    {
-        if (is_null($FaultingLayer)) {
-            throw new \InvalidArgumentException('non-nullable FaultingLayer cannot be null');
-        }
-        if (!$FaultingLayer instanceof \Microsoft\MsAds\Rest\Model\BulkService\FaultSource) {
-            $FaultingLayer = new \Microsoft\MsAds\Rest\Model\BulkService\FaultSource($FaultingLayer);
-        }
-        $this->container['FaultingLayer'] = $FaultingLayer;
-
-        return $this;
-    }
-
-    /**
      * Gets ErrorSourceSystem
      *
      * @return string|null
@@ -480,6 +412,79 @@ class AdCenterAuthorizationFault extends ApplicationFault implements ModelInterf
             }
         }
         $this->container['ErrorSourceSystem'] = $ErrorSourceSystem;
+
+        return $this;
+    }
+
+    /**
+     * Gets FaultingLayer
+     *
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\FaultSource|mixed|null
+     */
+    public function getFaultingLayer()
+    {
+        if (!isset($this->container['FaultingLayer']) || is_null($this->container['FaultingLayer'])) {
+            return null;
+        }
+        if ((is_object($this->container['FaultingLayer']) || is_string($this->container['FaultingLayer'])) && method_exists($this->container['FaultingLayer'], 'getValue')) {
+            return $this->container['FaultingLayer']->getValue();
+        }
+        return $this->container['FaultingLayer'];
+    }
+
+    /**
+     * Sets FaultingLayer
+     *
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\FaultSource|mixed|null $FaultingLayer FaultingLayer
+     *
+     * @return self
+     */
+    public function setFaultingLayer($FaultingLayer)
+    {
+        if (is_null($FaultingLayer)) {
+            throw new \InvalidArgumentException('non-nullable FaultingLayer cannot be null');
+        }
+        if (!is_null($FaultingLayer) && !$FaultingLayer instanceof \Microsoft\MsAds\Rest\Model\BulkService\FaultSource) {
+            $FaultingLayer = new \Microsoft\MsAds\Rest\Model\BulkService\FaultSource($FaultingLayer);
+        }
+        $this->container['FaultingLayer'] = $FaultingLayer;
+
+        return $this;
+    }
+
+    /**
+     * Gets MTServerName
+     *
+     * @return string|null
+     */
+    public function getMTServerName()
+    {
+        if (!isset($this->container['MTServerName']) || is_null($this->container['MTServerName'])) {
+            return null;
+        }
+        return $this->container['MTServerName'];
+    }
+
+    /**
+     * Sets MTServerName
+     *
+     * @param string|null $MTServerName MTServerName
+     *
+     * @return self
+     */
+    public function setMTServerName($MTServerName)
+    {
+        if (is_null($MTServerName)) {
+            array_push($this->openAPINullablesSetToNull, 'MTServerName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MTServerName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MTServerName'] = $MTServerName;
 
         return $this;
     }

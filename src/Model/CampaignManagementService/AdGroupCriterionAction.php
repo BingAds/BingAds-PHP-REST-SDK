@@ -300,7 +300,7 @@ class AdGroupCriterionAction implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($Action)) {
             throw new \InvalidArgumentException('non-nullable Action cannot be null');
         }
-        if (!$Action instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ItemAction) {
+        if (!is_null($Action) && !$Action instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ItemAction) {
             $Action = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ItemAction($Action);
         }
         $this->container['Action'] = $Action;

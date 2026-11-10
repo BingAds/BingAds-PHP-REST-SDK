@@ -300,7 +300,7 @@ class DeviceCondition implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($DeviceTypes)) {
             throw new \InvalidArgumentException('non-nullable DeviceTypes cannot be null');
         }
-        if (!$DeviceTypes instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType) {
+        if (!is_null($DeviceTypes) && !$DeviceTypes instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType) {
             $DeviceTypes = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType($DeviceTypes);
         }
         $this->container['DeviceTypes'] = $DeviceTypes;

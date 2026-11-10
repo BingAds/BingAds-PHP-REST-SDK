@@ -33,13 +33,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'StreetAddress' => 'string',
-        'StreetAddress2' => 'string',
         'CityName' => 'string',
+        'CountryCode' => 'string',
+        'PostalCode' => 'string',
         'ProvinceCode' => 'string',
         'ProvinceName' => 'string',
-        'PostalCode' => 'string',
-        'CountryCode' => 'string'
+        'StreetAddress' => 'string',
+        'StreetAddress2' => 'string'
     ];
 
     /**
@@ -50,13 +50,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'StreetAddress' => null,
-        'StreetAddress2' => null,
         'CityName' => null,
+        'CountryCode' => null,
+        'PostalCode' => null,
         'ProvinceCode' => null,
         'ProvinceName' => null,
-        'PostalCode' => null,
-        'CountryCode' => null
+        'StreetAddress' => null,
+        'StreetAddress2' => null
     ];
 
     /**
@@ -65,13 +65,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'StreetAddress' => true,
-        'StreetAddress2' => true,
         'CityName' => true,
+        'CountryCode' => true,
+        'PostalCode' => true,
         'ProvinceCode' => true,
         'ProvinceName' => true,
-        'PostalCode' => true,
-        'CountryCode' => true
+        'StreetAddress' => true,
+        'StreetAddress2' => true
     ];
 
     /**
@@ -160,13 +160,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'StreetAddress' => 'StreetAddress',
-        'StreetAddress2' => 'StreetAddress2',
         'CityName' => 'CityName',
+        'CountryCode' => 'CountryCode',
+        'PostalCode' => 'PostalCode',
         'ProvinceCode' => 'ProvinceCode',
         'ProvinceName' => 'ProvinceName',
-        'PostalCode' => 'PostalCode',
-        'CountryCode' => 'CountryCode'
+        'StreetAddress' => 'StreetAddress',
+        'StreetAddress2' => 'StreetAddress2'
     ];
 
     /**
@@ -175,13 +175,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'StreetAddress' => 'setStreetAddress',
-        'StreetAddress2' => 'setStreetAddress2',
         'CityName' => 'setCityName',
+        'CountryCode' => 'setCountryCode',
+        'PostalCode' => 'setPostalCode',
         'ProvinceCode' => 'setProvinceCode',
         'ProvinceName' => 'setProvinceName',
-        'PostalCode' => 'setPostalCode',
-        'CountryCode' => 'setCountryCode'
+        'StreetAddress' => 'setStreetAddress',
+        'StreetAddress2' => 'setStreetAddress2'
     ];
 
     /**
@@ -190,13 +190,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'StreetAddress' => 'getStreetAddress',
-        'StreetAddress2' => 'getStreetAddress2',
         'CityName' => 'getCityName',
+        'CountryCode' => 'getCountryCode',
+        'PostalCode' => 'getPostalCode',
         'ProvinceCode' => 'getProvinceCode',
         'ProvinceName' => 'getProvinceName',
-        'PostalCode' => 'getPostalCode',
-        'CountryCode' => 'getCountryCode'
+        'StreetAddress' => 'getStreetAddress',
+        'StreetAddress2' => 'getStreetAddress2'
     ];
 
     /**
@@ -256,13 +256,13 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('StreetAddress', $data ?? [], null);
-        $this->setIfExists('StreetAddress2', $data ?? [], null);
         $this->setIfExists('CityName', $data ?? [], null);
+        $this->setIfExists('CountryCode', $data ?? [], null);
+        $this->setIfExists('PostalCode', $data ?? [], null);
         $this->setIfExists('ProvinceCode', $data ?? [], null);
         $this->setIfExists('ProvinceName', $data ?? [], null);
-        $this->setIfExists('PostalCode', $data ?? [], null);
-        $this->setIfExists('CountryCode', $data ?? [], null);
+        $this->setIfExists('StreetAddress', $data ?? [], null);
+        $this->setIfExists('StreetAddress2', $data ?? [], null);
     }
 
     /**
@@ -308,80 +308,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets StreetAddress
-     *
-     * @return string|null
-     */
-    public function getStreetAddress()
-    {
-        if (!isset($this->container['StreetAddress']) || is_null($this->container['StreetAddress'])) {
-            return null;
-        }
-        return $this->container['StreetAddress'];
-    }
-
-    /**
-     * Sets StreetAddress
-     *
-     * @param string|null $StreetAddress StreetAddress
-     *
-     * @return self
-     */
-    public function setStreetAddress($StreetAddress)
-    {
-        if (is_null($StreetAddress)) {
-            array_push($this->openAPINullablesSetToNull, 'StreetAddress');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StreetAddress', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StreetAddress'] = $StreetAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets StreetAddress2
-     *
-     * @return string|null
-     */
-    public function getStreetAddress2()
-    {
-        if (!isset($this->container['StreetAddress2']) || is_null($this->container['StreetAddress2'])) {
-            return null;
-        }
-        return $this->container['StreetAddress2'];
-    }
-
-    /**
-     * Sets StreetAddress2
-     *
-     * @param string|null $StreetAddress2 StreetAddress2
-     *
-     * @return self
-     */
-    public function setStreetAddress2($StreetAddress2)
-    {
-        if (is_null($StreetAddress2)) {
-            array_push($this->openAPINullablesSetToNull, 'StreetAddress2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StreetAddress2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StreetAddress2'] = $StreetAddress2;
-
-        return $this;
-    }
-
-    /**
      * Gets CityName
      *
      * @return string|null
@@ -414,6 +340,80 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['CityName'] = $CityName;
+
+        return $this;
+    }
+
+    /**
+     * Gets CountryCode
+     *
+     * @return string|null
+     */
+    public function getCountryCode()
+    {
+        if (!isset($this->container['CountryCode']) || is_null($this->container['CountryCode'])) {
+            return null;
+        }
+        return $this->container['CountryCode'];
+    }
+
+    /**
+     * Sets CountryCode
+     *
+     * @param string|null $CountryCode CountryCode
+     *
+     * @return self
+     */
+    public function setCountryCode($CountryCode)
+    {
+        if (is_null($CountryCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CountryCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CountryCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CountryCode'] = $CountryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets PostalCode
+     *
+     * @return string|null
+     */
+    public function getPostalCode()
+    {
+        if (!isset($this->container['PostalCode']) || is_null($this->container['PostalCode'])) {
+            return null;
+        }
+        return $this->container['PostalCode'];
+    }
+
+    /**
+     * Sets PostalCode
+     *
+     * @param string|null $PostalCode PostalCode
+     *
+     * @return self
+     */
+    public function setPostalCode($PostalCode)
+    {
+        if (is_null($PostalCode)) {
+            array_push($this->openAPINullablesSetToNull, 'PostalCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PostalCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PostalCode'] = $PostalCode;
 
         return $this;
     }
@@ -493,75 +493,75 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets PostalCode
+     * Gets StreetAddress
      *
      * @return string|null
      */
-    public function getPostalCode()
+    public function getStreetAddress()
     {
-        if (!isset($this->container['PostalCode']) || is_null($this->container['PostalCode'])) {
+        if (!isset($this->container['StreetAddress']) || is_null($this->container['StreetAddress'])) {
             return null;
         }
-        return $this->container['PostalCode'];
+        return $this->container['StreetAddress'];
     }
 
     /**
-     * Sets PostalCode
+     * Sets StreetAddress
      *
-     * @param string|null $PostalCode PostalCode
+     * @param string|null $StreetAddress StreetAddress
      *
      * @return self
      */
-    public function setPostalCode($PostalCode)
+    public function setStreetAddress($StreetAddress)
     {
-        if (is_null($PostalCode)) {
-            array_push($this->openAPINullablesSetToNull, 'PostalCode');
+        if (is_null($StreetAddress)) {
+            array_push($this->openAPINullablesSetToNull, 'StreetAddress');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PostalCode', $nullablesSetToNull);
+            $index = array_search('StreetAddress', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PostalCode'] = $PostalCode;
+        $this->container['StreetAddress'] = $StreetAddress;
 
         return $this;
     }
 
     /**
-     * Gets CountryCode
+     * Gets StreetAddress2
      *
      * @return string|null
      */
-    public function getCountryCode()
+    public function getStreetAddress2()
     {
-        if (!isset($this->container['CountryCode']) || is_null($this->container['CountryCode'])) {
+        if (!isset($this->container['StreetAddress2']) || is_null($this->container['StreetAddress2'])) {
             return null;
         }
-        return $this->container['CountryCode'];
+        return $this->container['StreetAddress2'];
     }
 
     /**
-     * Sets CountryCode
+     * Sets StreetAddress2
      *
-     * @param string|null $CountryCode CountryCode
+     * @param string|null $StreetAddress2 StreetAddress2
      *
      * @return self
      */
-    public function setCountryCode($CountryCode)
+    public function setStreetAddress2($StreetAddress2)
     {
-        if (is_null($CountryCode)) {
-            array_push($this->openAPINullablesSetToNull, 'CountryCode');
+        if (is_null($StreetAddress2)) {
+            array_push($this->openAPINullablesSetToNull, 'StreetAddress2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CountryCode', $nullablesSetToNull);
+            $index = array_search('StreetAddress2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CountryCode'] = $CountryCode;
+        $this->container['StreetAddress2'] = $StreetAddress2;
 
         return $this;
     }

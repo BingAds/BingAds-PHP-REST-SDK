@@ -300,7 +300,7 @@ class OrderBy implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Field)) {
             throw new \InvalidArgumentException('non-nullable Field cannot be null');
         }
-        if (!$Field instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\OrderByField) {
+        if (!is_null($Field) && !$Field instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\OrderByField) {
             $Field = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\OrderByField($Field);
         }
         $this->container['Field'] = $Field;
@@ -336,7 +336,7 @@ class OrderBy implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Order)) {
             throw new \InvalidArgumentException('non-nullable Order cannot be null');
         }
-        if (!$Order instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\SortOrder) {
+        if (!is_null($Order) && !$Order instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\SortOrder) {
             $Order = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\SortOrder($Order);
         }
         $this->container['Order'] = $Order;

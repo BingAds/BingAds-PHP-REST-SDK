@@ -58,8 +58,8 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'DisplayUrlMode' => false,
-        'WebsiteDescription' => false
+        'DisplayUrlMode' => true,
+        'WebsiteDescription' => true
     ];
 
     /**
@@ -235,6 +235,11 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DisplayUrlMode', $data ?? [], null);
         $this->setIfExists('WebsiteDescription', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -342,9 +347,16 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
     public function setDisplayUrlMode($DisplayUrlMode)
     {
         if (is_null($DisplayUrlMode)) {
-            throw new \InvalidArgumentException('non-nullable DisplayUrlMode cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'DisplayUrlMode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DisplayUrlMode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$DisplayUrlMode instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaDisplayUrlMode) {
+        if (!is_null($DisplayUrlMode) && !$DisplayUrlMode instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaDisplayUrlMode) {
             $DisplayUrlMode = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaDisplayUrlMode($DisplayUrlMode);
         }
         $this->container['DisplayUrlMode'] = $DisplayUrlMode;
@@ -378,9 +390,16 @@ class VanityPharmaSetting extends Setting implements ModelInterface, ArrayAccess
     public function setWebsiteDescription($WebsiteDescription)
     {
         if (is_null($WebsiteDescription)) {
-            throw new \InvalidArgumentException('non-nullable WebsiteDescription cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'WebsiteDescription');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('WebsiteDescription', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$WebsiteDescription instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaWebsiteDescription) {
+        if (!is_null($WebsiteDescription) && !$WebsiteDescription instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaWebsiteDescription) {
             $WebsiteDescription = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\VanityPharmaWebsiteDescription($WebsiteDescription);
         }
         $this->container['WebsiteDescription'] = $WebsiteDescription;

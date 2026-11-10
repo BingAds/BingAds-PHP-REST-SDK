@@ -33,24 +33,24 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
-        'FlyerName' => 'string',
-        'StoreId' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Description' => 'string',
+        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'FlyerName' => 'string',
         'ImageMediaIds' => 'string[]',
         'ImageMediaUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
-        'FinalUrls' => 'string[]',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
+        'StoreId' => 'string',
         'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters'
     ];
 
     /**
@@ -61,24 +61,24 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
-        'FlyerName' => null,
-        'StoreId' => 'int64',
+        'ForwardCompatibilityMap' => null,
         'Description' => null,
+        'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'FlyerName' => null,
         'ImageMediaIds' => 'int64',
         'ImageMediaUrls' => null,
-        'FinalMobileUrls' => null,
-        'FinalUrls' => null,
-        'UrlCustomParameters' => null,
+        'StoreId' => 'int64',
         'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'UrlCustomParameters' => null
     ];
 
     /**
@@ -87,24 +87,24 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
-        'FlyerName' => true,
-        'StoreId' => true,
+        'ForwardCompatibilityMap' => true,
         'Description' => true,
+        'FinalAppUrls' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'FlyerName' => true,
         'ImageMediaIds' => true,
         'ImageMediaUrls' => true,
-        'FinalMobileUrls' => true,
-        'FinalUrls' => true,
-        'UrlCustomParameters' => true,
+        'StoreId' => true,
         'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'UrlCustomParameters' => true
     ];
 
     /**
@@ -193,24 +193,24 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
-        'FlyerName' => 'FlyerName',
-        'StoreId' => 'StoreId',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Description' => 'Description',
+        'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'FlyerName' => 'FlyerName',
         'ImageMediaIds' => 'ImageMediaIds',
         'ImageMediaUrls' => 'ImageMediaUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalUrls' => 'FinalUrls',
-        'UrlCustomParameters' => 'UrlCustomParameters',
+        'StoreId' => 'StoreId',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'UrlCustomParameters' => 'UrlCustomParameters'
     ];
 
     /**
@@ -219,24 +219,24 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
-        'FlyerName' => 'setFlyerName',
-        'StoreId' => 'setStoreId',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Description' => 'setDescription',
+        'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'FlyerName' => 'setFlyerName',
         'ImageMediaIds' => 'setImageMediaIds',
         'ImageMediaUrls' => 'setImageMediaUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalUrls' => 'setFinalUrls',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
+        'StoreId' => 'setStoreId',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'UrlCustomParameters' => 'setUrlCustomParameters'
     ];
 
     /**
@@ -245,24 +245,24 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
-        'FlyerName' => 'getFlyerName',
-        'StoreId' => 'getStoreId',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Description' => 'getDescription',
+        'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'FlyerName' => 'getFlyerName',
         'ImageMediaIds' => 'getImageMediaIds',
         'ImageMediaUrls' => 'getImageMediaUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalUrls' => 'getFinalUrls',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
+        'StoreId' => 'getStoreId',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'UrlCustomParameters' => 'getUrlCustomParameters'
     ];
 
     /**
@@ -322,24 +322,29 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('FlyerName', $data ?? [], null);
-        $this->setIfExists('StoreId', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('FlyerName', $data ?? [], null);
         $this->setIfExists('ImageMediaIds', $data ?? [], null);
         $this->setIfExists('ImageMediaUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+        $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('FinalAppUrls', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -383,79 +388,6 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -527,6 +459,86 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -606,75 +618,38 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets FlyerName
+     * Gets ForwardCompatibilityMap
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
      */
-    public function getFlyerName()
+    public function getForwardCompatibilityMap()
     {
-        if (!isset($this->container['FlyerName']) || is_null($this->container['FlyerName'])) {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
             return null;
         }
-        return $this->container['FlyerName'];
+        return $this->container['ForwardCompatibilityMap'];
     }
 
     /**
-     * Sets FlyerName
+     * Sets ForwardCompatibilityMap
      *
-     * @param string|null $FlyerName FlyerName
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
      *
      * @return self
      */
-    public function setFlyerName($FlyerName)
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
     {
-        if (is_null($FlyerName)) {
-            array_push($this->openAPINullablesSetToNull, 'FlyerName');
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FlyerName', $nullablesSetToNull);
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FlyerName'] = $FlyerName;
-
-        return $this;
-    }
-
-    /**
-     * Gets StoreId
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
-            return null;
-        }
-        return $this->container['StoreId'];
-    }
-
-    /**
-     * Sets StoreId
-     *
-     * @param string|null $StoreId StoreId
-     *
-     * @return self
-     */
-    public function setStoreId($StoreId)
-    {
-        if (is_null($StoreId)) {
-            array_push($this->openAPINullablesSetToNull, 'StoreId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StoreId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StoreId'] = $StoreId;
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -712,6 +687,191 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
             }
         }
         $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalAppUrls
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
+     */
+    public function getFinalAppUrls()
+    {
+        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
+            return null;
+        }
+        return $this->container['FinalAppUrls'];
+    }
+
+    /**
+     * Sets FinalAppUrls
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
+     *
+     * @return self
+     */
+    public function setFinalAppUrls($FinalAppUrls)
+    {
+        if (is_null($FinalAppUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalAppUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalAppUrls'] = $FinalAppUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalMobileUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalMobileUrls()
+    {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+            return null;
+        }
+        return $this->container['FinalMobileUrls'];
+    }
+
+    /**
+     * Sets FinalMobileUrls
+     *
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     *
+     * @return self
+     */
+    public function setFinalMobileUrls($FinalMobileUrls)
+    {
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FlyerName
+     *
+     * @return string|null
+     */
+    public function getFlyerName()
+    {
+        if (!isset($this->container['FlyerName']) || is_null($this->container['FlyerName'])) {
+            return null;
+        }
+        return $this->container['FlyerName'];
+    }
+
+    /**
+     * Sets FlyerName
+     *
+     * @param string|null $FlyerName FlyerName
+     *
+     * @return self
+     */
+    public function setFlyerName($FlyerName)
+    {
+        if (is_null($FlyerName)) {
+            array_push($this->openAPINullablesSetToNull, 'FlyerName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FlyerName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FlyerName'] = $FlyerName;
 
         return $this;
     }
@@ -791,112 +951,38 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets FinalMobileUrls
+     * Gets StoreId
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getFinalMobileUrls()
+    public function getStoreId()
     {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
             return null;
         }
-        return $this->container['FinalMobileUrls'];
+        return $this->container['StoreId'];
     }
 
     /**
-     * Sets FinalMobileUrls
+     * Sets StoreId
      *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     * @param string|null $StoreId StoreId
      *
      * @return self
      */
-    public function setFinalMobileUrls($FinalMobileUrls)
+    public function setStoreId($StoreId)
     {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        if (is_null($StoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'StoreId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            $index = array_search('StoreId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlCustomParameters
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
-     */
-    public function getUrlCustomParameters()
-    {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
-            return null;
-        }
-        return $this->container['UrlCustomParameters'];
-    }
-
-    /**
-     * Sets UrlCustomParameters
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
-     *
-     * @return self
-     */
-    public function setUrlCustomParameters($UrlCustomParameters)
-    {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
+        $this->container['StoreId'] = $StoreId;
 
         return $this;
     }
@@ -939,112 +1025,38 @@ class FlyerAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets FinalUrlSuffix
+     * Gets UrlCustomParameters
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
      */
-    public function getFinalUrlSuffix()
+    public function getUrlCustomParameters()
     {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
             return null;
         }
-        return $this->container['FinalUrlSuffix'];
+        return $this->container['UrlCustomParameters'];
     }
 
     /**
-     * Sets FinalUrlSuffix
+     * Sets UrlCustomParameters
      *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
      *
      * @return self
      */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
+    public function setUrlCustomParameters($UrlCustomParameters)
     {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalAppUrls
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
-     */
-    public function getFinalAppUrls()
-    {
-        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
-            return null;
-        }
-        return $this->container['FinalAppUrls'];
-    }
-
-    /**
-     * Sets FinalAppUrls
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
-     *
-     * @return self
-     */
-    public function setFinalAppUrls($FinalAppUrls)
-    {
-        if (is_null($FinalAppUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalAppUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalAppUrls'] = $FinalAppUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }

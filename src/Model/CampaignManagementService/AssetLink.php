@@ -34,9 +34,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Asset' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Asset',
-        'PinnedField' => 'string',
         'AssetPerformanceLabel' => 'string',
-        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLinkEditorialStatus'
+        'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLinkEditorialStatus',
+        'PinnedField' => 'string'
     ];
 
     /**
@@ -48,9 +48,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Asset' => null,
-        'PinnedField' => null,
         'AssetPerformanceLabel' => null,
-        'EditorialStatus' => null
+        'EditorialStatus' => null,
+        'PinnedField' => null
     ];
 
     /**
@@ -60,9 +60,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Asset' => true,
-        'PinnedField' => true,
         'AssetPerformanceLabel' => true,
-        'EditorialStatus' => false
+        'EditorialStatus' => true,
+        'PinnedField' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Asset' => 'Asset',
-        'PinnedField' => 'PinnedField',
         'AssetPerformanceLabel' => 'AssetPerformanceLabel',
-        'EditorialStatus' => 'EditorialStatus'
+        'EditorialStatus' => 'EditorialStatus',
+        'PinnedField' => 'PinnedField'
     ];
 
     /**
@@ -164,9 +164,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Asset' => 'setAsset',
-        'PinnedField' => 'setPinnedField',
         'AssetPerformanceLabel' => 'setAssetPerformanceLabel',
-        'EditorialStatus' => 'setEditorialStatus'
+        'EditorialStatus' => 'setEditorialStatus',
+        'PinnedField' => 'setPinnedField'
     ];
 
     /**
@@ -176,9 +176,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Asset' => 'getAsset',
-        'PinnedField' => 'getPinnedField',
         'AssetPerformanceLabel' => 'getAssetPerformanceLabel',
-        'EditorialStatus' => 'getEditorialStatus'
+        'EditorialStatus' => 'getEditorialStatus',
+        'PinnedField' => 'getPinnedField'
     ];
 
     /**
@@ -239,9 +239,9 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Asset', $data ?? [], null);
-        $this->setIfExists('PinnedField', $data ?? [], null);
         $this->setIfExists('AssetPerformanceLabel', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
+        $this->setIfExists('PinnedField', $data ?? [], null);
     }
 
     /**
@@ -324,43 +324,6 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets PinnedField
-     *
-     * @return string|null
-     */
-    public function getPinnedField()
-    {
-        if (!isset($this->container['PinnedField']) || is_null($this->container['PinnedField'])) {
-            return null;
-        }
-        return $this->container['PinnedField'];
-    }
-
-    /**
-     * Sets PinnedField
-     *
-     * @param string|null $PinnedField PinnedField
-     *
-     * @return self
-     */
-    public function setPinnedField($PinnedField)
-    {
-        if (is_null($PinnedField)) {
-            array_push($this->openAPINullablesSetToNull, 'PinnedField');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PinnedField', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PinnedField'] = $PinnedField;
-
-        return $this;
-    }
-
-    /**
      * Gets AssetPerformanceLabel
      *
      * @return string|null
@@ -423,12 +386,56 @@ class AssetLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEditorialStatus($EditorialStatus)
     {
         if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLinkEditorialStatus) {
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLinkEditorialStatus) {
             $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLinkEditorialStatus($EditorialStatus);
         }
         $this->container['EditorialStatus'] = $EditorialStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets PinnedField
+     *
+     * @return string|null
+     */
+    public function getPinnedField()
+    {
+        if (!isset($this->container['PinnedField']) || is_null($this->container['PinnedField'])) {
+            return null;
+        }
+        return $this->container['PinnedField'];
+    }
+
+    /**
+     * Sets PinnedField
+     *
+     * @param string|null $PinnedField PinnedField
+     *
+     * @return self
+     */
+    public function setPinnedField($PinnedField)
+    {
+        if (is_null($PinnedField)) {
+            array_push($this->openAPINullablesSetToNull, 'PinnedField');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PinnedField', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PinnedField'] = $PinnedField;
 
         return $this;
     }

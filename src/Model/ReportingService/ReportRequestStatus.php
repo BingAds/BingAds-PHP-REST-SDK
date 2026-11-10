@@ -33,8 +33,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType',
-        'ReportDownloadUrl' => 'string'
+        'ReportDownloadUrl' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'ReportDownloadUrl' => null
+        'ReportDownloadUrl' => null,
+        'Status' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'ReportDownloadUrl' => true
+        'ReportDownloadUrl' => true,
+        'Status' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'ReportDownloadUrl' => 'ReportDownloadUrl'
+        'ReportDownloadUrl' => 'ReportDownloadUrl',
+        'Status' => 'Status'
     ];
 
     /**
@@ -155,8 +155,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'ReportDownloadUrl' => 'setReportDownloadUrl'
+        'ReportDownloadUrl' => 'setReportDownloadUrl',
+        'Status' => 'setStatus'
     ];
 
     /**
@@ -165,8 +165,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'ReportDownloadUrl' => 'getReportDownloadUrl'
+        'ReportDownloadUrl' => 'getReportDownloadUrl',
+        'Status' => 'getStatus'
     ];
 
     /**
@@ -226,8 +226,8 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('ReportDownloadUrl', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType) {
-            $Status = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets ReportDownloadUrl
      *
      * @return string|null
@@ -341,6 +305,42 @@ class ReportRequestStatus implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['ReportDownloadUrl'] = $ReportDownloadUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            throw new \InvalidArgumentException('non-nullable Status cannot be null');
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType) {
+            $Status = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportRequestStatusType($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

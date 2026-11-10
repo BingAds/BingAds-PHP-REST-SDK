@@ -381,7 +381,7 @@ class MigrationStatusInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         if (is_null($Status)) {
             throw new \InvalidArgumentException('non-nullable Status cannot be null');
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MigrationStatus) {
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MigrationStatus) {
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MigrationStatus($Status);
         }
         $this->container['Status'] = $Status;

@@ -356,7 +356,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
             $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
         }
         $this->container['Type'] = $Type;
@@ -429,7 +429,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
         if (is_null($UrlCategory)) {
             throw new \InvalidArgumentException('non-nullable UrlCategory cannot be null');
         }
-        if (!$UrlCategory instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory) {
+        if (!is_null($UrlCategory) && !$UrlCategory instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory) {
             $UrlCategory = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlCategory($UrlCategory);
         }
         $this->container['UrlCategory'] = $UrlCategory;
@@ -465,7 +465,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
         if (is_null($UrlId)) {
             throw new \InvalidArgumentException('non-nullable UrlId cannot be null');
         }
-        if (!$UrlId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId) {
+        if (!is_null($UrlId) && !$UrlId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId) {
             $UrlId = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsUrlId($UrlId);
         }
         $this->container['UrlId'] = $UrlId;
@@ -538,7 +538,7 @@ class PerformanceInsightsMessageParameter implements ModelInterface, ArrayAccess
         if (is_null($EntityType)) {
             throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType) {
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType) {
             $EntityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType($EntityType);
         }
         $this->container['EntityType'] = $EntityType;

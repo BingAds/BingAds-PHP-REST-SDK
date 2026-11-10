@@ -228,6 +228,11 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('GenderTypes', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -300,7 +305,7 @@ class GenderDimension extends AudienceGroupDimension implements ModelInterface, 
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
             $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType($Type);
         }
         $this->container['Type'] = $Type;

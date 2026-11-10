@@ -33,10 +33,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'HealthCheckActionLinksMetadata' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]',
         'Key' => 'string',
         'Title' => 'string',
-        'Type' => 'string',
-        'HealthCheckActionLinksMetadata' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]'
+        'Type' => 'string'
     ];
 
     /**
@@ -47,10 +47,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'HealthCheckActionLinksMetadata' => null,
         'Key' => null,
         'Title' => null,
-        'Type' => null,
-        'HealthCheckActionLinksMetadata' => null
+        'Type' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'HealthCheckActionLinksMetadata' => true,
         'Key' => true,
         'Title' => true,
-        'Type' => true,
-        'HealthCheckActionLinksMetadata' => true
+        'Type' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $attributeMap = [
+        'HealthCheckActionLinksMetadata' => 'HealthCheckActionLinksMetadata',
         'Key' => 'Key',
         'Title' => 'Title',
-        'Type' => 'Type',
-        'HealthCheckActionLinksMetadata' => 'HealthCheckActionLinksMetadata'
+        'Type' => 'Type'
     ];
 
     /**
@@ -163,10 +163,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $setters = [
+        'HealthCheckActionLinksMetadata' => 'setHealthCheckActionLinksMetadata',
         'Key' => 'setKey',
         'Title' => 'setTitle',
-        'Type' => 'setType',
-        'HealthCheckActionLinksMetadata' => 'setHealthCheckActionLinksMetadata'
+        'Type' => 'setType'
     ];
 
     /**
@@ -175,10 +175,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $getters = [
+        'HealthCheckActionLinksMetadata' => 'getHealthCheckActionLinksMetadata',
         'Key' => 'getKey',
         'Title' => 'getTitle',
-        'Type' => 'getType',
-        'HealthCheckActionLinksMetadata' => 'getHealthCheckActionLinksMetadata'
+        'Type' => 'getType'
     ];
 
     /**
@@ -238,10 +238,10 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('HealthCheckActionLinksMetadata', $data ?? [], null);
         $this->setIfExists('Key', $data ?? [], null);
         $this->setIfExists('Title', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('HealthCheckActionLinksMetadata', $data ?? [], null);
     }
 
     /**
@@ -285,6 +285,43 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets HealthCheckActionLinksMetadata
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]|null
+     */
+    public function getHealthCheckActionLinksMetadata()
+    {
+        if (!isset($this->container['HealthCheckActionLinksMetadata']) || is_null($this->container['HealthCheckActionLinksMetadata'])) {
+            return null;
+        }
+        return $this->container['HealthCheckActionLinksMetadata'];
+    }
+
+    /**
+     * Sets HealthCheckActionLinksMetadata
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]|null $HealthCheckActionLinksMetadata HealthCheckActionLinksMetadata
+     *
+     * @return self
+     */
+    public function setHealthCheckActionLinksMetadata($HealthCheckActionLinksMetadata)
+    {
+        if (is_null($HealthCheckActionLinksMetadata)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckActionLinksMetadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckActionLinksMetadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckActionLinksMetadata'] = $HealthCheckActionLinksMetadata;
+
+        return $this;
+    }
 
     /**
      * Gets Key
@@ -393,43 +430,6 @@ class HealthCheckColumnMetadata implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
         $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets HealthCheckActionLinksMetadata
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]|null
-     */
-    public function getHealthCheckActionLinksMetadata()
-    {
-        if (!isset($this->container['HealthCheckActionLinksMetadata']) || is_null($this->container['HealthCheckActionLinksMetadata'])) {
-            return null;
-        }
-        return $this->container['HealthCheckActionLinksMetadata'];
-    }
-
-    /**
-     * Sets HealthCheckActionLinksMetadata
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckActionLinkMetadata[]|null $HealthCheckActionLinksMetadata HealthCheckActionLinksMetadata
-     *
-     * @return self
-     */
-    public function setHealthCheckActionLinksMetadata($HealthCheckActionLinksMetadata)
-    {
-        if (is_null($HealthCheckActionLinksMetadata)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckActionLinksMetadata');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckActionLinksMetadata', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckActionLinksMetadata'] = $HealthCheckActionLinksMetadata;
 
         return $this;
     }

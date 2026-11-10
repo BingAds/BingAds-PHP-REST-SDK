@@ -34,9 +34,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Id' => 'string',
+        'LinkedInCompany' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInCompanyData',
         'Name' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyNameStatus',
-        'LinkedInCompany' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInCompanyData'
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyNameStatus'
     ];
 
     /**
@@ -48,9 +48,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Id' => 'int64',
+        'LinkedInCompany' => null,
         'Name' => null,
-        'Status' => null,
-        'LinkedInCompany' => null
+        'Status' => null
     ];
 
     /**
@@ -60,9 +60,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Id' => true,
+        'LinkedInCompany' => true,
         'Name' => true,
-        'Status' => false,
-        'LinkedInCompany' => true
+        'Status' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Id' => 'Id',
+        'LinkedInCompany' => 'LinkedInCompany',
         'Name' => 'Name',
-        'Status' => 'Status',
-        'LinkedInCompany' => 'LinkedInCompany'
+        'Status' => 'Status'
     ];
 
     /**
@@ -164,9 +164,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Id' => 'setId',
+        'LinkedInCompany' => 'setLinkedInCompany',
         'Name' => 'setName',
-        'Status' => 'setStatus',
-        'LinkedInCompany' => 'setLinkedInCompany'
+        'Status' => 'setStatus'
     ];
 
     /**
@@ -176,9 +176,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Id' => 'getId',
+        'LinkedInCompany' => 'getLinkedInCompany',
         'Name' => 'getName',
-        'Status' => 'getStatus',
-        'LinkedInCompany' => 'getLinkedInCompany'
+        'Status' => 'getStatus'
     ];
 
     /**
@@ -239,9 +239,9 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('LinkedInCompany', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('LinkedInCompany', $data ?? [], null);
     }
 
     /**
@@ -324,6 +324,43 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets LinkedInCompany
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInCompanyData|null
+     */
+    public function getLinkedInCompany()
+    {
+        if (!isset($this->container['LinkedInCompany']) || is_null($this->container['LinkedInCompany'])) {
+            return null;
+        }
+        return $this->container['LinkedInCompany'];
+    }
+
+    /**
+     * Sets LinkedInCompany
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInCompanyData|null $LinkedInCompany LinkedInCompany
+     *
+     * @return self
+     */
+    public function setLinkedInCompany($LinkedInCompany)
+    {
+        if (is_null($LinkedInCompany)) {
+            array_push($this->openAPINullablesSetToNull, 'LinkedInCompany');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LinkedInCompany', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LinkedInCompany'] = $LinkedInCompany;
+
+        return $this;
+    }
+
+    /**
      * Gets Name
      *
      * @return string|null
@@ -386,49 +423,19 @@ class CompanyName implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatus($Status)
     {
         if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyNameStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyNameStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets LinkedInCompany
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInCompanyData|null
-     */
-    public function getLinkedInCompany()
-    {
-        if (!isset($this->container['LinkedInCompany']) || is_null($this->container['LinkedInCompany'])) {
-            return null;
-        }
-        return $this->container['LinkedInCompany'];
-    }
-
-    /**
-     * Sets LinkedInCompany
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInCompanyData|null $LinkedInCompany LinkedInCompany
-     *
-     * @return self
-     */
-    public function setLinkedInCompany($LinkedInCompany)
-    {
-        if (is_null($LinkedInCompany)) {
-            array_push($this->openAPINullablesSetToNull, 'LinkedInCompany');
+            array_push($this->openAPINullablesSetToNull, 'Status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LinkedInCompany', $nullablesSetToNull);
+            $index = array_search('Status', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['LinkedInCompany'] = $LinkedInCompany;
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyNameStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompanyNameStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

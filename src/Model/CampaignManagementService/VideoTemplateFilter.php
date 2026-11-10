@@ -33,12 +33,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Themes' => 'string[]',
         'AspectRatios' => 'string[]',
-        'TemplateIds' => 'string[]',
         'Durations' => 'int[]',
         'MaxMediaAssetCount' => 'int',
-        'MaxTextAssetCount' => 'int'
+        'MaxTextAssetCount' => 'int',
+        'TemplateIds' => 'string[]',
+        'Themes' => 'string[]'
     ];
 
     /**
@@ -49,12 +49,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Themes' => null,
         'AspectRatios' => null,
-        'TemplateIds' => null,
         'Durations' => 'int32',
         'MaxMediaAssetCount' => 'int32',
-        'MaxTextAssetCount' => 'int32'
+        'MaxTextAssetCount' => 'int32',
+        'TemplateIds' => null,
+        'Themes' => null
     ];
 
     /**
@@ -63,12 +63,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Themes' => true,
         'AspectRatios' => true,
-        'TemplateIds' => true,
         'Durations' => true,
         'MaxMediaAssetCount' => false,
-        'MaxTextAssetCount' => false
+        'MaxTextAssetCount' => false,
+        'TemplateIds' => true,
+        'Themes' => true
     ];
 
     /**
@@ -157,12 +157,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Themes' => 'Themes',
         'AspectRatios' => 'AspectRatios',
-        'TemplateIds' => 'TemplateIds',
         'Durations' => 'Durations',
         'MaxMediaAssetCount' => 'MaxMediaAssetCount',
-        'MaxTextAssetCount' => 'MaxTextAssetCount'
+        'MaxTextAssetCount' => 'MaxTextAssetCount',
+        'TemplateIds' => 'TemplateIds',
+        'Themes' => 'Themes'
     ];
 
     /**
@@ -171,12 +171,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'Themes' => 'setThemes',
         'AspectRatios' => 'setAspectRatios',
-        'TemplateIds' => 'setTemplateIds',
         'Durations' => 'setDurations',
         'MaxMediaAssetCount' => 'setMaxMediaAssetCount',
-        'MaxTextAssetCount' => 'setMaxTextAssetCount'
+        'MaxTextAssetCount' => 'setMaxTextAssetCount',
+        'TemplateIds' => 'setTemplateIds',
+        'Themes' => 'setThemes'
     ];
 
     /**
@@ -185,12 +185,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'Themes' => 'getThemes',
         'AspectRatios' => 'getAspectRatios',
-        'TemplateIds' => 'getTemplateIds',
         'Durations' => 'getDurations',
         'MaxMediaAssetCount' => 'getMaxMediaAssetCount',
-        'MaxTextAssetCount' => 'getMaxTextAssetCount'
+        'MaxTextAssetCount' => 'getMaxTextAssetCount',
+        'TemplateIds' => 'getTemplateIds',
+        'Themes' => 'getThemes'
     ];
 
     /**
@@ -250,12 +250,12 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Themes', $data ?? [], null);
         $this->setIfExists('AspectRatios', $data ?? [], null);
-        $this->setIfExists('TemplateIds', $data ?? [], null);
         $this->setIfExists('Durations', $data ?? [], null);
         $this->setIfExists('MaxMediaAssetCount', $data ?? [], null);
         $this->setIfExists('MaxTextAssetCount', $data ?? [], null);
+        $this->setIfExists('TemplateIds', $data ?? [], null);
+        $this->setIfExists('Themes', $data ?? [], null);
     }
 
     /**
@@ -301,43 +301,6 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets Themes
-     *
-     * @return string[]|null
-     */
-    public function getThemes()
-    {
-        if (!isset($this->container['Themes']) || is_null($this->container['Themes'])) {
-            return null;
-        }
-        return $this->container['Themes'];
-    }
-
-    /**
-     * Sets Themes
-     *
-     * @param string[]|null $Themes Themes
-     *
-     * @return self
-     */
-    public function setThemes($Themes)
-    {
-        if (is_null($Themes)) {
-            array_push($this->openAPINullablesSetToNull, 'Themes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Themes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Themes'] = $Themes;
-
-        return $this;
-    }
-
-    /**
      * Gets AspectRatios
      *
      * @return string[]|null
@@ -370,43 +333,6 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['AspectRatios'] = $AspectRatios;
-
-        return $this;
-    }
-
-    /**
-     * Gets TemplateIds
-     *
-     * @return string[]|null
-     */
-    public function getTemplateIds()
-    {
-        if (!isset($this->container['TemplateIds']) || is_null($this->container['TemplateIds'])) {
-            return null;
-        }
-        return $this->container['TemplateIds'];
-    }
-
-    /**
-     * Sets TemplateIds
-     *
-     * @param string[]|null $TemplateIds TemplateIds
-     *
-     * @return self
-     */
-    public function setTemplateIds($TemplateIds)
-    {
-        if (is_null($TemplateIds)) {
-            array_push($this->openAPINullablesSetToNull, 'TemplateIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TemplateIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TemplateIds'] = $TemplateIds;
 
         return $this;
     }
@@ -504,6 +430,80 @@ class VideoTemplateFilter implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable MaxTextAssetCount cannot be null');
         }
         $this->container['MaxTextAssetCount'] = $MaxTextAssetCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets TemplateIds
+     *
+     * @return string[]|null
+     */
+    public function getTemplateIds()
+    {
+        if (!isset($this->container['TemplateIds']) || is_null($this->container['TemplateIds'])) {
+            return null;
+        }
+        return $this->container['TemplateIds'];
+    }
+
+    /**
+     * Sets TemplateIds
+     *
+     * @param string[]|null $TemplateIds TemplateIds
+     *
+     * @return self
+     */
+    public function setTemplateIds($TemplateIds)
+    {
+        if (is_null($TemplateIds)) {
+            array_push($this->openAPINullablesSetToNull, 'TemplateIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TemplateIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TemplateIds'] = $TemplateIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets Themes
+     *
+     * @return string[]|null
+     */
+    public function getThemes()
+    {
+        if (!isset($this->container['Themes']) || is_null($this->container['Themes'])) {
+            return null;
+        }
+        return $this->container['Themes'];
+    }
+
+    /**
+     * Sets Themes
+     *
+     * @param string[]|null $Themes Themes
+     *
+     * @return self
+     */
+    public function setThemes($Themes)
+    {
+        if (is_null($Themes)) {
+            array_push($this->openAPINullablesSetToNull, 'Themes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Themes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Themes'] = $Themes;
 
         return $this;
     }

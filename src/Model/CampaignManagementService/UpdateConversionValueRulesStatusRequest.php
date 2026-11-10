@@ -337,7 +337,7 @@ class UpdateConversionValueRulesStatusRequest implements ModelInterface, ArrayAc
         if (is_null($Status)) {
             throw new \InvalidArgumentException('non-nullable Status cannot be null');
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus) {
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus) {
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionValueRuleStatus($Status);
         }
         $this->container['Status'] = $Status;

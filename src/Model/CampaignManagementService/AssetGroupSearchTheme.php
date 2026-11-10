@@ -381,7 +381,7 @@ class AssetGroupSearchTheme implements ModelInterface, ArrayAccess, \JsonSeriali
         if (is_null($Status)) {
             throw new \InvalidArgumentException('non-nullable Status cannot be null');
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus) {
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus) {
             $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus($Status);
         }
         $this->container['Status'] = $Status;

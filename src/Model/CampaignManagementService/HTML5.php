@@ -33,18 +33,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'Url' => 'string',
-        'Text' => 'string',
-        'DestinationUrl' => 'string',
-        'ThumbnailUrl' => 'string',
-        'Width' => 'int',
-        'Height' => 'int',
-        'Status' => 'string',
         'CreatedDateTimeInUTC' => '\DateTime',
-        'ModifiedDateTimeInUTC' => '\DateTime',
+        'DestinationUrl' => 'string',
         'FailureCode' => 'string',
-        'Id' => 'string'
+        'Height' => 'int',
+        'Id' => 'string',
+        'ModifiedDateTimeInUTC' => '\DateTime',
+        'Name' => 'string',
+        'Status' => 'string',
+        'Text' => 'string',
+        'ThumbnailUrl' => 'string',
+        'Url' => 'string',
+        'Width' => 'int'
     ];
 
     /**
@@ -55,18 +55,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'Url' => null,
-        'Text' => null,
-        'DestinationUrl' => null,
-        'ThumbnailUrl' => null,
-        'Width' => 'int32',
-        'Height' => 'int32',
-        'Status' => null,
         'CreatedDateTimeInUTC' => 'date-time',
-        'ModifiedDateTimeInUTC' => 'date-time',
+        'DestinationUrl' => null,
         'FailureCode' => null,
-        'Id' => 'int64'
+        'Height' => 'int32',
+        'Id' => 'int64',
+        'ModifiedDateTimeInUTC' => 'date-time',
+        'Name' => null,
+        'Status' => null,
+        'Text' => null,
+        'ThumbnailUrl' => null,
+        'Url' => null,
+        'Width' => 'int32'
     ];
 
     /**
@@ -75,18 +75,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'Url' => true,
-        'Text' => true,
-        'DestinationUrl' => true,
-        'ThumbnailUrl' => true,
-        'Width' => true,
-        'Height' => true,
-        'Status' => true,
         'CreatedDateTimeInUTC' => true,
-        'ModifiedDateTimeInUTC' => true,
+        'DestinationUrl' => true,
         'FailureCode' => true,
-        'Id' => true
+        'Height' => true,
+        'Id' => true,
+        'ModifiedDateTimeInUTC' => true,
+        'Name' => true,
+        'Status' => true,
+        'Text' => true,
+        'ThumbnailUrl' => true,
+        'Url' => true,
+        'Width' => true
     ];
 
     /**
@@ -175,18 +175,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'Url' => 'Url',
-        'Text' => 'Text',
-        'DestinationUrl' => 'DestinationUrl',
-        'ThumbnailUrl' => 'ThumbnailUrl',
-        'Width' => 'Width',
-        'Height' => 'Height',
-        'Status' => 'Status',
         'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
-        'ModifiedDateTimeInUTC' => 'ModifiedDateTimeInUTC',
+        'DestinationUrl' => 'DestinationUrl',
         'FailureCode' => 'FailureCode',
-        'Id' => 'Id'
+        'Height' => 'Height',
+        'Id' => 'Id',
+        'ModifiedDateTimeInUTC' => 'ModifiedDateTimeInUTC',
+        'Name' => 'Name',
+        'Status' => 'Status',
+        'Text' => 'Text',
+        'ThumbnailUrl' => 'ThumbnailUrl',
+        'Url' => 'Url',
+        'Width' => 'Width'
     ];
 
     /**
@@ -195,18 +195,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'Url' => 'setUrl',
-        'Text' => 'setText',
-        'DestinationUrl' => 'setDestinationUrl',
-        'ThumbnailUrl' => 'setThumbnailUrl',
-        'Width' => 'setWidth',
-        'Height' => 'setHeight',
-        'Status' => 'setStatus',
         'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
-        'ModifiedDateTimeInUTC' => 'setModifiedDateTimeInUTC',
+        'DestinationUrl' => 'setDestinationUrl',
         'FailureCode' => 'setFailureCode',
-        'Id' => 'setId'
+        'Height' => 'setHeight',
+        'Id' => 'setId',
+        'ModifiedDateTimeInUTC' => 'setModifiedDateTimeInUTC',
+        'Name' => 'setName',
+        'Status' => 'setStatus',
+        'Text' => 'setText',
+        'ThumbnailUrl' => 'setThumbnailUrl',
+        'Url' => 'setUrl',
+        'Width' => 'setWidth'
     ];
 
     /**
@@ -215,18 +215,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'Url' => 'getUrl',
-        'Text' => 'getText',
-        'DestinationUrl' => 'getDestinationUrl',
-        'ThumbnailUrl' => 'getThumbnailUrl',
-        'Width' => 'getWidth',
-        'Height' => 'getHeight',
-        'Status' => 'getStatus',
         'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
-        'ModifiedDateTimeInUTC' => 'getModifiedDateTimeInUTC',
+        'DestinationUrl' => 'getDestinationUrl',
         'FailureCode' => 'getFailureCode',
-        'Id' => 'getId'
+        'Height' => 'getHeight',
+        'Id' => 'getId',
+        'ModifiedDateTimeInUTC' => 'getModifiedDateTimeInUTC',
+        'Name' => 'getName',
+        'Status' => 'getStatus',
+        'Text' => 'getText',
+        'ThumbnailUrl' => 'getThumbnailUrl',
+        'Url' => 'getUrl',
+        'Width' => 'getWidth'
     ];
 
     /**
@@ -286,18 +286,18 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Url', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
-        $this->setIfExists('DestinationUrl', $data ?? [], null);
-        $this->setIfExists('ThumbnailUrl', $data ?? [], null);
-        $this->setIfExists('Width', $data ?? [], null);
-        $this->setIfExists('Height', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
-        $this->setIfExists('ModifiedDateTimeInUTC', $data ?? [], null);
+        $this->setIfExists('DestinationUrl', $data ?? [], null);
         $this->setIfExists('FailureCode', $data ?? [], null);
+        $this->setIfExists('Height', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('ModifiedDateTimeInUTC', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
+        $this->setIfExists('ThumbnailUrl', $data ?? [], null);
+        $this->setIfExists('Url', $data ?? [], null);
+        $this->setIfExists('Width', $data ?? [], null);
     }
 
     /**
@@ -343,112 +343,38 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Name
+     * Gets CreatedDateTimeInUTC
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getName()
+    public function getCreatedDateTimeInUTC()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['CreatedDateTimeInUTC']) || is_null($this->container['CreatedDateTimeInUTC'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['CreatedDateTimeInUTC'];
     }
 
     /**
-     * Sets Name
+     * Sets CreatedDateTimeInUTC
      *
-     * @param string|null $Name Name
+     * @param \DateTime|null $CreatedDateTimeInUTC CreatedDateTimeInUTC
      *
      * @return self
      */
-    public function setName($Name)
+    public function setCreatedDateTimeInUTC($CreatedDateTimeInUTC)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($CreatedDateTimeInUTC)) {
+            array_push($this->openAPINullablesSetToNull, 'CreatedDateTimeInUTC');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('CreatedDateTimeInUTC', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets Url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
-            return null;
-        }
-        return $this->container['Url'];
-    }
-
-    /**
-     * Sets Url
-     *
-     * @param string|null $Url Url
-     *
-     * @return self
-     */
-    public function setUrl($Url)
-    {
-        if (is_null($Url)) {
-            array_push($this->openAPINullablesSetToNull, 'Url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Url'] = $Url;
-
-        return $this;
-    }
-
-    /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
+        $this->container['CreatedDateTimeInUTC'] = $CreatedDateTimeInUTC;
 
         return $this;
     }
@@ -491,75 +417,38 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ThumbnailUrl
+     * Gets FailureCode
      *
      * @return string|null
      */
-    public function getThumbnailUrl()
+    public function getFailureCode()
     {
-        if (!isset($this->container['ThumbnailUrl']) || is_null($this->container['ThumbnailUrl'])) {
+        if (!isset($this->container['FailureCode']) || is_null($this->container['FailureCode'])) {
             return null;
         }
-        return $this->container['ThumbnailUrl'];
+        return $this->container['FailureCode'];
     }
 
     /**
-     * Sets ThumbnailUrl
+     * Sets FailureCode
      *
-     * @param string|null $ThumbnailUrl ThumbnailUrl
+     * @param string|null $FailureCode FailureCode
      *
      * @return self
      */
-    public function setThumbnailUrl($ThumbnailUrl)
+    public function setFailureCode($FailureCode)
     {
-        if (is_null($ThumbnailUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'ThumbnailUrl');
+        if (is_null($FailureCode)) {
+            array_push($this->openAPINullablesSetToNull, 'FailureCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ThumbnailUrl', $nullablesSetToNull);
+            $index = array_search('FailureCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ThumbnailUrl'] = $ThumbnailUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets Width
-     *
-     * @return int|null
-     */
-    public function getWidth()
-    {
-        if (!isset($this->container['Width']) || is_null($this->container['Width'])) {
-            return null;
-        }
-        return $this->container['Width'];
-    }
-
-    /**
-     * Sets Width
-     *
-     * @param int|null $Width Width
-     *
-     * @return self
-     */
-    public function setWidth($Width)
-    {
-        if (is_null($Width)) {
-            array_push($this->openAPINullablesSetToNull, 'Width');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Width', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Width'] = $Width;
+        $this->container['FailureCode'] = $FailureCode;
 
         return $this;
     }
@@ -602,75 +491,38 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Status
+     * Gets Id
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getId()
     {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
             return null;
         }
-        return $this->container['Status'];
+        return $this->container['Id'];
     }
 
     /**
-     * Sets Status
+     * Sets Id
      *
-     * @param string|null $Status Status
+     * @param string|null $Id Id
      *
      * @return self
      */
-    public function setStatus($Status)
+    public function setId($Id)
     {
-        if (is_null($Status)) {
-            array_push($this->openAPINullablesSetToNull, 'Status');
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Status', $nullablesSetToNull);
+            $index = array_search('Id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets CreatedDateTimeInUTC
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedDateTimeInUTC()
-    {
-        if (!isset($this->container['CreatedDateTimeInUTC']) || is_null($this->container['CreatedDateTimeInUTC'])) {
-            return null;
-        }
-        return $this->container['CreatedDateTimeInUTC'];
-    }
-
-    /**
-     * Sets CreatedDateTimeInUTC
-     *
-     * @param \DateTime|null $CreatedDateTimeInUTC CreatedDateTimeInUTC
-     *
-     * @return self
-     */
-    public function setCreatedDateTimeInUTC($CreatedDateTimeInUTC)
-    {
-        if (is_null($CreatedDateTimeInUTC)) {
-            array_push($this->openAPINullablesSetToNull, 'CreatedDateTimeInUTC');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CreatedDateTimeInUTC', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CreatedDateTimeInUTC'] = $CreatedDateTimeInUTC;
+        $this->container['Id'] = $Id;
 
         return $this;
     }
@@ -713,75 +565,223 @@ class HTML5 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets FailureCode
+     * Gets Name
      *
      * @return string|null
      */
-    public function getFailureCode()
+    public function getName()
     {
-        if (!isset($this->container['FailureCode']) || is_null($this->container['FailureCode'])) {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
             return null;
         }
-        return $this->container['FailureCode'];
+        return $this->container['Name'];
     }
 
     /**
-     * Sets FailureCode
+     * Sets Name
      *
-     * @param string|null $FailureCode FailureCode
+     * @param string|null $Name Name
      *
      * @return self
      */
-    public function setFailureCode($FailureCode)
+    public function setName($Name)
     {
-        if (is_null($FailureCode)) {
-            array_push($this->openAPINullablesSetToNull, 'FailureCode');
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FailureCode', $nullablesSetToNull);
+            $index = array_search('Name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FailureCode'] = $FailureCode;
+        $this->container['Name'] = $Name;
 
         return $this;
     }
 
     /**
-     * Gets Id
+     * Gets Status
      *
      * @return string|null
      */
-    public function getId()
+    public function getStatus()
     {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
             return null;
         }
-        return $this->container['Id'];
+        return $this->container['Status'];
     }
 
     /**
-     * Sets Id
+     * Sets Status
      *
-     * @param string|null $Id Id
+     * @param string|null $Status Status
      *
      * @return self
      */
-    public function setId($Id)
+    public function setStatus($Status)
     {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
+            $index = array_search('Status', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Id'] = $Id;
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
+
+        return $this;
+    }
+
+    /**
+     * Gets ThumbnailUrl
+     *
+     * @return string|null
+     */
+    public function getThumbnailUrl()
+    {
+        if (!isset($this->container['ThumbnailUrl']) || is_null($this->container['ThumbnailUrl'])) {
+            return null;
+        }
+        return $this->container['ThumbnailUrl'];
+    }
+
+    /**
+     * Sets ThumbnailUrl
+     *
+     * @param string|null $ThumbnailUrl ThumbnailUrl
+     *
+     * @return self
+     */
+    public function setThumbnailUrl($ThumbnailUrl)
+    {
+        if (is_null($ThumbnailUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'ThumbnailUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ThumbnailUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ThumbnailUrl'] = $ThumbnailUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
+            return null;
+        }
+        return $this->container['Url'];
+    }
+
+    /**
+     * Sets Url
+     *
+     * @param string|null $Url Url
+     *
+     * @return self
+     */
+    public function setUrl($Url)
+    {
+        if (is_null($Url)) {
+            array_push($this->openAPINullablesSetToNull, 'Url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Url'] = $Url;
+
+        return $this;
+    }
+
+    /**
+     * Gets Width
+     *
+     * @return int|null
+     */
+    public function getWidth()
+    {
+        if (!isset($this->container['Width']) || is_null($this->container['Width'])) {
+            return null;
+        }
+        return $this->container['Width'];
+    }
+
+    /**
+     * Sets Width
+     *
+     * @param int|null $Width Width
+     *
+     * @return self
+     */
+    public function setWidth($Width)
+    {
+        if (is_null($Width)) {
+            array_push($this->openAPINullablesSetToNull, 'Width');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Width', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Width'] = $Width;
 
         return $this;
     }

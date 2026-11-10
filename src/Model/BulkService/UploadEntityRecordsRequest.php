@@ -33,8 +33,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ResponseMode' => '\Microsoft\MsAds\Rest\Model\BulkService\ResponseMode',
         'EntityRecords' => 'string[]',
+        'ResponseMode' => '\Microsoft\MsAds\Rest\Model\BulkService\ResponseMode',
         'AccountId' => 'string'
     ];
 
@@ -46,8 +46,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ResponseMode' => null,
         'EntityRecords' => null,
+        'ResponseMode' => null,
         'AccountId' => 'int64'
     ];
 
@@ -57,8 +57,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ResponseMode' => false,
         'EntityRecords' => true,
+        'ResponseMode' => false,
         'AccountId' => false
     ];
 
@@ -148,8 +148,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ResponseMode' => 'ResponseMode',
         'EntityRecords' => 'EntityRecords',
+        'ResponseMode' => 'ResponseMode',
         'AccountId' => 'AccountId'
     ];
 
@@ -159,8 +159,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'ResponseMode' => 'setResponseMode',
         'EntityRecords' => 'setEntityRecords',
+        'ResponseMode' => 'setResponseMode',
         'AccountId' => 'setAccountId'
     ];
 
@@ -170,8 +170,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'ResponseMode' => 'getResponseMode',
         'EntityRecords' => 'getEntityRecords',
+        'ResponseMode' => 'getResponseMode',
         'AccountId' => 'getAccountId'
     ];
 
@@ -232,8 +232,8 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ResponseMode', $data ?? [], null);
         $this->setIfExists('EntityRecords', $data ?? [], null);
+        $this->setIfExists('ResponseMode', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
     }
 
@@ -280,42 +280,6 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets ResponseMode
-     *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode|mixed|null
-     */
-    public function getResponseMode()
-    {
-        if (!isset($this->container['ResponseMode']) || is_null($this->container['ResponseMode'])) {
-            return null;
-        }
-        if ((is_object($this->container['ResponseMode']) || is_string($this->container['ResponseMode'])) && method_exists($this->container['ResponseMode'], 'getValue')) {
-            return $this->container['ResponseMode']->getValue();
-        }
-        return $this->container['ResponseMode'];
-    }
-
-    /**
-     * Sets ResponseMode
-     *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode|mixed|null $ResponseMode ResponseMode
-     *
-     * @return self
-     */
-    public function setResponseMode($ResponseMode)
-    {
-        if (is_null($ResponseMode)) {
-            throw new \InvalidArgumentException('non-nullable ResponseMode cannot be null');
-        }
-        if (!$ResponseMode instanceof \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode) {
-            $ResponseMode = new \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode($ResponseMode);
-        }
-        $this->container['ResponseMode'] = $ResponseMode;
-
-        return $this;
-    }
-
-    /**
      * Gets EntityRecords
      *
      * @return string[]|null
@@ -348,6 +312,42 @@ class UploadEntityRecordsRequest implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['EntityRecords'] = $EntityRecords;
+
+        return $this;
+    }
+
+    /**
+     * Gets ResponseMode
+     *
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode|mixed|null
+     */
+    public function getResponseMode()
+    {
+        if (!isset($this->container['ResponseMode']) || is_null($this->container['ResponseMode'])) {
+            return null;
+        }
+        if ((is_object($this->container['ResponseMode']) || is_string($this->container['ResponseMode'])) && method_exists($this->container['ResponseMode'], 'getValue')) {
+            return $this->container['ResponseMode']->getValue();
+        }
+        return $this->container['ResponseMode'];
+    }
+
+    /**
+     * Sets ResponseMode
+     *
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode|mixed|null $ResponseMode ResponseMode
+     *
+     * @return self
+     */
+    public function setResponseMode($ResponseMode)
+    {
+        if (is_null($ResponseMode)) {
+            throw new \InvalidArgumentException('non-nullable ResponseMode cannot be null');
+        }
+        if (!is_null($ResponseMode) && !$ResponseMode instanceof \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode) {
+            $ResponseMode = new \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode($ResponseMode);
+        }
+        $this->container['ResponseMode'] = $ResponseMode;
 
         return $this;
     }

@@ -337,7 +337,7 @@ class ProfileInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
             $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($Type);
         }
         $this->container['Type'] = $Type;

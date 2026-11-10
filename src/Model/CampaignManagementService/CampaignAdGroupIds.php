@@ -33,9 +33,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CampaignId' => 'string',
+        'ActiveAdGroupsOnly' => 'bool',
         'AdGroupIds' => 'string[]',
-        'ActiveAdGroupsOnly' => 'bool'
+        'CampaignId' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CampaignId' => 'int64',
+        'ActiveAdGroupsOnly' => null,
         'AdGroupIds' => 'int64',
-        'ActiveAdGroupsOnly' => null
+        'CampaignId' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CampaignId' => false,
+        'ActiveAdGroupsOnly' => true,
         'AdGroupIds' => true,
-        'ActiveAdGroupsOnly' => true
+        'CampaignId' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CampaignId' => 'CampaignId',
+        'ActiveAdGroupsOnly' => 'ActiveAdGroupsOnly',
         'AdGroupIds' => 'AdGroupIds',
-        'ActiveAdGroupsOnly' => 'ActiveAdGroupsOnly'
+        'CampaignId' => 'CampaignId'
     ];
 
     /**
@@ -159,9 +159,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $setters = [
-        'CampaignId' => 'setCampaignId',
+        'ActiveAdGroupsOnly' => 'setActiveAdGroupsOnly',
         'AdGroupIds' => 'setAdGroupIds',
-        'ActiveAdGroupsOnly' => 'setActiveAdGroupsOnly'
+        'CampaignId' => 'setCampaignId'
     ];
 
     /**
@@ -170,9 +170,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $getters = [
-        'CampaignId' => 'getCampaignId',
+        'ActiveAdGroupsOnly' => 'getActiveAdGroupsOnly',
         'AdGroupIds' => 'getAdGroupIds',
-        'ActiveAdGroupsOnly' => 'getActiveAdGroupsOnly'
+        'CampaignId' => 'getCampaignId'
     ];
 
     /**
@@ -232,9 +232,9 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CampaignId', $data ?? [], null);
-        $this->setIfExists('AdGroupIds', $data ?? [], null);
         $this->setIfExists('ActiveAdGroupsOnly', $data ?? [], null);
+        $this->setIfExists('AdGroupIds', $data ?? [], null);
+        $this->setIfExists('CampaignId', $data ?? [], null);
     }
 
     /**
@@ -280,31 +280,38 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets CampaignId
+     * Gets ActiveAdGroupsOnly
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getCampaignId()
+    public function getActiveAdGroupsOnly()
     {
-        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
+        if (!isset($this->container['ActiveAdGroupsOnly']) || is_null($this->container['ActiveAdGroupsOnly'])) {
             return null;
         }
-        return $this->container['CampaignId'];
+        return $this->container['ActiveAdGroupsOnly'];
     }
 
     /**
-     * Sets CampaignId
+     * Sets ActiveAdGroupsOnly
      *
-     * @param string|null $CampaignId CampaignId
+     * @param bool|null $ActiveAdGroupsOnly ActiveAdGroupsOnly
      *
      * @return self
      */
-    public function setCampaignId($CampaignId)
+    public function setActiveAdGroupsOnly($ActiveAdGroupsOnly)
     {
-        if (is_null($CampaignId)) {
-            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
+        if (is_null($ActiveAdGroupsOnly)) {
+            array_push($this->openAPINullablesSetToNull, 'ActiveAdGroupsOnly');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ActiveAdGroupsOnly', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['CampaignId'] = $CampaignId;
+        $this->container['ActiveAdGroupsOnly'] = $ActiveAdGroupsOnly;
 
         return $this;
     }
@@ -347,38 +354,31 @@ class CampaignAdGroupIds implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets ActiveAdGroupsOnly
+     * Gets CampaignId
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getActiveAdGroupsOnly()
+    public function getCampaignId()
     {
-        if (!isset($this->container['ActiveAdGroupsOnly']) || is_null($this->container['ActiveAdGroupsOnly'])) {
+        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
             return null;
         }
-        return $this->container['ActiveAdGroupsOnly'];
+        return $this->container['CampaignId'];
     }
 
     /**
-     * Sets ActiveAdGroupsOnly
+     * Sets CampaignId
      *
-     * @param bool|null $ActiveAdGroupsOnly ActiveAdGroupsOnly
+     * @param string|null $CampaignId CampaignId
      *
      * @return self
      */
-    public function setActiveAdGroupsOnly($ActiveAdGroupsOnly)
+    public function setCampaignId($CampaignId)
     {
-        if (is_null($ActiveAdGroupsOnly)) {
-            array_push($this->openAPINullablesSetToNull, 'ActiveAdGroupsOnly');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ActiveAdGroupsOnly', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($CampaignId)) {
+            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
         }
-        $this->container['ActiveAdGroupsOnly'] = $ActiveAdGroupsOnly;
+        $this->container['CampaignId'] = $CampaignId;
 
         return $this;
     }

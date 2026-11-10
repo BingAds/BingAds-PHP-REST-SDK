@@ -57,9 +57,9 @@ class UserLocationPerformanceReportFilter implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdDistribution' => false,
+        'AdDistribution' => true,
         'CountryCode' => true,
-        'Language' => false
+        'Language' => true
     ];
 
     /**
@@ -305,9 +305,16 @@ class UserLocationPerformanceReportFilter implements ModelInterface, ArrayAccess
     public function setAdDistribution($AdDistribution)
     {
         if (is_null($AdDistribution)) {
-            throw new \InvalidArgumentException('non-nullable AdDistribution cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AdDistribution');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdDistribution', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdDistribution instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter) {
+        if (!is_null($AdDistribution) && !$AdDistribution instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter) {
             $AdDistribution = new \Microsoft\MsAds\Rest\Model\ReportingService\AdDistributionReportFilter($AdDistribution);
         }
         $this->container['AdDistribution'] = $AdDistribution;
@@ -378,9 +385,16 @@ class UserLocationPerformanceReportFilter implements ModelInterface, ArrayAccess
     public function setLanguage($Language)
     {
         if (is_null($Language)) {
-            throw new \InvalidArgumentException('non-nullable Language cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
+        if (!is_null($Language) && !$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
             $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
         }
         $this->container['Language'] = $Language;

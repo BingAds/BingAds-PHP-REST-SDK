@@ -379,7 +379,7 @@ class GetEstimatedBidByKeywordsRequest implements ModelInterface, ArrayAccess, \
         if (is_null($TargetPositionForAds)) {
             throw new \InvalidArgumentException('non-nullable TargetPositionForAds cannot be null');
         }
-        if (!$TargetPositionForAds instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\TargetAdPosition) {
+        if (!is_null($TargetPositionForAds) && !$TargetPositionForAds instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\TargetAdPosition) {
             $TargetPositionForAds = new \Microsoft\MsAds\Rest\Model\AdInsightService\TargetAdPosition($TargetPositionForAds);
         }
         $this->container['TargetPositionForAds'] = $TargetPositionForAds;
@@ -489,7 +489,7 @@ class GetEstimatedBidByKeywordsRequest implements ModelInterface, ArrayAccess, \
         if (is_null($CurrencyCode)) {
             throw new \InvalidArgumentException('non-nullable CurrencyCode cannot be null');
         }
-        if (!$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode) {
+        if (!is_null($CurrencyCode) && !$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode) {
             $CurrencyCode = new \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode($CurrencyCode);
         }
         $this->container['CurrencyCode'] = $CurrencyCode;

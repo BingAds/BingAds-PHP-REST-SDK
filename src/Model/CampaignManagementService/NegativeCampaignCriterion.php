@@ -36,8 +36,8 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         'CampaignId' => 'string',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus',
         'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus',
         'Type' => 'string'
     ];
 
@@ -52,8 +52,8 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         'CampaignId' => 'int64',
         'Criterion' => null,
         'ForwardCompatibilityMap' => null,
-        'Status' => null,
         'Id' => 'int64',
+        'Status' => null,
         'Type' => null
     ];
 
@@ -66,8 +66,8 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         'CampaignId' => false,
         'Criterion' => true,
         'ForwardCompatibilityMap' => true,
-        'Status' => false,
         'Id' => true,
+        'Status' => true,
         'Type' => true
     ];
 
@@ -160,8 +160,8 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         'CampaignId' => 'CampaignId',
         'Criterion' => 'Criterion',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'Status' => 'Status',
         'Id' => 'Id',
+        'Status' => 'Status',
         'Type' => 'Type'
     ];
 
@@ -174,8 +174,8 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         'CampaignId' => 'setCampaignId',
         'Criterion' => 'setCriterion',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'Status' => 'setStatus',
         'Id' => 'setId',
+        'Status' => 'setStatus',
         'Type' => 'setType'
     ];
 
@@ -188,8 +188,8 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         'CampaignId' => 'getCampaignId',
         'Criterion' => 'getCriterion',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'Status' => 'getStatus',
         'Id' => 'getId',
+        'Status' => 'getStatus',
         'Type' => 'getType'
     ];
 
@@ -253,9 +253,14 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -405,42 +410,6 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
     }
 
     /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -473,6 +442,49 @@ class NegativeCampaignCriterion extends CampaignCriterion implements ModelInterf
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

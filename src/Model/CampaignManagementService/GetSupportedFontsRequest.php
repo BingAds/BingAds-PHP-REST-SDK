@@ -293,7 +293,7 @@ class GetSupportedFontsRequest implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($AdSubType)) {
             throw new \InvalidArgumentException('non-nullable AdSubType cannot be null');
         }
-        if (!$AdSubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdSubType) {
+        if (!is_null($AdSubType) && !$AdSubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdSubType) {
             $AdSubType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdSubType($AdSubType);
         }
         $this->container['AdSubType'] = $AdSubType;

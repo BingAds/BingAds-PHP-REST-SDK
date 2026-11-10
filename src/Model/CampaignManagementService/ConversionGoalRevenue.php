@@ -33,9 +33,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'CurrencyCode' => 'string',
         'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenueType',
-        'Value' => 'float',
-        'CurrencyCode' => 'string'
+        'Value' => 'float'
     ];
 
     /**
@@ -46,9 +46,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'CurrencyCode' => null,
         'Type' => null,
-        'Value' => 'double',
-        'CurrencyCode' => null
+        'Value' => 'double'
     ];
 
     /**
@@ -57,9 +57,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => false,
-        'Value' => true,
-        'CurrencyCode' => true
+        'CurrencyCode' => true,
+        'Type' => true,
+        'Value' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
+        'CurrencyCode' => 'CurrencyCode',
         'Type' => 'Type',
-        'Value' => 'Value',
-        'CurrencyCode' => 'CurrencyCode'
+        'Value' => 'Value'
     ];
 
     /**
@@ -159,9 +159,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
+        'CurrencyCode' => 'setCurrencyCode',
         'Type' => 'setType',
-        'Value' => 'setValue',
-        'CurrencyCode' => 'setCurrencyCode'
+        'Value' => 'setValue'
     ];
 
     /**
@@ -170,9 +170,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
+        'CurrencyCode' => 'getCurrencyCode',
         'Type' => 'getType',
-        'Value' => 'getValue',
-        'CurrencyCode' => 'getCurrencyCode'
+        'Value' => 'getValue'
     ];
 
     /**
@@ -232,9 +232,9 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('CurrencyCode', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Value', $data ?? [], null);
-        $this->setIfExists('CurrencyCode', $data ?? [], null);
     }
 
     /**
@@ -280,6 +280,43 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
+     * Gets CurrencyCode
+     *
+     * @return string|null
+     */
+    public function getCurrencyCode()
+    {
+        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
+            return null;
+        }
+        return $this->container['CurrencyCode'];
+    }
+
+    /**
+     * Sets CurrencyCode
+     *
+     * @param string|null $CurrencyCode CurrencyCode
+     *
+     * @return self
+     */
+    public function setCurrencyCode($CurrencyCode)
+    {
+        if (is_null($CurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CurrencyCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CurrencyCode'] = $CurrencyCode;
+
+        return $this;
+    }
+
+    /**
      * Gets Type
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenueType|mixed|null
@@ -305,9 +342,16 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setType($Type)
     {
         if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenueType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenueType) {
             $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenueType($Type);
         }
         $this->container['Type'] = $Type;
@@ -348,43 +392,6 @@ class ConversionGoalRevenue implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['Value'] = $Value;
-
-        return $this;
-    }
-
-    /**
-     * Gets CurrencyCode
-     *
-     * @return string|null
-     */
-    public function getCurrencyCode()
-    {
-        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
-            return null;
-        }
-        return $this->container['CurrencyCode'];
-    }
-
-    /**
-     * Sets CurrencyCode
-     *
-     * @param string|null $CurrencyCode CurrencyCode
-     *
-     * @return self
-     */
-    public function setCurrencyCode($CurrencyCode)
-    {
-        if (is_null($CurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CurrencyCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CurrencyCode'] = $CurrencyCode;
 
         return $this;
     }

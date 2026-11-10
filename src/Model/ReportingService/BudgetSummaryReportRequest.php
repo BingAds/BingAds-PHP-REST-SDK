@@ -33,16 +33,16 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ReportName' => 'string',
-        'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
-        'ReturnOnlyCompleteData' => 'bool',
-        'ExcludeReportHeader' => 'bool',
-        'ExcludeReportFooter' => 'bool',
         'ExcludeColumnHeaders' => 'bool',
+        'ExcludeReportFooter' => 'bool',
+        'ExcludeReportHeader' => 'bool',
+        'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
         'FormatVersion' => 'string',
+        'ReportName' => 'string',
+        'ReturnOnlyCompleteData' => 'bool',
+        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]',
         'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountThroughCampaignReportScope',
         'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
-        'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]',
         'Type' => 'string'
     ];
 
@@ -54,16 +54,16 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ReportName' => null,
-        'Format' => null,
-        'ReturnOnlyCompleteData' => null,
-        'ExcludeReportHeader' => null,
-        'ExcludeReportFooter' => null,
         'ExcludeColumnHeaders' => null,
+        'ExcludeReportFooter' => null,
+        'ExcludeReportHeader' => null,
+        'Format' => null,
         'FormatVersion' => null,
+        'ReportName' => null,
+        'ReturnOnlyCompleteData' => null,
+        'Columns' => null,
         'Scope' => null,
         'Time' => null,
-        'Columns' => null,
         'Type' => null
     ];
 
@@ -73,16 +73,16 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ReportName' => true,
-        'Format' => false,
-        'ReturnOnlyCompleteData' => true,
-        'ExcludeReportHeader' => true,
-        'ExcludeReportFooter' => true,
         'ExcludeColumnHeaders' => true,
+        'ExcludeReportFooter' => true,
+        'ExcludeReportHeader' => true,
+        'Format' => true,
         'FormatVersion' => true,
+        'ReportName' => true,
+        'ReturnOnlyCompleteData' => true,
+        'Columns' => true,
         'Scope' => true,
         'Time' => true,
-        'Columns' => true,
         'Type' => true
     ];
 
@@ -172,16 +172,16 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ReportName' => 'ReportName',
-        'Format' => 'Format',
-        'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
-        'ExcludeReportHeader' => 'ExcludeReportHeader',
-        'ExcludeReportFooter' => 'ExcludeReportFooter',
         'ExcludeColumnHeaders' => 'ExcludeColumnHeaders',
+        'ExcludeReportFooter' => 'ExcludeReportFooter',
+        'ExcludeReportHeader' => 'ExcludeReportHeader',
+        'Format' => 'Format',
         'FormatVersion' => 'FormatVersion',
+        'ReportName' => 'ReportName',
+        'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
+        'Columns' => 'Columns',
         'Scope' => 'Scope',
         'Time' => 'Time',
-        'Columns' => 'Columns',
         'Type' => 'Type'
     ];
 
@@ -191,16 +191,16 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'ReportName' => 'setReportName',
-        'Format' => 'setFormat',
-        'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
-        'ExcludeReportHeader' => 'setExcludeReportHeader',
-        'ExcludeReportFooter' => 'setExcludeReportFooter',
         'ExcludeColumnHeaders' => 'setExcludeColumnHeaders',
+        'ExcludeReportFooter' => 'setExcludeReportFooter',
+        'ExcludeReportHeader' => 'setExcludeReportHeader',
+        'Format' => 'setFormat',
         'FormatVersion' => 'setFormatVersion',
+        'ReportName' => 'setReportName',
+        'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
+        'Columns' => 'setColumns',
         'Scope' => 'setScope',
         'Time' => 'setTime',
-        'Columns' => 'setColumns',
         'Type' => 'setType'
     ];
 
@@ -210,16 +210,16 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'ReportName' => 'getReportName',
-        'Format' => 'getFormat',
-        'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
-        'ExcludeReportHeader' => 'getExcludeReportHeader',
-        'ExcludeReportFooter' => 'getExcludeReportFooter',
         'ExcludeColumnHeaders' => 'getExcludeColumnHeaders',
+        'ExcludeReportFooter' => 'getExcludeReportFooter',
+        'ExcludeReportHeader' => 'getExcludeReportHeader',
+        'Format' => 'getFormat',
         'FormatVersion' => 'getFormatVersion',
+        'ReportName' => 'getReportName',
+        'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
+        'Columns' => 'getColumns',
         'Scope' => 'getScope',
         'Time' => 'getTime',
-        'Columns' => 'getColumns',
         'Type' => 'getType'
     ];
 
@@ -280,17 +280,22 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ReportName', $data ?? [], null);
-        $this->setIfExists('Format', $data ?? [], null);
-        $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
-        $this->setIfExists('ExcludeReportHeader', $data ?? [], null);
-        $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
         $this->setIfExists('ExcludeColumnHeaders', $data ?? [], null);
+        $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
+        $this->setIfExists('ExcludeReportHeader', $data ?? [], null);
+        $this->setIfExists('Format', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
+        $this->setIfExists('ReportName', $data ?? [], null);
+        $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
+        $this->setIfExists('Columns', $data ?? [], null);
         $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('Time', $data ?? [], null);
-        $this->setIfExists('Columns', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'BudgetSummaryReportRequest');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -336,148 +341,38 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
 
 
     /**
-     * Gets ReportName
-     *
-     * @return string|null
-     */
-    public function getReportName()
-    {
-        if (!isset($this->container['ReportName']) || is_null($this->container['ReportName'])) {
-            return null;
-        }
-        return $this->container['ReportName'];
-    }
-
-    /**
-     * Sets ReportName
-     *
-     * @param string|null $ReportName ReportName
-     *
-     * @return self
-     */
-    public function setReportName($ReportName)
-    {
-        if (is_null($ReportName)) {
-            array_push($this->openAPINullablesSetToNull, 'ReportName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReportName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ReportName'] = $ReportName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Format
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null
-     */
-    public function getFormat()
-    {
-        if (!isset($this->container['Format']) || is_null($this->container['Format'])) {
-            return null;
-        }
-        if ((is_object($this->container['Format']) || is_string($this->container['Format'])) && method_exists($this->container['Format'], 'getValue')) {
-            return $this->container['Format']->getValue();
-        }
-        return $this->container['Format'];
-    }
-
-    /**
-     * Sets Format
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null $Format Format
-     *
-     * @return self
-     */
-    public function setFormat($Format)
-    {
-        if (is_null($Format)) {
-            throw new \InvalidArgumentException('non-nullable Format cannot be null');
-        }
-        if (!$Format instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat) {
-            $Format = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat($Format);
-        }
-        $this->container['Format'] = $Format;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnOnlyCompleteData
+     * Gets ExcludeColumnHeaders
      *
      * @return bool|null
      */
-    public function getReturnOnlyCompleteData()
+    public function getExcludeColumnHeaders()
     {
-        if (!isset($this->container['ReturnOnlyCompleteData']) || is_null($this->container['ReturnOnlyCompleteData'])) {
+        if (!isset($this->container['ExcludeColumnHeaders']) || is_null($this->container['ExcludeColumnHeaders'])) {
             return null;
         }
-        return $this->container['ReturnOnlyCompleteData'];
+        return $this->container['ExcludeColumnHeaders'];
     }
 
     /**
-     * Sets ReturnOnlyCompleteData
+     * Sets ExcludeColumnHeaders
      *
-     * @param bool|null $ReturnOnlyCompleteData ReturnOnlyCompleteData
+     * @param bool|null $ExcludeColumnHeaders ExcludeColumnHeaders
      *
      * @return self
      */
-    public function setReturnOnlyCompleteData($ReturnOnlyCompleteData)
+    public function setExcludeColumnHeaders($ExcludeColumnHeaders)
     {
-        if (is_null($ReturnOnlyCompleteData)) {
-            array_push($this->openAPINullablesSetToNull, 'ReturnOnlyCompleteData');
+        if (is_null($ExcludeColumnHeaders)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeColumnHeaders');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReturnOnlyCompleteData', $nullablesSetToNull);
+            $index = array_search('ExcludeColumnHeaders', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ReturnOnlyCompleteData'] = $ReturnOnlyCompleteData;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExcludeReportHeader
-     *
-     * @return bool|null
-     */
-    public function getExcludeReportHeader()
-    {
-        if (!isset($this->container['ExcludeReportHeader']) || is_null($this->container['ExcludeReportHeader'])) {
-            return null;
-        }
-        return $this->container['ExcludeReportHeader'];
-    }
-
-    /**
-     * Sets ExcludeReportHeader
-     *
-     * @param bool|null $ExcludeReportHeader ExcludeReportHeader
-     *
-     * @return self
-     */
-    public function setExcludeReportHeader($ExcludeReportHeader)
-    {
-        if (is_null($ExcludeReportHeader)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeReportHeader');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeReportHeader', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExcludeReportHeader'] = $ExcludeReportHeader;
+        $this->container['ExcludeColumnHeaders'] = $ExcludeColumnHeaders;
 
         return $this;
     }
@@ -520,38 +415,81 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
     }
 
     /**
-     * Gets ExcludeColumnHeaders
+     * Gets ExcludeReportHeader
      *
      * @return bool|null
      */
-    public function getExcludeColumnHeaders()
+    public function getExcludeReportHeader()
     {
-        if (!isset($this->container['ExcludeColumnHeaders']) || is_null($this->container['ExcludeColumnHeaders'])) {
+        if (!isset($this->container['ExcludeReportHeader']) || is_null($this->container['ExcludeReportHeader'])) {
             return null;
         }
-        return $this->container['ExcludeColumnHeaders'];
+        return $this->container['ExcludeReportHeader'];
     }
 
     /**
-     * Sets ExcludeColumnHeaders
+     * Sets ExcludeReportHeader
      *
-     * @param bool|null $ExcludeColumnHeaders ExcludeColumnHeaders
+     * @param bool|null $ExcludeReportHeader ExcludeReportHeader
      *
      * @return self
      */
-    public function setExcludeColumnHeaders($ExcludeColumnHeaders)
+    public function setExcludeReportHeader($ExcludeReportHeader)
     {
-        if (is_null($ExcludeColumnHeaders)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeColumnHeaders');
+        if (is_null($ExcludeReportHeader)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeReportHeader');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeColumnHeaders', $nullablesSetToNull);
+            $index = array_search('ExcludeReportHeader', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ExcludeColumnHeaders'] = $ExcludeColumnHeaders;
+        $this->container['ExcludeReportHeader'] = $ExcludeReportHeader;
+
+        return $this;
+    }
+
+    /**
+     * Gets Format
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null
+     */
+    public function getFormat()
+    {
+        if (!isset($this->container['Format']) || is_null($this->container['Format'])) {
+            return null;
+        }
+        if ((is_object($this->container['Format']) || is_string($this->container['Format'])) && method_exists($this->container['Format'], 'getValue')) {
+            return $this->container['Format']->getValue();
+        }
+        return $this->container['Format'];
+    }
+
+    /**
+     * Sets Format
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null $Format Format
+     *
+     * @return self
+     */
+    public function setFormat($Format)
+    {
+        if (is_null($Format)) {
+            array_push($this->openAPINullablesSetToNull, 'Format');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Format', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Format) && !$Format instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat) {
+            $Format = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat($Format);
+        }
+        $this->container['Format'] = $Format;
 
         return $this;
     }
@@ -589,6 +527,136 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
             }
         }
         $this->container['FormatVersion'] = $FormatVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReportName
+     *
+     * @return string|null
+     */
+    public function getReportName()
+    {
+        if (!isset($this->container['ReportName']) || is_null($this->container['ReportName'])) {
+            return null;
+        }
+        return $this->container['ReportName'];
+    }
+
+    /**
+     * Sets ReportName
+     *
+     * @param string|null $ReportName ReportName
+     *
+     * @return self
+     */
+    public function setReportName($ReportName)
+    {
+        if (is_null($ReportName)) {
+            array_push($this->openAPINullablesSetToNull, 'ReportName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReportName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ReportName'] = $ReportName;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnOnlyCompleteData
+     *
+     * @return bool|null
+     */
+    public function getReturnOnlyCompleteData()
+    {
+        if (!isset($this->container['ReturnOnlyCompleteData']) || is_null($this->container['ReturnOnlyCompleteData'])) {
+            return null;
+        }
+        return $this->container['ReturnOnlyCompleteData'];
+    }
+
+    /**
+     * Sets ReturnOnlyCompleteData
+     *
+     * @param bool|null $ReturnOnlyCompleteData ReturnOnlyCompleteData
+     *
+     * @return self
+     */
+    public function setReturnOnlyCompleteData($ReturnOnlyCompleteData)
+    {
+        if (is_null($ReturnOnlyCompleteData)) {
+            array_push($this->openAPINullablesSetToNull, 'ReturnOnlyCompleteData');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnOnlyCompleteData', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ReturnOnlyCompleteData'] = $ReturnOnlyCompleteData;
+
+        return $this;
+    }
+
+    /**
+     * Gets Columns
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null
+     */
+    public function getColumns()
+    {
+        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
+            return null;
+        }
+        $values = [];
+        if (is_array($this->container['Columns'])) {
+            foreach ($this->container['Columns'] as $ColumnsItem) {
+                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
+                    $values[] = $ColumnsItem->getValue();
+                }
+            }
+        }
+        if (count($values) > 0) {
+            return $values;
+        }
+        return $this->container['Columns'];
+    }
+
+    /**
+     * Sets Columns
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null $Columns Columns
+     *
+     * @return self
+     */
+    public function setColumns($Columns)
+    {
+        if (is_null($Columns)) {
+            array_push($this->openAPINullablesSetToNull, 'Columns');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Columns', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_array($Columns)) {
+            $Columns = [$Columns];
+        }
+        foreach ($Columns as $key => $ColumnsItem) {
+            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn) {
+                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn($ColumnsItem);
+            }
+        }
+        $this->container['Columns'] = $Columns;
 
         return $this;
     }
@@ -663,62 +731,6 @@ class BudgetSummaryReportRequest extends ReportRequest implements ModelInterface
             }
         }
         $this->container['Time'] = $Time;
-
-        return $this;
-    }
-
-    /**
-     * Gets Columns
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null
-     */
-    public function getColumns()
-    {
-        if (!isset($this->container['Columns']) || is_null($this->container['Columns'])) {
-            return null;
-        }
-        $values = [];
-        if (is_array($this->container['Columns'])) {
-            foreach ($this->container['Columns'] as $ColumnsItem) {
-                if ((is_object($ColumnsItem) || is_string($ColumnsItem)) && method_exists($ColumnsItem, 'getValue')) {
-                    $values[] = $ColumnsItem->getValue();
-                }
-            }
-        }
-        if (count($values) > 0) {
-            return $values;
-        }
-        return $this->container['Columns'];
-    }
-
-    /**
-     * Sets Columns
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn[]|mixed|null $Columns Columns
-     *
-     * @return self
-     */
-    public function setColumns($Columns)
-    {
-        if (is_null($Columns)) {
-            array_push($this->openAPINullablesSetToNull, 'Columns');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Columns', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        if (!is_array($Columns)) {
-            $Columns = [$Columns];
-        }
-        foreach ($Columns as $key => $ColumnsItem) {
-            if (!$ColumnsItem instanceof \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn) {
-                $Columns[$key] = new \Microsoft\MsAds\Rest\Model\ReportingService\BudgetSummaryReportColumn($ColumnsItem);
-            }
-        }
-        $this->container['Columns'] = $Columns;
 
         return $this;
     }

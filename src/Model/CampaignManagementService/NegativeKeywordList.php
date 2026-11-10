@@ -33,12 +33,12 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ItemCount' => 'int',
+        'AssociationCount' => 'int',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Id' => 'string',
         'Name' => 'string',
         'Type' => 'string',
-        'AssociationCount' => 'int',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ItemCount' => 'int'
     ];
 
     /**
@@ -49,12 +49,12 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ItemCount' => 'int32',
+        'AssociationCount' => 'int32',
+        'ForwardCompatibilityMap' => null,
         'Id' => 'int64',
         'Name' => null,
         'Type' => null,
-        'AssociationCount' => 'int32',
-        'ForwardCompatibilityMap' => null
+        'ItemCount' => 'int32'
     ];
 
     /**
@@ -63,12 +63,12 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ItemCount' => true,
+        'AssociationCount' => true,
+        'ForwardCompatibilityMap' => true,
         'Id' => true,
         'Name' => true,
         'Type' => true,
-        'AssociationCount' => true,
-        'ForwardCompatibilityMap' => true
+        'ItemCount' => true
     ];
 
     /**
@@ -157,12 +157,12 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ItemCount' => 'ItemCount',
+        'AssociationCount' => 'AssociationCount',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Id' => 'Id',
         'Name' => 'Name',
         'Type' => 'Type',
-        'AssociationCount' => 'AssociationCount',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ItemCount' => 'ItemCount'
     ];
 
     /**
@@ -171,12 +171,12 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $setters = [
-        'ItemCount' => 'setItemCount',
+        'AssociationCount' => 'setAssociationCount',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Id' => 'setId',
         'Name' => 'setName',
         'Type' => 'setType',
-        'AssociationCount' => 'setAssociationCount',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ItemCount' => 'setItemCount'
     ];
 
     /**
@@ -185,12 +185,12 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static array $getters = [
-        'ItemCount' => 'getItemCount',
+        'AssociationCount' => 'getAssociationCount',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Id' => 'getId',
         'Name' => 'getName',
         'Type' => 'getType',
-        'AssociationCount' => 'getAssociationCount',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ItemCount' => 'getItemCount'
     ];
 
     /**
@@ -250,12 +250,17 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ItemCount', $data ?? [], null);
+        $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('AssociationCount', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('ItemCount', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -301,38 +306,75 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets ItemCount
+     * Gets AssociationCount
      *
      * @return int|null
      */
-    public function getItemCount()
+    public function getAssociationCount()
     {
-        if (!isset($this->container['ItemCount']) || is_null($this->container['ItemCount'])) {
+        if (!isset($this->container['AssociationCount']) || is_null($this->container['AssociationCount'])) {
             return null;
         }
-        return $this->container['ItemCount'];
+        return $this->container['AssociationCount'];
     }
 
     /**
-     * Sets ItemCount
+     * Sets AssociationCount
      *
-     * @param int|null $ItemCount ItemCount
+     * @param int|null $AssociationCount AssociationCount
      *
      * @return self
      */
-    public function setItemCount($ItemCount)
+    public function setAssociationCount($AssociationCount)
     {
-        if (is_null($ItemCount)) {
-            array_push($this->openAPINullablesSetToNull, 'ItemCount');
+        if (is_null($AssociationCount)) {
+            array_push($this->openAPINullablesSetToNull, 'AssociationCount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ItemCount', $nullablesSetToNull);
+            $index = array_search('AssociationCount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ItemCount'] = $ItemCount;
+        $this->container['AssociationCount'] = $AssociationCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -449,75 +491,38 @@ class NegativeKeywordList extends SharedList implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets AssociationCount
+     * Gets ItemCount
      *
      * @return int|null
      */
-    public function getAssociationCount()
+    public function getItemCount()
     {
-        if (!isset($this->container['AssociationCount']) || is_null($this->container['AssociationCount'])) {
+        if (!isset($this->container['ItemCount']) || is_null($this->container['ItemCount'])) {
             return null;
         }
-        return $this->container['AssociationCount'];
+        return $this->container['ItemCount'];
     }
 
     /**
-     * Sets AssociationCount
+     * Sets ItemCount
      *
-     * @param int|null $AssociationCount AssociationCount
+     * @param int|null $ItemCount ItemCount
      *
      * @return self
      */
-    public function setAssociationCount($AssociationCount)
+    public function setItemCount($ItemCount)
     {
-        if (is_null($AssociationCount)) {
-            array_push($this->openAPINullablesSetToNull, 'AssociationCount');
+        if (is_null($ItemCount)) {
+            array_push($this->openAPINullablesSetToNull, 'ItemCount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssociationCount', $nullablesSetToNull);
+            $index = array_search('ItemCount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AssociationCount'] = $AssociationCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['ItemCount'] = $ItemCount;
 
         return $this;
     }

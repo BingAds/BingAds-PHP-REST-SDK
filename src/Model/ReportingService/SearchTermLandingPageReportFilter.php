@@ -33,10 +33,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'DeliveredMatchType' => '\Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter',
-        'SearchQueries' => 'string[]',
         'AdType' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter',
-        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter'
+        'DeliveredMatchType' => '\Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter',
+        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter',
+        'SearchQueries' => 'string[]'
     ];
 
     /**
@@ -47,10 +47,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'DeliveredMatchType' => null,
-        'SearchQueries' => null,
         'AdType' => null,
-        'Language' => null
+        'DeliveredMatchType' => null,
+        'Language' => null,
+        'SearchQueries' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'DeliveredMatchType' => false,
-        'SearchQueries' => true,
-        'AdType' => false,
-        'Language' => false
+        'AdType' => true,
+        'DeliveredMatchType' => true,
+        'Language' => true,
+        'SearchQueries' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'DeliveredMatchType' => 'DeliveredMatchType',
-        'SearchQueries' => 'SearchQueries',
         'AdType' => 'AdType',
-        'Language' => 'Language'
+        'DeliveredMatchType' => 'DeliveredMatchType',
+        'Language' => 'Language',
+        'SearchQueries' => 'SearchQueries'
     ];
 
     /**
@@ -163,10 +163,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'DeliveredMatchType' => 'setDeliveredMatchType',
-        'SearchQueries' => 'setSearchQueries',
         'AdType' => 'setAdType',
-        'Language' => 'setLanguage'
+        'DeliveredMatchType' => 'setDeliveredMatchType',
+        'Language' => 'setLanguage',
+        'SearchQueries' => 'setSearchQueries'
     ];
 
     /**
@@ -175,10 +175,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'DeliveredMatchType' => 'getDeliveredMatchType',
-        'SearchQueries' => 'getSearchQueries',
         'AdType' => 'getAdType',
-        'Language' => 'getLanguage'
+        'DeliveredMatchType' => 'getDeliveredMatchType',
+        'Language' => 'getLanguage',
+        'SearchQueries' => 'getSearchQueries'
     ];
 
     /**
@@ -238,10 +238,10 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('DeliveredMatchType', $data ?? [], null);
-        $this->setIfExists('SearchQueries', $data ?? [], null);
         $this->setIfExists('AdType', $data ?? [], null);
+        $this->setIfExists('DeliveredMatchType', $data ?? [], null);
         $this->setIfExists('Language', $data ?? [], null);
+        $this->setIfExists('SearchQueries', $data ?? [], null);
     }
 
     /**
@@ -287,6 +287,49 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
 
 
     /**
+     * Gets AdType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null
+     */
+    public function getAdType()
+    {
+        if (!isset($this->container['AdType']) || is_null($this->container['AdType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdType']) || is_string($this->container['AdType'])) && method_exists($this->container['AdType'], 'getValue')) {
+            return $this->container['AdType']->getValue();
+        }
+        return $this->container['AdType'];
+    }
+
+    /**
+     * Sets AdType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null $AdType AdType
+     *
+     * @return self
+     */
+    public function setAdType($AdType)
+    {
+        if (is_null($AdType)) {
+            array_push($this->openAPINullablesSetToNull, 'AdType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AdType) && !$AdType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter) {
+            $AdType = new \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter($AdType);
+        }
+        $this->container['AdType'] = $AdType;
+
+        return $this;
+    }
+
+    /**
      * Gets DeliveredMatchType
      *
      * @return \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter|mixed|null
@@ -312,12 +355,62 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
     public function setDeliveredMatchType($DeliveredMatchType)
     {
         if (is_null($DeliveredMatchType)) {
-            throw new \InvalidArgumentException('non-nullable DeliveredMatchType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'DeliveredMatchType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DeliveredMatchType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$DeliveredMatchType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter) {
+        if (!is_null($DeliveredMatchType) && !$DeliveredMatchType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter) {
             $DeliveredMatchType = new \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter($DeliveredMatchType);
         }
         $this->container['DeliveredMatchType'] = $DeliveredMatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Language
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null
+     */
+    public function getLanguage()
+    {
+        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
+            return null;
+        }
+        if ((is_object($this->container['Language']) || is_string($this->container['Language'])) && method_exists($this->container['Language'], 'getValue')) {
+            return $this->container['Language']->getValue();
+        }
+        return $this->container['Language'];
+    }
+
+    /**
+     * Sets Language
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null $Language Language
+     *
+     * @return self
+     */
+    public function setLanguage($Language)
+    {
+        if (is_null($Language)) {
+            array_push($this->openAPINullablesSetToNull, 'Language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Language) && !$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
+            $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
+        }
+        $this->container['Language'] = $Language;
 
         return $this;
     }
@@ -355,78 +448,6 @@ class SearchTermLandingPageReportFilter implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['SearchQueries'] = $SearchQueries;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null
-     */
-    public function getAdType()
-    {
-        if (!isset($this->container['AdType']) || is_null($this->container['AdType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AdType']) || is_string($this->container['AdType'])) && method_exists($this->container['AdType'], 'getValue')) {
-            return $this->container['AdType']->getValue();
-        }
-        return $this->container['AdType'];
-    }
-
-    /**
-     * Sets AdType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null $AdType AdType
-     *
-     * @return self
-     */
-    public function setAdType($AdType)
-    {
-        if (is_null($AdType)) {
-            throw new \InvalidArgumentException('non-nullable AdType cannot be null');
-        }
-        if (!$AdType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter) {
-            $AdType = new \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter($AdType);
-        }
-        $this->container['AdType'] = $AdType;
-
-        return $this;
-    }
-
-    /**
-     * Gets Language
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null
-     */
-    public function getLanguage()
-    {
-        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
-            return null;
-        }
-        if ((is_object($this->container['Language']) || is_string($this->container['Language'])) && method_exists($this->container['Language'], 'getValue')) {
-            return $this->container['Language']->getValue();
-        }
-        return $this->container['Language'];
-    }
-
-    /**
-     * Sets Language
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null $Language Language
-     *
-     * @return self
-     */
-    public function setLanguage($Language)
-    {
-        if (is_null($Language)) {
-            throw new \InvalidArgumentException('non-nullable Language cannot be null');
-        }
-        if (!$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
-            $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
-        }
-        $this->container['Language'] = $Language;
 
         return $this;
     }

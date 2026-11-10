@@ -61,8 +61,8 @@ class CreateAssetGroupRecommendationRequest implements ModelInterface, ArrayAcce
     protected static array $openAPINullables = [
         'FinalUrls' => true,
         'Prompt' => true,
-        'TextTone' => false,
-        'ReturnAdditionalFields' => false
+        'TextTone' => true,
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -386,9 +386,16 @@ class CreateAssetGroupRecommendationRequest implements ModelInterface, ArrayAcce
     public function setTextTone($TextTone)
     {
         if (is_null($TextTone)) {
-            throw new \InvalidArgumentException('non-nullable TextTone cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'TextTone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextTone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$TextTone instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone) {
+        if (!is_null($TextTone) && !$TextTone instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone) {
             $TextTone = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone($TextTone);
         }
         $this->container['TextTone'] = $TextTone;
@@ -422,9 +429,16 @@ class CreateAssetGroupRecommendationRequest implements ModelInterface, ArrayAcce
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

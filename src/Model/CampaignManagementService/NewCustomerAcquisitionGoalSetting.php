@@ -34,9 +34,9 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'NewCustomerAcquisitionGoalId' => 'string',
+        'AdditionalConversionValue' => 'float',
         'NewCustomerAcquisitionBidOnlyMode' => 'bool',
-        'AdditionalConversionValue' => 'float'
+        'NewCustomerAcquisitionGoalId' => 'string'
     ];
 
     /**
@@ -48,9 +48,9 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'NewCustomerAcquisitionGoalId' => 'int64',
+        'AdditionalConversionValue' => 'double',
         'NewCustomerAcquisitionBidOnlyMode' => null,
-        'AdditionalConversionValue' => 'double'
+        'NewCustomerAcquisitionGoalId' => 'int64'
     ];
 
     /**
@@ -60,9 +60,9 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'NewCustomerAcquisitionGoalId' => true,
+        'AdditionalConversionValue' => true,
         'NewCustomerAcquisitionBidOnlyMode' => true,
-        'AdditionalConversionValue' => true
+        'NewCustomerAcquisitionGoalId' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'NewCustomerAcquisitionGoalId' => 'NewCustomerAcquisitionGoalId',
+        'AdditionalConversionValue' => 'AdditionalConversionValue',
         'NewCustomerAcquisitionBidOnlyMode' => 'NewCustomerAcquisitionBidOnlyMode',
-        'AdditionalConversionValue' => 'AdditionalConversionValue'
+        'NewCustomerAcquisitionGoalId' => 'NewCustomerAcquisitionGoalId'
     ];
 
     /**
@@ -164,9 +164,9 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'NewCustomerAcquisitionGoalId' => 'setNewCustomerAcquisitionGoalId',
+        'AdditionalConversionValue' => 'setAdditionalConversionValue',
         'NewCustomerAcquisitionBidOnlyMode' => 'setNewCustomerAcquisitionBidOnlyMode',
-        'AdditionalConversionValue' => 'setAdditionalConversionValue'
+        'NewCustomerAcquisitionGoalId' => 'setNewCustomerAcquisitionGoalId'
     ];
 
     /**
@@ -176,9 +176,9 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'NewCustomerAcquisitionGoalId' => 'getNewCustomerAcquisitionGoalId',
+        'AdditionalConversionValue' => 'getAdditionalConversionValue',
         'NewCustomerAcquisitionBidOnlyMode' => 'getNewCustomerAcquisitionBidOnlyMode',
-        'AdditionalConversionValue' => 'getAdditionalConversionValue'
+        'NewCustomerAcquisitionGoalId' => 'getNewCustomerAcquisitionGoalId'
     ];
 
     /**
@@ -239,9 +239,14 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('NewCustomerAcquisitionGoalId', $data ?? [], null);
-        $this->setIfExists('NewCustomerAcquisitionBidOnlyMode', $data ?? [], null);
         $this->setIfExists('AdditionalConversionValue', $data ?? [], null);
+        $this->setIfExists('NewCustomerAcquisitionBidOnlyMode', $data ?? [], null);
+        $this->setIfExists('NewCustomerAcquisitionGoalId', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -324,38 +329,38 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
     }
 
     /**
-     * Gets NewCustomerAcquisitionGoalId
+     * Gets AdditionalConversionValue
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getNewCustomerAcquisitionGoalId()
+    public function getAdditionalConversionValue()
     {
-        if (!isset($this->container['NewCustomerAcquisitionGoalId']) || is_null($this->container['NewCustomerAcquisitionGoalId'])) {
+        if (!isset($this->container['AdditionalConversionValue']) || is_null($this->container['AdditionalConversionValue'])) {
             return null;
         }
-        return $this->container['NewCustomerAcquisitionGoalId'];
+        return $this->container['AdditionalConversionValue'];
     }
 
     /**
-     * Sets NewCustomerAcquisitionGoalId
+     * Sets AdditionalConversionValue
      *
-     * @param string|null $NewCustomerAcquisitionGoalId NewCustomerAcquisitionGoalId
+     * @param float|null $AdditionalConversionValue AdditionalConversionValue
      *
      * @return self
      */
-    public function setNewCustomerAcquisitionGoalId($NewCustomerAcquisitionGoalId)
+    public function setAdditionalConversionValue($AdditionalConversionValue)
     {
-        if (is_null($NewCustomerAcquisitionGoalId)) {
-            array_push($this->openAPINullablesSetToNull, 'NewCustomerAcquisitionGoalId');
+        if (is_null($AdditionalConversionValue)) {
+            array_push($this->openAPINullablesSetToNull, 'AdditionalConversionValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NewCustomerAcquisitionGoalId', $nullablesSetToNull);
+            $index = array_search('AdditionalConversionValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['NewCustomerAcquisitionGoalId'] = $NewCustomerAcquisitionGoalId;
+        $this->container['AdditionalConversionValue'] = $AdditionalConversionValue;
 
         return $this;
     }
@@ -398,38 +403,38 @@ class NewCustomerAcquisitionGoalSetting extends Setting implements ModelInterfac
     }
 
     /**
-     * Gets AdditionalConversionValue
+     * Gets NewCustomerAcquisitionGoalId
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getAdditionalConversionValue()
+    public function getNewCustomerAcquisitionGoalId()
     {
-        if (!isset($this->container['AdditionalConversionValue']) || is_null($this->container['AdditionalConversionValue'])) {
+        if (!isset($this->container['NewCustomerAcquisitionGoalId']) || is_null($this->container['NewCustomerAcquisitionGoalId'])) {
             return null;
         }
-        return $this->container['AdditionalConversionValue'];
+        return $this->container['NewCustomerAcquisitionGoalId'];
     }
 
     /**
-     * Sets AdditionalConversionValue
+     * Sets NewCustomerAcquisitionGoalId
      *
-     * @param float|null $AdditionalConversionValue AdditionalConversionValue
+     * @param string|null $NewCustomerAcquisitionGoalId NewCustomerAcquisitionGoalId
      *
      * @return self
      */
-    public function setAdditionalConversionValue($AdditionalConversionValue)
+    public function setNewCustomerAcquisitionGoalId($NewCustomerAcquisitionGoalId)
     {
-        if (is_null($AdditionalConversionValue)) {
-            array_push($this->openAPINullablesSetToNull, 'AdditionalConversionValue');
+        if (is_null($NewCustomerAcquisitionGoalId)) {
+            array_push($this->openAPINullablesSetToNull, 'NewCustomerAcquisitionGoalId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdditionalConversionValue', $nullablesSetToNull);
+            $index = array_search('NewCustomerAcquisitionGoalId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AdditionalConversionValue'] = $AdditionalConversionValue;
+        $this->container['NewCustomerAcquisitionGoalId'] = $NewCustomerAcquisitionGoalId;
 
         return $this;
     }

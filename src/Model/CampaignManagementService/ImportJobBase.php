@@ -33,18 +33,18 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'Id' => 'string',
-        'Type' => 'string',
-        'Status' => 'string',
-        'NotificationType' => 'string',
         'CreatedByUserId' => 'string',
         'CreatedByUserName' => 'string',
-        'Frequency' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Frequency',
-        'LastRunTimeInUTC' => '\DateTime',
         'CreatedDateTimeInUTC' => '\DateTime',
+        'Frequency' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Frequency',
+        'Id' => 'string',
         'ImportOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportOption',
-        'NotificationEmail' => 'string'
+        'LastRunTimeInUTC' => '\DateTime',
+        'Name' => 'string',
+        'NotificationEmail' => 'string',
+        'NotificationType' => 'string',
+        'Status' => 'string',
+        'Type' => 'string'
     ];
 
     /**
@@ -55,18 +55,18 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'Id' => 'int64',
-        'Type' => null,
-        'Status' => null,
-        'NotificationType' => null,
         'CreatedByUserId' => 'int64',
         'CreatedByUserName' => null,
-        'Frequency' => null,
-        'LastRunTimeInUTC' => 'date-time',
         'CreatedDateTimeInUTC' => 'date-time',
+        'Frequency' => null,
+        'Id' => 'int64',
         'ImportOption' => null,
-        'NotificationEmail' => null
+        'LastRunTimeInUTC' => 'date-time',
+        'Name' => null,
+        'NotificationEmail' => null,
+        'NotificationType' => null,
+        'Status' => null,
+        'Type' => null
     ];
 
     /**
@@ -75,18 +75,18 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'Id' => true,
-        'Type' => true,
-        'Status' => true,
-        'NotificationType' => true,
         'CreatedByUserId' => true,
         'CreatedByUserName' => true,
-        'Frequency' => true,
-        'LastRunTimeInUTC' => true,
         'CreatedDateTimeInUTC' => true,
+        'Frequency' => true,
+        'Id' => true,
         'ImportOption' => true,
-        'NotificationEmail' => true
+        'LastRunTimeInUTC' => true,
+        'Name' => true,
+        'NotificationEmail' => true,
+        'NotificationType' => true,
+        'Status' => true,
+        'Type' => true
     ];
 
     /**
@@ -175,18 +175,18 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'Id' => 'Id',
-        'Type' => 'Type',
-        'Status' => 'Status',
-        'NotificationType' => 'NotificationType',
         'CreatedByUserId' => 'CreatedByUserId',
         'CreatedByUserName' => 'CreatedByUserName',
-        'Frequency' => 'Frequency',
-        'LastRunTimeInUTC' => 'LastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
+        'Frequency' => 'Frequency',
+        'Id' => 'Id',
         'ImportOption' => 'ImportOption',
-        'NotificationEmail' => 'NotificationEmail'
+        'LastRunTimeInUTC' => 'LastRunTimeInUTC',
+        'Name' => 'Name',
+        'NotificationEmail' => 'NotificationEmail',
+        'NotificationType' => 'NotificationType',
+        'Status' => 'Status',
+        'Type' => 'Type'
     ];
 
     /**
@@ -195,18 +195,18 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'Id' => 'setId',
-        'Type' => 'setType',
-        'Status' => 'setStatus',
-        'NotificationType' => 'setNotificationType',
         'CreatedByUserId' => 'setCreatedByUserId',
         'CreatedByUserName' => 'setCreatedByUserName',
-        'Frequency' => 'setFrequency',
-        'LastRunTimeInUTC' => 'setLastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
+        'Frequency' => 'setFrequency',
+        'Id' => 'setId',
         'ImportOption' => 'setImportOption',
-        'NotificationEmail' => 'setNotificationEmail'
+        'LastRunTimeInUTC' => 'setLastRunTimeInUTC',
+        'Name' => 'setName',
+        'NotificationEmail' => 'setNotificationEmail',
+        'NotificationType' => 'setNotificationType',
+        'Status' => 'setStatus',
+        'Type' => 'setType'
     ];
 
     /**
@@ -215,18 +215,18 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'Id' => 'getId',
-        'Type' => 'getType',
-        'Status' => 'getStatus',
-        'NotificationType' => 'getNotificationType',
         'CreatedByUserId' => 'getCreatedByUserId',
         'CreatedByUserName' => 'getCreatedByUserName',
-        'Frequency' => 'getFrequency',
-        'LastRunTimeInUTC' => 'getLastRunTimeInUTC',
         'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
+        'Frequency' => 'getFrequency',
+        'Id' => 'getId',
         'ImportOption' => 'getImportOption',
-        'NotificationEmail' => 'getNotificationEmail'
+        'LastRunTimeInUTC' => 'getLastRunTimeInUTC',
+        'Name' => 'getName',
+        'NotificationEmail' => 'getNotificationEmail',
+        'NotificationType' => 'getNotificationType',
+        'Status' => 'getStatus',
+        'Type' => 'getType'
     ];
 
     /**
@@ -286,18 +286,23 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('NotificationType', $data ?? [], null);
         $this->setIfExists('CreatedByUserId', $data ?? [], null);
         $this->setIfExists('CreatedByUserName', $data ?? [], null);
-        $this->setIfExists('Frequency', $data ?? [], null);
-        $this->setIfExists('LastRunTimeInUTC', $data ?? [], null);
         $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
+        $this->setIfExists('Frequency', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('ImportOption', $data ?? [], null);
+        $this->setIfExists('LastRunTimeInUTC', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('NotificationEmail', $data ?? [], null);
+        $this->setIfExists('NotificationType', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -341,191 +346,6 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param string|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            array_push($this->openAPINullablesSetToNull, 'Status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Status', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets NotificationType
-     *
-     * @return string|null
-     */
-    public function getNotificationType()
-    {
-        if (!isset($this->container['NotificationType']) || is_null($this->container['NotificationType'])) {
-            return null;
-        }
-        return $this->container['NotificationType'];
-    }
-
-    /**
-     * Sets NotificationType
-     *
-     * @param string|null $NotificationType NotificationType
-     *
-     * @return self
-     */
-    public function setNotificationType($NotificationType)
-    {
-        if (is_null($NotificationType)) {
-            array_push($this->openAPINullablesSetToNull, 'NotificationType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NotificationType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NotificationType'] = $NotificationType;
-
-        return $this;
-    }
 
     /**
      * Gets CreatedByUserId
@@ -602,6 +422,43 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets CreatedDateTimeInUTC
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedDateTimeInUTC()
+    {
+        if (!isset($this->container['CreatedDateTimeInUTC']) || is_null($this->container['CreatedDateTimeInUTC'])) {
+            return null;
+        }
+        return $this->container['CreatedDateTimeInUTC'];
+    }
+
+    /**
+     * Sets CreatedDateTimeInUTC
+     *
+     * @param \DateTime|null $CreatedDateTimeInUTC CreatedDateTimeInUTC
+     *
+     * @return self
+     */
+    public function setCreatedDateTimeInUTC($CreatedDateTimeInUTC)
+    {
+        if (is_null($CreatedDateTimeInUTC)) {
+            array_push($this->openAPINullablesSetToNull, 'CreatedDateTimeInUTC');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CreatedDateTimeInUTC', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CreatedDateTimeInUTC'] = $CreatedDateTimeInUTC;
+
+        return $this;
+    }
+
+    /**
      * Gets Frequency
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Frequency|null
@@ -639,75 +496,38 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets LastRunTimeInUTC
+     * Gets Id
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getLastRunTimeInUTC()
+    public function getId()
     {
-        if (!isset($this->container['LastRunTimeInUTC']) || is_null($this->container['LastRunTimeInUTC'])) {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
             return null;
         }
-        return $this->container['LastRunTimeInUTC'];
+        return $this->container['Id'];
     }
 
     /**
-     * Sets LastRunTimeInUTC
+     * Sets Id
      *
-     * @param \DateTime|null $LastRunTimeInUTC LastRunTimeInUTC
+     * @param string|null $Id Id
      *
      * @return self
      */
-    public function setLastRunTimeInUTC($LastRunTimeInUTC)
+    public function setId($Id)
     {
-        if (is_null($LastRunTimeInUTC)) {
-            array_push($this->openAPINullablesSetToNull, 'LastRunTimeInUTC');
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LastRunTimeInUTC', $nullablesSetToNull);
+            $index = array_search('Id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['LastRunTimeInUTC'] = $LastRunTimeInUTC;
-
-        return $this;
-    }
-
-    /**
-     * Gets CreatedDateTimeInUTC
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedDateTimeInUTC()
-    {
-        if (!isset($this->container['CreatedDateTimeInUTC']) || is_null($this->container['CreatedDateTimeInUTC'])) {
-            return null;
-        }
-        return $this->container['CreatedDateTimeInUTC'];
-    }
-
-    /**
-     * Sets CreatedDateTimeInUTC
-     *
-     * @param \DateTime|null $CreatedDateTimeInUTC CreatedDateTimeInUTC
-     *
-     * @return self
-     */
-    public function setCreatedDateTimeInUTC($CreatedDateTimeInUTC)
-    {
-        if (is_null($CreatedDateTimeInUTC)) {
-            array_push($this->openAPINullablesSetToNull, 'CreatedDateTimeInUTC');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CreatedDateTimeInUTC', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CreatedDateTimeInUTC'] = $CreatedDateTimeInUTC;
+        $this->container['Id'] = $Id;
 
         return $this;
     }
@@ -750,6 +570,80 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets LastRunTimeInUTC
+     *
+     * @return \DateTime|null
+     */
+    public function getLastRunTimeInUTC()
+    {
+        if (!isset($this->container['LastRunTimeInUTC']) || is_null($this->container['LastRunTimeInUTC'])) {
+            return null;
+        }
+        return $this->container['LastRunTimeInUTC'];
+    }
+
+    /**
+     * Sets LastRunTimeInUTC
+     *
+     * @param \DateTime|null $LastRunTimeInUTC LastRunTimeInUTC
+     *
+     * @return self
+     */
+    public function setLastRunTimeInUTC($LastRunTimeInUTC)
+    {
+        if (is_null($LastRunTimeInUTC)) {
+            array_push($this->openAPINullablesSetToNull, 'LastRunTimeInUTC');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LastRunTimeInUTC', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LastRunTimeInUTC'] = $LastRunTimeInUTC;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
      * Gets NotificationEmail
      *
      * @return string|null
@@ -782,6 +676,117 @@ class ImportJobBase extends ImportJob implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['NotificationEmail'] = $NotificationEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets NotificationType
+     *
+     * @return string|null
+     */
+    public function getNotificationType()
+    {
+        if (!isset($this->container['NotificationType']) || is_null($this->container['NotificationType'])) {
+            return null;
+        }
+        return $this->container['NotificationType'];
+    }
+
+    /**
+     * Sets NotificationType
+     *
+     * @param string|null $NotificationType NotificationType
+     *
+     * @return self
+     */
+    public function setNotificationType($NotificationType)
+    {
+        if (is_null($NotificationType)) {
+            array_push($this->openAPINullablesSetToNull, 'NotificationType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NotificationType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NotificationType'] = $NotificationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param string|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

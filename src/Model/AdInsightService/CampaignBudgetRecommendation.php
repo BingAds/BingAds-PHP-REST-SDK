@@ -375,6 +375,11 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         $this->setIfExists('CurrentBudget', $data ?? [], null);
         $this->setIfExists('BudgetPoints', $data ?? [], null);
         $this->setIfExists('BudgetType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -1177,7 +1182,7 @@ class CampaignBudgetRecommendation extends RecommendationBase implements ModelIn
         if (is_null($BudgetType)) {
             throw new \InvalidArgumentException('non-nullable BudgetType cannot be null');
         }
-        if (!$BudgetType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType) {
+        if (!is_null($BudgetType) && !$BudgetType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType) {
             $BudgetType = new \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType($BudgetType);
         }
         $this->container['BudgetType'] = $BudgetType;

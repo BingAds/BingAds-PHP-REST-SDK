@@ -34,10 +34,10 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'ChannelPlacementId' => 'string',
-        'ChannelPlacementName' => 'string',
         'ChannelId' => 'int',
         'ChannelName' => 'string',
+        'ChannelPlacementId' => 'string',
+        'ChannelPlacementName' => 'string',
         'SubChannelId' => 'int',
         'SubChannelName' => 'string'
     ];
@@ -51,10 +51,10 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'ChannelPlacementId' => 'int64',
-        'ChannelPlacementName' => null,
         'ChannelId' => 'int32',
         'ChannelName' => null,
+        'ChannelPlacementId' => 'int64',
+        'ChannelPlacementName' => null,
         'SubChannelId' => 'int32',
         'SubChannelName' => null
     ];
@@ -66,10 +66,10 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'ChannelPlacementId' => false,
-        'ChannelPlacementName' => true,
         'ChannelId' => false,
         'ChannelName' => true,
+        'ChannelPlacementId' => false,
+        'ChannelPlacementName' => true,
         'SubChannelId' => true,
         'SubChannelName' => true
     ];
@@ -161,10 +161,10 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'ChannelPlacementId' => 'ChannelPlacementId',
-        'ChannelPlacementName' => 'ChannelPlacementName',
         'ChannelId' => 'ChannelId',
         'ChannelName' => 'ChannelName',
+        'ChannelPlacementId' => 'ChannelPlacementId',
+        'ChannelPlacementName' => 'ChannelPlacementName',
         'SubChannelId' => 'SubChannelId',
         'SubChannelName' => 'SubChannelName'
     ];
@@ -176,10 +176,10 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'ChannelPlacementId' => 'setChannelPlacementId',
-        'ChannelPlacementName' => 'setChannelPlacementName',
         'ChannelId' => 'setChannelId',
         'ChannelName' => 'setChannelName',
+        'ChannelPlacementId' => 'setChannelPlacementId',
+        'ChannelPlacementName' => 'setChannelPlacementName',
         'SubChannelId' => 'setSubChannelId',
         'SubChannelName' => 'setSubChannelName'
     ];
@@ -191,10 +191,10 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'ChannelPlacementId' => 'getChannelPlacementId',
-        'ChannelPlacementName' => 'getChannelPlacementName',
         'ChannelId' => 'getChannelId',
         'ChannelName' => 'getChannelName',
+        'ChannelPlacementId' => 'getChannelPlacementId',
+        'ChannelPlacementName' => 'getChannelPlacementName',
         'SubChannelId' => 'getSubChannelId',
         'SubChannelName' => 'getSubChannelName'
     ];
@@ -257,12 +257,17 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('ChannelPlacementId', $data ?? [], null);
-        $this->setIfExists('ChannelPlacementName', $data ?? [], null);
         $this->setIfExists('ChannelId', $data ?? [], null);
         $this->setIfExists('ChannelName', $data ?? [], null);
+        $this->setIfExists('ChannelPlacementId', $data ?? [], null);
+        $this->setIfExists('ChannelPlacementName', $data ?? [], null);
         $this->setIfExists('SubChannelId', $data ?? [], null);
         $this->setIfExists('SubChannelName', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -345,73 +350,6 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
     }
 
     /**
-     * Gets ChannelPlacementId
-     *
-     * @return string|null
-     */
-    public function getChannelPlacementId()
-    {
-        if (!isset($this->container['ChannelPlacementId']) || is_null($this->container['ChannelPlacementId'])) {
-            return null;
-        }
-        return $this->container['ChannelPlacementId'];
-    }
-
-    /**
-     * Sets ChannelPlacementId
-     *
-     * @param string|null $ChannelPlacementId ChannelPlacementId
-     *
-     * @return self
-     */
-    public function setChannelPlacementId($ChannelPlacementId)
-    {
-        if (is_null($ChannelPlacementId)) {
-            throw new \InvalidArgumentException('non-nullable ChannelPlacementId cannot be null');
-        }
-        $this->container['ChannelPlacementId'] = $ChannelPlacementId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ChannelPlacementName
-     *
-     * @return string|null
-     */
-    public function getChannelPlacementName()
-    {
-        if (!isset($this->container['ChannelPlacementName']) || is_null($this->container['ChannelPlacementName'])) {
-            return null;
-        }
-        return $this->container['ChannelPlacementName'];
-    }
-
-    /**
-     * Sets ChannelPlacementName
-     *
-     * @param string|null $ChannelPlacementName ChannelPlacementName
-     *
-     * @return self
-     */
-    public function setChannelPlacementName($ChannelPlacementName)
-    {
-        if (is_null($ChannelPlacementName)) {
-            array_push($this->openAPINullablesSetToNull, 'ChannelPlacementName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ChannelPlacementName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ChannelPlacementName'] = $ChannelPlacementName;
-
-        return $this;
-    }
-
-    /**
      * Gets ChannelId
      *
      * @return int|null
@@ -474,6 +412,73 @@ class ChannelPlacementCriterion extends Criterion implements ModelInterface, Arr
             }
         }
         $this->container['ChannelName'] = $ChannelName;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacementId
+     *
+     * @return string|null
+     */
+    public function getChannelPlacementId()
+    {
+        if (!isset($this->container['ChannelPlacementId']) || is_null($this->container['ChannelPlacementId'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacementId'];
+    }
+
+    /**
+     * Sets ChannelPlacementId
+     *
+     * @param string|null $ChannelPlacementId ChannelPlacementId
+     *
+     * @return self
+     */
+    public function setChannelPlacementId($ChannelPlacementId)
+    {
+        if (is_null($ChannelPlacementId)) {
+            throw new \InvalidArgumentException('non-nullable ChannelPlacementId cannot be null');
+        }
+        $this->container['ChannelPlacementId'] = $ChannelPlacementId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ChannelPlacementName
+     *
+     * @return string|null
+     */
+    public function getChannelPlacementName()
+    {
+        if (!isset($this->container['ChannelPlacementName']) || is_null($this->container['ChannelPlacementName'])) {
+            return null;
+        }
+        return $this->container['ChannelPlacementName'];
+    }
+
+    /**
+     * Sets ChannelPlacementName
+     *
+     * @param string|null $ChannelPlacementName ChannelPlacementName
+     *
+     * @return self
+     */
+    public function setChannelPlacementName($ChannelPlacementName)
+    {
+        if (is_null($ChannelPlacementName)) {
+            array_push($this->openAPINullablesSetToNull, 'ChannelPlacementName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ChannelPlacementName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ChannelPlacementName'] = $ChannelPlacementName;
 
         return $this;
     }

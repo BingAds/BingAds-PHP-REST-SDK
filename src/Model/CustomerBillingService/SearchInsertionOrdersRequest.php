@@ -425,7 +425,7 @@ class SearchInsertionOrdersRequest implements ModelInterface, ArrayAccess, \Json
         if (is_null($ReturnAdditionalFields)) {
             throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\InsertionOrderAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

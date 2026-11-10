@@ -33,8 +33,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Key' => 'string',
-        'AuditPoints' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AuditPointResult[]'
+        'AuditPoints' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AuditPointResult[]',
+        'Key' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Key' => null,
-        'AuditPoints' => null
+        'AuditPoints' => null,
+        'Key' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Key' => true,
-        'AuditPoints' => true
+        'AuditPoints' => true,
+        'Key' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Key' => 'Key',
-        'AuditPoints' => 'AuditPoints'
+        'AuditPoints' => 'AuditPoints',
+        'Key' => 'Key'
     ];
 
     /**
@@ -155,8 +155,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Key' => 'setKey',
-        'AuditPoints' => 'setAuditPoints'
+        'AuditPoints' => 'setAuditPoints',
+        'Key' => 'setKey'
     ];
 
     /**
@@ -165,8 +165,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Key' => 'getKey',
-        'AuditPoints' => 'getAuditPoints'
+        'AuditPoints' => 'getAuditPoints',
+        'Key' => 'getKey'
     ];
 
     /**
@@ -226,8 +226,8 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Key', $data ?? [], null);
         $this->setIfExists('AuditPoints', $data ?? [], null);
+        $this->setIfExists('Key', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Key
-     *
-     * @return string|null
-     */
-    public function getKey()
-    {
-        if (!isset($this->container['Key']) || is_null($this->container['Key'])) {
-            return null;
-        }
-        return $this->container['Key'];
-    }
-
-    /**
-     * Sets Key
-     *
-     * @param string|null $Key Key
-     *
-     * @return self
-     */
-    public function setKey($Key)
-    {
-        if (is_null($Key)) {
-            array_push($this->openAPINullablesSetToNull, 'Key');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Key', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Key'] = $Key;
-
-        return $this;
-    }
-
-    /**
      * Gets AuditPoints
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuditPointResult[]|null
@@ -342,6 +305,43 @@ class CategoryResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AuditPoints'] = $AuditPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets Key
+     *
+     * @return string|null
+     */
+    public function getKey()
+    {
+        if (!isset($this->container['Key']) || is_null($this->container['Key'])) {
+            return null;
+        }
+        return $this->container['Key'];
+    }
+
+    /**
+     * Sets Key
+     *
+     * @param string|null $Key Key
+     *
+     * @return self
+     */
+    public function setKey($Key)
+    {
+        if (is_null($Key)) {
+            array_push($this->openAPINullablesSetToNull, 'Key');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Key', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Key'] = $Key;
 
         return $this;
     }

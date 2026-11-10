@@ -401,7 +401,7 @@ class RuleItem implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Operator)) {
             throw new \InvalidArgumentException('non-nullable Operator cannot be null');
         }
-        if (!$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator) {
+        if (!is_null($Operator) && !$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator) {
             $Operator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator($Operator);
         }
         $this->container['Operator'] = $Operator;

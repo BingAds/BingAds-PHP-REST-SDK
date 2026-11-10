@@ -33,9 +33,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Type' => 'string',
+        'Cron' => 'string',
         'TimeZone' => 'string',
-        'Cron' => 'string'
+        'Type' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Type' => null,
+        'Cron' => null,
         'TimeZone' => null,
-        'Cron' => null
+        'Type' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => true,
+        'Cron' => true,
         'TimeZone' => true,
-        'Cron' => true
+        'Type' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Type' => 'Type',
+        'Cron' => 'Cron',
         'TimeZone' => 'TimeZone',
-        'Cron' => 'Cron'
+        'Type' => 'Type'
     ];
 
     /**
@@ -159,9 +159,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Type' => 'setType',
+        'Cron' => 'setCron',
         'TimeZone' => 'setTimeZone',
-        'Cron' => 'setCron'
+        'Type' => 'setType'
     ];
 
     /**
@@ -170,9 +170,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Type' => 'getType',
+        'Cron' => 'getCron',
         'TimeZone' => 'getTimeZone',
-        'Cron' => 'getCron'
+        'Type' => 'getType'
     ];
 
     /**
@@ -232,9 +232,9 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('TimeZone', $data ?? [], null);
         $this->setIfExists('Cron', $data ?? [], null);
+        $this->setIfExists('TimeZone', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -280,38 +280,38 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Type
+     * Gets Cron
      *
      * @return string|null
      */
-    public function getType()
+    public function getCron()
     {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+        if (!isset($this->container['Cron']) || is_null($this->container['Cron'])) {
             return null;
         }
-        return $this->container['Type'];
+        return $this->container['Cron'];
     }
 
     /**
-     * Sets Type
+     * Sets Cron
      *
-     * @param string|null $Type Type
+     * @param string|null $Cron Cron
      *
      * @return self
      */
-    public function setType($Type)
+    public function setCron($Cron)
     {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
+        if (is_null($Cron)) {
+            array_push($this->openAPINullablesSetToNull, 'Cron');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
+            $index = array_search('Cron', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Type'] = $Type;
+        $this->container['Cron'] = $Cron;
 
         return $this;
     }
@@ -354,38 +354,38 @@ class Frequency implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Cron
+     * Gets Type
      *
      * @return string|null
      */
-    public function getCron()
+    public function getType()
     {
-        if (!isset($this->container['Cron']) || is_null($this->container['Cron'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['Cron'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets Cron
+     * Sets Type
      *
-     * @param string|null $Cron Cron
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setCron($Cron)
+    public function setType($Type)
     {
-        if (is_null($Cron)) {
-            array_push($this->openAPINullablesSetToNull, 'Cron');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Cron', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Cron'] = $Cron;
+        $this->container['Type'] = $Type;
 
         return $this;
     }

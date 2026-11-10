@@ -33,17 +33,17 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ReportName' => 'string',
-        'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
-        'ReturnOnlyCompleteData' => 'bool',
-        'ExcludeReportHeader' => 'bool',
-        'ExcludeReportFooter' => 'bool',
         'ExcludeColumnHeaders' => 'bool',
+        'ExcludeReportFooter' => 'bool',
+        'ExcludeReportHeader' => 'bool',
+        'Format' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat',
         'FormatVersion' => 'string',
-        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountReportScope',
-        'Filter' => 'object',
-        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
+        'ReportName' => 'string',
+        'ReturnOnlyCompleteData' => 'bool',
         'Columns' => '\Microsoft\MsAds\Rest\Model\ReportingService\TravelQueryInsightReportColumn[]',
+        'Filter' => 'object',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountReportScope',
+        'Time' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTime',
         'Type' => 'string'
     ];
 
@@ -55,17 +55,17 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ReportName' => null,
-        'Format' => null,
-        'ReturnOnlyCompleteData' => null,
-        'ExcludeReportHeader' => null,
-        'ExcludeReportFooter' => null,
         'ExcludeColumnHeaders' => null,
+        'ExcludeReportFooter' => null,
+        'ExcludeReportHeader' => null,
+        'Format' => null,
         'FormatVersion' => null,
-        'Scope' => null,
-        'Filter' => null,
-        'Time' => null,
+        'ReportName' => null,
+        'ReturnOnlyCompleteData' => null,
         'Columns' => null,
+        'Filter' => null,
+        'Scope' => null,
+        'Time' => null,
         'Type' => null
     ];
 
@@ -75,17 +75,17 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ReportName' => true,
-        'Format' => false,
-        'ReturnOnlyCompleteData' => true,
-        'ExcludeReportHeader' => true,
-        'ExcludeReportFooter' => true,
         'ExcludeColumnHeaders' => true,
+        'ExcludeReportFooter' => true,
+        'ExcludeReportHeader' => true,
+        'Format' => true,
         'FormatVersion' => true,
-        'Scope' => true,
-        'Filter' => true,
-        'Time' => true,
+        'ReportName' => true,
+        'ReturnOnlyCompleteData' => true,
         'Columns' => true,
+        'Filter' => true,
+        'Scope' => true,
+        'Time' => true,
         'Type' => true
     ];
 
@@ -175,17 +175,17 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ReportName' => 'ReportName',
-        'Format' => 'Format',
-        'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
-        'ExcludeReportHeader' => 'ExcludeReportHeader',
-        'ExcludeReportFooter' => 'ExcludeReportFooter',
         'ExcludeColumnHeaders' => 'ExcludeColumnHeaders',
+        'ExcludeReportFooter' => 'ExcludeReportFooter',
+        'ExcludeReportHeader' => 'ExcludeReportHeader',
+        'Format' => 'Format',
         'FormatVersion' => 'FormatVersion',
-        'Scope' => 'Scope',
-        'Filter' => 'Filter',
-        'Time' => 'Time',
+        'ReportName' => 'ReportName',
+        'ReturnOnlyCompleteData' => 'ReturnOnlyCompleteData',
         'Columns' => 'Columns',
+        'Filter' => 'Filter',
+        'Scope' => 'Scope',
+        'Time' => 'Time',
         'Type' => 'Type'
     ];
 
@@ -195,17 +195,17 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
      * @var string[]
      */
     protected static array $setters = [
-        'ReportName' => 'setReportName',
-        'Format' => 'setFormat',
-        'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
-        'ExcludeReportHeader' => 'setExcludeReportHeader',
-        'ExcludeReportFooter' => 'setExcludeReportFooter',
         'ExcludeColumnHeaders' => 'setExcludeColumnHeaders',
+        'ExcludeReportFooter' => 'setExcludeReportFooter',
+        'ExcludeReportHeader' => 'setExcludeReportHeader',
+        'Format' => 'setFormat',
         'FormatVersion' => 'setFormatVersion',
-        'Scope' => 'setScope',
-        'Filter' => 'setFilter',
-        'Time' => 'setTime',
+        'ReportName' => 'setReportName',
+        'ReturnOnlyCompleteData' => 'setReturnOnlyCompleteData',
         'Columns' => 'setColumns',
+        'Filter' => 'setFilter',
+        'Scope' => 'setScope',
+        'Time' => 'setTime',
         'Type' => 'setType'
     ];
 
@@ -215,17 +215,17 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
      * @var string[]
      */
     protected static array $getters = [
-        'ReportName' => 'getReportName',
-        'Format' => 'getFormat',
-        'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
-        'ExcludeReportHeader' => 'getExcludeReportHeader',
-        'ExcludeReportFooter' => 'getExcludeReportFooter',
         'ExcludeColumnHeaders' => 'getExcludeColumnHeaders',
+        'ExcludeReportFooter' => 'getExcludeReportFooter',
+        'ExcludeReportHeader' => 'getExcludeReportHeader',
+        'Format' => 'getFormat',
         'FormatVersion' => 'getFormatVersion',
-        'Scope' => 'getScope',
-        'Filter' => 'getFilter',
-        'Time' => 'getTime',
+        'ReportName' => 'getReportName',
+        'ReturnOnlyCompleteData' => 'getReturnOnlyCompleteData',
         'Columns' => 'getColumns',
+        'Filter' => 'getFilter',
+        'Scope' => 'getScope',
+        'Time' => 'getTime',
         'Type' => 'getType'
     ];
 
@@ -286,18 +286,23 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ReportName', $data ?? [], null);
-        $this->setIfExists('Format', $data ?? [], null);
-        $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
-        $this->setIfExists('ExcludeReportHeader', $data ?? [], null);
-        $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
         $this->setIfExists('ExcludeColumnHeaders', $data ?? [], null);
+        $this->setIfExists('ExcludeReportFooter', $data ?? [], null);
+        $this->setIfExists('ExcludeReportHeader', $data ?? [], null);
+        $this->setIfExists('Format', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('Filter', $data ?? [], null);
-        $this->setIfExists('Time', $data ?? [], null);
+        $this->setIfExists('ReportName', $data ?? [], null);
+        $this->setIfExists('ReturnOnlyCompleteData', $data ?? [], null);
         $this->setIfExists('Columns', $data ?? [], null);
+        $this->setIfExists('Filter', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('Time', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'TravelQueryInsightReportRequest');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -343,148 +348,38 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
 
 
     /**
-     * Gets ReportName
-     *
-     * @return string|null
-     */
-    public function getReportName()
-    {
-        if (!isset($this->container['ReportName']) || is_null($this->container['ReportName'])) {
-            return null;
-        }
-        return $this->container['ReportName'];
-    }
-
-    /**
-     * Sets ReportName
-     *
-     * @param string|null $ReportName ReportName
-     *
-     * @return self
-     */
-    public function setReportName($ReportName)
-    {
-        if (is_null($ReportName)) {
-            array_push($this->openAPINullablesSetToNull, 'ReportName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReportName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ReportName'] = $ReportName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Format
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null
-     */
-    public function getFormat()
-    {
-        if (!isset($this->container['Format']) || is_null($this->container['Format'])) {
-            return null;
-        }
-        if ((is_object($this->container['Format']) || is_string($this->container['Format'])) && method_exists($this->container['Format'], 'getValue')) {
-            return $this->container['Format']->getValue();
-        }
-        return $this->container['Format'];
-    }
-
-    /**
-     * Sets Format
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null $Format Format
-     *
-     * @return self
-     */
-    public function setFormat($Format)
-    {
-        if (is_null($Format)) {
-            throw new \InvalidArgumentException('non-nullable Format cannot be null');
-        }
-        if (!$Format instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat) {
-            $Format = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat($Format);
-        }
-        $this->container['Format'] = $Format;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnOnlyCompleteData
+     * Gets ExcludeColumnHeaders
      *
      * @return bool|null
      */
-    public function getReturnOnlyCompleteData()
+    public function getExcludeColumnHeaders()
     {
-        if (!isset($this->container['ReturnOnlyCompleteData']) || is_null($this->container['ReturnOnlyCompleteData'])) {
+        if (!isset($this->container['ExcludeColumnHeaders']) || is_null($this->container['ExcludeColumnHeaders'])) {
             return null;
         }
-        return $this->container['ReturnOnlyCompleteData'];
+        return $this->container['ExcludeColumnHeaders'];
     }
 
     /**
-     * Sets ReturnOnlyCompleteData
+     * Sets ExcludeColumnHeaders
      *
-     * @param bool|null $ReturnOnlyCompleteData ReturnOnlyCompleteData
+     * @param bool|null $ExcludeColumnHeaders ExcludeColumnHeaders
      *
      * @return self
      */
-    public function setReturnOnlyCompleteData($ReturnOnlyCompleteData)
+    public function setExcludeColumnHeaders($ExcludeColumnHeaders)
     {
-        if (is_null($ReturnOnlyCompleteData)) {
-            array_push($this->openAPINullablesSetToNull, 'ReturnOnlyCompleteData');
+        if (is_null($ExcludeColumnHeaders)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeColumnHeaders');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ReturnOnlyCompleteData', $nullablesSetToNull);
+            $index = array_search('ExcludeColumnHeaders', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ReturnOnlyCompleteData'] = $ReturnOnlyCompleteData;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExcludeReportHeader
-     *
-     * @return bool|null
-     */
-    public function getExcludeReportHeader()
-    {
-        if (!isset($this->container['ExcludeReportHeader']) || is_null($this->container['ExcludeReportHeader'])) {
-            return null;
-        }
-        return $this->container['ExcludeReportHeader'];
-    }
-
-    /**
-     * Sets ExcludeReportHeader
-     *
-     * @param bool|null $ExcludeReportHeader ExcludeReportHeader
-     *
-     * @return self
-     */
-    public function setExcludeReportHeader($ExcludeReportHeader)
-    {
-        if (is_null($ExcludeReportHeader)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeReportHeader');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeReportHeader', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExcludeReportHeader'] = $ExcludeReportHeader;
+        $this->container['ExcludeColumnHeaders'] = $ExcludeColumnHeaders;
 
         return $this;
     }
@@ -527,38 +422,81 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
     }
 
     /**
-     * Gets ExcludeColumnHeaders
+     * Gets ExcludeReportHeader
      *
      * @return bool|null
      */
-    public function getExcludeColumnHeaders()
+    public function getExcludeReportHeader()
     {
-        if (!isset($this->container['ExcludeColumnHeaders']) || is_null($this->container['ExcludeColumnHeaders'])) {
+        if (!isset($this->container['ExcludeReportHeader']) || is_null($this->container['ExcludeReportHeader'])) {
             return null;
         }
-        return $this->container['ExcludeColumnHeaders'];
+        return $this->container['ExcludeReportHeader'];
     }
 
     /**
-     * Sets ExcludeColumnHeaders
+     * Sets ExcludeReportHeader
      *
-     * @param bool|null $ExcludeColumnHeaders ExcludeColumnHeaders
+     * @param bool|null $ExcludeReportHeader ExcludeReportHeader
      *
      * @return self
      */
-    public function setExcludeColumnHeaders($ExcludeColumnHeaders)
+    public function setExcludeReportHeader($ExcludeReportHeader)
     {
-        if (is_null($ExcludeColumnHeaders)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeColumnHeaders');
+        if (is_null($ExcludeReportHeader)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeReportHeader');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeColumnHeaders', $nullablesSetToNull);
+            $index = array_search('ExcludeReportHeader', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ExcludeColumnHeaders'] = $ExcludeColumnHeaders;
+        $this->container['ExcludeReportHeader'] = $ExcludeReportHeader;
+
+        return $this;
+    }
+
+    /**
+     * Gets Format
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null
+     */
+    public function getFormat()
+    {
+        if (!isset($this->container['Format']) || is_null($this->container['Format'])) {
+            return null;
+        }
+        if ((is_object($this->container['Format']) || is_string($this->container['Format'])) && method_exists($this->container['Format'], 'getValue')) {
+            return $this->container['Format']->getValue();
+        }
+        return $this->container['Format'];
+    }
+
+    /**
+     * Sets Format
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat|mixed|null $Format Format
+     *
+     * @return self
+     */
+    public function setFormat($Format)
+    {
+        if (is_null($Format)) {
+            array_push($this->openAPINullablesSetToNull, 'Format');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Format', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Format) && !$Format instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat) {
+            $Format = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportFormat($Format);
+        }
+        $this->container['Format'] = $Format;
 
         return $this;
     }
@@ -601,112 +539,75 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
     }
 
     /**
-     * Gets Scope
+     * Gets ReportName
      *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountReportScope|null
+     * @return string|null
      */
-    public function getScope()
+    public function getReportName()
     {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+        if (!isset($this->container['ReportName']) || is_null($this->container['ReportName'])) {
             return null;
         }
-        return $this->container['Scope'];
+        return $this->container['ReportName'];
     }
 
     /**
-     * Sets Scope
+     * Sets ReportName
      *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountReportScope|null $Scope Scope
+     * @param string|null $ReportName ReportName
      *
      * @return self
      */
-    public function setScope($Scope)
+    public function setReportName($ReportName)
     {
-        if (is_null($Scope)) {
-            array_push($this->openAPINullablesSetToNull, 'Scope');
+        if (is_null($ReportName)) {
+            array_push($this->openAPINullablesSetToNull, 'ReportName');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scope', $nullablesSetToNull);
+            $index = array_search('ReportName', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Scope'] = $Scope;
+        $this->container['ReportName'] = $ReportName;
 
         return $this;
     }
 
     /**
-     * Gets Filter
+     * Gets ReturnOnlyCompleteData
      *
-     * @return object|null
+     * @return bool|null
      */
-    public function getFilter()
+    public function getReturnOnlyCompleteData()
     {
-        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
+        if (!isset($this->container['ReturnOnlyCompleteData']) || is_null($this->container['ReturnOnlyCompleteData'])) {
             return null;
         }
-        return $this->container['Filter'];
+        return $this->container['ReturnOnlyCompleteData'];
     }
 
     /**
-     * Sets Filter
+     * Sets ReturnOnlyCompleteData
      *
-     * @param object|null $Filter Filter
+     * @param bool|null $ReturnOnlyCompleteData ReturnOnlyCompleteData
      *
      * @return self
      */
-    public function setFilter($Filter)
+    public function setReturnOnlyCompleteData($ReturnOnlyCompleteData)
     {
-        if (is_null($Filter)) {
-            array_push($this->openAPINullablesSetToNull, 'Filter');
+        if (is_null($ReturnOnlyCompleteData)) {
+            array_push($this->openAPINullablesSetToNull, 'ReturnOnlyCompleteData');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Filter', $nullablesSetToNull);
+            $index = array_search('ReturnOnlyCompleteData', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Filter'] = $Filter;
-
-        return $this;
-    }
-
-    /**
-     * Gets Time
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null
-     */
-    public function getTime()
-    {
-        if (!isset($this->container['Time']) || is_null($this->container['Time'])) {
-            return null;
-        }
-        return $this->container['Time'];
-    }
-
-    /**
-     * Sets Time
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null $Time Time
-     *
-     * @return self
-     */
-    public function setTime($Time)
-    {
-        if (is_null($Time)) {
-            array_push($this->openAPINullablesSetToNull, 'Time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Time', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Time'] = $Time;
+        $this->container['ReturnOnlyCompleteData'] = $ReturnOnlyCompleteData;
 
         return $this;
     }
@@ -763,6 +664,117 @@ class TravelQueryInsightReportRequest extends ReportRequest implements ModelInte
             }
         }
         $this->container['Columns'] = $Columns;
+
+        return $this;
+    }
+
+    /**
+     * Gets Filter
+     *
+     * @return object|null
+     */
+    public function getFilter()
+    {
+        if (!isset($this->container['Filter']) || is_null($this->container['Filter'])) {
+            return null;
+        }
+        return $this->container['Filter'];
+    }
+
+    /**
+     * Sets Filter
+     *
+     * @param object|null $Filter Filter
+     *
+     * @return self
+     */
+    public function setFilter($Filter)
+    {
+        if (is_null($Filter)) {
+            array_push($this->openAPINullablesSetToNull, 'Filter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Filter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Filter'] = $Filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountReportScope|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountReportScope|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets Time
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null
+     */
+    public function getTime()
+    {
+        if (!isset($this->container['Time']) || is_null($this->container['Time'])) {
+            return null;
+        }
+        return $this->container['Time'];
+    }
+
+    /**
+     * Sets Time
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTime|null $Time Time
+     *
+     * @return self
+     */
+    public function setTime($Time)
+    {
+        if (is_null($Time)) {
+            array_push($this->openAPINullablesSetToNull, 'Time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Time'] = $Time;
 
         return $this;
     }

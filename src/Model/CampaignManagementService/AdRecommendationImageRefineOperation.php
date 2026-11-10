@@ -307,7 +307,7 @@ class AdRecommendationImageRefineOperation implements ModelInterface, ArrayAcces
         if (is_null($ImageRefineType)) {
             throw new \InvalidArgumentException('non-nullable ImageRefineType cannot be null');
         }
-        if (!$ImageRefineType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageRefineType) {
+        if (!is_null($ImageRefineType) && !$ImageRefineType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageRefineType) {
             $ImageRefineType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageRefineType($ImageRefineType);
         }
         $this->container['ImageRefineType'] = $ImageRefineType;

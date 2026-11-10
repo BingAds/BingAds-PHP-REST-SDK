@@ -33,8 +33,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
-        'AssetGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroup[]'
+        'AssetGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroup[]',
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PartialErrors' => null,
-        'AssetGroups' => null
+        'AssetGroups' => null,
+        'PartialErrors' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PartialErrors' => true,
-        'AssetGroups' => true
+        'AssetGroups' => true,
+        'PartialErrors' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PartialErrors' => 'PartialErrors',
-        'AssetGroups' => 'AssetGroups'
+        'AssetGroups' => 'AssetGroups',
+        'PartialErrors' => 'PartialErrors'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
-        'PartialErrors' => 'setPartialErrors',
-        'AssetGroups' => 'setAssetGroups'
+        'AssetGroups' => 'setAssetGroups',
+        'PartialErrors' => 'setPartialErrors'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
-        'PartialErrors' => 'getPartialErrors',
-        'AssetGroups' => 'getAssetGroups'
+        'AssetGroups' => 'getAssetGroups',
+        'PartialErrors' => 'getPartialErrors'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PartialErrors', $data ?? [], null);
         $this->setIfExists('AssetGroups', $data ?? [], null);
+        $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets AssetGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroup[]|null
@@ -342,6 +305,43 @@ class GetAssetGroupsByCampaignIdResponse implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['AssetGroups'] = $AssetGroups;
+
+        return $this;
+    }
+
+    /**
+     * Gets PartialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     */
+    public function getPartialErrors()
+    {
+        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+            return null;
+        }
+        return $this->container['PartialErrors'];
+    }
+
+    /**
+     * Sets PartialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     *
+     * @return self
+     */
+    public function setPartialErrors($PartialErrors)
+    {
+        if (is_null($PartialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PartialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PartialErrors'] = $PartialErrors;
 
         return $this;
     }

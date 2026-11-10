@@ -33,14 +33,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AssociatedCampaignType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
+        'AssociationCount' => 'int',
+        'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
+        'CurrencyCode' => 'string',
         'Id' => 'string',
         'Name' => 'string',
-        'AssociatedCampaignType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
-        'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
-        'AssociationCount' => 'int',
-        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'CurrencyCode' => 'string',
-        'ReportingTimeZone' => 'string'
+        'ReportingTimeZone' => 'string',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope'
     ];
 
     /**
@@ -51,14 +51,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AssociatedCampaignType' => null,
+        'AssociationCount' => 'int32',
+        'BiddingScheme' => null,
+        'CurrencyCode' => null,
         'Id' => 'int64',
         'Name' => null,
-        'AssociatedCampaignType' => null,
-        'BiddingScheme' => null,
-        'AssociationCount' => 'int32',
-        'Scope' => null,
-        'CurrencyCode' => null,
-        'ReportingTimeZone' => null
+        'ReportingTimeZone' => null,
+        'Scope' => null
     ];
 
     /**
@@ -67,14 +67,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AssociatedCampaignType' => true,
+        'AssociationCount' => true,
+        'BiddingScheme' => true,
+        'CurrencyCode' => true,
         'Id' => true,
         'Name' => true,
-        'AssociatedCampaignType' => false,
-        'BiddingScheme' => true,
-        'AssociationCount' => true,
-        'Scope' => false,
-        'CurrencyCode' => true,
-        'ReportingTimeZone' => true
+        'ReportingTimeZone' => true,
+        'Scope' => true
     ];
 
     /**
@@ -163,14 +163,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AssociatedCampaignType' => 'AssociatedCampaignType',
+        'AssociationCount' => 'AssociationCount',
+        'BiddingScheme' => 'BiddingScheme',
+        'CurrencyCode' => 'CurrencyCode',
         'Id' => 'Id',
         'Name' => 'Name',
-        'AssociatedCampaignType' => 'AssociatedCampaignType',
-        'BiddingScheme' => 'BiddingScheme',
-        'AssociationCount' => 'AssociationCount',
-        'Scope' => 'Scope',
-        'CurrencyCode' => 'CurrencyCode',
-        'ReportingTimeZone' => 'ReportingTimeZone'
+        'ReportingTimeZone' => 'ReportingTimeZone',
+        'Scope' => 'Scope'
     ];
 
     /**
@@ -179,14 +179,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'AssociatedCampaignType' => 'setAssociatedCampaignType',
+        'AssociationCount' => 'setAssociationCount',
+        'BiddingScheme' => 'setBiddingScheme',
+        'CurrencyCode' => 'setCurrencyCode',
         'Id' => 'setId',
         'Name' => 'setName',
-        'AssociatedCampaignType' => 'setAssociatedCampaignType',
-        'BiddingScheme' => 'setBiddingScheme',
-        'AssociationCount' => 'setAssociationCount',
-        'Scope' => 'setScope',
-        'CurrencyCode' => 'setCurrencyCode',
-        'ReportingTimeZone' => 'setReportingTimeZone'
+        'ReportingTimeZone' => 'setReportingTimeZone',
+        'Scope' => 'setScope'
     ];
 
     /**
@@ -195,14 +195,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'AssociatedCampaignType' => 'getAssociatedCampaignType',
+        'AssociationCount' => 'getAssociationCount',
+        'BiddingScheme' => 'getBiddingScheme',
+        'CurrencyCode' => 'getCurrencyCode',
         'Id' => 'getId',
         'Name' => 'getName',
-        'AssociatedCampaignType' => 'getAssociatedCampaignType',
-        'BiddingScheme' => 'getBiddingScheme',
-        'AssociationCount' => 'getAssociationCount',
-        'Scope' => 'getScope',
-        'CurrencyCode' => 'getCurrencyCode',
-        'ReportingTimeZone' => 'getReportingTimeZone'
+        'ReportingTimeZone' => 'getReportingTimeZone',
+        'Scope' => 'getScope'
     ];
 
     /**
@@ -262,14 +262,14 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AssociatedCampaignType', $data ?? [], null);
+        $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('BiddingScheme', $data ?? [], null);
+        $this->setIfExists('CurrencyCode', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('AssociatedCampaignType', $data ?? [], null);
-        $this->setIfExists('BiddingScheme', $data ?? [], null);
-        $this->setIfExists('AssociationCount', $data ?? [], null);
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('CurrencyCode', $data ?? [], null);
         $this->setIfExists('ReportingTimeZone', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
     }
 
     /**
@@ -313,6 +313,160 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AssociatedCampaignType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null
+     */
+    public function getAssociatedCampaignType()
+    {
+        if (!isset($this->container['AssociatedCampaignType']) || is_null($this->container['AssociatedCampaignType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AssociatedCampaignType']) || is_string($this->container['AssociatedCampaignType'])) && method_exists($this->container['AssociatedCampaignType'], 'getValue')) {
+            return $this->container['AssociatedCampaignType']->getValue();
+        }
+        return $this->container['AssociatedCampaignType'];
+    }
+
+    /**
+     * Sets AssociatedCampaignType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null $AssociatedCampaignType AssociatedCampaignType
+     *
+     * @return self
+     */
+    public function setAssociatedCampaignType($AssociatedCampaignType)
+    {
+        if (is_null($AssociatedCampaignType)) {
+            array_push($this->openAPINullablesSetToNull, 'AssociatedCampaignType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssociatedCampaignType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AssociatedCampaignType) && !$AssociatedCampaignType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
+            $AssociatedCampaignType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($AssociatedCampaignType);
+        }
+        $this->container['AssociatedCampaignType'] = $AssociatedCampaignType;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssociationCount
+     *
+     * @return int|null
+     */
+    public function getAssociationCount()
+    {
+        if (!isset($this->container['AssociationCount']) || is_null($this->container['AssociationCount'])) {
+            return null;
+        }
+        return $this->container['AssociationCount'];
+    }
+
+    /**
+     * Sets AssociationCount
+     *
+     * @param int|null $AssociationCount AssociationCount
+     *
+     * @return self
+     */
+    public function setAssociationCount($AssociationCount)
+    {
+        if (is_null($AssociationCount)) {
+            array_push($this->openAPINullablesSetToNull, 'AssociationCount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssociationCount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AssociationCount'] = $AssociationCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets BiddingScheme
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null
+     */
+    public function getBiddingScheme()
+    {
+        if (!isset($this->container['BiddingScheme']) || is_null($this->container['BiddingScheme'])) {
+            return null;
+        }
+        return $this->container['BiddingScheme'];
+    }
+
+    /**
+     * Sets BiddingScheme
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null $BiddingScheme BiddingScheme
+     *
+     * @return self
+     */
+    public function setBiddingScheme($BiddingScheme)
+    {
+        if (is_null($BiddingScheme)) {
+            array_push($this->openAPINullablesSetToNull, 'BiddingScheme');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BiddingScheme', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BiddingScheme'] = $BiddingScheme;
+
+        return $this;
+    }
+
+    /**
+     * Gets CurrencyCode
+     *
+     * @return string|null
+     */
+    public function getCurrencyCode()
+    {
+        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
+            return null;
+        }
+        return $this->container['CurrencyCode'];
+    }
+
+    /**
+     * Sets CurrencyCode
+     *
+     * @param string|null $CurrencyCode CurrencyCode
+     *
+     * @return self
+     */
+    public function setCurrencyCode($CurrencyCode)
+    {
+        if (is_null($CurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CurrencyCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CurrencyCode'] = $CurrencyCode;
+
+        return $this;
+    }
 
     /**
      * Gets Id
@@ -389,189 +543,6 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets AssociatedCampaignType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null
-     */
-    public function getAssociatedCampaignType()
-    {
-        if (!isset($this->container['AssociatedCampaignType']) || is_null($this->container['AssociatedCampaignType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AssociatedCampaignType']) || is_string($this->container['AssociatedCampaignType'])) && method_exists($this->container['AssociatedCampaignType'], 'getValue')) {
-            return $this->container['AssociatedCampaignType']->getValue();
-        }
-        return $this->container['AssociatedCampaignType'];
-    }
-
-    /**
-     * Sets AssociatedCampaignType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null $AssociatedCampaignType AssociatedCampaignType
-     *
-     * @return self
-     */
-    public function setAssociatedCampaignType($AssociatedCampaignType)
-    {
-        if (is_null($AssociatedCampaignType)) {
-            throw new \InvalidArgumentException('non-nullable AssociatedCampaignType cannot be null');
-        }
-        if (!$AssociatedCampaignType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
-            $AssociatedCampaignType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($AssociatedCampaignType);
-        }
-        $this->container['AssociatedCampaignType'] = $AssociatedCampaignType;
-
-        return $this;
-    }
-
-    /**
-     * Gets BiddingScheme
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null
-     */
-    public function getBiddingScheme()
-    {
-        if (!isset($this->container['BiddingScheme']) || is_null($this->container['BiddingScheme'])) {
-            return null;
-        }
-        return $this->container['BiddingScheme'];
-    }
-
-    /**
-     * Sets BiddingScheme
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null $BiddingScheme BiddingScheme
-     *
-     * @return self
-     */
-    public function setBiddingScheme($BiddingScheme)
-    {
-        if (is_null($BiddingScheme)) {
-            array_push($this->openAPINullablesSetToNull, 'BiddingScheme');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BiddingScheme', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BiddingScheme'] = $BiddingScheme;
-
-        return $this;
-    }
-
-    /**
-     * Gets AssociationCount
-     *
-     * @return int|null
-     */
-    public function getAssociationCount()
-    {
-        if (!isset($this->container['AssociationCount']) || is_null($this->container['AssociationCount'])) {
-            return null;
-        }
-        return $this->container['AssociationCount'];
-    }
-
-    /**
-     * Sets AssociationCount
-     *
-     * @param int|null $AssociationCount AssociationCount
-     *
-     * @return self
-     */
-    public function setAssociationCount($AssociationCount)
-    {
-        if (is_null($AssociationCount)) {
-            array_push($this->openAPINullablesSetToNull, 'AssociationCount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssociationCount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AssociationCount'] = $AssociationCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
-            return $this->container['Scope']->getValue();
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
-        }
-        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
-            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets CurrencyCode
-     *
-     * @return string|null
-     */
-    public function getCurrencyCode()
-    {
-        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
-            return null;
-        }
-        return $this->container['CurrencyCode'];
-    }
-
-    /**
-     * Sets CurrencyCode
-     *
-     * @param string|null $CurrencyCode CurrencyCode
-     *
-     * @return self
-     */
-    public function setCurrencyCode($CurrencyCode)
-    {
-        if (is_null($CurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CurrencyCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CurrencyCode'] = $CurrencyCode;
-
-        return $this;
-    }
-
-    /**
      * Gets ReportingTimeZone
      *
      * @return string|null
@@ -604,6 +575,49 @@ class BidStrategy implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ReportingTimeZone'] = $ReportingTimeZone;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Scope) && !$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
 
         return $this;
     }

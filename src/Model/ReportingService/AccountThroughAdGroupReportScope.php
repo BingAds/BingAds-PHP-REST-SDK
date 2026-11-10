@@ -34,8 +34,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
       */
     protected static array $openAPITypes = [
         'AccountIds' => 'string[]',
-        'Campaigns' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignReportScope[]',
-        'AdGroups' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupReportScope[]'
+        'AdGroups' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupReportScope[]',
+        'Campaigns' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignReportScope[]'
     ];
 
     /**
@@ -47,8 +47,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
       */
     protected static array $openAPIFormats = [
         'AccountIds' => 'int64',
-        'Campaigns' => null,
-        'AdGroups' => null
+        'AdGroups' => null,
+        'Campaigns' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
       */
     protected static array $openAPINullables = [
         'AccountIds' => true,
-        'Campaigns' => true,
-        'AdGroups' => true
+        'AdGroups' => true,
+        'Campaigns' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
      */
     protected static array $attributeMap = [
         'AccountIds' => 'AccountIds',
-        'Campaigns' => 'Campaigns',
-        'AdGroups' => 'AdGroups'
+        'AdGroups' => 'AdGroups',
+        'Campaigns' => 'Campaigns'
     ];
 
     /**
@@ -160,8 +160,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
      */
     protected static array $setters = [
         'AccountIds' => 'setAccountIds',
-        'Campaigns' => 'setCampaigns',
-        'AdGroups' => 'setAdGroups'
+        'AdGroups' => 'setAdGroups',
+        'Campaigns' => 'setCampaigns'
     ];
 
     /**
@@ -171,8 +171,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
      */
     protected static array $getters = [
         'AccountIds' => 'getAccountIds',
-        'Campaigns' => 'getCampaigns',
-        'AdGroups' => 'getAdGroups'
+        'AdGroups' => 'getAdGroups',
+        'Campaigns' => 'getCampaigns'
     ];
 
     /**
@@ -233,8 +233,8 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountIds', $data ?? [], null);
-        $this->setIfExists('Campaigns', $data ?? [], null);
         $this->setIfExists('AdGroups', $data ?? [], null);
+        $this->setIfExists('Campaigns', $data ?? [], null);
     }
 
     /**
@@ -317,43 +317,6 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets Campaigns
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignReportScope[]|null
-     */
-    public function getCampaigns()
-    {
-        if (!isset($this->container['Campaigns']) || is_null($this->container['Campaigns'])) {
-            return null;
-        }
-        return $this->container['Campaigns'];
-    }
-
-    /**
-     * Sets Campaigns
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignReportScope[]|null $Campaigns Campaigns
-     *
-     * @return self
-     */
-    public function setCampaigns($Campaigns)
-    {
-        if (is_null($Campaigns)) {
-            array_push($this->openAPINullablesSetToNull, 'Campaigns');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Campaigns', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Campaigns'] = $Campaigns;
-
-        return $this;
-    }
-
-    /**
      * Gets AdGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupReportScope[]|null
@@ -386,6 +349,43 @@ class AccountThroughAdGroupReportScope implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['AdGroups'] = $AdGroups;
+
+        return $this;
+    }
+
+    /**
+     * Gets Campaigns
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignReportScope[]|null
+     */
+    public function getCampaigns()
+    {
+        if (!isset($this->container['Campaigns']) || is_null($this->container['Campaigns'])) {
+            return null;
+        }
+        return $this->container['Campaigns'];
+    }
+
+    /**
+     * Sets Campaigns
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignReportScope[]|null $Campaigns Campaigns
+     *
+     * @return self
+     */
+    public function setCampaigns($Campaigns)
+    {
+        if (is_null($Campaigns)) {
+            array_push($this->openAPINullablesSetToNull, 'Campaigns');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Campaigns', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Campaigns'] = $Campaigns;
 
         return $this;
     }

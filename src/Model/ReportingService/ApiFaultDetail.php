@@ -34,8 +34,8 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
       */
     protected static array $openAPITypes = [
         'TrackingId' => 'string',
-        'OperationErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]',
         'BatchErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\BatchError[]',
+        'OperationErrors' => '\Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]',
         'Type' => 'string'
     ];
 
@@ -48,8 +48,8 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
       */
     protected static array $openAPIFormats = [
         'TrackingId' => null,
-        'OperationErrors' => null,
         'BatchErrors' => null,
+        'OperationErrors' => null,
         'Type' => null
     ];
 
@@ -60,8 +60,8 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
       */
     protected static array $openAPINullables = [
         'TrackingId' => true,
-        'OperationErrors' => false,
-        'BatchErrors' => false,
+        'BatchErrors' => true,
+        'OperationErrors' => true,
         'Type' => true
     ];
 
@@ -152,8 +152,8 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      */
     protected static array $attributeMap = [
         'TrackingId' => 'TrackingId',
-        'OperationErrors' => 'OperationErrors',
         'BatchErrors' => 'BatchErrors',
+        'OperationErrors' => 'OperationErrors',
         'Type' => 'Type'
     ];
 
@@ -164,8 +164,8 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      */
     protected static array $setters = [
         'TrackingId' => 'setTrackingId',
-        'OperationErrors' => 'setOperationErrors',
         'BatchErrors' => 'setBatchErrors',
+        'OperationErrors' => 'setOperationErrors',
         'Type' => 'setType'
     ];
 
@@ -176,8 +176,8 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
      */
     protected static array $getters = [
         'TrackingId' => 'getTrackingId',
-        'OperationErrors' => 'getOperationErrors',
         'BatchErrors' => 'getBatchErrors',
+        'OperationErrors' => 'getOperationErrors',
         'Type' => 'getType'
     ];
 
@@ -239,9 +239,14 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
     public function __construct(?array $data = null)
     {
         $this->setIfExists('TrackingId', $data ?? [], null);
-        $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
+        $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'ApiFaultDetail');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -324,36 +329,6 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets OperationErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null
-     */
-    public function getOperationErrors()
-    {
-        if (!isset($this->container['OperationErrors']) || is_null($this->container['OperationErrors'])) {
-            return null;
-        }
-        return $this->container['OperationErrors'];
-    }
-
-    /**
-     * Sets OperationErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null $OperationErrors OperationErrors
-     *
-     * @return self
-     */
-    public function setOperationErrors($OperationErrors)
-    {
-        if (is_null($OperationErrors)) {
-            throw new \InvalidArgumentException('non-nullable OperationErrors cannot be null');
-        }
-        $this->container['OperationErrors'] = $OperationErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets BatchErrors
      *
      * @return \Microsoft\MsAds\Rest\Model\ReportingService\BatchError[]|null
@@ -376,9 +351,53 @@ class ApiFaultDetail extends ApplicationFault implements ModelInterface, ArrayAc
     public function setBatchErrors($BatchErrors)
     {
         if (is_null($BatchErrors)) {
-            throw new \InvalidArgumentException('non-nullable BatchErrors cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'BatchErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BatchErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['BatchErrors'] = $BatchErrors;
+
+        return $this;
+    }
+
+    /**
+     * Gets OperationErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null
+     */
+    public function getOperationErrors()
+    {
+        if (!isset($this->container['OperationErrors']) || is_null($this->container['OperationErrors'])) {
+            return null;
+        }
+        return $this->container['OperationErrors'];
+    }
+
+    /**
+     * Sets OperationErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\OperationError[]|null $OperationErrors OperationErrors
+     *
+     * @return self
+     */
+    public function setOperationErrors($OperationErrors)
+    {
+        if (is_null($OperationErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'OperationErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('OperationErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['OperationErrors'] = $OperationErrors;
 
         return $this;
     }

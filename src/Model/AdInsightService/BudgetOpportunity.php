@@ -446,7 +446,7 @@ class BudgetOpportunity implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($BudgetType)) {
             throw new \InvalidArgumentException('non-nullable BudgetType cannot be null');
         }
-        if (!$BudgetType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType) {
+        if (!is_null($BudgetType) && !$BudgetType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType) {
             $BudgetType = new \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetLimitType($BudgetType);
         }
         $this->container['BudgetType'] = $BudgetType;

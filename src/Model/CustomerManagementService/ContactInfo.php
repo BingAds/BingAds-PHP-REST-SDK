@@ -511,7 +511,7 @@ class ContactInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($EmailFormat)) {
             throw new \InvalidArgumentException('non-nullable EmailFormat cannot be null');
         }
-        if (!$EmailFormat instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\EmailFormat) {
+        if (!is_null($EmailFormat) && !$EmailFormat instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\EmailFormat) {
             $EmailFormat = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\EmailFormat($EmailFormat);
         }
         $this->container['EmailFormat'] = $EmailFormat;

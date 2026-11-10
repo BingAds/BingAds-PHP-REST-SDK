@@ -33,8 +33,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField',
-        'AudienceGroupIds' => 'string[]'
+        'AudienceGroupIds' => 'string[]',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ReturnAdditionalFields' => null,
-        'AudienceGroupIds' => 'int64'
+        'AudienceGroupIds' => 'int64',
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ReturnAdditionalFields' => false,
-        'AudienceGroupIds' => true
+        'AudienceGroupIds' => true,
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
-        'AudienceGroupIds' => 'AudienceGroupIds'
+        'AudienceGroupIds' => 'AudienceGroupIds',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
-        'AudienceGroupIds' => 'setAudienceGroupIds'
+        'AudienceGroupIds' => 'setAudienceGroupIds',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
-        'AudienceGroupIds' => 'getAudienceGroupIds'
+        'AudienceGroupIds' => 'getAudienceGroupIds',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
         $this->setIfExists('AudienceGroupIds', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
-
-        return $this;
-    }
-
-    /**
      * Gets AudienceGroupIds
      *
      * @return string[]|null
@@ -341,6 +305,49 @@ class GetAudienceGroupsByIdsRequest implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['AudienceGroupIds'] = $AudienceGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

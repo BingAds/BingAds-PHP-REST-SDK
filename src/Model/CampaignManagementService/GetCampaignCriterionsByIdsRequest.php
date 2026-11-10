@@ -33,10 +33,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'CampaignCriterionIds' => 'string[]',
         'CampaignId' => 'string',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField',
         'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType',
-        'CampaignCriterionIds' => 'string[]'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField'
     ];
 
     /**
@@ -47,10 +47,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'CampaignCriterionIds' => 'int64',
         'CampaignId' => 'int64',
-        'ReturnAdditionalFields' => null,
         'CriterionType' => null,
-        'CampaignCriterionIds' => 'int64'
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'CampaignCriterionIds' => true,
         'CampaignId' => false,
-        'ReturnAdditionalFields' => false,
         'CriterionType' => false,
-        'CampaignCriterionIds' => true
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
+        'CampaignCriterionIds' => 'CampaignCriterionIds',
         'CampaignId' => 'CampaignId',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
         'CriterionType' => 'CriterionType',
-        'CampaignCriterionIds' => 'CampaignCriterionIds'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -163,10 +163,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
+        'CampaignCriterionIds' => 'setCampaignCriterionIds',
         'CampaignId' => 'setCampaignId',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
         'CriterionType' => 'setCriterionType',
-        'CampaignCriterionIds' => 'setCampaignCriterionIds'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -175,10 +175,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
+        'CampaignCriterionIds' => 'getCampaignCriterionIds',
         'CampaignId' => 'getCampaignId',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
         'CriterionType' => 'getCriterionType',
-        'CampaignCriterionIds' => 'getCampaignCriterionIds'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -238,10 +238,10 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CampaignId', $data ?? [], null);
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
-        $this->setIfExists('CriterionType', $data ?? [], null);
         $this->setIfExists('CampaignCriterionIds', $data ?? [], null);
+        $this->setIfExists('CampaignId', $data ?? [], null);
+        $this->setIfExists('CriterionType', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -287,108 +287,6 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets CampaignId
-     *
-     * @return string|null
-     */
-    public function getCampaignId()
-    {
-        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
-            return null;
-        }
-        return $this->container['CampaignId'];
-    }
-
-    /**
-     * Sets CampaignId
-     *
-     * @param string|null $CampaignId CampaignId
-     *
-     * @return self
-     */
-    public function setCampaignId($CampaignId)
-    {
-        if (is_null($CampaignId)) {
-            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
-        }
-        $this->container['CampaignId'] = $CampaignId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
-
-        return $this;
-    }
-
-    /**
-     * Gets CriterionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null
-     */
-    public function getCriterionType()
-    {
-        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
-            return $this->container['CriterionType']->getValue();
-        }
-        return $this->container['CriterionType'];
-    }
-
-    /**
-     * Sets CriterionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null $CriterionType CriterionType
-     *
-     * @return self
-     */
-    public function setCriterionType($CriterionType)
-    {
-        if (is_null($CriterionType)) {
-            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
-        }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
-            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType($CriterionType);
-        }
-        $this->container['CriterionType'] = $CriterionType;
-
-        return $this;
-    }
-
-    /**
      * Gets CampaignCriterionIds
      *
      * @return string[]|null
@@ -421,6 +319,115 @@ class GetCampaignCriterionsByIdsRequest implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['CampaignCriterionIds'] = $CampaignCriterionIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignId
+     *
+     * @return string|null
+     */
+    public function getCampaignId()
+    {
+        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
+            return null;
+        }
+        return $this->container['CampaignId'];
+    }
+
+    /**
+     * Sets CampaignId
+     *
+     * @param string|null $CampaignId CampaignId
+     *
+     * @return self
+     */
+    public function setCampaignId($CampaignId)
+    {
+        if (is_null($CampaignId)) {
+            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
+        }
+        $this->container['CampaignId'] = $CampaignId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CriterionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null
+     */
+    public function getCriterionType()
+    {
+        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
+            return $this->container['CriterionType']->getValue();
+        }
+        return $this->container['CriterionType'];
+    }
+
+    /**
+     * Sets CriterionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null $CriterionType CriterionType
+     *
+     * @return self
+     */
+    public function setCriterionType($CriterionType)
+    {
+        if (is_null($CriterionType)) {
+            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
+        }
+        if (!is_null($CriterionType) && !$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
+            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType($CriterionType);
+        }
+        $this->container['CriterionType'] = $CriterionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

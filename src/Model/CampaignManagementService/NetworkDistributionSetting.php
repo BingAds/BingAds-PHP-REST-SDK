@@ -56,7 +56,7 @@ class NetworkDistributionSetting extends Setting implements ModelInterface, Arra
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'NetworkOption' => false
+        'NetworkOption' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class NetworkDistributionSetting extends Setting implements ModelInterface, Arra
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('NetworkOption', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class NetworkDistributionSetting extends Setting implements ModelInterface, Arra
     public function setNetworkOption($NetworkOption)
     {
         if (is_null($NetworkOption)) {
-            throw new \InvalidArgumentException('non-nullable NetworkOption cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'NetworkOption');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NetworkOption', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$NetworkOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network) {
+        if (!is_null($NetworkOption) && !$NetworkOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network) {
             $NetworkOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\Network($NetworkOption);
         }
         $this->container['NetworkOption'] = $NetworkOption;

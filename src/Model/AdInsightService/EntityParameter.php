@@ -249,6 +249,11 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
         $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('EntityCount', $data ?? [], null);
         $this->setIfExists('EntityDetails', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -321,7 +326,7 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType) {
             $Type = new \Microsoft\MsAds\Rest\Model\AdInsightService\ParameterType($Type);
         }
         $this->container['Type'] = $Type;
@@ -394,7 +399,7 @@ class EntityParameter extends PerformanceInsightsMessageParameter implements Mod
         if (is_null($EntityType)) {
             throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType) {
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType) {
             $EntityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsEntityType($EntityType);
         }
         $this->container['EntityType'] = $EntityType;
