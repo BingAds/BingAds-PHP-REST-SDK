@@ -381,7 +381,7 @@ class AccountTaxCertificate implements ModelInterface, ArrayAccess, \JsonSeriali
         if (is_null($Status)) {
             throw new \InvalidArgumentException('non-nullable Status cannot be null');
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\TaxCertificateStatus) {
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\TaxCertificateStatus) {
             $Status = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\TaxCertificateStatus($Status);
         }
         $this->container['Status'] = $Status;

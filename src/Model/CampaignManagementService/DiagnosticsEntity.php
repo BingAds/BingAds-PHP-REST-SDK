@@ -34,8 +34,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPITypes = [
         'Id' => 'string',
-        'Type' => 'string',
-        'SubType' => 'string'
+        'SubType' => 'string',
+        'Type' => 'string'
     ];
 
     /**
@@ -47,8 +47,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPIFormats = [
         'Id' => 'int64',
-        'Type' => null,
-        'SubType' => null
+        'SubType' => null,
+        'Type' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'Id' => false,
-        'Type' => true,
-        'SubType' => true
+        'SubType' => true,
+        'Type' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static array $attributeMap = [
         'Id' => 'Id',
-        'Type' => 'Type',
-        'SubType' => 'SubType'
+        'SubType' => 'SubType',
+        'Type' => 'Type'
     ];
 
     /**
@@ -160,8 +160,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static array $setters = [
         'Id' => 'setId',
-        'Type' => 'setType',
-        'SubType' => 'setSubType'
+        'SubType' => 'setSubType',
+        'Type' => 'setType'
     ];
 
     /**
@@ -171,8 +171,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static array $getters = [
         'Id' => 'getId',
-        'Type' => 'getType',
-        'SubType' => 'getSubType'
+        'SubType' => 'getSubType',
+        'Type' => 'getType'
     ];
 
     /**
@@ -233,8 +233,8 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
     }
 
     /**
@@ -310,43 +310,6 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets SubType
      *
      * @return string|null
@@ -379,6 +342,43 @@ class DiagnosticsEntity implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['SubType'] = $SubType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

@@ -235,6 +235,11 @@ class ProfileCriterion extends Criterion implements ModelInterface, ArrayAccess,
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ProfileId', $data ?? [], null);
         $this->setIfExists('ProfileType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -374,7 +379,7 @@ class ProfileCriterion extends Criterion implements ModelInterface, ArrayAccess,
         if (is_null($ProfileType)) {
             throw new \InvalidArgumentException('non-nullable ProfileType cannot be null');
         }
-        if (!$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+        if (!is_null($ProfileType) && !$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
             $ProfileType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($ProfileType);
         }
         $this->container['ProfileType'] = $ProfileType;

@@ -242,6 +242,11 @@ class NumberRuleItem extends RuleItem implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Operator', $data ?? [], null);
         $this->setIfExists('Value', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -388,7 +393,7 @@ class NumberRuleItem extends RuleItem implements ModelInterface, ArrayAccess, \J
         if (is_null($Operator)) {
             throw new \InvalidArgumentException('non-nullable Operator cannot be null');
         }
-        if (!$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator) {
+        if (!is_null($Operator) && !$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator) {
             $Operator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator($Operator);
         }
         $this->container['Operator'] = $Operator;

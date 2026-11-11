@@ -228,6 +228,11 @@ class LanguageSearchParameter extends SearchParameter implements ModelInterface,
     {
         $this->setIfExists('Languages', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'LanguageSearchParameter');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**

@@ -61,6 +61,8 @@ class AccountPropertyName
 
     public const OPT_OUT_FROM_SYSTEM_SOURCED_IMAGES_IN_SWF = 'OptOutFromSystemSourcedImagesInSWF';
 
+    public const AI_DETECTED_CONTENT_WATERMARK_POLICY = 'AIDetectedContentWatermarkPolicy';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -148,7 +150,8 @@ class AccountPropertyName
             self::ASSET_AI_ENHANCEMENT_OPTOUT,
             self::ACCEPT_NIELSEN_TERMS_AND_CONDITIONS,
             self::IMAGE_MISSING_WARNING_OPTOUT,
-            self::OPT_OUT_FROM_SYSTEM_SOURCED_IMAGES_IN_SWF
+            self::OPT_OUT_FROM_SYSTEM_SOURCED_IMAGES_IN_SWF,
+            self::AI_DETECTED_CONTENT_WATERMARK_POLICY
         ];
     }
 }

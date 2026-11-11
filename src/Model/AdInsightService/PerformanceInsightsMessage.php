@@ -307,7 +307,7 @@ class PerformanceInsightsMessage implements ModelInterface, ArrayAccess, \JsonSe
         if (is_null($TemplateId)) {
             throw new \InvalidArgumentException('non-nullable TemplateId cannot be null');
         }
-        if (!$TemplateId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsMessageTemplateId) {
+        if (!is_null($TemplateId) && !$TemplateId instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsMessageTemplateId) {
             $TemplateId = new \Microsoft\MsAds\Rest\Model\AdInsightService\PerformanceInsightsMessageTemplateId($TemplateId);
         }
         $this->container['TemplateId'] = $TemplateId;

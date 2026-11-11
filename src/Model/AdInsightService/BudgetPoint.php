@@ -351,7 +351,7 @@ class BudgetPoint implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($BudgetPointType)) {
             throw new \InvalidArgumentException('non-nullable BudgetPointType cannot be null');
         }
-        if (!$BudgetPointType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPointType) {
+        if (!is_null($BudgetPointType) && !$BudgetPointType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPointType) {
             $BudgetPointType = new \Microsoft\MsAds\Rest\Model\AdInsightService\BudgetPointType($BudgetPointType);
         }
         $this->container['BudgetPointType'] = $BudgetPointType;

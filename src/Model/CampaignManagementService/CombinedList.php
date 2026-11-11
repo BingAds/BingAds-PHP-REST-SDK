@@ -33,18 +33,18 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'MembershipDuration' => 'int',
-        'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
-        'SupportedCampaignTypes' => 'string[]',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
-        'Id' => 'string',
-        'Name' => 'string',
         'Description' => 'string',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
-        'ParentId' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Id' => 'string',
+        'MembershipDuration' => 'int',
+        'Name' => 'string',
+        'ParentId' => 'string',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
+        'SearchSize' => 'string',
+        'SupportedCampaignTypes' => 'string[]',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'CombinationRules' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]'
     ];
 
@@ -56,18 +56,18 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Scope' => null,
-        'MembershipDuration' => 'int32',
-        'SearchSize' => 'int64',
         'AudienceNetworkSize' => 'int64',
-        'SupportedCampaignTypes' => null,
         'CustomerShare' => null,
-        'Id' => 'int64',
-        'Name' => null,
         'Description' => null,
-        'Type' => null,
-        'ParentId' => 'int64',
         'ForwardCompatibilityMap' => null,
+        'Id' => 'int64',
+        'MembershipDuration' => 'int32',
+        'Name' => null,
+        'ParentId' => 'int64',
+        'Scope' => null,
+        'SearchSize' => 'int64',
+        'SupportedCampaignTypes' => null,
+        'Type' => null,
         'CombinationRules' => null
     ];
 
@@ -77,18 +77,18 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Scope' => false,
-        'MembershipDuration' => true,
-        'SearchSize' => true,
         'AudienceNetworkSize' => true,
-        'SupportedCampaignTypes' => true,
         'CustomerShare' => true,
-        'Id' => true,
-        'Name' => true,
         'Description' => true,
-        'Type' => false,
-        'ParentId' => true,
         'ForwardCompatibilityMap' => true,
+        'Id' => true,
+        'MembershipDuration' => true,
+        'Name' => true,
+        'ParentId' => true,
+        'Scope' => true,
+        'SearchSize' => true,
+        'SupportedCampaignTypes' => true,
+        'Type' => false,
         'CombinationRules' => true
     ];
 
@@ -178,18 +178,18 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Scope' => 'Scope',
-        'MembershipDuration' => 'MembershipDuration',
-        'SearchSize' => 'SearchSize',
         'AudienceNetworkSize' => 'AudienceNetworkSize',
-        'SupportedCampaignTypes' => 'SupportedCampaignTypes',
         'CustomerShare' => 'CustomerShare',
-        'Id' => 'Id',
-        'Name' => 'Name',
         'Description' => 'Description',
-        'Type' => 'Type',
-        'ParentId' => 'ParentId',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Id' => 'Id',
+        'MembershipDuration' => 'MembershipDuration',
+        'Name' => 'Name',
+        'ParentId' => 'ParentId',
+        'Scope' => 'Scope',
+        'SearchSize' => 'SearchSize',
+        'SupportedCampaignTypes' => 'SupportedCampaignTypes',
+        'Type' => 'Type',
         'CombinationRules' => 'CombinationRules'
     ];
 
@@ -199,18 +199,18 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $setters = [
-        'Scope' => 'setScope',
-        'MembershipDuration' => 'setMembershipDuration',
-        'SearchSize' => 'setSearchSize',
         'AudienceNetworkSize' => 'setAudienceNetworkSize',
-        'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
         'CustomerShare' => 'setCustomerShare',
-        'Id' => 'setId',
-        'Name' => 'setName',
         'Description' => 'setDescription',
-        'Type' => 'setType',
-        'ParentId' => 'setParentId',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Id' => 'setId',
+        'MembershipDuration' => 'setMembershipDuration',
+        'Name' => 'setName',
+        'ParentId' => 'setParentId',
+        'Scope' => 'setScope',
+        'SearchSize' => 'setSearchSize',
+        'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
+        'Type' => 'setType',
         'CombinationRules' => 'setCombinationRules'
     ];
 
@@ -220,18 +220,18 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static array $getters = [
-        'Scope' => 'getScope',
-        'MembershipDuration' => 'getMembershipDuration',
-        'SearchSize' => 'getSearchSize',
         'AudienceNetworkSize' => 'getAudienceNetworkSize',
-        'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
         'CustomerShare' => 'getCustomerShare',
-        'Id' => 'getId',
-        'Name' => 'getName',
         'Description' => 'getDescription',
-        'Type' => 'getType',
-        'ParentId' => 'getParentId',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Id' => 'getId',
+        'MembershipDuration' => 'getMembershipDuration',
+        'Name' => 'getName',
+        'ParentId' => 'getParentId',
+        'Scope' => 'getScope',
+        'SearchSize' => 'getSearchSize',
+        'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
+        'Type' => 'getType',
         'CombinationRules' => 'getCombinationRules'
     ];
 
@@ -292,19 +292,24 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
-        $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('MembershipDuration', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('ParentId', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('SearchSize', $data ?? [], null);
+        $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CombinationRules', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -350,116 +355,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
-            return $this->container['Scope']->getValue();
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
-        }
-        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
-            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets MembershipDuration
-     *
-     * @return int|null
-     */
-    public function getMembershipDuration()
-    {
-        if (!isset($this->container['MembershipDuration']) || is_null($this->container['MembershipDuration'])) {
-            return null;
-        }
-        return $this->container['MembershipDuration'];
-    }
-
-    /**
-     * Sets MembershipDuration
-     *
-     * @param int|null $MembershipDuration MembershipDuration
-     *
-     * @return self
-     */
-    public function setMembershipDuration($MembershipDuration)
-    {
-        if (is_null($MembershipDuration)) {
-            array_push($this->openAPINullablesSetToNull, 'MembershipDuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MembershipDuration', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MembershipDuration'] = $MembershipDuration;
-
-        return $this;
-    }
-
-    /**
-     * Gets SearchSize
-     *
-     * @return string|null
-     */
-    public function getSearchSize()
-    {
-        if (!isset($this->container['SearchSize']) || is_null($this->container['SearchSize'])) {
-            return null;
-        }
-        return $this->container['SearchSize'];
-    }
-
-    /**
-     * Sets SearchSize
-     *
-     * @param string|null $SearchSize SearchSize
-     *
-     * @return self
-     */
-    public function setSearchSize($SearchSize)
-    {
-        if (is_null($SearchSize)) {
-            array_push($this->openAPINullablesSetToNull, 'SearchSize');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SearchSize', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SearchSize'] = $SearchSize;
-
-        return $this;
-    }
-
-    /**
      * Gets AudienceNetworkSize
      *
      * @return string|null
@@ -492,43 +387,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['AudienceNetworkSize'] = $AudienceNetworkSize;
-
-        return $this;
-    }
-
-    /**
-     * Gets SupportedCampaignTypes
-     *
-     * @return string[]|null
-     */
-    public function getSupportedCampaignTypes()
-    {
-        if (!isset($this->container['SupportedCampaignTypes']) || is_null($this->container['SupportedCampaignTypes'])) {
-            return null;
-        }
-        return $this->container['SupportedCampaignTypes'];
-    }
-
-    /**
-     * Sets SupportedCampaignTypes
-     *
-     * @param string[]|null $SupportedCampaignTypes SupportedCampaignTypes
-     *
-     * @return self
-     */
-    public function setSupportedCampaignTypes($SupportedCampaignTypes)
-    {
-        if (is_null($SupportedCampaignTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'SupportedCampaignTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SupportedCampaignTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SupportedCampaignTypes'] = $SupportedCampaignTypes;
 
         return $this;
     }
@@ -571,6 +429,80 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
+        }
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
      * Gets Id
      *
      * @return string|null
@@ -603,6 +535,43 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets MembershipDuration
+     *
+     * @return int|null
+     */
+    public function getMembershipDuration()
+    {
+        if (!isset($this->container['MembershipDuration']) || is_null($this->container['MembershipDuration'])) {
+            return null;
+        }
+        return $this->container['MembershipDuration'];
+    }
+
+    /**
+     * Sets MembershipDuration
+     *
+     * @param int|null $MembershipDuration MembershipDuration
+     *
+     * @return self
+     */
+    public function setMembershipDuration($MembershipDuration)
+    {
+        if (is_null($MembershipDuration)) {
+            array_push($this->openAPINullablesSetToNull, 'MembershipDuration');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MembershipDuration', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MembershipDuration'] = $MembershipDuration;
 
         return $this;
     }
@@ -645,79 +614,6 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets Description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
-            return null;
-        }
-        return $this->container['Description'];
-    }
-
-    /**
-     * Sets Description
-     *
-     * @param string|null $Description Description
-     *
-     * @return self
-     */
-    public function setDescription($Description)
-    {
-        if (is_null($Description)) {
-            array_push($this->openAPINullablesSetToNull, 'Description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Description'] = $Description;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets ParentId
      *
      * @return string|null
@@ -755,38 +651,154 @@ class CombinedList extends Audience implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets ForwardCompatibilityMap
+     * Gets Scope
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
      */
-    public function getForwardCompatibilityMap()
+    public function getScope()
     {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
             return null;
         }
-        return $this->container['ForwardCompatibilityMap'];
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
     }
 
     /**
-     * Sets ForwardCompatibilityMap
+     * Sets Scope
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
      *
      * @return self
      */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    public function setScope($Scope)
     {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            $index = array_search('Scope', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        if (!is_null($Scope) && !$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets SearchSize
+     *
+     * @return string|null
+     */
+    public function getSearchSize()
+    {
+        if (!isset($this->container['SearchSize']) || is_null($this->container['SearchSize'])) {
+            return null;
+        }
+        return $this->container['SearchSize'];
+    }
+
+    /**
+     * Sets SearchSize
+     *
+     * @param string|null $SearchSize SearchSize
+     *
+     * @return self
+     */
+    public function setSearchSize($SearchSize)
+    {
+        if (is_null($SearchSize)) {
+            array_push($this->openAPINullablesSetToNull, 'SearchSize');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SearchSize', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SearchSize'] = $SearchSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets SupportedCampaignTypes
+     *
+     * @return string[]|null
+     */
+    public function getSupportedCampaignTypes()
+    {
+        if (!isset($this->container['SupportedCampaignTypes']) || is_null($this->container['SupportedCampaignTypes'])) {
+            return null;
+        }
+        return $this->container['SupportedCampaignTypes'];
+    }
+
+    /**
+     * Sets SupportedCampaignTypes
+     *
+     * @param string[]|null $SupportedCampaignTypes SupportedCampaignTypes
+     *
+     * @return self
+     */
+    public function setSupportedCampaignTypes($SupportedCampaignTypes)
+    {
+        if (is_null($SupportedCampaignTypes)) {
+            array_push($this->openAPINullablesSetToNull, 'SupportedCampaignTypes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SupportedCampaignTypes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SupportedCampaignTypes'] = $SupportedCampaignTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

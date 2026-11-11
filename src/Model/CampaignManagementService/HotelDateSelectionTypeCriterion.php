@@ -56,7 +56,7 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'HotelDateSelectionType' => false
+        'HotelDateSelectionType' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('HotelDateSelectionType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class HotelDateSelectionTypeCriterion extends Criterion implements ModelInterfac
     public function setHotelDateSelectionType($HotelDateSelectionType)
     {
         if (is_null($HotelDateSelectionType)) {
-            throw new \InvalidArgumentException('non-nullable HotelDateSelectionType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'HotelDateSelectionType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HotelDateSelectionType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$HotelDateSelectionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType) {
+        if (!is_null($HotelDateSelectionType) && !$HotelDateSelectionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType) {
             $HotelDateSelectionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelDateSelectionType($HotelDateSelectionType);
         }
         $this->container['HotelDateSelectionType'] = $HotelDateSelectionType;

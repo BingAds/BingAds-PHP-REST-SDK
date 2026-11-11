@@ -1028,7 +1028,7 @@ class SearchParameter implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Segment)) {
             throw new \InvalidArgumentException('non-nullable Segment cannot be null');
         }
-        if (!$Segment instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionSegment) {
+        if (!is_null($Segment) && !$Segment instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionSegment) {
             $Segment = new \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionSegment($Segment);
         }
         $this->container['Segment'] = $Segment;

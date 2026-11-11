@@ -33,8 +33,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'NestedPartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchErrorCollection[]',
-        'NegativeKeywordIds' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IdCollection[]'
+        'NegativeKeywordIds' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\IdCollection[]',
+        'NestedPartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchErrorCollection[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'NestedPartialErrors' => null,
-        'NegativeKeywordIds' => null
+        'NegativeKeywordIds' => null,
+        'NestedPartialErrors' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'NestedPartialErrors' => true,
-        'NegativeKeywordIds' => true
+        'NegativeKeywordIds' => true,
+        'NestedPartialErrors' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
-        'NestedPartialErrors' => 'NestedPartialErrors',
-        'NegativeKeywordIds' => 'NegativeKeywordIds'
+        'NegativeKeywordIds' => 'NegativeKeywordIds',
+        'NestedPartialErrors' => 'NestedPartialErrors'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
-        'NestedPartialErrors' => 'setNestedPartialErrors',
-        'NegativeKeywordIds' => 'setNegativeKeywordIds'
+        'NegativeKeywordIds' => 'setNegativeKeywordIds',
+        'NestedPartialErrors' => 'setNestedPartialErrors'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
-        'NestedPartialErrors' => 'getNestedPartialErrors',
-        'NegativeKeywordIds' => 'getNegativeKeywordIds'
+        'NegativeKeywordIds' => 'getNegativeKeywordIds',
+        'NestedPartialErrors' => 'getNestedPartialErrors'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('NestedPartialErrors', $data ?? [], null);
         $this->setIfExists('NegativeKeywordIds', $data ?? [], null);
+        $this->setIfExists('NestedPartialErrors', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets NestedPartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchErrorCollection[]|null
-     */
-    public function getNestedPartialErrors()
-    {
-        if (!isset($this->container['NestedPartialErrors']) || is_null($this->container['NestedPartialErrors'])) {
-            return null;
-        }
-        return $this->container['NestedPartialErrors'];
-    }
-
-    /**
-     * Sets NestedPartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchErrorCollection[]|null $NestedPartialErrors NestedPartialErrors
-     *
-     * @return self
-     */
-    public function setNestedPartialErrors($NestedPartialErrors)
-    {
-        if (is_null($NestedPartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'NestedPartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('NestedPartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['NestedPartialErrors'] = $NestedPartialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets NegativeKeywordIds
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\IdCollection[]|null
@@ -342,6 +305,43 @@ class AddNegativeKeywordsToEntitiesResponse implements ModelInterface, ArrayAcce
             }
         }
         $this->container['NegativeKeywordIds'] = $NegativeKeywordIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets NestedPartialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchErrorCollection[]|null
+     */
+    public function getNestedPartialErrors()
+    {
+        if (!isset($this->container['NestedPartialErrors']) || is_null($this->container['NestedPartialErrors'])) {
+            return null;
+        }
+        return $this->container['NestedPartialErrors'];
+    }
+
+    /**
+     * Sets NestedPartialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchErrorCollection[]|null $NestedPartialErrors NestedPartialErrors
+     *
+     * @return self
+     */
+    public function setNestedPartialErrors($NestedPartialErrors)
+    {
+        if (is_null($NestedPartialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'NestedPartialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NestedPartialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['NestedPartialErrors'] = $NestedPartialErrors;
 
         return $this;
     }

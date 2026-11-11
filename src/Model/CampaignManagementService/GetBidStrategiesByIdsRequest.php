@@ -34,8 +34,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPITypes = [
         'BidStrategyIds' => 'string[]',
-        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope'
     ];
 
     /**
@@ -47,8 +47,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPIFormats = [
         'BidStrategyIds' => 'int64',
-        'Scope' => null,
-        'ReturnAdditionalFields' => null
+        'ReturnAdditionalFields' => null,
+        'Scope' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'BidStrategyIds' => true,
-        'Scope' => false,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => true,
+        'Scope' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static array $attributeMap = [
         'BidStrategyIds' => 'BidStrategyIds',
-        'Scope' => 'Scope',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
+        'Scope' => 'Scope'
     ];
 
     /**
@@ -160,8 +160,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static array $setters = [
         'BidStrategyIds' => 'setBidStrategyIds',
-        'Scope' => 'setScope',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
+        'Scope' => 'setScope'
     ];
 
     /**
@@ -171,8 +171,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static array $getters = [
         'BidStrategyIds' => 'getBidStrategyIds',
-        'Scope' => 'getScope',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
+        'Scope' => 'getScope'
     ];
 
     /**
@@ -233,8 +233,8 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
     public function __construct(?array $data = null)
     {
         $this->setIfExists('BidStrategyIds', $data ?? [], null);
-        $this->setIfExists('Scope', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
     }
 
     /**
@@ -317,42 +317,6 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
-            return $this->container['Scope']->getValue();
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
-        }
-        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
-            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
      * Gets ReturnAdditionalFields
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField|mixed|null
@@ -378,12 +342,62 @@ class GetBidStrategiesByIdsRequest implements ModelInterface, ArrayAccess, \Json
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PortfolioBidStrategyAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
+     */
+    public function getScope()
+    {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
+            return null;
+        }
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
+    }
+
+    /**
+     * Sets Scope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
+     *
+     * @return self
+     */
+    public function setScope($Scope)
+    {
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Scope) && !$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
 
         return $this;
     }

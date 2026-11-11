@@ -33,8 +33,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TextAssetLinks' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]'
+        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
+        'TextAssetLinks' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TextAssetLinks' => null,
-        'Errors' => null
+        'Errors' => null,
+        'TextAssetLinks' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TextAssetLinks' => true,
-        'Errors' => true
+        'Errors' => true,
+        'TextAssetLinks' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TextAssetLinks' => 'TextAssetLinks',
-        'Errors' => 'Errors'
+        'Errors' => 'Errors',
+        'TextAssetLinks' => 'TextAssetLinks'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'TextAssetLinks' => 'setTextAssetLinks',
-        'Errors' => 'setErrors'
+        'Errors' => 'setErrors',
+        'TextAssetLinks' => 'setTextAssetLinks'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'TextAssetLinks' => 'getTextAssetLinks',
-        'Errors' => 'getErrors'
+        'Errors' => 'getErrors',
+        'TextAssetLinks' => 'getTextAssetLinks'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TextAssetLinks', $data ?? [], null);
         $this->setIfExists('Errors', $data ?? [], null);
+        $this->setIfExists('TextAssetLinks', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets TextAssetLinks
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getTextAssetLinks()
-    {
-        if (!isset($this->container['TextAssetLinks']) || is_null($this->container['TextAssetLinks'])) {
-            return null;
-        }
-        return $this->container['TextAssetLinks'];
-    }
-
-    /**
-     * Sets TextAssetLinks
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $TextAssetLinks TextAssetLinks
-     *
-     * @return self
-     */
-    public function setTextAssetLinks($TextAssetLinks)
-    {
-        if (is_null($TextAssetLinks)) {
-            array_push($this->openAPINullablesSetToNull, 'TextAssetLinks');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TextAssetLinks', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TextAssetLinks'] = $TextAssetLinks;
-
-        return $this;
-    }
-
-    /**
      * Gets Errors
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null
@@ -342,6 +305,43 @@ class AdRecommendationTextRefineResult implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['Errors'] = $Errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAssetLinks
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getTextAssetLinks()
+    {
+        if (!isset($this->container['TextAssetLinks']) || is_null($this->container['TextAssetLinks'])) {
+            return null;
+        }
+        return $this->container['TextAssetLinks'];
+    }
+
+    /**
+     * Sets TextAssetLinks
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $TextAssetLinks TextAssetLinks
+     *
+     * @return self
+     */
+    public function setTextAssetLinks($TextAssetLinks)
+    {
+        if (is_null($TextAssetLinks)) {
+            array_push($this->openAPINullablesSetToNull, 'TextAssetLinks');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextAssetLinks', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TextAssetLinks'] = $TextAssetLinks;
 
         return $this;
     }

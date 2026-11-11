@@ -33,15 +33,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MicrosoftClickId' => 'string',
-        'ConversionName' => 'string',
-        'ConversionTime' => '\DateTime',
+        'AdjustmentCurrencyCode' => 'string',
         'AdjustmentTime' => '\DateTime',
         'AdjustmentType' => 'string',
         'AdjustmentValue' => 'float',
-        'AdjustmentCurrencyCode' => 'string',
+        'ConversionName' => 'string',
+        'ConversionTime' => '\DateTime',
         'HashedEmailAddress' => 'string',
-        'HashedPhoneNumber' => 'string'
+        'HashedPhoneNumber' => 'string',
+        'MicrosoftClickId' => 'string'
     ];
 
     /**
@@ -52,15 +52,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MicrosoftClickId' => null,
-        'ConversionName' => null,
-        'ConversionTime' => 'date-time',
+        'AdjustmentCurrencyCode' => null,
         'AdjustmentTime' => 'date-time',
         'AdjustmentType' => null,
         'AdjustmentValue' => 'double',
-        'AdjustmentCurrencyCode' => null,
+        'ConversionName' => null,
+        'ConversionTime' => 'date-time',
         'HashedEmailAddress' => null,
-        'HashedPhoneNumber' => null
+        'HashedPhoneNumber' => null,
+        'MicrosoftClickId' => null
     ];
 
     /**
@@ -69,15 +69,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MicrosoftClickId' => true,
-        'ConversionName' => true,
-        'ConversionTime' => false,
+        'AdjustmentCurrencyCode' => true,
         'AdjustmentTime' => false,
         'AdjustmentType' => true,
         'AdjustmentValue' => true,
-        'AdjustmentCurrencyCode' => true,
+        'ConversionName' => true,
+        'ConversionTime' => false,
         'HashedEmailAddress' => true,
-        'HashedPhoneNumber' => true
+        'HashedPhoneNumber' => true,
+        'MicrosoftClickId' => true
     ];
 
     /**
@@ -166,15 +166,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MicrosoftClickId' => 'MicrosoftClickId',
-        'ConversionName' => 'ConversionName',
-        'ConversionTime' => 'ConversionTime',
+        'AdjustmentCurrencyCode' => 'AdjustmentCurrencyCode',
         'AdjustmentTime' => 'AdjustmentTime',
         'AdjustmentType' => 'AdjustmentType',
         'AdjustmentValue' => 'AdjustmentValue',
-        'AdjustmentCurrencyCode' => 'AdjustmentCurrencyCode',
+        'ConversionName' => 'ConversionName',
+        'ConversionTime' => 'ConversionTime',
         'HashedEmailAddress' => 'HashedEmailAddress',
-        'HashedPhoneNumber' => 'HashedPhoneNumber'
+        'HashedPhoneNumber' => 'HashedPhoneNumber',
+        'MicrosoftClickId' => 'MicrosoftClickId'
     ];
 
     /**
@@ -183,15 +183,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $setters = [
-        'MicrosoftClickId' => 'setMicrosoftClickId',
-        'ConversionName' => 'setConversionName',
-        'ConversionTime' => 'setConversionTime',
+        'AdjustmentCurrencyCode' => 'setAdjustmentCurrencyCode',
         'AdjustmentTime' => 'setAdjustmentTime',
         'AdjustmentType' => 'setAdjustmentType',
         'AdjustmentValue' => 'setAdjustmentValue',
-        'AdjustmentCurrencyCode' => 'setAdjustmentCurrencyCode',
+        'ConversionName' => 'setConversionName',
+        'ConversionTime' => 'setConversionTime',
         'HashedEmailAddress' => 'setHashedEmailAddress',
-        'HashedPhoneNumber' => 'setHashedPhoneNumber'
+        'HashedPhoneNumber' => 'setHashedPhoneNumber',
+        'MicrosoftClickId' => 'setMicrosoftClickId'
     ];
 
     /**
@@ -200,15 +200,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $getters = [
-        'MicrosoftClickId' => 'getMicrosoftClickId',
-        'ConversionName' => 'getConversionName',
-        'ConversionTime' => 'getConversionTime',
+        'AdjustmentCurrencyCode' => 'getAdjustmentCurrencyCode',
         'AdjustmentTime' => 'getAdjustmentTime',
         'AdjustmentType' => 'getAdjustmentType',
         'AdjustmentValue' => 'getAdjustmentValue',
-        'AdjustmentCurrencyCode' => 'getAdjustmentCurrencyCode',
+        'ConversionName' => 'getConversionName',
+        'ConversionTime' => 'getConversionTime',
         'HashedEmailAddress' => 'getHashedEmailAddress',
-        'HashedPhoneNumber' => 'getHashedPhoneNumber'
+        'HashedPhoneNumber' => 'getHashedPhoneNumber',
+        'MicrosoftClickId' => 'getMicrosoftClickId'
     ];
 
     /**
@@ -268,15 +268,15 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MicrosoftClickId', $data ?? [], null);
-        $this->setIfExists('ConversionName', $data ?? [], null);
-        $this->setIfExists('ConversionTime', $data ?? [], null);
+        $this->setIfExists('AdjustmentCurrencyCode', $data ?? [], null);
         $this->setIfExists('AdjustmentTime', $data ?? [], null);
         $this->setIfExists('AdjustmentType', $data ?? [], null);
         $this->setIfExists('AdjustmentValue', $data ?? [], null);
-        $this->setIfExists('AdjustmentCurrencyCode', $data ?? [], null);
+        $this->setIfExists('ConversionName', $data ?? [], null);
+        $this->setIfExists('ConversionTime', $data ?? [], null);
         $this->setIfExists('HashedEmailAddress', $data ?? [], null);
         $this->setIfExists('HashedPhoneNumber', $data ?? [], null);
+        $this->setIfExists('MicrosoftClickId', $data ?? [], null);
     }
 
     /**
@@ -322,105 +322,38 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets MicrosoftClickId
+     * Gets AdjustmentCurrencyCode
      *
      * @return string|null
      */
-    public function getMicrosoftClickId()
+    public function getAdjustmentCurrencyCode()
     {
-        if (!isset($this->container['MicrosoftClickId']) || is_null($this->container['MicrosoftClickId'])) {
+        if (!isset($this->container['AdjustmentCurrencyCode']) || is_null($this->container['AdjustmentCurrencyCode'])) {
             return null;
         }
-        return $this->container['MicrosoftClickId'];
+        return $this->container['AdjustmentCurrencyCode'];
     }
 
     /**
-     * Sets MicrosoftClickId
+     * Sets AdjustmentCurrencyCode
      *
-     * @param string|null $MicrosoftClickId MicrosoftClickId
+     * @param string|null $AdjustmentCurrencyCode AdjustmentCurrencyCode
      *
      * @return self
      */
-    public function setMicrosoftClickId($MicrosoftClickId)
+    public function setAdjustmentCurrencyCode($AdjustmentCurrencyCode)
     {
-        if (is_null($MicrosoftClickId)) {
-            array_push($this->openAPINullablesSetToNull, 'MicrosoftClickId');
+        if (is_null($AdjustmentCurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'AdjustmentCurrencyCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MicrosoftClickId', $nullablesSetToNull);
+            $index = array_search('AdjustmentCurrencyCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['MicrosoftClickId'] = $MicrosoftClickId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConversionName
-     *
-     * @return string|null
-     */
-    public function getConversionName()
-    {
-        if (!isset($this->container['ConversionName']) || is_null($this->container['ConversionName'])) {
-            return null;
-        }
-        return $this->container['ConversionName'];
-    }
-
-    /**
-     * Sets ConversionName
-     *
-     * @param string|null $ConversionName ConversionName
-     *
-     * @return self
-     */
-    public function setConversionName($ConversionName)
-    {
-        if (is_null($ConversionName)) {
-            array_push($this->openAPINullablesSetToNull, 'ConversionName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConversionName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ConversionName'] = $ConversionName;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConversionTime
-     *
-     * @return \DateTime|null
-     */
-    public function getConversionTime()
-    {
-        if (!isset($this->container['ConversionTime']) || is_null($this->container['ConversionTime'])) {
-            return null;
-        }
-        return $this->container['ConversionTime'];
-    }
-
-    /**
-     * Sets ConversionTime
-     *
-     * @param \DateTime|null $ConversionTime ConversionTime
-     *
-     * @return self
-     */
-    public function setConversionTime($ConversionTime)
-    {
-        if (is_null($ConversionTime)) {
-            throw new \InvalidArgumentException('non-nullable ConversionTime cannot be null');
-        }
-        $this->container['ConversionTime'] = $ConversionTime;
+        $this->container['AdjustmentCurrencyCode'] = $AdjustmentCurrencyCode;
 
         return $this;
     }
@@ -530,38 +463,68 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets AdjustmentCurrencyCode
+     * Gets ConversionName
      *
      * @return string|null
      */
-    public function getAdjustmentCurrencyCode()
+    public function getConversionName()
     {
-        if (!isset($this->container['AdjustmentCurrencyCode']) || is_null($this->container['AdjustmentCurrencyCode'])) {
+        if (!isset($this->container['ConversionName']) || is_null($this->container['ConversionName'])) {
             return null;
         }
-        return $this->container['AdjustmentCurrencyCode'];
+        return $this->container['ConversionName'];
     }
 
     /**
-     * Sets AdjustmentCurrencyCode
+     * Sets ConversionName
      *
-     * @param string|null $AdjustmentCurrencyCode AdjustmentCurrencyCode
+     * @param string|null $ConversionName ConversionName
      *
      * @return self
      */
-    public function setAdjustmentCurrencyCode($AdjustmentCurrencyCode)
+    public function setConversionName($ConversionName)
     {
-        if (is_null($AdjustmentCurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'AdjustmentCurrencyCode');
+        if (is_null($ConversionName)) {
+            array_push($this->openAPINullablesSetToNull, 'ConversionName');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdjustmentCurrencyCode', $nullablesSetToNull);
+            $index = array_search('ConversionName', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AdjustmentCurrencyCode'] = $AdjustmentCurrencyCode;
+        $this->container['ConversionName'] = $ConversionName;
+
+        return $this;
+    }
+
+    /**
+     * Gets ConversionTime
+     *
+     * @return \DateTime|null
+     */
+    public function getConversionTime()
+    {
+        if (!isset($this->container['ConversionTime']) || is_null($this->container['ConversionTime'])) {
+            return null;
+        }
+        return $this->container['ConversionTime'];
+    }
+
+    /**
+     * Sets ConversionTime
+     *
+     * @param \DateTime|null $ConversionTime ConversionTime
+     *
+     * @return self
+     */
+    public function setConversionTime($ConversionTime)
+    {
+        if (is_null($ConversionTime)) {
+            throw new \InvalidArgumentException('non-nullable ConversionTime cannot be null');
+        }
+        $this->container['ConversionTime'] = $ConversionTime;
 
         return $this;
     }
@@ -636,6 +599,43 @@ class OfflineConversionAdjustment implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['HashedPhoneNumber'] = $HashedPhoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets MicrosoftClickId
+     *
+     * @return string|null
+     */
+    public function getMicrosoftClickId()
+    {
+        if (!isset($this->container['MicrosoftClickId']) || is_null($this->container['MicrosoftClickId'])) {
+            return null;
+        }
+        return $this->container['MicrosoftClickId'];
+    }
+
+    /**
+     * Sets MicrosoftClickId
+     *
+     * @param string|null $MicrosoftClickId MicrosoftClickId
+     *
+     * @return self
+     */
+    public function setMicrosoftClickId($MicrosoftClickId)
+    {
+        if (is_null($MicrosoftClickId)) {
+            array_push($this->openAPINullablesSetToNull, 'MicrosoftClickId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MicrosoftClickId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MicrosoftClickId'] = $MicrosoftClickId;
 
         return $this;
     }

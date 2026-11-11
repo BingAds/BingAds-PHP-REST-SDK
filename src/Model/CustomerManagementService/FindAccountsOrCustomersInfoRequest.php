@@ -374,7 +374,7 @@ class FindAccountsOrCustomersInfoRequest implements ModelInterface, ArrayAccess,
         if (is_null($ReturnAdditionalFields)) {
             throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

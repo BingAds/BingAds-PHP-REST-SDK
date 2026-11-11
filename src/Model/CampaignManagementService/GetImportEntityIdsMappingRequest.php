@@ -388,7 +388,7 @@ class GetImportEntityIdsMappingRequest implements ModelInterface, ArrayAccess, \
         if (is_null($ImportEntityType)) {
             throw new \InvalidArgumentException('non-nullable ImportEntityType cannot be null');
         }
-        if (!$ImportEntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportEntityType) {
+        if (!is_null($ImportEntityType) && !$ImportEntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportEntityType) {
             $ImportEntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportEntityType($ImportEntityType);
         }
         $this->container['ImportEntityType'] = $ImportEntityType;

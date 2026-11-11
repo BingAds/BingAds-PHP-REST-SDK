@@ -33,13 +33,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'AssetGroupId' => 'string',
         'AssetGroupListingType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupListingType',
-        'ParentListingGroupId' => 'string',
         'Dimension' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductCondition',
+        'Id' => 'string',
         'IsExcluded' => 'bool',
-        'ListingGroupPath' => 'string'
+        'ListingGroupPath' => 'string',
+        'ParentListingGroupId' => 'string'
     ];
 
     /**
@@ -50,13 +50,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'AssetGroupId' => 'int64',
         'AssetGroupListingType' => null,
-        'ParentListingGroupId' => 'int64',
         'Dimension' => null,
+        'Id' => 'int64',
         'IsExcluded' => null,
-        'ListingGroupPath' => null
+        'ListingGroupPath' => null,
+        'ParentListingGroupId' => 'int64'
     ];
 
     /**
@@ -65,13 +65,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'AssetGroupId' => false,
         'AssetGroupListingType' => false,
-        'ParentListingGroupId' => true,
         'Dimension' => true,
+        'Id' => true,
         'IsExcluded' => false,
-        'ListingGroupPath' => true
+        'ListingGroupPath' => true,
+        'ParentListingGroupId' => true
     ];
 
     /**
@@ -160,13 +160,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'AssetGroupId' => 'AssetGroupId',
         'AssetGroupListingType' => 'AssetGroupListingType',
-        'ParentListingGroupId' => 'ParentListingGroupId',
         'Dimension' => 'Dimension',
+        'Id' => 'Id',
         'IsExcluded' => 'IsExcluded',
-        'ListingGroupPath' => 'ListingGroupPath'
+        'ListingGroupPath' => 'ListingGroupPath',
+        'ParentListingGroupId' => 'ParentListingGroupId'
     ];
 
     /**
@@ -175,13 +175,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'AssetGroupId' => 'setAssetGroupId',
         'AssetGroupListingType' => 'setAssetGroupListingType',
-        'ParentListingGroupId' => 'setParentListingGroupId',
         'Dimension' => 'setDimension',
+        'Id' => 'setId',
         'IsExcluded' => 'setIsExcluded',
-        'ListingGroupPath' => 'setListingGroupPath'
+        'ListingGroupPath' => 'setListingGroupPath',
+        'ParentListingGroupId' => 'setParentListingGroupId'
     ];
 
     /**
@@ -190,13 +190,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'AssetGroupId' => 'getAssetGroupId',
         'AssetGroupListingType' => 'getAssetGroupListingType',
-        'ParentListingGroupId' => 'getParentListingGroupId',
         'Dimension' => 'getDimension',
+        'Id' => 'getId',
         'IsExcluded' => 'getIsExcluded',
-        'ListingGroupPath' => 'getListingGroupPath'
+        'ListingGroupPath' => 'getListingGroupPath',
+        'ParentListingGroupId' => 'getParentListingGroupId'
     ];
 
     /**
@@ -256,13 +256,13 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('AssetGroupId', $data ?? [], null);
         $this->setIfExists('AssetGroupListingType', $data ?? [], null);
-        $this->setIfExists('ParentListingGroupId', $data ?? [], null);
         $this->setIfExists('Dimension', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('IsExcluded', $data ?? [], null);
         $this->setIfExists('ListingGroupPath', $data ?? [], null);
+        $this->setIfExists('ParentListingGroupId', $data ?? [], null);
     }
 
     /**
@@ -306,43 +306,6 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets AssetGroupId
@@ -402,47 +365,10 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($AssetGroupListingType)) {
             throw new \InvalidArgumentException('non-nullable AssetGroupListingType cannot be null');
         }
-        if (!$AssetGroupListingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupListingType) {
+        if (!is_null($AssetGroupListingType) && !$AssetGroupListingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupListingType) {
             $AssetGroupListingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroupListingType($AssetGroupListingType);
         }
         $this->container['AssetGroupListingType'] = $AssetGroupListingType;
-
-        return $this;
-    }
-
-    /**
-     * Gets ParentListingGroupId
-     *
-     * @return string|null
-     */
-    public function getParentListingGroupId()
-    {
-        if (!isset($this->container['ParentListingGroupId']) || is_null($this->container['ParentListingGroupId'])) {
-            return null;
-        }
-        return $this->container['ParentListingGroupId'];
-    }
-
-    /**
-     * Sets ParentListingGroupId
-     *
-     * @param string|null $ParentListingGroupId ParentListingGroupId
-     *
-     * @return self
-     */
-    public function setParentListingGroupId($ParentListingGroupId)
-    {
-        if (is_null($ParentListingGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'ParentListingGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ParentListingGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ParentListingGroupId'] = $ParentListingGroupId;
 
         return $this;
     }
@@ -480,6 +406,43 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['Dimension'] = $Dimension;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }
@@ -547,6 +510,43 @@ class AssetGroupListingGroup implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['ListingGroupPath'] = $ListingGroupPath;
+
+        return $this;
+    }
+
+    /**
+     * Gets ParentListingGroupId
+     *
+     * @return string|null
+     */
+    public function getParentListingGroupId()
+    {
+        if (!isset($this->container['ParentListingGroupId']) || is_null($this->container['ParentListingGroupId'])) {
+            return null;
+        }
+        return $this->container['ParentListingGroupId'];
+    }
+
+    /**
+     * Sets ParentListingGroupId
+     *
+     * @param string|null $ParentListingGroupId ParentListingGroupId
+     *
+     * @return self
+     */
+    public function setParentListingGroupId($ParentListingGroupId)
+    {
+        if (is_null($ParentListingGroupId)) {
+            array_push($this->openAPINullablesSetToNull, 'ParentListingGroupId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ParentListingGroupId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ParentListingGroupId'] = $ParentListingGroupId;
 
         return $this;
     }

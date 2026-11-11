@@ -34,8 +34,8 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
       */
     protected static array $openAPITypes = [
         'AccountStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter',
-        'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
         'AdGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter',
+        'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
         'KeywordStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter'
     ];
 
@@ -48,8 +48,8 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
       */
     protected static array $openAPIFormats = [
         'AccountStatus' => null,
-        'CampaignStatus' => null,
         'AdGroupStatus' => null,
+        'CampaignStatus' => null,
         'KeywordStatus' => null
     ];
 
@@ -59,10 +59,10 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AccountStatus' => false,
-        'CampaignStatus' => false,
-        'AdGroupStatus' => false,
-        'KeywordStatus' => false
+        'AccountStatus' => true,
+        'AdGroupStatus' => true,
+        'CampaignStatus' => true,
+        'KeywordStatus' => true
     ];
 
     /**
@@ -152,8 +152,8 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
      */
     protected static array $attributeMap = [
         'AccountStatus' => 'AccountStatus',
-        'CampaignStatus' => 'CampaignStatus',
         'AdGroupStatus' => 'AdGroupStatus',
+        'CampaignStatus' => 'CampaignStatus',
         'KeywordStatus' => 'KeywordStatus'
     ];
 
@@ -164,8 +164,8 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
      */
     protected static array $setters = [
         'AccountStatus' => 'setAccountStatus',
-        'CampaignStatus' => 'setCampaignStatus',
         'AdGroupStatus' => 'setAdGroupStatus',
+        'CampaignStatus' => 'setCampaignStatus',
         'KeywordStatus' => 'setKeywordStatus'
     ];
 
@@ -176,8 +176,8 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
      */
     protected static array $getters = [
         'AccountStatus' => 'getAccountStatus',
-        'CampaignStatus' => 'getCampaignStatus',
         'AdGroupStatus' => 'getAdGroupStatus',
+        'CampaignStatus' => 'getCampaignStatus',
         'KeywordStatus' => 'getKeywordStatus'
     ];
 
@@ -239,8 +239,8 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountStatus', $data ?? [], null);
-        $this->setIfExists('CampaignStatus', $data ?? [], null);
         $this->setIfExists('AdGroupStatus', $data ?? [], null);
+        $this->setIfExists('CampaignStatus', $data ?? [], null);
         $this->setIfExists('KeywordStatus', $data ?? [], null);
     }
 
@@ -312,48 +312,19 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
     public function setAccountStatus($AccountStatus)
     {
         if (is_null($AccountStatus)) {
-            throw new \InvalidArgumentException('non-nullable AccountStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AccountStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AccountStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AccountStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter) {
+        if (!is_null($AccountStatus) && !$AccountStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter) {
             $AccountStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter($AccountStatus);
         }
         $this->container['AccountStatus'] = $AccountStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null
-     */
-    public function getCampaignStatus()
-    {
-        if (!isset($this->container['CampaignStatus']) || is_null($this->container['CampaignStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['CampaignStatus']) || is_string($this->container['CampaignStatus'])) && method_exists($this->container['CampaignStatus'], 'getValue')) {
-            return $this->container['CampaignStatus']->getValue();
-        }
-        return $this->container['CampaignStatus'];
-    }
-
-    /**
-     * Sets CampaignStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null $CampaignStatus CampaignStatus
-     *
-     * @return self
-     */
-    public function setCampaignStatus($CampaignStatus)
-    {
-        if (is_null($CampaignStatus)) {
-            throw new \InvalidArgumentException('non-nullable CampaignStatus cannot be null');
-        }
-        if (!$CampaignStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter) {
-            $CampaignStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter($CampaignStatus);
-        }
-        $this->container['CampaignStatus'] = $CampaignStatus;
 
         return $this;
     }
@@ -384,12 +355,62 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
     public function setAdGroupStatus($AdGroupStatus)
     {
         if (is_null($AdGroupStatus)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AdGroupStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter) {
+        if (!is_null($AdGroupStatus) && !$AdGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter) {
             $AdGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter($AdGroupStatus);
         }
         $this->container['AdGroupStatus'] = $AdGroupStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null
+     */
+    public function getCampaignStatus()
+    {
+        if (!isset($this->container['CampaignStatus']) || is_null($this->container['CampaignStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['CampaignStatus']) || is_string($this->container['CampaignStatus'])) && method_exists($this->container['CampaignStatus'], 'getValue')) {
+            return $this->container['CampaignStatus']->getValue();
+        }
+        return $this->container['CampaignStatus'];
+    }
+
+    /**
+     * Sets CampaignStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null $CampaignStatus CampaignStatus
+     *
+     * @return self
+     */
+    public function setCampaignStatus($CampaignStatus)
+    {
+        if (is_null($CampaignStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CampaignStatus) && !$CampaignStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter) {
+            $CampaignStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter($CampaignStatus);
+        }
+        $this->container['CampaignStatus'] = $CampaignStatus;
 
         return $this;
     }
@@ -420,9 +441,16 @@ class NegativeKeywordConflictReportFilter implements ModelInterface, ArrayAccess
     public function setKeywordStatus($KeywordStatus)
     {
         if (is_null($KeywordStatus)) {
-            throw new \InvalidArgumentException('non-nullable KeywordStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'KeywordStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('KeywordStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$KeywordStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter) {
+        if (!is_null($KeywordStatus) && !$KeywordStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter) {
             $KeywordStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter($KeywordStatus);
         }
         $this->container['KeywordStatus'] = $KeywordStatus;

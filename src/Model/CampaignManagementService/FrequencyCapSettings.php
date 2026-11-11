@@ -33,8 +33,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'TimeGranularity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity',
-        'CapValue' => 'int'
+        'CapValue' => 'int',
+        'TimeGranularity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity'
     ];
 
     /**
@@ -45,8 +45,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'TimeGranularity' => null,
-        'CapValue' => 'int32'
+        'CapValue' => 'int32',
+        'TimeGranularity' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'TimeGranularity' => false,
-        'CapValue' => false
+        'CapValue' => false,
+        'TimeGranularity' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $attributeMap = [
-        'TimeGranularity' => 'TimeGranularity',
-        'CapValue' => 'CapValue'
+        'CapValue' => 'CapValue',
+        'TimeGranularity' => 'TimeGranularity'
     ];
 
     /**
@@ -155,8 +155,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $setters = [
-        'TimeGranularity' => 'setTimeGranularity',
-        'CapValue' => 'setCapValue'
+        'CapValue' => 'setCapValue',
+        'TimeGranularity' => 'setTimeGranularity'
     ];
 
     /**
@@ -165,8 +165,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $getters = [
-        'TimeGranularity' => 'getTimeGranularity',
-        'CapValue' => 'getCapValue'
+        'CapValue' => 'getCapValue',
+        'TimeGranularity' => 'getTimeGranularity'
     ];
 
     /**
@@ -226,8 +226,8 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('TimeGranularity', $data ?? [], null);
         $this->setIfExists('CapValue', $data ?? [], null);
+        $this->setIfExists('TimeGranularity', $data ?? [], null);
     }
 
     /**
@@ -273,6 +273,36 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
+     * Gets CapValue
+     *
+     * @return int|null
+     */
+    public function getCapValue()
+    {
+        if (!isset($this->container['CapValue']) || is_null($this->container['CapValue'])) {
+            return null;
+        }
+        return $this->container['CapValue'];
+    }
+
+    /**
+     * Sets CapValue
+     *
+     * @param int|null $CapValue CapValue
+     *
+     * @return self
+     */
+    public function setCapValue($CapValue)
+    {
+        if (is_null($CapValue)) {
+            throw new \InvalidArgumentException('non-nullable CapValue cannot be null');
+        }
+        $this->container['CapValue'] = $CapValue;
+
+        return $this;
+    }
+
+    /**
      * Gets TimeGranularity
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity|mixed|null
@@ -300,40 +330,10 @@ class FrequencyCapSettings implements ModelInterface, ArrayAccess, \JsonSerializ
         if (is_null($TimeGranularity)) {
             throw new \InvalidArgumentException('non-nullable TimeGranularity cannot be null');
         }
-        if (!$TimeGranularity instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity) {
+        if (!is_null($TimeGranularity) && !$TimeGranularity instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity) {
             $TimeGranularity = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FrequencyCapTimeGranularity($TimeGranularity);
         }
         $this->container['TimeGranularity'] = $TimeGranularity;
-
-        return $this;
-    }
-
-    /**
-     * Gets CapValue
-     *
-     * @return int|null
-     */
-    public function getCapValue()
-    {
-        if (!isset($this->container['CapValue']) || is_null($this->container['CapValue'])) {
-            return null;
-        }
-        return $this->container['CapValue'];
-    }
-
-    /**
-     * Sets CapValue
-     *
-     * @param int|null $CapValue CapValue
-     *
-     * @return self
-     */
-    public function setCapValue($CapValue)
-    {
-        if (is_null($CapValue)) {
-            throw new \InvalidArgumentException('non-nullable CapValue cannot be null');
-        }
-        $this->container['CapValue'] = $CapValue;
 
         return $this;
     }

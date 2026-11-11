@@ -52,13 +52,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'string',
         'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdApiError[]',
         'Type' => 'string',
-        'EditorialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]',
         'BatchErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
+        'EditorialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]',
         'OperationErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
         'ErrorMessage' => 'string',
-        'MTServerName' => 'string',
-        'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource',
         'ErrorSourceSystem' => 'string',
+        'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource',
+        'MTServerName' => 'string',
         'ErrorCode' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode'
     ];
 
@@ -73,13 +73,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => null,
         'Errors' => null,
         'Type' => null,
-        'EditorialErrors' => null,
         'BatchErrors' => null,
+        'EditorialErrors' => null,
         'OperationErrors' => null,
         'ErrorMessage' => null,
-        'MTServerName' => null,
-        'FaultingLayer' => null,
         'ErrorSourceSystem' => null,
+        'FaultingLayer' => null,
+        'MTServerName' => null,
         'ErrorCode' => null
     ];
 
@@ -92,13 +92,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => true,
         'Errors' => true,
         'Type' => true,
-        'EditorialErrors' => true,
         'BatchErrors' => true,
+        'EditorialErrors' => true,
         'OperationErrors' => true,
         'ErrorMessage' => true,
-        'MTServerName' => true,
-        'FaultingLayer' => false,
         'ErrorSourceSystem' => true,
+        'FaultingLayer' => false,
+        'MTServerName' => true,
         'ErrorCode' => false
     ];
 
@@ -191,13 +191,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'TrackingId',
         'Errors' => 'Errors',
         'Type' => 'Type',
-        'EditorialErrors' => 'EditorialErrors',
         'BatchErrors' => 'BatchErrors',
+        'EditorialErrors' => 'EditorialErrors',
         'OperationErrors' => 'OperationErrors',
         'ErrorMessage' => 'ErrorMessage',
-        'MTServerName' => 'MTServerName',
-        'FaultingLayer' => 'FaultingLayer',
         'ErrorSourceSystem' => 'ErrorSourceSystem',
+        'FaultingLayer' => 'FaultingLayer',
+        'MTServerName' => 'MTServerName',
         'ErrorCode' => 'ErrorCode'
     ];
 
@@ -210,13 +210,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'setTrackingId',
         'Errors' => 'setErrors',
         'Type' => 'setType',
-        'EditorialErrors' => 'setEditorialErrors',
         'BatchErrors' => 'setBatchErrors',
+        'EditorialErrors' => 'setEditorialErrors',
         'OperationErrors' => 'setOperationErrors',
         'ErrorMessage' => 'setErrorMessage',
-        'MTServerName' => 'setMTServerName',
-        'FaultingLayer' => 'setFaultingLayer',
         'ErrorSourceSystem' => 'setErrorSourceSystem',
+        'FaultingLayer' => 'setFaultingLayer',
+        'MTServerName' => 'setMTServerName',
         'ErrorCode' => 'setErrorCode'
     ];
 
@@ -229,13 +229,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         'TrackingId' => 'getTrackingId',
         'Errors' => 'getErrors',
         'Type' => 'getType',
-        'EditorialErrors' => 'getEditorialErrors',
         'BatchErrors' => 'getBatchErrors',
+        'EditorialErrors' => 'getEditorialErrors',
         'OperationErrors' => 'getOperationErrors',
         'ErrorMessage' => 'getErrorMessage',
-        'MTServerName' => 'getMTServerName',
-        'FaultingLayer' => 'getFaultingLayer',
         'ErrorSourceSystem' => 'getErrorSourceSystem',
+        'FaultingLayer' => 'getFaultingLayer',
+        'MTServerName' => 'getMTServerName',
         'ErrorCode' => 'getErrorCode'
     ];
 
@@ -299,13 +299,13 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AdCenterFault');
-        $this->setIfExists('EditorialErrors', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
+        $this->setIfExists('EditorialErrors', $data ?? [], null);
         $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('ErrorMessage', $data ?? [], null);
-        $this->setIfExists('MTServerName', $data ?? [], null);
-        $this->setIfExists('FaultingLayer', $data ?? [], null);
         $this->setIfExists('ErrorSourceSystem', $data ?? [], null);
+        $this->setIfExists('FaultingLayer', $data ?? [], null);
+        $this->setIfExists('MTServerName', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
@@ -339,9 +339,6 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['TrackingId'] === null) {
-            $invalidProperties[] = "'TrackingId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -360,7 +357,7 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets TrackingId
      *
-     * @return string
+     * @return string|null
      */
     public function getTrackingId()
     {
@@ -373,7 +370,7 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets TrackingId
      *
-     * @param string $TrackingId TrackingId
+     * @param string|null $TrackingId TrackingId
      *
      * @return self
      */
@@ -469,43 +466,6 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets EditorialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null
-     */
-    public function getEditorialErrors()
-    {
-        if (!isset($this->container['EditorialErrors']) || is_null($this->container['EditorialErrors'])) {
-            return null;
-        }
-        return $this->container['EditorialErrors'];
-    }
-
-    /**
-     * Sets EditorialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null $EditorialErrors EditorialErrors
-     *
-     * @return self
-     */
-    public function setEditorialErrors($EditorialErrors)
-    {
-        if (is_null($EditorialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'EditorialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EditorialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EditorialErrors'] = $EditorialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets BatchErrors
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
@@ -538,6 +498,43 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BatchErrors'] = $BatchErrors;
+
+        return $this;
+    }
+
+    /**
+     * Gets EditorialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null
+     */
+    public function getEditorialErrors()
+    {
+        if (!isset($this->container['EditorialErrors']) || is_null($this->container['EditorialErrors'])) {
+            return null;
+        }
+        return $this->container['EditorialErrors'];
+    }
+
+    /**
+     * Sets EditorialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null $EditorialErrors EditorialErrors
+     *
+     * @return self
+     */
+    public function setEditorialErrors($EditorialErrors)
+    {
+        if (is_null($EditorialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'EditorialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EditorialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EditorialErrors'] = $EditorialErrors;
 
         return $this;
     }
@@ -617,79 +614,6 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets MTServerName
-     *
-     * @return string|null
-     */
-    public function getMTServerName()
-    {
-        if (!isset($this->container['MTServerName']) || is_null($this->container['MTServerName'])) {
-            return null;
-        }
-        return $this->container['MTServerName'];
-    }
-
-    /**
-     * Sets MTServerName
-     *
-     * @param string|null $MTServerName MTServerName
-     *
-     * @return self
-     */
-    public function setMTServerName($MTServerName)
-    {
-        if (is_null($MTServerName)) {
-            array_push($this->openAPINullablesSetToNull, 'MTServerName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MTServerName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MTServerName'] = $MTServerName;
-
-        return $this;
-    }
-
-    /**
-     * Gets FaultingLayer
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null
-     */
-    public function getFaultingLayer()
-    {
-        if (!isset($this->container['FaultingLayer']) || is_null($this->container['FaultingLayer'])) {
-            return null;
-        }
-        if ((is_object($this->container['FaultingLayer']) || is_string($this->container['FaultingLayer'])) && method_exists($this->container['FaultingLayer'], 'getValue')) {
-            return $this->container['FaultingLayer']->getValue();
-        }
-        return $this->container['FaultingLayer'];
-    }
-
-    /**
-     * Sets FaultingLayer
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null $FaultingLayer FaultingLayer
-     *
-     * @return self
-     */
-    public function setFaultingLayer($FaultingLayer)
-    {
-        if (is_null($FaultingLayer)) {
-            throw new \InvalidArgumentException('non-nullable FaultingLayer cannot be null');
-        }
-        if (!$FaultingLayer instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource) {
-            $FaultingLayer = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource($FaultingLayer);
-        }
-        $this->container['FaultingLayer'] = $FaultingLayer;
-
-        return $this;
-    }
-
-    /**
      * Gets ErrorSourceSystem
      *
      * @return string|null
@@ -727,6 +651,79 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets FaultingLayer
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null
+     */
+    public function getFaultingLayer()
+    {
+        if (!isset($this->container['FaultingLayer']) || is_null($this->container['FaultingLayer'])) {
+            return null;
+        }
+        if ((is_object($this->container['FaultingLayer']) || is_string($this->container['FaultingLayer'])) && method_exists($this->container['FaultingLayer'], 'getValue')) {
+            return $this->container['FaultingLayer']->getValue();
+        }
+        return $this->container['FaultingLayer'];
+    }
+
+    /**
+     * Sets FaultingLayer
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null $FaultingLayer FaultingLayer
+     *
+     * @return self
+     */
+    public function setFaultingLayer($FaultingLayer)
+    {
+        if (is_null($FaultingLayer)) {
+            throw new \InvalidArgumentException('non-nullable FaultingLayer cannot be null');
+        }
+        if (!is_null($FaultingLayer) && !$FaultingLayer instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource) {
+            $FaultingLayer = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource($FaultingLayer);
+        }
+        $this->container['FaultingLayer'] = $FaultingLayer;
+
+        return $this;
+    }
+
+    /**
+     * Gets MTServerName
+     *
+     * @return string|null
+     */
+    public function getMTServerName()
+    {
+        if (!isset($this->container['MTServerName']) || is_null($this->container['MTServerName'])) {
+            return null;
+        }
+        return $this->container['MTServerName'];
+    }
+
+    /**
+     * Sets MTServerName
+     *
+     * @param string|null $MTServerName MTServerName
+     *
+     * @return self
+     */
+    public function setMTServerName($MTServerName)
+    {
+        if (is_null($MTServerName)) {
+            array_push($this->openAPINullablesSetToNull, 'MTServerName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MTServerName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MTServerName'] = $MTServerName;
+
+        return $this;
+    }
+
+    /**
      * Gets ErrorCode
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode|mixed|null
@@ -754,7 +751,7 @@ class ApplicationFault implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($ErrorCode)) {
             throw new \InvalidArgumentException('non-nullable ErrorCode cannot be null');
         }
-        if (!$ErrorCode instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode) {
+        if (!is_null($ErrorCode) && !$ErrorCode instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode) {
             $ErrorCode = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode($ErrorCode);
         }
         $this->container['ErrorCode'] = $ErrorCode;

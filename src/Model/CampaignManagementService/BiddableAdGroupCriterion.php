@@ -34,19 +34,19 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
         'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
         'Type' => 'string',
         'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
         'DestinationUrl' => 'string',
-        'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'FinalUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
-        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus',
+        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'TrackingUrlTemplate' => 'string',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback'
     ];
 
@@ -59,19 +59,19 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'Status' => null,
         'Criterion' => null,
         'Id' => 'int64',
+        'Status' => null,
         'Type' => null,
         'CriterionBid' => null,
         'DestinationUrl' => null,
-        'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'UrlCustomParameters' => null,
-        'FinalUrls' => null,
-        'FinalMobileUrls' => null,
-        'FinalAppUrls' => null,
         'EditorialStatus' => null,
+        'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'TrackingUrlTemplate' => null,
+        'UrlCustomParameters' => null,
         'CriterionCashback' => null
     ];
 
@@ -82,19 +82,19 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'AdGroupId' => false,
-        'Status' => false,
         'Criterion' => true,
         'Id' => true,
+        'Status' => true,
         'Type' => true,
         'CriterionBid' => true,
         'DestinationUrl' => true,
-        'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'UrlCustomParameters' => true,
-        'FinalUrls' => true,
-        'FinalMobileUrls' => true,
+        'EditorialStatus' => true,
         'FinalAppUrls' => true,
-        'EditorialStatus' => false,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'TrackingUrlTemplate' => true,
+        'UrlCustomParameters' => true,
         'CriterionCashback' => true
     ];
 
@@ -185,19 +185,19 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'Status' => 'Status',
         'Criterion' => 'Criterion',
         'Id' => 'Id',
+        'Status' => 'Status',
         'Type' => 'Type',
         'CriterionBid' => 'CriterionBid',
         'DestinationUrl' => 'DestinationUrl',
-        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'UrlCustomParameters' => 'UrlCustomParameters',
-        'FinalUrls' => 'FinalUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalAppUrls' => 'FinalAppUrls',
         'EditorialStatus' => 'EditorialStatus',
+        'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'UrlCustomParameters' => 'UrlCustomParameters',
         'CriterionCashback' => 'CriterionCashback'
     ];
 
@@ -208,19 +208,19 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'Status' => 'setStatus',
         'Criterion' => 'setCriterion',
         'Id' => 'setId',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'CriterionBid' => 'setCriterionBid',
         'DestinationUrl' => 'setDestinationUrl',
-        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
-        'FinalUrls' => 'setFinalUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalAppUrls' => 'setFinalAppUrls',
         'EditorialStatus' => 'setEditorialStatus',
+        'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'UrlCustomParameters' => 'setUrlCustomParameters',
         'CriterionCashback' => 'setCriterionCashback'
     ];
 
@@ -231,19 +231,19 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'Status' => 'getStatus',
         'Criterion' => 'getCriterion',
         'Id' => 'getId',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'CriterionBid' => 'getCriterionBid',
         'DestinationUrl' => 'getDestinationUrl',
-        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
-        'FinalUrls' => 'getFinalUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalAppUrls' => 'getFinalAppUrls',
         'EditorialStatus' => 'getEditorialStatus',
+        'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'UrlCustomParameters' => 'getUrlCustomParameters',
         'CriterionCashback' => 'getCriterionCashback'
     ];
 
@@ -305,20 +305,25 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CriterionBid', $data ?? [], null);
         $this->setIfExists('DestinationUrl', $data ?? [], null);
-        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalAppUrls', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
+        $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('CriterionCashback', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -394,42 +399,6 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
     }
 
     /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Criterion
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion|null
@@ -499,6 +468,49 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -615,186 +627,44 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
     }
 
     /**
-     * Gets TrackingUrlTemplate
+     * Gets EditorialStatus
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus|mixed|null
      */
-    public function getTrackingUrlTemplate()
+    public function getEditorialStatus()
     {
-        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
             return null;
         }
-        return $this->container['TrackingUrlTemplate'];
+        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
+            return $this->container['EditorialStatus']->getValue();
+        }
+        return $this->container['EditorialStatus'];
     }
 
     /**
-     * Sets TrackingUrlTemplate
+     * Sets EditorialStatus
      *
-     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus|mixed|null $EditorialStatus EditorialStatus
      *
      * @return self
      */
-    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    public function setEditorialStatus($EditorialStatus)
     {
-        if (is_null($TrackingUrlTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        if (is_null($EditorialStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus) {
+            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus($EditorialStatus);
         }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlCustomParameters
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
-     */
-    public function getUrlCustomParameters()
-    {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
-            return null;
-        }
-        return $this->container['UrlCustomParameters'];
-    }
-
-    /**
-     * Sets UrlCustomParameters
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
-     *
-     * @return self
-     */
-    public function setUrlCustomParameters($UrlCustomParameters)
-    {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalMobileUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalMobileUrls()
-    {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
-            return null;
-        }
-        return $this->container['FinalMobileUrls'];
-    }
-
-    /**
-     * Sets FinalMobileUrls
-     *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
-     *
-     * @return self
-     */
-    public function setFinalMobileUrls($FinalMobileUrls)
-    {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+        $this->container['EditorialStatus'] = $EditorialStatus;
 
         return $this;
     }
@@ -837,37 +707,186 @@ class BiddableAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
     }
 
     /**
-     * Gets EditorialStatus
+     * Gets FinalMobileUrls
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus|mixed|null
+     * @return string[]|null
      */
-    public function getEditorialStatus()
+    public function getFinalMobileUrls()
     {
-        if (!isset($this->container['EditorialStatus']) || is_null($this->container['EditorialStatus'])) {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
             return null;
         }
-        if ((is_object($this->container['EditorialStatus']) || is_string($this->container['EditorialStatus'])) && method_exists($this->container['EditorialStatus'], 'getValue')) {
-            return $this->container['EditorialStatus']->getValue();
-        }
-        return $this->container['EditorialStatus'];
+        return $this->container['FinalMobileUrls'];
     }
 
     /**
-     * Sets EditorialStatus
+     * Sets FinalMobileUrls
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus|mixed|null $EditorialStatus EditorialStatus
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
      *
      * @return self
      */
-    public function setEditorialStatus($EditorialStatus)
+    public function setFinalMobileUrls($FinalMobileUrls)
     {
-        if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus) {
-            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionEditorialStatus($EditorialStatus);
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
         }
-        $this->container['EditorialStatus'] = $EditorialStatus;
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingUrlTemplate
+     *
+     * @return string|null
+     */
+    public function getTrackingUrlTemplate()
+    {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+            return null;
+        }
+        return $this->container['TrackingUrlTemplate'];
+    }
+
+    /**
+     * Sets TrackingUrlTemplate
+     *
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     *
+     * @return self
+     */
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    {
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlCustomParameters
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     */
+    public function getUrlCustomParameters()
+    {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+            return null;
+        }
+        return $this->container['UrlCustomParameters'];
+    }
+
+    /**
+     * Sets UrlCustomParameters
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     *
+     * @return self
+     */
+    public function setUrlCustomParameters($UrlCustomParameters)
+    {
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MediaIds' => 'string[]',
-        'MediaEnabledEntities' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter'
+        'MediaEnabledEntities' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter',
+        'MediaIds' => 'string[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MediaIds' => 'int64',
-        'MediaEnabledEntities' => null
+        'MediaEnabledEntities' => null,
+        'MediaIds' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MediaIds' => true,
-        'MediaEnabledEntities' => false
+        'MediaEnabledEntities' => false,
+        'MediaIds' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MediaIds' => 'MediaIds',
-        'MediaEnabledEntities' => 'MediaEnabledEntities'
+        'MediaEnabledEntities' => 'MediaEnabledEntities',
+        'MediaIds' => 'MediaIds'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $setters = [
-        'MediaIds' => 'setMediaIds',
-        'MediaEnabledEntities' => 'setMediaEnabledEntities'
+        'MediaEnabledEntities' => 'setMediaEnabledEntities',
+        'MediaIds' => 'setMediaIds'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $getters = [
-        'MediaIds' => 'getMediaIds',
-        'MediaEnabledEntities' => 'getMediaEnabledEntities'
+        'MediaEnabledEntities' => 'getMediaEnabledEntities',
+        'MediaIds' => 'getMediaIds'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MediaIds', $data ?? [], null);
         $this->setIfExists('MediaEnabledEntities', $data ?? [], null);
+        $this->setIfExists('MediaIds', $data ?? [], null);
     }
 
     /**
@@ -273,6 +273,42 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
+     * Gets MediaEnabledEntities
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter|mixed|null
+     */
+    public function getMediaEnabledEntities()
+    {
+        if (!isset($this->container['MediaEnabledEntities']) || is_null($this->container['MediaEnabledEntities'])) {
+            return null;
+        }
+        if ((is_object($this->container['MediaEnabledEntities']) || is_string($this->container['MediaEnabledEntities'])) && method_exists($this->container['MediaEnabledEntities'], 'getValue')) {
+            return $this->container['MediaEnabledEntities']->getValue();
+        }
+        return $this->container['MediaEnabledEntities'];
+    }
+
+    /**
+     * Sets MediaEnabledEntities
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter|mixed|null $MediaEnabledEntities MediaEnabledEntities
+     *
+     * @return self
+     */
+    public function setMediaEnabledEntities($MediaEnabledEntities)
+    {
+        if (is_null($MediaEnabledEntities)) {
+            throw new \InvalidArgumentException('non-nullable MediaEnabledEntities cannot be null');
+        }
+        if (!is_null($MediaEnabledEntities) && !$MediaEnabledEntities instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter) {
+            $MediaEnabledEntities = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter($MediaEnabledEntities);
+        }
+        $this->container['MediaEnabledEntities'] = $MediaEnabledEntities;
+
+        return $this;
+    }
+
+    /**
      * Gets MediaIds
      *
      * @return string[]|null
@@ -305,42 +341,6 @@ class GetMediaAssociationsRequest implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['MediaIds'] = $MediaIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets MediaEnabledEntities
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter|mixed|null
-     */
-    public function getMediaEnabledEntities()
-    {
-        if (!isset($this->container['MediaEnabledEntities']) || is_null($this->container['MediaEnabledEntities'])) {
-            return null;
-        }
-        if ((is_object($this->container['MediaEnabledEntities']) || is_string($this->container['MediaEnabledEntities'])) && method_exists($this->container['MediaEnabledEntities'], 'getValue')) {
-            return $this->container['MediaEnabledEntities']->getValue();
-        }
-        return $this->container['MediaEnabledEntities'];
-    }
-
-    /**
-     * Sets MediaEnabledEntities
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter|mixed|null $MediaEnabledEntities MediaEnabledEntities
-     *
-     * @return self
-     */
-    public function setMediaEnabledEntities($MediaEnabledEntities)
-    {
-        if (is_null($MediaEnabledEntities)) {
-            throw new \InvalidArgumentException('non-nullable MediaEnabledEntities cannot be null');
-        }
-        if (!$MediaEnabledEntities instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter) {
-            $MediaEnabledEntities = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter($MediaEnabledEntities);
-        }
-        $this->container['MediaEnabledEntities'] = $MediaEnabledEntities;
 
         return $this;
     }

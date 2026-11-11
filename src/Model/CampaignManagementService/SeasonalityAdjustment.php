@@ -33,15 +33,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AdjustmentPercentage' => 'float',
+        'CampaignAssociations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAssociation[]',
+        'CampaignTypeFilter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
+        'Description' => 'string',
+        'DeviceTypeFilter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType',
+        'EndDate' => '\DateTime',
         'Id' => 'string',
         'Name' => 'string',
-        'Description' => 'string',
-        'AdjustmentPercentage' => 'float',
-        'StartDate' => '\DateTime',
-        'EndDate' => '\DateTime',
-        'DeviceTypeFilter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType',
-        'CampaignTypeFilter' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
-        'CampaignAssociations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAssociation[]'
+        'StartDate' => '\DateTime'
     ];
 
     /**
@@ -52,15 +52,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AdjustmentPercentage' => 'double',
+        'CampaignAssociations' => null,
+        'CampaignTypeFilter' => null,
+        'Description' => null,
+        'DeviceTypeFilter' => null,
+        'EndDate' => 'date-time',
         'Id' => 'int64',
         'Name' => null,
-        'Description' => null,
-        'AdjustmentPercentage' => 'double',
-        'StartDate' => 'date-time',
-        'EndDate' => 'date-time',
-        'DeviceTypeFilter' => null,
-        'CampaignTypeFilter' => null,
-        'CampaignAssociations' => null
+        'StartDate' => 'date-time'
     ];
 
     /**
@@ -69,15 +69,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AdjustmentPercentage' => true,
+        'CampaignAssociations' => true,
+        'CampaignTypeFilter' => true,
+        'Description' => true,
+        'DeviceTypeFilter' => true,
+        'EndDate' => true,
         'Id' => true,
         'Name' => true,
-        'Description' => true,
-        'AdjustmentPercentage' => true,
-        'StartDate' => true,
-        'EndDate' => true,
-        'DeviceTypeFilter' => false,
-        'CampaignTypeFilter' => false,
-        'CampaignAssociations' => true
+        'StartDate' => true
     ];
 
     /**
@@ -166,15 +166,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AdjustmentPercentage' => 'AdjustmentPercentage',
+        'CampaignAssociations' => 'CampaignAssociations',
+        'CampaignTypeFilter' => 'CampaignTypeFilter',
+        'Description' => 'Description',
+        'DeviceTypeFilter' => 'DeviceTypeFilter',
+        'EndDate' => 'EndDate',
         'Id' => 'Id',
         'Name' => 'Name',
-        'Description' => 'Description',
-        'AdjustmentPercentage' => 'AdjustmentPercentage',
-        'StartDate' => 'StartDate',
-        'EndDate' => 'EndDate',
-        'DeviceTypeFilter' => 'DeviceTypeFilter',
-        'CampaignTypeFilter' => 'CampaignTypeFilter',
-        'CampaignAssociations' => 'CampaignAssociations'
+        'StartDate' => 'StartDate'
     ];
 
     /**
@@ -183,15 +183,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
+        'AdjustmentPercentage' => 'setAdjustmentPercentage',
+        'CampaignAssociations' => 'setCampaignAssociations',
+        'CampaignTypeFilter' => 'setCampaignTypeFilter',
+        'Description' => 'setDescription',
+        'DeviceTypeFilter' => 'setDeviceTypeFilter',
+        'EndDate' => 'setEndDate',
         'Id' => 'setId',
         'Name' => 'setName',
-        'Description' => 'setDescription',
-        'AdjustmentPercentage' => 'setAdjustmentPercentage',
-        'StartDate' => 'setStartDate',
-        'EndDate' => 'setEndDate',
-        'DeviceTypeFilter' => 'setDeviceTypeFilter',
-        'CampaignTypeFilter' => 'setCampaignTypeFilter',
-        'CampaignAssociations' => 'setCampaignAssociations'
+        'StartDate' => 'setStartDate'
     ];
 
     /**
@@ -200,15 +200,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
+        'AdjustmentPercentage' => 'getAdjustmentPercentage',
+        'CampaignAssociations' => 'getCampaignAssociations',
+        'CampaignTypeFilter' => 'getCampaignTypeFilter',
+        'Description' => 'getDescription',
+        'DeviceTypeFilter' => 'getDeviceTypeFilter',
+        'EndDate' => 'getEndDate',
         'Id' => 'getId',
         'Name' => 'getName',
-        'Description' => 'getDescription',
-        'AdjustmentPercentage' => 'getAdjustmentPercentage',
-        'StartDate' => 'getStartDate',
-        'EndDate' => 'getEndDate',
-        'DeviceTypeFilter' => 'getDeviceTypeFilter',
-        'CampaignTypeFilter' => 'getCampaignTypeFilter',
-        'CampaignAssociations' => 'getCampaignAssociations'
+        'StartDate' => 'getStartDate'
     ];
 
     /**
@@ -268,15 +268,15 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AdjustmentPercentage', $data ?? [], null);
+        $this->setIfExists('CampaignAssociations', $data ?? [], null);
+        $this->setIfExists('CampaignTypeFilter', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('DeviceTypeFilter', $data ?? [], null);
+        $this->setIfExists('EndDate', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Description', $data ?? [], null);
-        $this->setIfExists('AdjustmentPercentage', $data ?? [], null);
         $this->setIfExists('StartDate', $data ?? [], null);
-        $this->setIfExists('EndDate', $data ?? [], null);
-        $this->setIfExists('DeviceTypeFilter', $data ?? [], null);
-        $this->setIfExists('CampaignTypeFilter', $data ?? [], null);
-        $this->setIfExists('CampaignAssociations', $data ?? [], null);
     }
 
     /**
@@ -320,6 +320,240 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AdjustmentPercentage
+     *
+     * @return float|null
+     */
+    public function getAdjustmentPercentage()
+    {
+        if (!isset($this->container['AdjustmentPercentage']) || is_null($this->container['AdjustmentPercentage'])) {
+            return null;
+        }
+        return $this->container['AdjustmentPercentage'];
+    }
+
+    /**
+     * Sets AdjustmentPercentage
+     *
+     * @param float|null $AdjustmentPercentage AdjustmentPercentage
+     *
+     * @return self
+     */
+    public function setAdjustmentPercentage($AdjustmentPercentage)
+    {
+        if (is_null($AdjustmentPercentage)) {
+            array_push($this->openAPINullablesSetToNull, 'AdjustmentPercentage');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdjustmentPercentage', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdjustmentPercentage'] = $AdjustmentPercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignAssociations
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAssociation[]|null
+     */
+    public function getCampaignAssociations()
+    {
+        if (!isset($this->container['CampaignAssociations']) || is_null($this->container['CampaignAssociations'])) {
+            return null;
+        }
+        return $this->container['CampaignAssociations'];
+    }
+
+    /**
+     * Sets CampaignAssociations
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAssociation[]|null $CampaignAssociations CampaignAssociations
+     *
+     * @return self
+     */
+    public function setCampaignAssociations($CampaignAssociations)
+    {
+        if (is_null($CampaignAssociations)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignAssociations');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignAssociations', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignAssociations'] = $CampaignAssociations;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignTypeFilter
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null
+     */
+    public function getCampaignTypeFilter()
+    {
+        if (!isset($this->container['CampaignTypeFilter']) || is_null($this->container['CampaignTypeFilter'])) {
+            return null;
+        }
+        if ((is_object($this->container['CampaignTypeFilter']) || is_string($this->container['CampaignTypeFilter'])) && method_exists($this->container['CampaignTypeFilter'], 'getValue')) {
+            return $this->container['CampaignTypeFilter']->getValue();
+        }
+        return $this->container['CampaignTypeFilter'];
+    }
+
+    /**
+     * Sets CampaignTypeFilter
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null $CampaignTypeFilter CampaignTypeFilter
+     *
+     * @return self
+     */
+    public function setCampaignTypeFilter($CampaignTypeFilter)
+    {
+        if (is_null($CampaignTypeFilter)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignTypeFilter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignTypeFilter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CampaignTypeFilter) && !$CampaignTypeFilter instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
+            $CampaignTypeFilter = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($CampaignTypeFilter);
+        }
+        $this->container['CampaignTypeFilter'] = $CampaignTypeFilter;
+
+        return $this;
+    }
+
+    /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
+        }
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets DeviceTypeFilter
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType|mixed|null
+     */
+    public function getDeviceTypeFilter()
+    {
+        if (!isset($this->container['DeviceTypeFilter']) || is_null($this->container['DeviceTypeFilter'])) {
+            return null;
+        }
+        if ((is_object($this->container['DeviceTypeFilter']) || is_string($this->container['DeviceTypeFilter'])) && method_exists($this->container['DeviceTypeFilter'], 'getValue')) {
+            return $this->container['DeviceTypeFilter']->getValue();
+        }
+        return $this->container['DeviceTypeFilter'];
+    }
+
+    /**
+     * Sets DeviceTypeFilter
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType|mixed|null $DeviceTypeFilter DeviceTypeFilter
+     *
+     * @return self
+     */
+    public function setDeviceTypeFilter($DeviceTypeFilter)
+    {
+        if (is_null($DeviceTypeFilter)) {
+            array_push($this->openAPINullablesSetToNull, 'DeviceTypeFilter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DeviceTypeFilter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($DeviceTypeFilter) && !$DeviceTypeFilter instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType) {
+            $DeviceTypeFilter = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType($DeviceTypeFilter);
+        }
+        $this->container['DeviceTypeFilter'] = $DeviceTypeFilter;
+
+        return $this;
+    }
+
+    /**
+     * Gets EndDate
+     *
+     * @return \DateTime|null
+     */
+    public function getEndDate()
+    {
+        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
+            return null;
+        }
+        return $this->container['EndDate'];
+    }
+
+    /**
+     * Sets EndDate
+     *
+     * @param \DateTime|null $EndDate EndDate
+     *
+     * @return self
+     */
+    public function setEndDate($EndDate)
+    {
+        if (is_null($EndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
 
     /**
      * Gets Id
@@ -396,80 +630,6 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets Description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
-            return null;
-        }
-        return $this->container['Description'];
-    }
-
-    /**
-     * Sets Description
-     *
-     * @param string|null $Description Description
-     *
-     * @return self
-     */
-    public function setDescription($Description)
-    {
-        if (is_null($Description)) {
-            array_push($this->openAPINullablesSetToNull, 'Description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Description'] = $Description;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdjustmentPercentage
-     *
-     * @return float|null
-     */
-    public function getAdjustmentPercentage()
-    {
-        if (!isset($this->container['AdjustmentPercentage']) || is_null($this->container['AdjustmentPercentage'])) {
-            return null;
-        }
-        return $this->container['AdjustmentPercentage'];
-    }
-
-    /**
-     * Sets AdjustmentPercentage
-     *
-     * @param float|null $AdjustmentPercentage AdjustmentPercentage
-     *
-     * @return self
-     */
-    public function setAdjustmentPercentage($AdjustmentPercentage)
-    {
-        if (is_null($AdjustmentPercentage)) {
-            array_push($this->openAPINullablesSetToNull, 'AdjustmentPercentage');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdjustmentPercentage', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AdjustmentPercentage'] = $AdjustmentPercentage;
-
-        return $this;
-    }
-
-    /**
      * Gets StartDate
      *
      * @return \DateTime|null
@@ -502,152 +662,6 @@ class SeasonalityAdjustment implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['StartDate'] = $StartDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets EndDate
-     *
-     * @return \DateTime|null
-     */
-    public function getEndDate()
-    {
-        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
-            return null;
-        }
-        return $this->container['EndDate'];
-    }
-
-    /**
-     * Sets EndDate
-     *
-     * @param \DateTime|null $EndDate EndDate
-     *
-     * @return self
-     */
-    public function setEndDate($EndDate)
-    {
-        if (is_null($EndDate)) {
-            array_push($this->openAPINullablesSetToNull, 'EndDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EndDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EndDate'] = $EndDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets DeviceTypeFilter
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType|mixed|null
-     */
-    public function getDeviceTypeFilter()
-    {
-        if (!isset($this->container['DeviceTypeFilter']) || is_null($this->container['DeviceTypeFilter'])) {
-            return null;
-        }
-        if ((is_object($this->container['DeviceTypeFilter']) || is_string($this->container['DeviceTypeFilter'])) && method_exists($this->container['DeviceTypeFilter'], 'getValue')) {
-            return $this->container['DeviceTypeFilter']->getValue();
-        }
-        return $this->container['DeviceTypeFilter'];
-    }
-
-    /**
-     * Sets DeviceTypeFilter
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType|mixed|null $DeviceTypeFilter DeviceTypeFilter
-     *
-     * @return self
-     */
-    public function setDeviceTypeFilter($DeviceTypeFilter)
-    {
-        if (is_null($DeviceTypeFilter)) {
-            throw new \InvalidArgumentException('non-nullable DeviceTypeFilter cannot be null');
-        }
-        if (!$DeviceTypeFilter instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType) {
-            $DeviceTypeFilter = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DeviceType($DeviceTypeFilter);
-        }
-        $this->container['DeviceTypeFilter'] = $DeviceTypeFilter;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignTypeFilter
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null
-     */
-    public function getCampaignTypeFilter()
-    {
-        if (!isset($this->container['CampaignTypeFilter']) || is_null($this->container['CampaignTypeFilter'])) {
-            return null;
-        }
-        if ((is_object($this->container['CampaignTypeFilter']) || is_string($this->container['CampaignTypeFilter'])) && method_exists($this->container['CampaignTypeFilter'], 'getValue')) {
-            return $this->container['CampaignTypeFilter']->getValue();
-        }
-        return $this->container['CampaignTypeFilter'];
-    }
-
-    /**
-     * Sets CampaignTypeFilter
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null $CampaignTypeFilter CampaignTypeFilter
-     *
-     * @return self
-     */
-    public function setCampaignTypeFilter($CampaignTypeFilter)
-    {
-        if (is_null($CampaignTypeFilter)) {
-            throw new \InvalidArgumentException('non-nullable CampaignTypeFilter cannot be null');
-        }
-        if (!$CampaignTypeFilter instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
-            $CampaignTypeFilter = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($CampaignTypeFilter);
-        }
-        $this->container['CampaignTypeFilter'] = $CampaignTypeFilter;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignAssociations
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAssociation[]|null
-     */
-    public function getCampaignAssociations()
-    {
-        if (!isset($this->container['CampaignAssociations']) || is_null($this->container['CampaignAssociations'])) {
-            return null;
-        }
-        return $this->container['CampaignAssociations'];
-    }
-
-    /**
-     * Sets CampaignAssociations
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAssociation[]|null $CampaignAssociations CampaignAssociations
-     *
-     * @return self
-     */
-    public function setCampaignAssociations($CampaignAssociations)
-    {
-        if (is_null($CampaignAssociations)) {
-            array_push($this->openAPINullablesSetToNull, 'CampaignAssociations');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CampaignAssociations', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CampaignAssociations'] = $CampaignAssociations;
 
         return $this;
     }

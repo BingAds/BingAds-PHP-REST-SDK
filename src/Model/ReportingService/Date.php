@@ -33,9 +33,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Year' => 'int',
+        'Day' => 'int',
         'Month' => 'int',
-        'Day' => 'int'
+        'Year' => 'int'
     ];
 
     /**
@@ -46,9 +46,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Year' => 'int32',
+        'Day' => 'int32',
         'Month' => 'int32',
-        'Day' => 'int32'
+        'Year' => 'int32'
     ];
 
     /**
@@ -57,9 +57,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Year' => false,
+        'Day' => false,
         'Month' => false,
-        'Day' => false
+        'Year' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Year' => 'Year',
+        'Day' => 'Day',
         'Month' => 'Month',
-        'Day' => 'Day'
+        'Year' => 'Year'
     ];
 
     /**
@@ -159,9 +159,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Year' => 'setYear',
+        'Day' => 'setDay',
         'Month' => 'setMonth',
-        'Day' => 'setDay'
+        'Year' => 'setYear'
     ];
 
     /**
@@ -170,9 +170,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Year' => 'getYear',
+        'Day' => 'getDay',
         'Month' => 'getMonth',
-        'Day' => 'getDay'
+        'Year' => 'getYear'
     ];
 
     /**
@@ -232,9 +232,9 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Year', $data ?? [], null);
-        $this->setIfExists('Month', $data ?? [], null);
         $this->setIfExists('Day', $data ?? [], null);
+        $this->setIfExists('Month', $data ?? [], null);
+        $this->setIfExists('Year', $data ?? [], null);
     }
 
     /**
@@ -280,31 +280,31 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Year
+     * Gets Day
      *
      * @return int|null
      */
-    public function getYear()
+    public function getDay()
     {
-        if (!isset($this->container['Year']) || is_null($this->container['Year'])) {
+        if (!isset($this->container['Day']) || is_null($this->container['Day'])) {
             return null;
         }
-        return $this->container['Year'];
+        return $this->container['Day'];
     }
 
     /**
-     * Sets Year
+     * Sets Day
      *
-     * @param int|null $Year Year
+     * @param int|null $Day Day
      *
      * @return self
      */
-    public function setYear($Year)
+    public function setDay($Day)
     {
-        if (is_null($Year)) {
-            throw new \InvalidArgumentException('non-nullable Year cannot be null');
+        if (is_null($Day)) {
+            throw new \InvalidArgumentException('non-nullable Day cannot be null');
         }
-        $this->container['Year'] = $Year;
+        $this->container['Day'] = $Day;
 
         return $this;
     }
@@ -340,31 +340,31 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Day
+     * Gets Year
      *
      * @return int|null
      */
-    public function getDay()
+    public function getYear()
     {
-        if (!isset($this->container['Day']) || is_null($this->container['Day'])) {
+        if (!isset($this->container['Year']) || is_null($this->container['Year'])) {
             return null;
         }
-        return $this->container['Day'];
+        return $this->container['Year'];
     }
 
     /**
-     * Sets Day
+     * Sets Year
      *
-     * @param int|null $Day Day
+     * @param int|null $Year Year
      *
      * @return self
      */
-    public function setDay($Day)
+    public function setYear($Year)
     {
-        if (is_null($Day)) {
-            throw new \InvalidArgumentException('non-nullable Day cannot be null');
+        if (is_null($Year)) {
+            throw new \InvalidArgumentException('non-nullable Year cannot be null');
         }
-        $this->container['Day'] = $Day;
+        $this->container['Year'] = $Year;
 
         return $this;
     }

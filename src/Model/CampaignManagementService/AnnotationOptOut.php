@@ -33,10 +33,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CustomerId' => 'string',
         'AccountId' => 'string',
-        'IsOptOut' => 'bool',
-        'AnnotationGroupId' => 'string'
+        'AnnotationGroupId' => 'string',
+        'CustomerId' => 'string',
+        'IsOptOut' => 'bool'
     ];
 
     /**
@@ -47,10 +47,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CustomerId' => 'int64',
         'AccountId' => 'int64',
-        'IsOptOut' => null,
-        'AnnotationGroupId' => 'int64'
+        'AnnotationGroupId' => 'int64',
+        'CustomerId' => 'int64',
+        'IsOptOut' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CustomerId' => false,
         'AccountId' => false,
-        'IsOptOut' => false,
-        'AnnotationGroupId' => false
+        'AnnotationGroupId' => false,
+        'CustomerId' => false,
+        'IsOptOut' => false
     ];
 
     /**
@@ -151,10 +151,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CustomerId' => 'CustomerId',
         'AccountId' => 'AccountId',
-        'IsOptOut' => 'IsOptOut',
-        'AnnotationGroupId' => 'AnnotationGroupId'
+        'AnnotationGroupId' => 'AnnotationGroupId',
+        'CustomerId' => 'CustomerId',
+        'IsOptOut' => 'IsOptOut'
     ];
 
     /**
@@ -163,10 +163,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'CustomerId' => 'setCustomerId',
         'AccountId' => 'setAccountId',
-        'IsOptOut' => 'setIsOptOut',
-        'AnnotationGroupId' => 'setAnnotationGroupId'
+        'AnnotationGroupId' => 'setAnnotationGroupId',
+        'CustomerId' => 'setCustomerId',
+        'IsOptOut' => 'setIsOptOut'
     ];
 
     /**
@@ -175,10 +175,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'CustomerId' => 'getCustomerId',
         'AccountId' => 'getAccountId',
-        'IsOptOut' => 'getIsOptOut',
-        'AnnotationGroupId' => 'getAnnotationGroupId'
+        'AnnotationGroupId' => 'getAnnotationGroupId',
+        'CustomerId' => 'getCustomerId',
+        'IsOptOut' => 'getIsOptOut'
     ];
 
     /**
@@ -238,10 +238,10 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CustomerId', $data ?? [], null);
         $this->setIfExists('AccountId', $data ?? [], null);
-        $this->setIfExists('IsOptOut', $data ?? [], null);
         $this->setIfExists('AnnotationGroupId', $data ?? [], null);
+        $this->setIfExists('CustomerId', $data ?? [], null);
+        $this->setIfExists('IsOptOut', $data ?? [], null);
     }
 
     /**
@@ -287,36 +287,6 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets CustomerId
-     *
-     * @return string|null
-     */
-    public function getCustomerId()
-    {
-        if (!isset($this->container['CustomerId']) || is_null($this->container['CustomerId'])) {
-            return null;
-        }
-        return $this->container['CustomerId'];
-    }
-
-    /**
-     * Sets CustomerId
-     *
-     * @param string|null $CustomerId CustomerId
-     *
-     * @return self
-     */
-    public function setCustomerId($CustomerId)
-    {
-        if (is_null($CustomerId)) {
-            throw new \InvalidArgumentException('non-nullable CustomerId cannot be null');
-        }
-        $this->container['CustomerId'] = $CustomerId;
-
-        return $this;
-    }
-
-    /**
      * Gets AccountId
      *
      * @return string|null
@@ -347,36 +317,6 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets IsOptOut
-     *
-     * @return bool|null
-     */
-    public function getIsOptOut()
-    {
-        if (!isset($this->container['IsOptOut']) || is_null($this->container['IsOptOut'])) {
-            return null;
-        }
-        return $this->container['IsOptOut'];
-    }
-
-    /**
-     * Sets IsOptOut
-     *
-     * @param bool|null $IsOptOut IsOptOut
-     *
-     * @return self
-     */
-    public function setIsOptOut($IsOptOut)
-    {
-        if (is_null($IsOptOut)) {
-            throw new \InvalidArgumentException('non-nullable IsOptOut cannot be null');
-        }
-        $this->container['IsOptOut'] = $IsOptOut;
-
-        return $this;
-    }
-
-    /**
      * Gets AnnotationGroupId
      *
      * @return string|null
@@ -402,6 +342,66 @@ class AnnotationOptOut implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable AnnotationGroupId cannot be null');
         }
         $this->container['AnnotationGroupId'] = $AnnotationGroupId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CustomerId
+     *
+     * @return string|null
+     */
+    public function getCustomerId()
+    {
+        if (!isset($this->container['CustomerId']) || is_null($this->container['CustomerId'])) {
+            return null;
+        }
+        return $this->container['CustomerId'];
+    }
+
+    /**
+     * Sets CustomerId
+     *
+     * @param string|null $CustomerId CustomerId
+     *
+     * @return self
+     */
+    public function setCustomerId($CustomerId)
+    {
+        if (is_null($CustomerId)) {
+            throw new \InvalidArgumentException('non-nullable CustomerId cannot be null');
+        }
+        $this->container['CustomerId'] = $CustomerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsOptOut
+     *
+     * @return bool|null
+     */
+    public function getIsOptOut()
+    {
+        if (!isset($this->container['IsOptOut']) || is_null($this->container['IsOptOut'])) {
+            return null;
+        }
+        return $this->container['IsOptOut'];
+    }
+
+    /**
+     * Sets IsOptOut
+     *
+     * @param bool|null $IsOptOut IsOptOut
+     *
+     * @return self
+     */
+    public function setIsOptOut($IsOptOut)
+    {
+        if (is_null($IsOptOut)) {
+            throw new \InvalidArgumentException('non-nullable IsOptOut cannot be null');
+        }
+        $this->container['IsOptOut'] = $IsOptOut;
 
         return $this;
     }

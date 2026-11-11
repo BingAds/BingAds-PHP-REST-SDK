@@ -33,14 +33,14 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'FieldPath' => 'string',
         'ErrorCode' => 'string',
+        'FieldPath' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'Message' => 'string',
+        'Type' => 'string',
         'Code' => 'int',
         'Details' => 'string',
-        'Index' => 'int',
-        'Type' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'Index' => 'int'
     ];
 
     /**
@@ -51,14 +51,14 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'FieldPath' => null,
         'ErrorCode' => null,
+        'FieldPath' => null,
+        'ForwardCompatibilityMap' => null,
         'Message' => null,
+        'Type' => null,
         'Code' => 'int32',
         'Details' => null,
-        'Index' => 'int32',
-        'Type' => null,
-        'ForwardCompatibilityMap' => null
+        'Index' => 'int32'
     ];
 
     /**
@@ -67,14 +67,14 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'FieldPath' => true,
         'ErrorCode' => true,
+        'FieldPath' => true,
+        'ForwardCompatibilityMap' => true,
         'Message' => true,
+        'Type' => true,
         'Code' => false,
         'Details' => true,
-        'Index' => false,
-        'Type' => true,
-        'ForwardCompatibilityMap' => true
+        'Index' => false
     ];
 
     /**
@@ -163,14 +163,14 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'FieldPath' => 'FieldPath',
         'ErrorCode' => 'ErrorCode',
+        'FieldPath' => 'FieldPath',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'Message' => 'Message',
+        'Type' => 'Type',
         'Code' => 'Code',
         'Details' => 'Details',
-        'Index' => 'Index',
-        'Type' => 'Type',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'Index' => 'Index'
     ];
 
     /**
@@ -179,14 +179,14 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'FieldPath' => 'setFieldPath',
         'ErrorCode' => 'setErrorCode',
+        'FieldPath' => 'setFieldPath',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'Message' => 'setMessage',
+        'Type' => 'setType',
         'Code' => 'setCode',
         'Details' => 'setDetails',
-        'Index' => 'setIndex',
-        'Type' => 'setType',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'Index' => 'setIndex'
     ];
 
     /**
@@ -195,14 +195,14 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'FieldPath' => 'getFieldPath',
         'ErrorCode' => 'getErrorCode',
+        'FieldPath' => 'getFieldPath',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'Message' => 'getMessage',
+        'Type' => 'getType',
         'Code' => 'getCode',
         'Details' => 'getDetails',
-        'Index' => 'getIndex',
-        'Type' => 'getType',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'Index' => 'getIndex'
     ];
 
     /**
@@ -262,14 +262,19 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('FieldPath', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
+        $this->setIfExists('FieldPath', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('Message', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], 'BatchError');
         $this->setIfExists('Code', $data ?? [], null);
         $this->setIfExists('Details', $data ?? [], null);
         $this->setIfExists('Index', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BatchError');
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -315,43 +320,6 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets FieldPath
-     *
-     * @return string|null
-     */
-    public function getFieldPath()
-    {
-        if (!isset($this->container['FieldPath']) || is_null($this->container['FieldPath'])) {
-            return null;
-        }
-        return $this->container['FieldPath'];
-    }
-
-    /**
-     * Sets FieldPath
-     *
-     * @param string|null $FieldPath FieldPath
-     *
-     * @return self
-     */
-    public function setFieldPath($FieldPath)
-    {
-        if (is_null($FieldPath)) {
-            array_push($this->openAPINullablesSetToNull, 'FieldPath');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FieldPath', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FieldPath'] = $FieldPath;
-
-        return $this;
-    }
-
-    /**
      * Gets ErrorCode
      *
      * @return string|null
@@ -389,6 +357,80 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
     }
 
     /**
+     * Gets FieldPath
+     *
+     * @return string|null
+     */
+    public function getFieldPath()
+    {
+        if (!isset($this->container['FieldPath']) || is_null($this->container['FieldPath'])) {
+            return null;
+        }
+        return $this->container['FieldPath'];
+    }
+
+    /**
+     * Sets FieldPath
+     *
+     * @param string|null $FieldPath FieldPath
+     *
+     * @return self
+     */
+    public function setFieldPath($FieldPath)
+    {
+        if (is_null($FieldPath)) {
+            array_push($this->openAPINullablesSetToNull, 'FieldPath');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FieldPath', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FieldPath'] = $FieldPath;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
      * Gets Message
      *
      * @return string|null
@@ -421,6 +463,43 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['Message'] = $Message;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -518,80 +597,6 @@ class BatchErrorBase extends BatchError implements ModelInterface, ArrayAccess, 
             throw new \InvalidArgumentException('non-nullable Index cannot be null');
         }
         $this->container['Index'] = $Index;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }

@@ -34,8 +34,8 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
       */
     protected static array $openAPITypes = [
         'Name' => 'string',
-        'Url' => 'string',
-        'Type' => 'string'
+        'Type' => 'string',
+        'Url' => 'string'
     ];
 
     /**
@@ -47,8 +47,8 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
       */
     protected static array $openAPIFormats = [
         'Name' => null,
-        'Url' => null,
-        'Type' => null
+        'Type' => null,
+        'Url' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
       */
     protected static array $openAPINullables = [
         'Name' => true,
-        'Url' => true,
-        'Type' => true
+        'Type' => true,
+        'Url' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
      */
     protected static array $attributeMap = [
         'Name' => 'Name',
-        'Url' => 'Url',
-        'Type' => 'Type'
+        'Type' => 'Type',
+        'Url' => 'Url'
     ];
 
     /**
@@ -160,8 +160,8 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
      */
     protected static array $setters = [
         'Name' => 'setName',
-        'Url' => 'setUrl',
-        'Type' => 'setType'
+        'Type' => 'setType',
+        'Url' => 'setUrl'
     ];
 
     /**
@@ -171,8 +171,8 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
      */
     protected static array $getters = [
         'Name' => 'getName',
-        'Url' => 'getUrl',
-        'Type' => 'getType'
+        'Type' => 'getType',
+        'Url' => 'getUrl'
     ];
 
     /**
@@ -233,8 +233,13 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Url', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'MediaRepresentation');
+        $this->setIfExists('Url', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,43 +322,6 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
     }
 
     /**
-     * Gets Url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
-            return null;
-        }
-        return $this->container['Url'];
-    }
-
-    /**
-     * Sets Url
-     *
-     * @param string|null $Url Url
-     *
-     * @return self
-     */
-    public function setUrl($Url)
-    {
-        if (is_null($Url)) {
-            array_push($this->openAPINullablesSetToNull, 'Url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Url'] = $Url;
-
-        return $this;
-    }
-
-    /**
      * Gets Type
      *
      * @return string|null
@@ -386,6 +354,43 @@ class MediaRepresentationBase extends MediaRepresentation implements ModelInterf
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets Url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
+            return null;
+        }
+        return $this->container['Url'];
+    }
+
+    /**
+     * Sets Url
+     *
+     * @param string|null $Url Url
+     *
+     * @return self
+     */
+    public function setUrl($Url)
+    {
+        if (is_null($Url)) {
+            array_push($this->openAPINullablesSetToNull, 'Url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Url'] = $Url;
 
         return $this;
     }

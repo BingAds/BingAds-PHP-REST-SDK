@@ -314,7 +314,7 @@ class GetAuctionInsightDataRequest implements ModelInterface, ArrayAccess, \Json
         if (is_null($EntityType)) {
             throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType) {
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType) {
             $EntityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType($EntityType);
         }
         $this->container['EntityType'] = $EntityType;
@@ -424,7 +424,7 @@ class GetAuctionInsightDataRequest implements ModelInterface, ArrayAccess, \Json
         if (is_null($ReturnAdditionalFields)) {
             throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionInsightKpiAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionInsightKpiAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionInsightKpiAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

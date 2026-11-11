@@ -33,11 +33,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'CustomizedProperties' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationCustomizedProperty[]',
+        'ImageAssetProperties' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageAssetProperty[]',
         'TemplateId' => 'string',
         'TemplateVersion' => 'string',
-        'TextAssetProperties' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextAssetProperty[]',
-        'ImageAssetProperties' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageAssetProperty[]',
-        'CustomizedProperties' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationCustomizedProperty[]'
+        'TextAssetProperties' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextAssetProperty[]'
     ];
 
     /**
@@ -48,11 +48,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'CustomizedProperties' => null,
+        'ImageAssetProperties' => null,
         'TemplateId' => null,
         'TemplateVersion' => null,
-        'TextAssetProperties' => null,
-        'ImageAssetProperties' => null,
-        'CustomizedProperties' => null
+        'TextAssetProperties' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'CustomizedProperties' => true,
+        'ImageAssetProperties' => true,
         'TemplateId' => true,
         'TemplateVersion' => true,
-        'TextAssetProperties' => true,
-        'ImageAssetProperties' => true,
-        'CustomizedProperties' => true
+        'TextAssetProperties' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
+        'CustomizedProperties' => 'CustomizedProperties',
+        'ImageAssetProperties' => 'ImageAssetProperties',
         'TemplateId' => 'TemplateId',
         'TemplateVersion' => 'TemplateVersion',
-        'TextAssetProperties' => 'TextAssetProperties',
-        'ImageAssetProperties' => 'ImageAssetProperties',
-        'CustomizedProperties' => 'CustomizedProperties'
+        'TextAssetProperties' => 'TextAssetProperties'
     ];
 
     /**
@@ -167,11 +167,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
+        'CustomizedProperties' => 'setCustomizedProperties',
+        'ImageAssetProperties' => 'setImageAssetProperties',
         'TemplateId' => 'setTemplateId',
         'TemplateVersion' => 'setTemplateVersion',
-        'TextAssetProperties' => 'setTextAssetProperties',
-        'ImageAssetProperties' => 'setImageAssetProperties',
-        'CustomizedProperties' => 'setCustomizedProperties'
+        'TextAssetProperties' => 'setTextAssetProperties'
     ];
 
     /**
@@ -180,11 +180,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
+        'CustomizedProperties' => 'getCustomizedProperties',
+        'ImageAssetProperties' => 'getImageAssetProperties',
         'TemplateId' => 'getTemplateId',
         'TemplateVersion' => 'getTemplateVersion',
-        'TextAssetProperties' => 'getTextAssetProperties',
-        'ImageAssetProperties' => 'getImageAssetProperties',
-        'CustomizedProperties' => 'getCustomizedProperties'
+        'TextAssetProperties' => 'getTextAssetProperties'
     ];
 
     /**
@@ -244,11 +244,11 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('CustomizedProperties', $data ?? [], null);
+        $this->setIfExists('ImageAssetProperties', $data ?? [], null);
         $this->setIfExists('TemplateId', $data ?? [], null);
         $this->setIfExists('TemplateVersion', $data ?? [], null);
         $this->setIfExists('TextAssetProperties', $data ?? [], null);
-        $this->setIfExists('ImageAssetProperties', $data ?? [], null);
-        $this->setIfExists('CustomizedProperties', $data ?? [], null);
     }
 
     /**
@@ -292,6 +292,80 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets CustomizedProperties
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationCustomizedProperty[]|null
+     */
+    public function getCustomizedProperties()
+    {
+        if (!isset($this->container['CustomizedProperties']) || is_null($this->container['CustomizedProperties'])) {
+            return null;
+        }
+        return $this->container['CustomizedProperties'];
+    }
+
+    /**
+     * Sets CustomizedProperties
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationCustomizedProperty[]|null $CustomizedProperties CustomizedProperties
+     *
+     * @return self
+     */
+    public function setCustomizedProperties($CustomizedProperties)
+    {
+        if (is_null($CustomizedProperties)) {
+            array_push($this->openAPINullablesSetToNull, 'CustomizedProperties');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CustomizedProperties', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CustomizedProperties'] = $CustomizedProperties;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImageAssetProperties
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageAssetProperty[]|null
+     */
+    public function getImageAssetProperties()
+    {
+        if (!isset($this->container['ImageAssetProperties']) || is_null($this->container['ImageAssetProperties'])) {
+            return null;
+        }
+        return $this->container['ImageAssetProperties'];
+    }
+
+    /**
+     * Sets ImageAssetProperties
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageAssetProperty[]|null $ImageAssetProperties ImageAssetProperties
+     *
+     * @return self
+     */
+    public function setImageAssetProperties($ImageAssetProperties)
+    {
+        if (is_null($ImageAssetProperties)) {
+            array_push($this->openAPINullablesSetToNull, 'ImageAssetProperties');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImageAssetProperties', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImageAssetProperties'] = $ImageAssetProperties;
+
+        return $this;
+    }
 
     /**
      * Gets TemplateId
@@ -400,80 +474,6 @@ class AdRecommendationImageSuggestionMetadata implements ModelInterface, ArrayAc
             }
         }
         $this->container['TextAssetProperties'] = $TextAssetProperties;
-
-        return $this;
-    }
-
-    /**
-     * Gets ImageAssetProperties
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageAssetProperty[]|null
-     */
-    public function getImageAssetProperties()
-    {
-        if (!isset($this->container['ImageAssetProperties']) || is_null($this->container['ImageAssetProperties'])) {
-            return null;
-        }
-        return $this->container['ImageAssetProperties'];
-    }
-
-    /**
-     * Sets ImageAssetProperties
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageAssetProperty[]|null $ImageAssetProperties ImageAssetProperties
-     *
-     * @return self
-     */
-    public function setImageAssetProperties($ImageAssetProperties)
-    {
-        if (is_null($ImageAssetProperties)) {
-            array_push($this->openAPINullablesSetToNull, 'ImageAssetProperties');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ImageAssetProperties', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ImageAssetProperties'] = $ImageAssetProperties;
-
-        return $this;
-    }
-
-    /**
-     * Gets CustomizedProperties
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationCustomizedProperty[]|null
-     */
-    public function getCustomizedProperties()
-    {
-        if (!isset($this->container['CustomizedProperties']) || is_null($this->container['CustomizedProperties'])) {
-            return null;
-        }
-        return $this->container['CustomizedProperties'];
-    }
-
-    /**
-     * Sets CustomizedProperties
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationCustomizedProperty[]|null $CustomizedProperties CustomizedProperties
-     *
-     * @return self
-     */
-    public function setCustomizedProperties($CustomizedProperties)
-    {
-        if (is_null($CustomizedProperties)) {
-            array_push($this->openAPINullablesSetToNull, 'CustomizedProperties');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CustomizedProperties', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CustomizedProperties'] = $CustomizedProperties;
 
         return $this;
     }

@@ -33,11 +33,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Description' => 'string',
+        'Details' => 'array<string,string>',
         'Key' => 'string',
         'Severity' => 'string',
-        'Description' => 'string',
-        'Timestamp' => 'string',
-        'Details' => 'array<string,string>'
+        'Timestamp' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Description' => null,
+        'Details' => null,
         'Key' => null,
         'Severity' => null,
-        'Description' => null,
-        'Timestamp' => null,
-        'Details' => null
+        'Timestamp' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Description' => true,
+        'Details' => true,
         'Key' => true,
         'Severity' => true,
-        'Description' => true,
-        'Timestamp' => true,
-        'Details' => true
+        'Timestamp' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Description' => 'Description',
+        'Details' => 'Details',
         'Key' => 'Key',
         'Severity' => 'Severity',
-        'Description' => 'Description',
-        'Timestamp' => 'Timestamp',
-        'Details' => 'Details'
+        'Timestamp' => 'Timestamp'
     ];
 
     /**
@@ -167,11 +167,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Description' => 'setDescription',
+        'Details' => 'setDetails',
         'Key' => 'setKey',
         'Severity' => 'setSeverity',
-        'Description' => 'setDescription',
-        'Timestamp' => 'setTimestamp',
-        'Details' => 'setDetails'
+        'Timestamp' => 'setTimestamp'
     ];
 
     /**
@@ -180,11 +180,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Description' => 'getDescription',
+        'Details' => 'getDetails',
         'Key' => 'getKey',
         'Severity' => 'getSeverity',
-        'Description' => 'getDescription',
-        'Timestamp' => 'getTimestamp',
-        'Details' => 'getDetails'
+        'Timestamp' => 'getTimestamp'
     ];
 
     /**
@@ -244,11 +244,11 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('Details', $data ?? [], null);
         $this->setIfExists('Key', $data ?? [], null);
         $this->setIfExists('Severity', $data ?? [], null);
-        $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('Timestamp', $data ?? [], null);
-        $this->setIfExists('Details', $data ?? [], null);
     }
 
     /**
@@ -292,6 +292,80 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
+        }
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets Details
+     *
+     * @return array<string,string>|null
+     */
+    public function getDetails()
+    {
+        if (!isset($this->container['Details']) || is_null($this->container['Details'])) {
+            return null;
+        }
+        return $this->container['Details'];
+    }
+
+    /**
+     * Sets Details
+     *
+     * @param array<string,string>|null $Details Details
+     *
+     * @return self
+     */
+    public function setDetails($Details)
+    {
+        if (is_null($Details)) {
+            array_push($this->openAPINullablesSetToNull, 'Details');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Details', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Details'] = $Details;
+
+        return $this;
+    }
 
     /**
      * Gets Key
@@ -368,43 +442,6 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
-            return null;
-        }
-        return $this->container['Description'];
-    }
-
-    /**
-     * Sets Description
-     *
-     * @param string|null $Description Description
-     *
-     * @return self
-     */
-    public function setDescription($Description)
-    {
-        if (is_null($Description)) {
-            array_push($this->openAPINullablesSetToNull, 'Description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Description'] = $Description;
-
-        return $this;
-    }
-
-    /**
      * Gets Timestamp
      *
      * @return string|null
@@ -437,43 +474,6 @@ class AuditPointResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Timestamp'] = $Timestamp;
-
-        return $this;
-    }
-
-    /**
-     * Gets Details
-     *
-     * @return array<string,string>|null
-     */
-    public function getDetails()
-    {
-        if (!isset($this->container['Details']) || is_null($this->container['Details'])) {
-            return null;
-        }
-        return $this->container['Details'];
-    }
-
-    /**
-     * Sets Details
-     *
-     * @param array<string,string>|null $Details Details
-     *
-     * @return self
-     */
-    public function setDetails($Details)
-    {
-        if (is_null($Details)) {
-            array_push($this->openAPINullablesSetToNull, 'Details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Details', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Details'] = $Details;
 
         return $this;
     }

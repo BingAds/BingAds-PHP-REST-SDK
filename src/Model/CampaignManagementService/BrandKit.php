@@ -33,17 +33,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'Name' => 'string',
-        'BusinessName' => 'string',
-        'Images' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
-        'SquareLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
-        'LandscapeLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
-        'Palettes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitPalette[]',
-        'Fonts' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]',
         'BrandVoice' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice',
-        'TermExclusions' => 'string[]',
-        'MessagingRestrictions' => 'string[]'
+        'BusinessName' => 'string',
+        'Fonts' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]',
+        'Id' => 'string',
+        'Images' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
+        'LandscapeLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
+        'MessagingRestrictions' => 'string[]',
+        'Name' => 'string',
+        'Palettes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitPalette[]',
+        'SquareLogos' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]',
+        'TermExclusions' => 'string[]'
     ];
 
     /**
@@ -54,17 +54,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
-        'Name' => null,
-        'BusinessName' => null,
-        'Images' => null,
-        'SquareLogos' => null,
-        'LandscapeLogos' => null,
-        'Palettes' => null,
-        'Fonts' => null,
         'BrandVoice' => null,
-        'TermExclusions' => null,
-        'MessagingRestrictions' => null
+        'BusinessName' => null,
+        'Fonts' => null,
+        'Id' => 'int64',
+        'Images' => null,
+        'LandscapeLogos' => null,
+        'MessagingRestrictions' => null,
+        'Name' => null,
+        'Palettes' => null,
+        'SquareLogos' => null,
+        'TermExclusions' => null
     ];
 
     /**
@@ -73,17 +73,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
-        'Name' => true,
-        'BusinessName' => true,
-        'Images' => true,
-        'SquareLogos' => true,
-        'LandscapeLogos' => true,
-        'Palettes' => true,
-        'Fonts' => true,
         'BrandVoice' => true,
-        'TermExclusions' => true,
-        'MessagingRestrictions' => true
+        'BusinessName' => true,
+        'Fonts' => true,
+        'Id' => true,
+        'Images' => true,
+        'LandscapeLogos' => true,
+        'MessagingRestrictions' => true,
+        'Name' => true,
+        'Palettes' => true,
+        'SquareLogos' => true,
+        'TermExclusions' => true
     ];
 
     /**
@@ -172,17 +172,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'Name' => 'Name',
-        'BusinessName' => 'BusinessName',
-        'Images' => 'Images',
-        'SquareLogos' => 'SquareLogos',
-        'LandscapeLogos' => 'LandscapeLogos',
-        'Palettes' => 'Palettes',
-        'Fonts' => 'Fonts',
         'BrandVoice' => 'BrandVoice',
-        'TermExclusions' => 'TermExclusions',
-        'MessagingRestrictions' => 'MessagingRestrictions'
+        'BusinessName' => 'BusinessName',
+        'Fonts' => 'Fonts',
+        'Id' => 'Id',
+        'Images' => 'Images',
+        'LandscapeLogos' => 'LandscapeLogos',
+        'MessagingRestrictions' => 'MessagingRestrictions',
+        'Name' => 'Name',
+        'Palettes' => 'Palettes',
+        'SquareLogos' => 'SquareLogos',
+        'TermExclusions' => 'TermExclusions'
     ];
 
     /**
@@ -191,17 +191,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'Name' => 'setName',
-        'BusinessName' => 'setBusinessName',
-        'Images' => 'setImages',
-        'SquareLogos' => 'setSquareLogos',
-        'LandscapeLogos' => 'setLandscapeLogos',
-        'Palettes' => 'setPalettes',
-        'Fonts' => 'setFonts',
         'BrandVoice' => 'setBrandVoice',
-        'TermExclusions' => 'setTermExclusions',
-        'MessagingRestrictions' => 'setMessagingRestrictions'
+        'BusinessName' => 'setBusinessName',
+        'Fonts' => 'setFonts',
+        'Id' => 'setId',
+        'Images' => 'setImages',
+        'LandscapeLogos' => 'setLandscapeLogos',
+        'MessagingRestrictions' => 'setMessagingRestrictions',
+        'Name' => 'setName',
+        'Palettes' => 'setPalettes',
+        'SquareLogos' => 'setSquareLogos',
+        'TermExclusions' => 'setTermExclusions'
     ];
 
     /**
@@ -210,17 +210,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'Name' => 'getName',
-        'BusinessName' => 'getBusinessName',
-        'Images' => 'getImages',
-        'SquareLogos' => 'getSquareLogos',
-        'LandscapeLogos' => 'getLandscapeLogos',
-        'Palettes' => 'getPalettes',
-        'Fonts' => 'getFonts',
         'BrandVoice' => 'getBrandVoice',
-        'TermExclusions' => 'getTermExclusions',
-        'MessagingRestrictions' => 'getMessagingRestrictions'
+        'BusinessName' => 'getBusinessName',
+        'Fonts' => 'getFonts',
+        'Id' => 'getId',
+        'Images' => 'getImages',
+        'LandscapeLogos' => 'getLandscapeLogos',
+        'MessagingRestrictions' => 'getMessagingRestrictions',
+        'Name' => 'getName',
+        'Palettes' => 'getPalettes',
+        'SquareLogos' => 'getSquareLogos',
+        'TermExclusions' => 'getTermExclusions'
     ];
 
     /**
@@ -280,17 +280,17 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('BusinessName', $data ?? [], null);
-        $this->setIfExists('Images', $data ?? [], null);
-        $this->setIfExists('SquareLogos', $data ?? [], null);
-        $this->setIfExists('LandscapeLogos', $data ?? [], null);
-        $this->setIfExists('Palettes', $data ?? [], null);
-        $this->setIfExists('Fonts', $data ?? [], null);
         $this->setIfExists('BrandVoice', $data ?? [], null);
-        $this->setIfExists('TermExclusions', $data ?? [], null);
+        $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('Fonts', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Images', $data ?? [], null);
+        $this->setIfExists('LandscapeLogos', $data ?? [], null);
         $this->setIfExists('MessagingRestrictions', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('Palettes', $data ?? [], null);
+        $this->setIfExists('SquareLogos', $data ?? [], null);
+        $this->setIfExists('TermExclusions', $data ?? [], null);
     }
 
     /**
@@ -336,75 +336,38 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Id
+     * Gets BrandVoice
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice|null
      */
-    public function getId()
+    public function getBrandVoice()
     {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+        if (!isset($this->container['BrandVoice']) || is_null($this->container['BrandVoice'])) {
             return null;
         }
-        return $this->container['Id'];
+        return $this->container['BrandVoice'];
     }
 
     /**
-     * Sets Id
+     * Sets BrandVoice
      *
-     * @param string|null $Id Id
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice|null $BrandVoice BrandVoice
      *
      * @return self
      */
-    public function setId($Id)
+    public function setBrandVoice($BrandVoice)
     {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
+        if (is_null($BrandVoice)) {
+            array_push($this->openAPINullablesSetToNull, 'BrandVoice');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
+            $index = array_search('BrandVoice', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
+        $this->container['BrandVoice'] = $BrandVoice;
 
         return $this;
     }
@@ -447,6 +410,80 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets Fonts
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]|null
+     */
+    public function getFonts()
+    {
+        if (!isset($this->container['Fonts']) || is_null($this->container['Fonts'])) {
+            return null;
+        }
+        return $this->container['Fonts'];
+    }
+
+    /**
+     * Sets Fonts
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]|null $Fonts Fonts
+     *
+     * @return self
+     */
+    public function setFonts($Fonts)
+    {
+        if (is_null($Fonts)) {
+            array_push($this->openAPINullablesSetToNull, 'Fonts');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Fonts', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Fonts'] = $Fonts;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
      * Gets Images
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]|null
@@ -479,43 +516,6 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Images'] = $Images;
-
-        return $this;
-    }
-
-    /**
-     * Gets SquareLogos
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]|null
-     */
-    public function getSquareLogos()
-    {
-        if (!isset($this->container['SquareLogos']) || is_null($this->container['SquareLogos'])) {
-            return null;
-        }
-        return $this->container['SquareLogos'];
-    }
-
-    /**
-     * Sets SquareLogos
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]|null $SquareLogos SquareLogos
-     *
-     * @return self
-     */
-    public function setSquareLogos($SquareLogos)
-    {
-        if (is_null($SquareLogos)) {
-            array_push($this->openAPINullablesSetToNull, 'SquareLogos');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SquareLogos', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SquareLogos'] = $SquareLogos;
 
         return $this;
     }
@@ -558,6 +558,80 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets MessagingRestrictions
+     *
+     * @return string[]|null
+     */
+    public function getMessagingRestrictions()
+    {
+        if (!isset($this->container['MessagingRestrictions']) || is_null($this->container['MessagingRestrictions'])) {
+            return null;
+        }
+        return $this->container['MessagingRestrictions'];
+    }
+
+    /**
+     * Sets MessagingRestrictions
+     *
+     * @param string[]|null $MessagingRestrictions MessagingRestrictions
+     *
+     * @return self
+     */
+    public function setMessagingRestrictions($MessagingRestrictions)
+    {
+        if (is_null($MessagingRestrictions)) {
+            array_push($this->openAPINullablesSetToNull, 'MessagingRestrictions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MessagingRestrictions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MessagingRestrictions'] = $MessagingRestrictions;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
      * Gets Palettes
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitPalette[]|null
@@ -595,75 +669,38 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Fonts
+     * Gets SquareLogos
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]|null
      */
-    public function getFonts()
+    public function getSquareLogos()
     {
-        if (!isset($this->container['Fonts']) || is_null($this->container['Fonts'])) {
+        if (!isset($this->container['SquareLogos']) || is_null($this->container['SquareLogos'])) {
             return null;
         }
-        return $this->container['Fonts'];
+        return $this->container['SquareLogos'];
     }
 
     /**
-     * Sets Fonts
+     * Sets SquareLogos
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitFont[]|null $Fonts Fonts
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitImage[]|null $SquareLogos SquareLogos
      *
      * @return self
      */
-    public function setFonts($Fonts)
+    public function setSquareLogos($SquareLogos)
     {
-        if (is_null($Fonts)) {
-            array_push($this->openAPINullablesSetToNull, 'Fonts');
+        if (is_null($SquareLogos)) {
+            array_push($this->openAPINullablesSetToNull, 'SquareLogos');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Fonts', $nullablesSetToNull);
+            $index = array_search('SquareLogos', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Fonts'] = $Fonts;
-
-        return $this;
-    }
-
-    /**
-     * Gets BrandVoice
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice|null
-     */
-    public function getBrandVoice()
-    {
-        if (!isset($this->container['BrandVoice']) || is_null($this->container['BrandVoice'])) {
-            return null;
-        }
-        return $this->container['BrandVoice'];
-    }
-
-    /**
-     * Sets BrandVoice
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandVoice|null $BrandVoice BrandVoice
-     *
-     * @return self
-     */
-    public function setBrandVoice($BrandVoice)
-    {
-        if (is_null($BrandVoice)) {
-            array_push($this->openAPINullablesSetToNull, 'BrandVoice');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BrandVoice', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BrandVoice'] = $BrandVoice;
+        $this->container['SquareLogos'] = $SquareLogos;
 
         return $this;
     }
@@ -701,43 +738,6 @@ class BrandKit implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['TermExclusions'] = $TermExclusions;
-
-        return $this;
-    }
-
-    /**
-     * Gets MessagingRestrictions
-     *
-     * @return string[]|null
-     */
-    public function getMessagingRestrictions()
-    {
-        if (!isset($this->container['MessagingRestrictions']) || is_null($this->container['MessagingRestrictions'])) {
-            return null;
-        }
-        return $this->container['MessagingRestrictions'];
-    }
-
-    /**
-     * Sets MessagingRestrictions
-     *
-     * @param string[]|null $MessagingRestrictions MessagingRestrictions
-     *
-     * @return self
-     */
-    public function setMessagingRestrictions($MessagingRestrictions)
-    {
-        if (is_null($MessagingRestrictions)) {
-            array_push($this->openAPINullablesSetToNull, 'MessagingRestrictions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MessagingRestrictions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MessagingRestrictions'] = $MessagingRestrictions;
 
         return $this;
     }

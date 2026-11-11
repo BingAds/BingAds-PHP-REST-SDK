@@ -440,7 +440,7 @@ class Criterion implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Network)) {
             throw new \InvalidArgumentException('non-nullable Network cannot be null');
         }
-        if (!$Network instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\NetworkType) {
+        if (!is_null($Network) && !$Network instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\NetworkType) {
             $Network = new \Microsoft\MsAds\Rest\Model\AdInsightService\NetworkType($Network);
         }
         $this->container['Network'] = $Network;

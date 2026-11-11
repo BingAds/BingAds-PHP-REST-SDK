@@ -34,8 +34,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Code' => 'int',
-        'ErrorCode' => 'string',
         'Details' => 'string',
+        'ErrorCode' => 'string',
         'Index' => 'int',
         'Message' => 'string'
     ];
@@ -49,8 +49,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Code' => 'int32',
-        'ErrorCode' => null,
         'Details' => null,
+        'ErrorCode' => null,
         'Index' => 'int32',
         'Message' => null
     ];
@@ -62,8 +62,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Code' => false,
-        'ErrorCode' => true,
         'Details' => true,
+        'ErrorCode' => true,
         'Index' => false,
         'Message' => true
     ];
@@ -155,8 +155,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Code' => 'Code',
-        'ErrorCode' => 'ErrorCode',
         'Details' => 'Details',
+        'ErrorCode' => 'ErrorCode',
         'Index' => 'Index',
         'Message' => 'Message'
     ];
@@ -168,8 +168,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Code' => 'setCode',
-        'ErrorCode' => 'setErrorCode',
         'Details' => 'setDetails',
+        'ErrorCode' => 'setErrorCode',
         'Index' => 'setIndex',
         'Message' => 'setMessage'
     ];
@@ -181,8 +181,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Code' => 'getCode',
-        'ErrorCode' => 'getErrorCode',
         'Details' => 'getDetails',
+        'ErrorCode' => 'getErrorCode',
         'Index' => 'getIndex',
         'Message' => 'getMessage'
     ];
@@ -245,8 +245,8 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Code', $data ?? [], null);
-        $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('Details', $data ?? [], null);
+        $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('Index', $data ?? [], null);
         $this->setIfExists('Message', $data ?? [], null);
     }
@@ -324,43 +324,6 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ErrorCode
-     *
-     * @return string|null
-     */
-    public function getErrorCode()
-    {
-        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
-            return null;
-        }
-        return $this->container['ErrorCode'];
-    }
-
-    /**
-     * Sets ErrorCode
-     *
-     * @param string|null $ErrorCode ErrorCode
-     *
-     * @return self
-     */
-    public function setErrorCode($ErrorCode)
-    {
-        if (is_null($ErrorCode)) {
-            array_push($this->openAPINullablesSetToNull, 'ErrorCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ErrorCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ErrorCode'] = $ErrorCode;
-
-        return $this;
-    }
-
-    /**
      * Gets Details
      *
      * @return string|null
@@ -393,6 +356,43 @@ class BatchError implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Details'] = $Details;
+
+        return $this;
+    }
+
+    /**
+     * Gets ErrorCode
+     *
+     * @return string|null
+     */
+    public function getErrorCode()
+    {
+        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
+            return null;
+        }
+        return $this->container['ErrorCode'];
+    }
+
+    /**
+     * Sets ErrorCode
+     *
+     * @param string|null $ErrorCode ErrorCode
+     *
+     * @return self
+     */
+    public function setErrorCode($ErrorCode)
+    {
+        if (is_null($ErrorCode)) {
+            array_push($this->openAPINullablesSetToNull, 'ErrorCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ErrorCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ErrorCode'] = $ErrorCode;
 
         return $this;
     }

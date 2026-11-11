@@ -33,13 +33,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'StartTimeInUTC' => '\DateTime',
-        'Status' => 'string',
-        'ImportJob' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportJob',
         'EntityStatistics' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportEntityStatistics[]',
         'ErrorLogUrl' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Id' => 'string',
+        'ImportJob' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportJob',
+        'StartTimeInUTC' => '\DateTime',
+        'Status' => 'string'
     ];
 
     /**
@@ -50,13 +50,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => null,
-        'StartTimeInUTC' => 'date-time',
-        'Status' => null,
-        'ImportJob' => null,
         'EntityStatistics' => null,
         'ErrorLogUrl' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'Id' => null,
+        'ImportJob' => null,
+        'StartTimeInUTC' => 'date-time',
+        'Status' => null
     ];
 
     /**
@@ -65,13 +65,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
-        'StartTimeInUTC' => false,
-        'Status' => true,
-        'ImportJob' => true,
         'EntityStatistics' => true,
         'ErrorLogUrl' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'Id' => true,
+        'ImportJob' => true,
+        'StartTimeInUTC' => false,
+        'Status' => true
     ];
 
     /**
@@ -160,13 +160,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'StartTimeInUTC' => 'StartTimeInUTC',
-        'Status' => 'Status',
-        'ImportJob' => 'ImportJob',
         'EntityStatistics' => 'EntityStatistics',
         'ErrorLogUrl' => 'ErrorLogUrl',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Id' => 'Id',
+        'ImportJob' => 'ImportJob',
+        'StartTimeInUTC' => 'StartTimeInUTC',
+        'Status' => 'Status'
     ];
 
     /**
@@ -175,13 +175,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'StartTimeInUTC' => 'setStartTimeInUTC',
-        'Status' => 'setStatus',
-        'ImportJob' => 'setImportJob',
         'EntityStatistics' => 'setEntityStatistics',
         'ErrorLogUrl' => 'setErrorLogUrl',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Id' => 'setId',
+        'ImportJob' => 'setImportJob',
+        'StartTimeInUTC' => 'setStartTimeInUTC',
+        'Status' => 'setStatus'
     ];
 
     /**
@@ -190,13 +190,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'StartTimeInUTC' => 'getStartTimeInUTC',
-        'Status' => 'getStatus',
-        'ImportJob' => 'getImportJob',
         'EntityStatistics' => 'getEntityStatistics',
         'ErrorLogUrl' => 'getErrorLogUrl',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Id' => 'getId',
+        'ImportJob' => 'getImportJob',
+        'StartTimeInUTC' => 'getStartTimeInUTC',
+        'Status' => 'getStatus'
     ];
 
     /**
@@ -256,13 +256,13 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('StartTimeInUTC', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('ImportJob', $data ?? [], null);
         $this->setIfExists('EntityStatistics', $data ?? [], null);
         $this->setIfExists('ErrorLogUrl', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('ImportJob', $data ?? [], null);
+        $this->setIfExists('StartTimeInUTC', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
     }
 
     /**
@@ -306,147 +306,6 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets StartTimeInUTC
-     *
-     * @return \DateTime|null
-     */
-    public function getStartTimeInUTC()
-    {
-        if (!isset($this->container['StartTimeInUTC']) || is_null($this->container['StartTimeInUTC'])) {
-            return null;
-        }
-        return $this->container['StartTimeInUTC'];
-    }
-
-    /**
-     * Sets StartTimeInUTC
-     *
-     * @param \DateTime|null $StartTimeInUTC StartTimeInUTC
-     *
-     * @return self
-     */
-    public function setStartTimeInUTC($StartTimeInUTC)
-    {
-        if (is_null($StartTimeInUTC)) {
-            throw new \InvalidArgumentException('non-nullable StartTimeInUTC cannot be null');
-        }
-        $this->container['StartTimeInUTC'] = $StartTimeInUTC;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param string|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            array_push($this->openAPINullablesSetToNull, 'Status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Status', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets ImportJob
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportJob|null
-     */
-    public function getImportJob()
-    {
-        if (!isset($this->container['ImportJob']) || is_null($this->container['ImportJob'])) {
-            return null;
-        }
-        return $this->container['ImportJob'];
-    }
-
-    /**
-     * Sets ImportJob
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportJob|null $ImportJob ImportJob
-     *
-     * @return self
-     */
-    public function setImportJob($ImportJob)
-    {
-        if (is_null($ImportJob)) {
-            array_push($this->openAPINullablesSetToNull, 'ImportJob');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ImportJob', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ImportJob'] = $ImportJob;
-
-        return $this;
-    }
 
     /**
      * Gets EntityStatistics
@@ -555,6 +414,147 @@ class ImportResult implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImportJob
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportJob|null
+     */
+    public function getImportJob()
+    {
+        if (!isset($this->container['ImportJob']) || is_null($this->container['ImportJob'])) {
+            return null;
+        }
+        return $this->container['ImportJob'];
+    }
+
+    /**
+     * Sets ImportJob
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImportJob|null $ImportJob ImportJob
+     *
+     * @return self
+     */
+    public function setImportJob($ImportJob)
+    {
+        if (is_null($ImportJob)) {
+            array_push($this->openAPINullablesSetToNull, 'ImportJob');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImportJob', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImportJob'] = $ImportJob;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartTimeInUTC
+     *
+     * @return \DateTime|null
+     */
+    public function getStartTimeInUTC()
+    {
+        if (!isset($this->container['StartTimeInUTC']) || is_null($this->container['StartTimeInUTC'])) {
+            return null;
+        }
+        return $this->container['StartTimeInUTC'];
+    }
+
+    /**
+     * Sets StartTimeInUTC
+     *
+     * @param \DateTime|null $StartTimeInUTC StartTimeInUTC
+     *
+     * @return self
+     */
+    public function setStartTimeInUTC($StartTimeInUTC)
+    {
+        if (is_null($StartTimeInUTC)) {
+            throw new \InvalidArgumentException('non-nullable StartTimeInUTC cannot be null');
+        }
+        $this->container['StartTimeInUTC'] = $StartTimeInUTC;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param string|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

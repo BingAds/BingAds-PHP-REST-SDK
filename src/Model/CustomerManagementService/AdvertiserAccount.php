@@ -526,7 +526,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($CurrencyCode)) {
             throw new \InvalidArgumentException('non-nullable CurrencyCode cannot be null');
         }
-        if (!$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\CurrencyCode) {
+        if (!is_null($CurrencyCode) && !$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\CurrencyCode) {
             $CurrencyCode = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\CurrencyCode($CurrencyCode);
         }
         $this->container['CurrencyCode'] = $CurrencyCode;
@@ -562,7 +562,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($AccountFinancialStatus)) {
             throw new \InvalidArgumentException('non-nullable AccountFinancialStatus cannot be null');
         }
-        if (!$AccountFinancialStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountFinancialStatus) {
+        if (!is_null($AccountFinancialStatus) && !$AccountFinancialStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountFinancialStatus) {
             $AccountFinancialStatus = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountFinancialStatus($AccountFinancialStatus);
         }
         $this->container['AccountFinancialStatus'] = $AccountFinancialStatus;
@@ -635,7 +635,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($Language)) {
             throw new \InvalidArgumentException('non-nullable Language cannot be null');
         }
-        if (!$Language instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LanguageType) {
+        if (!is_null($Language) && !$Language instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\LanguageType) {
             $Language = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\LanguageType($Language);
         }
         $this->container['Language'] = $Language;
@@ -886,7 +886,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($PaymentMethodType)) {
             throw new \InvalidArgumentException('non-nullable PaymentMethodType cannot be null');
         }
-        if (!$PaymentMethodType instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\PaymentMethodType) {
+        if (!is_null($PaymentMethodType) && !$PaymentMethodType instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\PaymentMethodType) {
             $PaymentMethodType = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\PaymentMethodType($PaymentMethodType);
         }
         $this->container['PaymentMethodType'] = $PaymentMethodType;
@@ -959,7 +959,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($AccountLifeCycleStatus)) {
             throw new \InvalidArgumentException('non-nullable AccountLifeCycleStatus cannot be null');
         }
-        if (!$AccountLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountLifeCycleStatus) {
+        if (!is_null($AccountLifeCycleStatus) && !$AccountLifeCycleStatus instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountLifeCycleStatus) {
             $AccountLifeCycleStatus = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\AccountLifeCycleStatus($AccountLifeCycleStatus);
         }
         $this->container['AccountLifeCycleStatus'] = $AccountLifeCycleStatus;
@@ -1032,7 +1032,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($TimeZone)) {
             throw new \InvalidArgumentException('non-nullable TimeZone cannot be null');
         }
-        if (!$TimeZone instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\TimeZoneType) {
+        if (!is_null($TimeZone) && !$TimeZone instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\TimeZoneType) {
             $TimeZone = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\TimeZoneType($TimeZone);
         }
         $this->container['TimeZone'] = $TimeZone;
@@ -1364,7 +1364,7 @@ class AdvertiserAccount implements ModelInterface, ArrayAccess, \JsonSerializabl
         if (is_null($AutoTagType)) {
             throw new \InvalidArgumentException('non-nullable AutoTagType cannot be null');
         }
-        if (!$AutoTagType instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AutoTagType) {
+        if (!is_null($AutoTagType) && !$AutoTagType instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\AutoTagType) {
             $AutoTagType = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\AutoTagType($AutoTagType);
         }
         $this->container['AutoTagType'] = $AutoTagType;

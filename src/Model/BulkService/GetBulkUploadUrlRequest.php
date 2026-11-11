@@ -300,7 +300,7 @@ class GetBulkUploadUrlRequest implements ModelInterface, ArrayAccess, \JsonSeria
         if (is_null($ResponseMode)) {
             throw new \InvalidArgumentException('non-nullable ResponseMode cannot be null');
         }
-        if (!$ResponseMode instanceof \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode) {
+        if (!is_null($ResponseMode) && !$ResponseMode instanceof \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode) {
             $ResponseMode = new \Microsoft\MsAds\Rest\Model\BulkService\ResponseMode($ResponseMode);
         }
         $this->container['ResponseMode'] = $ResponseMode;

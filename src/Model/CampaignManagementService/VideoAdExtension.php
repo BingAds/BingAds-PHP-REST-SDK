@@ -33,26 +33,26 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
-        'Name' => 'string',
-        'DisplayText' => 'string',
-        'AlternativeText' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
         'ActionText' => 'string',
-        'VideoId' => 'string',
+        'AlternativeText' => 'string',
+        'DisplayText' => 'string',
+        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'Name' => 'string',
         'ThumbnailId' => 'string',
         'ThumbnailUrl' => 'string',
-        'FinalMobileUrls' => 'string[]',
-        'FinalUrls' => 'string[]',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
+        'VideoId' => 'string'
     ];
 
     /**
@@ -63,26 +63,26 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
-        'Name' => null,
-        'DisplayText' => null,
-        'AlternativeText' => null,
+        'ForwardCompatibilityMap' => null,
         'ActionText' => null,
-        'VideoId' => 'int64',
+        'AlternativeText' => null,
+        'DisplayText' => null,
+        'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'Name' => null,
         'ThumbnailId' => 'int64',
         'ThumbnailUrl' => null,
-        'FinalMobileUrls' => null,
-        'FinalUrls' => null,
-        'UrlCustomParameters' => null,
         'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'FinalAppUrls' => null,
-        'ForwardCompatibilityMap' => null
+        'UrlCustomParameters' => null,
+        'VideoId' => 'int64'
     ];
 
     /**
@@ -91,26 +91,26 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
-        'Name' => true,
-        'DisplayText' => true,
-        'AlternativeText' => true,
+        'ForwardCompatibilityMap' => true,
         'ActionText' => true,
-        'VideoId' => true,
+        'AlternativeText' => true,
+        'DisplayText' => true,
+        'FinalAppUrls' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'Name' => true,
         'ThumbnailId' => true,
         'ThumbnailUrl' => true,
-        'FinalMobileUrls' => true,
-        'FinalUrls' => true,
-        'UrlCustomParameters' => true,
         'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'FinalAppUrls' => true,
-        'ForwardCompatibilityMap' => true
+        'UrlCustomParameters' => true,
+        'VideoId' => true
     ];
 
     /**
@@ -199,26 +199,26 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
-        'Name' => 'Name',
-        'DisplayText' => 'DisplayText',
-        'AlternativeText' => 'AlternativeText',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
         'ActionText' => 'ActionText',
-        'VideoId' => 'VideoId',
+        'AlternativeText' => 'AlternativeText',
+        'DisplayText' => 'DisplayText',
+        'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'Name' => 'Name',
         'ThumbnailId' => 'ThumbnailId',
         'ThumbnailUrl' => 'ThumbnailUrl',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalUrls' => 'FinalUrls',
-        'UrlCustomParameters' => 'UrlCustomParameters',
         'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'FinalAppUrls' => 'FinalAppUrls',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'UrlCustomParameters' => 'UrlCustomParameters',
+        'VideoId' => 'VideoId'
     ];
 
     /**
@@ -227,26 +227,26 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
-        'Name' => 'setName',
-        'DisplayText' => 'setDisplayText',
-        'AlternativeText' => 'setAlternativeText',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
         'ActionText' => 'setActionText',
-        'VideoId' => 'setVideoId',
+        'AlternativeText' => 'setAlternativeText',
+        'DisplayText' => 'setDisplayText',
+        'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'Name' => 'setName',
         'ThumbnailId' => 'setThumbnailId',
         'ThumbnailUrl' => 'setThumbnailUrl',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalUrls' => 'setFinalUrls',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
         'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'FinalAppUrls' => 'setFinalAppUrls',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'UrlCustomParameters' => 'setUrlCustomParameters',
+        'VideoId' => 'setVideoId'
     ];
 
     /**
@@ -255,26 +255,26 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
-        'Name' => 'getName',
-        'DisplayText' => 'getDisplayText',
-        'AlternativeText' => 'getAlternativeText',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
         'ActionText' => 'getActionText',
-        'VideoId' => 'getVideoId',
+        'AlternativeText' => 'getAlternativeText',
+        'DisplayText' => 'getDisplayText',
+        'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'Name' => 'getName',
         'ThumbnailId' => 'getThumbnailId',
         'ThumbnailUrl' => 'getThumbnailUrl',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalUrls' => 'getFinalUrls',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
         'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'FinalAppUrls' => 'getFinalAppUrls',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'UrlCustomParameters' => 'getUrlCustomParameters',
+        'VideoId' => 'getVideoId'
     ];
 
     /**
@@ -334,26 +334,31 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('DisplayText', $data ?? [], null);
-        $this->setIfExists('AlternativeText', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
         $this->setIfExists('ActionText', $data ?? [], null);
-        $this->setIfExists('VideoId', $data ?? [], null);
+        $this->setIfExists('AlternativeText', $data ?? [], null);
+        $this->setIfExists('DisplayText', $data ?? [], null);
+        $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('ThumbnailId', $data ?? [], null);
         $this->setIfExists('ThumbnailUrl', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('FinalAppUrls', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+        $this->setIfExists('VideoId', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -397,79 +402,6 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -541,6 +473,86 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -620,112 +632,38 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets Name
+     * Gets ForwardCompatibilityMap
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
      */
-    public function getName()
+    public function getForwardCompatibilityMap()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['ForwardCompatibilityMap'];
     }
 
     /**
-     * Sets Name
+     * Sets ForwardCompatibilityMap
      *
-     * @param string|null $Name Name
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
      *
      * @return self
      */
-    public function setName($Name)
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets DisplayText
-     *
-     * @return string|null
-     */
-    public function getDisplayText()
-    {
-        if (!isset($this->container['DisplayText']) || is_null($this->container['DisplayText'])) {
-            return null;
-        }
-        return $this->container['DisplayText'];
-    }
-
-    /**
-     * Sets DisplayText
-     *
-     * @param string|null $DisplayText DisplayText
-     *
-     * @return self
-     */
-    public function setDisplayText($DisplayText)
-    {
-        if (is_null($DisplayText)) {
-            array_push($this->openAPINullablesSetToNull, 'DisplayText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DisplayText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DisplayText'] = $DisplayText;
-
-        return $this;
-    }
-
-    /**
-     * Gets AlternativeText
-     *
-     * @return string|null
-     */
-    public function getAlternativeText()
-    {
-        if (!isset($this->container['AlternativeText']) || is_null($this->container['AlternativeText'])) {
-            return null;
-        }
-        return $this->container['AlternativeText'];
-    }
-
-    /**
-     * Sets AlternativeText
-     *
-     * @param string|null $AlternativeText AlternativeText
-     *
-     * @return self
-     */
-    public function setAlternativeText($AlternativeText)
-    {
-        if (is_null($AlternativeText)) {
-            array_push($this->openAPINullablesSetToNull, 'AlternativeText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AlternativeText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AlternativeText'] = $AlternativeText;
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -768,38 +706,260 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets VideoId
+     * Gets AlternativeText
      *
      * @return string|null
      */
-    public function getVideoId()
+    public function getAlternativeText()
     {
-        if (!isset($this->container['VideoId']) || is_null($this->container['VideoId'])) {
+        if (!isset($this->container['AlternativeText']) || is_null($this->container['AlternativeText'])) {
             return null;
         }
-        return $this->container['VideoId'];
+        return $this->container['AlternativeText'];
     }
 
     /**
-     * Sets VideoId
+     * Sets AlternativeText
      *
-     * @param string|null $VideoId VideoId
+     * @param string|null $AlternativeText AlternativeText
      *
      * @return self
      */
-    public function setVideoId($VideoId)
+    public function setAlternativeText($AlternativeText)
     {
-        if (is_null($VideoId)) {
-            array_push($this->openAPINullablesSetToNull, 'VideoId');
+        if (is_null($AlternativeText)) {
+            array_push($this->openAPINullablesSetToNull, 'AlternativeText');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('VideoId', $nullablesSetToNull);
+            $index = array_search('AlternativeText', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['VideoId'] = $VideoId;
+        $this->container['AlternativeText'] = $AlternativeText;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisplayText
+     *
+     * @return string|null
+     */
+    public function getDisplayText()
+    {
+        if (!isset($this->container['DisplayText']) || is_null($this->container['DisplayText'])) {
+            return null;
+        }
+        return $this->container['DisplayText'];
+    }
+
+    /**
+     * Sets DisplayText
+     *
+     * @param string|null $DisplayText DisplayText
+     *
+     * @return self
+     */
+    public function setDisplayText($DisplayText)
+    {
+        if (is_null($DisplayText)) {
+            array_push($this->openAPINullablesSetToNull, 'DisplayText');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DisplayText', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DisplayText'] = $DisplayText;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalAppUrls
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
+     */
+    public function getFinalAppUrls()
+    {
+        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
+            return null;
+        }
+        return $this->container['FinalAppUrls'];
+    }
+
+    /**
+     * Sets FinalAppUrls
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
+     *
+     * @return self
+     */
+    public function setFinalAppUrls($FinalAppUrls)
+    {
+        if (is_null($FinalAppUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalAppUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalAppUrls'] = $FinalAppUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalMobileUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalMobileUrls()
+    {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+            return null;
+        }
+        return $this->container['FinalMobileUrls'];
+    }
+
+    /**
+     * Sets FinalMobileUrls
+     *
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     *
+     * @return self
+     */
+    public function setFinalMobileUrls($FinalMobileUrls)
+    {
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
 
         return $this;
     }
@@ -879,75 +1039,38 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets FinalMobileUrls
+     * Gets TrackingUrlTemplate
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getFinalMobileUrls()
+    public function getTrackingUrlTemplate()
     {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
             return null;
         }
-        return $this->container['FinalMobileUrls'];
+        return $this->container['TrackingUrlTemplate'];
     }
 
     /**
-     * Sets FinalMobileUrls
+     * Sets TrackingUrlTemplate
      *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
      *
      * @return self
      */
-    public function setFinalMobileUrls($FinalMobileUrls)
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
     {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
 
         return $this;
     }
@@ -990,149 +1113,38 @@ class VideoAdExtension extends AdExtension implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets TrackingUrlTemplate
+     * Gets VideoId
      *
      * @return string|null
      */
-    public function getTrackingUrlTemplate()
+    public function getVideoId()
     {
-        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+        if (!isset($this->container['VideoId']) || is_null($this->container['VideoId'])) {
             return null;
         }
-        return $this->container['TrackingUrlTemplate'];
+        return $this->container['VideoId'];
     }
 
     /**
-     * Sets TrackingUrlTemplate
+     * Sets VideoId
      *
-     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     * @param string|null $VideoId VideoId
      *
      * @return self
      */
-    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    public function setVideoId($VideoId)
     {
-        if (is_null($TrackingUrlTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        if (is_null($VideoId)) {
+            array_push($this->openAPINullablesSetToNull, 'VideoId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            $index = array_search('VideoId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalAppUrls
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null
-     */
-    public function getFinalAppUrls()
-    {
-        if (!isset($this->container['FinalAppUrls']) || is_null($this->container['FinalAppUrls'])) {
-            return null;
-        }
-        return $this->container['FinalAppUrls'];
-    }
-
-    /**
-     * Sets FinalAppUrls
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]|null $FinalAppUrls FinalAppUrls
-     *
-     * @return self
-     */
-    public function setFinalAppUrls($FinalAppUrls)
-    {
-        if (is_null($FinalAppUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalAppUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalAppUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalAppUrls'] = $FinalAppUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['VideoId'] = $VideoId;
 
         return $this;
     }

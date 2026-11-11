@@ -33,14 +33,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'HealthCheckName' => 'string',
-        'HealthCheckDisplayName' => 'string',
-        'HealthCheckDescription' => 'string',
-        'HealthCheckSubType' => 'string',
         'HealthCheckCategory' => 'string',
-        'HealthCheckSeverity' => 'string',
         'HealthCheckCategoryDisplayName' => 'string',
-        'HealthCheckColumnsMetadata' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckColumnMetadata[]'
+        'HealthCheckColumnsMetadata' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckColumnMetadata[]',
+        'HealthCheckDescription' => 'string',
+        'HealthCheckDisplayName' => 'string',
+        'HealthCheckName' => 'string',
+        'HealthCheckSeverity' => 'string',
+        'HealthCheckSubType' => 'string'
     ];
 
     /**
@@ -51,14 +51,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'HealthCheckName' => null,
-        'HealthCheckDisplayName' => null,
-        'HealthCheckDescription' => null,
-        'HealthCheckSubType' => null,
         'HealthCheckCategory' => null,
-        'HealthCheckSeverity' => null,
         'HealthCheckCategoryDisplayName' => null,
-        'HealthCheckColumnsMetadata' => null
+        'HealthCheckColumnsMetadata' => null,
+        'HealthCheckDescription' => null,
+        'HealthCheckDisplayName' => null,
+        'HealthCheckName' => null,
+        'HealthCheckSeverity' => null,
+        'HealthCheckSubType' => null
     ];
 
     /**
@@ -67,14 +67,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'HealthCheckName' => true,
-        'HealthCheckDisplayName' => true,
-        'HealthCheckDescription' => true,
-        'HealthCheckSubType' => true,
         'HealthCheckCategory' => true,
-        'HealthCheckSeverity' => true,
         'HealthCheckCategoryDisplayName' => true,
-        'HealthCheckColumnsMetadata' => true
+        'HealthCheckColumnsMetadata' => true,
+        'HealthCheckDescription' => true,
+        'HealthCheckDisplayName' => true,
+        'HealthCheckName' => true,
+        'HealthCheckSeverity' => true,
+        'HealthCheckSubType' => true
     ];
 
     /**
@@ -163,14 +163,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'HealthCheckName' => 'HealthCheckName',
-        'HealthCheckDisplayName' => 'HealthCheckDisplayName',
-        'HealthCheckDescription' => 'HealthCheckDescription',
-        'HealthCheckSubType' => 'HealthCheckSubType',
         'HealthCheckCategory' => 'HealthCheckCategory',
-        'HealthCheckSeverity' => 'HealthCheckSeverity',
         'HealthCheckCategoryDisplayName' => 'HealthCheckCategoryDisplayName',
-        'HealthCheckColumnsMetadata' => 'HealthCheckColumnsMetadata'
+        'HealthCheckColumnsMetadata' => 'HealthCheckColumnsMetadata',
+        'HealthCheckDescription' => 'HealthCheckDescription',
+        'HealthCheckDisplayName' => 'HealthCheckDisplayName',
+        'HealthCheckName' => 'HealthCheckName',
+        'HealthCheckSeverity' => 'HealthCheckSeverity',
+        'HealthCheckSubType' => 'HealthCheckSubType'
     ];
 
     /**
@@ -179,14 +179,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'HealthCheckName' => 'setHealthCheckName',
-        'HealthCheckDisplayName' => 'setHealthCheckDisplayName',
-        'HealthCheckDescription' => 'setHealthCheckDescription',
-        'HealthCheckSubType' => 'setHealthCheckSubType',
         'HealthCheckCategory' => 'setHealthCheckCategory',
-        'HealthCheckSeverity' => 'setHealthCheckSeverity',
         'HealthCheckCategoryDisplayName' => 'setHealthCheckCategoryDisplayName',
-        'HealthCheckColumnsMetadata' => 'setHealthCheckColumnsMetadata'
+        'HealthCheckColumnsMetadata' => 'setHealthCheckColumnsMetadata',
+        'HealthCheckDescription' => 'setHealthCheckDescription',
+        'HealthCheckDisplayName' => 'setHealthCheckDisplayName',
+        'HealthCheckName' => 'setHealthCheckName',
+        'HealthCheckSeverity' => 'setHealthCheckSeverity',
+        'HealthCheckSubType' => 'setHealthCheckSubType'
     ];
 
     /**
@@ -195,14 +195,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'HealthCheckName' => 'getHealthCheckName',
-        'HealthCheckDisplayName' => 'getHealthCheckDisplayName',
-        'HealthCheckDescription' => 'getHealthCheckDescription',
-        'HealthCheckSubType' => 'getHealthCheckSubType',
         'HealthCheckCategory' => 'getHealthCheckCategory',
-        'HealthCheckSeverity' => 'getHealthCheckSeverity',
         'HealthCheckCategoryDisplayName' => 'getHealthCheckCategoryDisplayName',
-        'HealthCheckColumnsMetadata' => 'getHealthCheckColumnsMetadata'
+        'HealthCheckColumnsMetadata' => 'getHealthCheckColumnsMetadata',
+        'HealthCheckDescription' => 'getHealthCheckDescription',
+        'HealthCheckDisplayName' => 'getHealthCheckDisplayName',
+        'HealthCheckName' => 'getHealthCheckName',
+        'HealthCheckSeverity' => 'getHealthCheckSeverity',
+        'HealthCheckSubType' => 'getHealthCheckSubType'
     ];
 
     /**
@@ -262,14 +262,14 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('HealthCheckName', $data ?? [], null);
-        $this->setIfExists('HealthCheckDisplayName', $data ?? [], null);
-        $this->setIfExists('HealthCheckDescription', $data ?? [], null);
-        $this->setIfExists('HealthCheckSubType', $data ?? [], null);
         $this->setIfExists('HealthCheckCategory', $data ?? [], null);
-        $this->setIfExists('HealthCheckSeverity', $data ?? [], null);
         $this->setIfExists('HealthCheckCategoryDisplayName', $data ?? [], null);
         $this->setIfExists('HealthCheckColumnsMetadata', $data ?? [], null);
+        $this->setIfExists('HealthCheckDescription', $data ?? [], null);
+        $this->setIfExists('HealthCheckDisplayName', $data ?? [], null);
+        $this->setIfExists('HealthCheckName', $data ?? [], null);
+        $this->setIfExists('HealthCheckSeverity', $data ?? [], null);
+        $this->setIfExists('HealthCheckSubType', $data ?? [], null);
     }
 
     /**
@@ -315,154 +315,6 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets HealthCheckName
-     *
-     * @return string|null
-     */
-    public function getHealthCheckName()
-    {
-        if (!isset($this->container['HealthCheckName']) || is_null($this->container['HealthCheckName'])) {
-            return null;
-        }
-        return $this->container['HealthCheckName'];
-    }
-
-    /**
-     * Sets HealthCheckName
-     *
-     * @param string|null $HealthCheckName HealthCheckName
-     *
-     * @return self
-     */
-    public function setHealthCheckName($HealthCheckName)
-    {
-        if (is_null($HealthCheckName)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckName'] = $HealthCheckName;
-
-        return $this;
-    }
-
-    /**
-     * Gets HealthCheckDisplayName
-     *
-     * @return string|null
-     */
-    public function getHealthCheckDisplayName()
-    {
-        if (!isset($this->container['HealthCheckDisplayName']) || is_null($this->container['HealthCheckDisplayName'])) {
-            return null;
-        }
-        return $this->container['HealthCheckDisplayName'];
-    }
-
-    /**
-     * Sets HealthCheckDisplayName
-     *
-     * @param string|null $HealthCheckDisplayName HealthCheckDisplayName
-     *
-     * @return self
-     */
-    public function setHealthCheckDisplayName($HealthCheckDisplayName)
-    {
-        if (is_null($HealthCheckDisplayName)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckDisplayName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckDisplayName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckDisplayName'] = $HealthCheckDisplayName;
-
-        return $this;
-    }
-
-    /**
-     * Gets HealthCheckDescription
-     *
-     * @return string|null
-     */
-    public function getHealthCheckDescription()
-    {
-        if (!isset($this->container['HealthCheckDescription']) || is_null($this->container['HealthCheckDescription'])) {
-            return null;
-        }
-        return $this->container['HealthCheckDescription'];
-    }
-
-    /**
-     * Sets HealthCheckDescription
-     *
-     * @param string|null $HealthCheckDescription HealthCheckDescription
-     *
-     * @return self
-     */
-    public function setHealthCheckDescription($HealthCheckDescription)
-    {
-        if (is_null($HealthCheckDescription)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckDescription');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckDescription', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckDescription'] = $HealthCheckDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets HealthCheckSubType
-     *
-     * @return string|null
-     */
-    public function getHealthCheckSubType()
-    {
-        if (!isset($this->container['HealthCheckSubType']) || is_null($this->container['HealthCheckSubType'])) {
-            return null;
-        }
-        return $this->container['HealthCheckSubType'];
-    }
-
-    /**
-     * Sets HealthCheckSubType
-     *
-     * @param string|null $HealthCheckSubType HealthCheckSubType
-     *
-     * @return self
-     */
-    public function setHealthCheckSubType($HealthCheckSubType)
-    {
-        if (is_null($HealthCheckSubType)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckSubType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckSubType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckSubType'] = $HealthCheckSubType;
-
-        return $this;
-    }
-
-    /**
      * Gets HealthCheckCategory
      *
      * @return string|null
@@ -495,43 +347,6 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['HealthCheckCategory'] = $HealthCheckCategory;
-
-        return $this;
-    }
-
-    /**
-     * Gets HealthCheckSeverity
-     *
-     * @return string|null
-     */
-    public function getHealthCheckSeverity()
-    {
-        if (!isset($this->container['HealthCheckSeverity']) || is_null($this->container['HealthCheckSeverity'])) {
-            return null;
-        }
-        return $this->container['HealthCheckSeverity'];
-    }
-
-    /**
-     * Sets HealthCheckSeverity
-     *
-     * @param string|null $HealthCheckSeverity HealthCheckSeverity
-     *
-     * @return self
-     */
-    public function setHealthCheckSeverity($HealthCheckSeverity)
-    {
-        if (is_null($HealthCheckSeverity)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckSeverity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckSeverity', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckSeverity'] = $HealthCheckSeverity;
 
         return $this;
     }
@@ -606,6 +421,191 @@ class HealthCheckMetadata implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['HealthCheckColumnsMetadata'] = $HealthCheckColumnsMetadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets HealthCheckDescription
+     *
+     * @return string|null
+     */
+    public function getHealthCheckDescription()
+    {
+        if (!isset($this->container['HealthCheckDescription']) || is_null($this->container['HealthCheckDescription'])) {
+            return null;
+        }
+        return $this->container['HealthCheckDescription'];
+    }
+
+    /**
+     * Sets HealthCheckDescription
+     *
+     * @param string|null $HealthCheckDescription HealthCheckDescription
+     *
+     * @return self
+     */
+    public function setHealthCheckDescription($HealthCheckDescription)
+    {
+        if (is_null($HealthCheckDescription)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckDescription');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckDescription', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckDescription'] = $HealthCheckDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets HealthCheckDisplayName
+     *
+     * @return string|null
+     */
+    public function getHealthCheckDisplayName()
+    {
+        if (!isset($this->container['HealthCheckDisplayName']) || is_null($this->container['HealthCheckDisplayName'])) {
+            return null;
+        }
+        return $this->container['HealthCheckDisplayName'];
+    }
+
+    /**
+     * Sets HealthCheckDisplayName
+     *
+     * @param string|null $HealthCheckDisplayName HealthCheckDisplayName
+     *
+     * @return self
+     */
+    public function setHealthCheckDisplayName($HealthCheckDisplayName)
+    {
+        if (is_null($HealthCheckDisplayName)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckDisplayName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckDisplayName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckDisplayName'] = $HealthCheckDisplayName;
+
+        return $this;
+    }
+
+    /**
+     * Gets HealthCheckName
+     *
+     * @return string|null
+     */
+    public function getHealthCheckName()
+    {
+        if (!isset($this->container['HealthCheckName']) || is_null($this->container['HealthCheckName'])) {
+            return null;
+        }
+        return $this->container['HealthCheckName'];
+    }
+
+    /**
+     * Sets HealthCheckName
+     *
+     * @param string|null $HealthCheckName HealthCheckName
+     *
+     * @return self
+     */
+    public function setHealthCheckName($HealthCheckName)
+    {
+        if (is_null($HealthCheckName)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckName'] = $HealthCheckName;
+
+        return $this;
+    }
+
+    /**
+     * Gets HealthCheckSeverity
+     *
+     * @return string|null
+     */
+    public function getHealthCheckSeverity()
+    {
+        if (!isset($this->container['HealthCheckSeverity']) || is_null($this->container['HealthCheckSeverity'])) {
+            return null;
+        }
+        return $this->container['HealthCheckSeverity'];
+    }
+
+    /**
+     * Sets HealthCheckSeverity
+     *
+     * @param string|null $HealthCheckSeverity HealthCheckSeverity
+     *
+     * @return self
+     */
+    public function setHealthCheckSeverity($HealthCheckSeverity)
+    {
+        if (is_null($HealthCheckSeverity)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckSeverity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckSeverity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckSeverity'] = $HealthCheckSeverity;
+
+        return $this;
+    }
+
+    /**
+     * Gets HealthCheckSubType
+     *
+     * @return string|null
+     */
+    public function getHealthCheckSubType()
+    {
+        if (!isset($this->container['HealthCheckSubType']) || is_null($this->container['HealthCheckSubType'])) {
+            return null;
+        }
+        return $this->container['HealthCheckSubType'];
+    }
+
+    /**
+     * Sets HealthCheckSubType
+     *
+     * @param string|null $HealthCheckSubType HealthCheckSubType
+     *
+     * @return self
+     */
+    public function setHealthCheckSubType($HealthCheckSubType)
+    {
+        if (is_null($HealthCheckSubType)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckSubType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckSubType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckSubType'] = $HealthCheckSubType;
 
         return $this;
     }

@@ -34,12 +34,12 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
+        'FeedLabel' => 'string',
+        'LocalInventoryAdsEnabled' => 'bool',
         'Priority' => 'int',
         'SalesCountryCode' => 'string',
-        'StoreId' => 'string',
-        'LocalInventoryAdsEnabled' => 'bool',
         'ShoppableAdsEnabled' => 'bool',
-        'FeedLabel' => 'string'
+        'StoreId' => 'string'
     ];
 
     /**
@@ -51,12 +51,12 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
       */
     protected static array $openAPIFormats = [
         'Type' => null,
+        'FeedLabel' => null,
+        'LocalInventoryAdsEnabled' => null,
         'Priority' => 'int32',
         'SalesCountryCode' => null,
-        'StoreId' => 'int64',
-        'LocalInventoryAdsEnabled' => null,
         'ShoppableAdsEnabled' => null,
-        'FeedLabel' => null
+        'StoreId' => 'int64'
     ];
 
     /**
@@ -66,12 +66,12 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
       */
     protected static array $openAPINullables = [
         'Type' => true,
+        'FeedLabel' => true,
+        'LocalInventoryAdsEnabled' => true,
         'Priority' => true,
         'SalesCountryCode' => true,
-        'StoreId' => true,
-        'LocalInventoryAdsEnabled' => true,
         'ShoppableAdsEnabled' => true,
-        'FeedLabel' => true
+        'StoreId' => true
     ];
 
     /**
@@ -161,12 +161,12 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
+        'FeedLabel' => 'FeedLabel',
+        'LocalInventoryAdsEnabled' => 'LocalInventoryAdsEnabled',
         'Priority' => 'Priority',
         'SalesCountryCode' => 'SalesCountryCode',
-        'StoreId' => 'StoreId',
-        'LocalInventoryAdsEnabled' => 'LocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'ShoppableAdsEnabled',
-        'FeedLabel' => 'FeedLabel'
+        'StoreId' => 'StoreId'
     ];
 
     /**
@@ -176,12 +176,12 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      */
     protected static array $setters = [
         'Type' => 'setType',
+        'FeedLabel' => 'setFeedLabel',
+        'LocalInventoryAdsEnabled' => 'setLocalInventoryAdsEnabled',
         'Priority' => 'setPriority',
         'SalesCountryCode' => 'setSalesCountryCode',
-        'StoreId' => 'setStoreId',
-        'LocalInventoryAdsEnabled' => 'setLocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'setShoppableAdsEnabled',
-        'FeedLabel' => 'setFeedLabel'
+        'StoreId' => 'setStoreId'
     ];
 
     /**
@@ -191,12 +191,12 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
      */
     protected static array $getters = [
         'Type' => 'getType',
+        'FeedLabel' => 'getFeedLabel',
+        'LocalInventoryAdsEnabled' => 'getLocalInventoryAdsEnabled',
         'Priority' => 'getPriority',
         'SalesCountryCode' => 'getSalesCountryCode',
-        'StoreId' => 'getStoreId',
-        'LocalInventoryAdsEnabled' => 'getLocalInventoryAdsEnabled',
         'ShoppableAdsEnabled' => 'getShoppableAdsEnabled',
-        'FeedLabel' => 'getFeedLabel'
+        'StoreId' => 'getStoreId'
     ];
 
     /**
@@ -257,12 +257,17 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('FeedLabel', $data ?? [], null);
+        $this->setIfExists('LocalInventoryAdsEnabled', $data ?? [], null);
         $this->setIfExists('Priority', $data ?? [], null);
         $this->setIfExists('SalesCountryCode', $data ?? [], null);
-        $this->setIfExists('StoreId', $data ?? [], null);
-        $this->setIfExists('LocalInventoryAdsEnabled', $data ?? [], null);
         $this->setIfExists('ShoppableAdsEnabled', $data ?? [], null);
-        $this->setIfExists('FeedLabel', $data ?? [], null);
+        $this->setIfExists('StoreId', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -345,6 +350,80 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets FeedLabel
+     *
+     * @return string|null
+     */
+    public function getFeedLabel()
+    {
+        if (!isset($this->container['FeedLabel']) || is_null($this->container['FeedLabel'])) {
+            return null;
+        }
+        return $this->container['FeedLabel'];
+    }
+
+    /**
+     * Sets FeedLabel
+     *
+     * @param string|null $FeedLabel FeedLabel
+     *
+     * @return self
+     */
+    public function setFeedLabel($FeedLabel)
+    {
+        if (is_null($FeedLabel)) {
+            array_push($this->openAPINullablesSetToNull, 'FeedLabel');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FeedLabel', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FeedLabel'] = $FeedLabel;
+
+        return $this;
+    }
+
+    /**
+     * Gets LocalInventoryAdsEnabled
+     *
+     * @return bool|null
+     */
+    public function getLocalInventoryAdsEnabled()
+    {
+        if (!isset($this->container['LocalInventoryAdsEnabled']) || is_null($this->container['LocalInventoryAdsEnabled'])) {
+            return null;
+        }
+        return $this->container['LocalInventoryAdsEnabled'];
+    }
+
+    /**
+     * Sets LocalInventoryAdsEnabled
+     *
+     * @param bool|null $LocalInventoryAdsEnabled LocalInventoryAdsEnabled
+     *
+     * @return self
+     */
+    public function setLocalInventoryAdsEnabled($LocalInventoryAdsEnabled)
+    {
+        if (is_null($LocalInventoryAdsEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'LocalInventoryAdsEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LocalInventoryAdsEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LocalInventoryAdsEnabled'] = $LocalInventoryAdsEnabled;
+
+        return $this;
+    }
+
+    /**
      * Gets Priority
      *
      * @return int|null
@@ -419,80 +498,6 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets StoreId
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
-            return null;
-        }
-        return $this->container['StoreId'];
-    }
-
-    /**
-     * Sets StoreId
-     *
-     * @param string|null $StoreId StoreId
-     *
-     * @return self
-     */
-    public function setStoreId($StoreId)
-    {
-        if (is_null($StoreId)) {
-            array_push($this->openAPINullablesSetToNull, 'StoreId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StoreId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StoreId'] = $StoreId;
-
-        return $this;
-    }
-
-    /**
-     * Gets LocalInventoryAdsEnabled
-     *
-     * @return bool|null
-     */
-    public function getLocalInventoryAdsEnabled()
-    {
-        if (!isset($this->container['LocalInventoryAdsEnabled']) || is_null($this->container['LocalInventoryAdsEnabled'])) {
-            return null;
-        }
-        return $this->container['LocalInventoryAdsEnabled'];
-    }
-
-    /**
-     * Sets LocalInventoryAdsEnabled
-     *
-     * @param bool|null $LocalInventoryAdsEnabled LocalInventoryAdsEnabled
-     *
-     * @return self
-     */
-    public function setLocalInventoryAdsEnabled($LocalInventoryAdsEnabled)
-    {
-        if (is_null($LocalInventoryAdsEnabled)) {
-            array_push($this->openAPINullablesSetToNull, 'LocalInventoryAdsEnabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LocalInventoryAdsEnabled', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LocalInventoryAdsEnabled'] = $LocalInventoryAdsEnabled;
-
-        return $this;
-    }
-
-    /**
      * Gets ShoppableAdsEnabled
      *
      * @return bool|null
@@ -530,38 +535,38 @@ class ShoppingSetting extends Setting implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets FeedLabel
+     * Gets StoreId
      *
      * @return string|null
      */
-    public function getFeedLabel()
+    public function getStoreId()
     {
-        if (!isset($this->container['FeedLabel']) || is_null($this->container['FeedLabel'])) {
+        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
             return null;
         }
-        return $this->container['FeedLabel'];
+        return $this->container['StoreId'];
     }
 
     /**
-     * Sets FeedLabel
+     * Sets StoreId
      *
-     * @param string|null $FeedLabel FeedLabel
+     * @param string|null $StoreId StoreId
      *
      * @return self
      */
-    public function setFeedLabel($FeedLabel)
+    public function setStoreId($StoreId)
     {
-        if (is_null($FeedLabel)) {
-            array_push($this->openAPINullablesSetToNull, 'FeedLabel');
+        if (is_null($StoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'StoreId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FeedLabel', $nullablesSetToNull);
+            $index = array_search('StoreId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['FeedLabel'] = $FeedLabel;
+        $this->container['StoreId'] = $StoreId;
 
         return $this;
     }

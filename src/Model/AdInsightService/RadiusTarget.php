@@ -344,7 +344,7 @@ class RadiusTarget implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($RadiusUnit)) {
             throw new \InvalidArgumentException('non-nullable RadiusUnit cannot be null');
         }
-        if (!$RadiusUnit instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\RadiusUnit) {
+        if (!is_null($RadiusUnit) && !$RadiusUnit instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\RadiusUnit) {
             $RadiusUnit = new \Microsoft\MsAds\Rest\Model\AdInsightService\RadiusUnit($RadiusUnit);
         }
         $this->container['RadiusUnit'] = $RadiusUnit;

@@ -57,18 +57,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
-        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
         'DevicePreference' => 'string',
         'Id' => 'string',
+        'Scheduling' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus',
         'Type' => 'string',
         'Version' => 'int',
-        'Address' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Address',
-        'GeoPoint' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint',
-        'GeoCodeStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus',
-        'CompanyName' => 'string',
-        'PhoneNumber' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Address' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Address',
+        'CompanyName' => 'string',
+        'GeoCodeStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus',
+        'GeoPoint' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint',
+        'PhoneNumber' => 'string',
         'CountryCode' => 'string',
         'IsCallOnly' => 'bool',
         'IsCallTrackingEnabled' => 'bool',
@@ -76,22 +76,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AlternativeText' => 'string',
         'Description' => 'string',
         'DestinationUrl' => 'string',
-        'ImageMediaIds' => 'string[]',
-        'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
-        'FinalUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
-        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
-        'Images' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
         'DisplayText' => 'string',
+        'FinalAppUrls' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppUrl[]',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrlSuffix' => 'string',
+        'FinalUrls' => 'string[]',
+        'ImageMediaIds' => 'string[]',
+        'Images' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
         'Layouts' => 'string[]',
         'SourceType' => 'string',
+        'TrackingUrlTemplate' => 'string',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
         'AppPlatform' => 'string',
         'AppStoreId' => 'string',
         'IsExact' => 'bool',
-        'Text' => 'string',
         'Source' => 'string',
+        'Text' => 'string',
         'Url' => 'string',
         'Description1' => 'string',
         'Description2' => 'string',
@@ -101,33 +101,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'Values' => 'string[]',
         'PriceExtensionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType',
         'TableRows' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceTableRow[]',
-        'PromotionItem' => 'string',
-        'DiscountModifier' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier',
-        'PercentOff' => 'float',
-        'MoneyAmountOff' => 'float',
-        'PromotionCode' => 'string',
-        'OrdersOverAmount' => 'float',
-        'PromotionStartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'PromotionEndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'PromotionOccasion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion',
         'CurrencyCode' => 'string',
+        'DiscountModifier' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier',
+        'MoneyAmountOff' => 'float',
+        'OrdersOverAmount' => 'float',
+        'PercentOff' => 'float',
+        'PromotionCode' => 'string',
+        'PromotionEndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'PromotionItem' => 'string',
+        'PromotionOccasion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion',
+        'PromotionStartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
         'AdExtensionHeaderType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionHeaderType',
         'Texts' => 'string[]',
         'FlyerName' => 'string',
-        'StoreId' => 'string',
         'ImageMediaUrls' => 'string[]',
-        'Name' => 'string',
+        'StoreId' => 'string',
         'ActionText' => 'string',
-        'VideoId' => 'string',
+        'Name' => 'string',
         'ThumbnailId' => 'string',
         'ThumbnailUrl' => 'string',
-        'Title' => 'string',
-        'PopupText' => 'string',
-        'LineText' => 'string',
+        'VideoId' => 'string',
         'DisclaimerLayout' => 'string',
-        'BusinessName' => 'string',
+        'LineText' => 'string',
+        'PopupText' => 'string',
+        'Title' => 'string',
         'BusinessLogo' => 'string',
         'BusinessLogoUrl' => 'string',
+        'BusinessName' => 'string',
         'DomainName' => 'string'
     ];
 
@@ -139,18 +139,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Scheduling' => null,
         'DevicePreference' => 'int64',
         'Id' => 'int64',
+        'Scheduling' => null,
+        'Status' => null,
         'Type' => null,
         'Version' => 'int32',
-        'Address' => null,
-        'GeoPoint' => null,
-        'GeoCodeStatus' => null,
-        'CompanyName' => null,
-        'PhoneNumber' => null,
         'ForwardCompatibilityMap' => null,
+        'Address' => null,
+        'CompanyName' => null,
+        'GeoCodeStatus' => null,
+        'GeoPoint' => null,
+        'PhoneNumber' => null,
         'CountryCode' => null,
         'IsCallOnly' => null,
         'IsCallTrackingEnabled' => null,
@@ -158,22 +158,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AlternativeText' => null,
         'Description' => null,
         'DestinationUrl' => null,
-        'ImageMediaIds' => 'int64',
-        'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'UrlCustomParameters' => null,
-        'FinalUrls' => null,
-        'FinalMobileUrls' => null,
-        'FinalAppUrls' => null,
-        'Images' => null,
         'DisplayText' => null,
+        'FinalAppUrls' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrlSuffix' => null,
+        'FinalUrls' => null,
+        'ImageMediaIds' => 'int64',
+        'Images' => null,
         'Layouts' => null,
         'SourceType' => null,
+        'TrackingUrlTemplate' => null,
+        'UrlCustomParameters' => null,
         'AppPlatform' => null,
         'AppStoreId' => null,
         'IsExact' => null,
-        'Text' => null,
         'Source' => null,
+        'Text' => null,
         'Url' => null,
         'Description1' => null,
         'Description2' => null,
@@ -183,33 +183,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'Values' => null,
         'PriceExtensionType' => null,
         'TableRows' => null,
-        'PromotionItem' => null,
-        'DiscountModifier' => null,
-        'PercentOff' => 'double',
-        'MoneyAmountOff' => 'double',
-        'PromotionCode' => null,
-        'OrdersOverAmount' => 'double',
-        'PromotionStartDate' => null,
-        'PromotionEndDate' => null,
-        'PromotionOccasion' => null,
         'CurrencyCode' => null,
+        'DiscountModifier' => null,
+        'MoneyAmountOff' => 'double',
+        'OrdersOverAmount' => 'double',
+        'PercentOff' => 'double',
+        'PromotionCode' => null,
+        'PromotionEndDate' => null,
+        'PromotionItem' => null,
+        'PromotionOccasion' => null,
+        'PromotionStartDate' => null,
         'AdExtensionHeaderType' => null,
         'Texts' => null,
         'FlyerName' => null,
-        'StoreId' => 'int64',
         'ImageMediaUrls' => null,
-        'Name' => null,
+        'StoreId' => 'int64',
         'ActionText' => null,
-        'VideoId' => 'int64',
+        'Name' => null,
         'ThumbnailId' => 'int64',
         'ThumbnailUrl' => null,
-        'Title' => null,
-        'PopupText' => null,
-        'LineText' => null,
+        'VideoId' => 'int64',
         'DisclaimerLayout' => null,
-        'BusinessName' => null,
+        'LineText' => null,
+        'PopupText' => null,
+        'Title' => null,
         'BusinessLogo' => 'int64',
         'BusinessLogoUrl' => null,
+        'BusinessName' => null,
         'DomainName' => null
     ];
 
@@ -219,18 +219,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => false,
-        'Scheduling' => true,
         'DevicePreference' => true,
         'Id' => true,
+        'Scheduling' => true,
+        'Status' => true,
         'Type' => true,
         'Version' => true,
-        'Address' => true,
-        'GeoPoint' => true,
-        'GeoCodeStatus' => false,
-        'CompanyName' => true,
-        'PhoneNumber' => true,
         'ForwardCompatibilityMap' => true,
+        'Address' => true,
+        'CompanyName' => true,
+        'GeoCodeStatus' => true,
+        'GeoPoint' => true,
+        'PhoneNumber' => true,
         'CountryCode' => true,
         'IsCallOnly' => true,
         'IsCallTrackingEnabled' => true,
@@ -238,22 +238,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AlternativeText' => true,
         'Description' => true,
         'DestinationUrl' => true,
-        'ImageMediaIds' => true,
-        'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'UrlCustomParameters' => true,
-        'FinalUrls' => true,
-        'FinalMobileUrls' => true,
-        'FinalAppUrls' => true,
-        'Images' => true,
         'DisplayText' => true,
+        'FinalAppUrls' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrlSuffix' => true,
+        'FinalUrls' => true,
+        'ImageMediaIds' => true,
+        'Images' => true,
         'Layouts' => true,
         'SourceType' => true,
+        'TrackingUrlTemplate' => true,
+        'UrlCustomParameters' => true,
         'AppPlatform' => true,
         'AppStoreId' => true,
         'IsExact' => false,
-        'Text' => true,
         'Source' => true,
+        'Text' => true,
         'Url' => true,
         'Description1' => true,
         'Description2' => true,
@@ -263,33 +263,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'Values' => true,
         'PriceExtensionType' => false,
         'TableRows' => true,
-        'PromotionItem' => true,
-        'DiscountModifier' => false,
-        'PercentOff' => true,
-        'MoneyAmountOff' => true,
-        'PromotionCode' => true,
-        'OrdersOverAmount' => true,
-        'PromotionStartDate' => true,
-        'PromotionEndDate' => true,
-        'PromotionOccasion' => false,
         'CurrencyCode' => true,
-        'AdExtensionHeaderType' => false,
+        'DiscountModifier' => true,
+        'MoneyAmountOff' => true,
+        'OrdersOverAmount' => true,
+        'PercentOff' => true,
+        'PromotionCode' => true,
+        'PromotionEndDate' => true,
+        'PromotionItem' => true,
+        'PromotionOccasion' => true,
+        'PromotionStartDate' => true,
+        'AdExtensionHeaderType' => true,
         'Texts' => true,
         'FlyerName' => true,
-        'StoreId' => true,
         'ImageMediaUrls' => true,
-        'Name' => true,
+        'StoreId' => true,
         'ActionText' => true,
-        'VideoId' => true,
+        'Name' => true,
         'ThumbnailId' => true,
         'ThumbnailUrl' => true,
-        'Title' => true,
-        'PopupText' => true,
-        'LineText' => true,
+        'VideoId' => true,
         'DisclaimerLayout' => true,
-        'BusinessName' => true,
+        'LineText' => true,
+        'PopupText' => true,
+        'Title' => true,
         'BusinessLogo' => true,
         'BusinessLogoUrl' => true,
+        'BusinessName' => true,
         'DomainName' => true
     ];
 
@@ -379,18 +379,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Scheduling' => 'Scheduling',
         'DevicePreference' => 'DevicePreference',
         'Id' => 'Id',
+        'Scheduling' => 'Scheduling',
+        'Status' => 'Status',
         'Type' => 'Type',
         'Version' => 'Version',
-        'Address' => 'Address',
-        'GeoPoint' => 'GeoPoint',
-        'GeoCodeStatus' => 'GeoCodeStatus',
-        'CompanyName' => 'CompanyName',
-        'PhoneNumber' => 'PhoneNumber',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Address' => 'Address',
+        'CompanyName' => 'CompanyName',
+        'GeoCodeStatus' => 'GeoCodeStatus',
+        'GeoPoint' => 'GeoPoint',
+        'PhoneNumber' => 'PhoneNumber',
         'CountryCode' => 'CountryCode',
         'IsCallOnly' => 'IsCallOnly',
         'IsCallTrackingEnabled' => 'IsCallTrackingEnabled',
@@ -398,22 +398,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AlternativeText' => 'AlternativeText',
         'Description' => 'Description',
         'DestinationUrl' => 'DestinationUrl',
-        'ImageMediaIds' => 'ImageMediaIds',
-        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'UrlCustomParameters' => 'UrlCustomParameters',
-        'FinalUrls' => 'FinalUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'FinalAppUrls' => 'FinalAppUrls',
-        'Images' => 'Images',
         'DisplayText' => 'DisplayText',
+        'FinalAppUrls' => 'FinalAppUrls',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'FinalUrls' => 'FinalUrls',
+        'ImageMediaIds' => 'ImageMediaIds',
+        'Images' => 'Images',
         'Layouts' => 'Layouts',
         'SourceType' => 'SourceType',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'UrlCustomParameters' => 'UrlCustomParameters',
         'AppPlatform' => 'AppPlatform',
         'AppStoreId' => 'AppStoreId',
         'IsExact' => 'IsExact',
-        'Text' => 'Text',
         'Source' => 'Source',
+        'Text' => 'Text',
         'Url' => 'Url',
         'Description1' => 'Description1',
         'Description2' => 'Description2',
@@ -423,33 +423,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'Values' => 'Values',
         'PriceExtensionType' => 'PriceExtensionType',
         'TableRows' => 'TableRows',
-        'PromotionItem' => 'PromotionItem',
-        'DiscountModifier' => 'DiscountModifier',
-        'PercentOff' => 'PercentOff',
-        'MoneyAmountOff' => 'MoneyAmountOff',
-        'PromotionCode' => 'PromotionCode',
-        'OrdersOverAmount' => 'OrdersOverAmount',
-        'PromotionStartDate' => 'PromotionStartDate',
-        'PromotionEndDate' => 'PromotionEndDate',
-        'PromotionOccasion' => 'PromotionOccasion',
         'CurrencyCode' => 'CurrencyCode',
+        'DiscountModifier' => 'DiscountModifier',
+        'MoneyAmountOff' => 'MoneyAmountOff',
+        'OrdersOverAmount' => 'OrdersOverAmount',
+        'PercentOff' => 'PercentOff',
+        'PromotionCode' => 'PromotionCode',
+        'PromotionEndDate' => 'PromotionEndDate',
+        'PromotionItem' => 'PromotionItem',
+        'PromotionOccasion' => 'PromotionOccasion',
+        'PromotionStartDate' => 'PromotionStartDate',
         'AdExtensionHeaderType' => 'AdExtensionHeaderType',
         'Texts' => 'Texts',
         'FlyerName' => 'FlyerName',
-        'StoreId' => 'StoreId',
         'ImageMediaUrls' => 'ImageMediaUrls',
-        'Name' => 'Name',
+        'StoreId' => 'StoreId',
         'ActionText' => 'ActionText',
-        'VideoId' => 'VideoId',
+        'Name' => 'Name',
         'ThumbnailId' => 'ThumbnailId',
         'ThumbnailUrl' => 'ThumbnailUrl',
-        'Title' => 'Title',
-        'PopupText' => 'PopupText',
-        'LineText' => 'LineText',
+        'VideoId' => 'VideoId',
         'DisclaimerLayout' => 'DisclaimerLayout',
-        'BusinessName' => 'BusinessName',
+        'LineText' => 'LineText',
+        'PopupText' => 'PopupText',
+        'Title' => 'Title',
         'BusinessLogo' => 'BusinessLogo',
         'BusinessLogoUrl' => 'BusinessLogoUrl',
+        'BusinessName' => 'BusinessName',
         'DomainName' => 'DomainName'
     ];
 
@@ -459,18 +459,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Scheduling' => 'setScheduling',
         'DevicePreference' => 'setDevicePreference',
         'Id' => 'setId',
+        'Scheduling' => 'setScheduling',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'Version' => 'setVersion',
-        'Address' => 'setAddress',
-        'GeoPoint' => 'setGeoPoint',
-        'GeoCodeStatus' => 'setGeoCodeStatus',
-        'CompanyName' => 'setCompanyName',
-        'PhoneNumber' => 'setPhoneNumber',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Address' => 'setAddress',
+        'CompanyName' => 'setCompanyName',
+        'GeoCodeStatus' => 'setGeoCodeStatus',
+        'GeoPoint' => 'setGeoPoint',
+        'PhoneNumber' => 'setPhoneNumber',
         'CountryCode' => 'setCountryCode',
         'IsCallOnly' => 'setIsCallOnly',
         'IsCallTrackingEnabled' => 'setIsCallTrackingEnabled',
@@ -478,22 +478,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AlternativeText' => 'setAlternativeText',
         'Description' => 'setDescription',
         'DestinationUrl' => 'setDestinationUrl',
-        'ImageMediaIds' => 'setImageMediaIds',
-        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
-        'FinalUrls' => 'setFinalUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'FinalAppUrls' => 'setFinalAppUrls',
-        'Images' => 'setImages',
         'DisplayText' => 'setDisplayText',
+        'FinalAppUrls' => 'setFinalAppUrls',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'FinalUrls' => 'setFinalUrls',
+        'ImageMediaIds' => 'setImageMediaIds',
+        'Images' => 'setImages',
         'Layouts' => 'setLayouts',
         'SourceType' => 'setSourceType',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'UrlCustomParameters' => 'setUrlCustomParameters',
         'AppPlatform' => 'setAppPlatform',
         'AppStoreId' => 'setAppStoreId',
         'IsExact' => 'setIsExact',
-        'Text' => 'setText',
         'Source' => 'setSource',
+        'Text' => 'setText',
         'Url' => 'setUrl',
         'Description1' => 'setDescription1',
         'Description2' => 'setDescription2',
@@ -503,33 +503,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'Values' => 'setValues',
         'PriceExtensionType' => 'setPriceExtensionType',
         'TableRows' => 'setTableRows',
-        'PromotionItem' => 'setPromotionItem',
-        'DiscountModifier' => 'setDiscountModifier',
-        'PercentOff' => 'setPercentOff',
-        'MoneyAmountOff' => 'setMoneyAmountOff',
-        'PromotionCode' => 'setPromotionCode',
-        'OrdersOverAmount' => 'setOrdersOverAmount',
-        'PromotionStartDate' => 'setPromotionStartDate',
-        'PromotionEndDate' => 'setPromotionEndDate',
-        'PromotionOccasion' => 'setPromotionOccasion',
         'CurrencyCode' => 'setCurrencyCode',
+        'DiscountModifier' => 'setDiscountModifier',
+        'MoneyAmountOff' => 'setMoneyAmountOff',
+        'OrdersOverAmount' => 'setOrdersOverAmount',
+        'PercentOff' => 'setPercentOff',
+        'PromotionCode' => 'setPromotionCode',
+        'PromotionEndDate' => 'setPromotionEndDate',
+        'PromotionItem' => 'setPromotionItem',
+        'PromotionOccasion' => 'setPromotionOccasion',
+        'PromotionStartDate' => 'setPromotionStartDate',
         'AdExtensionHeaderType' => 'setAdExtensionHeaderType',
         'Texts' => 'setTexts',
         'FlyerName' => 'setFlyerName',
-        'StoreId' => 'setStoreId',
         'ImageMediaUrls' => 'setImageMediaUrls',
-        'Name' => 'setName',
+        'StoreId' => 'setStoreId',
         'ActionText' => 'setActionText',
-        'VideoId' => 'setVideoId',
+        'Name' => 'setName',
         'ThumbnailId' => 'setThumbnailId',
         'ThumbnailUrl' => 'setThumbnailUrl',
-        'Title' => 'setTitle',
-        'PopupText' => 'setPopupText',
-        'LineText' => 'setLineText',
+        'VideoId' => 'setVideoId',
         'DisclaimerLayout' => 'setDisclaimerLayout',
-        'BusinessName' => 'setBusinessName',
+        'LineText' => 'setLineText',
+        'PopupText' => 'setPopupText',
+        'Title' => 'setTitle',
         'BusinessLogo' => 'setBusinessLogo',
         'BusinessLogoUrl' => 'setBusinessLogoUrl',
+        'BusinessName' => 'setBusinessName',
         'DomainName' => 'setDomainName'
     ];
 
@@ -539,18 +539,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Scheduling' => 'getScheduling',
         'DevicePreference' => 'getDevicePreference',
         'Id' => 'getId',
+        'Scheduling' => 'getScheduling',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'Version' => 'getVersion',
-        'Address' => 'getAddress',
-        'GeoPoint' => 'getGeoPoint',
-        'GeoCodeStatus' => 'getGeoCodeStatus',
-        'CompanyName' => 'getCompanyName',
-        'PhoneNumber' => 'getPhoneNumber',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Address' => 'getAddress',
+        'CompanyName' => 'getCompanyName',
+        'GeoCodeStatus' => 'getGeoCodeStatus',
+        'GeoPoint' => 'getGeoPoint',
+        'PhoneNumber' => 'getPhoneNumber',
         'CountryCode' => 'getCountryCode',
         'IsCallOnly' => 'getIsCallOnly',
         'IsCallTrackingEnabled' => 'getIsCallTrackingEnabled',
@@ -558,22 +558,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'AlternativeText' => 'getAlternativeText',
         'Description' => 'getDescription',
         'DestinationUrl' => 'getDestinationUrl',
-        'ImageMediaIds' => 'getImageMediaIds',
-        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
-        'FinalUrls' => 'getFinalUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'FinalAppUrls' => 'getFinalAppUrls',
-        'Images' => 'getImages',
         'DisplayText' => 'getDisplayText',
+        'FinalAppUrls' => 'getFinalAppUrls',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'FinalUrls' => 'getFinalUrls',
+        'ImageMediaIds' => 'getImageMediaIds',
+        'Images' => 'getImages',
         'Layouts' => 'getLayouts',
         'SourceType' => 'getSourceType',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'UrlCustomParameters' => 'getUrlCustomParameters',
         'AppPlatform' => 'getAppPlatform',
         'AppStoreId' => 'getAppStoreId',
         'IsExact' => 'getIsExact',
-        'Text' => 'getText',
         'Source' => 'getSource',
+        'Text' => 'getText',
         'Url' => 'getUrl',
         'Description1' => 'getDescription1',
         'Description2' => 'getDescription2',
@@ -583,33 +583,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         'Values' => 'getValues',
         'PriceExtensionType' => 'getPriceExtensionType',
         'TableRows' => 'getTableRows',
-        'PromotionItem' => 'getPromotionItem',
-        'DiscountModifier' => 'getDiscountModifier',
-        'PercentOff' => 'getPercentOff',
-        'MoneyAmountOff' => 'getMoneyAmountOff',
-        'PromotionCode' => 'getPromotionCode',
-        'OrdersOverAmount' => 'getOrdersOverAmount',
-        'PromotionStartDate' => 'getPromotionStartDate',
-        'PromotionEndDate' => 'getPromotionEndDate',
-        'PromotionOccasion' => 'getPromotionOccasion',
         'CurrencyCode' => 'getCurrencyCode',
+        'DiscountModifier' => 'getDiscountModifier',
+        'MoneyAmountOff' => 'getMoneyAmountOff',
+        'OrdersOverAmount' => 'getOrdersOverAmount',
+        'PercentOff' => 'getPercentOff',
+        'PromotionCode' => 'getPromotionCode',
+        'PromotionEndDate' => 'getPromotionEndDate',
+        'PromotionItem' => 'getPromotionItem',
+        'PromotionOccasion' => 'getPromotionOccasion',
+        'PromotionStartDate' => 'getPromotionStartDate',
         'AdExtensionHeaderType' => 'getAdExtensionHeaderType',
         'Texts' => 'getTexts',
         'FlyerName' => 'getFlyerName',
-        'StoreId' => 'getStoreId',
         'ImageMediaUrls' => 'getImageMediaUrls',
-        'Name' => 'getName',
+        'StoreId' => 'getStoreId',
         'ActionText' => 'getActionText',
-        'VideoId' => 'getVideoId',
+        'Name' => 'getName',
         'ThumbnailId' => 'getThumbnailId',
         'ThumbnailUrl' => 'getThumbnailUrl',
-        'Title' => 'getTitle',
-        'PopupText' => 'getPopupText',
-        'LineText' => 'getLineText',
+        'VideoId' => 'getVideoId',
         'DisclaimerLayout' => 'getDisclaimerLayout',
-        'BusinessName' => 'getBusinessName',
+        'LineText' => 'getLineText',
+        'PopupText' => 'getPopupText',
+        'Title' => 'getTitle',
         'BusinessLogo' => 'getBusinessLogo',
         'BusinessLogoUrl' => 'getBusinessLogoUrl',
+        'BusinessName' => 'getBusinessName',
         'DomainName' => 'getDomainName'
     ];
 
@@ -670,18 +670,18 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scheduling', $data ?? [], null);
         $this->setIfExists('DevicePreference', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Scheduling', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Version', $data ?? [], null);
-        $this->setIfExists('Address', $data ?? [], null);
-        $this->setIfExists('GeoPoint', $data ?? [], null);
-        $this->setIfExists('GeoCodeStatus', $data ?? [], null);
-        $this->setIfExists('CompanyName', $data ?? [], null);
-        $this->setIfExists('PhoneNumber', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Address', $data ?? [], null);
+        $this->setIfExists('CompanyName', $data ?? [], null);
+        $this->setIfExists('GeoCodeStatus', $data ?? [], null);
+        $this->setIfExists('GeoPoint', $data ?? [], null);
+        $this->setIfExists('PhoneNumber', $data ?? [], null);
         $this->setIfExists('CountryCode', $data ?? [], null);
         $this->setIfExists('IsCallOnly', $data ?? [], null);
         $this->setIfExists('IsCallTrackingEnabled', $data ?? [], null);
@@ -689,22 +689,22 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('AlternativeText', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
         $this->setIfExists('DestinationUrl', $data ?? [], null);
-        $this->setIfExists('ImageMediaIds', $data ?? [], null);
-        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('FinalAppUrls', $data ?? [], null);
-        $this->setIfExists('Images', $data ?? [], null);
         $this->setIfExists('DisplayText', $data ?? [], null);
+        $this->setIfExists('FinalAppUrls', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('ImageMediaIds', $data ?? [], null);
+        $this->setIfExists('Images', $data ?? [], null);
         $this->setIfExists('Layouts', $data ?? [], null);
         $this->setIfExists('SourceType', $data ?? [], null);
+        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
         $this->setIfExists('AppPlatform', $data ?? [], null);
         $this->setIfExists('AppStoreId', $data ?? [], null);
         $this->setIfExists('IsExact', $data ?? [], null);
-        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Source', $data ?? [], null);
+        $this->setIfExists('Text', $data ?? [], null);
         $this->setIfExists('Url', $data ?? [], null);
         $this->setIfExists('Description1', $data ?? [], null);
         $this->setIfExists('Description2', $data ?? [], null);
@@ -714,33 +714,33 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('Values', $data ?? [], null);
         $this->setIfExists('PriceExtensionType', $data ?? [], null);
         $this->setIfExists('TableRows', $data ?? [], null);
-        $this->setIfExists('PromotionItem', $data ?? [], null);
-        $this->setIfExists('DiscountModifier', $data ?? [], null);
-        $this->setIfExists('PercentOff', $data ?? [], null);
-        $this->setIfExists('MoneyAmountOff', $data ?? [], null);
-        $this->setIfExists('PromotionCode', $data ?? [], null);
-        $this->setIfExists('OrdersOverAmount', $data ?? [], null);
-        $this->setIfExists('PromotionStartDate', $data ?? [], null);
-        $this->setIfExists('PromotionEndDate', $data ?? [], null);
-        $this->setIfExists('PromotionOccasion', $data ?? [], null);
         $this->setIfExists('CurrencyCode', $data ?? [], null);
+        $this->setIfExists('DiscountModifier', $data ?? [], null);
+        $this->setIfExists('MoneyAmountOff', $data ?? [], null);
+        $this->setIfExists('OrdersOverAmount', $data ?? [], null);
+        $this->setIfExists('PercentOff', $data ?? [], null);
+        $this->setIfExists('PromotionCode', $data ?? [], null);
+        $this->setIfExists('PromotionEndDate', $data ?? [], null);
+        $this->setIfExists('PromotionItem', $data ?? [], null);
+        $this->setIfExists('PromotionOccasion', $data ?? [], null);
+        $this->setIfExists('PromotionStartDate', $data ?? [], null);
         $this->setIfExists('AdExtensionHeaderType', $data ?? [], null);
         $this->setIfExists('Texts', $data ?? [], null);
         $this->setIfExists('FlyerName', $data ?? [], null);
-        $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('ImageMediaUrls', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('StoreId', $data ?? [], null);
         $this->setIfExists('ActionText', $data ?? [], null);
-        $this->setIfExists('VideoId', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('ThumbnailId', $data ?? [], null);
         $this->setIfExists('ThumbnailUrl', $data ?? [], null);
-        $this->setIfExists('Title', $data ?? [], null);
-        $this->setIfExists('PopupText', $data ?? [], null);
-        $this->setIfExists('LineText', $data ?? [], null);
+        $this->setIfExists('VideoId', $data ?? [], null);
         $this->setIfExists('DisclaimerLayout', $data ?? [], null);
-        $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('LineText', $data ?? [], null);
+        $this->setIfExists('PopupText', $data ?? [], null);
+        $this->setIfExists('Title', $data ?? [], null);
         $this->setIfExists('BusinessLogo', $data ?? [], null);
         $this->setIfExists('BusinessLogoUrl', $data ?? [], null);
+        $this->setIfExists('BusinessName', $data ?? [], null);
         $this->setIfExists('DomainName', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
@@ -788,79 +788,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scheduling
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
-     */
-    public function getScheduling()
-    {
-        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
-            return null;
-        }
-        return $this->container['Scheduling'];
-    }
-
-    /**
-     * Sets Scheduling
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
-     *
-     * @return self
-     */
-    public function setScheduling($Scheduling)
-    {
-        if (is_null($Scheduling)) {
-            array_push($this->openAPINullablesSetToNull, 'Scheduling');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Scheduling', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Scheduling'] = $Scheduling;
-
-        return $this;
-    }
 
     /**
      * Gets DevicePreference
@@ -932,6 +859,86 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Scheduling
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null
+     */
+    public function getScheduling()
+    {
+        if (!isset($this->container['Scheduling']) || is_null($this->container['Scheduling'])) {
+            return null;
+        }
+        return $this->container['Scheduling'];
+    }
+
+    /**
+     * Sets Scheduling
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Schedule|null $Scheduling Scheduling
+     *
+     * @return self
+     */
+    public function setScheduling($Scheduling)
+    {
+        if (is_null($Scheduling)) {
+            array_push($this->openAPINullablesSetToNull, 'Scheduling');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Scheduling', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Scheduling'] = $Scheduling;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -1011,6 +1018,43 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
      * Gets Address
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Address|null
@@ -1043,79 +1087,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Address'] = $Address;
-
-        return $this;
-    }
-
-    /**
-     * Gets GeoPoint
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null
-     */
-    public function getGeoPoint()
-    {
-        if (!isset($this->container['GeoPoint']) || is_null($this->container['GeoPoint'])) {
-            return null;
-        }
-        return $this->container['GeoPoint'];
-    }
-
-    /**
-     * Sets GeoPoint
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null $GeoPoint GeoPoint
-     *
-     * @return self
-     */
-    public function setGeoPoint($GeoPoint)
-    {
-        if (is_null($GeoPoint)) {
-            array_push($this->openAPINullablesSetToNull, 'GeoPoint');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('GeoPoint', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['GeoPoint'] = $GeoPoint;
-
-        return $this;
-    }
-
-    /**
-     * Gets GeoCodeStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null
-     */
-    public function getGeoCodeStatus()
-    {
-        if (!isset($this->container['GeoCodeStatus']) || is_null($this->container['GeoCodeStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['GeoCodeStatus']) || is_string($this->container['GeoCodeStatus'])) && method_exists($this->container['GeoCodeStatus'], 'getValue')) {
-            return $this->container['GeoCodeStatus']->getValue();
-        }
-        return $this->container['GeoCodeStatus'];
-    }
-
-    /**
-     * Sets GeoCodeStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null $GeoCodeStatus GeoCodeStatus
-     *
-     * @return self
-     */
-    public function setGeoCodeStatus($GeoCodeStatus)
-    {
-        if (is_null($GeoCodeStatus)) {
-            throw new \InvalidArgumentException('non-nullable GeoCodeStatus cannot be null');
-        }
-        if (!$GeoCodeStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus) {
-            $GeoCodeStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus($GeoCodeStatus);
-        }
-        $this->container['GeoCodeStatus'] = $GeoCodeStatus;
 
         return $this;
     }
@@ -1158,6 +1129,86 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets GeoCodeStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null
+     */
+    public function getGeoCodeStatus()
+    {
+        if (!isset($this->container['GeoCodeStatus']) || is_null($this->container['GeoCodeStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['GeoCodeStatus']) || is_string($this->container['GeoCodeStatus'])) && method_exists($this->container['GeoCodeStatus'], 'getValue')) {
+            return $this->container['GeoCodeStatus']->getValue();
+        }
+        return $this->container['GeoCodeStatus'];
+    }
+
+    /**
+     * Sets GeoCodeStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus|mixed|null $GeoCodeStatus GeoCodeStatus
+     *
+     * @return self
+     */
+    public function setGeoCodeStatus($GeoCodeStatus)
+    {
+        if (is_null($GeoCodeStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'GeoCodeStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GeoCodeStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($GeoCodeStatus) && !$GeoCodeStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus) {
+            $GeoCodeStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BusinessGeoCodeStatus($GeoCodeStatus);
+        }
+        $this->container['GeoCodeStatus'] = $GeoCodeStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets GeoPoint
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null
+     */
+    public function getGeoPoint()
+    {
+        if (!isset($this->container['GeoPoint']) || is_null($this->container['GeoPoint'])) {
+            return null;
+        }
+        return $this->container['GeoPoint'];
+    }
+
+    /**
+     * Sets GeoPoint
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GeoPoint|null $GeoPoint GeoPoint
+     *
+     * @return self
+     */
+    public function setGeoPoint($GeoPoint)
+    {
+        if (is_null($GeoPoint)) {
+            array_push($this->openAPINullablesSetToNull, 'GeoPoint');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GeoPoint', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['GeoPoint'] = $GeoPoint;
+
+        return $this;
+    }
+
+    /**
      * Gets PhoneNumber
      *
      * @return string|null
@@ -1190,43 +1241,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['PhoneNumber'] = $PhoneNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -1491,223 +1505,38 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ImageMediaIds
-     *
-     * @return string[]|null
-     */
-    public function getImageMediaIds()
-    {
-        if (!isset($this->container['ImageMediaIds']) || is_null($this->container['ImageMediaIds'])) {
-            return null;
-        }
-        return $this->container['ImageMediaIds'];
-    }
-
-    /**
-     * Sets ImageMediaIds
-     *
-     * @param string[]|null $ImageMediaIds ImageMediaIds
-     *
-     * @return self
-     */
-    public function setImageMediaIds($ImageMediaIds)
-    {
-        if (is_null($ImageMediaIds)) {
-            array_push($this->openAPINullablesSetToNull, 'ImageMediaIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ImageMediaIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ImageMediaIds'] = $ImageMediaIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrackingUrlTemplate
+     * Gets DisplayText
      *
      * @return string|null
      */
-    public function getTrackingUrlTemplate()
+    public function getDisplayText()
     {
-        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+        if (!isset($this->container['DisplayText']) || is_null($this->container['DisplayText'])) {
             return null;
         }
-        return $this->container['TrackingUrlTemplate'];
+        return $this->container['DisplayText'];
     }
 
     /**
-     * Sets TrackingUrlTemplate
+     * Sets DisplayText
      *
-     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     * @param string|null $DisplayText DisplayText
      *
      * @return self
      */
-    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    public function setDisplayText($DisplayText)
     {
-        if (is_null($TrackingUrlTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        if (is_null($DisplayText)) {
+            array_push($this->openAPINullablesSetToNull, 'DisplayText');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            $index = array_search('DisplayText', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrlSuffix
-     *
-     * @return string|null
-     */
-    public function getFinalUrlSuffix()
-    {
-        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
-            return null;
-        }
-        return $this->container['FinalUrlSuffix'];
-    }
-
-    /**
-     * Sets FinalUrlSuffix
-     *
-     * @param string|null $FinalUrlSuffix FinalUrlSuffix
-     *
-     * @return self
-     */
-    public function setFinalUrlSuffix($FinalUrlSuffix)
-    {
-        if (is_null($FinalUrlSuffix)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
-
-        return $this;
-    }
-
-    /**
-     * Gets UrlCustomParameters
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
-     */
-    public function getUrlCustomParameters()
-    {
-        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
-            return null;
-        }
-        return $this->container['UrlCustomParameters'];
-    }
-
-    /**
-     * Sets UrlCustomParameters
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
-     *
-     * @return self
-     */
-    public function setUrlCustomParameters($UrlCustomParameters)
-    {
-        if (is_null($UrlCustomParameters)) {
-            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets FinalMobileUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalMobileUrls()
-    {
-        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
-            return null;
-        }
-        return $this->container['FinalMobileUrls'];
-    }
-
-    /**
-     * Sets FinalMobileUrls
-     *
-     * @param string[]|null $FinalMobileUrls FinalMobileUrls
-     *
-     * @return self
-     */
-    public function setFinalMobileUrls($FinalMobileUrls)
-    {
-        if (is_null($FinalMobileUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+        $this->container['DisplayText'] = $DisplayText;
 
         return $this;
     }
@@ -1750,6 +1579,154 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets FinalMobileUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalMobileUrls()
+    {
+        if (!isset($this->container['FinalMobileUrls']) || is_null($this->container['FinalMobileUrls'])) {
+            return null;
+        }
+        return $this->container['FinalMobileUrls'];
+    }
+
+    /**
+     * Sets FinalMobileUrls
+     *
+     * @param string[]|null $FinalMobileUrls FinalMobileUrls
+     *
+     * @return self
+     */
+    public function setFinalMobileUrls($FinalMobileUrls)
+    {
+        if (is_null($FinalMobileUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalMobileUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalMobileUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalMobileUrls'] = $FinalMobileUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrlSuffix
+     *
+     * @return string|null
+     */
+    public function getFinalUrlSuffix()
+    {
+        if (!isset($this->container['FinalUrlSuffix']) || is_null($this->container['FinalUrlSuffix'])) {
+            return null;
+        }
+        return $this->container['FinalUrlSuffix'];
+    }
+
+    /**
+     * Sets FinalUrlSuffix
+     *
+     * @param string|null $FinalUrlSuffix FinalUrlSuffix
+     *
+     * @return self
+     */
+    public function setFinalUrlSuffix($FinalUrlSuffix)
+    {
+        if (is_null($FinalUrlSuffix)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrlSuffix');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrlSuffix', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrlSuffix'] = $FinalUrlSuffix;
+
+        return $this;
+    }
+
+    /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets ImageMediaIds
+     *
+     * @return string[]|null
+     */
+    public function getImageMediaIds()
+    {
+        if (!isset($this->container['ImageMediaIds']) || is_null($this->container['ImageMediaIds'])) {
+            return null;
+        }
+        return $this->container['ImageMediaIds'];
+    }
+
+    /**
+     * Sets ImageMediaIds
+     *
+     * @param string[]|null $ImageMediaIds ImageMediaIds
+     *
+     * @return self
+     */
+    public function setImageMediaIds($ImageMediaIds)
+    {
+        if (is_null($ImageMediaIds)) {
+            array_push($this->openAPINullablesSetToNull, 'ImageMediaIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ImageMediaIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ImageMediaIds'] = $ImageMediaIds;
+
+        return $this;
+    }
+
+    /**
      * Gets Images
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
@@ -1782,43 +1759,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Images'] = $Images;
-
-        return $this;
-    }
-
-    /**
-     * Gets DisplayText
-     *
-     * @return string|null
-     */
-    public function getDisplayText()
-    {
-        if (!isset($this->container['DisplayText']) || is_null($this->container['DisplayText'])) {
-            return null;
-        }
-        return $this->container['DisplayText'];
-    }
-
-    /**
-     * Sets DisplayText
-     *
-     * @param string|null $DisplayText DisplayText
-     *
-     * @return self
-     */
-    public function setDisplayText($DisplayText)
-    {
-        if (is_null($DisplayText)) {
-            array_push($this->openAPINullablesSetToNull, 'DisplayText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DisplayText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DisplayText'] = $DisplayText;
 
         return $this;
     }
@@ -1893,6 +1833,80 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['SourceType'] = $SourceType;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingUrlTemplate
+     *
+     * @return string|null
+     */
+    public function getTrackingUrlTemplate()
+    {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+            return null;
+        }
+        return $this->container['TrackingUrlTemplate'];
+    }
+
+    /**
+     * Sets TrackingUrlTemplate
+     *
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     *
+     * @return self
+     */
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    {
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+
+        return $this;
+    }
+
+    /**
+     * Gets UrlCustomParameters
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
+     */
+    public function getUrlCustomParameters()
+    {
+        if (!isset($this->container['UrlCustomParameters']) || is_null($this->container['UrlCustomParameters'])) {
+            return null;
+        }
+        return $this->container['UrlCustomParameters'];
+    }
+
+    /**
+     * Sets UrlCustomParameters
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null $UrlCustomParameters UrlCustomParameters
+     *
+     * @return self
+     */
+    public function setUrlCustomParameters($UrlCustomParameters)
+    {
+        if (is_null($UrlCustomParameters)) {
+            array_push($this->openAPINullablesSetToNull, 'UrlCustomParameters');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UrlCustomParameters', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UrlCustomParameters'] = $UrlCustomParameters;
 
         return $this;
     }
@@ -2002,43 +2016,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
-            return null;
-        }
-        return $this->container['Text'];
-    }
-
-    /**
-     * Sets Text
-     *
-     * @param string|null $Text Text
-     *
-     * @return self
-     */
-    public function setText($Text)
-    {
-        if (is_null($Text)) {
-            array_push($this->openAPINullablesSetToNull, 'Text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Text', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Text'] = $Text;
-
-        return $this;
-    }
-
-    /**
      * Gets Source
      *
      * @return string|null
@@ -2071,6 +2048,43 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Source'] = $Source;
+
+        return $this;
+    }
+
+    /**
+     * Gets Text
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        if (!isset($this->container['Text']) || is_null($this->container['Text'])) {
+            return null;
+        }
+        return $this->container['Text'];
+    }
+
+    /**
+     * Sets Text
+     *
+     * @param string|null $Text Text
+     *
+     * @return self
+     */
+    public function setText($Text)
+    {
+        if (is_null($Text)) {
+            array_push($this->openAPINullablesSetToNull, 'Text');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Text', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Text'] = $Text;
 
         return $this;
     }
@@ -2214,7 +2228,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($ActionType)) {
             throw new \InvalidArgumentException('non-nullable ActionType cannot be null');
         }
-        if (!$ActionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ActionAdExtensionActionType) {
+        if (!is_null($ActionType) && !$ActionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ActionAdExtensionActionType) {
             $ActionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ActionAdExtensionActionType($ActionType);
         }
         $this->container['ActionType'] = $ActionType;
@@ -2361,7 +2375,7 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($PriceExtensionType)) {
             throw new \InvalidArgumentException('non-nullable PriceExtensionType cannot be null');
         }
-        if (!$PriceExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType) {
+        if (!is_null($PriceExtensionType) && !$PriceExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType) {
             $PriceExtensionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceExtensionType($PriceExtensionType);
         }
         $this->container['PriceExtensionType'] = $PriceExtensionType;
@@ -2407,38 +2421,38 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets PromotionItem
+     * Gets CurrencyCode
      *
      * @return string|null
      */
-    public function getPromotionItem()
+    public function getCurrencyCode()
     {
-        if (!isset($this->container['PromotionItem']) || is_null($this->container['PromotionItem'])) {
+        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
             return null;
         }
-        return $this->container['PromotionItem'];
+        return $this->container['CurrencyCode'];
     }
 
     /**
-     * Sets PromotionItem
+     * Sets CurrencyCode
      *
-     * @param string|null $PromotionItem PromotionItem
+     * @param string|null $CurrencyCode CurrencyCode
      *
      * @return self
      */
-    public function setPromotionItem($PromotionItem)
+    public function setCurrencyCode($CurrencyCode)
     {
-        if (is_null($PromotionItem)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionItem');
+        if (is_null($CurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionItem', $nullablesSetToNull);
+            $index = array_search('CurrencyCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PromotionItem'] = $PromotionItem;
+        $this->container['CurrencyCode'] = $CurrencyCode;
 
         return $this;
     }
@@ -2469,49 +2483,19 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDiscountModifier($DiscountModifier)
     {
         if (is_null($DiscountModifier)) {
-            throw new \InvalidArgumentException('non-nullable DiscountModifier cannot be null');
-        }
-        if (!$DiscountModifier instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier) {
-            $DiscountModifier = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier($DiscountModifier);
-        }
-        $this->container['DiscountModifier'] = $DiscountModifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets PercentOff
-     *
-     * @return float|null
-     */
-    public function getPercentOff()
-    {
-        if (!isset($this->container['PercentOff']) || is_null($this->container['PercentOff'])) {
-            return null;
-        }
-        return $this->container['PercentOff'];
-    }
-
-    /**
-     * Sets PercentOff
-     *
-     * @param float|null $PercentOff PercentOff
-     *
-     * @return self
-     */
-    public function setPercentOff($PercentOff)
-    {
-        if (is_null($PercentOff)) {
-            array_push($this->openAPINullablesSetToNull, 'PercentOff');
+            array_push($this->openAPINullablesSetToNull, 'DiscountModifier');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PercentOff', $nullablesSetToNull);
+            $index = array_search('DiscountModifier', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PercentOff'] = $PercentOff;
+        if (!is_null($DiscountModifier) && !$DiscountModifier instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier) {
+            $DiscountModifier = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionDiscountModifier($DiscountModifier);
+        }
+        $this->container['DiscountModifier'] = $DiscountModifier;
 
         return $this;
     }
@@ -2554,43 +2538,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets PromotionCode
-     *
-     * @return string|null
-     */
-    public function getPromotionCode()
-    {
-        if (!isset($this->container['PromotionCode']) || is_null($this->container['PromotionCode'])) {
-            return null;
-        }
-        return $this->container['PromotionCode'];
-    }
-
-    /**
-     * Sets PromotionCode
-     *
-     * @param string|null $PromotionCode PromotionCode
-     *
-     * @return self
-     */
-    public function setPromotionCode($PromotionCode)
-    {
-        if (is_null($PromotionCode)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PromotionCode'] = $PromotionCode;
-
-        return $this;
-    }
-
-    /**
      * Gets OrdersOverAmount
      *
      * @return float|null
@@ -2628,38 +2575,75 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets PromotionStartDate
+     * Gets PercentOff
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     * @return float|null
      */
-    public function getPromotionStartDate()
+    public function getPercentOff()
     {
-        if (!isset($this->container['PromotionStartDate']) || is_null($this->container['PromotionStartDate'])) {
+        if (!isset($this->container['PercentOff']) || is_null($this->container['PercentOff'])) {
             return null;
         }
-        return $this->container['PromotionStartDate'];
+        return $this->container['PercentOff'];
     }
 
     /**
-     * Sets PromotionStartDate
+     * Sets PercentOff
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $PromotionStartDate PromotionStartDate
+     * @param float|null $PercentOff PercentOff
      *
      * @return self
      */
-    public function setPromotionStartDate($PromotionStartDate)
+    public function setPercentOff($PercentOff)
     {
-        if (is_null($PromotionStartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'PromotionStartDate');
+        if (is_null($PercentOff)) {
+            array_push($this->openAPINullablesSetToNull, 'PercentOff');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PromotionStartDate', $nullablesSetToNull);
+            $index = array_search('PercentOff', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['PromotionStartDate'] = $PromotionStartDate;
+        $this->container['PercentOff'] = $PercentOff;
+
+        return $this;
+    }
+
+    /**
+     * Gets PromotionCode
+     *
+     * @return string|null
+     */
+    public function getPromotionCode()
+    {
+        if (!isset($this->container['PromotionCode']) || is_null($this->container['PromotionCode'])) {
+            return null;
+        }
+        return $this->container['PromotionCode'];
+    }
+
+    /**
+     * Sets PromotionCode
+     *
+     * @param string|null $PromotionCode PromotionCode
+     *
+     * @return self
+     */
+    public function setPromotionCode($PromotionCode)
+    {
+        if (is_null($PromotionCode)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionCode'] = $PromotionCode;
 
         return $this;
     }
@@ -2702,6 +2686,43 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets PromotionItem
+     *
+     * @return string|null
+     */
+    public function getPromotionItem()
+    {
+        if (!isset($this->container['PromotionItem']) || is_null($this->container['PromotionItem'])) {
+            return null;
+        }
+        return $this->container['PromotionItem'];
+    }
+
+    /**
+     * Sets PromotionItem
+     *
+     * @param string|null $PromotionItem PromotionItem
+     *
+     * @return self
+     */
+    public function setPromotionItem($PromotionItem)
+    {
+        if (is_null($PromotionItem)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionItem');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionItem', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PromotionItem'] = $PromotionItem;
+
+        return $this;
+    }
+
+    /**
      * Gets PromotionOccasion
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion|mixed|null
@@ -2727,9 +2748,16 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPromotionOccasion($PromotionOccasion)
     {
         if (is_null($PromotionOccasion)) {
-            throw new \InvalidArgumentException('non-nullable PromotionOccasion cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'PromotionOccasion');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PromotionOccasion', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$PromotionOccasion instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion) {
+        if (!is_null($PromotionOccasion) && !$PromotionOccasion instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion) {
             $PromotionOccasion = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PromotionOccasion($PromotionOccasion);
         }
         $this->container['PromotionOccasion'] = $PromotionOccasion;
@@ -2738,38 +2766,38 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets CurrencyCode
+     * Gets PromotionStartDate
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
      */
-    public function getCurrencyCode()
+    public function getPromotionStartDate()
     {
-        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
+        if (!isset($this->container['PromotionStartDate']) || is_null($this->container['PromotionStartDate'])) {
             return null;
         }
-        return $this->container['CurrencyCode'];
+        return $this->container['PromotionStartDate'];
     }
 
     /**
-     * Sets CurrencyCode
+     * Sets PromotionStartDate
      *
-     * @param string|null $CurrencyCode CurrencyCode
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $PromotionStartDate PromotionStartDate
      *
      * @return self
      */
-    public function setCurrencyCode($CurrencyCode)
+    public function setPromotionStartDate($PromotionStartDate)
     {
-        if (is_null($CurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
+        if (is_null($PromotionStartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'PromotionStartDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CurrencyCode', $nullablesSetToNull);
+            $index = array_search('PromotionStartDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CurrencyCode'] = $CurrencyCode;
+        $this->container['PromotionStartDate'] = $PromotionStartDate;
 
         return $this;
     }
@@ -2800,9 +2828,16 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdExtensionHeaderType($AdExtensionHeaderType)
     {
         if (is_null($AdExtensionHeaderType)) {
-            throw new \InvalidArgumentException('non-nullable AdExtensionHeaderType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AdExtensionHeaderType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdExtensionHeaderType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdExtensionHeaderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionHeaderType) {
+        if (!is_null($AdExtensionHeaderType) && !$AdExtensionHeaderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionHeaderType) {
             $AdExtensionHeaderType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionHeaderType($AdExtensionHeaderType);
         }
         $this->container['AdExtensionHeaderType'] = $AdExtensionHeaderType;
@@ -2885,43 +2920,6 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets StoreId
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
-            return null;
-        }
-        return $this->container['StoreId'];
-    }
-
-    /**
-     * Sets StoreId
-     *
-     * @param string|null $StoreId StoreId
-     *
-     * @return self
-     */
-    public function setStoreId($StoreId)
-    {
-        if (is_null($StoreId)) {
-            array_push($this->openAPINullablesSetToNull, 'StoreId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StoreId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StoreId'] = $StoreId;
-
-        return $this;
-    }
-
-    /**
      * Gets ImageMediaUrls
      *
      * @return string[]|null
@@ -2959,38 +2957,38 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Name
+     * Gets StoreId
      *
      * @return string|null
      */
-    public function getName()
+    public function getStoreId()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['StoreId']) || is_null($this->container['StoreId'])) {
             return null;
         }
-        return $this->container['Name'];
+        return $this->container['StoreId'];
     }
 
     /**
-     * Sets Name
+     * Sets StoreId
      *
-     * @param string|null $Name Name
+     * @param string|null $StoreId StoreId
      *
      * @return self
      */
-    public function setName($Name)
+    public function setStoreId($StoreId)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($StoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'StoreId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('StoreId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
+        $this->container['StoreId'] = $StoreId;
 
         return $this;
     }
@@ -3033,38 +3031,38 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets VideoId
+     * Gets Name
      *
      * @return string|null
      */
-    public function getVideoId()
+    public function getName()
     {
-        if (!isset($this->container['VideoId']) || is_null($this->container['VideoId'])) {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
             return null;
         }
-        return $this->container['VideoId'];
+        return $this->container['Name'];
     }
 
     /**
-     * Sets VideoId
+     * Sets Name
      *
-     * @param string|null $VideoId VideoId
+     * @param string|null $Name Name
      *
      * @return self
      */
-    public function setVideoId($VideoId)
+    public function setName($Name)
     {
-        if (is_null($VideoId)) {
-            array_push($this->openAPINullablesSetToNull, 'VideoId');
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('VideoId', $nullablesSetToNull);
+            $index = array_search('Name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['VideoId'] = $VideoId;
+        $this->container['Name'] = $Name;
 
         return $this;
     }
@@ -3144,112 +3142,38 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Title
+     * Gets VideoId
      *
      * @return string|null
      */
-    public function getTitle()
+    public function getVideoId()
     {
-        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
+        if (!isset($this->container['VideoId']) || is_null($this->container['VideoId'])) {
             return null;
         }
-        return $this->container['Title'];
+        return $this->container['VideoId'];
     }
 
     /**
-     * Sets Title
+     * Sets VideoId
      *
-     * @param string|null $Title Title
+     * @param string|null $VideoId VideoId
      *
      * @return self
      */
-    public function setTitle($Title)
+    public function setVideoId($VideoId)
     {
-        if (is_null($Title)) {
-            array_push($this->openAPINullablesSetToNull, 'Title');
+        if (is_null($VideoId)) {
+            array_push($this->openAPINullablesSetToNull, 'VideoId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Title', $nullablesSetToNull);
+            $index = array_search('VideoId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Title'] = $Title;
-
-        return $this;
-    }
-
-    /**
-     * Gets PopupText
-     *
-     * @return string|null
-     */
-    public function getPopupText()
-    {
-        if (!isset($this->container['PopupText']) || is_null($this->container['PopupText'])) {
-            return null;
-        }
-        return $this->container['PopupText'];
-    }
-
-    /**
-     * Sets PopupText
-     *
-     * @param string|null $PopupText PopupText
-     *
-     * @return self
-     */
-    public function setPopupText($PopupText)
-    {
-        if (is_null($PopupText)) {
-            array_push($this->openAPINullablesSetToNull, 'PopupText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PopupText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PopupText'] = $PopupText;
-
-        return $this;
-    }
-
-    /**
-     * Gets LineText
-     *
-     * @return string|null
-     */
-    public function getLineText()
-    {
-        if (!isset($this->container['LineText']) || is_null($this->container['LineText'])) {
-            return null;
-        }
-        return $this->container['LineText'];
-    }
-
-    /**
-     * Sets LineText
-     *
-     * @param string|null $LineText LineText
-     *
-     * @return self
-     */
-    public function setLineText($LineText)
-    {
-        if (is_null($LineText)) {
-            array_push($this->openAPINullablesSetToNull, 'LineText');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LineText', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LineText'] = $LineText;
+        $this->container['VideoId'] = $VideoId;
 
         return $this;
     }
@@ -3292,38 +3216,112 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets BusinessName
+     * Gets LineText
      *
      * @return string|null
      */
-    public function getBusinessName()
+    public function getLineText()
     {
-        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+        if (!isset($this->container['LineText']) || is_null($this->container['LineText'])) {
             return null;
         }
-        return $this->container['BusinessName'];
+        return $this->container['LineText'];
     }
 
     /**
-     * Sets BusinessName
+     * Sets LineText
      *
-     * @param string|null $BusinessName BusinessName
+     * @param string|null $LineText LineText
      *
      * @return self
      */
-    public function setBusinessName($BusinessName)
+    public function setLineText($LineText)
     {
-        if (is_null($BusinessName)) {
-            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        if (is_null($LineText)) {
+            array_push($this->openAPINullablesSetToNull, 'LineText');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BusinessName', $nullablesSetToNull);
+            $index = array_search('LineText', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['BusinessName'] = $BusinessName;
+        $this->container['LineText'] = $LineText;
+
+        return $this;
+    }
+
+    /**
+     * Gets PopupText
+     *
+     * @return string|null
+     */
+    public function getPopupText()
+    {
+        if (!isset($this->container['PopupText']) || is_null($this->container['PopupText'])) {
+            return null;
+        }
+        return $this->container['PopupText'];
+    }
+
+    /**
+     * Sets PopupText
+     *
+     * @param string|null $PopupText PopupText
+     *
+     * @return self
+     */
+    public function setPopupText($PopupText)
+    {
+        if (is_null($PopupText)) {
+            array_push($this->openAPINullablesSetToNull, 'PopupText');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PopupText', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PopupText'] = $PopupText;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title
+     *
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        if (!isset($this->container['Title']) || is_null($this->container['Title'])) {
+            return null;
+        }
+        return $this->container['Title'];
+    }
+
+    /**
+     * Sets Title
+     *
+     * @param string|null $Title Title
+     *
+     * @return self
+     */
+    public function setTitle($Title)
+    {
+        if (is_null($Title)) {
+            array_push($this->openAPINullablesSetToNull, 'Title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Title'] = $Title;
 
         return $this;
     }
@@ -3398,6 +3396,43 @@ class AdExtension implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BusinessLogoUrl'] = $BusinessLogoUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessName
+     *
+     * @return string|null
+     */
+    public function getBusinessName()
+    {
+        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+            return null;
+        }
+        return $this->container['BusinessName'];
+    }
+
+    /**
+     * Sets BusinessName
+     *
+     * @param string|null $BusinessName BusinessName
+     *
+     * @return self
+     */
+    public function setBusinessName($BusinessName)
+    {
+        if (is_null($BusinessName)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessName'] = $BusinessName;
 
         return $this;
     }

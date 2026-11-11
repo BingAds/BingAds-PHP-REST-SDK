@@ -33,9 +33,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'ConversionGoalIds' => 'string[]',
         'ConversionGoalTypes' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalAdditionalField',
-        'ConversionGoalIds' => 'string[]'
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalAdditionalField'
     ];
 
     /**
@@ -46,9 +46,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'ConversionGoalIds' => 'int64',
         'ConversionGoalTypes' => null,
-        'ReturnAdditionalFields' => null,
-        'ConversionGoalIds' => 'int64'
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'ConversionGoalIds' => true,
         'ConversionGoalTypes' => false,
-        'ReturnAdditionalFields' => false,
-        'ConversionGoalIds' => true
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
+        'ConversionGoalIds' => 'ConversionGoalIds',
         'ConversionGoalTypes' => 'ConversionGoalTypes',
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
-        'ConversionGoalIds' => 'ConversionGoalIds'
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -159,9 +159,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
+        'ConversionGoalIds' => 'setConversionGoalIds',
         'ConversionGoalTypes' => 'setConversionGoalTypes',
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
-        'ConversionGoalIds' => 'setConversionGoalIds'
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -170,9 +170,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
+        'ConversionGoalIds' => 'getConversionGoalIds',
         'ConversionGoalTypes' => 'getConversionGoalTypes',
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
-        'ConversionGoalIds' => 'getConversionGoalIds'
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -232,9 +232,9 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('ConversionGoalIds', $data ?? [], null);
         $this->setIfExists('ConversionGoalTypes', $data ?? [], null);
         $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
-        $this->setIfExists('ConversionGoalIds', $data ?? [], null);
     }
 
     /**
@@ -280,6 +280,43 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
 
 
     /**
+     * Gets ConversionGoalIds
+     *
+     * @return string[]|null
+     */
+    public function getConversionGoalIds()
+    {
+        if (!isset($this->container['ConversionGoalIds']) || is_null($this->container['ConversionGoalIds'])) {
+            return null;
+        }
+        return $this->container['ConversionGoalIds'];
+    }
+
+    /**
+     * Sets ConversionGoalIds
+     *
+     * @param string[]|null $ConversionGoalIds ConversionGoalIds
+     *
+     * @return self
+     */
+    public function setConversionGoalIds($ConversionGoalIds)
+    {
+        if (is_null($ConversionGoalIds)) {
+            array_push($this->openAPINullablesSetToNull, 'ConversionGoalIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ConversionGoalIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ConversionGoalIds'] = $ConversionGoalIds;
+
+        return $this;
+    }
+
+    /**
      * Gets ConversionGoalTypes
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
@@ -307,7 +344,7 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
         if (is_null($ConversionGoalTypes)) {
             throw new \InvalidArgumentException('non-nullable ConversionGoalTypes cannot be null');
         }
-        if (!$ConversionGoalTypes instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+        if (!is_null($ConversionGoalTypes) && !$ConversionGoalTypes instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
             $ConversionGoalTypes = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($ConversionGoalTypes);
         }
         $this->container['ConversionGoalTypes'] = $ConversionGoalTypes;
@@ -341,49 +378,19 @@ class GetConversionGoalsByIdsRequest implements ModelInterface, ArrayAccess, \Js
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConversionGoalIds
-     *
-     * @return string[]|null
-     */
-    public function getConversionGoalIds()
-    {
-        if (!isset($this->container['ConversionGoalIds']) || is_null($this->container['ConversionGoalIds'])) {
-            return null;
-        }
-        return $this->container['ConversionGoalIds'];
-    }
-
-    /**
-     * Sets ConversionGoalIds
-     *
-     * @param string[]|null $ConversionGoalIds ConversionGoalIds
-     *
-     * @return self
-     */
-    public function setConversionGoalIds($ConversionGoalIds)
-    {
-        if (is_null($ConversionGoalIds)) {
-            array_push($this->openAPINullablesSetToNull, 'ConversionGoalIds');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConversionGoalIds', $nullablesSetToNull);
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ConversionGoalIds'] = $ConversionGoalIds;
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

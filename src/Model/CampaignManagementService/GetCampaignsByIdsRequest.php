@@ -62,7 +62,7 @@ class GetCampaignsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'AccountId' => false,
         'CampaignIds' => true,
         'CampaignType' => false,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -381,7 +381,7 @@ class GetCampaignsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($CampaignType)) {
             throw new \InvalidArgumentException('non-nullable CampaignType cannot be null');
         }
-        if (!$CampaignType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
+        if (!is_null($CampaignType) && !$CampaignType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
             $CampaignType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($CampaignType);
         }
         $this->container['CampaignType'] = $CampaignType;
@@ -415,9 +415,16 @@ class GetCampaignsByIdsRequest implements ModelInterface, ArrayAccess, \JsonSeri
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

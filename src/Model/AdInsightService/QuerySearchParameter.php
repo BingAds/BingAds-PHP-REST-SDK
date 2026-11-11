@@ -228,6 +228,11 @@ class QuerySearchParameter extends SearchParameter implements ModelInterface, Ar
     {
         $this->setIfExists('Queries', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'QuerySearchParameter');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**

@@ -33,8 +33,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField',
-        'AssetGroupId' => 'string'
+        'AssetGroupId' => 'string',
+        'ReturnAdditionalFields' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ReturnAdditionalFields' => null,
-        'AssetGroupId' => 'int64'
+        'AssetGroupId' => 'int64',
+        'ReturnAdditionalFields' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ReturnAdditionalFields' => false,
-        'AssetGroupId' => false
+        'AssetGroupId' => false,
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ReturnAdditionalFields' => 'ReturnAdditionalFields',
-        'AssetGroupId' => 'AssetGroupId'
+        'AssetGroupId' => 'AssetGroupId',
+        'ReturnAdditionalFields' => 'ReturnAdditionalFields'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'ReturnAdditionalFields' => 'setReturnAdditionalFields',
-        'AssetGroupId' => 'setAssetGroupId'
+        'AssetGroupId' => 'setAssetGroupId',
+        'ReturnAdditionalFields' => 'setReturnAdditionalFields'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'ReturnAdditionalFields' => 'getReturnAdditionalFields',
-        'AssetGroupId' => 'getAssetGroupId'
+        'AssetGroupId' => 'getAssetGroupId',
+        'ReturnAdditionalFields' => 'getReturnAdditionalFields'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
         $this->setIfExists('AssetGroupId', $data ?? [], null);
+        $this->setIfExists('ReturnAdditionalFields', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets ReturnAdditionalFields
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
-     */
-    public function getReturnAdditionalFields()
-    {
-        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
-            return null;
-        }
-        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
-            return $this->container['ReturnAdditionalFields']->getValue();
-        }
-        return $this->container['ReturnAdditionalFields'];
-    }
-
-    /**
-     * Sets ReturnAdditionalFields
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
-     *
-     * @return self
-     */
-    public function setReturnAdditionalFields($ReturnAdditionalFields)
-    {
-        if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
-        }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
-            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
-        }
-        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
-
-        return $this;
-    }
-
-    /**
      * Gets AssetGroupId
      *
      * @return string|null
@@ -334,6 +298,49 @@ class GetKeywordsByAssetGroupIdRequest implements ModelInterface, ArrayAccess, \
             throw new \InvalidArgumentException('non-nullable AssetGroupId cannot be null');
         }
         $this->container['AssetGroupId'] = $AssetGroupId;
+
+        return $this;
+    }
+
+    /**
+     * Gets ReturnAdditionalFields
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null
+     */
+    public function getReturnAdditionalFields()
+    {
+        if (!isset($this->container['ReturnAdditionalFields']) || is_null($this->container['ReturnAdditionalFields'])) {
+            return null;
+        }
+        if ((is_object($this->container['ReturnAdditionalFields']) || is_string($this->container['ReturnAdditionalFields'])) && method_exists($this->container['ReturnAdditionalFields'], 'getValue')) {
+            return $this->container['ReturnAdditionalFields']->getValue();
+        }
+        return $this->container['ReturnAdditionalFields'];
+    }
+
+    /**
+     * Sets ReturnAdditionalFields
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField|mixed|null $ReturnAdditionalFields ReturnAdditionalFields
+     *
+     * @return self
+     */
+    public function setReturnAdditionalFields($ReturnAdditionalFields)
+    {
+        if (is_null($ReturnAdditionalFields)) {
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField) {
+            $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeywordAdditionalField($ReturnAdditionalFields);
+        }
+        $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;
 
         return $this;
     }

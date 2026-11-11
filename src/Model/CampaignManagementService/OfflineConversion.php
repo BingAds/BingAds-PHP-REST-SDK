@@ -33,15 +33,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MicrosoftClickId' => 'string',
+        'ConversionCurrencyCode' => 'string',
         'ConversionName' => 'string',
         'ConversionTime' => '\DateTime',
         'ConversionValue' => 'float',
-        'ConversionCurrencyCode' => 'string',
         'ExternalAttributionCredit' => 'float',
         'ExternalAttributionModel' => 'string',
         'HashedEmailAddress' => 'string',
-        'HashedPhoneNumber' => 'string'
+        'HashedPhoneNumber' => 'string',
+        'MicrosoftClickId' => 'string'
     ];
 
     /**
@@ -52,15 +52,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MicrosoftClickId' => null,
+        'ConversionCurrencyCode' => null,
         'ConversionName' => null,
         'ConversionTime' => 'date-time',
         'ConversionValue' => 'double',
-        'ConversionCurrencyCode' => null,
         'ExternalAttributionCredit' => 'double',
         'ExternalAttributionModel' => null,
         'HashedEmailAddress' => null,
-        'HashedPhoneNumber' => null
+        'HashedPhoneNumber' => null,
+        'MicrosoftClickId' => null
     ];
 
     /**
@@ -69,15 +69,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MicrosoftClickId' => true,
+        'ConversionCurrencyCode' => true,
         'ConversionName' => true,
         'ConversionTime' => false,
         'ConversionValue' => true,
-        'ConversionCurrencyCode' => true,
         'ExternalAttributionCredit' => true,
         'ExternalAttributionModel' => true,
         'HashedEmailAddress' => true,
-        'HashedPhoneNumber' => true
+        'HashedPhoneNumber' => true,
+        'MicrosoftClickId' => true
     ];
 
     /**
@@ -166,15 +166,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MicrosoftClickId' => 'MicrosoftClickId',
+        'ConversionCurrencyCode' => 'ConversionCurrencyCode',
         'ConversionName' => 'ConversionName',
         'ConversionTime' => 'ConversionTime',
         'ConversionValue' => 'ConversionValue',
-        'ConversionCurrencyCode' => 'ConversionCurrencyCode',
         'ExternalAttributionCredit' => 'ExternalAttributionCredit',
         'ExternalAttributionModel' => 'ExternalAttributionModel',
         'HashedEmailAddress' => 'HashedEmailAddress',
-        'HashedPhoneNumber' => 'HashedPhoneNumber'
+        'HashedPhoneNumber' => 'HashedPhoneNumber',
+        'MicrosoftClickId' => 'MicrosoftClickId'
     ];
 
     /**
@@ -183,15 +183,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $setters = [
-        'MicrosoftClickId' => 'setMicrosoftClickId',
+        'ConversionCurrencyCode' => 'setConversionCurrencyCode',
         'ConversionName' => 'setConversionName',
         'ConversionTime' => 'setConversionTime',
         'ConversionValue' => 'setConversionValue',
-        'ConversionCurrencyCode' => 'setConversionCurrencyCode',
         'ExternalAttributionCredit' => 'setExternalAttributionCredit',
         'ExternalAttributionModel' => 'setExternalAttributionModel',
         'HashedEmailAddress' => 'setHashedEmailAddress',
-        'HashedPhoneNumber' => 'setHashedPhoneNumber'
+        'HashedPhoneNumber' => 'setHashedPhoneNumber',
+        'MicrosoftClickId' => 'setMicrosoftClickId'
     ];
 
     /**
@@ -200,15 +200,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $getters = [
-        'MicrosoftClickId' => 'getMicrosoftClickId',
+        'ConversionCurrencyCode' => 'getConversionCurrencyCode',
         'ConversionName' => 'getConversionName',
         'ConversionTime' => 'getConversionTime',
         'ConversionValue' => 'getConversionValue',
-        'ConversionCurrencyCode' => 'getConversionCurrencyCode',
         'ExternalAttributionCredit' => 'getExternalAttributionCredit',
         'ExternalAttributionModel' => 'getExternalAttributionModel',
         'HashedEmailAddress' => 'getHashedEmailAddress',
-        'HashedPhoneNumber' => 'getHashedPhoneNumber'
+        'HashedPhoneNumber' => 'getHashedPhoneNumber',
+        'MicrosoftClickId' => 'getMicrosoftClickId'
     ];
 
     /**
@@ -268,15 +268,15 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MicrosoftClickId', $data ?? [], null);
+        $this->setIfExists('ConversionCurrencyCode', $data ?? [], null);
         $this->setIfExists('ConversionName', $data ?? [], null);
         $this->setIfExists('ConversionTime', $data ?? [], null);
         $this->setIfExists('ConversionValue', $data ?? [], null);
-        $this->setIfExists('ConversionCurrencyCode', $data ?? [], null);
         $this->setIfExists('ExternalAttributionCredit', $data ?? [], null);
         $this->setIfExists('ExternalAttributionModel', $data ?? [], null);
         $this->setIfExists('HashedEmailAddress', $data ?? [], null);
         $this->setIfExists('HashedPhoneNumber', $data ?? [], null);
+        $this->setIfExists('MicrosoftClickId', $data ?? [], null);
     }
 
     /**
@@ -322,38 +322,38 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets MicrosoftClickId
+     * Gets ConversionCurrencyCode
      *
      * @return string|null
      */
-    public function getMicrosoftClickId()
+    public function getConversionCurrencyCode()
     {
-        if (!isset($this->container['MicrosoftClickId']) || is_null($this->container['MicrosoftClickId'])) {
+        if (!isset($this->container['ConversionCurrencyCode']) || is_null($this->container['ConversionCurrencyCode'])) {
             return null;
         }
-        return $this->container['MicrosoftClickId'];
+        return $this->container['ConversionCurrencyCode'];
     }
 
     /**
-     * Sets MicrosoftClickId
+     * Sets ConversionCurrencyCode
      *
-     * @param string|null $MicrosoftClickId MicrosoftClickId
+     * @param string|null $ConversionCurrencyCode ConversionCurrencyCode
      *
      * @return self
      */
-    public function setMicrosoftClickId($MicrosoftClickId)
+    public function setConversionCurrencyCode($ConversionCurrencyCode)
     {
-        if (is_null($MicrosoftClickId)) {
-            array_push($this->openAPINullablesSetToNull, 'MicrosoftClickId');
+        if (is_null($ConversionCurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'ConversionCurrencyCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MicrosoftClickId', $nullablesSetToNull);
+            $index = array_search('ConversionCurrencyCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['MicrosoftClickId'] = $MicrosoftClickId;
+        $this->container['ConversionCurrencyCode'] = $ConversionCurrencyCode;
 
         return $this;
     }
@@ -458,43 +458,6 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['ConversionValue'] = $ConversionValue;
-
-        return $this;
-    }
-
-    /**
-     * Gets ConversionCurrencyCode
-     *
-     * @return string|null
-     */
-    public function getConversionCurrencyCode()
-    {
-        if (!isset($this->container['ConversionCurrencyCode']) || is_null($this->container['ConversionCurrencyCode'])) {
-            return null;
-        }
-        return $this->container['ConversionCurrencyCode'];
-    }
-
-    /**
-     * Sets ConversionCurrencyCode
-     *
-     * @param string|null $ConversionCurrencyCode ConversionCurrencyCode
-     *
-     * @return self
-     */
-    public function setConversionCurrencyCode($ConversionCurrencyCode)
-    {
-        if (is_null($ConversionCurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'ConversionCurrencyCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConversionCurrencyCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ConversionCurrencyCode'] = $ConversionCurrencyCode;
 
         return $this;
     }
@@ -643,6 +606,43 @@ class OfflineConversion implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['HashedPhoneNumber'] = $HashedPhoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets MicrosoftClickId
+     *
+     * @return string|null
+     */
+    public function getMicrosoftClickId()
+    {
+        if (!isset($this->container['MicrosoftClickId']) || is_null($this->container['MicrosoftClickId'])) {
+            return null;
+        }
+        return $this->container['MicrosoftClickId'];
+    }
+
+    /**
+     * Sets MicrosoftClickId
+     *
+     * @param string|null $MicrosoftClickId MicrosoftClickId
+     *
+     * @return self
+     */
+    public function setMicrosoftClickId($MicrosoftClickId)
+    {
+        if (is_null($MicrosoftClickId)) {
+            array_push($this->openAPINullablesSetToNull, 'MicrosoftClickId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MicrosoftClickId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MicrosoftClickId'] = $MicrosoftClickId;
 
         return $this;
     }

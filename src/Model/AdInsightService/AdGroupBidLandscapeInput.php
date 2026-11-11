@@ -330,7 +330,7 @@ class AdGroupBidLandscapeInput implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($AdGroupBidLandscapeType)) {
             throw new \InvalidArgumentException('non-nullable AdGroupBidLandscapeType cannot be null');
         }
-        if (!$AdGroupBidLandscapeType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AdGroupBidLandscapeType) {
+        if (!is_null($AdGroupBidLandscapeType) && !$AdGroupBidLandscapeType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AdGroupBidLandscapeType) {
             $AdGroupBidLandscapeType = new \Microsoft\MsAds\Rest\Model\AdInsightService\AdGroupBidLandscapeType($AdGroupBidLandscapeType);
         }
         $this->container['AdGroupBidLandscapeType'] = $AdGroupBidLandscapeType;

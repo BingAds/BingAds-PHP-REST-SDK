@@ -365,7 +365,7 @@ class PerformanceInsightsDetail implements ModelInterface, ArrayAccess, \JsonSer
         if (is_null($EntityType)) {
             throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType) {
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType) {
             $EntityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType($EntityType);
         }
         $this->container['EntityType'] = $EntityType;
@@ -401,7 +401,7 @@ class PerformanceInsightsDetail implements ModelInterface, ArrayAccess, \JsonSer
         if (is_null($KPIType)) {
             throw new \InvalidArgumentException('non-nullable KPIType cannot be null');
         }
-        if (!$KPIType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\KPIType) {
+        if (!is_null($KPIType) && !$KPIType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\KPIType) {
             $KPIType = new \Microsoft\MsAds\Rest\Model\AdInsightService\KPIType($KPIType);
         }
         $this->container['KPIType'] = $KPIType;

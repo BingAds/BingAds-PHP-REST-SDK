@@ -33,9 +33,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'AdGroupCriterionIds' => 'string[]',
         'AdGroupId' => 'string',
-        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType',
-        'AdGroupCriterionIds' => 'string[]'
+        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType'
     ];
 
     /**
@@ -46,9 +46,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'AdGroupCriterionIds' => 'int64',
         'AdGroupId' => 'int64',
-        'CriterionType' => null,
-        'AdGroupCriterionIds' => 'int64'
+        'CriterionType' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'AdGroupCriterionIds' => true,
         'AdGroupId' => false,
-        'CriterionType' => false,
-        'AdGroupCriterionIds' => true
+        'CriterionType' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
+        'AdGroupCriterionIds' => 'AdGroupCriterionIds',
         'AdGroupId' => 'AdGroupId',
-        'CriterionType' => 'CriterionType',
-        'AdGroupCriterionIds' => 'AdGroupCriterionIds'
+        'CriterionType' => 'CriterionType'
     ];
 
     /**
@@ -159,9 +159,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
+        'AdGroupCriterionIds' => 'setAdGroupCriterionIds',
         'AdGroupId' => 'setAdGroupId',
-        'CriterionType' => 'setCriterionType',
-        'AdGroupCriterionIds' => 'setAdGroupCriterionIds'
+        'CriterionType' => 'setCriterionType'
     ];
 
     /**
@@ -170,9 +170,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
+        'AdGroupCriterionIds' => 'getAdGroupCriterionIds',
         'AdGroupId' => 'getAdGroupId',
-        'CriterionType' => 'getCriterionType',
-        'AdGroupCriterionIds' => 'getAdGroupCriterionIds'
+        'CriterionType' => 'getCriterionType'
     ];
 
     /**
@@ -232,9 +232,9 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('AdGroupCriterionIds', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
         $this->setIfExists('CriterionType', $data ?? [], null);
-        $this->setIfExists('AdGroupCriterionIds', $data ?? [], null);
     }
 
     /**
@@ -278,6 +278,43 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets AdGroupCriterionIds
+     *
+     * @return string[]|null
+     */
+    public function getAdGroupCriterionIds()
+    {
+        if (!isset($this->container['AdGroupCriterionIds']) || is_null($this->container['AdGroupCriterionIds'])) {
+            return null;
+        }
+        return $this->container['AdGroupCriterionIds'];
+    }
+
+    /**
+     * Sets AdGroupCriterionIds
+     *
+     * @param string[]|null $AdGroupCriterionIds AdGroupCriterionIds
+     *
+     * @return self
+     */
+    public function setAdGroupCriterionIds($AdGroupCriterionIds)
+    {
+        if (is_null($AdGroupCriterionIds)) {
+            array_push($this->openAPINullablesSetToNull, 'AdGroupCriterionIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupCriterionIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdGroupCriterionIds'] = $AdGroupCriterionIds;
+
+        return $this;
+    }
 
     /**
      * Gets AdGroupId
@@ -337,47 +374,10 @@ class DeleteAdGroupCriterionsRequest implements ModelInterface, ArrayAccess, \Js
         if (is_null($CriterionType)) {
             throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
         }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType) {
+        if (!is_null($CriterionType) && !$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType) {
             $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionType($CriterionType);
         }
         $this->container['CriterionType'] = $CriterionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdGroupCriterionIds
-     *
-     * @return string[]|null
-     */
-    public function getAdGroupCriterionIds()
-    {
-        if (!isset($this->container['AdGroupCriterionIds']) || is_null($this->container['AdGroupCriterionIds'])) {
-            return null;
-        }
-        return $this->container['AdGroupCriterionIds'];
-    }
-
-    /**
-     * Sets AdGroupCriterionIds
-     *
-     * @param string[]|null $AdGroupCriterionIds AdGroupCriterionIds
-     *
-     * @return self
-     */
-    public function setAdGroupCriterionIds($AdGroupCriterionIds)
-    {
-        if (is_null($AdGroupCriterionIds)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupCriterionIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupCriterionIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AdGroupCriterionIds'] = $AdGroupCriterionIds;
 
         return $this;
     }

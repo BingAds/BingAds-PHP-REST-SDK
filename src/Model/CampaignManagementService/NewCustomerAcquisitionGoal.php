@@ -33,9 +33,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
         'AdditionalValue' => 'float',
-        'Audiences' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceIdName[]'
+        'Audiences' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceIdName[]',
+        'Id' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
         'AdditionalValue' => 'double',
-        'Audiences' => null
+        'Audiences' => null,
+        'Id' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
         'AdditionalValue' => true,
-        'Audiences' => true
+        'Audiences' => true,
+        'Id' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
         'AdditionalValue' => 'AdditionalValue',
-        'Audiences' => 'Audiences'
+        'Audiences' => 'Audiences',
+        'Id' => 'Id'
     ];
 
     /**
@@ -159,9 +159,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
         'AdditionalValue' => 'setAdditionalValue',
-        'Audiences' => 'setAudiences'
+        'Audiences' => 'setAudiences',
+        'Id' => 'setId'
     ];
 
     /**
@@ -170,9 +170,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
         'AdditionalValue' => 'getAdditionalValue',
-        'Audiences' => 'getAudiences'
+        'Audiences' => 'getAudiences',
+        'Id' => 'getId'
     ];
 
     /**
@@ -232,9 +232,9 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('AdditionalValue', $data ?? [], null);
         $this->setIfExists('Audiences', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
     }
 
     /**
@@ -278,43 +278,6 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
 
     /**
      * Gets AdditionalValue
@@ -386,6 +349,43 @@ class NewCustomerAcquisitionGoal implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['Audiences'] = $Audiences;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
 
         return $this;
     }

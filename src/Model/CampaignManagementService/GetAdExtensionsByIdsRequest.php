@@ -62,7 +62,7 @@ class GetAdExtensionsByIdsRequest implements ModelInterface, ArrayAccess, \JsonS
         'AccountId' => false,
         'AdExtensionIds' => true,
         'AdExtensionType' => false,
-        'ReturnAdditionalFields' => false
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -381,7 +381,7 @@ class GetAdExtensionsByIdsRequest implements ModelInterface, ArrayAccess, \JsonS
         if (is_null($AdExtensionType)) {
             throw new \InvalidArgumentException('non-nullable AdExtensionType cannot be null');
         }
-        if (!$AdExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter) {
+        if (!is_null($AdExtensionType) && !$AdExtensionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter) {
             $AdExtensionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionsTypeFilter($AdExtensionType);
         }
         $this->container['AdExtensionType'] = $AdExtensionType;
@@ -415,9 +415,16 @@ class GetAdExtensionsByIdsRequest implements ModelInterface, ArrayAccess, \JsonS
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdExtensionAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

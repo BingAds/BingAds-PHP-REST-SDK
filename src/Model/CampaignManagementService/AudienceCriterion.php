@@ -59,7 +59,7 @@ class AudienceCriterion extends Criterion implements ModelInterface, ArrayAccess
     protected static array $openAPINullables = [
         'Type' => true,
         'AudienceId' => true,
-        'AudienceType' => false
+        'AudienceType' => true
     ];
 
     /**
@@ -235,6 +235,11 @@ class AudienceCriterion extends Criterion implements ModelInterface, ArrayAccess
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('AudienceId', $data ?? [], null);
         $this->setIfExists('AudienceType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -379,9 +384,16 @@ class AudienceCriterion extends Criterion implements ModelInterface, ArrayAccess
     public function setAudienceType($AudienceType)
     {
         if (is_null($AudienceType)) {
-            throw new \InvalidArgumentException('non-nullable AudienceType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AudienceType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AudienceType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+        if (!is_null($AudienceType) && !$AudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
             $AudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($AudienceType);
         }
         $this->container['AudienceType'] = $AudienceType;

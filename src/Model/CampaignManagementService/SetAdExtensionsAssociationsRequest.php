@@ -374,7 +374,7 @@ class SetAdExtensionsAssociationsRequest implements ModelInterface, ArrayAccess,
         if (is_null($AssociationType)) {
             throw new \InvalidArgumentException('non-nullable AssociationType cannot be null');
         }
-        if (!$AssociationType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType) {
+        if (!is_null($AssociationType) && !$AssociationType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType) {
             $AssociationType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssociationType($AssociationType);
         }
         $this->container['AssociationType'] = $AssociationType;

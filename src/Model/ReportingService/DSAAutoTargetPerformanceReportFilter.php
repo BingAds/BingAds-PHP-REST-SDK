@@ -34,11 +34,11 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
       */
     protected static array $openAPITypes = [
         'AccountStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter',
-        'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
         'AdGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter',
+        'BidStrategyType' => '\Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter',
+        'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
         'DynamicAdTargetStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\DynamicAdTargetStatusReportFilter',
-        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter',
-        'BidStrategyType' => '\Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter'
+        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter'
     ];
 
     /**
@@ -50,11 +50,11 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
       */
     protected static array $openAPIFormats = [
         'AccountStatus' => null,
-        'CampaignStatus' => null,
         'AdGroupStatus' => null,
+        'BidStrategyType' => null,
+        'CampaignStatus' => null,
         'DynamicAdTargetStatus' => null,
-        'Language' => null,
-        'BidStrategyType' => null
+        'Language' => null
     ];
 
     /**
@@ -63,12 +63,12 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AccountStatus' => false,
-        'CampaignStatus' => false,
-        'AdGroupStatus' => false,
-        'DynamicAdTargetStatus' => false,
-        'Language' => false,
-        'BidStrategyType' => false
+        'AccountStatus' => true,
+        'AdGroupStatus' => true,
+        'BidStrategyType' => true,
+        'CampaignStatus' => true,
+        'DynamicAdTargetStatus' => true,
+        'Language' => true
     ];
 
     /**
@@ -158,11 +158,11 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
      */
     protected static array $attributeMap = [
         'AccountStatus' => 'AccountStatus',
-        'CampaignStatus' => 'CampaignStatus',
         'AdGroupStatus' => 'AdGroupStatus',
+        'BidStrategyType' => 'BidStrategyType',
+        'CampaignStatus' => 'CampaignStatus',
         'DynamicAdTargetStatus' => 'DynamicAdTargetStatus',
-        'Language' => 'Language',
-        'BidStrategyType' => 'BidStrategyType'
+        'Language' => 'Language'
     ];
 
     /**
@@ -172,11 +172,11 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
      */
     protected static array $setters = [
         'AccountStatus' => 'setAccountStatus',
-        'CampaignStatus' => 'setCampaignStatus',
         'AdGroupStatus' => 'setAdGroupStatus',
+        'BidStrategyType' => 'setBidStrategyType',
+        'CampaignStatus' => 'setCampaignStatus',
         'DynamicAdTargetStatus' => 'setDynamicAdTargetStatus',
-        'Language' => 'setLanguage',
-        'BidStrategyType' => 'setBidStrategyType'
+        'Language' => 'setLanguage'
     ];
 
     /**
@@ -186,11 +186,11 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
      */
     protected static array $getters = [
         'AccountStatus' => 'getAccountStatus',
-        'CampaignStatus' => 'getCampaignStatus',
         'AdGroupStatus' => 'getAdGroupStatus',
+        'BidStrategyType' => 'getBidStrategyType',
+        'CampaignStatus' => 'getCampaignStatus',
         'DynamicAdTargetStatus' => 'getDynamicAdTargetStatus',
-        'Language' => 'getLanguage',
-        'BidStrategyType' => 'getBidStrategyType'
+        'Language' => 'getLanguage'
     ];
 
     /**
@@ -251,11 +251,11 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountStatus', $data ?? [], null);
-        $this->setIfExists('CampaignStatus', $data ?? [], null);
         $this->setIfExists('AdGroupStatus', $data ?? [], null);
+        $this->setIfExists('BidStrategyType', $data ?? [], null);
+        $this->setIfExists('CampaignStatus', $data ?? [], null);
         $this->setIfExists('DynamicAdTargetStatus', $data ?? [], null);
         $this->setIfExists('Language', $data ?? [], null);
-        $this->setIfExists('BidStrategyType', $data ?? [], null);
     }
 
     /**
@@ -326,48 +326,19 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
     public function setAccountStatus($AccountStatus)
     {
         if (is_null($AccountStatus)) {
-            throw new \InvalidArgumentException('non-nullable AccountStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AccountStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AccountStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AccountStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter) {
+        if (!is_null($AccountStatus) && !$AccountStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter) {
             $AccountStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter($AccountStatus);
         }
         $this->container['AccountStatus'] = $AccountStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null
-     */
-    public function getCampaignStatus()
-    {
-        if (!isset($this->container['CampaignStatus']) || is_null($this->container['CampaignStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['CampaignStatus']) || is_string($this->container['CampaignStatus'])) && method_exists($this->container['CampaignStatus'], 'getValue')) {
-            return $this->container['CampaignStatus']->getValue();
-        }
-        return $this->container['CampaignStatus'];
-    }
-
-    /**
-     * Sets CampaignStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null $CampaignStatus CampaignStatus
-     *
-     * @return self
-     */
-    public function setCampaignStatus($CampaignStatus)
-    {
-        if (is_null($CampaignStatus)) {
-            throw new \InvalidArgumentException('non-nullable CampaignStatus cannot be null');
-        }
-        if (!$CampaignStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter) {
-            $CampaignStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter($CampaignStatus);
-        }
-        $this->container['CampaignStatus'] = $CampaignStatus;
 
         return $this;
     }
@@ -398,12 +369,105 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
     public function setAdGroupStatus($AdGroupStatus)
     {
         if (is_null($AdGroupStatus)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'AdGroupStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$AdGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter) {
+        if (!is_null($AdGroupStatus) && !$AdGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter) {
             $AdGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter($AdGroupStatus);
         }
         $this->container['AdGroupStatus'] = $AdGroupStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets BidStrategyType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter|mixed|null
+     */
+    public function getBidStrategyType()
+    {
+        if (!isset($this->container['BidStrategyType']) || is_null($this->container['BidStrategyType'])) {
+            return null;
+        }
+        if ((is_object($this->container['BidStrategyType']) || is_string($this->container['BidStrategyType'])) && method_exists($this->container['BidStrategyType'], 'getValue')) {
+            return $this->container['BidStrategyType']->getValue();
+        }
+        return $this->container['BidStrategyType'];
+    }
+
+    /**
+     * Sets BidStrategyType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter|mixed|null $BidStrategyType BidStrategyType
+     *
+     * @return self
+     */
+    public function setBidStrategyType($BidStrategyType)
+    {
+        if (is_null($BidStrategyType)) {
+            array_push($this->openAPINullablesSetToNull, 'BidStrategyType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BidStrategyType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($BidStrategyType) && !$BidStrategyType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter) {
+            $BidStrategyType = new \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter($BidStrategyType);
+        }
+        $this->container['BidStrategyType'] = $BidStrategyType;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null
+     */
+    public function getCampaignStatus()
+    {
+        if (!isset($this->container['CampaignStatus']) || is_null($this->container['CampaignStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['CampaignStatus']) || is_string($this->container['CampaignStatus'])) && method_exists($this->container['CampaignStatus'], 'getValue')) {
+            return $this->container['CampaignStatus']->getValue();
+        }
+        return $this->container['CampaignStatus'];
+    }
+
+    /**
+     * Sets CampaignStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null $CampaignStatus CampaignStatus
+     *
+     * @return self
+     */
+    public function setCampaignStatus($CampaignStatus)
+    {
+        if (is_null($CampaignStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CampaignStatus) && !$CampaignStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter) {
+            $CampaignStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter($CampaignStatus);
+        }
+        $this->container['CampaignStatus'] = $CampaignStatus;
 
         return $this;
     }
@@ -434,9 +498,16 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
     public function setDynamicAdTargetStatus($DynamicAdTargetStatus)
     {
         if (is_null($DynamicAdTargetStatus)) {
-            throw new \InvalidArgumentException('non-nullable DynamicAdTargetStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'DynamicAdTargetStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DynamicAdTargetStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$DynamicAdTargetStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DynamicAdTargetStatusReportFilter) {
+        if (!is_null($DynamicAdTargetStatus) && !$DynamicAdTargetStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DynamicAdTargetStatusReportFilter) {
             $DynamicAdTargetStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\DynamicAdTargetStatusReportFilter($DynamicAdTargetStatus);
         }
         $this->container['DynamicAdTargetStatus'] = $DynamicAdTargetStatus;
@@ -470,48 +541,19 @@ class DSAAutoTargetPerformanceReportFilter implements ModelInterface, ArrayAcces
     public function setLanguage($Language)
     {
         if (is_null($Language)) {
-            throw new \InvalidArgumentException('non-nullable Language cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'Language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
+        if (!is_null($Language) && !$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
             $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
         }
         $this->container['Language'] = $Language;
-
-        return $this;
-    }
-
-    /**
-     * Gets BidStrategyType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter|mixed|null
-     */
-    public function getBidStrategyType()
-    {
-        if (!isset($this->container['BidStrategyType']) || is_null($this->container['BidStrategyType'])) {
-            return null;
-        }
-        if ((is_object($this->container['BidStrategyType']) || is_string($this->container['BidStrategyType'])) && method_exists($this->container['BidStrategyType'], 'getValue')) {
-            return $this->container['BidStrategyType']->getValue();
-        }
-        return $this->container['BidStrategyType'];
-    }
-
-    /**
-     * Sets BidStrategyType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter|mixed|null $BidStrategyType BidStrategyType
-     *
-     * @return self
-     */
-    public function setBidStrategyType($BidStrategyType)
-    {
-        if (is_null($BidStrategyType)) {
-            throw new \InvalidArgumentException('non-nullable BidStrategyType cannot be null');
-        }
-        if (!$BidStrategyType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter) {
-            $BidStrategyType = new \Microsoft\MsAds\Rest\Model\ReportingService\BidStrategyTypeReportFilter($BidStrategyType);
-        }
-        $this->container['BidStrategyType'] = $BidStrategyType;
 
         return $this;
     }

@@ -33,10 +33,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AdOrKeywordId' => 'string',
         'AdGroupId' => 'string',
-        'Reasons' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialReason[]',
-        'AppealStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus'
+        'AdOrKeywordId' => 'string',
+        'AppealStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus',
+        'Reasons' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialReason[]'
     ];
 
     /**
@@ -47,10 +47,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AdOrKeywordId' => 'int64',
         'AdGroupId' => 'int64',
-        'Reasons' => null,
-        'AppealStatus' => null
+        'AdOrKeywordId' => 'int64',
+        'AppealStatus' => null,
+        'Reasons' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AdOrKeywordId' => false,
         'AdGroupId' => false,
-        'Reasons' => true,
-        'AppealStatus' => false
+        'AdOrKeywordId' => false,
+        'AppealStatus' => false,
+        'Reasons' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AdOrKeywordId' => 'AdOrKeywordId',
         'AdGroupId' => 'AdGroupId',
-        'Reasons' => 'Reasons',
-        'AppealStatus' => 'AppealStatus'
+        'AdOrKeywordId' => 'AdOrKeywordId',
+        'AppealStatus' => 'AppealStatus',
+        'Reasons' => 'Reasons'
     ];
 
     /**
@@ -163,10 +163,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $setters = [
-        'AdOrKeywordId' => 'setAdOrKeywordId',
         'AdGroupId' => 'setAdGroupId',
-        'Reasons' => 'setReasons',
-        'AppealStatus' => 'setAppealStatus'
+        'AdOrKeywordId' => 'setAdOrKeywordId',
+        'AppealStatus' => 'setAppealStatus',
+        'Reasons' => 'setReasons'
     ];
 
     /**
@@ -175,10 +175,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $getters = [
-        'AdOrKeywordId' => 'getAdOrKeywordId',
         'AdGroupId' => 'getAdGroupId',
-        'Reasons' => 'getReasons',
-        'AppealStatus' => 'getAppealStatus'
+        'AdOrKeywordId' => 'getAdOrKeywordId',
+        'AppealStatus' => 'getAppealStatus',
+        'Reasons' => 'getReasons'
     ];
 
     /**
@@ -238,10 +238,10 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AdOrKeywordId', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('Reasons', $data ?? [], null);
+        $this->setIfExists('AdOrKeywordId', $data ?? [], null);
         $this->setIfExists('AppealStatus', $data ?? [], null);
+        $this->setIfExists('Reasons', $data ?? [], null);
     }
 
     /**
@@ -287,6 +287,36 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
+     * Gets AdGroupId
+     *
+     * @return string|null
+     */
+    public function getAdGroupId()
+    {
+        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+            return null;
+        }
+        return $this->container['AdGroupId'];
+    }
+
+    /**
+     * Sets AdGroupId
+     *
+     * @param string|null $AdGroupId AdGroupId
+     *
+     * @return self
+     */
+    public function setAdGroupId($AdGroupId)
+    {
+        if (is_null($AdGroupId)) {
+            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        }
+        $this->container['AdGroupId'] = $AdGroupId;
+
+        return $this;
+    }
+
+    /**
      * Gets AdOrKeywordId
      *
      * @return string|null
@@ -317,31 +347,37 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets AdGroupId
+     * Gets AppealStatus
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null
      */
-    public function getAdGroupId()
+    public function getAppealStatus()
     {
-        if (!isset($this->container['AdGroupId']) || is_null($this->container['AdGroupId'])) {
+        if (!isset($this->container['AppealStatus']) || is_null($this->container['AppealStatus'])) {
             return null;
         }
-        return $this->container['AdGroupId'];
+        if ((is_object($this->container['AppealStatus']) || is_string($this->container['AppealStatus'])) && method_exists($this->container['AppealStatus'], 'getValue')) {
+            return $this->container['AppealStatus']->getValue();
+        }
+        return $this->container['AppealStatus'];
     }
 
     /**
-     * Sets AdGroupId
+     * Sets AppealStatus
      *
-     * @param string|null $AdGroupId AdGroupId
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null $AppealStatus AppealStatus
      *
      * @return self
      */
-    public function setAdGroupId($AdGroupId)
+    public function setAppealStatus($AppealStatus)
     {
-        if (is_null($AdGroupId)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupId cannot be null');
+        if (is_null($AppealStatus)) {
+            throw new \InvalidArgumentException('non-nullable AppealStatus cannot be null');
         }
-        $this->container['AdGroupId'] = $AdGroupId;
+        if (!is_null($AppealStatus) && !$AppealStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus) {
+            $AppealStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus($AppealStatus);
+        }
+        $this->container['AppealStatus'] = $AppealStatus;
 
         return $this;
     }
@@ -379,42 +415,6 @@ class EditorialReasonCollection implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
         $this->container['Reasons'] = $Reasons;
-
-        return $this;
-    }
-
-    /**
-     * Gets AppealStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null
-     */
-    public function getAppealStatus()
-    {
-        if (!isset($this->container['AppealStatus']) || is_null($this->container['AppealStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['AppealStatus']) || is_string($this->container['AppealStatus'])) && method_exists($this->container['AppealStatus'], 'getValue')) {
-            return $this->container['AppealStatus']->getValue();
-        }
-        return $this->container['AppealStatus'];
-    }
-
-    /**
-     * Sets AppealStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus|mixed|null $AppealStatus AppealStatus
-     *
-     * @return self
-     */
-    public function setAppealStatus($AppealStatus)
-    {
-        if (is_null($AppealStatus)) {
-            throw new \InvalidArgumentException('non-nullable AppealStatus cannot be null');
-        }
-        if (!$AppealStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus) {
-            $AppealStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AppealStatus($AppealStatus);
-        }
-        $this->container['AppealStatus'] = $AppealStatus;
 
         return $this;
     }

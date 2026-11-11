@@ -33,11 +33,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'UploadDate' => '\DateTime',
+        'FailureCount' => 'int',
         'FileUrl' => 'string',
         'FileUrlExpiryTimeUtc' => '\DateTime',
         'SuccessCount' => 'int',
-        'FailureCount' => 'int'
+        'UploadDate' => '\DateTime'
     ];
 
     /**
@@ -48,11 +48,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'UploadDate' => 'date-time',
+        'FailureCount' => 'int32',
         'FileUrl' => null,
         'FileUrlExpiryTimeUtc' => 'date-time',
         'SuccessCount' => 'int32',
-        'FailureCount' => 'int32'
+        'UploadDate' => 'date-time'
     ];
 
     /**
@@ -61,11 +61,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'UploadDate' => false,
+        'FailureCount' => false,
         'FileUrl' => true,
         'FileUrlExpiryTimeUtc' => false,
         'SuccessCount' => false,
-        'FailureCount' => false
+        'UploadDate' => false
     ];
 
     /**
@@ -154,11 +154,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'UploadDate' => 'UploadDate',
+        'FailureCount' => 'FailureCount',
         'FileUrl' => 'FileUrl',
         'FileUrlExpiryTimeUtc' => 'FileUrlExpiryTimeUtc',
         'SuccessCount' => 'SuccessCount',
-        'FailureCount' => 'FailureCount'
+        'UploadDate' => 'UploadDate'
     ];
 
     /**
@@ -167,11 +167,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'UploadDate' => 'setUploadDate',
+        'FailureCount' => 'setFailureCount',
         'FileUrl' => 'setFileUrl',
         'FileUrlExpiryTimeUtc' => 'setFileUrlExpiryTimeUtc',
         'SuccessCount' => 'setSuccessCount',
-        'FailureCount' => 'setFailureCount'
+        'UploadDate' => 'setUploadDate'
     ];
 
     /**
@@ -180,11 +180,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'UploadDate' => 'getUploadDate',
+        'FailureCount' => 'getFailureCount',
         'FileUrl' => 'getFileUrl',
         'FileUrlExpiryTimeUtc' => 'getFileUrlExpiryTimeUtc',
         'SuccessCount' => 'getSuccessCount',
-        'FailureCount' => 'getFailureCount'
+        'UploadDate' => 'getUploadDate'
     ];
 
     /**
@@ -244,11 +244,11 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('UploadDate', $data ?? [], null);
+        $this->setIfExists('FailureCount', $data ?? [], null);
         $this->setIfExists('FileUrl', $data ?? [], null);
         $this->setIfExists('FileUrlExpiryTimeUtc', $data ?? [], null);
         $this->setIfExists('SuccessCount', $data ?? [], null);
-        $this->setIfExists('FailureCount', $data ?? [], null);
+        $this->setIfExists('UploadDate', $data ?? [], null);
     }
 
     /**
@@ -294,31 +294,31 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets UploadDate
+     * Gets FailureCount
      *
-     * @return \DateTime|null
+     * @return int|null
      */
-    public function getUploadDate()
+    public function getFailureCount()
     {
-        if (!isset($this->container['UploadDate']) || is_null($this->container['UploadDate'])) {
+        if (!isset($this->container['FailureCount']) || is_null($this->container['FailureCount'])) {
             return null;
         }
-        return $this->container['UploadDate'];
+        return $this->container['FailureCount'];
     }
 
     /**
-     * Sets UploadDate
+     * Sets FailureCount
      *
-     * @param \DateTime|null $UploadDate UploadDate
+     * @param int|null $FailureCount FailureCount
      *
      * @return self
      */
-    public function setUploadDate($UploadDate)
+    public function setFailureCount($FailureCount)
     {
-        if (is_null($UploadDate)) {
-            throw new \InvalidArgumentException('non-nullable UploadDate cannot be null');
+        if (is_null($FailureCount)) {
+            throw new \InvalidArgumentException('non-nullable FailureCount cannot be null');
         }
-        $this->container['UploadDate'] = $UploadDate;
+        $this->container['FailureCount'] = $FailureCount;
 
         return $this;
     }
@@ -421,31 +421,31 @@ class DailySummary implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets FailureCount
+     * Gets UploadDate
      *
-     * @return int|null
+     * @return \DateTime|null
      */
-    public function getFailureCount()
+    public function getUploadDate()
     {
-        if (!isset($this->container['FailureCount']) || is_null($this->container['FailureCount'])) {
+        if (!isset($this->container['UploadDate']) || is_null($this->container['UploadDate'])) {
             return null;
         }
-        return $this->container['FailureCount'];
+        return $this->container['UploadDate'];
     }
 
     /**
-     * Sets FailureCount
+     * Sets UploadDate
      *
-     * @param int|null $FailureCount FailureCount
+     * @param \DateTime|null $UploadDate UploadDate
      *
      * @return self
      */
-    public function setFailureCount($FailureCount)
+    public function setUploadDate($UploadDate)
     {
-        if (is_null($FailureCount)) {
-            throw new \InvalidArgumentException('non-nullable FailureCount cannot be null');
+        if (is_null($UploadDate)) {
+            throw new \InvalidArgumentException('non-nullable UploadDate cannot be null');
         }
-        $this->container['FailureCount'] = $FailureCount;
+        $this->container['UploadDate'] = $UploadDate;
 
         return $this;
     }

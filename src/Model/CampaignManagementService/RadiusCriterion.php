@@ -34,11 +34,11 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
+        'LatitudeDegrees' => 'float',
+        'LongitudeDegrees' => 'float',
         'Name' => 'string',
         'Radius' => 'string',
-        'RadiusUnit' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit',
-        'LatitudeDegrees' => 'float',
-        'LongitudeDegrees' => 'float'
+        'RadiusUnit' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit'
     ];
 
     /**
@@ -50,11 +50,11 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPIFormats = [
         'Type' => null,
+        'LatitudeDegrees' => 'double',
+        'LongitudeDegrees' => 'double',
         'Name' => null,
         'Radius' => 'int64',
-        'RadiusUnit' => null,
-        'LatitudeDegrees' => 'double',
-        'LongitudeDegrees' => 'double'
+        'RadiusUnit' => null
     ];
 
     /**
@@ -64,11 +64,11 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'Type' => true,
+        'LatitudeDegrees' => true,
+        'LongitudeDegrees' => true,
         'Name' => true,
         'Radius' => true,
-        'RadiusUnit' => false,
-        'LatitudeDegrees' => true,
-        'LongitudeDegrees' => true
+        'RadiusUnit' => true
     ];
 
     /**
@@ -158,11 +158,11 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
+        'LatitudeDegrees' => 'LatitudeDegrees',
+        'LongitudeDegrees' => 'LongitudeDegrees',
         'Name' => 'Name',
         'Radius' => 'Radius',
-        'RadiusUnit' => 'RadiusUnit',
-        'LatitudeDegrees' => 'LatitudeDegrees',
-        'LongitudeDegrees' => 'LongitudeDegrees'
+        'RadiusUnit' => 'RadiusUnit'
     ];
 
     /**
@@ -172,11 +172,11 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      */
     protected static array $setters = [
         'Type' => 'setType',
+        'LatitudeDegrees' => 'setLatitudeDegrees',
+        'LongitudeDegrees' => 'setLongitudeDegrees',
         'Name' => 'setName',
         'Radius' => 'setRadius',
-        'RadiusUnit' => 'setRadiusUnit',
-        'LatitudeDegrees' => 'setLatitudeDegrees',
-        'LongitudeDegrees' => 'setLongitudeDegrees'
+        'RadiusUnit' => 'setRadiusUnit'
     ];
 
     /**
@@ -186,11 +186,11 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
      */
     protected static array $getters = [
         'Type' => 'getType',
+        'LatitudeDegrees' => 'getLatitudeDegrees',
+        'LongitudeDegrees' => 'getLongitudeDegrees',
         'Name' => 'getName',
         'Radius' => 'getRadius',
-        'RadiusUnit' => 'getRadiusUnit',
-        'LatitudeDegrees' => 'getLatitudeDegrees',
-        'LongitudeDegrees' => 'getLongitudeDegrees'
+        'RadiusUnit' => 'getRadiusUnit'
     ];
 
     /**
@@ -251,11 +251,16 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
+        $this->setIfExists('LatitudeDegrees', $data ?? [], null);
+        $this->setIfExists('LongitudeDegrees', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Radius', $data ?? [], null);
         $this->setIfExists('RadiusUnit', $data ?? [], null);
-        $this->setIfExists('LatitudeDegrees', $data ?? [], null);
-        $this->setIfExists('LongitudeDegrees', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -333,6 +338,80 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['Type'] = $Type;
+
+        return $this;
+    }
+
+    /**
+     * Gets LatitudeDegrees
+     *
+     * @return float|null
+     */
+    public function getLatitudeDegrees()
+    {
+        if (!isset($this->container['LatitudeDegrees']) || is_null($this->container['LatitudeDegrees'])) {
+            return null;
+        }
+        return $this->container['LatitudeDegrees'];
+    }
+
+    /**
+     * Sets LatitudeDegrees
+     *
+     * @param float|null $LatitudeDegrees LatitudeDegrees
+     *
+     * @return self
+     */
+    public function setLatitudeDegrees($LatitudeDegrees)
+    {
+        if (is_null($LatitudeDegrees)) {
+            array_push($this->openAPINullablesSetToNull, 'LatitudeDegrees');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LatitudeDegrees', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LatitudeDegrees'] = $LatitudeDegrees;
+
+        return $this;
+    }
+
+    /**
+     * Gets LongitudeDegrees
+     *
+     * @return float|null
+     */
+    public function getLongitudeDegrees()
+    {
+        if (!isset($this->container['LongitudeDegrees']) || is_null($this->container['LongitudeDegrees'])) {
+            return null;
+        }
+        return $this->container['LongitudeDegrees'];
+    }
+
+    /**
+     * Sets LongitudeDegrees
+     *
+     * @param float|null $LongitudeDegrees LongitudeDegrees
+     *
+     * @return self
+     */
+    public function setLongitudeDegrees($LongitudeDegrees)
+    {
+        if (is_null($LongitudeDegrees)) {
+            array_push($this->openAPINullablesSetToNull, 'LongitudeDegrees');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LongitudeDegrees', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LongitudeDegrees'] = $LongitudeDegrees;
 
         return $this;
     }
@@ -437,86 +516,19 @@ class RadiusCriterion extends Criterion implements ModelInterface, ArrayAccess, 
     public function setRadiusUnit($RadiusUnit)
     {
         if (is_null($RadiusUnit)) {
-            throw new \InvalidArgumentException('non-nullable RadiusUnit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'RadiusUnit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('RadiusUnit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$RadiusUnit instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit) {
+        if (!is_null($RadiusUnit) && !$RadiusUnit instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit) {
             $RadiusUnit = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DistanceUnit($RadiusUnit);
         }
         $this->container['RadiusUnit'] = $RadiusUnit;
-
-        return $this;
-    }
-
-    /**
-     * Gets LatitudeDegrees
-     *
-     * @return float|null
-     */
-    public function getLatitudeDegrees()
-    {
-        if (!isset($this->container['LatitudeDegrees']) || is_null($this->container['LatitudeDegrees'])) {
-            return null;
-        }
-        return $this->container['LatitudeDegrees'];
-    }
-
-    /**
-     * Sets LatitudeDegrees
-     *
-     * @param float|null $LatitudeDegrees LatitudeDegrees
-     *
-     * @return self
-     */
-    public function setLatitudeDegrees($LatitudeDegrees)
-    {
-        if (is_null($LatitudeDegrees)) {
-            array_push($this->openAPINullablesSetToNull, 'LatitudeDegrees');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LatitudeDegrees', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LatitudeDegrees'] = $LatitudeDegrees;
-
-        return $this;
-    }
-
-    /**
-     * Gets LongitudeDegrees
-     *
-     * @return float|null
-     */
-    public function getLongitudeDegrees()
-    {
-        if (!isset($this->container['LongitudeDegrees']) || is_null($this->container['LongitudeDegrees'])) {
-            return null;
-        }
-        return $this->container['LongitudeDegrees'];
-    }
-
-    /**
-     * Sets LongitudeDegrees
-     *
-     * @param float|null $LongitudeDegrees LongitudeDegrees
-     *
-     * @return self
-     */
-    public function setLongitudeDegrees($LongitudeDegrees)
-    {
-        if (is_null($LongitudeDegrees)) {
-            array_push($this->openAPINullablesSetToNull, 'LongitudeDegrees');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LongitudeDegrees', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LongitudeDegrees'] = $LongitudeDegrees;
 
         return $this;
     }

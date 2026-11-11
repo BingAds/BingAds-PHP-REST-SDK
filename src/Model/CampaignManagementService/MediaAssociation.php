@@ -33,9 +33,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MediaId' => 'string',
+        'EntityId' => 'string',
         'MediaEnabledEntity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter',
-        'EntityId' => 'string'
+        'MediaId' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MediaId' => 'int64',
+        'EntityId' => 'int64',
         'MediaEnabledEntity' => null,
-        'EntityId' => 'int64'
+        'MediaId' => 'int64'
     ];
 
     /**
@@ -57,9 +57,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MediaId' => false,
+        'EntityId' => false,
         'MediaEnabledEntity' => false,
-        'EntityId' => false
+        'MediaId' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MediaId' => 'MediaId',
+        'EntityId' => 'EntityId',
         'MediaEnabledEntity' => 'MediaEnabledEntity',
-        'EntityId' => 'EntityId'
+        'MediaId' => 'MediaId'
     ];
 
     /**
@@ -159,9 +159,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'MediaId' => 'setMediaId',
+        'EntityId' => 'setEntityId',
         'MediaEnabledEntity' => 'setMediaEnabledEntity',
-        'EntityId' => 'setEntityId'
+        'MediaId' => 'setMediaId'
     ];
 
     /**
@@ -170,9 +170,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'MediaId' => 'getMediaId',
+        'EntityId' => 'getEntityId',
         'MediaEnabledEntity' => 'getMediaEnabledEntity',
-        'EntityId' => 'getEntityId'
+        'MediaId' => 'getMediaId'
     ];
 
     /**
@@ -232,9 +232,9 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MediaId', $data ?? [], null);
-        $this->setIfExists('MediaEnabledEntity', $data ?? [], null);
         $this->setIfExists('EntityId', $data ?? [], null);
+        $this->setIfExists('MediaEnabledEntity', $data ?? [], null);
+        $this->setIfExists('MediaId', $data ?? [], null);
     }
 
     /**
@@ -280,31 +280,31 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets MediaId
+     * Gets EntityId
      *
      * @return string|null
      */
-    public function getMediaId()
+    public function getEntityId()
     {
-        if (!isset($this->container['MediaId']) || is_null($this->container['MediaId'])) {
+        if (!isset($this->container['EntityId']) || is_null($this->container['EntityId'])) {
             return null;
         }
-        return $this->container['MediaId'];
+        return $this->container['EntityId'];
     }
 
     /**
-     * Sets MediaId
+     * Sets EntityId
      *
-     * @param string|null $MediaId MediaId
+     * @param string|null $EntityId EntityId
      *
      * @return self
      */
-    public function setMediaId($MediaId)
+    public function setEntityId($EntityId)
     {
-        if (is_null($MediaId)) {
-            throw new \InvalidArgumentException('non-nullable MediaId cannot be null');
+        if (is_null($EntityId)) {
+            throw new \InvalidArgumentException('non-nullable EntityId cannot be null');
         }
-        $this->container['MediaId'] = $MediaId;
+        $this->container['EntityId'] = $EntityId;
 
         return $this;
     }
@@ -337,7 +337,7 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($MediaEnabledEntity)) {
             throw new \InvalidArgumentException('non-nullable MediaEnabledEntity cannot be null');
         }
-        if (!$MediaEnabledEntity instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter) {
+        if (!is_null($MediaEnabledEntity) && !$MediaEnabledEntity instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter) {
             $MediaEnabledEntity = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaEnabledEntityFilter($MediaEnabledEntity);
         }
         $this->container['MediaEnabledEntity'] = $MediaEnabledEntity;
@@ -346,31 +346,31 @@ class MediaAssociation implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets EntityId
+     * Gets MediaId
      *
      * @return string|null
      */
-    public function getEntityId()
+    public function getMediaId()
     {
-        if (!isset($this->container['EntityId']) || is_null($this->container['EntityId'])) {
+        if (!isset($this->container['MediaId']) || is_null($this->container['MediaId'])) {
             return null;
         }
-        return $this->container['EntityId'];
+        return $this->container['MediaId'];
     }
 
     /**
-     * Sets EntityId
+     * Sets MediaId
      *
-     * @param string|null $EntityId EntityId
+     * @param string|null $MediaId MediaId
      *
      * @return self
      */
-    public function setEntityId($EntityId)
+    public function setMediaId($MediaId)
     {
-        if (is_null($EntityId)) {
-            throw new \InvalidArgumentException('non-nullable EntityId cannot be null');
+        if (is_null($MediaId)) {
+            throw new \InvalidArgumentException('non-nullable MediaId cannot be null');
         }
-        $this->container['EntityId'] = $EntityId;
+        $this->container['MediaId'] = $MediaId;
 
         return $this;
     }

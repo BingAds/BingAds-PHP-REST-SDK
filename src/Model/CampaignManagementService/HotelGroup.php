@@ -242,6 +242,11 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('Listing', $data ?? [], null);
         $this->setIfExists('ListingType', $data ?? [], null);
         $this->setIfExists('ParentCriterionId', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -388,7 +393,7 @@ class HotelGroup extends Criterion implements ModelInterface, ArrayAccess, \Json
         if (is_null($ListingType)) {
             throw new \InvalidArgumentException('non-nullable ListingType cannot be null');
         }
-        if (!$ListingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType) {
+        if (!is_null($ListingType) && !$ListingType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType) {
             $ListingType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelListingType($ListingType);
         }
         $this->container['ListingType'] = $ListingType;

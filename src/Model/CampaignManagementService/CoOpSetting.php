@@ -34,9 +34,9 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'BidOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption',
         'BidBoostValue' => 'float',
-        'BidMaxValue' => 'float'
+        'BidMaxValue' => 'float',
+        'BidOption' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption'
     ];
 
     /**
@@ -48,9 +48,9 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'BidOption' => null,
         'BidBoostValue' => 'double',
-        'BidMaxValue' => 'double'
+        'BidMaxValue' => 'double',
+        'BidOption' => null
     ];
 
     /**
@@ -60,9 +60,9 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'BidOption' => false,
         'BidBoostValue' => true,
-        'BidMaxValue' => true
+        'BidMaxValue' => true,
+        'BidOption' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'BidOption' => 'BidOption',
         'BidBoostValue' => 'BidBoostValue',
-        'BidMaxValue' => 'BidMaxValue'
+        'BidMaxValue' => 'BidMaxValue',
+        'BidOption' => 'BidOption'
     ];
 
     /**
@@ -164,9 +164,9 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'BidOption' => 'setBidOption',
         'BidBoostValue' => 'setBidBoostValue',
-        'BidMaxValue' => 'setBidMaxValue'
+        'BidMaxValue' => 'setBidMaxValue',
+        'BidOption' => 'setBidOption'
     ];
 
     /**
@@ -176,9 +176,9 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'BidOption' => 'getBidOption',
         'BidBoostValue' => 'getBidBoostValue',
-        'BidMaxValue' => 'getBidMaxValue'
+        'BidMaxValue' => 'getBidMaxValue',
+        'BidOption' => 'getBidOption'
     ];
 
     /**
@@ -239,9 +239,14 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('BidOption', $data ?? [], null);
         $this->setIfExists('BidBoostValue', $data ?? [], null);
         $this->setIfExists('BidMaxValue', $data ?? [], null);
+        $this->setIfExists('BidOption', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -324,42 +329,6 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets BidOption
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption|mixed|null
-     */
-    public function getBidOption()
-    {
-        if (!isset($this->container['BidOption']) || is_null($this->container['BidOption'])) {
-            return null;
-        }
-        if ((is_object($this->container['BidOption']) || is_string($this->container['BidOption'])) && method_exists($this->container['BidOption'], 'getValue')) {
-            return $this->container['BidOption']->getValue();
-        }
-        return $this->container['BidOption'];
-    }
-
-    /**
-     * Sets BidOption
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption|mixed|null $BidOption BidOption
-     *
-     * @return self
-     */
-    public function setBidOption($BidOption)
-    {
-        if (is_null($BidOption)) {
-            throw new \InvalidArgumentException('non-nullable BidOption cannot be null');
-        }
-        if (!$BidOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption) {
-            $BidOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption($BidOption);
-        }
-        $this->container['BidOption'] = $BidOption;
-
-        return $this;
-    }
-
-    /**
      * Gets BidBoostValue
      *
      * @return float|null
@@ -429,6 +398,49 @@ class CoOpSetting extends Setting implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['BidMaxValue'] = $BidMaxValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets BidOption
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption|mixed|null
+     */
+    public function getBidOption()
+    {
+        if (!isset($this->container['BidOption']) || is_null($this->container['BidOption'])) {
+            return null;
+        }
+        if ((is_object($this->container['BidOption']) || is_string($this->container['BidOption'])) && method_exists($this->container['BidOption'], 'getValue')) {
+            return $this->container['BidOption']->getValue();
+        }
+        return $this->container['BidOption'];
+    }
+
+    /**
+     * Sets BidOption
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption|mixed|null $BidOption BidOption
+     *
+     * @return self
+     */
+    public function setBidOption($BidOption)
+    {
+        if (is_null($BidOption)) {
+            array_push($this->openAPINullablesSetToNull, 'BidOption');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BidOption', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($BidOption) && !$BidOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption) {
+            $BidOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BidOption($BidOption);
+        }
+        $this->container['BidOption'] = $BidOption;
 
         return $this;
     }

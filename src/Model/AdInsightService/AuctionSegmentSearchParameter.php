@@ -228,6 +228,11 @@ class AuctionSegmentSearchParameter extends SearchParameter implements ModelInte
     {
         $this->setIfExists('Segment', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AuctionSegmentSearchParameter');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -300,7 +305,7 @@ class AuctionSegmentSearchParameter extends SearchParameter implements ModelInte
         if (is_null($Segment)) {
             throw new \InvalidArgumentException('non-nullable Segment cannot be null');
         }
-        if (!$Segment instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionSegment) {
+        if (!is_null($Segment) && !$Segment instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionSegment) {
             $Segment = new \Microsoft\MsAds\Rest\Model\AdInsightService\AuctionSegment($Segment);
         }
         $this->container['Segment'] = $Segment;

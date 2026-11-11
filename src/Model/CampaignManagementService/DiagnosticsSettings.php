@@ -34,8 +34,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPITypes = [
         'EnableCache' => 'bool',
-        'LastCheckTimeUTC' => 'string',
-        'EnablePilot' => 'bool'
+        'EnablePilot' => 'bool',
+        'LastCheckTimeUTC' => 'string'
     ];
 
     /**
@@ -47,8 +47,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPIFormats = [
         'EnableCache' => null,
-        'LastCheckTimeUTC' => null,
-        'EnablePilot' => null
+        'EnablePilot' => null,
+        'LastCheckTimeUTC' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'EnableCache' => false,
-        'LastCheckTimeUTC' => true,
-        'EnablePilot' => false
+        'EnablePilot' => false,
+        'LastCheckTimeUTC' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $attributeMap = [
         'EnableCache' => 'EnableCache',
-        'LastCheckTimeUTC' => 'LastCheckTimeUTC',
-        'EnablePilot' => 'EnablePilot'
+        'EnablePilot' => 'EnablePilot',
+        'LastCheckTimeUTC' => 'LastCheckTimeUTC'
     ];
 
     /**
@@ -160,8 +160,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $setters = [
         'EnableCache' => 'setEnableCache',
-        'LastCheckTimeUTC' => 'setLastCheckTimeUTC',
-        'EnablePilot' => 'setEnablePilot'
+        'EnablePilot' => 'setEnablePilot',
+        'LastCheckTimeUTC' => 'setLastCheckTimeUTC'
     ];
 
     /**
@@ -171,8 +171,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $getters = [
         'EnableCache' => 'getEnableCache',
-        'LastCheckTimeUTC' => 'getLastCheckTimeUTC',
-        'EnablePilot' => 'getEnablePilot'
+        'EnablePilot' => 'getEnablePilot',
+        'LastCheckTimeUTC' => 'getLastCheckTimeUTC'
     ];
 
     /**
@@ -233,8 +233,8 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('EnableCache', $data ?? [], null);
-        $this->setIfExists('LastCheckTimeUTC', $data ?? [], null);
         $this->setIfExists('EnablePilot', $data ?? [], null);
+        $this->setIfExists('LastCheckTimeUTC', $data ?? [], null);
     }
 
     /**
@@ -310,6 +310,36 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets EnablePilot
+     *
+     * @return bool|null
+     */
+    public function getEnablePilot()
+    {
+        if (!isset($this->container['EnablePilot']) || is_null($this->container['EnablePilot'])) {
+            return null;
+        }
+        return $this->container['EnablePilot'];
+    }
+
+    /**
+     * Sets EnablePilot
+     *
+     * @param bool|null $EnablePilot EnablePilot
+     *
+     * @return self
+     */
+    public function setEnablePilot($EnablePilot)
+    {
+        if (is_null($EnablePilot)) {
+            throw new \InvalidArgumentException('non-nullable EnablePilot cannot be null');
+        }
+        $this->container['EnablePilot'] = $EnablePilot;
+
+        return $this;
+    }
+
+    /**
      * Gets LastCheckTimeUTC
      *
      * @return string|null
@@ -342,36 +372,6 @@ class DiagnosticsSettings implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['LastCheckTimeUTC'] = $LastCheckTimeUTC;
-
-        return $this;
-    }
-
-    /**
-     * Gets EnablePilot
-     *
-     * @return bool|null
-     */
-    public function getEnablePilot()
-    {
-        if (!isset($this->container['EnablePilot']) || is_null($this->container['EnablePilot'])) {
-            return null;
-        }
-        return $this->container['EnablePilot'];
-    }
-
-    /**
-     * Sets EnablePilot
-     *
-     * @param bool|null $EnablePilot EnablePilot
-     *
-     * @return self
-     */
-    public function setEnablePilot($EnablePilot)
-    {
-        if (is_null($EnablePilot)) {
-            throw new \InvalidArgumentException('non-nullable EnablePilot cannot be null');
-        }
-        $this->container['EnablePilot'] = $EnablePilot;
 
         return $this;
     }

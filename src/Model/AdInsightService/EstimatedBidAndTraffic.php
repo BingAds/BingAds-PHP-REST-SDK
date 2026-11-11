@@ -659,7 +659,7 @@ class EstimatedBidAndTraffic implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($CurrencyCode)) {
             throw new \InvalidArgumentException('non-nullable CurrencyCode cannot be null');
         }
-        if (!$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode) {
+        if (!is_null($CurrencyCode) && !$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode) {
             $CurrencyCode = new \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode($CurrencyCode);
         }
         $this->container['CurrencyCode'] = $CurrencyCode;
@@ -695,7 +695,7 @@ class EstimatedBidAndTraffic implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($MatchType)) {
             throw new \InvalidArgumentException('non-nullable MatchType cannot be null');
         }
-        if (!$MatchType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType) {
+        if (!is_null($MatchType) && !$MatchType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType) {
             $MatchType = new \Microsoft\MsAds\Rest\Model\AdInsightService\MatchType($MatchType);
         }
         $this->container['MatchType'] = $MatchType;

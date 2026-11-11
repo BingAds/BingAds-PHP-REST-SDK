@@ -34,9 +34,9 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
         'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus',
         'Type' => 'string'
     ];
 
@@ -49,9 +49,9 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'Status' => null,
         'Criterion' => null,
         'Id' => 'int64',
+        'Status' => null,
         'Type' => null
     ];
 
@@ -62,9 +62,9 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'AdGroupId' => false,
-        'Status' => false,
         'Criterion' => true,
         'Id' => true,
+        'Status' => true,
         'Type' => true
     ];
 
@@ -155,9 +155,9 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'Status' => 'Status',
         'Criterion' => 'Criterion',
         'Id' => 'Id',
+        'Status' => 'Status',
         'Type' => 'Type'
     ];
 
@@ -168,9 +168,9 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'Status' => 'setStatus',
         'Criterion' => 'setCriterion',
         'Id' => 'setId',
+        'Status' => 'setStatus',
         'Type' => 'setType'
     ];
 
@@ -181,9 +181,9 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'Status' => 'getStatus',
         'Criterion' => 'getCriterion',
         'Id' => 'getId',
+        'Status' => 'getStatus',
         'Type' => 'getType'
     ];
 
@@ -245,10 +245,15 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -324,42 +329,6 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
     }
 
     /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Criterion
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion|null
@@ -429,6 +398,49 @@ class NegativeAdGroupCriterion extends AdGroupCriterion implements ModelInterfac
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdGroupCriterionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

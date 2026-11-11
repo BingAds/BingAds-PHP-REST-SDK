@@ -307,7 +307,7 @@ class GetPerformanceInsightsDetailDataByAccountIdRequest implements ModelInterfa
         if (is_null($EntityType)) {
             throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType) {
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType) {
             $EntityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\EntityType($EntityType);
         }
         $this->container['EntityType'] = $EntityType;

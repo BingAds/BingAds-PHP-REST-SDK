@@ -228,6 +228,11 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('HotelAdGroupType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -337,7 +342,7 @@ class HotelSetting extends Setting implements ModelInterface, ArrayAccess, \Json
         if (is_null($HotelAdGroupType)) {
             throw new \InvalidArgumentException('non-nullable HotelAdGroupType cannot be null');
         }
-        if (!$HotelAdGroupType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType) {
+        if (!is_null($HotelAdGroupType) && !$HotelAdGroupType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType) {
             $HotelAdGroupType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\HotelAdGroupType($HotelAdGroupType);
         }
         $this->container['HotelAdGroupType'] = $HotelAdGroupType;

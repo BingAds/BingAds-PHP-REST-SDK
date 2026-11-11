@@ -34,10 +34,10 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'LocationId' => 'string',
-        'LocationType' => 'string',
         'DisplayName' => 'string',
-        'EnclosedLocationIds' => 'string[]'
+        'EnclosedLocationIds' => 'string[]',
+        'LocationId' => 'string',
+        'LocationType' => 'string'
     ];
 
     /**
@@ -49,10 +49,10 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'LocationId' => 'int64',
-        'LocationType' => null,
         'DisplayName' => null,
-        'EnclosedLocationIds' => 'int64'
+        'EnclosedLocationIds' => 'int64',
+        'LocationId' => 'int64',
+        'LocationType' => null
     ];
 
     /**
@@ -62,10 +62,10 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'LocationId' => true,
-        'LocationType' => true,
         'DisplayName' => true,
-        'EnclosedLocationIds' => true
+        'EnclosedLocationIds' => true,
+        'LocationId' => true,
+        'LocationType' => true
     ];
 
     /**
@@ -155,10 +155,10 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'LocationId' => 'LocationId',
-        'LocationType' => 'LocationType',
         'DisplayName' => 'DisplayName',
-        'EnclosedLocationIds' => 'EnclosedLocationIds'
+        'EnclosedLocationIds' => 'EnclosedLocationIds',
+        'LocationId' => 'LocationId',
+        'LocationType' => 'LocationType'
     ];
 
     /**
@@ -168,10 +168,10 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'LocationId' => 'setLocationId',
-        'LocationType' => 'setLocationType',
         'DisplayName' => 'setDisplayName',
-        'EnclosedLocationIds' => 'setEnclosedLocationIds'
+        'EnclosedLocationIds' => 'setEnclosedLocationIds',
+        'LocationId' => 'setLocationId',
+        'LocationType' => 'setLocationType'
     ];
 
     /**
@@ -181,10 +181,10 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'LocationId' => 'getLocationId',
-        'LocationType' => 'getLocationType',
         'DisplayName' => 'getDisplayName',
-        'EnclosedLocationIds' => 'getEnclosedLocationIds'
+        'EnclosedLocationIds' => 'getEnclosedLocationIds',
+        'LocationId' => 'getLocationId',
+        'LocationType' => 'getLocationType'
     ];
 
     /**
@@ -245,10 +245,15 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('LocationId', $data ?? [], null);
-        $this->setIfExists('LocationType', $data ?? [], null);
         $this->setIfExists('DisplayName', $data ?? [], null);
         $this->setIfExists('EnclosedLocationIds', $data ?? [], null);
+        $this->setIfExists('LocationId', $data ?? [], null);
+        $this->setIfExists('LocationType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -331,80 +336,6 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets LocationId
-     *
-     * @return string|null
-     */
-    public function getLocationId()
-    {
-        if (!isset($this->container['LocationId']) || is_null($this->container['LocationId'])) {
-            return null;
-        }
-        return $this->container['LocationId'];
-    }
-
-    /**
-     * Sets LocationId
-     *
-     * @param string|null $LocationId LocationId
-     *
-     * @return self
-     */
-    public function setLocationId($LocationId)
-    {
-        if (is_null($LocationId)) {
-            array_push($this->openAPINullablesSetToNull, 'LocationId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LocationId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LocationId'] = $LocationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets LocationType
-     *
-     * @return string|null
-     */
-    public function getLocationType()
-    {
-        if (!isset($this->container['LocationType']) || is_null($this->container['LocationType'])) {
-            return null;
-        }
-        return $this->container['LocationType'];
-    }
-
-    /**
-     * Sets LocationType
-     *
-     * @param string|null $LocationType LocationType
-     *
-     * @return self
-     */
-    public function setLocationType($LocationType)
-    {
-        if (is_null($LocationType)) {
-            array_push($this->openAPINullablesSetToNull, 'LocationType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LocationType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['LocationType'] = $LocationType;
-
-        return $this;
-    }
-
-    /**
      * Gets DisplayName
      *
      * @return string|null
@@ -474,6 +405,80 @@ class LocationCriterion extends Criterion implements ModelInterface, ArrayAccess
             }
         }
         $this->container['EnclosedLocationIds'] = $EnclosedLocationIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets LocationId
+     *
+     * @return string|null
+     */
+    public function getLocationId()
+    {
+        if (!isset($this->container['LocationId']) || is_null($this->container['LocationId'])) {
+            return null;
+        }
+        return $this->container['LocationId'];
+    }
+
+    /**
+     * Sets LocationId
+     *
+     * @param string|null $LocationId LocationId
+     *
+     * @return self
+     */
+    public function setLocationId($LocationId)
+    {
+        if (is_null($LocationId)) {
+            array_push($this->openAPINullablesSetToNull, 'LocationId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LocationId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LocationId'] = $LocationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets LocationType
+     *
+     * @return string|null
+     */
+    public function getLocationType()
+    {
+        if (!isset($this->container['LocationType']) || is_null($this->container['LocationType'])) {
+            return null;
+        }
+        return $this->container['LocationType'];
+    }
+
+    /**
+     * Sets LocationType
+     *
+     * @param string|null $LocationType LocationType
+     *
+     * @return self
+     */
+    public function setLocationType($LocationType)
+    {
+        if (is_null($LocationType)) {
+            array_push($this->openAPINullablesSetToNull, 'LocationType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LocationType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['LocationType'] = $LocationType;
 
         return $this;
     }

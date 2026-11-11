@@ -33,8 +33,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CampaignId' => 'string',
-        'AssetGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroup[]'
+        'AssetGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroup[]',
+        'CampaignId' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CampaignId' => 'int64',
-        'AssetGroups' => null
+        'AssetGroups' => null,
+        'CampaignId' => 'int64'
     ];
 
     /**
@@ -55,8 +55,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CampaignId' => false,
-        'AssetGroups' => true
+        'AssetGroups' => true,
+        'CampaignId' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CampaignId' => 'CampaignId',
-        'AssetGroups' => 'AssetGroups'
+        'AssetGroups' => 'AssetGroups',
+        'CampaignId' => 'CampaignId'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $setters = [
-        'CampaignId' => 'setCampaignId',
-        'AssetGroups' => 'setAssetGroups'
+        'AssetGroups' => 'setAssetGroups',
+        'CampaignId' => 'setCampaignId'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static array $getters = [
-        'CampaignId' => 'getCampaignId',
-        'AssetGroups' => 'getAssetGroups'
+        'AssetGroups' => 'getAssetGroups',
+        'CampaignId' => 'getCampaignId'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('AssetGroups', $data ?? [], null);
+        $this->setIfExists('CampaignId', $data ?? [], null);
     }
 
     /**
@@ -273,36 +273,6 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets CampaignId
-     *
-     * @return string|null
-     */
-    public function getCampaignId()
-    {
-        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
-            return null;
-        }
-        return $this->container['CampaignId'];
-    }
-
-    /**
-     * Sets CampaignId
-     *
-     * @param string|null $CampaignId CampaignId
-     *
-     * @return self
-     */
-    public function setCampaignId($CampaignId)
-    {
-        if (is_null($CampaignId)) {
-            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
-        }
-        $this->container['CampaignId'] = $CampaignId;
-
-        return $this;
-    }
-
-    /**
      * Gets AssetGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetGroup[]|null
@@ -335,6 +305,36 @@ class AddAssetGroupsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['AssetGroups'] = $AssetGroups;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignId
+     *
+     * @return string|null
+     */
+    public function getCampaignId()
+    {
+        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
+            return null;
+        }
+        return $this->container['CampaignId'];
+    }
+
+    /**
+     * Sets CampaignId
+     *
+     * @param string|null $CampaignId CampaignId
+     *
+     * @return self
+     */
+    public function setCampaignId($CampaignId)
+    {
+        if (is_null($CampaignId)) {
+            throw new \InvalidArgumentException('non-nullable CampaignId cannot be null');
+        }
+        $this->container['CampaignId'] = $CampaignId;
 
         return $this;
     }

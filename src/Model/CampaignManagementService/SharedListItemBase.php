@@ -33,8 +33,8 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Type' => 'string',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Type' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Type' => null,
-        'ForwardCompatibilityMap' => null
+        'ForwardCompatibilityMap' => null,
+        'Type' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Type' => true,
-        'ForwardCompatibilityMap' => true
+        'ForwardCompatibilityMap' => true,
+        'Type' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Type' => 'Type',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Type' => 'Type'
     ];
 
     /**
@@ -155,8 +155,8 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
      * @var string[]
      */
     protected static array $setters = [
-        'Type' => 'setType',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Type' => 'setType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
      * @var string[]
      */
     protected static array $getters = [
-        'Type' => 'getType',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Type' => 'getType'
     ];
 
     /**
@@ -226,8 +226,13 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -273,43 +278,6 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
 
 
     /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets ForwardCompatibilityMap
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
@@ -342,6 +310,43 @@ class SharedListItemBase extends SharedListItem implements ModelInterface, Array
             }
         }
         $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param string|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

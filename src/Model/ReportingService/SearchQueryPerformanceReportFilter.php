@@ -33,17 +33,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'DeliveredMatchType' => '\Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter',
-        'SearchQueries' => 'string[]',
-        'AdType' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter',
-        'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
-        'AdStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter',
-        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter',
         'AccountStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter',
         'AdGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter',
-        'KeywordStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter',
+        'AdStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter',
+        'AdType' => '\Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter',
+        'AssetGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter',
+        'CampaignStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter',
+        'DeliveredMatchType' => '\Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter',
         'ExcludeZeroClicks' => 'bool',
-        'AssetGroupStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter'
+        'KeywordStatus' => '\Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter',
+        'Language' => '\Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter',
+        'SearchQueries' => 'string[]'
     ];
 
     /**
@@ -54,17 +54,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'DeliveredMatchType' => null,
-        'SearchQueries' => null,
-        'AdType' => null,
-        'CampaignStatus' => null,
-        'AdStatus' => null,
-        'Language' => null,
         'AccountStatus' => null,
         'AdGroupStatus' => null,
-        'KeywordStatus' => null,
+        'AdStatus' => null,
+        'AdType' => null,
+        'AssetGroupStatus' => null,
+        'CampaignStatus' => null,
+        'DeliveredMatchType' => null,
         'ExcludeZeroClicks' => null,
-        'AssetGroupStatus' => null
+        'KeywordStatus' => null,
+        'Language' => null,
+        'SearchQueries' => null
     ];
 
     /**
@@ -73,17 +73,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'DeliveredMatchType' => false,
-        'SearchQueries' => true,
-        'AdType' => false,
-        'CampaignStatus' => false,
-        'AdStatus' => false,
-        'Language' => false,
-        'AccountStatus' => false,
-        'AdGroupStatus' => false,
-        'KeywordStatus' => false,
+        'AccountStatus' => true,
+        'AdGroupStatus' => true,
+        'AdStatus' => true,
+        'AdType' => true,
+        'AssetGroupStatus' => true,
+        'CampaignStatus' => true,
+        'DeliveredMatchType' => true,
         'ExcludeZeroClicks' => false,
-        'AssetGroupStatus' => false
+        'KeywordStatus' => true,
+        'Language' => true,
+        'SearchQueries' => true
     ];
 
     /**
@@ -172,17 +172,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'DeliveredMatchType' => 'DeliveredMatchType',
-        'SearchQueries' => 'SearchQueries',
-        'AdType' => 'AdType',
-        'CampaignStatus' => 'CampaignStatus',
-        'AdStatus' => 'AdStatus',
-        'Language' => 'Language',
         'AccountStatus' => 'AccountStatus',
         'AdGroupStatus' => 'AdGroupStatus',
-        'KeywordStatus' => 'KeywordStatus',
+        'AdStatus' => 'AdStatus',
+        'AdType' => 'AdType',
+        'AssetGroupStatus' => 'AssetGroupStatus',
+        'CampaignStatus' => 'CampaignStatus',
+        'DeliveredMatchType' => 'DeliveredMatchType',
         'ExcludeZeroClicks' => 'ExcludeZeroClicks',
-        'AssetGroupStatus' => 'AssetGroupStatus'
+        'KeywordStatus' => 'KeywordStatus',
+        'Language' => 'Language',
+        'SearchQueries' => 'SearchQueries'
     ];
 
     /**
@@ -191,17 +191,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $setters = [
-        'DeliveredMatchType' => 'setDeliveredMatchType',
-        'SearchQueries' => 'setSearchQueries',
-        'AdType' => 'setAdType',
-        'CampaignStatus' => 'setCampaignStatus',
-        'AdStatus' => 'setAdStatus',
-        'Language' => 'setLanguage',
         'AccountStatus' => 'setAccountStatus',
         'AdGroupStatus' => 'setAdGroupStatus',
-        'KeywordStatus' => 'setKeywordStatus',
+        'AdStatus' => 'setAdStatus',
+        'AdType' => 'setAdType',
+        'AssetGroupStatus' => 'setAssetGroupStatus',
+        'CampaignStatus' => 'setCampaignStatus',
+        'DeliveredMatchType' => 'setDeliveredMatchType',
         'ExcludeZeroClicks' => 'setExcludeZeroClicks',
-        'AssetGroupStatus' => 'setAssetGroupStatus'
+        'KeywordStatus' => 'setKeywordStatus',
+        'Language' => 'setLanguage',
+        'SearchQueries' => 'setSearchQueries'
     ];
 
     /**
@@ -210,17 +210,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static array $getters = [
-        'DeliveredMatchType' => 'getDeliveredMatchType',
-        'SearchQueries' => 'getSearchQueries',
-        'AdType' => 'getAdType',
-        'CampaignStatus' => 'getCampaignStatus',
-        'AdStatus' => 'getAdStatus',
-        'Language' => 'getLanguage',
         'AccountStatus' => 'getAccountStatus',
         'AdGroupStatus' => 'getAdGroupStatus',
-        'KeywordStatus' => 'getKeywordStatus',
+        'AdStatus' => 'getAdStatus',
+        'AdType' => 'getAdType',
+        'AssetGroupStatus' => 'getAssetGroupStatus',
+        'CampaignStatus' => 'getCampaignStatus',
+        'DeliveredMatchType' => 'getDeliveredMatchType',
         'ExcludeZeroClicks' => 'getExcludeZeroClicks',
-        'AssetGroupStatus' => 'getAssetGroupStatus'
+        'KeywordStatus' => 'getKeywordStatus',
+        'Language' => 'getLanguage',
+        'SearchQueries' => 'getSearchQueries'
     ];
 
     /**
@@ -280,17 +280,17 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('DeliveredMatchType', $data ?? [], null);
-        $this->setIfExists('SearchQueries', $data ?? [], null);
-        $this->setIfExists('AdType', $data ?? [], null);
-        $this->setIfExists('CampaignStatus', $data ?? [], null);
-        $this->setIfExists('AdStatus', $data ?? [], null);
-        $this->setIfExists('Language', $data ?? [], null);
         $this->setIfExists('AccountStatus', $data ?? [], null);
         $this->setIfExists('AdGroupStatus', $data ?? [], null);
-        $this->setIfExists('KeywordStatus', $data ?? [], null);
-        $this->setIfExists('ExcludeZeroClicks', $data ?? [], null);
+        $this->setIfExists('AdStatus', $data ?? [], null);
+        $this->setIfExists('AdType', $data ?? [], null);
         $this->setIfExists('AssetGroupStatus', $data ?? [], null);
+        $this->setIfExists('CampaignStatus', $data ?? [], null);
+        $this->setIfExists('DeliveredMatchType', $data ?? [], null);
+        $this->setIfExists('ExcludeZeroClicks', $data ?? [], null);
+        $this->setIfExists('KeywordStatus', $data ?? [], null);
+        $this->setIfExists('Language', $data ?? [], null);
+        $this->setIfExists('SearchQueries', $data ?? [], null);
     }
 
     /**
@@ -336,6 +336,264 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
 
 
     /**
+     * Gets AccountStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter|mixed|null
+     */
+    public function getAccountStatus()
+    {
+        if (!isset($this->container['AccountStatus']) || is_null($this->container['AccountStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AccountStatus']) || is_string($this->container['AccountStatus'])) && method_exists($this->container['AccountStatus'], 'getValue')) {
+            return $this->container['AccountStatus']->getValue();
+        }
+        return $this->container['AccountStatus'];
+    }
+
+    /**
+     * Sets AccountStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter|mixed|null $AccountStatus AccountStatus
+     *
+     * @return self
+     */
+    public function setAccountStatus($AccountStatus)
+    {
+        if (is_null($AccountStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'AccountStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AccountStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AccountStatus) && !$AccountStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter) {
+            $AccountStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter($AccountStatus);
+        }
+        $this->container['AccountStatus'] = $AccountStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdGroupStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter|mixed|null
+     */
+    public function getAdGroupStatus()
+    {
+        if (!isset($this->container['AdGroupStatus']) || is_null($this->container['AdGroupStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdGroupStatus']) || is_string($this->container['AdGroupStatus'])) && method_exists($this->container['AdGroupStatus'], 'getValue')) {
+            return $this->container['AdGroupStatus']->getValue();
+        }
+        return $this->container['AdGroupStatus'];
+    }
+
+    /**
+     * Sets AdGroupStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter|mixed|null $AdGroupStatus AdGroupStatus
+     *
+     * @return self
+     */
+    public function setAdGroupStatus($AdGroupStatus)
+    {
+        if (is_null($AdGroupStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'AdGroupStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AdGroupStatus) && !$AdGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter) {
+            $AdGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter($AdGroupStatus);
+        }
+        $this->container['AdGroupStatus'] = $AdGroupStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter|mixed|null
+     */
+    public function getAdStatus()
+    {
+        if (!isset($this->container['AdStatus']) || is_null($this->container['AdStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdStatus']) || is_string($this->container['AdStatus'])) && method_exists($this->container['AdStatus'], 'getValue')) {
+            return $this->container['AdStatus']->getValue();
+        }
+        return $this->container['AdStatus'];
+    }
+
+    /**
+     * Sets AdStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter|mixed|null $AdStatus AdStatus
+     *
+     * @return self
+     */
+    public function setAdStatus($AdStatus)
+    {
+        if (is_null($AdStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'AdStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AdStatus) && !$AdStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter) {
+            $AdStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter($AdStatus);
+        }
+        $this->container['AdStatus'] = $AdStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null
+     */
+    public function getAdType()
+    {
+        if (!isset($this->container['AdType']) || is_null($this->container['AdType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AdType']) || is_string($this->container['AdType'])) && method_exists($this->container['AdType'], 'getValue')) {
+            return $this->container['AdType']->getValue();
+        }
+        return $this->container['AdType'];
+    }
+
+    /**
+     * Sets AdType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null $AdType AdType
+     *
+     * @return self
+     */
+    public function setAdType($AdType)
+    {
+        if (is_null($AdType)) {
+            array_push($this->openAPINullablesSetToNull, 'AdType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AdType) && !$AdType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter) {
+            $AdType = new \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter($AdType);
+        }
+        $this->container['AdType'] = $AdType;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null
+     */
+    public function getAssetGroupStatus()
+    {
+        if (!isset($this->container['AssetGroupStatus']) || is_null($this->container['AssetGroupStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['AssetGroupStatus']) || is_string($this->container['AssetGroupStatus'])) && method_exists($this->container['AssetGroupStatus'], 'getValue')) {
+            return $this->container['AssetGroupStatus']->getValue();
+        }
+        return $this->container['AssetGroupStatus'];
+    }
+
+    /**
+     * Sets AssetGroupStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null $AssetGroupStatus AssetGroupStatus
+     *
+     * @return self
+     */
+    public function setAssetGroupStatus($AssetGroupStatus)
+    {
+        if (is_null($AssetGroupStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetGroupStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssetGroupStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AssetGroupStatus) && !$AssetGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter) {
+            $AssetGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter($AssetGroupStatus);
+        }
+        $this->container['AssetGroupStatus'] = $AssetGroupStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null
+     */
+    public function getCampaignStatus()
+    {
+        if (!isset($this->container['CampaignStatus']) || is_null($this->container['CampaignStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['CampaignStatus']) || is_string($this->container['CampaignStatus'])) && method_exists($this->container['CampaignStatus'], 'getValue')) {
+            return $this->container['CampaignStatus']->getValue();
+        }
+        return $this->container['CampaignStatus'];
+    }
+
+    /**
+     * Sets CampaignStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null $CampaignStatus CampaignStatus
+     *
+     * @return self
+     */
+    public function setCampaignStatus($CampaignStatus)
+    {
+        if (is_null($CampaignStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CampaignStatus) && !$CampaignStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter) {
+            $CampaignStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter($CampaignStatus);
+        }
+        $this->container['CampaignStatus'] = $CampaignStatus;
+
+        return $this;
+    }
+
+    /**
      * Gets DeliveredMatchType
      *
      * @return \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter|mixed|null
@@ -361,12 +619,135 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
     public function setDeliveredMatchType($DeliveredMatchType)
     {
         if (is_null($DeliveredMatchType)) {
-            throw new \InvalidArgumentException('non-nullable DeliveredMatchType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'DeliveredMatchType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DeliveredMatchType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$DeliveredMatchType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter) {
+        if (!is_null($DeliveredMatchType) && !$DeliveredMatchType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter) {
             $DeliveredMatchType = new \Microsoft\MsAds\Rest\Model\ReportingService\DeliveredMatchTypeReportFilter($DeliveredMatchType);
         }
         $this->container['DeliveredMatchType'] = $DeliveredMatchType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExcludeZeroClicks
+     *
+     * @return bool|null
+     */
+    public function getExcludeZeroClicks()
+    {
+        if (!isset($this->container['ExcludeZeroClicks']) || is_null($this->container['ExcludeZeroClicks'])) {
+            return null;
+        }
+        return $this->container['ExcludeZeroClicks'];
+    }
+
+    /**
+     * Sets ExcludeZeroClicks
+     *
+     * @param bool|null $ExcludeZeroClicks ExcludeZeroClicks
+     *
+     * @return self
+     */
+    public function setExcludeZeroClicks($ExcludeZeroClicks)
+    {
+        if (is_null($ExcludeZeroClicks)) {
+            throw new \InvalidArgumentException('non-nullable ExcludeZeroClicks cannot be null');
+        }
+        $this->container['ExcludeZeroClicks'] = $ExcludeZeroClicks;
+
+        return $this;
+    }
+
+    /**
+     * Gets KeywordStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter|mixed|null
+     */
+    public function getKeywordStatus()
+    {
+        if (!isset($this->container['KeywordStatus']) || is_null($this->container['KeywordStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['KeywordStatus']) || is_string($this->container['KeywordStatus'])) && method_exists($this->container['KeywordStatus'], 'getValue')) {
+            return $this->container['KeywordStatus']->getValue();
+        }
+        return $this->container['KeywordStatus'];
+    }
+
+    /**
+     * Sets KeywordStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter|mixed|null $KeywordStatus KeywordStatus
+     *
+     * @return self
+     */
+    public function setKeywordStatus($KeywordStatus)
+    {
+        if (is_null($KeywordStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'KeywordStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('KeywordStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($KeywordStatus) && !$KeywordStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter) {
+            $KeywordStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter($KeywordStatus);
+        }
+        $this->container['KeywordStatus'] = $KeywordStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets Language
+     *
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null
+     */
+    public function getLanguage()
+    {
+        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
+            return null;
+        }
+        if ((is_object($this->container['Language']) || is_string($this->container['Language'])) && method_exists($this->container['Language'], 'getValue')) {
+            return $this->container['Language']->getValue();
+        }
+        return $this->container['Language'];
+    }
+
+    /**
+     * Sets Language
+     *
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null $Language Language
+     *
+     * @return self
+     */
+    public function setLanguage($Language)
+    {
+        if (is_null($Language)) {
+            array_push($this->openAPINullablesSetToNull, 'Language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Language) && !$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
+            $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
+        }
+        $this->container['Language'] = $Language;
 
         return $this;
     }
@@ -404,324 +785,6 @@ class SearchQueryPerformanceReportFilter implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['SearchQueries'] = $SearchQueries;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null
-     */
-    public function getAdType()
-    {
-        if (!isset($this->container['AdType']) || is_null($this->container['AdType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AdType']) || is_string($this->container['AdType'])) && method_exists($this->container['AdType'], 'getValue')) {
-            return $this->container['AdType']->getValue();
-        }
-        return $this->container['AdType'];
-    }
-
-    /**
-     * Sets AdType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter|mixed|null $AdType AdType
-     *
-     * @return self
-     */
-    public function setAdType($AdType)
-    {
-        if (is_null($AdType)) {
-            throw new \InvalidArgumentException('non-nullable AdType cannot be null');
-        }
-        if (!$AdType instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter) {
-            $AdType = new \Microsoft\MsAds\Rest\Model\ReportingService\AdTypeReportFilter($AdType);
-        }
-        $this->container['AdType'] = $AdType;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null
-     */
-    public function getCampaignStatus()
-    {
-        if (!isset($this->container['CampaignStatus']) || is_null($this->container['CampaignStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['CampaignStatus']) || is_string($this->container['CampaignStatus'])) && method_exists($this->container['CampaignStatus'], 'getValue')) {
-            return $this->container['CampaignStatus']->getValue();
-        }
-        return $this->container['CampaignStatus'];
-    }
-
-    /**
-     * Sets CampaignStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter|mixed|null $CampaignStatus CampaignStatus
-     *
-     * @return self
-     */
-    public function setCampaignStatus($CampaignStatus)
-    {
-        if (is_null($CampaignStatus)) {
-            throw new \InvalidArgumentException('non-nullable CampaignStatus cannot be null');
-        }
-        if (!$CampaignStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter) {
-            $CampaignStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\CampaignStatusReportFilter($CampaignStatus);
-        }
-        $this->container['CampaignStatus'] = $CampaignStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter|mixed|null
-     */
-    public function getAdStatus()
-    {
-        if (!isset($this->container['AdStatus']) || is_null($this->container['AdStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['AdStatus']) || is_string($this->container['AdStatus'])) && method_exists($this->container['AdStatus'], 'getValue')) {
-            return $this->container['AdStatus']->getValue();
-        }
-        return $this->container['AdStatus'];
-    }
-
-    /**
-     * Sets AdStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter|mixed|null $AdStatus AdStatus
-     *
-     * @return self
-     */
-    public function setAdStatus($AdStatus)
-    {
-        if (is_null($AdStatus)) {
-            throw new \InvalidArgumentException('non-nullable AdStatus cannot be null');
-        }
-        if (!$AdStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter) {
-            $AdStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdStatusReportFilter($AdStatus);
-        }
-        $this->container['AdStatus'] = $AdStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets Language
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null
-     */
-    public function getLanguage()
-    {
-        if (!isset($this->container['Language']) || is_null($this->container['Language'])) {
-            return null;
-        }
-        if ((is_object($this->container['Language']) || is_string($this->container['Language'])) && method_exists($this->container['Language'], 'getValue')) {
-            return $this->container['Language']->getValue();
-        }
-        return $this->container['Language'];
-    }
-
-    /**
-     * Sets Language
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter|mixed|null $Language Language
-     *
-     * @return self
-     */
-    public function setLanguage($Language)
-    {
-        if (is_null($Language)) {
-            throw new \InvalidArgumentException('non-nullable Language cannot be null');
-        }
-        if (!$Language instanceof \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter) {
-            $Language = new \Microsoft\MsAds\Rest\Model\ReportingService\LanguageReportFilter($Language);
-        }
-        $this->container['Language'] = $Language;
-
-        return $this;
-    }
-
-    /**
-     * Gets AccountStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter|mixed|null
-     */
-    public function getAccountStatus()
-    {
-        if (!isset($this->container['AccountStatus']) || is_null($this->container['AccountStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['AccountStatus']) || is_string($this->container['AccountStatus'])) && method_exists($this->container['AccountStatus'], 'getValue')) {
-            return $this->container['AccountStatus']->getValue();
-        }
-        return $this->container['AccountStatus'];
-    }
-
-    /**
-     * Sets AccountStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter|mixed|null $AccountStatus AccountStatus
-     *
-     * @return self
-     */
-    public function setAccountStatus($AccountStatus)
-    {
-        if (is_null($AccountStatus)) {
-            throw new \InvalidArgumentException('non-nullable AccountStatus cannot be null');
-        }
-        if (!$AccountStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter) {
-            $AccountStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AccountStatusReportFilter($AccountStatus);
-        }
-        $this->container['AccountStatus'] = $AccountStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets AdGroupStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter|mixed|null
-     */
-    public function getAdGroupStatus()
-    {
-        if (!isset($this->container['AdGroupStatus']) || is_null($this->container['AdGroupStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['AdGroupStatus']) || is_string($this->container['AdGroupStatus'])) && method_exists($this->container['AdGroupStatus'], 'getValue')) {
-            return $this->container['AdGroupStatus']->getValue();
-        }
-        return $this->container['AdGroupStatus'];
-    }
-
-    /**
-     * Sets AdGroupStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter|mixed|null $AdGroupStatus AdGroupStatus
-     *
-     * @return self
-     */
-    public function setAdGroupStatus($AdGroupStatus)
-    {
-        if (is_null($AdGroupStatus)) {
-            throw new \InvalidArgumentException('non-nullable AdGroupStatus cannot be null');
-        }
-        if (!$AdGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter) {
-            $AdGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AdGroupStatusReportFilter($AdGroupStatus);
-        }
-        $this->container['AdGroupStatus'] = $AdGroupStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets KeywordStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter|mixed|null
-     */
-    public function getKeywordStatus()
-    {
-        if (!isset($this->container['KeywordStatus']) || is_null($this->container['KeywordStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['KeywordStatus']) || is_string($this->container['KeywordStatus'])) && method_exists($this->container['KeywordStatus'], 'getValue')) {
-            return $this->container['KeywordStatus']->getValue();
-        }
-        return $this->container['KeywordStatus'];
-    }
-
-    /**
-     * Sets KeywordStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter|mixed|null $KeywordStatus KeywordStatus
-     *
-     * @return self
-     */
-    public function setKeywordStatus($KeywordStatus)
-    {
-        if (is_null($KeywordStatus)) {
-            throw new \InvalidArgumentException('non-nullable KeywordStatus cannot be null');
-        }
-        if (!$KeywordStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter) {
-            $KeywordStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\KeywordStatusReportFilter($KeywordStatus);
-        }
-        $this->container['KeywordStatus'] = $KeywordStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExcludeZeroClicks
-     *
-     * @return bool|null
-     */
-    public function getExcludeZeroClicks()
-    {
-        if (!isset($this->container['ExcludeZeroClicks']) || is_null($this->container['ExcludeZeroClicks'])) {
-            return null;
-        }
-        return $this->container['ExcludeZeroClicks'];
-    }
-
-    /**
-     * Sets ExcludeZeroClicks
-     *
-     * @param bool|null $ExcludeZeroClicks ExcludeZeroClicks
-     *
-     * @return self
-     */
-    public function setExcludeZeroClicks($ExcludeZeroClicks)
-    {
-        if (is_null($ExcludeZeroClicks)) {
-            throw new \InvalidArgumentException('non-nullable ExcludeZeroClicks cannot be null');
-        }
-        $this->container['ExcludeZeroClicks'] = $ExcludeZeroClicks;
-
-        return $this;
-    }
-
-    /**
-     * Gets AssetGroupStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null
-     */
-    public function getAssetGroupStatus()
-    {
-        if (!isset($this->container['AssetGroupStatus']) || is_null($this->container['AssetGroupStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['AssetGroupStatus']) || is_string($this->container['AssetGroupStatus'])) && method_exists($this->container['AssetGroupStatus'], 'getValue')) {
-            return $this->container['AssetGroupStatus']->getValue();
-        }
-        return $this->container['AssetGroupStatus'];
-    }
-
-    /**
-     * Sets AssetGroupStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter|mixed|null $AssetGroupStatus AssetGroupStatus
-     *
-     * @return self
-     */
-    public function setAssetGroupStatus($AssetGroupStatus)
-    {
-        if (is_null($AssetGroupStatus)) {
-            throw new \InvalidArgumentException('non-nullable AssetGroupStatus cannot be null');
-        }
-        if (!$AssetGroupStatus instanceof \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter) {
-            $AssetGroupStatus = new \Microsoft\MsAds\Rest\Model\ReportingService\AssetGroupStatusReportFilter($AssetGroupStatus);
-        }
-        $this->container['AssetGroupStatus'] = $AssetGroupStatus;
 
         return $this;
     }

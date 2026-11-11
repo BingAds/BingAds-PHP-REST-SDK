@@ -337,7 +337,7 @@ class DecimalRoundedResult implements ModelInterface, ArrayAccess, \JsonSerializ
         if (is_null($Unit)) {
             throw new \InvalidArgumentException('non-nullable Unit cannot be null');
         }
-        if (!$Unit instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ScaleUnit) {
+        if (!is_null($Unit) && !$Unit instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\ScaleUnit) {
             $Unit = new \Microsoft\MsAds\Rest\Model\AdInsightService\ScaleUnit($Unit);
         }
         $this->container['Unit'] = $Unit;

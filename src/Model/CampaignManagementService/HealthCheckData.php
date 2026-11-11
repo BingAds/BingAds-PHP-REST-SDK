@@ -33,10 +33,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'HealthCheckEntity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity',
-        'HealthCheckName' => 'string',
         'HealthCheckDataVersion' => 'string',
+        'HealthCheckEntity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity',
         'HealthCheckJsonData' => 'string',
+        'HealthCheckName' => 'string',
         'HealthCheckSubEntityResults' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckSubEntityData'
     ];
 
@@ -48,10 +48,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'HealthCheckEntity' => null,
-        'HealthCheckName' => null,
         'HealthCheckDataVersion' => null,
+        'HealthCheckEntity' => null,
         'HealthCheckJsonData' => null,
+        'HealthCheckName' => null,
         'HealthCheckSubEntityResults' => null
     ];
 
@@ -61,10 +61,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'HealthCheckEntity' => true,
-        'HealthCheckName' => true,
         'HealthCheckDataVersion' => true,
+        'HealthCheckEntity' => true,
         'HealthCheckJsonData' => true,
+        'HealthCheckName' => true,
         'HealthCheckSubEntityResults' => true
     ];
 
@@ -154,10 +154,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'HealthCheckEntity' => 'HealthCheckEntity',
-        'HealthCheckName' => 'HealthCheckName',
         'HealthCheckDataVersion' => 'HealthCheckDataVersion',
+        'HealthCheckEntity' => 'HealthCheckEntity',
         'HealthCheckJsonData' => 'HealthCheckJsonData',
+        'HealthCheckName' => 'HealthCheckName',
         'HealthCheckSubEntityResults' => 'HealthCheckSubEntityResults'
     ];
 
@@ -167,10 +167,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'HealthCheckEntity' => 'setHealthCheckEntity',
-        'HealthCheckName' => 'setHealthCheckName',
         'HealthCheckDataVersion' => 'setHealthCheckDataVersion',
+        'HealthCheckEntity' => 'setHealthCheckEntity',
         'HealthCheckJsonData' => 'setHealthCheckJsonData',
+        'HealthCheckName' => 'setHealthCheckName',
         'HealthCheckSubEntityResults' => 'setHealthCheckSubEntityResults'
     ];
 
@@ -180,10 +180,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'HealthCheckEntity' => 'getHealthCheckEntity',
-        'HealthCheckName' => 'getHealthCheckName',
         'HealthCheckDataVersion' => 'getHealthCheckDataVersion',
+        'HealthCheckEntity' => 'getHealthCheckEntity',
         'HealthCheckJsonData' => 'getHealthCheckJsonData',
+        'HealthCheckName' => 'getHealthCheckName',
         'HealthCheckSubEntityResults' => 'getHealthCheckSubEntityResults'
     ];
 
@@ -244,10 +244,10 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('HealthCheckEntity', $data ?? [], null);
-        $this->setIfExists('HealthCheckName', $data ?? [], null);
         $this->setIfExists('HealthCheckDataVersion', $data ?? [], null);
+        $this->setIfExists('HealthCheckEntity', $data ?? [], null);
         $this->setIfExists('HealthCheckJsonData', $data ?? [], null);
+        $this->setIfExists('HealthCheckName', $data ?? [], null);
         $this->setIfExists('HealthCheckSubEntityResults', $data ?? [], null);
     }
 
@@ -294,80 +294,6 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets HealthCheckEntity
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity|null
-     */
-    public function getHealthCheckEntity()
-    {
-        if (!isset($this->container['HealthCheckEntity']) || is_null($this->container['HealthCheckEntity'])) {
-            return null;
-        }
-        return $this->container['HealthCheckEntity'];
-    }
-
-    /**
-     * Sets HealthCheckEntity
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity|null $HealthCheckEntity HealthCheckEntity
-     *
-     * @return self
-     */
-    public function setHealthCheckEntity($HealthCheckEntity)
-    {
-        if (is_null($HealthCheckEntity)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckEntity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckEntity', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckEntity'] = $HealthCheckEntity;
-
-        return $this;
-    }
-
-    /**
-     * Gets HealthCheckName
-     *
-     * @return string|null
-     */
-    public function getHealthCheckName()
-    {
-        if (!isset($this->container['HealthCheckName']) || is_null($this->container['HealthCheckName'])) {
-            return null;
-        }
-        return $this->container['HealthCheckName'];
-    }
-
-    /**
-     * Sets HealthCheckName
-     *
-     * @param string|null $HealthCheckName HealthCheckName
-     *
-     * @return self
-     */
-    public function setHealthCheckName($HealthCheckName)
-    {
-        if (is_null($HealthCheckName)) {
-            array_push($this->openAPINullablesSetToNull, 'HealthCheckName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('HealthCheckName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['HealthCheckName'] = $HealthCheckName;
-
-        return $this;
-    }
-
-    /**
      * Gets HealthCheckDataVersion
      *
      * @return string|null
@@ -405,6 +331,43 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets HealthCheckEntity
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity|null
+     */
+    public function getHealthCheckEntity()
+    {
+        if (!isset($this->container['HealthCheckEntity']) || is_null($this->container['HealthCheckEntity'])) {
+            return null;
+        }
+        return $this->container['HealthCheckEntity'];
+    }
+
+    /**
+     * Sets HealthCheckEntity
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity|null $HealthCheckEntity HealthCheckEntity
+     *
+     * @return self
+     */
+    public function setHealthCheckEntity($HealthCheckEntity)
+    {
+        if (is_null($HealthCheckEntity)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckEntity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckEntity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckEntity'] = $HealthCheckEntity;
+
+        return $this;
+    }
+
+    /**
      * Gets HealthCheckJsonData
      *
      * @return string|null
@@ -437,6 +400,43 @@ class HealthCheckData implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['HealthCheckJsonData'] = $HealthCheckJsonData;
+
+        return $this;
+    }
+
+    /**
+     * Gets HealthCheckName
+     *
+     * @return string|null
+     */
+    public function getHealthCheckName()
+    {
+        if (!isset($this->container['HealthCheckName']) || is_null($this->container['HealthCheckName'])) {
+            return null;
+        }
+        return $this->container['HealthCheckName'];
+    }
+
+    /**
+     * Sets HealthCheckName
+     *
+     * @param string|null $HealthCheckName HealthCheckName
+     *
+     * @return self
+     */
+    public function setHealthCheckName($HealthCheckName)
+    {
+        if (is_null($HealthCheckName)) {
+            array_push($this->openAPINullablesSetToNull, 'HealthCheckName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('HealthCheckName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['HealthCheckName'] = $HealthCheckName;
 
         return $this;
     }

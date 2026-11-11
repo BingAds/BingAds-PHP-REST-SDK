@@ -34,9 +34,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Code' => 'int',
-        'Message' => 'string',
         'Detail' => 'string',
-        'ErrorCode' => 'string'
+        'ErrorCode' => 'string',
+        'Message' => 'string'
     ];
 
     /**
@@ -48,9 +48,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Code' => 'int32',
-        'Message' => null,
         'Detail' => null,
-        'ErrorCode' => null
+        'ErrorCode' => null,
+        'Message' => null
     ];
 
     /**
@@ -60,9 +60,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Code' => false,
-        'Message' => true,
         'Detail' => true,
-        'ErrorCode' => true
+        'ErrorCode' => true,
+        'Message' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Code' => 'Code',
-        'Message' => 'Message',
         'Detail' => 'Detail',
-        'ErrorCode' => 'ErrorCode'
+        'ErrorCode' => 'ErrorCode',
+        'Message' => 'Message'
     ];
 
     /**
@@ -164,9 +164,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Code' => 'setCode',
-        'Message' => 'setMessage',
         'Detail' => 'setDetail',
-        'ErrorCode' => 'setErrorCode'
+        'ErrorCode' => 'setErrorCode',
+        'Message' => 'setMessage'
     ];
 
     /**
@@ -176,9 +176,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Code' => 'getCode',
-        'Message' => 'getMessage',
         'Detail' => 'getDetail',
-        'ErrorCode' => 'getErrorCode'
+        'ErrorCode' => 'getErrorCode',
+        'Message' => 'getMessage'
     ];
 
     /**
@@ -239,9 +239,9 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Code', $data ?? [], null);
-        $this->setIfExists('Message', $data ?? [], null);
         $this->setIfExists('Detail', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
+        $this->setIfExists('Message', $data ?? [], null);
     }
 
     /**
@@ -317,43 +317,6 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        if (!isset($this->container['Message']) || is_null($this->container['Message'])) {
-            return null;
-        }
-        return $this->container['Message'];
-    }
-
-    /**
-     * Sets Message
-     *
-     * @param string|null $Message Message
-     *
-     * @return self
-     */
-    public function setMessage($Message)
-    {
-        if (is_null($Message)) {
-            array_push($this->openAPINullablesSetToNull, 'Message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Message', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Message'] = $Message;
-
-        return $this;
-    }
-
-    /**
      * Gets Detail
      *
      * @return string|null
@@ -423,6 +386,43 @@ class AdApiError implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ErrorCode'] = $ErrorCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets Message
+     *
+     * @return string|null
+     */
+    public function getMessage()
+    {
+        if (!isset($this->container['Message']) || is_null($this->container['Message'])) {
+            return null;
+        }
+        return $this->container['Message'];
+    }
+
+    /**
+     * Sets Message
+     *
+     * @param string|null $Message Message
+     *
+     * @return self
+     */
+    public function setMessage($Message)
+    {
+        if (is_null($Message)) {
+            array_push($this->openAPINullablesSetToNull, 'Message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Message'] = $Message;
 
         return $this;
     }

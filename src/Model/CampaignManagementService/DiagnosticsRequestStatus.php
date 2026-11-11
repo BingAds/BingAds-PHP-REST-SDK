@@ -33,8 +33,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Status' => 'string',
-        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]'
+        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
+        'Status' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Status' => null,
-        'Errors' => null
+        'Errors' => null,
+        'Status' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Status' => true,
-        'Errors' => true
+        'Errors' => true,
+        'Status' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Status' => 'Status',
-        'Errors' => 'Errors'
+        'Errors' => 'Errors',
+        'Status' => 'Status'
     ];
 
     /**
@@ -155,8 +155,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $setters = [
-        'Status' => 'setStatus',
-        'Errors' => 'setErrors'
+        'Errors' => 'setErrors',
+        'Status' => 'setStatus'
     ];
 
     /**
@@ -165,8 +165,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $getters = [
-        'Status' => 'getStatus',
-        'Errors' => 'getErrors'
+        'Errors' => 'getErrors',
+        'Status' => 'getStatus'
     ];
 
     /**
@@ -226,8 +226,8 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Errors', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets Status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param string|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            array_push($this->openAPINullablesSetToNull, 'Status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Status', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Errors
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null
@@ -342,6 +305,43 @@ class DiagnosticsRequestStatus implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['Errors'] = $Errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param string|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

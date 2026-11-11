@@ -351,7 +351,7 @@ class CampaignBidLandscape implements ModelInterface, ArrayAccess, \JsonSerializ
         if (is_null($CampaignBidLandscapeType)) {
             throw new \InvalidArgumentException('non-nullable CampaignBidLandscapeType cannot be null');
         }
-        if (!$CampaignBidLandscapeType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CampaignBidLandscapeType) {
+        if (!is_null($CampaignBidLandscapeType) && !$CampaignBidLandscapeType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CampaignBidLandscapeType) {
             $CampaignBidLandscapeType = new \Microsoft\MsAds\Rest\Model\AdInsightService\CampaignBidLandscapeType($CampaignBidLandscapeType);
         }
         $this->container['CampaignBidLandscapeType'] = $CampaignBidLandscapeType;

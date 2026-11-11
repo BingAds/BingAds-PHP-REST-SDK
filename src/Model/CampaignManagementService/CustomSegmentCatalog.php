@@ -59,7 +59,7 @@ class CustomSegmentCatalog implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static array $openAPINullables = [
         'CatalogId' => true,
         'CatalogName' => true,
-        'EffectiveEditorialStatus' => false
+        'EffectiveEditorialStatus' => true
     ];
 
     /**
@@ -379,9 +379,16 @@ class CustomSegmentCatalog implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setEffectiveEditorialStatus($EffectiveEditorialStatus)
     {
         if (is_null($EffectiveEditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EffectiveEditorialStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'EffectiveEditorialStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EffectiveEditorialStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$EffectiveEditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EffectiveEditorialStatus) {
+        if (!is_null($EffectiveEditorialStatus) && !$EffectiveEditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EffectiveEditorialStatus) {
             $EffectiveEditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EffectiveEditorialStatus($EffectiveEditorialStatus);
         }
         $this->container['EffectiveEditorialStatus'] = $EffectiveEditorialStatus;

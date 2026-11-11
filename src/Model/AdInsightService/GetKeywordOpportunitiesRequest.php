@@ -381,7 +381,7 @@ class GetKeywordOpportunitiesRequest implements ModelInterface, ArrayAccess, \Js
         if (is_null($OpportunityType)) {
             throw new \InvalidArgumentException('non-nullable OpportunityType cannot be null');
         }
-        if (!$OpportunityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\KeywordOpportunityType) {
+        if (!is_null($OpportunityType) && !$OpportunityType instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\KeywordOpportunityType) {
             $OpportunityType = new \Microsoft\MsAds\Rest\Model\AdInsightService\KeywordOpportunityType($OpportunityType);
         }
         $this->container['OpportunityType'] = $OpportunityType;

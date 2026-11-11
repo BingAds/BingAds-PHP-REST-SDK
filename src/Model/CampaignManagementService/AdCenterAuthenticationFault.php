@@ -34,11 +34,11 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
       */
     protected static array $openAPITypes = [
         'TrackingId' => 'string',
-        'ErrorCode' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode',
         'ErrorMessage' => 'string',
-        'MTServerName' => 'string',
-        'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource',
         'ErrorSourceSystem' => 'string',
+        'FaultingLayer' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource',
+        'MTServerName' => 'string',
+        'ErrorCode' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode',
         'Type' => 'string'
     ];
 
@@ -51,11 +51,11 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
       */
     protected static array $openAPIFormats = [
         'TrackingId' => null,
-        'ErrorCode' => null,
         'ErrorMessage' => null,
-        'MTServerName' => null,
-        'FaultingLayer' => null,
         'ErrorSourceSystem' => null,
+        'FaultingLayer' => null,
+        'MTServerName' => null,
+        'ErrorCode' => null,
         'Type' => null
     ];
 
@@ -66,11 +66,11 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
       */
     protected static array $openAPINullables = [
         'TrackingId' => true,
-        'ErrorCode' => false,
         'ErrorMessage' => true,
-        'MTServerName' => true,
-        'FaultingLayer' => false,
         'ErrorSourceSystem' => true,
+        'FaultingLayer' => false,
+        'MTServerName' => true,
+        'ErrorCode' => false,
         'Type' => true
     ];
 
@@ -161,11 +161,11 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      */
     protected static array $attributeMap = [
         'TrackingId' => 'TrackingId',
-        'ErrorCode' => 'ErrorCode',
         'ErrorMessage' => 'ErrorMessage',
-        'MTServerName' => 'MTServerName',
-        'FaultingLayer' => 'FaultingLayer',
         'ErrorSourceSystem' => 'ErrorSourceSystem',
+        'FaultingLayer' => 'FaultingLayer',
+        'MTServerName' => 'MTServerName',
+        'ErrorCode' => 'ErrorCode',
         'Type' => 'Type'
     ];
 
@@ -176,11 +176,11 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      */
     protected static array $setters = [
         'TrackingId' => 'setTrackingId',
-        'ErrorCode' => 'setErrorCode',
         'ErrorMessage' => 'setErrorMessage',
-        'MTServerName' => 'setMTServerName',
-        'FaultingLayer' => 'setFaultingLayer',
         'ErrorSourceSystem' => 'setErrorSourceSystem',
+        'FaultingLayer' => 'setFaultingLayer',
+        'MTServerName' => 'setMTServerName',
+        'ErrorCode' => 'setErrorCode',
         'Type' => 'setType'
     ];
 
@@ -191,11 +191,11 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
      */
     protected static array $getters = [
         'TrackingId' => 'getTrackingId',
-        'ErrorCode' => 'getErrorCode',
         'ErrorMessage' => 'getErrorMessage',
-        'MTServerName' => 'getMTServerName',
-        'FaultingLayer' => 'getFaultingLayer',
         'ErrorSourceSystem' => 'getErrorSourceSystem',
+        'FaultingLayer' => 'getFaultingLayer',
+        'MTServerName' => 'getMTServerName',
+        'ErrorCode' => 'getErrorCode',
         'Type' => 'getType'
     ];
 
@@ -257,12 +257,17 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
     public function __construct(?array $data = null)
     {
         $this->setIfExists('TrackingId', $data ?? [], null);
-        $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('ErrorMessage', $data ?? [], null);
-        $this->setIfExists('MTServerName', $data ?? [], null);
-        $this->setIfExists('FaultingLayer', $data ?? [], null);
         $this->setIfExists('ErrorSourceSystem', $data ?? [], null);
+        $this->setIfExists('FaultingLayer', $data ?? [], null);
+        $this->setIfExists('MTServerName', $data ?? [], null);
+        $this->setIfExists('ErrorCode', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'AdCenterAuthenticationFault');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -345,42 +350,6 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
     }
 
     /**
-     * Gets ErrorCode
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode|mixed|null
-     */
-    public function getErrorCode()
-    {
-        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
-            return null;
-        }
-        if ((is_object($this->container['ErrorCode']) || is_string($this->container['ErrorCode'])) && method_exists($this->container['ErrorCode'], 'getValue')) {
-            return $this->container['ErrorCode']->getValue();
-        }
-        return $this->container['ErrorCode'];
-    }
-
-    /**
-     * Sets ErrorCode
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode|mixed|null $ErrorCode ErrorCode
-     *
-     * @return self
-     */
-    public function setErrorCode($ErrorCode)
-    {
-        if (is_null($ErrorCode)) {
-            throw new \InvalidArgumentException('non-nullable ErrorCode cannot be null');
-        }
-        if (!$ErrorCode instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode) {
-            $ErrorCode = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode($ErrorCode);
-        }
-        $this->container['ErrorCode'] = $ErrorCode;
-
-        return $this;
-    }
-
-    /**
      * Gets ErrorMessage
      *
      * @return string|null
@@ -413,6 +382,79 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
             }
         }
         $this->container['ErrorMessage'] = $ErrorMessage;
+
+        return $this;
+    }
+
+    /**
+     * Gets ErrorSourceSystem
+     *
+     * @return string|null
+     */
+    public function getErrorSourceSystem()
+    {
+        if (!isset($this->container['ErrorSourceSystem']) || is_null($this->container['ErrorSourceSystem'])) {
+            return null;
+        }
+        return $this->container['ErrorSourceSystem'];
+    }
+
+    /**
+     * Sets ErrorSourceSystem
+     *
+     * @param string|null $ErrorSourceSystem ErrorSourceSystem
+     *
+     * @return self
+     */
+    public function setErrorSourceSystem($ErrorSourceSystem)
+    {
+        if (is_null($ErrorSourceSystem)) {
+            array_push($this->openAPINullablesSetToNull, 'ErrorSourceSystem');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ErrorSourceSystem', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ErrorSourceSystem'] = $ErrorSourceSystem;
+
+        return $this;
+    }
+
+    /**
+     * Gets FaultingLayer
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null
+     */
+    public function getFaultingLayer()
+    {
+        if (!isset($this->container['FaultingLayer']) || is_null($this->container['FaultingLayer'])) {
+            return null;
+        }
+        if ((is_object($this->container['FaultingLayer']) || is_string($this->container['FaultingLayer'])) && method_exists($this->container['FaultingLayer'], 'getValue')) {
+            return $this->container['FaultingLayer']->getValue();
+        }
+        return $this->container['FaultingLayer'];
+    }
+
+    /**
+     * Sets FaultingLayer
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null $FaultingLayer FaultingLayer
+     *
+     * @return self
+     */
+    public function setFaultingLayer($FaultingLayer)
+    {
+        if (is_null($FaultingLayer)) {
+            throw new \InvalidArgumentException('non-nullable FaultingLayer cannot be null');
+        }
+        if (!is_null($FaultingLayer) && !$FaultingLayer instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource) {
+            $FaultingLayer = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource($FaultingLayer);
+        }
+        $this->container['FaultingLayer'] = $FaultingLayer;
 
         return $this;
     }
@@ -455,74 +497,37 @@ class AdCenterAuthenticationFault extends ApplicationFault implements ModelInter
     }
 
     /**
-     * Gets FaultingLayer
+     * Gets ErrorCode
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode|mixed|null
      */
-    public function getFaultingLayer()
+    public function getErrorCode()
     {
-        if (!isset($this->container['FaultingLayer']) || is_null($this->container['FaultingLayer'])) {
+        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
             return null;
         }
-        if ((is_object($this->container['FaultingLayer']) || is_string($this->container['FaultingLayer'])) && method_exists($this->container['FaultingLayer'], 'getValue')) {
-            return $this->container['FaultingLayer']->getValue();
+        if ((is_object($this->container['ErrorCode']) || is_string($this->container['ErrorCode'])) && method_exists($this->container['ErrorCode'], 'getValue')) {
+            return $this->container['ErrorCode']->getValue();
         }
-        return $this->container['FaultingLayer'];
+        return $this->container['ErrorCode'];
     }
 
     /**
-     * Sets FaultingLayer
+     * Sets ErrorCode
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource|mixed|null $FaultingLayer FaultingLayer
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode|mixed|null $ErrorCode ErrorCode
      *
      * @return self
      */
-    public function setFaultingLayer($FaultingLayer)
+    public function setErrorCode($ErrorCode)
     {
-        if (is_null($FaultingLayer)) {
-            throw new \InvalidArgumentException('non-nullable FaultingLayer cannot be null');
+        if (is_null($ErrorCode)) {
+            throw new \InvalidArgumentException('non-nullable ErrorCode cannot be null');
         }
-        if (!$FaultingLayer instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource) {
-            $FaultingLayer = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\FaultSource($FaultingLayer);
+        if (!is_null($ErrorCode) && !$ErrorCode instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode) {
+            $ErrorCode = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AuthenticationFaultCode($ErrorCode);
         }
-        $this->container['FaultingLayer'] = $FaultingLayer;
-
-        return $this;
-    }
-
-    /**
-     * Gets ErrorSourceSystem
-     *
-     * @return string|null
-     */
-    public function getErrorSourceSystem()
-    {
-        if (!isset($this->container['ErrorSourceSystem']) || is_null($this->container['ErrorSourceSystem'])) {
-            return null;
-        }
-        return $this->container['ErrorSourceSystem'];
-    }
-
-    /**
-     * Sets ErrorSourceSystem
-     *
-     * @param string|null $ErrorSourceSystem ErrorSourceSystem
-     *
-     * @return self
-     */
-    public function setErrorSourceSystem($ErrorSourceSystem)
-    {
-        if (is_null($ErrorSourceSystem)) {
-            array_push($this->openAPINullablesSetToNull, 'ErrorSourceSystem');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ErrorSourceSystem', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ErrorSourceSystem'] = $ErrorSourceSystem;
+        $this->container['ErrorCode'] = $ErrorCode;
 
         return $this;
     }

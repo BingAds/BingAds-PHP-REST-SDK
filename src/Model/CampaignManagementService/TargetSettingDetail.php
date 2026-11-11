@@ -300,7 +300,7 @@ class TargetSettingDetail implements ModelInterface, ArrayAccess, \JsonSerializa
         if (is_null($CriterionTypeGroup)) {
             throw new \InvalidArgumentException('non-nullable CriterionTypeGroup cannot be null');
         }
-        if (!$CriterionTypeGroup instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionTypeGroup) {
+        if (!is_null($CriterionTypeGroup) && !$CriterionTypeGroup instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionTypeGroup) {
             $CriterionTypeGroup = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionTypeGroup($CriterionTypeGroup);
         }
         $this->container['CriterionTypeGroup'] = $CriterionTypeGroup;

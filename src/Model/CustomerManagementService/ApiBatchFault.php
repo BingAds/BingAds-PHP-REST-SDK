@@ -235,6 +235,11 @@ class ApiBatchFault extends ApplicationFault implements ModelInterface, ArrayAcc
         $this->setIfExists('TrackingId', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
         $this->setIfExists('OperationErrors', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**

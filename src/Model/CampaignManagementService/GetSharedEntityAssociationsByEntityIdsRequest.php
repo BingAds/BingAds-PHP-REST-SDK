@@ -64,8 +64,8 @@ class GetSharedEntityAssociationsByEntityIdsRequest implements ModelInterface, A
         'EntityIds' => true,
         'EntityType' => true,
         'SharedEntityType' => true,
-        'SharedEntityScope' => false,
-        'ReturnAdditionalFields' => false
+        'SharedEntityScope' => true,
+        'ReturnAdditionalFields' => true
     ];
 
     /**
@@ -430,9 +430,16 @@ class GetSharedEntityAssociationsByEntityIdsRequest implements ModelInterface, A
     public function setSharedEntityScope($SharedEntityScope)
     {
         if (is_null($SharedEntityScope)) {
-            throw new \InvalidArgumentException('non-nullable SharedEntityScope cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'SharedEntityScope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SharedEntityScope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$SharedEntityScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+        if (!is_null($SharedEntityScope) && !$SharedEntityScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
             $SharedEntityScope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($SharedEntityScope);
         }
         $this->container['SharedEntityScope'] = $SharedEntityScope;
@@ -466,9 +473,16 @@ class GetSharedEntityAssociationsByEntityIdsRequest implements ModelInterface, A
     public function setReturnAdditionalFields($ReturnAdditionalFields)
     {
         if (is_null($ReturnAdditionalFields)) {
-            throw new \InvalidArgumentException('non-nullable ReturnAdditionalFields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReturnAdditionalFields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReturnAdditionalFields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField) {
+        if (!is_null($ReturnAdditionalFields) && !$ReturnAdditionalFields instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField) {
             $ReturnAdditionalFields = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\SharedEntityAssociationAdditionalField($ReturnAdditionalFields);
         }
         $this->container['ReturnAdditionalFields'] = $ReturnAdditionalFields;

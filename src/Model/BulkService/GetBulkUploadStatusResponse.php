@@ -33,11 +33,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'RequestStatus' => 'string',
-        'ResultFileUrl' => 'string',
-        'PercentComplete' => 'int',
+        'Errors' => '\Microsoft\MsAds\Rest\Model\BulkService\OperationError[]',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]',
-        'Errors' => '\Microsoft\MsAds\Rest\Model\BulkService\OperationError[]'
+        'PercentComplete' => 'int',
+        'RequestStatus' => 'string',
+        'ResultFileUrl' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'RequestStatus' => null,
-        'ResultFileUrl' => null,
-        'PercentComplete' => 'int32',
+        'Errors' => null,
         'ForwardCompatibilityMap' => null,
-        'Errors' => null
+        'PercentComplete' => 'int32',
+        'RequestStatus' => null,
+        'ResultFileUrl' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'RequestStatus' => true,
-        'ResultFileUrl' => true,
-        'PercentComplete' => false,
+        'Errors' => true,
         'ForwardCompatibilityMap' => true,
-        'Errors' => true
+        'PercentComplete' => false,
+        'RequestStatus' => true,
+        'ResultFileUrl' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $attributeMap = [
-        'RequestStatus' => 'RequestStatus',
-        'ResultFileUrl' => 'ResultFileUrl',
-        'PercentComplete' => 'PercentComplete',
+        'Errors' => 'Errors',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'Errors' => 'Errors'
+        'PercentComplete' => 'PercentComplete',
+        'RequestStatus' => 'RequestStatus',
+        'ResultFileUrl' => 'ResultFileUrl'
     ];
 
     /**
@@ -167,11 +167,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $setters = [
-        'RequestStatus' => 'setRequestStatus',
-        'ResultFileUrl' => 'setResultFileUrl',
-        'PercentComplete' => 'setPercentComplete',
+        'Errors' => 'setErrors',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'Errors' => 'setErrors'
+        'PercentComplete' => 'setPercentComplete',
+        'RequestStatus' => 'setRequestStatus',
+        'ResultFileUrl' => 'setResultFileUrl'
     ];
 
     /**
@@ -180,11 +180,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static array $getters = [
-        'RequestStatus' => 'getRequestStatus',
-        'ResultFileUrl' => 'getResultFileUrl',
-        'PercentComplete' => 'getPercentComplete',
+        'Errors' => 'getErrors',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'Errors' => 'getErrors'
+        'PercentComplete' => 'getPercentComplete',
+        'RequestStatus' => 'getRequestStatus',
+        'ResultFileUrl' => 'getResultFileUrl'
     ];
 
     /**
@@ -244,11 +244,11 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Errors', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('PercentComplete', $data ?? [], null);
         $this->setIfExists('RequestStatus', $data ?? [], null);
         $this->setIfExists('ResultFileUrl', $data ?? [], null);
-        $this->setIfExists('PercentComplete', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('Errors', $data ?? [], null);
     }
 
     /**
@@ -292,6 +292,110 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Errors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null
+     */
+    public function getErrors()
+    {
+        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
+            return null;
+        }
+        return $this->container['Errors'];
+    }
+
+    /**
+     * Sets Errors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null $Errors Errors
+     *
+     * @return self
+     */
+    public function setErrors($Errors)
+    {
+        if (is_null($Errors)) {
+            array_push($this->openAPINullablesSetToNull, 'Errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Errors'] = $Errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets PercentComplete
+     *
+     * @return int|null
+     */
+    public function getPercentComplete()
+    {
+        if (!isset($this->container['PercentComplete']) || is_null($this->container['PercentComplete'])) {
+            return null;
+        }
+        return $this->container['PercentComplete'];
+    }
+
+    /**
+     * Sets PercentComplete
+     *
+     * @param int|null $PercentComplete PercentComplete
+     *
+     * @return self
+     */
+    public function setPercentComplete($PercentComplete)
+    {
+        if (is_null($PercentComplete)) {
+            throw new \InvalidArgumentException('non-nullable PercentComplete cannot be null');
+        }
+        $this->container['PercentComplete'] = $PercentComplete;
+
+        return $this;
+    }
 
     /**
      * Gets RequestStatus
@@ -363,110 +467,6 @@ class GetBulkUploadStatusResponse implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['ResultFileUrl'] = $ResultFileUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets PercentComplete
-     *
-     * @return int|null
-     */
-    public function getPercentComplete()
-    {
-        if (!isset($this->container['PercentComplete']) || is_null($this->container['PercentComplete'])) {
-            return null;
-        }
-        return $this->container['PercentComplete'];
-    }
-
-    /**
-     * Sets PercentComplete
-     *
-     * @param int|null $PercentComplete PercentComplete
-     *
-     * @return self
-     */
-    public function setPercentComplete($PercentComplete)
-    {
-        if (is_null($PercentComplete)) {
-            throw new \InvalidArgumentException('non-nullable PercentComplete cannot be null');
-        }
-        $this->container['PercentComplete'] = $PercentComplete;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
-
-        return $this;
-    }
-
-    /**
-     * Gets Errors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null
-     */
-    public function getErrors()
-    {
-        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
-            return null;
-        }
-        return $this->container['Errors'];
-    }
-
-    /**
-     * Sets Errors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\OperationError[]|null $Errors Errors
-     *
-     * @return self
-     */
-    public function setErrors($Errors)
-    {
-        if (is_null($Errors)) {
-            array_push($this->openAPINullablesSetToNull, 'Errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Errors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Errors'] = $Errors;
 
         return $this;
     }

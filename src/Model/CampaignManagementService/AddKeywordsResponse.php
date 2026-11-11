@@ -33,8 +33,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'KeywordIds' => 'string[]',
         'InheritedBidStrategyTypes' => 'string[]',
+        'KeywordIds' => 'string[]',
         'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
@@ -46,8 +46,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'KeywordIds' => 'int64',
         'InheritedBidStrategyTypes' => null,
+        'KeywordIds' => 'int64',
         'PartialErrors' => null
     ];
 
@@ -57,8 +57,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'KeywordIds' => true,
         'InheritedBidStrategyTypes' => true,
+        'KeywordIds' => true,
         'PartialErrors' => true
     ];
 
@@ -148,8 +148,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'KeywordIds' => 'KeywordIds',
         'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
+        'KeywordIds' => 'KeywordIds',
         'PartialErrors' => 'PartialErrors'
     ];
 
@@ -159,8 +159,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $setters = [
-        'KeywordIds' => 'setKeywordIds',
         'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
+        'KeywordIds' => 'setKeywordIds',
         'PartialErrors' => 'setPartialErrors'
     ];
 
@@ -170,8 +170,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static array $getters = [
-        'KeywordIds' => 'getKeywordIds',
         'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
+        'KeywordIds' => 'getKeywordIds',
         'PartialErrors' => 'getPartialErrors'
     ];
 
@@ -232,8 +232,8 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('KeywordIds', $data ?? [], null);
         $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('KeywordIds', $data ?? [], null);
         $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
@@ -280,43 +280,6 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets KeywordIds
-     *
-     * @return string[]|null
-     */
-    public function getKeywordIds()
-    {
-        if (!isset($this->container['KeywordIds']) || is_null($this->container['KeywordIds'])) {
-            return null;
-        }
-        return $this->container['KeywordIds'];
-    }
-
-    /**
-     * Sets KeywordIds
-     *
-     * @param string[]|null $KeywordIds KeywordIds
-     *
-     * @return self
-     */
-    public function setKeywordIds($KeywordIds)
-    {
-        if (is_null($KeywordIds)) {
-            array_push($this->openAPINullablesSetToNull, 'KeywordIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('KeywordIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['KeywordIds'] = $KeywordIds;
-
-        return $this;
-    }
-
-    /**
      * Gets InheritedBidStrategyTypes
      *
      * @return string[]|null
@@ -349,6 +312,43 @@ class AddKeywordsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets KeywordIds
+     *
+     * @return string[]|null
+     */
+    public function getKeywordIds()
+    {
+        if (!isset($this->container['KeywordIds']) || is_null($this->container['KeywordIds'])) {
+            return null;
+        }
+        return $this->container['KeywordIds'];
+    }
+
+    /**
+     * Sets KeywordIds
+     *
+     * @param string[]|null $KeywordIds KeywordIds
+     *
+     * @return self
+     */
+    public function setKeywordIds($KeywordIds)
+    {
+        if (is_null($KeywordIds)) {
+            array_push($this->openAPINullablesSetToNull, 'KeywordIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('KeywordIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['KeywordIds'] = $KeywordIds;
 
         return $this;
     }

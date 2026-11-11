@@ -33,15 +33,15 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
-        'FieldPath' => 'string',
         'BatchErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
-        'Message' => 'string',
         'ErrorCode' => 'string',
+        'FieldPath' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Message' => 'string',
+        'Type' => 'string',
         'Code' => 'int',
         'Details' => 'string',
-        'Index' => 'int',
-        'Type' => 'string'
+        'Index' => 'int'
     ];
 
     /**
@@ -52,15 +52,15 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ForwardCompatibilityMap' => null,
-        'FieldPath' => null,
         'BatchErrors' => null,
-        'Message' => null,
         'ErrorCode' => null,
+        'FieldPath' => null,
+        'ForwardCompatibilityMap' => null,
+        'Message' => null,
+        'Type' => null,
         'Code' => 'int32',
         'Details' => null,
-        'Index' => 'int32',
-        'Type' => null
+        'Index' => 'int32'
     ];
 
     /**
@@ -69,15 +69,15 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ForwardCompatibilityMap' => true,
-        'FieldPath' => true,
         'BatchErrors' => true,
-        'Message' => true,
         'ErrorCode' => true,
+        'FieldPath' => true,
+        'ForwardCompatibilityMap' => true,
+        'Message' => true,
+        'Type' => true,
         'Code' => true,
         'Details' => true,
-        'Index' => false,
-        'Type' => true
+        'Index' => false
     ];
 
     /**
@@ -166,15 +166,15 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'FieldPath' => 'FieldPath',
         'BatchErrors' => 'BatchErrors',
-        'Message' => 'Message',
         'ErrorCode' => 'ErrorCode',
+        'FieldPath' => 'FieldPath',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Message' => 'Message',
+        'Type' => 'Type',
         'Code' => 'Code',
         'Details' => 'Details',
-        'Index' => 'Index',
-        'Type' => 'Type'
+        'Index' => 'Index'
     ];
 
     /**
@@ -183,15 +183,15 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
      * @var string[]
      */
     protected static array $setters = [
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'FieldPath' => 'setFieldPath',
         'BatchErrors' => 'setBatchErrors',
-        'Message' => 'setMessage',
         'ErrorCode' => 'setErrorCode',
+        'FieldPath' => 'setFieldPath',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Message' => 'setMessage',
+        'Type' => 'setType',
         'Code' => 'setCode',
         'Details' => 'setDetails',
-        'Index' => 'setIndex',
-        'Type' => 'setType'
+        'Index' => 'setIndex'
     ];
 
     /**
@@ -200,15 +200,15 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
      * @var string[]
      */
     protected static array $getters = [
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'FieldPath' => 'getFieldPath',
         'BatchErrors' => 'getBatchErrors',
-        'Message' => 'getMessage',
         'ErrorCode' => 'getErrorCode',
+        'FieldPath' => 'getFieldPath',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Message' => 'getMessage',
+        'Type' => 'getType',
         'Code' => 'getCode',
         'Details' => 'getDetails',
-        'Index' => 'getIndex',
-        'Type' => 'getType'
+        'Index' => 'getIndex'
     ];
 
     /**
@@ -268,15 +268,20 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('FieldPath', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
-        $this->setIfExists('Message', $data ?? [], null);
         $this->setIfExists('ErrorCode', $data ?? [], null);
+        $this->setIfExists('FieldPath', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Message', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], 'BatchErrorCollection');
         $this->setIfExists('Code', $data ?? [], null);
         $this->setIfExists('Details', $data ?? [], null);
         $this->setIfExists('Index', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], 'BatchErrorCollection');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -322,38 +327,75 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
 
 
     /**
-     * Gets ForwardCompatibilityMap
+     * Gets BatchErrors
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
      */
-    public function getForwardCompatibilityMap()
+    public function getBatchErrors()
     {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+        if (!isset($this->container['BatchErrors']) || is_null($this->container['BatchErrors'])) {
             return null;
         }
-        return $this->container['ForwardCompatibilityMap'];
+        return $this->container['BatchErrors'];
     }
 
     /**
-     * Sets ForwardCompatibilityMap
+     * Sets BatchErrors
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $BatchErrors BatchErrors
      *
      * @return self
      */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    public function setBatchErrors($BatchErrors)
     {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        if (is_null($BatchErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'BatchErrors');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            $index = array_search('BatchErrors', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        $this->container['BatchErrors'] = $BatchErrors;
+
+        return $this;
+    }
+
+    /**
+     * Gets ErrorCode
+     *
+     * @return string|null
+     */
+    public function getErrorCode()
+    {
+        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
+            return null;
+        }
+        return $this->container['ErrorCode'];
+    }
+
+    /**
+     * Sets ErrorCode
+     *
+     * @param string|null $ErrorCode ErrorCode
+     *
+     * @return self
+     */
+    public function setErrorCode($ErrorCode)
+    {
+        if (is_null($ErrorCode)) {
+            array_push($this->openAPINullablesSetToNull, 'ErrorCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ErrorCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ErrorCode'] = $ErrorCode;
 
         return $this;
     }
@@ -396,38 +438,38 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
     }
 
     /**
-     * Gets BatchErrors
+     * Gets ForwardCompatibilityMap
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
      */
-    public function getBatchErrors()
+    public function getForwardCompatibilityMap()
     {
-        if (!isset($this->container['BatchErrors']) || is_null($this->container['BatchErrors'])) {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
             return null;
         }
-        return $this->container['BatchErrors'];
+        return $this->container['ForwardCompatibilityMap'];
     }
 
     /**
-     * Sets BatchErrors
+     * Sets ForwardCompatibilityMap
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $BatchErrors BatchErrors
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
      *
      * @return self
      */
-    public function setBatchErrors($BatchErrors)
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
     {
-        if (is_null($BatchErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'BatchErrors');
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BatchErrors', $nullablesSetToNull);
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['BatchErrors'] = $BatchErrors;
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }
@@ -470,38 +512,38 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
     }
 
     /**
-     * Gets ErrorCode
+     * Gets Type
      *
      * @return string|null
      */
-    public function getErrorCode()
+    public function getType()
     {
-        if (!isset($this->container['ErrorCode']) || is_null($this->container['ErrorCode'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['ErrorCode'];
+        return $this->container['Type'];
     }
 
     /**
-     * Sets ErrorCode
+     * Sets Type
      *
-     * @param string|null $ErrorCode ErrorCode
+     * @param string|null $Type Type
      *
      * @return self
      */
-    public function setErrorCode($ErrorCode)
+    public function setType($Type)
     {
-        if (is_null($ErrorCode)) {
-            array_push($this->openAPINullablesSetToNull, 'ErrorCode');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ErrorCode', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ErrorCode'] = $ErrorCode;
+        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -606,43 +648,6 @@ class BatchErrorCollectionBase extends BatchErrorCollection implements ModelInte
             throw new \InvalidArgumentException('non-nullable Index cannot be null');
         }
         $this->container['Index'] = $Index;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param string|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            array_push($this->openAPINullablesSetToNull, 'Type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Type'] = $Type;
 
         return $this;
     }

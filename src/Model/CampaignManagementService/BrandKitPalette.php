@@ -33,8 +33,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Colors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]',
         'ColorType' => 'string',
+        'Colors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]',
         'Name' => 'string'
     ];
 
@@ -46,8 +46,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Colors' => null,
         'ColorType' => null,
+        'Colors' => null,
         'Name' => null
     ];
 
@@ -57,8 +57,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Colors' => true,
         'ColorType' => true,
+        'Colors' => true,
         'Name' => true
     ];
 
@@ -148,8 +148,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Colors' => 'Colors',
         'ColorType' => 'ColorType',
+        'Colors' => 'Colors',
         'Name' => 'Name'
     ];
 
@@ -159,8 +159,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Colors' => 'setColors',
         'ColorType' => 'setColorType',
+        'Colors' => 'setColors',
         'Name' => 'setName'
     ];
 
@@ -170,8 +170,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Colors' => 'getColors',
         'ColorType' => 'getColorType',
+        'Colors' => 'getColors',
         'Name' => 'getName'
     ];
 
@@ -232,8 +232,8 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Colors', $data ?? [], null);
         $this->setIfExists('ColorType', $data ?? [], null);
+        $this->setIfExists('Colors', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
     }
 
@@ -280,43 +280,6 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Colors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]|null
-     */
-    public function getColors()
-    {
-        if (!isset($this->container['Colors']) || is_null($this->container['Colors'])) {
-            return null;
-        }
-        return $this->container['Colors'];
-    }
-
-    /**
-     * Sets Colors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]|null $Colors Colors
-     *
-     * @return self
-     */
-    public function setColors($Colors)
-    {
-        if (is_null($Colors)) {
-            array_push($this->openAPINullablesSetToNull, 'Colors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Colors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Colors'] = $Colors;
-
-        return $this;
-    }
-
-    /**
      * Gets ColorType
      *
      * @return string|null
@@ -349,6 +312,43 @@ class BrandKitPalette implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ColorType'] = $ColorType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Colors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]|null
+     */
+    public function getColors()
+    {
+        if (!isset($this->container['Colors']) || is_null($this->container['Colors'])) {
+            return null;
+        }
+        return $this->container['Colors'];
+    }
+
+    /**
+     * Sets Colors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BrandKitColor[]|null $Colors Colors
+     *
+     * @return self
+     */
+    public function setColors($Colors)
+    {
+        if (is_null($Colors)) {
+            array_push($this->openAPINullablesSetToNull, 'Colors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Colors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Colors'] = $Colors;
 
         return $this;
     }

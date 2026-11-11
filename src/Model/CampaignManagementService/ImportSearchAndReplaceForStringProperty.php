@@ -33,8 +33,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SearchString' => 'string',
-        'ReplaceString' => 'string'
+        'ReplaceString' => 'string',
+        'SearchString' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SearchString' => null,
-        'ReplaceString' => null
+        'ReplaceString' => null,
+        'SearchString' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SearchString' => true,
-        'ReplaceString' => true
+        'ReplaceString' => true,
+        'SearchString' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SearchString' => 'SearchString',
-        'ReplaceString' => 'ReplaceString'
+        'ReplaceString' => 'ReplaceString',
+        'SearchString' => 'SearchString'
     ];
 
     /**
@@ -155,8 +155,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $setters = [
-        'SearchString' => 'setSearchString',
-        'ReplaceString' => 'setReplaceString'
+        'ReplaceString' => 'setReplaceString',
+        'SearchString' => 'setSearchString'
     ];
 
     /**
@@ -165,8 +165,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static array $getters = [
-        'SearchString' => 'getSearchString',
-        'ReplaceString' => 'getReplaceString'
+        'ReplaceString' => 'getReplaceString',
+        'SearchString' => 'getSearchString'
     ];
 
     /**
@@ -226,8 +226,8 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SearchString', $data ?? [], null);
         $this->setIfExists('ReplaceString', $data ?? [], null);
+        $this->setIfExists('SearchString', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets SearchString
-     *
-     * @return string|null
-     */
-    public function getSearchString()
-    {
-        if (!isset($this->container['SearchString']) || is_null($this->container['SearchString'])) {
-            return null;
-        }
-        return $this->container['SearchString'];
-    }
-
-    /**
-     * Sets SearchString
-     *
-     * @param string|null $SearchString SearchString
-     *
-     * @return self
-     */
-    public function setSearchString($SearchString)
-    {
-        if (is_null($SearchString)) {
-            array_push($this->openAPINullablesSetToNull, 'SearchString');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SearchString', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SearchString'] = $SearchString;
-
-        return $this;
-    }
-
-    /**
      * Gets ReplaceString
      *
      * @return string|null
@@ -342,6 +305,43 @@ class ImportSearchAndReplaceForStringProperty implements ModelInterface, ArrayAc
             }
         }
         $this->container['ReplaceString'] = $ReplaceString;
+
+        return $this;
+    }
+
+    /**
+     * Gets SearchString
+     *
+     * @return string|null
+     */
+    public function getSearchString()
+    {
+        if (!isset($this->container['SearchString']) || is_null($this->container['SearchString'])) {
+            return null;
+        }
+        return $this->container['SearchString'];
+    }
+
+    /**
+     * Sets SearchString
+     *
+     * @param string|null $SearchString SearchString
+     *
+     * @return self
+     */
+    public function setSearchString($SearchString)
+    {
+        if (is_null($SearchString)) {
+            array_push($this->openAPINullablesSetToNull, 'SearchString');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SearchString', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SearchString'] = $SearchString;
 
         return $this;
     }

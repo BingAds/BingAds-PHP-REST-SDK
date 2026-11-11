@@ -34,8 +34,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPITypes = [
         'AdGroupId' => 'string',
-        'AssetGroupId' => 'string',
-        'KeywordIds' => 'string[]'
+        'KeywordIds' => 'string[]',
+        'AssetGroupId' => 'string'
     ];
 
     /**
@@ -47,8 +47,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPIFormats = [
         'AdGroupId' => 'int64',
-        'AssetGroupId' => 'int64',
-        'KeywordIds' => 'int64'
+        'KeywordIds' => 'int64',
+        'AssetGroupId' => 'int64'
     ];
 
     /**
@@ -58,8 +58,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPINullables = [
         'AdGroupId' => true,
-        'AssetGroupId' => true,
-        'KeywordIds' => true
+        'KeywordIds' => true,
+        'AssetGroupId' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static array $attributeMap = [
         'AdGroupId' => 'AdGroupId',
-        'AssetGroupId' => 'AssetGroupId',
-        'KeywordIds' => 'KeywordIds'
+        'KeywordIds' => 'KeywordIds',
+        'AssetGroupId' => 'AssetGroupId'
     ];
 
     /**
@@ -160,8 +160,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static array $setters = [
         'AdGroupId' => 'setAdGroupId',
-        'AssetGroupId' => 'setAssetGroupId',
-        'KeywordIds' => 'setKeywordIds'
+        'KeywordIds' => 'setKeywordIds',
+        'AssetGroupId' => 'setAssetGroupId'
     ];
 
     /**
@@ -171,8 +171,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static array $getters = [
         'AdGroupId' => 'getAdGroupId',
-        'AssetGroupId' => 'getAssetGroupId',
-        'KeywordIds' => 'getKeywordIds'
+        'KeywordIds' => 'getKeywordIds',
+        'AssetGroupId' => 'getAssetGroupId'
     ];
 
     /**
@@ -233,8 +233,8 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('AssetGroupId', $data ?? [], null);
         $this->setIfExists('KeywordIds', $data ?? [], null);
+        $this->setIfExists('AssetGroupId', $data ?? [], null);
     }
 
     /**
@@ -317,43 +317,6 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets AssetGroupId
-     *
-     * @return string|null
-     */
-    public function getAssetGroupId()
-    {
-        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
-            return null;
-        }
-        return $this->container['AssetGroupId'];
-    }
-
-    /**
-     * Sets AssetGroupId
-     *
-     * @param string|null $AssetGroupId AssetGroupId
-     *
-     * @return self
-     */
-    public function setAssetGroupId($AssetGroupId)
-    {
-        if (is_null($AssetGroupId)) {
-            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AssetGroupId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AssetGroupId'] = $AssetGroupId;
-
-        return $this;
-    }
-
-    /**
      * Gets KeywordIds
      *
      * @return string[]|null
@@ -386,6 +349,43 @@ class DeleteKeywordsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             }
         }
         $this->container['KeywordIds'] = $KeywordIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets AssetGroupId
+     *
+     * @return string|null
+     */
+    public function getAssetGroupId()
+    {
+        if (!isset($this->container['AssetGroupId']) || is_null($this->container['AssetGroupId'])) {
+            return null;
+        }
+        return $this->container['AssetGroupId'];
+    }
+
+    /**
+     * Sets AssetGroupId
+     *
+     * @param string|null $AssetGroupId AssetGroupId
+     *
+     * @return self
+     */
+    public function setAssetGroupId($AssetGroupId)
+    {
+        if (is_null($AssetGroupId)) {
+            array_push($this->openAPINullablesSetToNull, 'AssetGroupId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AssetGroupId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AssetGroupId'] = $AssetGroupId;
 
         return $this;
     }

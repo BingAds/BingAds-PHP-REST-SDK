@@ -336,7 +336,7 @@ class AudienceGroupDimension implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType) {
             $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceGroupDimensionType($Type);
         }
         $this->container['Type'] = $Type;

@@ -33,8 +33,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'EntityType' => 'string',
         'EntityIds' => 'string[]',
+        'EntityType' => 'string',
         'ParentEntityId' => 'string'
     ];
 
@@ -46,8 +46,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'EntityType' => null,
         'EntityIds' => 'int64',
+        'EntityType' => null,
         'ParentEntityId' => 'int64'
     ];
 
@@ -57,8 +57,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'EntityType' => true,
         'EntityIds' => true,
+        'EntityType' => true,
         'ParentEntityId' => true
     ];
 
@@ -148,8 +148,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $attributeMap = [
-        'EntityType' => 'EntityType',
         'EntityIds' => 'EntityIds',
+        'EntityType' => 'EntityType',
         'ParentEntityId' => 'ParentEntityId'
     ];
 
@@ -159,8 +159,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $setters = [
-        'EntityType' => 'setEntityType',
         'EntityIds' => 'setEntityIds',
+        'EntityType' => 'setEntityType',
         'ParentEntityId' => 'setParentEntityId'
     ];
 
@@ -170,8 +170,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static array $getters = [
-        'EntityType' => 'getEntityType',
         'EntityIds' => 'getEntityIds',
+        'EntityType' => 'getEntityType',
         'ParentEntityId' => 'getParentEntityId'
     ];
 
@@ -232,8 +232,8 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('EntityIds', $data ?? [], null);
+        $this->setIfExists('EntityType', $data ?? [], null);
         $this->setIfExists('ParentEntityId', $data ?? [], null);
     }
 
@@ -280,43 +280,6 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets EntityType
-     *
-     * @return string|null
-     */
-    public function getEntityType()
-    {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
-            return null;
-        }
-        return $this->container['EntityType'];
-    }
-
-    /**
-     * Sets EntityType
-     *
-     * @param string|null $EntityType EntityType
-     *
-     * @return self
-     */
-    public function setEntityType($EntityType)
-    {
-        if (is_null($EntityType)) {
-            array_push($this->openAPINullablesSetToNull, 'EntityType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EntityType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EntityType'] = $EntityType;
-
-        return $this;
-    }
-
-    /**
      * Gets EntityIds
      *
      * @return string[]|null
@@ -349,6 +312,43 @@ class GetNegativeKeywordsByEntityIdsRequest implements ModelInterface, ArrayAcce
             }
         }
         $this->container['EntityIds'] = $EntityIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets EntityType
+     *
+     * @return string|null
+     */
+    public function getEntityType()
+    {
+        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
+            return null;
+        }
+        return $this->container['EntityType'];
+    }
+
+    /**
+     * Sets EntityType
+     *
+     * @param string|null $EntityType EntityType
+     *
+     * @return self
+     */
+    public function setEntityType($EntityType)
+    {
+        if (is_null($EntityType)) {
+            array_push($this->openAPINullablesSetToNull, 'EntityType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EntityType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EntityType'] = $EntityType;
 
         return $this;
     }

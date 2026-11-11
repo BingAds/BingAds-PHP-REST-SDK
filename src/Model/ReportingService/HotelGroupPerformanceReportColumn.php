@@ -117,6 +117,10 @@ class HotelGroupPerformanceReportColumn
 
     public const MISSED_IMPRESSIONS_INSUFFICIENT_BID = 'MissedImpressionsInsufficientBid';
 
+    public const ABSOLUTE_TOP_IMPRESSION_SHARE_PERCENT = 'AbsoluteTopImpressionSharePercent';
+
+    public const TOP_IMPRESSION_SHARE_PERCENT = 'TopImpressionSharePercent';
+
 
     // If this is an enum with flags true, you can combine multiple values with a comma i.e "value1,value2"
     private static bool $isFlags = false;
@@ -232,7 +236,9 @@ class HotelGroupPerformanceReportColumn
             self::MISSED_IMPRESSIONS_NO_TAX,
             self::MISSED_IMPRESSIONS_OTHER,
             self::CLICK_SHARE,
-            self::MISSED_IMPRESSIONS_INSUFFICIENT_BID
+            self::MISSED_IMPRESSIONS_INSUFFICIENT_BID,
+            self::ABSOLUTE_TOP_IMPRESSION_SHARE_PERCENT,
+            self::TOP_IMPRESSION_SHARE_PERCENT
         ];
     }
 }

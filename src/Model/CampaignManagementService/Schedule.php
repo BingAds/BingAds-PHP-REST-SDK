@@ -33,10 +33,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'DayTimeRanges' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTime[]',
         'EndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'UseSearcherTimeZone' => 'bool',
-        'DayTimeRanges' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTime[]'
+        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'UseSearcherTimeZone' => 'bool'
     ];
 
     /**
@@ -47,10 +47,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'StartDate' => null,
+        'DayTimeRanges' => null,
         'EndDate' => null,
-        'UseSearcherTimeZone' => null,
-        'DayTimeRanges' => null
+        'StartDate' => null,
+        'UseSearcherTimeZone' => null
     ];
 
     /**
@@ -59,10 +59,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'StartDate' => true,
+        'DayTimeRanges' => true,
         'EndDate' => true,
-        'UseSearcherTimeZone' => true,
-        'DayTimeRanges' => true
+        'StartDate' => true,
+        'UseSearcherTimeZone' => true
     ];
 
     /**
@@ -151,10 +151,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'StartDate' => 'StartDate',
+        'DayTimeRanges' => 'DayTimeRanges',
         'EndDate' => 'EndDate',
-        'UseSearcherTimeZone' => 'UseSearcherTimeZone',
-        'DayTimeRanges' => 'DayTimeRanges'
+        'StartDate' => 'StartDate',
+        'UseSearcherTimeZone' => 'UseSearcherTimeZone'
     ];
 
     /**
@@ -163,10 +163,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'StartDate' => 'setStartDate',
+        'DayTimeRanges' => 'setDayTimeRanges',
         'EndDate' => 'setEndDate',
-        'UseSearcherTimeZone' => 'setUseSearcherTimeZone',
-        'DayTimeRanges' => 'setDayTimeRanges'
+        'StartDate' => 'setStartDate',
+        'UseSearcherTimeZone' => 'setUseSearcherTimeZone'
     ];
 
     /**
@@ -175,10 +175,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'StartDate' => 'getStartDate',
+        'DayTimeRanges' => 'getDayTimeRanges',
         'EndDate' => 'getEndDate',
-        'UseSearcherTimeZone' => 'getUseSearcherTimeZone',
-        'DayTimeRanges' => 'getDayTimeRanges'
+        'StartDate' => 'getStartDate',
+        'UseSearcherTimeZone' => 'getUseSearcherTimeZone'
     ];
 
     /**
@@ -238,10 +238,10 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('StartDate', $data ?? [], null);
-        $this->setIfExists('EndDate', $data ?? [], null);
-        $this->setIfExists('UseSearcherTimeZone', $data ?? [], null);
         $this->setIfExists('DayTimeRanges', $data ?? [], null);
+        $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('UseSearcherTimeZone', $data ?? [], null);
     }
 
     /**
@@ -287,38 +287,38 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets StartDate
+     * Gets DayTimeRanges
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTime[]|null
      */
-    public function getStartDate()
+    public function getDayTimeRanges()
     {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+        if (!isset($this->container['DayTimeRanges']) || is_null($this->container['DayTimeRanges'])) {
             return null;
         }
-        return $this->container['StartDate'];
+        return $this->container['DayTimeRanges'];
     }
 
     /**
-     * Sets StartDate
+     * Sets DayTimeRanges
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTime[]|null $DayTimeRanges DayTimeRanges
      *
      * @return self
      */
-    public function setStartDate($StartDate)
+    public function setDayTimeRanges($DayTimeRanges)
     {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        if (is_null($DayTimeRanges)) {
+            array_push($this->openAPINullablesSetToNull, 'DayTimeRanges');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
+            $index = array_search('DayTimeRanges', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['StartDate'] = $StartDate;
+        $this->container['DayTimeRanges'] = $DayTimeRanges;
 
         return $this;
     }
@@ -361,6 +361,43 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets StartDate
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
      * Gets UseSearcherTimeZone
      *
      * @return bool|null
@@ -393,43 +430,6 @@ class Schedule implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['UseSearcherTimeZone'] = $UseSearcherTimeZone;
-
-        return $this;
-    }
-
-    /**
-     * Gets DayTimeRanges
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTime[]|null
-     */
-    public function getDayTimeRanges()
-    {
-        if (!isset($this->container['DayTimeRanges']) || is_null($this->container['DayTimeRanges'])) {
-            return null;
-        }
-        return $this->container['DayTimeRanges'];
-    }
-
-    /**
-     * Sets DayTimeRanges
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DayTime[]|null $DayTimeRanges DayTimeRanges
-     *
-     * @return self
-     */
-    public function setDayTimeRanges($DayTimeRanges)
-    {
-        if (is_null($DayTimeRanges)) {
-            array_push($this->openAPINullablesSetToNull, 'DayTimeRanges');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DayTimeRanges', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DayTimeRanges'] = $DayTimeRanges;
 
         return $this;
     }

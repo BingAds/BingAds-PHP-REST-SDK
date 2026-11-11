@@ -33,14 +33,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Header' => 'string',
-        'Description' => 'string',
-        'FinalUrls' => 'string[]',
-        'FinalMobileUrls' => 'string[]',
-        'Price' => 'float',
         'CurrencyCode' => 'string',
-        'PriceUnit' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit',
+        'Description' => 'string',
+        'FinalMobileUrls' => 'string[]',
+        'FinalUrls' => 'string[]',
+        'Header' => 'string',
+        'Price' => 'float',
         'PriceQualifier' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceQualifier',
+        'PriceUnit' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit',
         'TermsAndConditions' => 'string',
         'TermsAndConditionsUrl' => 'string'
     ];
@@ -53,14 +53,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Header' => null,
-        'Description' => null,
-        'FinalUrls' => null,
-        'FinalMobileUrls' => null,
-        'Price' => 'double',
         'CurrencyCode' => null,
-        'PriceUnit' => null,
+        'Description' => null,
+        'FinalMobileUrls' => null,
+        'FinalUrls' => null,
+        'Header' => null,
+        'Price' => 'double',
         'PriceQualifier' => null,
+        'PriceUnit' => null,
         'TermsAndConditions' => null,
         'TermsAndConditionsUrl' => null
     ];
@@ -71,14 +71,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Header' => true,
-        'Description' => true,
-        'FinalUrls' => true,
-        'FinalMobileUrls' => true,
-        'Price' => false,
         'CurrencyCode' => true,
-        'PriceUnit' => false,
+        'Description' => true,
+        'FinalMobileUrls' => true,
+        'FinalUrls' => true,
+        'Header' => true,
+        'Price' => false,
         'PriceQualifier' => false,
+        'PriceUnit' => false,
         'TermsAndConditions' => true,
         'TermsAndConditionsUrl' => true
     ];
@@ -169,14 +169,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Header' => 'Header',
-        'Description' => 'Description',
-        'FinalUrls' => 'FinalUrls',
-        'FinalMobileUrls' => 'FinalMobileUrls',
-        'Price' => 'Price',
         'CurrencyCode' => 'CurrencyCode',
-        'PriceUnit' => 'PriceUnit',
+        'Description' => 'Description',
+        'FinalMobileUrls' => 'FinalMobileUrls',
+        'FinalUrls' => 'FinalUrls',
+        'Header' => 'Header',
+        'Price' => 'Price',
         'PriceQualifier' => 'PriceQualifier',
+        'PriceUnit' => 'PriceUnit',
         'TermsAndConditions' => 'TermsAndConditions',
         'TermsAndConditionsUrl' => 'TermsAndConditionsUrl'
     ];
@@ -187,14 +187,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Header' => 'setHeader',
-        'Description' => 'setDescription',
-        'FinalUrls' => 'setFinalUrls',
-        'FinalMobileUrls' => 'setFinalMobileUrls',
-        'Price' => 'setPrice',
         'CurrencyCode' => 'setCurrencyCode',
-        'PriceUnit' => 'setPriceUnit',
+        'Description' => 'setDescription',
+        'FinalMobileUrls' => 'setFinalMobileUrls',
+        'FinalUrls' => 'setFinalUrls',
+        'Header' => 'setHeader',
+        'Price' => 'setPrice',
         'PriceQualifier' => 'setPriceQualifier',
+        'PriceUnit' => 'setPriceUnit',
         'TermsAndConditions' => 'setTermsAndConditions',
         'TermsAndConditionsUrl' => 'setTermsAndConditionsUrl'
     ];
@@ -205,14 +205,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Header' => 'getHeader',
-        'Description' => 'getDescription',
-        'FinalUrls' => 'getFinalUrls',
-        'FinalMobileUrls' => 'getFinalMobileUrls',
-        'Price' => 'getPrice',
         'CurrencyCode' => 'getCurrencyCode',
-        'PriceUnit' => 'getPriceUnit',
+        'Description' => 'getDescription',
+        'FinalMobileUrls' => 'getFinalMobileUrls',
+        'FinalUrls' => 'getFinalUrls',
+        'Header' => 'getHeader',
+        'Price' => 'getPrice',
         'PriceQualifier' => 'getPriceQualifier',
+        'PriceUnit' => 'getPriceUnit',
         'TermsAndConditions' => 'getTermsAndConditions',
         'TermsAndConditionsUrl' => 'getTermsAndConditionsUrl'
     ];
@@ -274,14 +274,14 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Header', $data ?? [], null);
-        $this->setIfExists('Description', $data ?? [], null);
-        $this->setIfExists('FinalUrls', $data ?? [], null);
-        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
-        $this->setIfExists('Price', $data ?? [], null);
         $this->setIfExists('CurrencyCode', $data ?? [], null);
-        $this->setIfExists('PriceUnit', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('FinalMobileUrls', $data ?? [], null);
+        $this->setIfExists('FinalUrls', $data ?? [], null);
+        $this->setIfExists('Header', $data ?? [], null);
+        $this->setIfExists('Price', $data ?? [], null);
         $this->setIfExists('PriceQualifier', $data ?? [], null);
+        $this->setIfExists('PriceUnit', $data ?? [], null);
         $this->setIfExists('TermsAndConditions', $data ?? [], null);
         $this->setIfExists('TermsAndConditionsUrl', $data ?? [], null);
     }
@@ -329,38 +329,38 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Header
+     * Gets CurrencyCode
      *
      * @return string|null
      */
-    public function getHeader()
+    public function getCurrencyCode()
     {
-        if (!isset($this->container['Header']) || is_null($this->container['Header'])) {
+        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
             return null;
         }
-        return $this->container['Header'];
+        return $this->container['CurrencyCode'];
     }
 
     /**
-     * Sets Header
+     * Sets CurrencyCode
      *
-     * @param string|null $Header Header
+     * @param string|null $CurrencyCode CurrencyCode
      *
      * @return self
      */
-    public function setHeader($Header)
+    public function setCurrencyCode($CurrencyCode)
     {
-        if (is_null($Header)) {
-            array_push($this->openAPINullablesSetToNull, 'Header');
+        if (is_null($CurrencyCode)) {
+            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Header', $nullablesSetToNull);
+            $index = array_search('CurrencyCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Header'] = $Header;
+        $this->container['CurrencyCode'] = $CurrencyCode;
 
         return $this;
     }
@@ -403,43 +403,6 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets FinalUrls
-     *
-     * @return string[]|null
-     */
-    public function getFinalUrls()
-    {
-        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
-            return null;
-        }
-        return $this->container['FinalUrls'];
-    }
-
-    /**
-     * Sets FinalUrls
-     *
-     * @param string[]|null $FinalUrls FinalUrls
-     *
-     * @return self
-     */
-    public function setFinalUrls($FinalUrls)
-    {
-        if (is_null($FinalUrls)) {
-            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('FinalUrls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['FinalUrls'] = $FinalUrls;
-
-        return $this;
-    }
-
-    /**
      * Gets FinalMobileUrls
      *
      * @return string[]|null
@@ -477,6 +440,80 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets FinalUrls
+     *
+     * @return string[]|null
+     */
+    public function getFinalUrls()
+    {
+        if (!isset($this->container['FinalUrls']) || is_null($this->container['FinalUrls'])) {
+            return null;
+        }
+        return $this->container['FinalUrls'];
+    }
+
+    /**
+     * Sets FinalUrls
+     *
+     * @param string[]|null $FinalUrls FinalUrls
+     *
+     * @return self
+     */
+    public function setFinalUrls($FinalUrls)
+    {
+        if (is_null($FinalUrls)) {
+            array_push($this->openAPINullablesSetToNull, 'FinalUrls');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('FinalUrls', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['FinalUrls'] = $FinalUrls;
+
+        return $this;
+    }
+
+    /**
+     * Gets Header
+     *
+     * @return string|null
+     */
+    public function getHeader()
+    {
+        if (!isset($this->container['Header']) || is_null($this->container['Header'])) {
+            return null;
+        }
+        return $this->container['Header'];
+    }
+
+    /**
+     * Sets Header
+     *
+     * @param string|null $Header Header
+     *
+     * @return self
+     */
+    public function setHeader($Header)
+    {
+        if (is_null($Header)) {
+            array_push($this->openAPINullablesSetToNull, 'Header');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Header', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Header'] = $Header;
+
+        return $this;
+    }
+
+    /**
      * Gets Price
      *
      * @return float|null
@@ -502,79 +539,6 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable Price cannot be null');
         }
         $this->container['Price'] = $Price;
-
-        return $this;
-    }
-
-    /**
-     * Gets CurrencyCode
-     *
-     * @return string|null
-     */
-    public function getCurrencyCode()
-    {
-        if (!isset($this->container['CurrencyCode']) || is_null($this->container['CurrencyCode'])) {
-            return null;
-        }
-        return $this->container['CurrencyCode'];
-    }
-
-    /**
-     * Sets CurrencyCode
-     *
-     * @param string|null $CurrencyCode CurrencyCode
-     *
-     * @return self
-     */
-    public function setCurrencyCode($CurrencyCode)
-    {
-        if (is_null($CurrencyCode)) {
-            array_push($this->openAPINullablesSetToNull, 'CurrencyCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CurrencyCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CurrencyCode'] = $CurrencyCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets PriceUnit
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit|mixed|null
-     */
-    public function getPriceUnit()
-    {
-        if (!isset($this->container['PriceUnit']) || is_null($this->container['PriceUnit'])) {
-            return null;
-        }
-        if ((is_object($this->container['PriceUnit']) || is_string($this->container['PriceUnit'])) && method_exists($this->container['PriceUnit'], 'getValue')) {
-            return $this->container['PriceUnit']->getValue();
-        }
-        return $this->container['PriceUnit'];
-    }
-
-    /**
-     * Sets PriceUnit
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit|mixed|null $PriceUnit PriceUnit
-     *
-     * @return self
-     */
-    public function setPriceUnit($PriceUnit)
-    {
-        if (is_null($PriceUnit)) {
-            throw new \InvalidArgumentException('non-nullable PriceUnit cannot be null');
-        }
-        if (!$PriceUnit instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit) {
-            $PriceUnit = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit($PriceUnit);
-        }
-        $this->container['PriceUnit'] = $PriceUnit;
 
         return $this;
     }
@@ -607,10 +571,46 @@ class PriceTableRow implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($PriceQualifier)) {
             throw new \InvalidArgumentException('non-nullable PriceQualifier cannot be null');
         }
-        if (!$PriceQualifier instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceQualifier) {
+        if (!is_null($PriceQualifier) && !$PriceQualifier instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceQualifier) {
             $PriceQualifier = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceQualifier($PriceQualifier);
         }
         $this->container['PriceQualifier'] = $PriceQualifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriceUnit
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit|mixed|null
+     */
+    public function getPriceUnit()
+    {
+        if (!isset($this->container['PriceUnit']) || is_null($this->container['PriceUnit'])) {
+            return null;
+        }
+        if ((is_object($this->container['PriceUnit']) || is_string($this->container['PriceUnit'])) && method_exists($this->container['PriceUnit'], 'getValue')) {
+            return $this->container['PriceUnit']->getValue();
+        }
+        return $this->container['PriceUnit'];
+    }
+
+    /**
+     * Sets PriceUnit
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit|mixed|null $PriceUnit PriceUnit
+     *
+     * @return self
+     */
+    public function setPriceUnit($PriceUnit)
+    {
+        if (is_null($PriceUnit)) {
+            throw new \InvalidArgumentException('non-nullable PriceUnit cannot be null');
+        }
+        if (!is_null($PriceUnit) && !$PriceUnit instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit) {
+            $PriceUnit = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\PriceUnit($PriceUnit);
+        }
+        $this->container['PriceUnit'] = $PriceUnit;
 
         return $this;
     }

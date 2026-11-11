@@ -33,8 +33,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Operand' => 'string',
-        'Attribute' => 'string'
+        'Attribute' => 'string',
+        'Operand' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Operand' => null,
-        'Attribute' => null
+        'Attribute' => null,
+        'Operand' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Operand' => true,
-        'Attribute' => true
+        'Attribute' => true,
+        'Operand' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Operand' => 'Operand',
-        'Attribute' => 'Attribute'
+        'Attribute' => 'Attribute',
+        'Operand' => 'Operand'
     ];
 
     /**
@@ -155,8 +155,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Operand' => 'setOperand',
-        'Attribute' => 'setAttribute'
+        'Attribute' => 'setAttribute',
+        'Operand' => 'setOperand'
     ];
 
     /**
@@ -165,8 +165,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Operand' => 'getOperand',
-        'Attribute' => 'getAttribute'
+        'Attribute' => 'getAttribute',
+        'Operand' => 'getOperand'
     ];
 
     /**
@@ -226,8 +226,8 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Attribute', $data ?? [], null);
+        $this->setIfExists('Operand', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Operand
-     *
-     * @return string|null
-     */
-    public function getOperand()
-    {
-        if (!isset($this->container['Operand']) || is_null($this->container['Operand'])) {
-            return null;
-        }
-        return $this->container['Operand'];
-    }
-
-    /**
-     * Sets Operand
-     *
-     * @param string|null $Operand Operand
-     *
-     * @return self
-     */
-    public function setOperand($Operand)
-    {
-        if (is_null($Operand)) {
-            array_push($this->openAPINullablesSetToNull, 'Operand');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Operand', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Operand'] = $Operand;
-
-        return $this;
-    }
-
-    /**
      * Gets Attribute
      *
      * @return string|null
@@ -342,6 +305,43 @@ class HotelListing implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Attribute'] = $Attribute;
+
+        return $this;
+    }
+
+    /**
+     * Gets Operand
+     *
+     * @return string|null
+     */
+    public function getOperand()
+    {
+        if (!isset($this->container['Operand']) || is_null($this->container['Operand'])) {
+            return null;
+        }
+        return $this->container['Operand'];
+    }
+
+    /**
+     * Sets Operand
+     *
+     * @param string|null $Operand Operand
+     *
+     * @return self
+     */
+    public function setOperand($Operand)
+    {
+        if (is_null($Operand)) {
+            array_push($this->openAPINullablesSetToNull, 'Operand');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Operand', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Operand'] = $Operand;
 
         return $this;
     }

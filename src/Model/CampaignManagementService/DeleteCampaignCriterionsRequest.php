@@ -33,9 +33,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'CampaignCriterionIds' => 'string[]',
         'CampaignId' => 'string',
-        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType',
-        'CampaignCriterionIds' => 'string[]'
+        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType'
     ];
 
     /**
@@ -46,9 +46,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'CampaignCriterionIds' => 'int64',
         'CampaignId' => 'int64',
-        'CriterionType' => null,
-        'CampaignCriterionIds' => 'int64'
+        'CriterionType' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'CampaignCriterionIds' => true,
         'CampaignId' => false,
-        'CriterionType' => false,
-        'CampaignCriterionIds' => true
+        'CriterionType' => false
     ];
 
     /**
@@ -148,9 +148,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
+        'CampaignCriterionIds' => 'CampaignCriterionIds',
         'CampaignId' => 'CampaignId',
-        'CriterionType' => 'CriterionType',
-        'CampaignCriterionIds' => 'CampaignCriterionIds'
+        'CriterionType' => 'CriterionType'
     ];
 
     /**
@@ -159,9 +159,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
+        'CampaignCriterionIds' => 'setCampaignCriterionIds',
         'CampaignId' => 'setCampaignId',
-        'CriterionType' => 'setCriterionType',
-        'CampaignCriterionIds' => 'setCampaignCriterionIds'
+        'CriterionType' => 'setCriterionType'
     ];
 
     /**
@@ -170,9 +170,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
+        'CampaignCriterionIds' => 'getCampaignCriterionIds',
         'CampaignId' => 'getCampaignId',
-        'CriterionType' => 'getCriterionType',
-        'CampaignCriterionIds' => 'getCampaignCriterionIds'
+        'CriterionType' => 'getCriterionType'
     ];
 
     /**
@@ -232,9 +232,9 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('CampaignCriterionIds', $data ?? [], null);
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('CriterionType', $data ?? [], null);
-        $this->setIfExists('CampaignCriterionIds', $data ?? [], null);
     }
 
     /**
@@ -278,6 +278,43 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets CampaignCriterionIds
+     *
+     * @return string[]|null
+     */
+    public function getCampaignCriterionIds()
+    {
+        if (!isset($this->container['CampaignCriterionIds']) || is_null($this->container['CampaignCriterionIds'])) {
+            return null;
+        }
+        return $this->container['CampaignCriterionIds'];
+    }
+
+    /**
+     * Sets CampaignCriterionIds
+     *
+     * @param string[]|null $CampaignCriterionIds CampaignCriterionIds
+     *
+     * @return self
+     */
+    public function setCampaignCriterionIds($CampaignCriterionIds)
+    {
+        if (is_null($CampaignCriterionIds)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignCriterionIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignCriterionIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignCriterionIds'] = $CampaignCriterionIds;
+
+        return $this;
+    }
 
     /**
      * Gets CampaignId
@@ -337,47 +374,10 @@ class DeleteCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \J
         if (is_null($CriterionType)) {
             throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
         }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
+        if (!is_null($CriterionType) && !$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
             $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType($CriterionType);
         }
         $this->container['CriterionType'] = $CriterionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignCriterionIds
-     *
-     * @return string[]|null
-     */
-    public function getCampaignCriterionIds()
-    {
-        if (!isset($this->container['CampaignCriterionIds']) || is_null($this->container['CampaignCriterionIds'])) {
-            return null;
-        }
-        return $this->container['CampaignCriterionIds'];
-    }
-
-    /**
-     * Sets CampaignCriterionIds
-     *
-     * @param string[]|null $CampaignCriterionIds CampaignCriterionIds
-     *
-     * @return self
-     */
-    public function setCampaignCriterionIds($CampaignCriterionIds)
-    {
-        if (is_null($CampaignCriterionIds)) {
-            array_push($this->openAPINullablesSetToNull, 'CampaignCriterionIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CampaignCriterionIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CampaignCriterionIds'] = $CampaignCriterionIds;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
-        'MediaAssociations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaAssociation[][]'
+        'MediaAssociations' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaAssociation[][]',
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PartialErrors' => null,
-        'MediaAssociations' => null
+        'MediaAssociations' => null,
+        'PartialErrors' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PartialErrors' => true,
-        'MediaAssociations' => true
+        'MediaAssociations' => true,
+        'PartialErrors' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PartialErrors' => 'PartialErrors',
-        'MediaAssociations' => 'MediaAssociations'
+        'MediaAssociations' => 'MediaAssociations',
+        'PartialErrors' => 'PartialErrors'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
-        'PartialErrors' => 'setPartialErrors',
-        'MediaAssociations' => 'setMediaAssociations'
+        'MediaAssociations' => 'setMediaAssociations',
+        'PartialErrors' => 'setPartialErrors'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
-        'PartialErrors' => 'getPartialErrors',
-        'MediaAssociations' => 'getMediaAssociations'
+        'MediaAssociations' => 'getMediaAssociations',
+        'PartialErrors' => 'getPartialErrors'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PartialErrors', $data ?? [], null);
         $this->setIfExists('MediaAssociations', $data ?? [], null);
+        $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets MediaAssociations
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\MediaAssociation[][]|null
@@ -342,6 +305,43 @@ class GetMediaAssociationsResponse implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['MediaAssociations'] = $MediaAssociations;
+
+        return $this;
+    }
+
+    /**
+     * Gets PartialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     */
+    public function getPartialErrors()
+    {
+        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+            return null;
+        }
+        return $this->container['PartialErrors'];
+    }
+
+    /**
+     * Sets PartialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     *
+     * @return self
+     */
+    public function setPartialErrors($PartialErrors)
+    {
+        if (is_null($PartialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PartialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PartialErrors'] = $PartialErrors;
 
         return $this;
     }

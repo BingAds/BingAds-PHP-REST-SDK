@@ -344,7 +344,7 @@ class AppealEditorialRejectionsRequest implements ModelInterface, ArrayAccess, \
         if (is_null($EntityType)) {
             throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
         }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType) {
             $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityType($EntityType);
         }
         $this->container['EntityType'] = $EntityType;

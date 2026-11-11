@@ -33,8 +33,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'MediaList' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationRefinedMedia[]',
-        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]'
+        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
+        'MediaList' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationRefinedMedia[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'MediaList' => null,
-        'Errors' => null
+        'Errors' => null,
+        'MediaList' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'MediaList' => true,
-        'Errors' => true
+        'Errors' => true,
+        'MediaList' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'MediaList' => 'MediaList',
-        'Errors' => 'Errors'
+        'Errors' => 'Errors',
+        'MediaList' => 'MediaList'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $setters = [
-        'MediaList' => 'setMediaList',
-        'Errors' => 'setErrors'
+        'Errors' => 'setErrors',
+        'MediaList' => 'setMediaList'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static array $getters = [
-        'MediaList' => 'getMediaList',
-        'Errors' => 'getErrors'
+        'Errors' => 'getErrors',
+        'MediaList' => 'getMediaList'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('MediaList', $data ?? [], null);
         $this->setIfExists('Errors', $data ?? [], null);
+        $this->setIfExists('MediaList', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets MediaList
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationRefinedMedia[]|null
-     */
-    public function getMediaList()
-    {
-        if (!isset($this->container['MediaList']) || is_null($this->container['MediaList'])) {
-            return null;
-        }
-        return $this->container['MediaList'];
-    }
-
-    /**
-     * Sets MediaList
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationRefinedMedia[]|null $MediaList MediaList
-     *
-     * @return self
-     */
-    public function setMediaList($MediaList)
-    {
-        if (is_null($MediaList)) {
-            array_push($this->openAPINullablesSetToNull, 'MediaList');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MediaList', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MediaList'] = $MediaList;
-
-        return $this;
-    }
-
-    /**
      * Gets Errors
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null
@@ -342,6 +305,43 @@ class AdRecommendationMediaRefineResult implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['Errors'] = $Errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets MediaList
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationRefinedMedia[]|null
+     */
+    public function getMediaList()
+    {
+        if (!isset($this->container['MediaList']) || is_null($this->container['MediaList'])) {
+            return null;
+        }
+        return $this->container['MediaList'];
+    }
+
+    /**
+     * Sets MediaList
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationRefinedMedia[]|null $MediaList MediaList
+     *
+     * @return self
+     */
+    public function setMediaList($MediaList)
+    {
+        if (is_null($MediaList)) {
+            array_push($this->openAPINullablesSetToNull, 'MediaList');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MediaList', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MediaList'] = $MediaList;
 
         return $this;
     }

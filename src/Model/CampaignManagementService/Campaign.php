@@ -33,41 +33,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'Name' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus',
-        'DailyBudget' => 'float',
-        'BudgetType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType',
-        'TimeZone' => 'string',
-        'Settings' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]',
-        'CampaignType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
-        'SubType' => 'string',
-        'MarketingObjective' => 'string',
         'AudienceAdsBidAdjustment' => 'int',
-        'TrackingUrlTemplate' => 'string',
-        'FinalUrlSuffix' => 'string',
-        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
+        'BidStrategyScope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
         'BiddingScheme' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme',
+        'BrandColor' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'BrandLogo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'BudgetType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType',
+        'BusinessName' => 'string',
+        'DailyBudget' => 'float',
+        'DealIds' => 'string[]',
+        'EndDate' => '\DateTime',
+        'ExperimentId' => 'string',
+        'FinalUrlSuffix' => 'string',
+        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'GoalIds' => 'string[]',
+        'Id' => 'string',
+        'IsDealCampaign' => 'bool',
+        'IsPolitical' => 'bool',
+        'MarketingObjective' => 'string',
+        'MessagingRestrictions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'MultimediaAdsBidAdjustment' => 'int',
+        'Name' => 'string',
+        'PrivacyStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus',
+        'StartDate' => '\DateTime',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus',
+        'SubType' => 'string',
+        'TermExclusions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
+        'TimeZone' => 'string',
+        'TrackingUrlTemplate' => 'string',
+        'UrlCustomParameters' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters',
+        'UseCampaignLevelDates' => 'bool',
+        'CampaignType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType',
+        'Settings' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]',
         'BudgetId' => 'string',
         'Languages' => 'string[]',
-        'ExperimentId' => 'string',
         'AdScheduleUseSearcherTimeZone' => 'bool',
-        'BidStrategyId' => 'string',
-        'BidStrategyScope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'MultimediaAdsBidAdjustment' => 'int',
-        'GoalIds' => 'string[]',
-        'DealIds' => 'string[]',
-        'IsDealCampaign' => 'bool',
-        'StartDate' => '\DateTime',
-        'EndDate' => '\DateTime',
-        'UseCampaignLevelDates' => 'bool',
-        'IsPolitical' => 'bool',
-        'BusinessName' => 'string',
-        'BrandLogo' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'BrandColor' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'TermExclusions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]',
-        'PrivacyStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus',
-        'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]'
+        'BidStrategyId' => 'string'
     ];
 
     /**
@@ -78,41 +79,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
-        'Name' => null,
-        'Status' => null,
-        'DailyBudget' => 'double',
-        'BudgetType' => null,
-        'TimeZone' => null,
-        'Settings' => null,
-        'CampaignType' => null,
-        'SubType' => null,
-        'MarketingObjective' => null,
         'AudienceAdsBidAdjustment' => 'int32',
-        'TrackingUrlTemplate' => null,
-        'FinalUrlSuffix' => null,
-        'UrlCustomParameters' => null,
+        'BidStrategyScope' => null,
         'BiddingScheme' => null,
+        'BrandColor' => null,
+        'BrandLogo' => null,
+        'BudgetType' => null,
+        'BusinessName' => null,
+        'DailyBudget' => 'double',
+        'DealIds' => 'int64',
+        'EndDate' => 'date-time',
+        'ExperimentId' => 'int64',
+        'FinalUrlSuffix' => null,
+        'ForwardCompatibilityMap' => null,
+        'GoalIds' => 'int64',
+        'Id' => 'int64',
+        'IsDealCampaign' => null,
+        'IsPolitical' => null,
+        'MarketingObjective' => null,
+        'MessagingRestrictions' => null,
+        'MultimediaAdsBidAdjustment' => 'int32',
+        'Name' => null,
+        'PrivacyStatus' => null,
+        'StartDate' => 'date-time',
+        'Status' => null,
+        'SubType' => null,
+        'TermExclusions' => null,
+        'TimeZone' => null,
+        'TrackingUrlTemplate' => null,
+        'UrlCustomParameters' => null,
+        'UseCampaignLevelDates' => null,
+        'CampaignType' => null,
+        'Settings' => null,
         'BudgetId' => 'int64',
         'Languages' => null,
-        'ExperimentId' => 'int64',
         'AdScheduleUseSearcherTimeZone' => null,
-        'BidStrategyId' => 'int64',
-        'BidStrategyScope' => null,
-        'MultimediaAdsBidAdjustment' => 'int32',
-        'GoalIds' => 'int64',
-        'DealIds' => 'int64',
-        'IsDealCampaign' => null,
-        'StartDate' => 'date-time',
-        'EndDate' => 'date-time',
-        'UseCampaignLevelDates' => null,
-        'IsPolitical' => null,
-        'BusinessName' => null,
-        'BrandLogo' => null,
-        'BrandColor' => null,
-        'TermExclusions' => null,
-        'PrivacyStatus' => null,
-        'ForwardCompatibilityMap' => null
+        'BidStrategyId' => 'int64'
     ];
 
     /**
@@ -121,41 +123,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
-        'Name' => true,
-        'Status' => false,
-        'DailyBudget' => true,
-        'BudgetType' => false,
-        'TimeZone' => true,
-        'Settings' => true,
-        'CampaignType' => false,
-        'SubType' => true,
-        'MarketingObjective' => true,
         'AudienceAdsBidAdjustment' => true,
-        'TrackingUrlTemplate' => true,
-        'FinalUrlSuffix' => true,
-        'UrlCustomParameters' => true,
+        'BidStrategyScope' => true,
         'BiddingScheme' => true,
+        'BrandColor' => true,
+        'BrandLogo' => true,
+        'BudgetType' => true,
+        'BusinessName' => true,
+        'DailyBudget' => true,
+        'DealIds' => true,
+        'EndDate' => true,
+        'ExperimentId' => true,
+        'FinalUrlSuffix' => true,
+        'ForwardCompatibilityMap' => true,
+        'GoalIds' => true,
+        'Id' => true,
+        'IsDealCampaign' => true,
+        'IsPolitical' => false,
+        'MarketingObjective' => true,
+        'MessagingRestrictions' => true,
+        'MultimediaAdsBidAdjustment' => true,
+        'Name' => true,
+        'PrivacyStatus' => true,
+        'StartDate' => true,
+        'Status' => true,
+        'SubType' => true,
+        'TermExclusions' => true,
+        'TimeZone' => true,
+        'TrackingUrlTemplate' => true,
+        'UrlCustomParameters' => true,
+        'UseCampaignLevelDates' => true,
+        'CampaignType' => true,
+        'Settings' => true,
         'BudgetId' => true,
         'Languages' => true,
-        'ExperimentId' => true,
         'AdScheduleUseSearcherTimeZone' => true,
-        'BidStrategyId' => true,
-        'BidStrategyScope' => false,
-        'MultimediaAdsBidAdjustment' => true,
-        'GoalIds' => true,
-        'DealIds' => true,
-        'IsDealCampaign' => true,
-        'StartDate' => true,
-        'EndDate' => true,
-        'UseCampaignLevelDates' => true,
-        'IsPolitical' => false,
-        'BusinessName' => true,
-        'BrandLogo' => true,
-        'BrandColor' => true,
-        'TermExclusions' => true,
-        'PrivacyStatus' => false,
-        'ForwardCompatibilityMap' => true
+        'BidStrategyId' => true
     ];
 
     /**
@@ -244,41 +247,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'Name' => 'Name',
-        'Status' => 'Status',
-        'DailyBudget' => 'DailyBudget',
-        'BudgetType' => 'BudgetType',
-        'TimeZone' => 'TimeZone',
-        'Settings' => 'Settings',
-        'CampaignType' => 'CampaignType',
-        'SubType' => 'SubType',
-        'MarketingObjective' => 'MarketingObjective',
         'AudienceAdsBidAdjustment' => 'AudienceAdsBidAdjustment',
-        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
-        'FinalUrlSuffix' => 'FinalUrlSuffix',
-        'UrlCustomParameters' => 'UrlCustomParameters',
+        'BidStrategyScope' => 'BidStrategyScope',
         'BiddingScheme' => 'BiddingScheme',
+        'BrandColor' => 'BrandColor',
+        'BrandLogo' => 'BrandLogo',
+        'BudgetType' => 'BudgetType',
+        'BusinessName' => 'BusinessName',
+        'DailyBudget' => 'DailyBudget',
+        'DealIds' => 'DealIds',
+        'EndDate' => 'EndDate',
+        'ExperimentId' => 'ExperimentId',
+        'FinalUrlSuffix' => 'FinalUrlSuffix',
+        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'GoalIds' => 'GoalIds',
+        'Id' => 'Id',
+        'IsDealCampaign' => 'IsDealCampaign',
+        'IsPolitical' => 'IsPolitical',
+        'MarketingObjective' => 'MarketingObjective',
+        'MessagingRestrictions' => 'MessagingRestrictions',
+        'MultimediaAdsBidAdjustment' => 'MultimediaAdsBidAdjustment',
+        'Name' => 'Name',
+        'PrivacyStatus' => 'PrivacyStatus',
+        'StartDate' => 'StartDate',
+        'Status' => 'Status',
+        'SubType' => 'SubType',
+        'TermExclusions' => 'TermExclusions',
+        'TimeZone' => 'TimeZone',
+        'TrackingUrlTemplate' => 'TrackingUrlTemplate',
+        'UrlCustomParameters' => 'UrlCustomParameters',
+        'UseCampaignLevelDates' => 'UseCampaignLevelDates',
+        'CampaignType' => 'CampaignType',
+        'Settings' => 'Settings',
         'BudgetId' => 'BudgetId',
         'Languages' => 'Languages',
-        'ExperimentId' => 'ExperimentId',
         'AdScheduleUseSearcherTimeZone' => 'AdScheduleUseSearcherTimeZone',
-        'BidStrategyId' => 'BidStrategyId',
-        'BidStrategyScope' => 'BidStrategyScope',
-        'MultimediaAdsBidAdjustment' => 'MultimediaAdsBidAdjustment',
-        'GoalIds' => 'GoalIds',
-        'DealIds' => 'DealIds',
-        'IsDealCampaign' => 'IsDealCampaign',
-        'StartDate' => 'StartDate',
-        'EndDate' => 'EndDate',
-        'UseCampaignLevelDates' => 'UseCampaignLevelDates',
-        'IsPolitical' => 'IsPolitical',
-        'BusinessName' => 'BusinessName',
-        'BrandLogo' => 'BrandLogo',
-        'BrandColor' => 'BrandColor',
-        'TermExclusions' => 'TermExclusions',
-        'PrivacyStatus' => 'PrivacyStatus',
-        'ForwardCompatibilityMap' => 'ForwardCompatibilityMap'
+        'BidStrategyId' => 'BidStrategyId'
     ];
 
     /**
@@ -287,41 +291,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'Name' => 'setName',
-        'Status' => 'setStatus',
-        'DailyBudget' => 'setDailyBudget',
-        'BudgetType' => 'setBudgetType',
-        'TimeZone' => 'setTimeZone',
-        'Settings' => 'setSettings',
-        'CampaignType' => 'setCampaignType',
-        'SubType' => 'setSubType',
-        'MarketingObjective' => 'setMarketingObjective',
         'AudienceAdsBidAdjustment' => 'setAudienceAdsBidAdjustment',
-        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'setFinalUrlSuffix',
-        'UrlCustomParameters' => 'setUrlCustomParameters',
+        'BidStrategyScope' => 'setBidStrategyScope',
         'BiddingScheme' => 'setBiddingScheme',
+        'BrandColor' => 'setBrandColor',
+        'BrandLogo' => 'setBrandLogo',
+        'BudgetType' => 'setBudgetType',
+        'BusinessName' => 'setBusinessName',
+        'DailyBudget' => 'setDailyBudget',
+        'DealIds' => 'setDealIds',
+        'EndDate' => 'setEndDate',
+        'ExperimentId' => 'setExperimentId',
+        'FinalUrlSuffix' => 'setFinalUrlSuffix',
+        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'GoalIds' => 'setGoalIds',
+        'Id' => 'setId',
+        'IsDealCampaign' => 'setIsDealCampaign',
+        'IsPolitical' => 'setIsPolitical',
+        'MarketingObjective' => 'setMarketingObjective',
+        'MessagingRestrictions' => 'setMessagingRestrictions',
+        'MultimediaAdsBidAdjustment' => 'setMultimediaAdsBidAdjustment',
+        'Name' => 'setName',
+        'PrivacyStatus' => 'setPrivacyStatus',
+        'StartDate' => 'setStartDate',
+        'Status' => 'setStatus',
+        'SubType' => 'setSubType',
+        'TermExclusions' => 'setTermExclusions',
+        'TimeZone' => 'setTimeZone',
+        'TrackingUrlTemplate' => 'setTrackingUrlTemplate',
+        'UrlCustomParameters' => 'setUrlCustomParameters',
+        'UseCampaignLevelDates' => 'setUseCampaignLevelDates',
+        'CampaignType' => 'setCampaignType',
+        'Settings' => 'setSettings',
         'BudgetId' => 'setBudgetId',
         'Languages' => 'setLanguages',
-        'ExperimentId' => 'setExperimentId',
         'AdScheduleUseSearcherTimeZone' => 'setAdScheduleUseSearcherTimeZone',
-        'BidStrategyId' => 'setBidStrategyId',
-        'BidStrategyScope' => 'setBidStrategyScope',
-        'MultimediaAdsBidAdjustment' => 'setMultimediaAdsBidAdjustment',
-        'GoalIds' => 'setGoalIds',
-        'DealIds' => 'setDealIds',
-        'IsDealCampaign' => 'setIsDealCampaign',
-        'StartDate' => 'setStartDate',
-        'EndDate' => 'setEndDate',
-        'UseCampaignLevelDates' => 'setUseCampaignLevelDates',
-        'IsPolitical' => 'setIsPolitical',
-        'BusinessName' => 'setBusinessName',
-        'BrandLogo' => 'setBrandLogo',
-        'BrandColor' => 'setBrandColor',
-        'TermExclusions' => 'setTermExclusions',
-        'PrivacyStatus' => 'setPrivacyStatus',
-        'ForwardCompatibilityMap' => 'setForwardCompatibilityMap'
+        'BidStrategyId' => 'setBidStrategyId'
     ];
 
     /**
@@ -330,41 +335,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'Name' => 'getName',
-        'Status' => 'getStatus',
-        'DailyBudget' => 'getDailyBudget',
-        'BudgetType' => 'getBudgetType',
-        'TimeZone' => 'getTimeZone',
-        'Settings' => 'getSettings',
-        'CampaignType' => 'getCampaignType',
-        'SubType' => 'getSubType',
-        'MarketingObjective' => 'getMarketingObjective',
         'AudienceAdsBidAdjustment' => 'getAudienceAdsBidAdjustment',
-        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
-        'FinalUrlSuffix' => 'getFinalUrlSuffix',
-        'UrlCustomParameters' => 'getUrlCustomParameters',
+        'BidStrategyScope' => 'getBidStrategyScope',
         'BiddingScheme' => 'getBiddingScheme',
+        'BrandColor' => 'getBrandColor',
+        'BrandLogo' => 'getBrandLogo',
+        'BudgetType' => 'getBudgetType',
+        'BusinessName' => 'getBusinessName',
+        'DailyBudget' => 'getDailyBudget',
+        'DealIds' => 'getDealIds',
+        'EndDate' => 'getEndDate',
+        'ExperimentId' => 'getExperimentId',
+        'FinalUrlSuffix' => 'getFinalUrlSuffix',
+        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'GoalIds' => 'getGoalIds',
+        'Id' => 'getId',
+        'IsDealCampaign' => 'getIsDealCampaign',
+        'IsPolitical' => 'getIsPolitical',
+        'MarketingObjective' => 'getMarketingObjective',
+        'MessagingRestrictions' => 'getMessagingRestrictions',
+        'MultimediaAdsBidAdjustment' => 'getMultimediaAdsBidAdjustment',
+        'Name' => 'getName',
+        'PrivacyStatus' => 'getPrivacyStatus',
+        'StartDate' => 'getStartDate',
+        'Status' => 'getStatus',
+        'SubType' => 'getSubType',
+        'TermExclusions' => 'getTermExclusions',
+        'TimeZone' => 'getTimeZone',
+        'TrackingUrlTemplate' => 'getTrackingUrlTemplate',
+        'UrlCustomParameters' => 'getUrlCustomParameters',
+        'UseCampaignLevelDates' => 'getUseCampaignLevelDates',
+        'CampaignType' => 'getCampaignType',
+        'Settings' => 'getSettings',
         'BudgetId' => 'getBudgetId',
         'Languages' => 'getLanguages',
-        'ExperimentId' => 'getExperimentId',
         'AdScheduleUseSearcherTimeZone' => 'getAdScheduleUseSearcherTimeZone',
-        'BidStrategyId' => 'getBidStrategyId',
-        'BidStrategyScope' => 'getBidStrategyScope',
-        'MultimediaAdsBidAdjustment' => 'getMultimediaAdsBidAdjustment',
-        'GoalIds' => 'getGoalIds',
-        'DealIds' => 'getDealIds',
-        'IsDealCampaign' => 'getIsDealCampaign',
-        'StartDate' => 'getStartDate',
-        'EndDate' => 'getEndDate',
-        'UseCampaignLevelDates' => 'getUseCampaignLevelDates',
-        'IsPolitical' => 'getIsPolitical',
-        'BusinessName' => 'getBusinessName',
-        'BrandLogo' => 'getBrandLogo',
-        'BrandColor' => 'getBrandColor',
-        'TermExclusions' => 'getTermExclusions',
-        'PrivacyStatus' => 'getPrivacyStatus',
-        'ForwardCompatibilityMap' => 'getForwardCompatibilityMap'
+        'BidStrategyId' => 'getBidStrategyId'
     ];
 
     /**
@@ -424,41 +430,42 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('DailyBudget', $data ?? [], null);
-        $this->setIfExists('BudgetType', $data ?? [], null);
-        $this->setIfExists('TimeZone', $data ?? [], null);
-        $this->setIfExists('Settings', $data ?? [], null);
-        $this->setIfExists('CampaignType', $data ?? [], null);
-        $this->setIfExists('SubType', $data ?? [], null);
-        $this->setIfExists('MarketingObjective', $data ?? [], null);
         $this->setIfExists('AudienceAdsBidAdjustment', $data ?? [], null);
-        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
-        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
-        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+        $this->setIfExists('BidStrategyScope', $data ?? [], null);
         $this->setIfExists('BiddingScheme', $data ?? [], null);
+        $this->setIfExists('BrandColor', $data ?? [], null);
+        $this->setIfExists('BrandLogo', $data ?? [], null);
+        $this->setIfExists('BudgetType', $data ?? [], null);
+        $this->setIfExists('BusinessName', $data ?? [], null);
+        $this->setIfExists('DailyBudget', $data ?? [], null);
+        $this->setIfExists('DealIds', $data ?? [], null);
+        $this->setIfExists('EndDate', $data ?? [], null);
+        $this->setIfExists('ExperimentId', $data ?? [], null);
+        $this->setIfExists('FinalUrlSuffix', $data ?? [], null);
+        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('GoalIds', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('IsDealCampaign', $data ?? [], null);
+        $this->setIfExists('IsPolitical', $data ?? [], null);
+        $this->setIfExists('MarketingObjective', $data ?? [], null);
+        $this->setIfExists('MessagingRestrictions', $data ?? [], null);
+        $this->setIfExists('MultimediaAdsBidAdjustment', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('PrivacyStatus', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('SubType', $data ?? [], null);
+        $this->setIfExists('TermExclusions', $data ?? [], null);
+        $this->setIfExists('TimeZone', $data ?? [], null);
+        $this->setIfExists('TrackingUrlTemplate', $data ?? [], null);
+        $this->setIfExists('UrlCustomParameters', $data ?? [], null);
+        $this->setIfExists('UseCampaignLevelDates', $data ?? [], null);
+        $this->setIfExists('CampaignType', $data ?? [], null);
+        $this->setIfExists('Settings', $data ?? [], null);
         $this->setIfExists('BudgetId', $data ?? [], null);
         $this->setIfExists('Languages', $data ?? [], null);
-        $this->setIfExists('ExperimentId', $data ?? [], null);
         $this->setIfExists('AdScheduleUseSearcherTimeZone', $data ?? [], null);
         $this->setIfExists('BidStrategyId', $data ?? [], null);
-        $this->setIfExists('BidStrategyScope', $data ?? [], null);
-        $this->setIfExists('MultimediaAdsBidAdjustment', $data ?? [], null);
-        $this->setIfExists('GoalIds', $data ?? [], null);
-        $this->setIfExists('DealIds', $data ?? [], null);
-        $this->setIfExists('IsDealCampaign', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
-        $this->setIfExists('EndDate', $data ?? [], null);
-        $this->setIfExists('UseCampaignLevelDates', $data ?? [], null);
-        $this->setIfExists('IsPolitical', $data ?? [], null);
-        $this->setIfExists('BusinessName', $data ?? [], null);
-        $this->setIfExists('BrandLogo', $data ?? [], null);
-        $this->setIfExists('BrandColor', $data ?? [], null);
-        $this->setIfExists('TermExclusions', $data ?? [], null);
-        $this->setIfExists('PrivacyStatus', $data ?? [], null);
-        $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
     }
 
     /**
@@ -504,111 +511,272 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Id
+     * Gets AudienceAdsBidAdjustment
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getId()
+    public function getAudienceAdsBidAdjustment()
     {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+        if (!isset($this->container['AudienceAdsBidAdjustment']) || is_null($this->container['AudienceAdsBidAdjustment'])) {
             return null;
         }
-        return $this->container['Id'];
+        return $this->container['AudienceAdsBidAdjustment'];
     }
 
     /**
-     * Sets Id
+     * Sets AudienceAdsBidAdjustment
      *
-     * @param string|null $Id Id
+     * @param int|null $AudienceAdsBidAdjustment AudienceAdsBidAdjustment
      *
      * @return self
      */
-    public function setId($Id)
+    public function setAudienceAdsBidAdjustment($AudienceAdsBidAdjustment)
     {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
+        if (is_null($AudienceAdsBidAdjustment)) {
+            array_push($this->openAPINullablesSetToNull, 'AudienceAdsBidAdjustment');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
+            $index = array_search('AudienceAdsBidAdjustment', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Id'] = $Id;
+        $this->container['AudienceAdsBidAdjustment'] = $AudienceAdsBidAdjustment;
 
         return $this;
     }
 
     /**
-     * Gets Name
+     * Gets BidStrategyScope
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
      */
-    public function getName()
+    public function getBidStrategyScope()
     {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+        if (!isset($this->container['BidStrategyScope']) || is_null($this->container['BidStrategyScope'])) {
             return null;
         }
-        return $this->container['Name'];
+        if ((is_object($this->container['BidStrategyScope']) || is_string($this->container['BidStrategyScope'])) && method_exists($this->container['BidStrategyScope'], 'getValue')) {
+            return $this->container['BidStrategyScope']->getValue();
+        }
+        return $this->container['BidStrategyScope'];
     }
 
     /**
-     * Sets Name
+     * Sets BidStrategyScope
      *
-     * @param string|null $Name Name
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $BidStrategyScope BidStrategyScope
      *
      * @return self
      */
-    public function setName($Name)
+    public function setBidStrategyScope($BidStrategyScope)
     {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
+        if (is_null($BidStrategyScope)) {
+            array_push($this->openAPINullablesSetToNull, 'BidStrategyScope');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
+            $index = array_search('BidStrategyScope', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Name'] = $Name;
+        if (!is_null($BidStrategyScope) && !$BidStrategyScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $BidStrategyScope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($BidStrategyScope);
+        }
+        $this->container['BidStrategyScope'] = $BidStrategyScope;
 
         return $this;
     }
 
     /**
-     * Gets Status
+     * Gets BiddingScheme
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null
      */
-    public function getStatus()
+    public function getBiddingScheme()
     {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+        if (!isset($this->container['BiddingScheme']) || is_null($this->container['BiddingScheme'])) {
             return null;
         }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
+        return $this->container['BiddingScheme'];
     }
 
     /**
-     * Sets Status
+     * Sets BiddingScheme
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus|mixed|null $Status Status
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null $BiddingScheme BiddingScheme
      *
      * @return self
      */
-    public function setStatus($Status)
+    public function setBiddingScheme($BiddingScheme)
     {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
+        if (is_null($BiddingScheme)) {
+            array_push($this->openAPINullablesSetToNull, 'BiddingScheme');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BiddingScheme', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus($Status);
+        $this->container['BiddingScheme'] = $BiddingScheme;
+
+        return $this;
+    }
+
+    /**
+     * Gets BrandColor
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getBrandColor()
+    {
+        if (!isset($this->container['BrandColor']) || is_null($this->container['BrandColor'])) {
+            return null;
         }
-        $this->container['Status'] = $Status;
+        return $this->container['BrandColor'];
+    }
+
+    /**
+     * Sets BrandColor
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $BrandColor BrandColor
+     *
+     * @return self
+     */
+    public function setBrandColor($BrandColor)
+    {
+        if (is_null($BrandColor)) {
+            array_push($this->openAPINullablesSetToNull, 'BrandColor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BrandColor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BrandColor'] = $BrandColor;
+
+        return $this;
+    }
+
+    /**
+     * Gets BrandLogo
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getBrandLogo()
+    {
+        if (!isset($this->container['BrandLogo']) || is_null($this->container['BrandLogo'])) {
+            return null;
+        }
+        return $this->container['BrandLogo'];
+    }
+
+    /**
+     * Sets BrandLogo
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $BrandLogo BrandLogo
+     *
+     * @return self
+     */
+    public function setBrandLogo($BrandLogo)
+    {
+        if (is_null($BrandLogo)) {
+            array_push($this->openAPINullablesSetToNull, 'BrandLogo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BrandLogo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BrandLogo'] = $BrandLogo;
+
+        return $this;
+    }
+
+    /**
+     * Gets BudgetType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null
+     */
+    public function getBudgetType()
+    {
+        if (!isset($this->container['BudgetType']) || is_null($this->container['BudgetType'])) {
+            return null;
+        }
+        if ((is_object($this->container['BudgetType']) || is_string($this->container['BudgetType'])) && method_exists($this->container['BudgetType'], 'getValue')) {
+            return $this->container['BudgetType']->getValue();
+        }
+        return $this->container['BudgetType'];
+    }
+
+    /**
+     * Sets BudgetType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null $BudgetType BudgetType
+     *
+     * @return self
+     */
+    public function setBudgetType($BudgetType)
+    {
+        if (is_null($BudgetType)) {
+            array_push($this->openAPINullablesSetToNull, 'BudgetType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BudgetType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($BudgetType) && !$BudgetType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType) {
+            $BudgetType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType($BudgetType);
+        }
+        $this->container['BudgetType'] = $BudgetType;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessName
+     *
+     * @return string|null
+     */
+    public function getBusinessName()
+    {
+        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
+            return null;
+        }
+        return $this->container['BusinessName'];
+    }
+
+    /**
+     * Sets BusinessName
+     *
+     * @param string|null $BusinessName BusinessName
+     *
+     * @return self
+     */
+    public function setBusinessName($BusinessName)
+    {
+        if (is_null($BusinessName)) {
+            array_push($this->openAPINullablesSetToNull, 'BusinessName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BusinessName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['BusinessName'] = $BusinessName;
 
         return $this;
     }
@@ -651,295 +819,112 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets BudgetType
+     * Gets DealIds
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null
+     * @return string[]|null
      */
-    public function getBudgetType()
+    public function getDealIds()
     {
-        if (!isset($this->container['BudgetType']) || is_null($this->container['BudgetType'])) {
+        if (!isset($this->container['DealIds']) || is_null($this->container['DealIds'])) {
             return null;
         }
-        if ((is_object($this->container['BudgetType']) || is_string($this->container['BudgetType'])) && method_exists($this->container['BudgetType'], 'getValue')) {
-            return $this->container['BudgetType']->getValue();
-        }
-        return $this->container['BudgetType'];
+        return $this->container['DealIds'];
     }
 
     /**
-     * Sets BudgetType
+     * Sets DealIds
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null $BudgetType BudgetType
+     * @param string[]|null $DealIds DealIds
      *
      * @return self
      */
-    public function setBudgetType($BudgetType)
+    public function setDealIds($DealIds)
     {
-        if (is_null($BudgetType)) {
-            throw new \InvalidArgumentException('non-nullable BudgetType cannot be null');
+        if (is_null($DealIds)) {
+            array_push($this->openAPINullablesSetToNull, 'DealIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DealIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$BudgetType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType) {
-            $BudgetType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType($BudgetType);
-        }
-        $this->container['BudgetType'] = $BudgetType;
+        $this->container['DealIds'] = $DealIds;
 
         return $this;
     }
 
     /**
-     * Gets TimeZone
+     * Gets EndDate
+     *
+     * @return \DateTime|null
+     */
+    public function getEndDate()
+    {
+        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
+            return null;
+        }
+        return $this->container['EndDate'];
+    }
+
+    /**
+     * Sets EndDate
+     *
+     * @param \DateTime|null $EndDate EndDate
+     *
+     * @return self
+     */
+    public function setEndDate($EndDate)
+    {
+        if (is_null($EndDate)) {
+            array_push($this->openAPINullablesSetToNull, 'EndDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EndDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EndDate'] = $EndDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExperimentId
      *
      * @return string|null
      */
-    public function getTimeZone()
+    public function getExperimentId()
     {
-        if (!isset($this->container['TimeZone']) || is_null($this->container['TimeZone'])) {
+        if (!isset($this->container['ExperimentId']) || is_null($this->container['ExperimentId'])) {
             return null;
         }
-        return $this->container['TimeZone'];
+        return $this->container['ExperimentId'];
     }
 
     /**
-     * Sets TimeZone
+     * Sets ExperimentId
      *
-     * @param string|null $TimeZone TimeZone
+     * @param string|null $ExperimentId ExperimentId
      *
      * @return self
      */
-    public function setTimeZone($TimeZone)
+    public function setExperimentId($ExperimentId)
     {
-        if (is_null($TimeZone)) {
-            array_push($this->openAPINullablesSetToNull, 'TimeZone');
+        if (is_null($ExperimentId)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TimeZone', $nullablesSetToNull);
+            $index = array_search('ExperimentId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TimeZone'] = $TimeZone;
-
-        return $this;
-    }
-
-    /**
-     * Gets Settings
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]|null
-     */
-    public function getSettings()
-    {
-        if (!isset($this->container['Settings']) || is_null($this->container['Settings'])) {
-            return null;
-        }
-        return $this->container['Settings'];
-    }
-
-    /**
-     * Sets Settings
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]|null $Settings Settings
-     *
-     * @return self
-     */
-    public function setSettings($Settings)
-    {
-        if (is_null($Settings)) {
-            array_push($this->openAPINullablesSetToNull, 'Settings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Settings', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Settings'] = $Settings;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null
-     */
-    public function getCampaignType()
-    {
-        if (!isset($this->container['CampaignType']) || is_null($this->container['CampaignType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CampaignType']) || is_string($this->container['CampaignType'])) && method_exists($this->container['CampaignType'], 'getValue')) {
-            return $this->container['CampaignType']->getValue();
-        }
-        return $this->container['CampaignType'];
-    }
-
-    /**
-     * Sets CampaignType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null $CampaignType CampaignType
-     *
-     * @return self
-     */
-    public function setCampaignType($CampaignType)
-    {
-        if (is_null($CampaignType)) {
-            throw new \InvalidArgumentException('non-nullable CampaignType cannot be null');
-        }
-        if (!$CampaignType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
-            $CampaignType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($CampaignType);
-        }
-        $this->container['CampaignType'] = $CampaignType;
-
-        return $this;
-    }
-
-    /**
-     * Gets SubType
-     *
-     * @return string|null
-     */
-    public function getSubType()
-    {
-        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
-            return null;
-        }
-        return $this->container['SubType'];
-    }
-
-    /**
-     * Sets SubType
-     *
-     * @param string|null $SubType SubType
-     *
-     * @return self
-     */
-    public function setSubType($SubType)
-    {
-        if (is_null($SubType)) {
-            array_push($this->openAPINullablesSetToNull, 'SubType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SubType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SubType'] = $SubType;
-
-        return $this;
-    }
-
-    /**
-     * Gets MarketingObjective
-     *
-     * @return string|null
-     */
-    public function getMarketingObjective()
-    {
-        if (!isset($this->container['MarketingObjective']) || is_null($this->container['MarketingObjective'])) {
-            return null;
-        }
-        return $this->container['MarketingObjective'];
-    }
-
-    /**
-     * Sets MarketingObjective
-     *
-     * @param string|null $MarketingObjective MarketingObjective
-     *
-     * @return self
-     */
-    public function setMarketingObjective($MarketingObjective)
-    {
-        if (is_null($MarketingObjective)) {
-            array_push($this->openAPINullablesSetToNull, 'MarketingObjective');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MarketingObjective', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MarketingObjective'] = $MarketingObjective;
-
-        return $this;
-    }
-
-    /**
-     * Gets AudienceAdsBidAdjustment
-     *
-     * @return int|null
-     */
-    public function getAudienceAdsBidAdjustment()
-    {
-        if (!isset($this->container['AudienceAdsBidAdjustment']) || is_null($this->container['AudienceAdsBidAdjustment'])) {
-            return null;
-        }
-        return $this->container['AudienceAdsBidAdjustment'];
-    }
-
-    /**
-     * Sets AudienceAdsBidAdjustment
-     *
-     * @param int|null $AudienceAdsBidAdjustment AudienceAdsBidAdjustment
-     *
-     * @return self
-     */
-    public function setAudienceAdsBidAdjustment($AudienceAdsBidAdjustment)
-    {
-        if (is_null($AudienceAdsBidAdjustment)) {
-            array_push($this->openAPINullablesSetToNull, 'AudienceAdsBidAdjustment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AudienceAdsBidAdjustment', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AudienceAdsBidAdjustment'] = $AudienceAdsBidAdjustment;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrackingUrlTemplate
-     *
-     * @return string|null
-     */
-    public function getTrackingUrlTemplate()
-    {
-        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
-            return null;
-        }
-        return $this->container['TrackingUrlTemplate'];
-    }
-
-    /**
-     * Sets TrackingUrlTemplate
-     *
-     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
-     *
-     * @return self
-     */
-    public function setTrackingUrlTemplate($TrackingUrlTemplate)
-    {
-        if (is_null($TrackingUrlTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+        $this->container['ExperimentId'] = $ExperimentId;
 
         return $this;
     }
@@ -982,6 +967,603 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
+     * Gets GoalIds
+     *
+     * @return string[]|null
+     */
+    public function getGoalIds()
+    {
+        if (!isset($this->container['GoalIds']) || is_null($this->container['GoalIds'])) {
+            return null;
+        }
+        return $this->container['GoalIds'];
+    }
+
+    /**
+     * Sets GoalIds
+     *
+     * @param string[]|null $GoalIds GoalIds
+     *
+     * @return self
+     */
+    public function setGoalIds($GoalIds)
+    {
+        if (is_null($GoalIds)) {
+            array_push($this->openAPINullablesSetToNull, 'GoalIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GoalIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['GoalIds'] = $GoalIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsDealCampaign
+     *
+     * @return bool|null
+     */
+    public function getIsDealCampaign()
+    {
+        if (!isset($this->container['IsDealCampaign']) || is_null($this->container['IsDealCampaign'])) {
+            return null;
+        }
+        return $this->container['IsDealCampaign'];
+    }
+
+    /**
+     * Sets IsDealCampaign
+     *
+     * @param bool|null $IsDealCampaign IsDealCampaign
+     *
+     * @return self
+     */
+    public function setIsDealCampaign($IsDealCampaign)
+    {
+        if (is_null($IsDealCampaign)) {
+            array_push($this->openAPINullablesSetToNull, 'IsDealCampaign');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsDealCampaign', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsDealCampaign'] = $IsDealCampaign;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsPolitical
+     *
+     * @return bool|null
+     */
+    public function getIsPolitical()
+    {
+        if (!isset($this->container['IsPolitical']) || is_null($this->container['IsPolitical'])) {
+            return null;
+        }
+        return $this->container['IsPolitical'];
+    }
+
+    /**
+     * Sets IsPolitical
+     *
+     * @param bool|null $IsPolitical IsPolitical
+     *
+     * @return self
+     */
+    public function setIsPolitical($IsPolitical)
+    {
+        if (is_null($IsPolitical)) {
+            throw new \InvalidArgumentException('non-nullable IsPolitical cannot be null');
+        }
+        $this->container['IsPolitical'] = $IsPolitical;
+
+        return $this;
+    }
+
+    /**
+     * Gets MarketingObjective
+     *
+     * @return string|null
+     */
+    public function getMarketingObjective()
+    {
+        if (!isset($this->container['MarketingObjective']) || is_null($this->container['MarketingObjective'])) {
+            return null;
+        }
+        return $this->container['MarketingObjective'];
+    }
+
+    /**
+     * Sets MarketingObjective
+     *
+     * @param string|null $MarketingObjective MarketingObjective
+     *
+     * @return self
+     */
+    public function setMarketingObjective($MarketingObjective)
+    {
+        if (is_null($MarketingObjective)) {
+            array_push($this->openAPINullablesSetToNull, 'MarketingObjective');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MarketingObjective', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MarketingObjective'] = $MarketingObjective;
+
+        return $this;
+    }
+
+    /**
+     * Gets MessagingRestrictions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getMessagingRestrictions()
+    {
+        if (!isset($this->container['MessagingRestrictions']) || is_null($this->container['MessagingRestrictions'])) {
+            return null;
+        }
+        return $this->container['MessagingRestrictions'];
+    }
+
+    /**
+     * Sets MessagingRestrictions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $MessagingRestrictions MessagingRestrictions
+     *
+     * @return self
+     */
+    public function setMessagingRestrictions($MessagingRestrictions)
+    {
+        if (is_null($MessagingRestrictions)) {
+            array_push($this->openAPINullablesSetToNull, 'MessagingRestrictions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MessagingRestrictions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MessagingRestrictions'] = $MessagingRestrictions;
+
+        return $this;
+    }
+
+    /**
+     * Gets MultimediaAdsBidAdjustment
+     *
+     * @return int|null
+     */
+    public function getMultimediaAdsBidAdjustment()
+    {
+        if (!isset($this->container['MultimediaAdsBidAdjustment']) || is_null($this->container['MultimediaAdsBidAdjustment'])) {
+            return null;
+        }
+        return $this->container['MultimediaAdsBidAdjustment'];
+    }
+
+    /**
+     * Sets MultimediaAdsBidAdjustment
+     *
+     * @param int|null $MultimediaAdsBidAdjustment MultimediaAdsBidAdjustment
+     *
+     * @return self
+     */
+    public function setMultimediaAdsBidAdjustment($MultimediaAdsBidAdjustment)
+    {
+        if (is_null($MultimediaAdsBidAdjustment)) {
+            array_push($this->openAPINullablesSetToNull, 'MultimediaAdsBidAdjustment');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MultimediaAdsBidAdjustment', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MultimediaAdsBidAdjustment'] = $MultimediaAdsBidAdjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets PrivacyStatus
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus|mixed|null
+     */
+    public function getPrivacyStatus()
+    {
+        if (!isset($this->container['PrivacyStatus']) || is_null($this->container['PrivacyStatus'])) {
+            return null;
+        }
+        if ((is_object($this->container['PrivacyStatus']) || is_string($this->container['PrivacyStatus'])) && method_exists($this->container['PrivacyStatus'], 'getValue')) {
+            return $this->container['PrivacyStatus']->getValue();
+        }
+        return $this->container['PrivacyStatus'];
+    }
+
+    /**
+     * Sets PrivacyStatus
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus|mixed|null $PrivacyStatus PrivacyStatus
+     *
+     * @return self
+     */
+    public function setPrivacyStatus($PrivacyStatus)
+    {
+        if (is_null($PrivacyStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'PrivacyStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PrivacyStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($PrivacyStatus) && !$PrivacyStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus) {
+            $PrivacyStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus($PrivacyStatus);
+        }
+        $this->container['PrivacyStatus'] = $PrivacyStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartDate
+     *
+     * @return \DateTime|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \DateTime|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets SubType
+     *
+     * @return string|null
+     */
+    public function getSubType()
+    {
+        if (!isset($this->container['SubType']) || is_null($this->container['SubType'])) {
+            return null;
+        }
+        return $this->container['SubType'];
+    }
+
+    /**
+     * Sets SubType
+     *
+     * @param string|null $SubType SubType
+     *
+     * @return self
+     */
+    public function setSubType($SubType)
+    {
+        if (is_null($SubType)) {
+            array_push($this->openAPINullablesSetToNull, 'SubType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SubType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SubType'] = $SubType;
+
+        return $this;
+    }
+
+    /**
+     * Gets TermExclusions
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
+     */
+    public function getTermExclusions()
+    {
+        if (!isset($this->container['TermExclusions']) || is_null($this->container['TermExclusions'])) {
+            return null;
+        }
+        return $this->container['TermExclusions'];
+    }
+
+    /**
+     * Sets TermExclusions
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $TermExclusions TermExclusions
+     *
+     * @return self
+     */
+    public function setTermExclusions($TermExclusions)
+    {
+        if (is_null($TermExclusions)) {
+            array_push($this->openAPINullablesSetToNull, 'TermExclusions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TermExclusions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TermExclusions'] = $TermExclusions;
+
+        return $this;
+    }
+
+    /**
+     * Gets TimeZone
+     *
+     * @return string|null
+     */
+    public function getTimeZone()
+    {
+        if (!isset($this->container['TimeZone']) || is_null($this->container['TimeZone'])) {
+            return null;
+        }
+        return $this->container['TimeZone'];
+    }
+
+    /**
+     * Sets TimeZone
+     *
+     * @param string|null $TimeZone TimeZone
+     *
+     * @return self
+     */
+    public function setTimeZone($TimeZone)
+    {
+        if (is_null($TimeZone)) {
+            array_push($this->openAPINullablesSetToNull, 'TimeZone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TimeZone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TimeZone'] = $TimeZone;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingUrlTemplate
+     *
+     * @return string|null
+     */
+    public function getTrackingUrlTemplate()
+    {
+        if (!isset($this->container['TrackingUrlTemplate']) || is_null($this->container['TrackingUrlTemplate'])) {
+            return null;
+        }
+        return $this->container['TrackingUrlTemplate'];
+    }
+
+    /**
+     * Sets TrackingUrlTemplate
+     *
+     * @param string|null $TrackingUrlTemplate TrackingUrlTemplate
+     *
+     * @return self
+     */
+    public function setTrackingUrlTemplate($TrackingUrlTemplate)
+    {
+        if (is_null($TrackingUrlTemplate)) {
+            array_push($this->openAPINullablesSetToNull, 'TrackingUrlTemplate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingUrlTemplate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrackingUrlTemplate'] = $TrackingUrlTemplate;
+
+        return $this;
+    }
+
+    /**
      * Gets UrlCustomParameters
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomParameters|null
@@ -1019,38 +1601,118 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets BiddingScheme
+     * Gets UseCampaignLevelDates
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null
+     * @return bool|null
      */
-    public function getBiddingScheme()
+    public function getUseCampaignLevelDates()
     {
-        if (!isset($this->container['BiddingScheme']) || is_null($this->container['BiddingScheme'])) {
+        if (!isset($this->container['UseCampaignLevelDates']) || is_null($this->container['UseCampaignLevelDates'])) {
             return null;
         }
-        return $this->container['BiddingScheme'];
+        return $this->container['UseCampaignLevelDates'];
     }
 
     /**
-     * Sets BiddingScheme
+     * Sets UseCampaignLevelDates
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BiddingScheme|null $BiddingScheme BiddingScheme
+     * @param bool|null $UseCampaignLevelDates UseCampaignLevelDates
      *
      * @return self
      */
-    public function setBiddingScheme($BiddingScheme)
+    public function setUseCampaignLevelDates($UseCampaignLevelDates)
     {
-        if (is_null($BiddingScheme)) {
-            array_push($this->openAPINullablesSetToNull, 'BiddingScheme');
+        if (is_null($UseCampaignLevelDates)) {
+            array_push($this->openAPINullablesSetToNull, 'UseCampaignLevelDates');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BiddingScheme', $nullablesSetToNull);
+            $index = array_search('UseCampaignLevelDates', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['BiddingScheme'] = $BiddingScheme;
+        $this->container['UseCampaignLevelDates'] = $UseCampaignLevelDates;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null
+     */
+    public function getCampaignType()
+    {
+        if (!isset($this->container['CampaignType']) || is_null($this->container['CampaignType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CampaignType']) || is_string($this->container['CampaignType'])) && method_exists($this->container['CampaignType'], 'getValue')) {
+            return $this->container['CampaignType']->getValue();
+        }
+        return $this->container['CampaignType'];
+    }
+
+    /**
+     * Sets CampaignType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType|mixed|null $CampaignType CampaignType
+     *
+     * @return self
+     */
+    public function setCampaignType($CampaignType)
+    {
+        if (is_null($CampaignType)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CampaignType) && !$CampaignType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType) {
+            $CampaignType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignType($CampaignType);
+        }
+        $this->container['CampaignType'] = $CampaignType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Settings
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]|null
+     */
+    public function getSettings()
+    {
+        if (!isset($this->container['Settings']) || is_null($this->container['Settings'])) {
+            return null;
+        }
+        return $this->container['Settings'];
+    }
+
+    /**
+     * Sets Settings
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Setting[]|null $Settings Settings
+     *
+     * @return self
+     */
+    public function setSettings($Settings)
+    {
+        if (is_null($Settings)) {
+            array_push($this->openAPINullablesSetToNull, 'Settings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Settings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Settings'] = $Settings;
 
         return $this;
     }
@@ -1130,43 +1792,6 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ExperimentId
-     *
-     * @return string|null
-     */
-    public function getExperimentId()
-    {
-        if (!isset($this->container['ExperimentId']) || is_null($this->container['ExperimentId'])) {
-            return null;
-        }
-        return $this->container['ExperimentId'];
-    }
-
-    /**
-     * Sets ExperimentId
-     *
-     * @param string|null $ExperimentId ExperimentId
-     *
-     * @return self
-     */
-    public function setExperimentId($ExperimentId)
-    {
-        if (is_null($ExperimentId)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExperimentId'] = $ExperimentId;
-
-        return $this;
-    }
-
-    /**
      * Gets AdScheduleUseSearcherTimeZone
      *
      * @return bool|null
@@ -1236,552 +1861,6 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BidStrategyId'] = $BidStrategyId;
-
-        return $this;
-    }
-
-    /**
-     * Gets BidStrategyScope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
-     */
-    public function getBidStrategyScope()
-    {
-        if (!isset($this->container['BidStrategyScope']) || is_null($this->container['BidStrategyScope'])) {
-            return null;
-        }
-        if ((is_object($this->container['BidStrategyScope']) || is_string($this->container['BidStrategyScope'])) && method_exists($this->container['BidStrategyScope'], 'getValue')) {
-            return $this->container['BidStrategyScope']->getValue();
-        }
-        return $this->container['BidStrategyScope'];
-    }
-
-    /**
-     * Sets BidStrategyScope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $BidStrategyScope BidStrategyScope
-     *
-     * @return self
-     */
-    public function setBidStrategyScope($BidStrategyScope)
-    {
-        if (is_null($BidStrategyScope)) {
-            throw new \InvalidArgumentException('non-nullable BidStrategyScope cannot be null');
-        }
-        if (!$BidStrategyScope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
-            $BidStrategyScope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($BidStrategyScope);
-        }
-        $this->container['BidStrategyScope'] = $BidStrategyScope;
-
-        return $this;
-    }
-
-    /**
-     * Gets MultimediaAdsBidAdjustment
-     *
-     * @return int|null
-     */
-    public function getMultimediaAdsBidAdjustment()
-    {
-        if (!isset($this->container['MultimediaAdsBidAdjustment']) || is_null($this->container['MultimediaAdsBidAdjustment'])) {
-            return null;
-        }
-        return $this->container['MultimediaAdsBidAdjustment'];
-    }
-
-    /**
-     * Sets MultimediaAdsBidAdjustment
-     *
-     * @param int|null $MultimediaAdsBidAdjustment MultimediaAdsBidAdjustment
-     *
-     * @return self
-     */
-    public function setMultimediaAdsBidAdjustment($MultimediaAdsBidAdjustment)
-    {
-        if (is_null($MultimediaAdsBidAdjustment)) {
-            array_push($this->openAPINullablesSetToNull, 'MultimediaAdsBidAdjustment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MultimediaAdsBidAdjustment', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MultimediaAdsBidAdjustment'] = $MultimediaAdsBidAdjustment;
-
-        return $this;
-    }
-
-    /**
-     * Gets GoalIds
-     *
-     * @return string[]|null
-     */
-    public function getGoalIds()
-    {
-        if (!isset($this->container['GoalIds']) || is_null($this->container['GoalIds'])) {
-            return null;
-        }
-        return $this->container['GoalIds'];
-    }
-
-    /**
-     * Sets GoalIds
-     *
-     * @param string[]|null $GoalIds GoalIds
-     *
-     * @return self
-     */
-    public function setGoalIds($GoalIds)
-    {
-        if (is_null($GoalIds)) {
-            array_push($this->openAPINullablesSetToNull, 'GoalIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('GoalIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['GoalIds'] = $GoalIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets DealIds
-     *
-     * @return string[]|null
-     */
-    public function getDealIds()
-    {
-        if (!isset($this->container['DealIds']) || is_null($this->container['DealIds'])) {
-            return null;
-        }
-        return $this->container['DealIds'];
-    }
-
-    /**
-     * Sets DealIds
-     *
-     * @param string[]|null $DealIds DealIds
-     *
-     * @return self
-     */
-    public function setDealIds($DealIds)
-    {
-        if (is_null($DealIds)) {
-            array_push($this->openAPINullablesSetToNull, 'DealIds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DealIds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DealIds'] = $DealIds;
-
-        return $this;
-    }
-
-    /**
-     * Gets IsDealCampaign
-     *
-     * @return bool|null
-     */
-    public function getIsDealCampaign()
-    {
-        if (!isset($this->container['IsDealCampaign']) || is_null($this->container['IsDealCampaign'])) {
-            return null;
-        }
-        return $this->container['IsDealCampaign'];
-    }
-
-    /**
-     * Sets IsDealCampaign
-     *
-     * @param bool|null $IsDealCampaign IsDealCampaign
-     *
-     * @return self
-     */
-    public function setIsDealCampaign($IsDealCampaign)
-    {
-        if (is_null($IsDealCampaign)) {
-            array_push($this->openAPINullablesSetToNull, 'IsDealCampaign');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsDealCampaign', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IsDealCampaign'] = $IsDealCampaign;
-
-        return $this;
-    }
-
-    /**
-     * Gets StartDate
-     *
-     * @return \DateTime|null
-     */
-    public function getStartDate()
-    {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
-            return null;
-        }
-        return $this->container['StartDate'];
-    }
-
-    /**
-     * Sets StartDate
-     *
-     * @param \DateTime|null $StartDate StartDate
-     *
-     * @return self
-     */
-    public function setStartDate($StartDate)
-    {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StartDate'] = $StartDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets EndDate
-     *
-     * @return \DateTime|null
-     */
-    public function getEndDate()
-    {
-        if (!isset($this->container['EndDate']) || is_null($this->container['EndDate'])) {
-            return null;
-        }
-        return $this->container['EndDate'];
-    }
-
-    /**
-     * Sets EndDate
-     *
-     * @param \DateTime|null $EndDate EndDate
-     *
-     * @return self
-     */
-    public function setEndDate($EndDate)
-    {
-        if (is_null($EndDate)) {
-            array_push($this->openAPINullablesSetToNull, 'EndDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EndDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EndDate'] = $EndDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets UseCampaignLevelDates
-     *
-     * @return bool|null
-     */
-    public function getUseCampaignLevelDates()
-    {
-        if (!isset($this->container['UseCampaignLevelDates']) || is_null($this->container['UseCampaignLevelDates'])) {
-            return null;
-        }
-        return $this->container['UseCampaignLevelDates'];
-    }
-
-    /**
-     * Sets UseCampaignLevelDates
-     *
-     * @param bool|null $UseCampaignLevelDates UseCampaignLevelDates
-     *
-     * @return self
-     */
-    public function setUseCampaignLevelDates($UseCampaignLevelDates)
-    {
-        if (is_null($UseCampaignLevelDates)) {
-            array_push($this->openAPINullablesSetToNull, 'UseCampaignLevelDates');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UseCampaignLevelDates', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UseCampaignLevelDates'] = $UseCampaignLevelDates;
-
-        return $this;
-    }
-
-    /**
-     * Gets IsPolitical
-     *
-     * @return bool|null
-     */
-    public function getIsPolitical()
-    {
-        if (!isset($this->container['IsPolitical']) || is_null($this->container['IsPolitical'])) {
-            return null;
-        }
-        return $this->container['IsPolitical'];
-    }
-
-    /**
-     * Sets IsPolitical
-     *
-     * @param bool|null $IsPolitical IsPolitical
-     *
-     * @return self
-     */
-    public function setIsPolitical($IsPolitical)
-    {
-        if (is_null($IsPolitical)) {
-            throw new \InvalidArgumentException('non-nullable IsPolitical cannot be null');
-        }
-        $this->container['IsPolitical'] = $IsPolitical;
-
-        return $this;
-    }
-
-    /**
-     * Gets BusinessName
-     *
-     * @return string|null
-     */
-    public function getBusinessName()
-    {
-        if (!isset($this->container['BusinessName']) || is_null($this->container['BusinessName'])) {
-            return null;
-        }
-        return $this->container['BusinessName'];
-    }
-
-    /**
-     * Sets BusinessName
-     *
-     * @param string|null $BusinessName BusinessName
-     *
-     * @return self
-     */
-    public function setBusinessName($BusinessName)
-    {
-        if (is_null($BusinessName)) {
-            array_push($this->openAPINullablesSetToNull, 'BusinessName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BusinessName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BusinessName'] = $BusinessName;
-
-        return $this;
-    }
-
-    /**
-     * Gets BrandLogo
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getBrandLogo()
-    {
-        if (!isset($this->container['BrandLogo']) || is_null($this->container['BrandLogo'])) {
-            return null;
-        }
-        return $this->container['BrandLogo'];
-    }
-
-    /**
-     * Sets BrandLogo
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $BrandLogo BrandLogo
-     *
-     * @return self
-     */
-    public function setBrandLogo($BrandLogo)
-    {
-        if (is_null($BrandLogo)) {
-            array_push($this->openAPINullablesSetToNull, 'BrandLogo');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BrandLogo', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BrandLogo'] = $BrandLogo;
-
-        return $this;
-    }
-
-    /**
-     * Gets BrandColor
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getBrandColor()
-    {
-        if (!isset($this->container['BrandColor']) || is_null($this->container['BrandColor'])) {
-            return null;
-        }
-        return $this->container['BrandColor'];
-    }
-
-    /**
-     * Sets BrandColor
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $BrandColor BrandColor
-     *
-     * @return self
-     */
-    public function setBrandColor($BrandColor)
-    {
-        if (is_null($BrandColor)) {
-            array_push($this->openAPINullablesSetToNull, 'BrandColor');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('BrandColor', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['BrandColor'] = $BrandColor;
-
-        return $this;
-    }
-
-    /**
-     * Gets TermExclusions
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null
-     */
-    public function getTermExclusions()
-    {
-        if (!isset($this->container['TermExclusions']) || is_null($this->container['TermExclusions'])) {
-            return null;
-        }
-        return $this->container['TermExclusions'];
-    }
-
-    /**
-     * Sets TermExclusions
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink[]|null $TermExclusions TermExclusions
-     *
-     * @return self
-     */
-    public function setTermExclusions($TermExclusions)
-    {
-        if (is_null($TermExclusions)) {
-            array_push($this->openAPINullablesSetToNull, 'TermExclusions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TermExclusions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TermExclusions'] = $TermExclusions;
-
-        return $this;
-    }
-
-    /**
-     * Gets PrivacyStatus
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus|mixed|null
-     */
-    public function getPrivacyStatus()
-    {
-        if (!isset($this->container['PrivacyStatus']) || is_null($this->container['PrivacyStatus'])) {
-            return null;
-        }
-        if ((is_object($this->container['PrivacyStatus']) || is_string($this->container['PrivacyStatus'])) && method_exists($this->container['PrivacyStatus'], 'getValue')) {
-            return $this->container['PrivacyStatus']->getValue();
-        }
-        return $this->container['PrivacyStatus'];
-    }
-
-    /**
-     * Sets PrivacyStatus
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus|mixed|null $PrivacyStatus PrivacyStatus
-     *
-     * @return self
-     */
-    public function setPrivacyStatus($PrivacyStatus)
-    {
-        if (is_null($PrivacyStatus)) {
-            throw new \InvalidArgumentException('non-nullable PrivacyStatus cannot be null');
-        }
-        if (!$PrivacyStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus) {
-            $PrivacyStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignPrivacyStatus($PrivacyStatus);
-        }
-        $this->container['PrivacyStatus'] = $PrivacyStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets ForwardCompatibilityMap
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
-     */
-    public function getForwardCompatibilityMap()
-    {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
-            return null;
-        }
-        return $this->container['ForwardCompatibilityMap'];
-    }
-
-    /**
-     * Sets ForwardCompatibilityMap
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
-     *
-     * @return self
-     */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
-    {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
 
         return $this;
     }

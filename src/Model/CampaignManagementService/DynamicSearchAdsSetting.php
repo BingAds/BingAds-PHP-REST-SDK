@@ -35,10 +35,10 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     protected static array $openAPITypes = [
         'Type' => 'string',
         'DomainName' => 'string',
+        'DynamicDescriptionEnabled' => 'bool',
         'Language' => 'string',
-        'Source' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource',
         'PageFeedIds' => 'string[]',
-        'DynamicDescriptionEnabled' => 'bool'
+        'Source' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource'
     ];
 
     /**
@@ -51,10 +51,10 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     protected static array $openAPIFormats = [
         'Type' => null,
         'DomainName' => null,
+        'DynamicDescriptionEnabled' => null,
         'Language' => null,
-        'Source' => null,
         'PageFeedIds' => 'int64',
-        'DynamicDescriptionEnabled' => null
+        'Source' => null
     ];
 
     /**
@@ -65,10 +65,10 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     protected static array $openAPINullables = [
         'Type' => true,
         'DomainName' => true,
+        'DynamicDescriptionEnabled' => true,
         'Language' => true,
-        'Source' => false,
         'PageFeedIds' => true,
-        'DynamicDescriptionEnabled' => true
+        'Source' => true
     ];
 
     /**
@@ -159,10 +159,10 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     protected static array $attributeMap = [
         'Type' => 'Type',
         'DomainName' => 'DomainName',
+        'DynamicDescriptionEnabled' => 'DynamicDescriptionEnabled',
         'Language' => 'Language',
-        'Source' => 'Source',
         'PageFeedIds' => 'PageFeedIds',
-        'DynamicDescriptionEnabled' => 'DynamicDescriptionEnabled'
+        'Source' => 'Source'
     ];
 
     /**
@@ -173,10 +173,10 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     protected static array $setters = [
         'Type' => 'setType',
         'DomainName' => 'setDomainName',
+        'DynamicDescriptionEnabled' => 'setDynamicDescriptionEnabled',
         'Language' => 'setLanguage',
-        'Source' => 'setSource',
         'PageFeedIds' => 'setPageFeedIds',
-        'DynamicDescriptionEnabled' => 'setDynamicDescriptionEnabled'
+        'Source' => 'setSource'
     ];
 
     /**
@@ -187,10 +187,10 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     protected static array $getters = [
         'Type' => 'getType',
         'DomainName' => 'getDomainName',
+        'DynamicDescriptionEnabled' => 'getDynamicDescriptionEnabled',
         'Language' => 'getLanguage',
-        'Source' => 'getSource',
         'PageFeedIds' => 'getPageFeedIds',
-        'DynamicDescriptionEnabled' => 'getDynamicDescriptionEnabled'
+        'Source' => 'getSource'
     ];
 
     /**
@@ -252,10 +252,15 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('DomainName', $data ?? [], null);
-        $this->setIfExists('Language', $data ?? [], null);
-        $this->setIfExists('Source', $data ?? [], null);
-        $this->setIfExists('PageFeedIds', $data ?? [], null);
         $this->setIfExists('DynamicDescriptionEnabled', $data ?? [], null);
+        $this->setIfExists('Language', $data ?? [], null);
+        $this->setIfExists('PageFeedIds', $data ?? [], null);
+        $this->setIfExists('Source', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -375,6 +380,43 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     }
 
     /**
+     * Gets DynamicDescriptionEnabled
+     *
+     * @return bool|null
+     */
+    public function getDynamicDescriptionEnabled()
+    {
+        if (!isset($this->container['DynamicDescriptionEnabled']) || is_null($this->container['DynamicDescriptionEnabled'])) {
+            return null;
+        }
+        return $this->container['DynamicDescriptionEnabled'];
+    }
+
+    /**
+     * Sets DynamicDescriptionEnabled
+     *
+     * @param bool|null $DynamicDescriptionEnabled DynamicDescriptionEnabled
+     *
+     * @return self
+     */
+    public function setDynamicDescriptionEnabled($DynamicDescriptionEnabled)
+    {
+        if (is_null($DynamicDescriptionEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'DynamicDescriptionEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DynamicDescriptionEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DynamicDescriptionEnabled'] = $DynamicDescriptionEnabled;
+
+        return $this;
+    }
+
+    /**
      * Gets Language
      *
      * @return string|null
@@ -407,42 +449,6 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
             }
         }
         $this->container['Language'] = $Language;
-
-        return $this;
-    }
-
-    /**
-     * Gets Source
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource|mixed|null
-     */
-    public function getSource()
-    {
-        if (!isset($this->container['Source']) || is_null($this->container['Source'])) {
-            return null;
-        }
-        if ((is_object($this->container['Source']) || is_string($this->container['Source'])) && method_exists($this->container['Source'], 'getValue')) {
-            return $this->container['Source']->getValue();
-        }
-        return $this->container['Source'];
-    }
-
-    /**
-     * Sets Source
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource|mixed|null $Source Source
-     *
-     * @return self
-     */
-    public function setSource($Source)
-    {
-        if (is_null($Source)) {
-            throw new \InvalidArgumentException('non-nullable Source cannot be null');
-        }
-        if (!$Source instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource) {
-            $Source = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource($Source);
-        }
-        $this->container['Source'] = $Source;
 
         return $this;
     }
@@ -485,38 +491,44 @@ class DynamicSearchAdsSetting extends Setting implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets DynamicDescriptionEnabled
+     * Gets Source
      *
-     * @return bool|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource|mixed|null
      */
-    public function getDynamicDescriptionEnabled()
+    public function getSource()
     {
-        if (!isset($this->container['DynamicDescriptionEnabled']) || is_null($this->container['DynamicDescriptionEnabled'])) {
+        if (!isset($this->container['Source']) || is_null($this->container['Source'])) {
             return null;
         }
-        return $this->container['DynamicDescriptionEnabled'];
+        if ((is_object($this->container['Source']) || is_string($this->container['Source'])) && method_exists($this->container['Source'], 'getValue')) {
+            return $this->container['Source']->getValue();
+        }
+        return $this->container['Source'];
     }
 
     /**
-     * Sets DynamicDescriptionEnabled
+     * Sets Source
      *
-     * @param bool|null $DynamicDescriptionEnabled DynamicDescriptionEnabled
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource|mixed|null $Source Source
      *
      * @return self
      */
-    public function setDynamicDescriptionEnabled($DynamicDescriptionEnabled)
+    public function setSource($Source)
     {
-        if (is_null($DynamicDescriptionEnabled)) {
-            array_push($this->openAPINullablesSetToNull, 'DynamicDescriptionEnabled');
+        if (is_null($Source)) {
+            array_push($this->openAPINullablesSetToNull, 'Source');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DynamicDescriptionEnabled', $nullablesSetToNull);
+            $index = array_search('Source', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['DynamicDescriptionEnabled'] = $DynamicDescriptionEnabled;
+        if (!is_null($Source) && !$Source instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource) {
+            $Source = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\DynamicSearchAdsSource($Source);
+        }
+        $this->container['Source'] = $Source;
 
         return $this;
     }

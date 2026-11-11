@@ -958,7 +958,7 @@ class ClientLink implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Status)) {
             throw new \InvalidArgumentException('non-nullable Status cannot be null');
         }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\ClientLinkStatus) {
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CustomerManagementService\ClientLinkStatus) {
             $Status = new \Microsoft\MsAds\Rest\Model\CustomerManagementService\ClientLinkStatus($Status);
         }
         $this->container['Status'] = $Status;

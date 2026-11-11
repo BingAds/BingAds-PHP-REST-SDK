@@ -33,8 +33,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType',
-        'CampaignCriterions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterion[]'
+        'CampaignCriterions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterion[]',
+        'CriterionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CriterionType' => null,
-        'CampaignCriterions' => null
+        'CampaignCriterions' => null,
+        'CriterionType' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CriterionType' => false,
-        'CampaignCriterions' => true
+        'CampaignCriterions' => true,
+        'CriterionType' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CriterionType' => 'CriterionType',
-        'CampaignCriterions' => 'CampaignCriterions'
+        'CampaignCriterions' => 'CampaignCriterions',
+        'CriterionType' => 'CriterionType'
     ];
 
     /**
@@ -155,8 +155,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
-        'CriterionType' => 'setCriterionType',
-        'CampaignCriterions' => 'setCampaignCriterions'
+        'CampaignCriterions' => 'setCampaignCriterions',
+        'CriterionType' => 'setCriterionType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
-        'CriterionType' => 'getCriterionType',
-        'CampaignCriterions' => 'getCampaignCriterions'
+        'CampaignCriterions' => 'getCampaignCriterions',
+        'CriterionType' => 'getCriterionType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CriterionType', $data ?? [], null);
         $this->setIfExists('CampaignCriterions', $data ?? [], null);
+        $this->setIfExists('CriterionType', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets CriterionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null
-     */
-    public function getCriterionType()
-    {
-        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
-            return $this->container['CriterionType']->getValue();
-        }
-        return $this->container['CriterionType'];
-    }
-
-    /**
-     * Sets CriterionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null $CriterionType CriterionType
-     *
-     * @return self
-     */
-    public function setCriterionType($CriterionType)
-    {
-        if (is_null($CriterionType)) {
-            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
-        }
-        if (!$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
-            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType($CriterionType);
-        }
-        $this->container['CriterionType'] = $CriterionType;
-
-        return $this;
-    }
-
-    /**
      * Gets CampaignCriterions
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterion[]|null
@@ -341,6 +305,42 @@ class AddCampaignCriterionsRequest implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['CampaignCriterions'] = $CampaignCriterions;
+
+        return $this;
+    }
+
+    /**
+     * Gets CriterionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null
+     */
+    public function getCriterionType()
+    {
+        if (!isset($this->container['CriterionType']) || is_null($this->container['CriterionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CriterionType']) || is_string($this->container['CriterionType'])) && method_exists($this->container['CriterionType'], 'getValue')) {
+            return $this->container['CriterionType']->getValue();
+        }
+        return $this->container['CriterionType'];
+    }
+
+    /**
+     * Sets CriterionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType|mixed|null $CriterionType CriterionType
+     *
+     * @return self
+     */
+    public function setCriterionType($CriterionType)
+    {
+        if (is_null($CriterionType)) {
+            throw new \InvalidArgumentException('non-nullable CriterionType cannot be null');
+        }
+        if (!is_null($CriterionType) && !$CriterionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType) {
+            $CriterionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionType($CriterionType);
+        }
+        $this->container['CriterionType'] = $CriterionType;
 
         return $this;
     }

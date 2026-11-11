@@ -34,8 +34,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPITypes = [
         'FileUrl' => 'string',
-        'LastModifiedTimeUtc' => '\DateTime',
-        'FileUrlExpiryTimeUtc' => '\DateTime'
+        'FileUrlExpiryTimeUtc' => '\DateTime',
+        'LastModifiedTimeUtc' => '\DateTime'
     ];
 
     /**
@@ -47,8 +47,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPIFormats = [
         'FileUrl' => null,
-        'LastModifiedTimeUtc' => 'date-time',
-        'FileUrlExpiryTimeUtc' => 'date-time'
+        'FileUrlExpiryTimeUtc' => 'date-time',
+        'LastModifiedTimeUtc' => 'date-time'
     ];
 
     /**
@@ -58,8 +58,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'FileUrl' => true,
-        'LastModifiedTimeUtc' => false,
-        'FileUrlExpiryTimeUtc' => true
+        'FileUrlExpiryTimeUtc' => true,
+        'LastModifiedTimeUtc' => false
     ];
 
     /**
@@ -149,8 +149,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static array $attributeMap = [
         'FileUrl' => 'FileUrl',
-        'LastModifiedTimeUtc' => 'LastModifiedTimeUtc',
-        'FileUrlExpiryTimeUtc' => 'FileUrlExpiryTimeUtc'
+        'FileUrlExpiryTimeUtc' => 'FileUrlExpiryTimeUtc',
+        'LastModifiedTimeUtc' => 'LastModifiedTimeUtc'
     ];
 
     /**
@@ -160,8 +160,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static array $setters = [
         'FileUrl' => 'setFileUrl',
-        'LastModifiedTimeUtc' => 'setLastModifiedTimeUtc',
-        'FileUrlExpiryTimeUtc' => 'setFileUrlExpiryTimeUtc'
+        'FileUrlExpiryTimeUtc' => 'setFileUrlExpiryTimeUtc',
+        'LastModifiedTimeUtc' => 'setLastModifiedTimeUtc'
     ];
 
     /**
@@ -171,8 +171,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static array $getters = [
         'FileUrl' => 'getFileUrl',
-        'LastModifiedTimeUtc' => 'getLastModifiedTimeUtc',
-        'FileUrlExpiryTimeUtc' => 'getFileUrlExpiryTimeUtc'
+        'FileUrlExpiryTimeUtc' => 'getFileUrlExpiryTimeUtc',
+        'LastModifiedTimeUtc' => 'getLastModifiedTimeUtc'
     ];
 
     /**
@@ -233,8 +233,8 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
     public function __construct(?array $data = null)
     {
         $this->setIfExists('FileUrl', $data ?? [], null);
-        $this->setIfExists('LastModifiedTimeUtc', $data ?? [], null);
         $this->setIfExists('FileUrlExpiryTimeUtc', $data ?? [], null);
+        $this->setIfExists('LastModifiedTimeUtc', $data ?? [], null);
     }
 
     /**
@@ -317,36 +317,6 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets LastModifiedTimeUtc
-     *
-     * @return \DateTime|null
-     */
-    public function getLastModifiedTimeUtc()
-    {
-        if (!isset($this->container['LastModifiedTimeUtc']) || is_null($this->container['LastModifiedTimeUtc'])) {
-            return null;
-        }
-        return $this->container['LastModifiedTimeUtc'];
-    }
-
-    /**
-     * Sets LastModifiedTimeUtc
-     *
-     * @param \DateTime|null $LastModifiedTimeUtc LastModifiedTimeUtc
-     *
-     * @return self
-     */
-    public function setLastModifiedTimeUtc($LastModifiedTimeUtc)
-    {
-        if (is_null($LastModifiedTimeUtc)) {
-            throw new \InvalidArgumentException('non-nullable LastModifiedTimeUtc cannot be null');
-        }
-        $this->container['LastModifiedTimeUtc'] = $LastModifiedTimeUtc;
-
-        return $this;
-    }
-
-    /**
      * Gets FileUrlExpiryTimeUtc
      *
      * @return \DateTime|null
@@ -379,6 +349,36 @@ class GetGeoLocationsFileUrlResponse implements ModelInterface, ArrayAccess, \Js
             }
         }
         $this->container['FileUrlExpiryTimeUtc'] = $FileUrlExpiryTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets LastModifiedTimeUtc
+     *
+     * @return \DateTime|null
+     */
+    public function getLastModifiedTimeUtc()
+    {
+        if (!isset($this->container['LastModifiedTimeUtc']) || is_null($this->container['LastModifiedTimeUtc'])) {
+            return null;
+        }
+        return $this->container['LastModifiedTimeUtc'];
+    }
+
+    /**
+     * Sets LastModifiedTimeUtc
+     *
+     * @param \DateTime|null $LastModifiedTimeUtc LastModifiedTimeUtc
+     *
+     * @return self
+     */
+    public function setLastModifiedTimeUtc($LastModifiedTimeUtc)
+    {
+        if (is_null($LastModifiedTimeUtc)) {
+            throw new \InvalidArgumentException('non-nullable LastModifiedTimeUtc cannot be null');
+        }
+        $this->container['LastModifiedTimeUtc'] = $LastModifiedTimeUtc;
 
         return $this;
     }

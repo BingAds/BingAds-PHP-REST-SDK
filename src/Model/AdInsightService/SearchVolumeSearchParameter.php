@@ -235,6 +235,11 @@ class SearchVolumeSearchParameter extends SearchParameter implements ModelInterf
         $this->setIfExists('Minimum', $data ?? [], null);
         $this->setIfExists('Maximum', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'SearchVolumeSearchParameter');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**

@@ -59,7 +59,7 @@ class AdRecommendationTextRefineOperation implements ModelInterface, ArrayAccess
     protected static array $openAPINullables = [
         'TextField' => false,
         'TextFieldIndex' => false,
-        'TextTone' => false
+        'TextTone' => true
     ];
 
     /**
@@ -307,7 +307,7 @@ class AdRecommendationTextRefineOperation implements ModelInterface, ArrayAccess
         if (is_null($TextField)) {
             throw new \InvalidArgumentException('non-nullable TextField cannot be null');
         }
-        if (!$TextField instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField) {
+        if (!is_null($TextField) && !$TextField instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField) {
             $TextField = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextField($TextField);
         }
         $this->container['TextField'] = $TextField;
@@ -371,9 +371,16 @@ class AdRecommendationTextRefineOperation implements ModelInterface, ArrayAccess
     public function setTextTone($TextTone)
     {
         if (is_null($TextTone)) {
-            throw new \InvalidArgumentException('non-nullable TextTone cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'TextTone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TextTone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$TextTone instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone) {
+        if (!is_null($TextTone) && !$TextTone instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone) {
             $TextTone = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationTextTone($TextTone);
         }
         $this->container['TextTone'] = $TextTone;

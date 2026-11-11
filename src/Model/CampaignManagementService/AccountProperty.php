@@ -300,7 +300,7 @@ class AccountProperty implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Name)) {
             throw new \InvalidArgumentException('non-nullable Name cannot be null');
         }
-        if (!$Name instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountPropertyName) {
+        if (!is_null($Name) && !$Name instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountPropertyName) {
             $Name = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AccountPropertyName($Name);
         }
         $this->container['Name'] = $Name;

@@ -33,9 +33,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
         'HealthCheckEntity' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\HealthCheckEntity',
-        'HealthCheckName' => 'string',
-        'Errors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]'
+        'HealthCheckName' => 'string'
     ];
 
     /**
@@ -46,9 +46,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Errors' => null,
         'HealthCheckEntity' => null,
-        'HealthCheckName' => null,
-        'Errors' => null
+        'HealthCheckName' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Errors' => true,
         'HealthCheckEntity' => true,
-        'HealthCheckName' => true,
-        'Errors' => true
+        'HealthCheckName' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Errors' => 'Errors',
         'HealthCheckEntity' => 'HealthCheckEntity',
-        'HealthCheckName' => 'HealthCheckName',
-        'Errors' => 'Errors'
+        'HealthCheckName' => 'HealthCheckName'
     ];
 
     /**
@@ -159,9 +159,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Errors' => 'setErrors',
         'HealthCheckEntity' => 'setHealthCheckEntity',
-        'HealthCheckName' => 'setHealthCheckName',
-        'Errors' => 'setErrors'
+        'HealthCheckName' => 'setHealthCheckName'
     ];
 
     /**
@@ -170,9 +170,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Errors' => 'getErrors',
         'HealthCheckEntity' => 'getHealthCheckEntity',
-        'HealthCheckName' => 'getHealthCheckName',
-        'Errors' => 'getErrors'
+        'HealthCheckName' => 'getHealthCheckName'
     ];
 
     /**
@@ -232,9 +232,9 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Errors', $data ?? [], null);
         $this->setIfExists('HealthCheckEntity', $data ?? [], null);
         $this->setIfExists('HealthCheckName', $data ?? [], null);
-        $this->setIfExists('Errors', $data ?? [], null);
     }
 
     /**
@@ -278,6 +278,43 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets Errors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null
+     */
+    public function getErrors()
+    {
+        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
+            return null;
+        }
+        return $this->container['Errors'];
+    }
+
+    /**
+     * Sets Errors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null $Errors Errors
+     *
+     * @return self
+     */
+    public function setErrors($Errors)
+    {
+        if (is_null($Errors)) {
+            array_push($this->openAPINullablesSetToNull, 'Errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Errors'] = $Errors;
+
+        return $this;
+    }
 
     /**
      * Gets HealthCheckEntity
@@ -349,43 +386,6 @@ class HealthCheckError implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['HealthCheckName'] = $HealthCheckName;
-
-        return $this;
-    }
-
-    /**
-     * Gets Errors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null
-     */
-    public function getErrors()
-    {
-        if (!isset($this->container['Errors']) || is_null($this->container['Errors'])) {
-            return null;
-        }
-        return $this->container['Errors'];
-    }
-
-    /**
-     * Sets Errors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]|null $Errors Errors
-     *
-     * @return self
-     */
-    public function setErrors($Errors)
-    {
-        if (is_null($Errors)) {
-            array_push($this->openAPINullablesSetToNull, 'Errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Errors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Errors'] = $Errors;
 
         return $this;
     }

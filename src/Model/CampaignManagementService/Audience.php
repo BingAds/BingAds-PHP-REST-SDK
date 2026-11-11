@@ -26,6 +26,7 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     public const MAPPINGS = [
+        'AIPrompt' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\AIPromptAudience',
         'CombinedList' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinedList',
         'Custom' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomAudience',
         'CustomSegment' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegment',
@@ -50,18 +51,18 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'MembershipDuration' => 'int',
-        'SearchSize' => 'string',
         'AudienceNetworkSize' => 'string',
-        'SupportedCampaignTypes' => 'string[]',
         'CustomerShare' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerShare',
-        'Id' => 'string',
-        'Name' => 'string',
         'Description' => 'string',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
-        'ParentId' => 'string',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
+        'Id' => 'string',
+        'MembershipDuration' => 'int',
+        'Name' => 'string',
+        'ParentId' => 'string',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
+        'SearchSize' => 'string',
+        'SupportedCampaignTypes' => 'string[]',
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType',
         'Rule' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RemarketingRule',
         'TagId' => 'string',
         'ProductAudienceType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType',
@@ -69,11 +70,12 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CombinationRule[]',
         'CustomSegmentCatalogList' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegmentCatalog[]',
         'EditorialStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegmentEditorialStatus',
-        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType',
-        'CampaignId' => 'string',
         'AdGroupId' => 'string',
+        'AdGroupIds' => 'string[]',
+        'CampaignId' => 'string',
         'CampaignIds' => 'string[]',
-        'AdGroupIds' => 'string[]'
+        'EntityType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType',
+        'Prompt' => 'string'
     ];
 
     /**
@@ -84,18 +86,18 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Scope' => null,
-        'MembershipDuration' => 'int32',
-        'SearchSize' => 'int64',
         'AudienceNetworkSize' => 'int64',
-        'SupportedCampaignTypes' => null,
         'CustomerShare' => null,
-        'Id' => 'int64',
-        'Name' => null,
         'Description' => null,
-        'Type' => null,
-        'ParentId' => 'int64',
         'ForwardCompatibilityMap' => null,
+        'Id' => 'int64',
+        'MembershipDuration' => 'int32',
+        'Name' => null,
+        'ParentId' => 'int64',
+        'Scope' => null,
+        'SearchSize' => 'int64',
+        'SupportedCampaignTypes' => null,
+        'Type' => null,
         'Rule' => null,
         'TagId' => 'int64',
         'ProductAudienceType' => null,
@@ -103,11 +105,12 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => null,
         'CustomSegmentCatalogList' => null,
         'EditorialStatus' => null,
-        'EntityType' => null,
-        'CampaignId' => 'int64',
         'AdGroupId' => 'int64',
+        'AdGroupIds' => 'int64',
+        'CampaignId' => 'int64',
         'CampaignIds' => 'int64',
-        'AdGroupIds' => 'int64'
+        'EntityType' => null,
+        'Prompt' => null
     ];
 
     /**
@@ -116,30 +119,31 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Scope' => false,
-        'MembershipDuration' => true,
-        'SearchSize' => true,
         'AudienceNetworkSize' => true,
-        'SupportedCampaignTypes' => true,
         'CustomerShare' => true,
-        'Id' => true,
-        'Name' => true,
         'Description' => true,
-        'Type' => false,
-        'ParentId' => true,
         'ForwardCompatibilityMap' => true,
+        'Id' => true,
+        'MembershipDuration' => true,
+        'Name' => true,
+        'ParentId' => true,
+        'Scope' => true,
+        'SearchSize' => true,
+        'SupportedCampaignTypes' => true,
+        'Type' => false,
         'Rule' => true,
         'TagId' => true,
-        'ProductAudienceType' => false,
+        'ProductAudienceType' => true,
         'SourceId' => false,
         'CombinationRules' => true,
         'CustomSegmentCatalogList' => true,
-        'EditorialStatus' => false,
-        'EntityType' => false,
-        'CampaignId' => true,
+        'EditorialStatus' => true,
         'AdGroupId' => true,
+        'AdGroupIds' => true,
+        'CampaignId' => true,
         'CampaignIds' => true,
-        'AdGroupIds' => true
+        'EntityType' => false,
+        'Prompt' => true
     ];
 
     /**
@@ -228,18 +232,18 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Scope' => 'Scope',
-        'MembershipDuration' => 'MembershipDuration',
-        'SearchSize' => 'SearchSize',
         'AudienceNetworkSize' => 'AudienceNetworkSize',
-        'SupportedCampaignTypes' => 'SupportedCampaignTypes',
         'CustomerShare' => 'CustomerShare',
-        'Id' => 'Id',
-        'Name' => 'Name',
         'Description' => 'Description',
-        'Type' => 'Type',
-        'ParentId' => 'ParentId',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
+        'Id' => 'Id',
+        'MembershipDuration' => 'MembershipDuration',
+        'Name' => 'Name',
+        'ParentId' => 'ParentId',
+        'Scope' => 'Scope',
+        'SearchSize' => 'SearchSize',
+        'SupportedCampaignTypes' => 'SupportedCampaignTypes',
+        'Type' => 'Type',
         'Rule' => 'Rule',
         'TagId' => 'TagId',
         'ProductAudienceType' => 'ProductAudienceType',
@@ -247,11 +251,12 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => 'CombinationRules',
         'CustomSegmentCatalogList' => 'CustomSegmentCatalogList',
         'EditorialStatus' => 'EditorialStatus',
-        'EntityType' => 'EntityType',
-        'CampaignId' => 'CampaignId',
         'AdGroupId' => 'AdGroupId',
+        'AdGroupIds' => 'AdGroupIds',
+        'CampaignId' => 'CampaignId',
         'CampaignIds' => 'CampaignIds',
-        'AdGroupIds' => 'AdGroupIds'
+        'EntityType' => 'EntityType',
+        'Prompt' => 'Prompt'
     ];
 
     /**
@@ -260,18 +265,18 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Scope' => 'setScope',
-        'MembershipDuration' => 'setMembershipDuration',
-        'SearchSize' => 'setSearchSize',
         'AudienceNetworkSize' => 'setAudienceNetworkSize',
-        'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
         'CustomerShare' => 'setCustomerShare',
-        'Id' => 'setId',
-        'Name' => 'setName',
         'Description' => 'setDescription',
-        'Type' => 'setType',
-        'ParentId' => 'setParentId',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
+        'Id' => 'setId',
+        'MembershipDuration' => 'setMembershipDuration',
+        'Name' => 'setName',
+        'ParentId' => 'setParentId',
+        'Scope' => 'setScope',
+        'SearchSize' => 'setSearchSize',
+        'SupportedCampaignTypes' => 'setSupportedCampaignTypes',
+        'Type' => 'setType',
         'Rule' => 'setRule',
         'TagId' => 'setTagId',
         'ProductAudienceType' => 'setProductAudienceType',
@@ -279,11 +284,12 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => 'setCombinationRules',
         'CustomSegmentCatalogList' => 'setCustomSegmentCatalogList',
         'EditorialStatus' => 'setEditorialStatus',
-        'EntityType' => 'setEntityType',
-        'CampaignId' => 'setCampaignId',
         'AdGroupId' => 'setAdGroupId',
+        'AdGroupIds' => 'setAdGroupIds',
+        'CampaignId' => 'setCampaignId',
         'CampaignIds' => 'setCampaignIds',
-        'AdGroupIds' => 'setAdGroupIds'
+        'EntityType' => 'setEntityType',
+        'Prompt' => 'setPrompt'
     ];
 
     /**
@@ -292,18 +298,18 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Scope' => 'getScope',
-        'MembershipDuration' => 'getMembershipDuration',
-        'SearchSize' => 'getSearchSize',
         'AudienceNetworkSize' => 'getAudienceNetworkSize',
-        'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
         'CustomerShare' => 'getCustomerShare',
-        'Id' => 'getId',
-        'Name' => 'getName',
         'Description' => 'getDescription',
-        'Type' => 'getType',
-        'ParentId' => 'getParentId',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
+        'Id' => 'getId',
+        'MembershipDuration' => 'getMembershipDuration',
+        'Name' => 'getName',
+        'ParentId' => 'getParentId',
+        'Scope' => 'getScope',
+        'SearchSize' => 'getSearchSize',
+        'SupportedCampaignTypes' => 'getSupportedCampaignTypes',
+        'Type' => 'getType',
         'Rule' => 'getRule',
         'TagId' => 'getTagId',
         'ProductAudienceType' => 'getProductAudienceType',
@@ -311,11 +317,12 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         'CombinationRules' => 'getCombinationRules',
         'CustomSegmentCatalogList' => 'getCustomSegmentCatalogList',
         'EditorialStatus' => 'getEditorialStatus',
-        'EntityType' => 'getEntityType',
-        'CampaignId' => 'getCampaignId',
         'AdGroupId' => 'getAdGroupId',
+        'AdGroupIds' => 'getAdGroupIds',
+        'CampaignId' => 'getCampaignId',
         'CampaignIds' => 'getCampaignIds',
-        'AdGroupIds' => 'getAdGroupIds'
+        'EntityType' => 'getEntityType',
+        'Prompt' => 'getPrompt'
     ];
 
     /**
@@ -375,18 +382,18 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('MembershipDuration', $data ?? [], null);
-        $this->setIfExists('SearchSize', $data ?? [], null);
         $this->setIfExists('AudienceNetworkSize', $data ?? [], null);
-        $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
         $this->setIfExists('CustomerShare', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Description', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('ParentId', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('MembershipDuration', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('ParentId', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('SearchSize', $data ?? [], null);
+        $this->setIfExists('SupportedCampaignTypes', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('Rule', $data ?? [], null);
         $this->setIfExists('TagId', $data ?? [], null);
         $this->setIfExists('ProductAudienceType', $data ?? [], null);
@@ -394,11 +401,12 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('CombinationRules', $data ?? [], null);
         $this->setIfExists('CustomSegmentCatalogList', $data ?? [], null);
         $this->setIfExists('EditorialStatus', $data ?? [], null);
-        $this->setIfExists('EntityType', $data ?? [], null);
-        $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('AdGroupId', $data ?? [], null);
-        $this->setIfExists('CampaignIds', $data ?? [], null);
         $this->setIfExists('AdGroupIds', $data ?? [], null);
+        $this->setIfExists('CampaignId', $data ?? [], null);
+        $this->setIfExists('CampaignIds', $data ?? [], null);
+        $this->setIfExists('EntityType', $data ?? [], null);
+        $this->setIfExists('Prompt', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -447,116 +455,6 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
-            return $this->container['Scope']->getValue();
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
-        }
-        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
-            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets MembershipDuration
-     *
-     * @return int|null
-     */
-    public function getMembershipDuration()
-    {
-        if (!isset($this->container['MembershipDuration']) || is_null($this->container['MembershipDuration'])) {
-            return null;
-        }
-        return $this->container['MembershipDuration'];
-    }
-
-    /**
-     * Sets MembershipDuration
-     *
-     * @param int|null $MembershipDuration MembershipDuration
-     *
-     * @return self
-     */
-    public function setMembershipDuration($MembershipDuration)
-    {
-        if (is_null($MembershipDuration)) {
-            array_push($this->openAPINullablesSetToNull, 'MembershipDuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MembershipDuration', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['MembershipDuration'] = $MembershipDuration;
-
-        return $this;
-    }
-
-    /**
-     * Gets SearchSize
-     *
-     * @return string|null
-     */
-    public function getSearchSize()
-    {
-        if (!isset($this->container['SearchSize']) || is_null($this->container['SearchSize'])) {
-            return null;
-        }
-        return $this->container['SearchSize'];
-    }
-
-    /**
-     * Sets SearchSize
-     *
-     * @param string|null $SearchSize SearchSize
-     *
-     * @return self
-     */
-    public function setSearchSize($SearchSize)
-    {
-        if (is_null($SearchSize)) {
-            array_push($this->openAPINullablesSetToNull, 'SearchSize');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SearchSize', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SearchSize'] = $SearchSize;
-
-        return $this;
-    }
-
-    /**
      * Gets AudienceNetworkSize
      *
      * @return string|null
@@ -589,43 +487,6 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['AudienceNetworkSize'] = $AudienceNetworkSize;
-
-        return $this;
-    }
-
-    /**
-     * Gets SupportedCampaignTypes
-     *
-     * @return string[]|null
-     */
-    public function getSupportedCampaignTypes()
-    {
-        if (!isset($this->container['SupportedCampaignTypes']) || is_null($this->container['SupportedCampaignTypes'])) {
-            return null;
-        }
-        return $this->container['SupportedCampaignTypes'];
-    }
-
-    /**
-     * Sets SupportedCampaignTypes
-     *
-     * @param string[]|null $SupportedCampaignTypes SupportedCampaignTypes
-     *
-     * @return self
-     */
-    public function setSupportedCampaignTypes($SupportedCampaignTypes)
-    {
-        if (is_null($SupportedCampaignTypes)) {
-            array_push($this->openAPINullablesSetToNull, 'SupportedCampaignTypes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SupportedCampaignTypes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SupportedCampaignTypes'] = $SupportedCampaignTypes;
 
         return $this;
     }
@@ -668,6 +529,80 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets Description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+            return null;
+        }
+        return $this->container['Description'];
+    }
+
+    /**
+     * Sets Description
+     *
+     * @param string|null $Description Description
+     *
+     * @return self
+     */
+    public function setDescription($Description)
+    {
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets ForwardCompatibilityMap
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     */
+    public function getForwardCompatibilityMap()
+    {
+        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+            return null;
+        }
+        return $this->container['ForwardCompatibilityMap'];
+    }
+
+    /**
+     * Sets ForwardCompatibilityMap
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     *
+     * @return self
+     */
+    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    {
+        if (is_null($ForwardCompatibilityMap)) {
+            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+
+        return $this;
+    }
+
+    /**
      * Gets Id
      *
      * @return string|null
@@ -700,6 +635,43 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets MembershipDuration
+     *
+     * @return int|null
+     */
+    public function getMembershipDuration()
+    {
+        if (!isset($this->container['MembershipDuration']) || is_null($this->container['MembershipDuration'])) {
+            return null;
+        }
+        return $this->container['MembershipDuration'];
+    }
+
+    /**
+     * Sets MembershipDuration
+     *
+     * @param int|null $MembershipDuration MembershipDuration
+     *
+     * @return self
+     */
+    public function setMembershipDuration($MembershipDuration)
+    {
+        if (is_null($MembershipDuration)) {
+            array_push($this->openAPINullablesSetToNull, 'MembershipDuration');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('MembershipDuration', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['MembershipDuration'] = $MembershipDuration;
 
         return $this;
     }
@@ -742,79 +714,6 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets Description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
-            return null;
-        }
-        return $this->container['Description'];
-    }
-
-    /**
-     * Sets Description
-     *
-     * @param string|null $Description Description
-     *
-     * @return self
-     */
-    public function setDescription($Description)
-    {
-        if (is_null($Description)) {
-            array_push($this->openAPINullablesSetToNull, 'Description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Description', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Description'] = $Description;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
      * Gets ParentId
      *
      * @return string|null
@@ -852,38 +751,154 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ForwardCompatibilityMap
+     * Gets Scope
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
      */
-    public function getForwardCompatibilityMap()
+    public function getScope()
     {
-        if (!isset($this->container['ForwardCompatibilityMap']) || is_null($this->container['ForwardCompatibilityMap'])) {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
             return null;
         }
-        return $this->container['ForwardCompatibilityMap'];
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
     }
 
     /**
-     * Sets ForwardCompatibilityMap
+     * Sets Scope
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]|null $ForwardCompatibilityMap ForwardCompatibilityMap
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
      *
      * @return self
      */
-    public function setForwardCompatibilityMap($ForwardCompatibilityMap)
+    public function setScope($Scope)
     {
-        if (is_null($ForwardCompatibilityMap)) {
-            array_push($this->openAPINullablesSetToNull, 'ForwardCompatibilityMap');
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ForwardCompatibilityMap', $nullablesSetToNull);
+            $index = array_search('Scope', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ForwardCompatibilityMap'] = $ForwardCompatibilityMap;
+        if (!is_null($Scope) && !$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets SearchSize
+     *
+     * @return string|null
+     */
+    public function getSearchSize()
+    {
+        if (!isset($this->container['SearchSize']) || is_null($this->container['SearchSize'])) {
+            return null;
+        }
+        return $this->container['SearchSize'];
+    }
+
+    /**
+     * Sets SearchSize
+     *
+     * @param string|null $SearchSize SearchSize
+     *
+     * @return self
+     */
+    public function setSearchSize($SearchSize)
+    {
+        if (is_null($SearchSize)) {
+            array_push($this->openAPINullablesSetToNull, 'SearchSize');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SearchSize', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SearchSize'] = $SearchSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets SupportedCampaignTypes
+     *
+     * @return string[]|null
+     */
+    public function getSupportedCampaignTypes()
+    {
+        if (!isset($this->container['SupportedCampaignTypes']) || is_null($this->container['SupportedCampaignTypes'])) {
+            return null;
+        }
+        return $this->container['SupportedCampaignTypes'];
+    }
+
+    /**
+     * Sets SupportedCampaignTypes
+     *
+     * @param string[]|null $SupportedCampaignTypes SupportedCampaignTypes
+     *
+     * @return self
+     */
+    public function setSupportedCampaignTypes($SupportedCampaignTypes)
+    {
+        if (is_null($SupportedCampaignTypes)) {
+            array_push($this->openAPINullablesSetToNull, 'SupportedCampaignTypes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SupportedCampaignTypes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SupportedCampaignTypes'] = $SupportedCampaignTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AudienceType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -988,9 +1003,16 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProductAudienceType($ProductAudienceType)
     {
         if (is_null($ProductAudienceType)) {
-            throw new \InvalidArgumentException('non-nullable ProductAudienceType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ProductAudienceType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ProductAudienceType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ProductAudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType) {
+        if (!is_null($ProductAudienceType) && !$ProductAudienceType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType) {
             $ProductAudienceType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProductAudienceType($ProductAudienceType);
         }
         $this->container['ProductAudienceType'] = $ProductAudienceType;
@@ -1128,85 +1150,19 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEditorialStatus($EditorialStatus)
     {
         if (is_null($EditorialStatus)) {
-            throw new \InvalidArgumentException('non-nullable EditorialStatus cannot be null');
-        }
-        if (!$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegmentEditorialStatus) {
-            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegmentEditorialStatus($EditorialStatus);
-        }
-        $this->container['EditorialStatus'] = $EditorialStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets EntityType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType|mixed|null
-     */
-    public function getEntityType()
-    {
-        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
-            return null;
-        }
-        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
-            return $this->container['EntityType']->getValue();
-        }
-        return $this->container['EntityType'];
-    }
-
-    /**
-     * Sets EntityType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType|mixed|null $EntityType EntityType
-     *
-     * @return self
-     */
-    public function setEntityType($EntityType)
-    {
-        if (is_null($EntityType)) {
-            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
-        }
-        if (!$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType) {
-            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType($EntityType);
-        }
-        $this->container['EntityType'] = $EntityType;
-
-        return $this;
-    }
-
-    /**
-     * Gets CampaignId
-     *
-     * @return string|null
-     */
-    public function getCampaignId()
-    {
-        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
-            return null;
-        }
-        return $this->container['CampaignId'];
-    }
-
-    /**
-     * Sets CampaignId
-     *
-     * @param string|null $CampaignId CampaignId
-     *
-     * @return self
-     */
-    public function setCampaignId($CampaignId)
-    {
-        if (is_null($CampaignId)) {
-            array_push($this->openAPINullablesSetToNull, 'CampaignId');
+            array_push($this->openAPINullablesSetToNull, 'EditorialStatus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CampaignId', $nullablesSetToNull);
+            $index = array_search('EditorialStatus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CampaignId'] = $CampaignId;
+        if (!is_null($EditorialStatus) && !$EditorialStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegmentEditorialStatus) {
+            $EditorialStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomSegmentEditorialStatus($EditorialStatus);
+        }
+        $this->container['EditorialStatus'] = $EditorialStatus;
 
         return $this;
     }
@@ -1249,6 +1205,80 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets AdGroupIds
+     *
+     * @return string[]|null
+     */
+    public function getAdGroupIds()
+    {
+        if (!isset($this->container['AdGroupIds']) || is_null($this->container['AdGroupIds'])) {
+            return null;
+        }
+        return $this->container['AdGroupIds'];
+    }
+
+    /**
+     * Sets AdGroupIds
+     *
+     * @param string[]|null $AdGroupIds AdGroupIds
+     *
+     * @return self
+     */
+    public function setAdGroupIds($AdGroupIds)
+    {
+        if (is_null($AdGroupIds)) {
+            array_push($this->openAPINullablesSetToNull, 'AdGroupIds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AdGroupIds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AdGroupIds'] = $AdGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets CampaignId
+     *
+     * @return string|null
+     */
+    public function getCampaignId()
+    {
+        if (!isset($this->container['CampaignId']) || is_null($this->container['CampaignId'])) {
+            return null;
+        }
+        return $this->container['CampaignId'];
+    }
+
+    /**
+     * Sets CampaignId
+     *
+     * @param string|null $CampaignId CampaignId
+     *
+     * @return self
+     */
+    public function setCampaignId($CampaignId)
+    {
+        if (is_null($CampaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'CampaignId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CampaignId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CampaignId'] = $CampaignId;
+
+        return $this;
+    }
+
+    /**
      * Gets CampaignIds
      *
      * @return string[]|null
@@ -1286,38 +1316,74 @@ class Audience implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets AdGroupIds
+     * Gets EntityType
      *
-     * @return string[]|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType|mixed|null
      */
-    public function getAdGroupIds()
+    public function getEntityType()
     {
-        if (!isset($this->container['AdGroupIds']) || is_null($this->container['AdGroupIds'])) {
+        if (!isset($this->container['EntityType']) || is_null($this->container['EntityType'])) {
             return null;
         }
-        return $this->container['AdGroupIds'];
+        if ((is_object($this->container['EntityType']) || is_string($this->container['EntityType'])) && method_exists($this->container['EntityType'], 'getValue')) {
+            return $this->container['EntityType']->getValue();
+        }
+        return $this->container['EntityType'];
     }
 
     /**
-     * Sets AdGroupIds
+     * Sets EntityType
      *
-     * @param string[]|null $AdGroupIds AdGroupIds
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType|mixed|null $EntityType EntityType
      *
      * @return self
      */
-    public function setAdGroupIds($AdGroupIds)
+    public function setEntityType($EntityType)
     {
-        if (is_null($AdGroupIds)) {
-            array_push($this->openAPINullablesSetToNull, 'AdGroupIds');
+        if (is_null($EntityType)) {
+            throw new \InvalidArgumentException('non-nullable EntityType cannot be null');
+        }
+        if (!is_null($EntityType) && !$EntityType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType) {
+            $EntityType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ImpressionBasedEntityType($EntityType);
+        }
+        $this->container['EntityType'] = $EntityType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Prompt
+     *
+     * @return string|null
+     */
+    public function getPrompt()
+    {
+        if (!isset($this->container['Prompt']) || is_null($this->container['Prompt'])) {
+            return null;
+        }
+        return $this->container['Prompt'];
+    }
+
+    /**
+     * Sets Prompt
+     *
+     * @param string|null $Prompt Prompt
+     *
+     * @return self
+     */
+    public function setPrompt($Prompt)
+    {
+        if (is_null($Prompt)) {
+            array_push($this->openAPINullablesSetToNull, 'Prompt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AdGroupIds', $nullablesSetToNull);
+            $index = array_search('Prompt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['AdGroupIds'] = $AdGroupIds;
+        $this->container['Prompt'] = $Prompt;
 
         return $this;
     }

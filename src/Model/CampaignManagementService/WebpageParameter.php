@@ -33,8 +33,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'CriterionName' => 'string',
-        'Conditions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageCondition[]'
+        'Conditions' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageCondition[]',
+        'CriterionName' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'CriterionName' => null,
-        'Conditions' => null
+        'Conditions' => null,
+        'CriterionName' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'CriterionName' => true,
-        'Conditions' => true
+        'Conditions' => true,
+        'CriterionName' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'CriterionName' => 'CriterionName',
-        'Conditions' => 'Conditions'
+        'Conditions' => 'Conditions',
+        'CriterionName' => 'CriterionName'
     ];
 
     /**
@@ -155,8 +155,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'CriterionName' => 'setCriterionName',
-        'Conditions' => 'setConditions'
+        'Conditions' => 'setConditions',
+        'CriterionName' => 'setCriterionName'
     ];
 
     /**
@@ -165,8 +165,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'CriterionName' => 'getCriterionName',
-        'Conditions' => 'getConditions'
+        'Conditions' => 'getConditions',
+        'CriterionName' => 'getCriterionName'
     ];
 
     /**
@@ -226,8 +226,8 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('CriterionName', $data ?? [], null);
         $this->setIfExists('Conditions', $data ?? [], null);
+        $this->setIfExists('CriterionName', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets CriterionName
-     *
-     * @return string|null
-     */
-    public function getCriterionName()
-    {
-        if (!isset($this->container['CriterionName']) || is_null($this->container['CriterionName'])) {
-            return null;
-        }
-        return $this->container['CriterionName'];
-    }
-
-    /**
-     * Sets CriterionName
-     *
-     * @param string|null $CriterionName CriterionName
-     *
-     * @return self
-     */
-    public function setCriterionName($CriterionName)
-    {
-        if (is_null($CriterionName)) {
-            array_push($this->openAPINullablesSetToNull, 'CriterionName');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CriterionName', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CriterionName'] = $CriterionName;
-
-        return $this;
-    }
-
-    /**
      * Gets Conditions
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageCondition[]|null
@@ -342,6 +305,43 @@ class WebpageParameter implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Conditions'] = $Conditions;
+
+        return $this;
+    }
+
+    /**
+     * Gets CriterionName
+     *
+     * @return string|null
+     */
+    public function getCriterionName()
+    {
+        if (!isset($this->container['CriterionName']) || is_null($this->container['CriterionName'])) {
+            return null;
+        }
+        return $this->container['CriterionName'];
+    }
+
+    /**
+     * Sets CriterionName
+     *
+     * @param string|null $CriterionName CriterionName
+     *
+     * @return self
+     */
+    public function setCriterionName($CriterionName)
+    {
+        if (is_null($CriterionName)) {
+            array_push($this->openAPINullablesSetToNull, 'CriterionName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CriterionName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CriterionName'] = $CriterionName;
 
         return $this;
     }

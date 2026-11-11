@@ -34,9 +34,9 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'TargetImpressionShare' => 'float',
+        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid',
         'TargetAdPosition' => 'string',
-        'MaxCpc' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid'
+        'TargetImpressionShare' => 'float'
     ];
 
     /**
@@ -48,9 +48,9 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'TargetImpressionShare' => 'double',
+        'MaxCpc' => null,
         'TargetAdPosition' => null,
-        'MaxCpc' => null
+        'TargetImpressionShare' => 'double'
     ];
 
     /**
@@ -60,9 +60,9 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'TargetImpressionShare' => true,
+        'MaxCpc' => true,
         'TargetAdPosition' => true,
-        'MaxCpc' => true
+        'TargetImpressionShare' => true
     ];
 
     /**
@@ -152,9 +152,9 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'TargetImpressionShare' => 'TargetImpressionShare',
+        'MaxCpc' => 'MaxCpc',
         'TargetAdPosition' => 'TargetAdPosition',
-        'MaxCpc' => 'MaxCpc'
+        'TargetImpressionShare' => 'TargetImpressionShare'
     ];
 
     /**
@@ -164,9 +164,9 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'TargetImpressionShare' => 'setTargetImpressionShare',
+        'MaxCpc' => 'setMaxCpc',
         'TargetAdPosition' => 'setTargetAdPosition',
-        'MaxCpc' => 'setMaxCpc'
+        'TargetImpressionShare' => 'setTargetImpressionShare'
     ];
 
     /**
@@ -176,9 +176,9 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'TargetImpressionShare' => 'getTargetImpressionShare',
+        'MaxCpc' => 'getMaxCpc',
         'TargetAdPosition' => 'getTargetAdPosition',
-        'MaxCpc' => 'getMaxCpc'
+        'TargetImpressionShare' => 'getTargetImpressionShare'
     ];
 
     /**
@@ -239,9 +239,14 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('TargetImpressionShare', $data ?? [], null);
-        $this->setIfExists('TargetAdPosition', $data ?? [], null);
         $this->setIfExists('MaxCpc', $data ?? [], null);
+        $this->setIfExists('TargetAdPosition', $data ?? [], null);
+        $this->setIfExists('TargetImpressionShare', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -324,38 +329,38 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
     }
 
     /**
-     * Gets TargetImpressionShare
+     * Gets MaxCpc
      *
-     * @return float|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
      */
-    public function getTargetImpressionShare()
+    public function getMaxCpc()
     {
-        if (!isset($this->container['TargetImpressionShare']) || is_null($this->container['TargetImpressionShare'])) {
+        if (!isset($this->container['MaxCpc']) || is_null($this->container['MaxCpc'])) {
             return null;
         }
-        return $this->container['TargetImpressionShare'];
+        return $this->container['MaxCpc'];
     }
 
     /**
-     * Sets TargetImpressionShare
+     * Sets MaxCpc
      *
-     * @param float|null $TargetImpressionShare TargetImpressionShare
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null $MaxCpc MaxCpc
      *
      * @return self
      */
-    public function setTargetImpressionShare($TargetImpressionShare)
+    public function setMaxCpc($MaxCpc)
     {
-        if (is_null($TargetImpressionShare)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetImpressionShare');
+        if (is_null($MaxCpc)) {
+            array_push($this->openAPINullablesSetToNull, 'MaxCpc');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetImpressionShare', $nullablesSetToNull);
+            $index = array_search('MaxCpc', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['TargetImpressionShare'] = $TargetImpressionShare;
+        $this->container['MaxCpc'] = $MaxCpc;
 
         return $this;
     }
@@ -398,38 +403,38 @@ class TargetImpressionShareBiddingScheme extends BiddingScheme implements ModelI
     }
 
     /**
-     * Gets MaxCpc
+     * Gets TargetImpressionShare
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null
+     * @return float|null
      */
-    public function getMaxCpc()
+    public function getTargetImpressionShare()
     {
-        if (!isset($this->container['MaxCpc']) || is_null($this->container['MaxCpc'])) {
+        if (!isset($this->container['TargetImpressionShare']) || is_null($this->container['TargetImpressionShare'])) {
             return null;
         }
-        return $this->container['MaxCpc'];
+        return $this->container['TargetImpressionShare'];
     }
 
     /**
-     * Sets MaxCpc
+     * Sets TargetImpressionShare
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Bid|null $MaxCpc MaxCpc
+     * @param float|null $TargetImpressionShare TargetImpressionShare
      *
      * @return self
      */
-    public function setMaxCpc($MaxCpc)
+    public function setTargetImpressionShare($TargetImpressionShare)
     {
-        if (is_null($MaxCpc)) {
-            array_push($this->openAPINullablesSetToNull, 'MaxCpc');
+        if (is_null($TargetImpressionShare)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetImpressionShare');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('MaxCpc', $nullablesSetToNull);
+            $index = array_search('TargetImpressionShare', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['MaxCpc'] = $MaxCpc;
+        $this->container['TargetImpressionShare'] = $TargetImpressionShare;
 
         return $this;
     }

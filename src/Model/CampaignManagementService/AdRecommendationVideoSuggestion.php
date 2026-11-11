@@ -33,8 +33,7 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Video' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Video',
-        'InternalTemplate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RecommendationTemplateVideo'
+        'Video' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Video'
     ];
 
     /**
@@ -45,8 +44,7 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Video' => null,
-        'InternalTemplate' => null
+        'Video' => null
     ];
 
     /**
@@ -55,8 +53,7 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Video' => true,
-        'InternalTemplate' => true
+        'Video' => true
     ];
 
     /**
@@ -145,8 +142,7 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Video' => 'Video',
-        'InternalTemplate' => 'Internal_Template'
+        'Video' => 'Video'
     ];
 
     /**
@@ -155,8 +151,7 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
-        'Video' => 'setVideo',
-        'InternalTemplate' => 'setInternalTemplate'
+        'Video' => 'setVideo'
     ];
 
     /**
@@ -165,8 +160,7 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
-        'Video' => 'getVideo',
-        'InternalTemplate' => 'getInternalTemplate'
+        'Video' => 'getVideo'
     ];
 
     /**
@@ -227,7 +221,6 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Video', $data ?? [], null);
-        $this->setIfExists('InternalTemplate', $data ?? [], null);
     }
 
     /**
@@ -305,43 +298,6 @@ class AdRecommendationVideoSuggestion implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['Video'] = $Video;
-
-        return $this;
-    }
-
-    /**
-     * Gets InternalTemplate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RecommendationTemplateVideo|null
-     */
-    public function getInternalTemplate()
-    {
-        if (!isset($this->container['InternalTemplate']) || is_null($this->container['InternalTemplate'])) {
-            return null;
-        }
-        return $this->container['InternalTemplate'];
-    }
-
-    /**
-     * Sets InternalTemplate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RecommendationTemplateVideo|null $InternalTemplate InternalTemplate
-     *
-     * @return self
-     */
-    public function setInternalTemplate($InternalTemplate)
-    {
-        if (is_null($InternalTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'InternalTemplate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InternalTemplate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['InternalTemplate'] = $InternalTemplate;
 
         return $this;
     }

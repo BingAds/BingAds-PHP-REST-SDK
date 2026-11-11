@@ -34,16 +34,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPITypes = [
         'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus',
         'TargetCondition1' => 'string',
-        'TargetConditionOperator1' => 'string',
-        'TargetValue1' => 'string',
         'TargetCondition2' => 'string',
-        'TargetConditionOperator2' => 'string',
-        'TargetValue2' => 'string',
         'TargetCondition3' => 'string',
+        'TargetConditionOperator1' => 'string',
+        'TargetConditionOperator2' => 'string',
         'TargetConditionOperator3' => 'string',
-        'TargetValue3' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus'
+        'TargetValue1' => 'string',
+        'TargetValue2' => 'string',
+        'TargetValue3' => 'string'
     ];
 
     /**
@@ -55,16 +55,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPIFormats = [
         'Id' => 'int64',
+        'Status' => null,
         'TargetCondition1' => null,
-        'TargetConditionOperator1' => null,
-        'TargetValue1' => null,
         'TargetCondition2' => null,
-        'TargetConditionOperator2' => null,
-        'TargetValue2' => null,
         'TargetCondition3' => null,
+        'TargetConditionOperator1' => null,
+        'TargetConditionOperator2' => null,
         'TargetConditionOperator3' => null,
-        'TargetValue3' => null,
-        'Status' => null
+        'TargetValue1' => null,
+        'TargetValue2' => null,
+        'TargetValue3' => null
     ];
 
     /**
@@ -74,16 +74,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'Id' => true,
+        'Status' => false,
         'TargetCondition1' => true,
-        'TargetConditionOperator1' => true,
-        'TargetValue1' => true,
         'TargetCondition2' => true,
-        'TargetConditionOperator2' => true,
-        'TargetValue2' => true,
         'TargetCondition3' => true,
+        'TargetConditionOperator1' => true,
+        'TargetConditionOperator2' => true,
         'TargetConditionOperator3' => true,
-        'TargetValue3' => true,
-        'Status' => false
+        'TargetValue1' => true,
+        'TargetValue2' => true,
+        'TargetValue3' => true
     ];
 
     /**
@@ -173,16 +173,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $attributeMap = [
         'Id' => 'Id',
+        'Status' => 'Status',
         'TargetCondition1' => 'TargetCondition1',
-        'TargetConditionOperator1' => 'TargetConditionOperator1',
-        'TargetValue1' => 'TargetValue1',
         'TargetCondition2' => 'TargetCondition2',
-        'TargetConditionOperator2' => 'TargetConditionOperator2',
-        'TargetValue2' => 'TargetValue2',
         'TargetCondition3' => 'TargetCondition3',
+        'TargetConditionOperator1' => 'TargetConditionOperator1',
+        'TargetConditionOperator2' => 'TargetConditionOperator2',
         'TargetConditionOperator3' => 'TargetConditionOperator3',
-        'TargetValue3' => 'TargetValue3',
-        'Status' => 'Status'
+        'TargetValue1' => 'TargetValue1',
+        'TargetValue2' => 'TargetValue2',
+        'TargetValue3' => 'TargetValue3'
     ];
 
     /**
@@ -192,16 +192,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $setters = [
         'Id' => 'setId',
+        'Status' => 'setStatus',
         'TargetCondition1' => 'setTargetCondition1',
-        'TargetConditionOperator1' => 'setTargetConditionOperator1',
-        'TargetValue1' => 'setTargetValue1',
         'TargetCondition2' => 'setTargetCondition2',
-        'TargetConditionOperator2' => 'setTargetConditionOperator2',
-        'TargetValue2' => 'setTargetValue2',
         'TargetCondition3' => 'setTargetCondition3',
+        'TargetConditionOperator1' => 'setTargetConditionOperator1',
+        'TargetConditionOperator2' => 'setTargetConditionOperator2',
         'TargetConditionOperator3' => 'setTargetConditionOperator3',
-        'TargetValue3' => 'setTargetValue3',
-        'Status' => 'setStatus'
+        'TargetValue1' => 'setTargetValue1',
+        'TargetValue2' => 'setTargetValue2',
+        'TargetValue3' => 'setTargetValue3'
     ];
 
     /**
@@ -211,16 +211,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static array $getters = [
         'Id' => 'getId',
+        'Status' => 'getStatus',
         'TargetCondition1' => 'getTargetCondition1',
-        'TargetConditionOperator1' => 'getTargetConditionOperator1',
-        'TargetValue1' => 'getTargetValue1',
         'TargetCondition2' => 'getTargetCondition2',
-        'TargetConditionOperator2' => 'getTargetConditionOperator2',
-        'TargetValue2' => 'getTargetValue2',
         'TargetCondition3' => 'getTargetCondition3',
+        'TargetConditionOperator1' => 'getTargetConditionOperator1',
+        'TargetConditionOperator2' => 'getTargetConditionOperator2',
         'TargetConditionOperator3' => 'getTargetConditionOperator3',
-        'TargetValue3' => 'getTargetValue3',
-        'Status' => 'getStatus'
+        'TargetValue1' => 'getTargetValue1',
+        'TargetValue2' => 'getTargetValue2',
+        'TargetValue3' => 'getTargetValue3'
     ];
 
     /**
@@ -281,16 +281,16 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('TargetCondition1', $data ?? [], null);
-        $this->setIfExists('TargetConditionOperator1', $data ?? [], null);
-        $this->setIfExists('TargetValue1', $data ?? [], null);
-        $this->setIfExists('TargetCondition2', $data ?? [], null);
-        $this->setIfExists('TargetConditionOperator2', $data ?? [], null);
-        $this->setIfExists('TargetValue2', $data ?? [], null);
-        $this->setIfExists('TargetCondition3', $data ?? [], null);
-        $this->setIfExists('TargetConditionOperator3', $data ?? [], null);
-        $this->setIfExists('TargetValue3', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('TargetCondition1', $data ?? [], null);
+        $this->setIfExists('TargetCondition2', $data ?? [], null);
+        $this->setIfExists('TargetCondition3', $data ?? [], null);
+        $this->setIfExists('TargetConditionOperator1', $data ?? [], null);
+        $this->setIfExists('TargetConditionOperator2', $data ?? [], null);
+        $this->setIfExists('TargetConditionOperator3', $data ?? [], null);
+        $this->setIfExists('TargetValue1', $data ?? [], null);
+        $this->setIfExists('TargetValue2', $data ?? [], null);
+        $this->setIfExists('TargetValue3', $data ?? [], null);
     }
 
     /**
@@ -373,6 +373,42 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            throw new \InvalidArgumentException('non-nullable Status cannot be null');
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
      * Gets TargetCondition1
      *
      * @return string|null
@@ -405,80 +441,6 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['TargetCondition1'] = $TargetCondition1;
-
-        return $this;
-    }
-
-    /**
-     * Gets TargetConditionOperator1
-     *
-     * @return string|null
-     */
-    public function getTargetConditionOperator1()
-    {
-        if (!isset($this->container['TargetConditionOperator1']) || is_null($this->container['TargetConditionOperator1'])) {
-            return null;
-        }
-        return $this->container['TargetConditionOperator1'];
-    }
-
-    /**
-     * Sets TargetConditionOperator1
-     *
-     * @param string|null $TargetConditionOperator1 TargetConditionOperator1
-     *
-     * @return self
-     */
-    public function setTargetConditionOperator1($TargetConditionOperator1)
-    {
-        if (is_null($TargetConditionOperator1)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetConditionOperator1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetConditionOperator1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TargetConditionOperator1'] = $TargetConditionOperator1;
-
-        return $this;
-    }
-
-    /**
-     * Gets TargetValue1
-     *
-     * @return string|null
-     */
-    public function getTargetValue1()
-    {
-        if (!isset($this->container['TargetValue1']) || is_null($this->container['TargetValue1'])) {
-            return null;
-        }
-        return $this->container['TargetValue1'];
-    }
-
-    /**
-     * Sets TargetValue1
-     *
-     * @param string|null $TargetValue1 TargetValue1
-     *
-     * @return self
-     */
-    public function setTargetValue1($TargetValue1)
-    {
-        if (is_null($TargetValue1)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetValue1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetValue1', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TargetValue1'] = $TargetValue1;
 
         return $this;
     }
@@ -521,80 +483,6 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets TargetConditionOperator2
-     *
-     * @return string|null
-     */
-    public function getTargetConditionOperator2()
-    {
-        if (!isset($this->container['TargetConditionOperator2']) || is_null($this->container['TargetConditionOperator2'])) {
-            return null;
-        }
-        return $this->container['TargetConditionOperator2'];
-    }
-
-    /**
-     * Sets TargetConditionOperator2
-     *
-     * @param string|null $TargetConditionOperator2 TargetConditionOperator2
-     *
-     * @return self
-     */
-    public function setTargetConditionOperator2($TargetConditionOperator2)
-    {
-        if (is_null($TargetConditionOperator2)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetConditionOperator2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetConditionOperator2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TargetConditionOperator2'] = $TargetConditionOperator2;
-
-        return $this;
-    }
-
-    /**
-     * Gets TargetValue2
-     *
-     * @return string|null
-     */
-    public function getTargetValue2()
-    {
-        if (!isset($this->container['TargetValue2']) || is_null($this->container['TargetValue2'])) {
-            return null;
-        }
-        return $this->container['TargetValue2'];
-    }
-
-    /**
-     * Sets TargetValue2
-     *
-     * @param string|null $TargetValue2 TargetValue2
-     *
-     * @return self
-     */
-    public function setTargetValue2($TargetValue2)
-    {
-        if (is_null($TargetValue2)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetValue2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetValue2', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TargetValue2'] = $TargetValue2;
-
-        return $this;
-    }
-
-    /**
      * Gets TargetCondition3
      *
      * @return string|null
@@ -627,6 +515,80 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['TargetCondition3'] = $TargetCondition3;
+
+        return $this;
+    }
+
+    /**
+     * Gets TargetConditionOperator1
+     *
+     * @return string|null
+     */
+    public function getTargetConditionOperator1()
+    {
+        if (!isset($this->container['TargetConditionOperator1']) || is_null($this->container['TargetConditionOperator1'])) {
+            return null;
+        }
+        return $this->container['TargetConditionOperator1'];
+    }
+
+    /**
+     * Sets TargetConditionOperator1
+     *
+     * @param string|null $TargetConditionOperator1 TargetConditionOperator1
+     *
+     * @return self
+     */
+    public function setTargetConditionOperator1($TargetConditionOperator1)
+    {
+        if (is_null($TargetConditionOperator1)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetConditionOperator1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TargetConditionOperator1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TargetConditionOperator1'] = $TargetConditionOperator1;
+
+        return $this;
+    }
+
+    /**
+     * Gets TargetConditionOperator2
+     *
+     * @return string|null
+     */
+    public function getTargetConditionOperator2()
+    {
+        if (!isset($this->container['TargetConditionOperator2']) || is_null($this->container['TargetConditionOperator2'])) {
+            return null;
+        }
+        return $this->container['TargetConditionOperator2'];
+    }
+
+    /**
+     * Sets TargetConditionOperator2
+     *
+     * @param string|null $TargetConditionOperator2 TargetConditionOperator2
+     *
+     * @return self
+     */
+    public function setTargetConditionOperator2($TargetConditionOperator2)
+    {
+        if (is_null($TargetConditionOperator2)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetConditionOperator2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TargetConditionOperator2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TargetConditionOperator2'] = $TargetConditionOperator2;
 
         return $this;
     }
@@ -669,6 +631,80 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets TargetValue1
+     *
+     * @return string|null
+     */
+    public function getTargetValue1()
+    {
+        if (!isset($this->container['TargetValue1']) || is_null($this->container['TargetValue1'])) {
+            return null;
+        }
+        return $this->container['TargetValue1'];
+    }
+
+    /**
+     * Sets TargetValue1
+     *
+     * @param string|null $TargetValue1 TargetValue1
+     *
+     * @return self
+     */
+    public function setTargetValue1($TargetValue1)
+    {
+        if (is_null($TargetValue1)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetValue1');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TargetValue1', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TargetValue1'] = $TargetValue1;
+
+        return $this;
+    }
+
+    /**
+     * Gets TargetValue2
+     *
+     * @return string|null
+     */
+    public function getTargetValue2()
+    {
+        if (!isset($this->container['TargetValue2']) || is_null($this->container['TargetValue2'])) {
+            return null;
+        }
+        return $this->container['TargetValue2'];
+    }
+
+    /**
+     * Sets TargetValue2
+     *
+     * @param string|null $TargetValue2 TargetValue2
+     *
+     * @return self
+     */
+    public function setTargetValue2($TargetValue2)
+    {
+        if (is_null($TargetValue2)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetValue2');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TargetValue2', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TargetValue2'] = $TargetValue2;
+
+        return $this;
+    }
+
+    /**
      * Gets TargetValue3
      *
      * @return string|null
@@ -701,42 +737,6 @@ class AssetGroupUrlTarget implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['TargetValue3'] = $TargetValue3;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenericEntityStatus($Status);
-        }
-        $this->container['Status'] = $Status;
 
         return $this;
     }

@@ -33,8 +33,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
-        'InheritedBidStrategyTypes' => 'string[]'
+        'InheritedBidStrategyTypes' => 'string[]',
+        'PartialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]'
     ];
 
     /**
@@ -45,8 +45,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PartialErrors' => null,
-        'InheritedBidStrategyTypes' => null
+        'InheritedBidStrategyTypes' => null,
+        'PartialErrors' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PartialErrors' => true,
-        'InheritedBidStrategyTypes' => true
+        'InheritedBidStrategyTypes' => true,
+        'PartialErrors' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PartialErrors' => 'PartialErrors',
-        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes'
+        'InheritedBidStrategyTypes' => 'InheritedBidStrategyTypes',
+        'PartialErrors' => 'PartialErrors'
     ];
 
     /**
@@ -155,8 +155,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $setters = [
-        'PartialErrors' => 'setPartialErrors',
-        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes'
+        'InheritedBidStrategyTypes' => 'setInheritedBidStrategyTypes',
+        'PartialErrors' => 'setPartialErrors'
     ];
 
     /**
@@ -165,8 +165,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static array $getters = [
-        'PartialErrors' => 'getPartialErrors',
-        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes'
+        'InheritedBidStrategyTypes' => 'getInheritedBidStrategyTypes',
+        'PartialErrors' => 'getPartialErrors'
     ];
 
     /**
@@ -226,8 +226,8 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PartialErrors', $data ?? [], null);
         $this->setIfExists('InheritedBidStrategyTypes', $data ?? [], null);
+        $this->setIfExists('PartialErrors', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets PartialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
-     */
-    public function getPartialErrors()
-    {
-        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
-            return null;
-        }
-        return $this->container['PartialErrors'];
-    }
-
-    /**
-     * Sets PartialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
-     *
-     * @return self
-     */
-    public function setPartialErrors($PartialErrors)
-    {
-        if (is_null($PartialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('PartialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['PartialErrors'] = $PartialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets InheritedBidStrategyTypes
      *
      * @return string[]|null
@@ -342,6 +305,43 @@ class UpdateAdGroupsResponse implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['InheritedBidStrategyTypes'] = $InheritedBidStrategyTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets PartialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
+     */
+    public function getPartialErrors()
+    {
+        if (!isset($this->container['PartialErrors']) || is_null($this->container['PartialErrors'])) {
+            return null;
+        }
+        return $this->container['PartialErrors'];
+    }
+
+    /**
+     * Sets PartialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null $PartialErrors PartialErrors
+     *
+     * @return self
+     */
+    public function setPartialErrors($PartialErrors)
+    {
+        if (is_null($PartialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'PartialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('PartialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['PartialErrors'] = $PartialErrors;
 
         return $this;
     }

@@ -34,12 +34,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
       */
     protected static array $openAPITypes = [
         'AccountIds' => 'string[]',
-        'LastSyncTimeInUTC' => '\DateTime',
-        'DownloadEntities' => '\Microsoft\MsAds\Rest\Model\BulkService\DownloadEntity[]',
+        'CompressionType' => '\Microsoft\MsAds\Rest\Model\BulkService\CompressionType',
         'DataScope' => '\Microsoft\MsAds\Rest\Model\BulkService\DataScope',
+        'DownloadEntities' => '\Microsoft\MsAds\Rest\Model\BulkService\DownloadEntity[]',
         'DownloadFileType' => '\Microsoft\MsAds\Rest\Model\BulkService\DownloadFileType',
         'FormatVersion' => 'string',
-        'CompressionType' => '\Microsoft\MsAds\Rest\Model\BulkService\CompressionType'
+        'LastSyncTimeInUTC' => '\DateTime'
     ];
 
     /**
@@ -51,12 +51,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
       */
     protected static array $openAPIFormats = [
         'AccountIds' => 'int64',
-        'LastSyncTimeInUTC' => 'date-time',
-        'DownloadEntities' => null,
+        'CompressionType' => null,
         'DataScope' => null,
+        'DownloadEntities' => null,
         'DownloadFileType' => null,
         'FormatVersion' => null,
-        'CompressionType' => null
+        'LastSyncTimeInUTC' => 'date-time'
     ];
 
     /**
@@ -66,12 +66,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
       */
     protected static array $openAPINullables = [
         'AccountIds' => true,
-        'LastSyncTimeInUTC' => true,
-        'DownloadEntities' => true,
+        'CompressionType' => true,
         'DataScope' => false,
-        'DownloadFileType' => false,
+        'DownloadEntities' => true,
+        'DownloadFileType' => true,
         'FormatVersion' => true,
-        'CompressionType' => false
+        'LastSyncTimeInUTC' => true
     ];
 
     /**
@@ -161,12 +161,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
      */
     protected static array $attributeMap = [
         'AccountIds' => 'AccountIds',
-        'LastSyncTimeInUTC' => 'LastSyncTimeInUTC',
-        'DownloadEntities' => 'DownloadEntities',
+        'CompressionType' => 'CompressionType',
         'DataScope' => 'DataScope',
+        'DownloadEntities' => 'DownloadEntities',
         'DownloadFileType' => 'DownloadFileType',
         'FormatVersion' => 'FormatVersion',
-        'CompressionType' => 'CompressionType'
+        'LastSyncTimeInUTC' => 'LastSyncTimeInUTC'
     ];
 
     /**
@@ -176,12 +176,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
      */
     protected static array $setters = [
         'AccountIds' => 'setAccountIds',
-        'LastSyncTimeInUTC' => 'setLastSyncTimeInUTC',
-        'DownloadEntities' => 'setDownloadEntities',
+        'CompressionType' => 'setCompressionType',
         'DataScope' => 'setDataScope',
+        'DownloadEntities' => 'setDownloadEntities',
         'DownloadFileType' => 'setDownloadFileType',
         'FormatVersion' => 'setFormatVersion',
-        'CompressionType' => 'setCompressionType'
+        'LastSyncTimeInUTC' => 'setLastSyncTimeInUTC'
     ];
 
     /**
@@ -191,12 +191,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
      */
     protected static array $getters = [
         'AccountIds' => 'getAccountIds',
-        'LastSyncTimeInUTC' => 'getLastSyncTimeInUTC',
-        'DownloadEntities' => 'getDownloadEntities',
+        'CompressionType' => 'getCompressionType',
         'DataScope' => 'getDataScope',
+        'DownloadEntities' => 'getDownloadEntities',
         'DownloadFileType' => 'getDownloadFileType',
         'FormatVersion' => 'getFormatVersion',
-        'CompressionType' => 'getCompressionType'
+        'LastSyncTimeInUTC' => 'getLastSyncTimeInUTC'
     ];
 
     /**
@@ -257,12 +257,12 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
     public function __construct(?array $data = null)
     {
         $this->setIfExists('AccountIds', $data ?? [], null);
-        $this->setIfExists('LastSyncTimeInUTC', $data ?? [], null);
-        $this->setIfExists('DownloadEntities', $data ?? [], null);
+        $this->setIfExists('CompressionType', $data ?? [], null);
         $this->setIfExists('DataScope', $data ?? [], null);
+        $this->setIfExists('DownloadEntities', $data ?? [], null);
         $this->setIfExists('DownloadFileType', $data ?? [], null);
         $this->setIfExists('FormatVersion', $data ?? [], null);
-        $this->setIfExists('CompressionType', $data ?? [], null);
+        $this->setIfExists('LastSyncTimeInUTC', $data ?? [], null);
     }
 
     /**
@@ -345,38 +345,80 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets LastSyncTimeInUTC
+     * Gets CompressionType
      *
-     * @return \DateTime|null
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\CompressionType|mixed|null
      */
-    public function getLastSyncTimeInUTC()
+    public function getCompressionType()
     {
-        if (!isset($this->container['LastSyncTimeInUTC']) || is_null($this->container['LastSyncTimeInUTC'])) {
+        if (!isset($this->container['CompressionType']) || is_null($this->container['CompressionType'])) {
             return null;
         }
-        return $this->container['LastSyncTimeInUTC'];
+        if ((is_object($this->container['CompressionType']) || is_string($this->container['CompressionType'])) && method_exists($this->container['CompressionType'], 'getValue')) {
+            return $this->container['CompressionType']->getValue();
+        }
+        return $this->container['CompressionType'];
     }
 
     /**
-     * Sets LastSyncTimeInUTC
+     * Sets CompressionType
      *
-     * @param \DateTime|null $LastSyncTimeInUTC LastSyncTimeInUTC
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\CompressionType|mixed|null $CompressionType CompressionType
      *
      * @return self
      */
-    public function setLastSyncTimeInUTC($LastSyncTimeInUTC)
+    public function setCompressionType($CompressionType)
     {
-        if (is_null($LastSyncTimeInUTC)) {
-            array_push($this->openAPINullablesSetToNull, 'LastSyncTimeInUTC');
+        if (is_null($CompressionType)) {
+            array_push($this->openAPINullablesSetToNull, 'CompressionType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LastSyncTimeInUTC', $nullablesSetToNull);
+            $index = array_search('CompressionType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['LastSyncTimeInUTC'] = $LastSyncTimeInUTC;
+        if (!is_null($CompressionType) && !$CompressionType instanceof \Microsoft\MsAds\Rest\Model\BulkService\CompressionType) {
+            $CompressionType = new \Microsoft\MsAds\Rest\Model\BulkService\CompressionType($CompressionType);
+        }
+        $this->container['CompressionType'] = $CompressionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets DataScope
+     *
+     * @return \Microsoft\MsAds\Rest\Model\BulkService\DataScope|mixed|null
+     */
+    public function getDataScope()
+    {
+        if (!isset($this->container['DataScope']) || is_null($this->container['DataScope'])) {
+            return null;
+        }
+        if ((is_object($this->container['DataScope']) || is_string($this->container['DataScope'])) && method_exists($this->container['DataScope'], 'getValue')) {
+            return $this->container['DataScope']->getValue();
+        }
+        return $this->container['DataScope'];
+    }
+
+    /**
+     * Sets DataScope
+     *
+     * @param \Microsoft\MsAds\Rest\Model\BulkService\DataScope|mixed|null $DataScope DataScope
+     *
+     * @return self
+     */
+    public function setDataScope($DataScope)
+    {
+        if (is_null($DataScope)) {
+            throw new \InvalidArgumentException('non-nullable DataScope cannot be null');
+        }
+        if (!is_null($DataScope) && !$DataScope instanceof \Microsoft\MsAds\Rest\Model\BulkService\DataScope) {
+            $DataScope = new \Microsoft\MsAds\Rest\Model\BulkService\DataScope($DataScope);
+        }
+        $this->container['DataScope'] = $DataScope;
 
         return $this;
     }
@@ -438,42 +480,6 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets DataScope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\DataScope|mixed|null
-     */
-    public function getDataScope()
-    {
-        if (!isset($this->container['DataScope']) || is_null($this->container['DataScope'])) {
-            return null;
-        }
-        if ((is_object($this->container['DataScope']) || is_string($this->container['DataScope'])) && method_exists($this->container['DataScope'], 'getValue')) {
-            return $this->container['DataScope']->getValue();
-        }
-        return $this->container['DataScope'];
-    }
-
-    /**
-     * Sets DataScope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\DataScope|mixed|null $DataScope DataScope
-     *
-     * @return self
-     */
-    public function setDataScope($DataScope)
-    {
-        if (is_null($DataScope)) {
-            throw new \InvalidArgumentException('non-nullable DataScope cannot be null');
-        }
-        if (!$DataScope instanceof \Microsoft\MsAds\Rest\Model\BulkService\DataScope) {
-            $DataScope = new \Microsoft\MsAds\Rest\Model\BulkService\DataScope($DataScope);
-        }
-        $this->container['DataScope'] = $DataScope;
-
-        return $this;
-    }
-
-    /**
      * Gets DownloadFileType
      *
      * @return \Microsoft\MsAds\Rest\Model\BulkService\DownloadFileType|mixed|null
@@ -499,9 +505,16 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
     public function setDownloadFileType($DownloadFileType)
     {
         if (is_null($DownloadFileType)) {
-            throw new \InvalidArgumentException('non-nullable DownloadFileType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'DownloadFileType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DownloadFileType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$DownloadFileType instanceof \Microsoft\MsAds\Rest\Model\BulkService\DownloadFileType) {
+        if (!is_null($DownloadFileType) && !$DownloadFileType instanceof \Microsoft\MsAds\Rest\Model\BulkService\DownloadFileType) {
             $DownloadFileType = new \Microsoft\MsAds\Rest\Model\BulkService\DownloadFileType($DownloadFileType);
         }
         $this->container['DownloadFileType'] = $DownloadFileType;
@@ -547,37 +560,38 @@ class DownloadCampaignsByAccountIdsRequest implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets CompressionType
+     * Gets LastSyncTimeInUTC
      *
-     * @return \Microsoft\MsAds\Rest\Model\BulkService\CompressionType|mixed|null
+     * @return \DateTime|null
      */
-    public function getCompressionType()
+    public function getLastSyncTimeInUTC()
     {
-        if (!isset($this->container['CompressionType']) || is_null($this->container['CompressionType'])) {
+        if (!isset($this->container['LastSyncTimeInUTC']) || is_null($this->container['LastSyncTimeInUTC'])) {
             return null;
         }
-        if ((is_object($this->container['CompressionType']) || is_string($this->container['CompressionType'])) && method_exists($this->container['CompressionType'], 'getValue')) {
-            return $this->container['CompressionType']->getValue();
-        }
-        return $this->container['CompressionType'];
+        return $this->container['LastSyncTimeInUTC'];
     }
 
     /**
-     * Sets CompressionType
+     * Sets LastSyncTimeInUTC
      *
-     * @param \Microsoft\MsAds\Rest\Model\BulkService\CompressionType|mixed|null $CompressionType CompressionType
+     * @param \DateTime|null $LastSyncTimeInUTC LastSyncTimeInUTC
      *
      * @return self
      */
-    public function setCompressionType($CompressionType)
+    public function setLastSyncTimeInUTC($LastSyncTimeInUTC)
     {
-        if (is_null($CompressionType)) {
-            throw new \InvalidArgumentException('non-nullable CompressionType cannot be null');
+        if (is_null($LastSyncTimeInUTC)) {
+            array_push($this->openAPINullablesSetToNull, 'LastSyncTimeInUTC');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LastSyncTimeInUTC', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$CompressionType instanceof \Microsoft\MsAds\Rest\Model\BulkService\CompressionType) {
-            $CompressionType = new \Microsoft\MsAds\Rest\Model\BulkService\CompressionType($CompressionType);
-        }
-        $this->container['CompressionType'] = $CompressionType;
+        $this->container['LastSyncTimeInUTC'] = $LastSyncTimeInUTC;
 
         return $this;
     }

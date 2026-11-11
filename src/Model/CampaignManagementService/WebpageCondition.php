@@ -33,9 +33,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
+        'Argument' => 'string',
         'Operand' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperand',
-        'Operator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperator',
-        'Argument' => 'string'
+        'Operator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperator'
     ];
 
     /**
@@ -46,9 +46,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
+        'Argument' => null,
         'Operand' => null,
-        'Operator' => null,
-        'Argument' => null
+        'Operator' => null
     ];
 
     /**
@@ -57,9 +57,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'Argument' => true,
         'Operand' => false,
-        'Operator' => false,
-        'Argument' => true
+        'Operator' => true
     ];
 
     /**
@@ -148,9 +148,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'Argument' => 'Argument',
         'Operand' => 'Operand',
-        'Operator' => 'Operator',
-        'Argument' => 'Argument'
+        'Operator' => 'Operator'
     ];
 
     /**
@@ -159,9 +159,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
+        'Argument' => 'setArgument',
         'Operand' => 'setOperand',
-        'Operator' => 'setOperator',
-        'Argument' => 'setArgument'
+        'Operator' => 'setOperator'
     ];
 
     /**
@@ -170,9 +170,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
+        'Argument' => 'getArgument',
         'Operand' => 'getOperand',
-        'Operator' => 'getOperator',
-        'Argument' => 'getArgument'
+        'Operator' => 'getOperator'
     ];
 
     /**
@@ -232,9 +232,9 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('Argument', $data ?? [], null);
         $this->setIfExists('Operand', $data ?? [], null);
         $this->setIfExists('Operator', $data ?? [], null);
-        $this->setIfExists('Argument', $data ?? [], null);
     }
 
     /**
@@ -280,6 +280,43 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets Argument
+     *
+     * @return string|null
+     */
+    public function getArgument()
+    {
+        if (!isset($this->container['Argument']) || is_null($this->container['Argument'])) {
+            return null;
+        }
+        return $this->container['Argument'];
+    }
+
+    /**
+     * Sets Argument
+     *
+     * @param string|null $Argument Argument
+     *
+     * @return self
+     */
+    public function setArgument($Argument)
+    {
+        if (is_null($Argument)) {
+            array_push($this->openAPINullablesSetToNull, 'Argument');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Argument', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Argument'] = $Argument;
+
+        return $this;
+    }
+
+    /**
      * Gets Operand
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperand|mixed|null
@@ -307,7 +344,7 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Operand)) {
             throw new \InvalidArgumentException('non-nullable Operand cannot be null');
         }
-        if (!$Operand instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperand) {
+        if (!is_null($Operand) && !$Operand instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperand) {
             $Operand = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperand($Operand);
         }
         $this->container['Operand'] = $Operand;
@@ -341,49 +378,19 @@ class WebpageCondition implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOperator($Operator)
     {
         if (is_null($Operator)) {
-            throw new \InvalidArgumentException('non-nullable Operator cannot be null');
-        }
-        if (!$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperator) {
-            $Operator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperator($Operator);
-        }
-        $this->container['Operator'] = $Operator;
-
-        return $this;
-    }
-
-    /**
-     * Gets Argument
-     *
-     * @return string|null
-     */
-    public function getArgument()
-    {
-        if (!isset($this->container['Argument']) || is_null($this->container['Argument'])) {
-            return null;
-        }
-        return $this->container['Argument'];
-    }
-
-    /**
-     * Sets Argument
-     *
-     * @param string|null $Argument Argument
-     *
-     * @return self
-     */
-    public function setArgument($Argument)
-    {
-        if (is_null($Argument)) {
-            array_push($this->openAPINullablesSetToNull, 'Argument');
+            array_push($this->openAPINullablesSetToNull, 'Operator');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Argument', $nullablesSetToNull);
+            $index = array_search('Operator', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Argument'] = $Argument;
+        if (!is_null($Operator) && !$Operator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperator) {
+            $Operator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\WebpageConditionOperator($Operator);
+        }
+        $this->container['Operator'] = $Operator;
 
         return $this;
     }

@@ -483,7 +483,7 @@ class GetEstimatedPositionByKeywordsRequest implements ModelInterface, ArrayAcce
         if (is_null($CurrencyCode)) {
             throw new \InvalidArgumentException('non-nullable CurrencyCode cannot be null');
         }
-        if (!$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode) {
+        if (!is_null($CurrencyCode) && !$CurrencyCode instanceof \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode) {
             $CurrencyCode = new \Microsoft\MsAds\Rest\Model\AdInsightService\CurrencyCode($CurrencyCode);
         }
         $this->container['CurrencyCode'] = $CurrencyCode;

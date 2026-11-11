@@ -33,8 +33,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ProfileType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType',
-        'LanguageLocale' => 'string'
+        'LanguageLocale' => 'string',
+        'ProfileType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType'
     ];
 
     /**
@@ -45,8 +45,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ProfileType' => null,
-        'LanguageLocale' => null
+        'LanguageLocale' => null,
+        'ProfileType' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ProfileType' => false,
-        'LanguageLocale' => true
+        'LanguageLocale' => true,
+        'ProfileType' => false
     ];
 
     /**
@@ -145,8 +145,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ProfileType' => 'ProfileType',
-        'LanguageLocale' => 'LanguageLocale'
+        'LanguageLocale' => 'LanguageLocale',
+        'ProfileType' => 'ProfileType'
     ];
 
     /**
@@ -155,8 +155,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $setters = [
-        'ProfileType' => 'setProfileType',
-        'LanguageLocale' => 'setLanguageLocale'
+        'LanguageLocale' => 'setLanguageLocale',
+        'ProfileType' => 'setProfileType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static array $getters = [
-        'ProfileType' => 'getProfileType',
-        'LanguageLocale' => 'getLanguageLocale'
+        'LanguageLocale' => 'getLanguageLocale',
+        'ProfileType' => 'getProfileType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ProfileType', $data ?? [], null);
         $this->setIfExists('LanguageLocale', $data ?? [], null);
+        $this->setIfExists('ProfileType', $data ?? [], null);
     }
 
     /**
@@ -273,42 +273,6 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets ProfileType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
-     */
-    public function getProfileType()
-    {
-        if (!isset($this->container['ProfileType']) || is_null($this->container['ProfileType'])) {
-            return null;
-        }
-        if ((is_object($this->container['ProfileType']) || is_string($this->container['ProfileType'])) && method_exists($this->container['ProfileType'], 'getValue')) {
-            return $this->container['ProfileType']->getValue();
-        }
-        return $this->container['ProfileType'];
-    }
-
-    /**
-     * Sets ProfileType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null $ProfileType ProfileType
-     *
-     * @return self
-     */
-    public function setProfileType($ProfileType)
-    {
-        if (is_null($ProfileType)) {
-            throw new \InvalidArgumentException('non-nullable ProfileType cannot be null');
-        }
-        if (!$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
-            $ProfileType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($ProfileType);
-        }
-        $this->container['ProfileType'] = $ProfileType;
-
-        return $this;
-    }
-
-    /**
      * Gets LanguageLocale
      *
      * @return string|null
@@ -341,6 +305,42 @@ class GetProfileDataFileUrlRequest implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['LanguageLocale'] = $LanguageLocale;
+
+        return $this;
+    }
+
+    /**
+     * Gets ProfileType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
+     */
+    public function getProfileType()
+    {
+        if (!isset($this->container['ProfileType']) || is_null($this->container['ProfileType'])) {
+            return null;
+        }
+        if ((is_object($this->container['ProfileType']) || is_string($this->container['ProfileType'])) && method_exists($this->container['ProfileType'], 'getValue')) {
+            return $this->container['ProfileType']->getValue();
+        }
+        return $this->container['ProfileType'];
+    }
+
+    /**
+     * Sets ProfileType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null $ProfileType ProfileType
+     *
+     * @return self
+     */
+    public function setProfileType($ProfileType)
+    {
+        if (is_null($ProfileType)) {
+            throw new \InvalidArgumentException('non-nullable ProfileType cannot be null');
+        }
+        if (!is_null($ProfileType) && !$ProfileType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+            $ProfileType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($ProfileType);
+        }
+        $this->container['ProfileType'] = $ProfileType;
 
         return $this;
     }

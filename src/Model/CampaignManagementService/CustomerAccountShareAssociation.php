@@ -33,8 +33,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'UsageType' => 'string',
-        'AssociationCount' => 'string'
+        'AssociationCount' => 'string',
+        'UsageType' => 'string'
     ];
 
     /**
@@ -45,8 +45,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'UsageType' => null,
-        'AssociationCount' => 'int64'
+        'AssociationCount' => 'int64',
+        'UsageType' => null
     ];
 
     /**
@@ -55,8 +55,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'UsageType' => true,
-        'AssociationCount' => true
+        'AssociationCount' => true,
+        'UsageType' => true
     ];
 
     /**
@@ -145,8 +145,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
-        'UsageType' => 'UsageType',
-        'AssociationCount' => 'AssociationCount'
+        'AssociationCount' => 'AssociationCount',
+        'UsageType' => 'UsageType'
     ];
 
     /**
@@ -155,8 +155,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
-        'UsageType' => 'setUsageType',
-        'AssociationCount' => 'setAssociationCount'
+        'AssociationCount' => 'setAssociationCount',
+        'UsageType' => 'setUsageType'
     ];
 
     /**
@@ -165,8 +165,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
-        'UsageType' => 'getUsageType',
-        'AssociationCount' => 'getAssociationCount'
+        'AssociationCount' => 'getAssociationCount',
+        'UsageType' => 'getUsageType'
     ];
 
     /**
@@ -226,8 +226,8 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('UsageType', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('UsageType', $data ?? [], null);
     }
 
     /**
@@ -273,43 +273,6 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets UsageType
-     *
-     * @return string|null
-     */
-    public function getUsageType()
-    {
-        if (!isset($this->container['UsageType']) || is_null($this->container['UsageType'])) {
-            return null;
-        }
-        return $this->container['UsageType'];
-    }
-
-    /**
-     * Sets UsageType
-     *
-     * @param string|null $UsageType UsageType
-     *
-     * @return self
-     */
-    public function setUsageType($UsageType)
-    {
-        if (is_null($UsageType)) {
-            array_push($this->openAPINullablesSetToNull, 'UsageType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('UsageType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['UsageType'] = $UsageType;
-
-        return $this;
-    }
-
-    /**
      * Gets AssociationCount
      *
      * @return string|null
@@ -342,6 +305,43 @@ class CustomerAccountShareAssociation implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['AssociationCount'] = $AssociationCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets UsageType
+     *
+     * @return string|null
+     */
+    public function getUsageType()
+    {
+        if (!isset($this->container['UsageType']) || is_null($this->container['UsageType'])) {
+            return null;
+        }
+        return $this->container['UsageType'];
+    }
+
+    /**
+     * Sets UsageType
+     *
+     * @param string|null $UsageType UsageType
+     *
+     * @return self
+     */
+    public function setUsageType($UsageType)
+    {
+        if (is_null($UsageType)) {
+            array_push($this->openAPINullablesSetToNull, 'UsageType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('UsageType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['UsageType'] = $UsageType;
 
         return $this;
     }

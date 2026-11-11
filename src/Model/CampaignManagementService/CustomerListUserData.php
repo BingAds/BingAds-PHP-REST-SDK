@@ -33,11 +33,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'AudienceId' => 'string',
-        'CustomerListItems' => 'string[]',
-        'CustomerListItemSubType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType',
+        'AcceptCustomerMatchTerm' => 'bool',
         'ActionType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType',
-        'AcceptCustomerMatchTerm' => 'bool'
+        'AudienceId' => 'string',
+        'CustomerListItemSubType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType',
+        'CustomerListItems' => 'string[]'
     ];
 
     /**
@@ -48,11 +48,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'AudienceId' => 'int64',
-        'CustomerListItems' => null,
-        'CustomerListItemSubType' => null,
+        'AcceptCustomerMatchTerm' => null,
         'ActionType' => null,
-        'AcceptCustomerMatchTerm' => null
+        'AudienceId' => 'int64',
+        'CustomerListItemSubType' => null,
+        'CustomerListItems' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'AudienceId' => false,
-        'CustomerListItems' => true,
-        'CustomerListItemSubType' => false,
+        'AcceptCustomerMatchTerm' => true,
         'ActionType' => false,
-        'AcceptCustomerMatchTerm' => true
+        'AudienceId' => false,
+        'CustomerListItemSubType' => false,
+        'CustomerListItems' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $attributeMap = [
-        'AudienceId' => 'AudienceId',
-        'CustomerListItems' => 'CustomerListItems',
-        'CustomerListItemSubType' => 'CustomerListItemSubType',
+        'AcceptCustomerMatchTerm' => 'AcceptCustomerMatchTerm',
         'ActionType' => 'ActionType',
-        'AcceptCustomerMatchTerm' => 'AcceptCustomerMatchTerm'
+        'AudienceId' => 'AudienceId',
+        'CustomerListItemSubType' => 'CustomerListItemSubType',
+        'CustomerListItems' => 'CustomerListItems'
     ];
 
     /**
@@ -167,11 +167,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $setters = [
-        'AudienceId' => 'setAudienceId',
-        'CustomerListItems' => 'setCustomerListItems',
-        'CustomerListItemSubType' => 'setCustomerListItemSubType',
+        'AcceptCustomerMatchTerm' => 'setAcceptCustomerMatchTerm',
         'ActionType' => 'setActionType',
-        'AcceptCustomerMatchTerm' => 'setAcceptCustomerMatchTerm'
+        'AudienceId' => 'setAudienceId',
+        'CustomerListItemSubType' => 'setCustomerListItemSubType',
+        'CustomerListItems' => 'setCustomerListItems'
     ];
 
     /**
@@ -180,11 +180,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $getters = [
-        'AudienceId' => 'getAudienceId',
-        'CustomerListItems' => 'getCustomerListItems',
-        'CustomerListItemSubType' => 'getCustomerListItemSubType',
+        'AcceptCustomerMatchTerm' => 'getAcceptCustomerMatchTerm',
         'ActionType' => 'getActionType',
-        'AcceptCustomerMatchTerm' => 'getAcceptCustomerMatchTerm'
+        'AudienceId' => 'getAudienceId',
+        'CustomerListItemSubType' => 'getCustomerListItemSubType',
+        'CustomerListItems' => 'getCustomerListItems'
     ];
 
     /**
@@ -244,11 +244,11 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('AudienceId', $data ?? [], null);
-        $this->setIfExists('CustomerListItems', $data ?? [], null);
-        $this->setIfExists('CustomerListItemSubType', $data ?? [], null);
-        $this->setIfExists('ActionType', $data ?? [], null);
         $this->setIfExists('AcceptCustomerMatchTerm', $data ?? [], null);
+        $this->setIfExists('ActionType', $data ?? [], null);
+        $this->setIfExists('AudienceId', $data ?? [], null);
+        $this->setIfExists('CustomerListItemSubType', $data ?? [], null);
+        $this->setIfExists('CustomerListItems', $data ?? [], null);
     }
 
     /**
@@ -294,6 +294,79 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
+     * Gets AcceptCustomerMatchTerm
+     *
+     * @return bool|null
+     */
+    public function getAcceptCustomerMatchTerm()
+    {
+        if (!isset($this->container['AcceptCustomerMatchTerm']) || is_null($this->container['AcceptCustomerMatchTerm'])) {
+            return null;
+        }
+        return $this->container['AcceptCustomerMatchTerm'];
+    }
+
+    /**
+     * Sets AcceptCustomerMatchTerm
+     *
+     * @param bool|null $AcceptCustomerMatchTerm AcceptCustomerMatchTerm
+     *
+     * @return self
+     */
+    public function setAcceptCustomerMatchTerm($AcceptCustomerMatchTerm)
+    {
+        if (is_null($AcceptCustomerMatchTerm)) {
+            array_push($this->openAPINullablesSetToNull, 'AcceptCustomerMatchTerm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AcceptCustomerMatchTerm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['AcceptCustomerMatchTerm'] = $AcceptCustomerMatchTerm;
+
+        return $this;
+    }
+
+    /**
+     * Gets ActionType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType|mixed|null
+     */
+    public function getActionType()
+    {
+        if (!isset($this->container['ActionType']) || is_null($this->container['ActionType'])) {
+            return null;
+        }
+        if ((is_object($this->container['ActionType']) || is_string($this->container['ActionType'])) && method_exists($this->container['ActionType'], 'getValue')) {
+            return $this->container['ActionType']->getValue();
+        }
+        return $this->container['ActionType'];
+    }
+
+    /**
+     * Sets ActionType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType|mixed|null $ActionType ActionType
+     *
+     * @return self
+     */
+    public function setActionType($ActionType)
+    {
+        if (is_null($ActionType)) {
+            throw new \InvalidArgumentException('non-nullable ActionType cannot be null');
+        }
+        if (!is_null($ActionType) && !$ActionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType) {
+            $ActionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType($ActionType);
+        }
+        $this->container['ActionType'] = $ActionType;
+
+        return $this;
+    }
+
+    /**
      * Gets AudienceId
      *
      * @return string|null
@@ -319,6 +392,42 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable AudienceId cannot be null');
         }
         $this->container['AudienceId'] = $AudienceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets CustomerListItemSubType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType|mixed|null
+     */
+    public function getCustomerListItemSubType()
+    {
+        if (!isset($this->container['CustomerListItemSubType']) || is_null($this->container['CustomerListItemSubType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CustomerListItemSubType']) || is_string($this->container['CustomerListItemSubType'])) && method_exists($this->container['CustomerListItemSubType'], 'getValue')) {
+            return $this->container['CustomerListItemSubType']->getValue();
+        }
+        return $this->container['CustomerListItemSubType'];
+    }
+
+    /**
+     * Sets CustomerListItemSubType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType|mixed|null $CustomerListItemSubType CustomerListItemSubType
+     *
+     * @return self
+     */
+    public function setCustomerListItemSubType($CustomerListItemSubType)
+    {
+        if (is_null($CustomerListItemSubType)) {
+            throw new \InvalidArgumentException('non-nullable CustomerListItemSubType cannot be null');
+        }
+        if (!is_null($CustomerListItemSubType) && !$CustomerListItemSubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType) {
+            $CustomerListItemSubType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType($CustomerListItemSubType);
+        }
+        $this->container['CustomerListItemSubType'] = $CustomerListItemSubType;
 
         return $this;
     }
@@ -356,115 +465,6 @@ class CustomerListUserData implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
         $this->container['CustomerListItems'] = $CustomerListItems;
-
-        return $this;
-    }
-
-    /**
-     * Gets CustomerListItemSubType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType|mixed|null
-     */
-    public function getCustomerListItemSubType()
-    {
-        if (!isset($this->container['CustomerListItemSubType']) || is_null($this->container['CustomerListItemSubType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CustomerListItemSubType']) || is_string($this->container['CustomerListItemSubType'])) && method_exists($this->container['CustomerListItemSubType'], 'getValue')) {
-            return $this->container['CustomerListItemSubType']->getValue();
-        }
-        return $this->container['CustomerListItemSubType'];
-    }
-
-    /**
-     * Sets CustomerListItemSubType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType|mixed|null $CustomerListItemSubType CustomerListItemSubType
-     *
-     * @return self
-     */
-    public function setCustomerListItemSubType($CustomerListItemSubType)
-    {
-        if (is_null($CustomerListItemSubType)) {
-            throw new \InvalidArgumentException('non-nullable CustomerListItemSubType cannot be null');
-        }
-        if (!$CustomerListItemSubType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType) {
-            $CustomerListItemSubType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListItemSubType($CustomerListItemSubType);
-        }
-        $this->container['CustomerListItemSubType'] = $CustomerListItemSubType;
-
-        return $this;
-    }
-
-    /**
-     * Gets ActionType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType|mixed|null
-     */
-    public function getActionType()
-    {
-        if (!isset($this->container['ActionType']) || is_null($this->container['ActionType'])) {
-            return null;
-        }
-        if ((is_object($this->container['ActionType']) || is_string($this->container['ActionType'])) && method_exists($this->container['ActionType'], 'getValue')) {
-            return $this->container['ActionType']->getValue();
-        }
-        return $this->container['ActionType'];
-    }
-
-    /**
-     * Sets ActionType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType|mixed|null $ActionType ActionType
-     *
-     * @return self
-     */
-    public function setActionType($ActionType)
-    {
-        if (is_null($ActionType)) {
-            throw new \InvalidArgumentException('non-nullable ActionType cannot be null');
-        }
-        if (!$ActionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType) {
-            $ActionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CustomerListActionType($ActionType);
-        }
-        $this->container['ActionType'] = $ActionType;
-
-        return $this;
-    }
-
-    /**
-     * Gets AcceptCustomerMatchTerm
-     *
-     * @return bool|null
-     */
-    public function getAcceptCustomerMatchTerm()
-    {
-        if (!isset($this->container['AcceptCustomerMatchTerm']) || is_null($this->container['AcceptCustomerMatchTerm'])) {
-            return null;
-        }
-        return $this->container['AcceptCustomerMatchTerm'];
-    }
-
-    /**
-     * Sets AcceptCustomerMatchTerm
-     *
-     * @param bool|null $AcceptCustomerMatchTerm AcceptCustomerMatchTerm
-     *
-     * @return self
-     */
-    public function setAcceptCustomerMatchTerm($AcceptCustomerMatchTerm)
-    {
-        if (is_null($AcceptCustomerMatchTerm)) {
-            array_push($this->openAPINullablesSetToNull, 'AcceptCustomerMatchTerm');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('AcceptCustomerMatchTerm', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['AcceptCustomerMatchTerm'] = $AcceptCustomerMatchTerm;
 
         return $this;
     }

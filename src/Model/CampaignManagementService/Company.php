@@ -33,9 +33,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ProfileId' => 'string',
-        'Name' => 'string',
         'LogoUrl' => 'string',
+        'Name' => 'string',
+        'ProfileId' => 'string',
         'Status' => 'string'
     ];
 
@@ -47,9 +47,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'ProfileId' => 'int64',
-        'Name' => null,
         'LogoUrl' => null,
+        'Name' => null,
+        'ProfileId' => 'int64',
         'Status' => null
     ];
 
@@ -59,9 +59,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ProfileId' => false,
-        'Name' => true,
         'LogoUrl' => true,
+        'Name' => true,
+        'ProfileId' => false,
         'Status' => true
     ];
 
@@ -151,9 +151,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'ProfileId' => 'ProfileId',
-        'Name' => 'Name',
         'LogoUrl' => 'LogoUrl',
+        'Name' => 'Name',
+        'ProfileId' => 'ProfileId',
         'Status' => 'Status'
     ];
 
@@ -163,9 +163,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'ProfileId' => 'setProfileId',
-        'Name' => 'setName',
         'LogoUrl' => 'setLogoUrl',
+        'Name' => 'setName',
+        'ProfileId' => 'setProfileId',
         'Status' => 'setStatus'
     ];
 
@@ -175,9 +175,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'ProfileId' => 'getProfileId',
-        'Name' => 'getName',
         'LogoUrl' => 'getLogoUrl',
+        'Name' => 'getName',
+        'ProfileId' => 'getProfileId',
         'Status' => 'getStatus'
     ];
 
@@ -238,9 +238,9 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('ProfileId', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('LogoUrl', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('ProfileId', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
     }
 
@@ -287,31 +287,38 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets ProfileId
+     * Gets LogoUrl
      *
      * @return string|null
      */
-    public function getProfileId()
+    public function getLogoUrl()
     {
-        if (!isset($this->container['ProfileId']) || is_null($this->container['ProfileId'])) {
+        if (!isset($this->container['LogoUrl']) || is_null($this->container['LogoUrl'])) {
             return null;
         }
-        return $this->container['ProfileId'];
+        return $this->container['LogoUrl'];
     }
 
     /**
-     * Sets ProfileId
+     * Sets LogoUrl
      *
-     * @param string|null $ProfileId ProfileId
+     * @param string|null $LogoUrl LogoUrl
      *
      * @return self
      */
-    public function setProfileId($ProfileId)
+    public function setLogoUrl($LogoUrl)
     {
-        if (is_null($ProfileId)) {
-            throw new \InvalidArgumentException('non-nullable ProfileId cannot be null');
+        if (is_null($LogoUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'LogoUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LogoUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['ProfileId'] = $ProfileId;
+        $this->container['LogoUrl'] = $LogoUrl;
 
         return $this;
     }
@@ -354,38 +361,31 @@ class Company implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets LogoUrl
+     * Gets ProfileId
      *
      * @return string|null
      */
-    public function getLogoUrl()
+    public function getProfileId()
     {
-        if (!isset($this->container['LogoUrl']) || is_null($this->container['LogoUrl'])) {
+        if (!isset($this->container['ProfileId']) || is_null($this->container['ProfileId'])) {
             return null;
         }
-        return $this->container['LogoUrl'];
+        return $this->container['ProfileId'];
     }
 
     /**
-     * Sets LogoUrl
+     * Sets ProfileId
      *
-     * @param string|null $LogoUrl LogoUrl
+     * @param string|null $ProfileId ProfileId
      *
      * @return self
      */
-    public function setLogoUrl($LogoUrl)
+    public function setProfileId($ProfileId)
     {
-        if (is_null($LogoUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'LogoUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('LogoUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($ProfileId)) {
+            throw new \InvalidArgumentException('non-nullable ProfileId cannot be null');
         }
-        $this->container['LogoUrl'] = $LogoUrl;
+        $this->container['ProfileId'] = $ProfileId;
 
         return $this;
     }

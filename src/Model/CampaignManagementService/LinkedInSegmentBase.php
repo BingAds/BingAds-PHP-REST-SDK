@@ -35,9 +35,9 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     protected static array $openAPITypes = [
         'Id' => 'string',
         'Name' => 'string',
-        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType',
+        'Reach' => 'string',
         'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus',
-        'Reach' => 'string'
+        'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType'
     ];
 
     /**
@@ -50,9 +50,9 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     protected static array $openAPIFormats = [
         'Id' => 'int64',
         'Name' => null,
-        'Type' => null,
+        'Reach' => 'int64',
         'Status' => null,
-        'Reach' => 'int64'
+        'Type' => null
     ];
 
     /**
@@ -63,9 +63,9 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     protected static array $openAPINullables = [
         'Id' => true,
         'Name' => true,
-        'Type' => false,
-        'Status' => false,
-        'Reach' => true
+        'Reach' => true,
+        'Status' => true,
+        'Type' => false
     ];
 
     /**
@@ -156,9 +156,9 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     protected static array $attributeMap = [
         'Id' => 'Id',
         'Name' => 'Name',
-        'Type' => 'Type',
+        'Reach' => 'Reach',
         'Status' => 'Status',
-        'Reach' => 'Reach'
+        'Type' => 'Type'
     ];
 
     /**
@@ -169,9 +169,9 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     protected static array $setters = [
         'Id' => 'setId',
         'Name' => 'setName',
-        'Type' => 'setType',
+        'Reach' => 'setReach',
         'Status' => 'setStatus',
-        'Reach' => 'setReach'
+        'Type' => 'setType'
     ];
 
     /**
@@ -182,9 +182,9 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     protected static array $getters = [
         'Id' => 'getId',
         'Name' => 'getName',
-        'Type' => 'getType',
+        'Reach' => 'getReach',
         'Status' => 'getStatus',
-        'Reach' => 'getReach'
+        'Type' => 'getType'
     ];
 
     /**
@@ -246,9 +246,14 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     {
         $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Reach', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('Type', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -368,78 +373,6 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
     }
 
     /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Reach
      *
      * @return string|null
@@ -472,6 +405,85 @@ class LinkedInSegmentBase extends LinkedInSegment implements ModelInterface, Arr
             }
         }
         $this->container['Reach'] = $Reach;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\LinkedInSegmentStatus($Status);
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null
+     */
+    public function getType()
+    {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
+            return null;
+        }
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
+    }
+
+    /**
+     * Sets Type
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType|mixed|null $Type Type
+     *
+     * @return self
+     */
+    public function setType($Type)
+    {
+        if (is_null($Type)) {
+            throw new \InvalidArgumentException('non-nullable Type cannot be null');
+        }
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ProfileType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }

@@ -34,8 +34,8 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'IncludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
-        'ExcludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]'
+        'ExcludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
+        'IncludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]'
     ];
 
     /**
@@ -47,8 +47,8 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'IncludeRuleItemGroups' => null,
-        'ExcludeRuleItemGroups' => null
+        'ExcludeRuleItemGroups' => null,
+        'IncludeRuleItemGroups' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'IncludeRuleItemGroups' => true,
-        'ExcludeRuleItemGroups' => true
+        'ExcludeRuleItemGroups' => true,
+        'IncludeRuleItemGroups' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'IncludeRuleItemGroups' => 'IncludeRuleItemGroups',
-        'ExcludeRuleItemGroups' => 'ExcludeRuleItemGroups'
+        'ExcludeRuleItemGroups' => 'ExcludeRuleItemGroups',
+        'IncludeRuleItemGroups' => 'IncludeRuleItemGroups'
     ];
 
     /**
@@ -160,8 +160,8 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'IncludeRuleItemGroups' => 'setIncludeRuleItemGroups',
-        'ExcludeRuleItemGroups' => 'setExcludeRuleItemGroups'
+        'ExcludeRuleItemGroups' => 'setExcludeRuleItemGroups',
+        'IncludeRuleItemGroups' => 'setIncludeRuleItemGroups'
     ];
 
     /**
@@ -171,8 +171,8 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'IncludeRuleItemGroups' => 'getIncludeRuleItemGroups',
-        'ExcludeRuleItemGroups' => 'getExcludeRuleItemGroups'
+        'ExcludeRuleItemGroups' => 'getExcludeRuleItemGroups',
+        'IncludeRuleItemGroups' => 'getIncludeRuleItemGroups'
     ];
 
     /**
@@ -233,8 +233,13 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('IncludeRuleItemGroups', $data ?? [], null);
         $this->setIfExists('ExcludeRuleItemGroups', $data ?? [], null);
+        $this->setIfExists('IncludeRuleItemGroups', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,43 +322,6 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
     }
 
     /**
-     * Gets IncludeRuleItemGroups
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
-     */
-    public function getIncludeRuleItemGroups()
-    {
-        if (!isset($this->container['IncludeRuleItemGroups']) || is_null($this->container['IncludeRuleItemGroups'])) {
-            return null;
-        }
-        return $this->container['IncludeRuleItemGroups'];
-    }
-
-    /**
-     * Sets IncludeRuleItemGroups
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null $IncludeRuleItemGroups IncludeRuleItemGroups
-     *
-     * @return self
-     */
-    public function setIncludeRuleItemGroups($IncludeRuleItemGroups)
-    {
-        if (is_null($IncludeRuleItemGroups)) {
-            array_push($this->openAPINullablesSetToNull, 'IncludeRuleItemGroups');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IncludeRuleItemGroups', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IncludeRuleItemGroups'] = $IncludeRuleItemGroups;
-
-        return $this;
-    }
-
-    /**
      * Gets ExcludeRuleItemGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
@@ -386,6 +354,43 @@ class PageVisitorsWhoDidNotVisitAnotherPageRule extends RemarketingRule implemen
             }
         }
         $this->container['ExcludeRuleItemGroups'] = $ExcludeRuleItemGroups;
+
+        return $this;
+    }
+
+    /**
+     * Gets IncludeRuleItemGroups
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
+     */
+    public function getIncludeRuleItemGroups()
+    {
+        if (!isset($this->container['IncludeRuleItemGroups']) || is_null($this->container['IncludeRuleItemGroups'])) {
+            return null;
+        }
+        return $this->container['IncludeRuleItemGroups'];
+    }
+
+    /**
+     * Sets IncludeRuleItemGroups
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null $IncludeRuleItemGroups IncludeRuleItemGroups
+     *
+     * @return self
+     */
+    public function setIncludeRuleItemGroups($IncludeRuleItemGroups)
+    {
+        if (is_null($IncludeRuleItemGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'IncludeRuleItemGroups');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IncludeRuleItemGroups', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IncludeRuleItemGroups'] = $IncludeRuleItemGroups;
 
         return $this;
     }

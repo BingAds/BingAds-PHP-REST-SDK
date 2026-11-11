@@ -344,7 +344,7 @@ class Predicate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Operator)) {
             throw new \InvalidArgumentException('non-nullable Operator cannot be null');
         }
-        if (!$Operator instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\PredicateOperator) {
+        if (!is_null($Operator) && !$Operator instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\PredicateOperator) {
             $Operator = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\PredicateOperator($Operator);
         }
         $this->container['Operator'] = $Operator;

@@ -33,9 +33,9 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'PredefinedTime' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod',
-        'CustomDateRangeStart' => '\Microsoft\MsAds\Rest\Model\ReportingService\Date',
         'CustomDateRangeEnd' => '\Microsoft\MsAds\Rest\Model\ReportingService\Date',
+        'CustomDateRangeStart' => '\Microsoft\MsAds\Rest\Model\ReportingService\Date',
+        'PredefinedTime' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod',
         'ReportTimeZone' => '\Microsoft\MsAds\Rest\Model\ReportingService\ReportTimeZone'
     ];
 
@@ -47,9 +47,9 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'PredefinedTime' => null,
-        'CustomDateRangeStart' => null,
         'CustomDateRangeEnd' => null,
+        'CustomDateRangeStart' => null,
+        'PredefinedTime' => null,
         'ReportTimeZone' => null
     ];
 
@@ -59,10 +59,10 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'PredefinedTime' => false,
-        'CustomDateRangeStart' => true,
         'CustomDateRangeEnd' => true,
-        'ReportTimeZone' => false
+        'CustomDateRangeStart' => true,
+        'PredefinedTime' => true,
+        'ReportTimeZone' => true
     ];
 
     /**
@@ -151,9 +151,9 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'PredefinedTime' => 'PredefinedTime',
-        'CustomDateRangeStart' => 'CustomDateRangeStart',
         'CustomDateRangeEnd' => 'CustomDateRangeEnd',
+        'CustomDateRangeStart' => 'CustomDateRangeStart',
+        'PredefinedTime' => 'PredefinedTime',
         'ReportTimeZone' => 'ReportTimeZone'
     ];
 
@@ -163,9 +163,9 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'PredefinedTime' => 'setPredefinedTime',
-        'CustomDateRangeStart' => 'setCustomDateRangeStart',
         'CustomDateRangeEnd' => 'setCustomDateRangeEnd',
+        'CustomDateRangeStart' => 'setCustomDateRangeStart',
+        'PredefinedTime' => 'setPredefinedTime',
         'ReportTimeZone' => 'setReportTimeZone'
     ];
 
@@ -175,9 +175,9 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'PredefinedTime' => 'getPredefinedTime',
-        'CustomDateRangeStart' => 'getCustomDateRangeStart',
         'CustomDateRangeEnd' => 'getCustomDateRangeEnd',
+        'CustomDateRangeStart' => 'getCustomDateRangeStart',
+        'PredefinedTime' => 'getPredefinedTime',
         'ReportTimeZone' => 'getReportTimeZone'
     ];
 
@@ -238,9 +238,9 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('PredefinedTime', $data ?? [], null);
-        $this->setIfExists('CustomDateRangeStart', $data ?? [], null);
         $this->setIfExists('CustomDateRangeEnd', $data ?? [], null);
+        $this->setIfExists('CustomDateRangeStart', $data ?? [], null);
+        $this->setIfExists('PredefinedTime', $data ?? [], null);
         $this->setIfExists('ReportTimeZone', $data ?? [], null);
     }
 
@@ -287,37 +287,38 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets PredefinedTime
+     * Gets CustomDateRangeEnd
      *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\Date|null
      */
-    public function getPredefinedTime()
+    public function getCustomDateRangeEnd()
     {
-        if (!isset($this->container['PredefinedTime']) || is_null($this->container['PredefinedTime'])) {
+        if (!isset($this->container['CustomDateRangeEnd']) || is_null($this->container['CustomDateRangeEnd'])) {
             return null;
         }
-        if ((is_object($this->container['PredefinedTime']) || is_string($this->container['PredefinedTime'])) && method_exists($this->container['PredefinedTime'], 'getValue')) {
-            return $this->container['PredefinedTime']->getValue();
-        }
-        return $this->container['PredefinedTime'];
+        return $this->container['CustomDateRangeEnd'];
     }
 
     /**
-     * Sets PredefinedTime
+     * Sets CustomDateRangeEnd
      *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod|mixed|null $PredefinedTime PredefinedTime
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\Date|null $CustomDateRangeEnd CustomDateRangeEnd
      *
      * @return self
      */
-    public function setPredefinedTime($PredefinedTime)
+    public function setCustomDateRangeEnd($CustomDateRangeEnd)
     {
-        if (is_null($PredefinedTime)) {
-            throw new \InvalidArgumentException('non-nullable PredefinedTime cannot be null');
+        if (is_null($CustomDateRangeEnd)) {
+            array_push($this->openAPINullablesSetToNull, 'CustomDateRangeEnd');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CustomDateRangeEnd', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$PredefinedTime instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod) {
-            $PredefinedTime = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod($PredefinedTime);
-        }
-        $this->container['PredefinedTime'] = $PredefinedTime;
+        $this->container['CustomDateRangeEnd'] = $CustomDateRangeEnd;
 
         return $this;
     }
@@ -360,38 +361,44 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets CustomDateRangeEnd
+     * Gets PredefinedTime
      *
-     * @return \Microsoft\MsAds\Rest\Model\ReportingService\Date|null
+     * @return \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod|mixed|null
      */
-    public function getCustomDateRangeEnd()
+    public function getPredefinedTime()
     {
-        if (!isset($this->container['CustomDateRangeEnd']) || is_null($this->container['CustomDateRangeEnd'])) {
+        if (!isset($this->container['PredefinedTime']) || is_null($this->container['PredefinedTime'])) {
             return null;
         }
-        return $this->container['CustomDateRangeEnd'];
+        if ((is_object($this->container['PredefinedTime']) || is_string($this->container['PredefinedTime'])) && method_exists($this->container['PredefinedTime'], 'getValue')) {
+            return $this->container['PredefinedTime']->getValue();
+        }
+        return $this->container['PredefinedTime'];
     }
 
     /**
-     * Sets CustomDateRangeEnd
+     * Sets PredefinedTime
      *
-     * @param \Microsoft\MsAds\Rest\Model\ReportingService\Date|null $CustomDateRangeEnd CustomDateRangeEnd
+     * @param \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod|mixed|null $PredefinedTime PredefinedTime
      *
      * @return self
      */
-    public function setCustomDateRangeEnd($CustomDateRangeEnd)
+    public function setPredefinedTime($PredefinedTime)
     {
-        if (is_null($CustomDateRangeEnd)) {
-            array_push($this->openAPINullablesSetToNull, 'CustomDateRangeEnd');
+        if (is_null($PredefinedTime)) {
+            array_push($this->openAPINullablesSetToNull, 'PredefinedTime');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CustomDateRangeEnd', $nullablesSetToNull);
+            $index = array_search('PredefinedTime', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['CustomDateRangeEnd'] = $CustomDateRangeEnd;
+        if (!is_null($PredefinedTime) && !$PredefinedTime instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod) {
+            $PredefinedTime = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimePeriod($PredefinedTime);
+        }
+        $this->container['PredefinedTime'] = $PredefinedTime;
 
         return $this;
     }
@@ -422,9 +429,16 @@ class ReportTime implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setReportTimeZone($ReportTimeZone)
     {
         if (is_null($ReportTimeZone)) {
-            throw new \InvalidArgumentException('non-nullable ReportTimeZone cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ReportTimeZone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ReportTimeZone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ReportTimeZone instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimeZone) {
+        if (!is_null($ReportTimeZone) && !$ReportTimeZone instanceof \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimeZone) {
             $ReportTimeZone = new \Microsoft\MsAds\Rest\Model\ReportingService\ReportTimeZone($ReportTimeZone);
         }
         $this->container['ReportTimeZone'] = $ReportTimeZone;

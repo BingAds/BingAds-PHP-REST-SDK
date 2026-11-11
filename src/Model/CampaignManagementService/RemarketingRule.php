@@ -46,19 +46,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'RuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
         'NormalForm' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm',
+        'RuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
         'AnotherRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
-        'IncludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
         'ExcludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
-        'CategoryOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator',
-        'Category' => 'string',
-        'ActionOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator',
+        'IncludeRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
         'Action' => 'string',
-        'LabelOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator',
+        'ActionOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator',
+        'Category' => 'string',
+        'CategoryOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator',
         'Label' => 'string',
-        'ValueOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator',
-        'Value' => 'float'
+        'LabelOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator',
+        'Value' => 'float',
+        'ValueOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator'
     ];
 
     /**
@@ -70,19 +70,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'RuleItemGroups' => null,
         'NormalForm' => null,
+        'RuleItemGroups' => null,
         'AnotherRuleItemGroups' => null,
-        'IncludeRuleItemGroups' => null,
         'ExcludeRuleItemGroups' => null,
-        'CategoryOperator' => null,
-        'Category' => null,
-        'ActionOperator' => null,
+        'IncludeRuleItemGroups' => null,
         'Action' => null,
-        'LabelOperator' => null,
+        'ActionOperator' => null,
+        'Category' => null,
+        'CategoryOperator' => null,
         'Label' => null,
-        'ValueOperator' => null,
-        'Value' => 'double'
+        'LabelOperator' => null,
+        'Value' => 'double',
+        'ValueOperator' => null
     ];
 
     /**
@@ -92,19 +92,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'Type' => true,
+        'NormalForm' => true,
         'RuleItemGroups' => true,
-        'NormalForm' => false,
         'AnotherRuleItemGroups' => true,
-        'IncludeRuleItemGroups' => true,
         'ExcludeRuleItemGroups' => true,
-        'CategoryOperator' => false,
-        'Category' => true,
-        'ActionOperator' => false,
+        'IncludeRuleItemGroups' => true,
         'Action' => true,
-        'LabelOperator' => false,
+        'ActionOperator' => false,
+        'Category' => true,
+        'CategoryOperator' => false,
         'Label' => true,
-        'ValueOperator' => false,
-        'Value' => true
+        'LabelOperator' => false,
+        'Value' => true,
+        'ValueOperator' => false
     ];
 
     /**
@@ -194,19 +194,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'RuleItemGroups' => 'RuleItemGroups',
         'NormalForm' => 'NormalForm',
+        'RuleItemGroups' => 'RuleItemGroups',
         'AnotherRuleItemGroups' => 'AnotherRuleItemGroups',
-        'IncludeRuleItemGroups' => 'IncludeRuleItemGroups',
         'ExcludeRuleItemGroups' => 'ExcludeRuleItemGroups',
-        'CategoryOperator' => 'CategoryOperator',
-        'Category' => 'Category',
-        'ActionOperator' => 'ActionOperator',
+        'IncludeRuleItemGroups' => 'IncludeRuleItemGroups',
         'Action' => 'Action',
-        'LabelOperator' => 'LabelOperator',
+        'ActionOperator' => 'ActionOperator',
+        'Category' => 'Category',
+        'CategoryOperator' => 'CategoryOperator',
         'Label' => 'Label',
-        'ValueOperator' => 'ValueOperator',
-        'Value' => 'Value'
+        'LabelOperator' => 'LabelOperator',
+        'Value' => 'Value',
+        'ValueOperator' => 'ValueOperator'
     ];
 
     /**
@@ -216,19 +216,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'RuleItemGroups' => 'setRuleItemGroups',
         'NormalForm' => 'setNormalForm',
+        'RuleItemGroups' => 'setRuleItemGroups',
         'AnotherRuleItemGroups' => 'setAnotherRuleItemGroups',
-        'IncludeRuleItemGroups' => 'setIncludeRuleItemGroups',
         'ExcludeRuleItemGroups' => 'setExcludeRuleItemGroups',
-        'CategoryOperator' => 'setCategoryOperator',
-        'Category' => 'setCategory',
-        'ActionOperator' => 'setActionOperator',
+        'IncludeRuleItemGroups' => 'setIncludeRuleItemGroups',
         'Action' => 'setAction',
-        'LabelOperator' => 'setLabelOperator',
+        'ActionOperator' => 'setActionOperator',
+        'Category' => 'setCategory',
+        'CategoryOperator' => 'setCategoryOperator',
         'Label' => 'setLabel',
-        'ValueOperator' => 'setValueOperator',
-        'Value' => 'setValue'
+        'LabelOperator' => 'setLabelOperator',
+        'Value' => 'setValue',
+        'ValueOperator' => 'setValueOperator'
     ];
 
     /**
@@ -238,19 +238,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'RuleItemGroups' => 'getRuleItemGroups',
         'NormalForm' => 'getNormalForm',
+        'RuleItemGroups' => 'getRuleItemGroups',
         'AnotherRuleItemGroups' => 'getAnotherRuleItemGroups',
-        'IncludeRuleItemGroups' => 'getIncludeRuleItemGroups',
         'ExcludeRuleItemGroups' => 'getExcludeRuleItemGroups',
-        'CategoryOperator' => 'getCategoryOperator',
-        'Category' => 'getCategory',
-        'ActionOperator' => 'getActionOperator',
+        'IncludeRuleItemGroups' => 'getIncludeRuleItemGroups',
         'Action' => 'getAction',
-        'LabelOperator' => 'getLabelOperator',
+        'ActionOperator' => 'getActionOperator',
+        'Category' => 'getCategory',
+        'CategoryOperator' => 'getCategoryOperator',
         'Label' => 'getLabel',
-        'ValueOperator' => 'getValueOperator',
-        'Value' => 'getValue'
+        'LabelOperator' => 'getLabelOperator',
+        'Value' => 'getValue',
+        'ValueOperator' => 'getValueOperator'
     ];
 
     /**
@@ -311,19 +311,19 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('NormalForm', $data ?? [], null);
+        $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('AnotherRuleItemGroups', $data ?? [], null);
-        $this->setIfExists('IncludeRuleItemGroups', $data ?? [], null);
         $this->setIfExists('ExcludeRuleItemGroups', $data ?? [], null);
-        $this->setIfExists('CategoryOperator', $data ?? [], null);
-        $this->setIfExists('Category', $data ?? [], null);
-        $this->setIfExists('ActionOperator', $data ?? [], null);
+        $this->setIfExists('IncludeRuleItemGroups', $data ?? [], null);
         $this->setIfExists('Action', $data ?? [], null);
-        $this->setIfExists('LabelOperator', $data ?? [], null);
+        $this->setIfExists('ActionOperator', $data ?? [], null);
+        $this->setIfExists('Category', $data ?? [], null);
+        $this->setIfExists('CategoryOperator', $data ?? [], null);
         $this->setIfExists('Label', $data ?? [], null);
-        $this->setIfExists('ValueOperator', $data ?? [], null);
+        $this->setIfExists('LabelOperator', $data ?? [], null);
         $this->setIfExists('Value', $data ?? [], null);
+        $this->setIfExists('ValueOperator', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['Type'] = static::$openAPIModelName;
@@ -409,6 +409,49 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets NormalForm
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null
+     */
+    public function getNormalForm()
+    {
+        if (!isset($this->container['NormalForm']) || is_null($this->container['NormalForm'])) {
+            return null;
+        }
+        if ((is_object($this->container['NormalForm']) || is_string($this->container['NormalForm'])) && method_exists($this->container['NormalForm'], 'getValue')) {
+            return $this->container['NormalForm']->getValue();
+        }
+        return $this->container['NormalForm'];
+    }
+
+    /**
+     * Sets NormalForm
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null $NormalForm NormalForm
+     *
+     * @return self
+     */
+    public function setNormalForm($NormalForm)
+    {
+        if (is_null($NormalForm)) {
+            array_push($this->openAPINullablesSetToNull, 'NormalForm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NormalForm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($NormalForm) && !$NormalForm instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm) {
+            $NormalForm = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm($NormalForm);
+        }
+        $this->container['NormalForm'] = $NormalForm;
+
+        return $this;
+    }
+
+    /**
      * Gets RuleItemGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
@@ -441,42 +484,6 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['RuleItemGroups'] = $RuleItemGroups;
-
-        return $this;
-    }
-
-    /**
-     * Gets NormalForm
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null
-     */
-    public function getNormalForm()
-    {
-        if (!isset($this->container['NormalForm']) || is_null($this->container['NormalForm'])) {
-            return null;
-        }
-        if ((is_object($this->container['NormalForm']) || is_string($this->container['NormalForm'])) && method_exists($this->container['NormalForm'], 'getValue')) {
-            return $this->container['NormalForm']->getValue();
-        }
-        return $this->container['NormalForm'];
-    }
-
-    /**
-     * Sets NormalForm
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null $NormalForm NormalForm
-     *
-     * @return self
-     */
-    public function setNormalForm($NormalForm)
-    {
-        if (is_null($NormalForm)) {
-            throw new \InvalidArgumentException('non-nullable NormalForm cannot be null');
-        }
-        if (!$NormalForm instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm) {
-            $NormalForm = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm($NormalForm);
-        }
-        $this->container['NormalForm'] = $NormalForm;
 
         return $this;
     }
@@ -519,43 +526,6 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets IncludeRuleItemGroups
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
-     */
-    public function getIncludeRuleItemGroups()
-    {
-        if (!isset($this->container['IncludeRuleItemGroups']) || is_null($this->container['IncludeRuleItemGroups'])) {
-            return null;
-        }
-        return $this->container['IncludeRuleItemGroups'];
-    }
-
-    /**
-     * Sets IncludeRuleItemGroups
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null $IncludeRuleItemGroups IncludeRuleItemGroups
-     *
-     * @return self
-     */
-    public function setIncludeRuleItemGroups($IncludeRuleItemGroups)
-    {
-        if (is_null($IncludeRuleItemGroups)) {
-            array_push($this->openAPINullablesSetToNull, 'IncludeRuleItemGroups');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IncludeRuleItemGroups', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IncludeRuleItemGroups'] = $IncludeRuleItemGroups;
-
-        return $this;
-    }
-
-    /**
      * Gets ExcludeRuleItemGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
@@ -593,110 +563,38 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets CategoryOperator
+     * Gets IncludeRuleItemGroups
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
      */
-    public function getCategoryOperator()
+    public function getIncludeRuleItemGroups()
     {
-        if (!isset($this->container['CategoryOperator']) || is_null($this->container['CategoryOperator'])) {
+        if (!isset($this->container['IncludeRuleItemGroups']) || is_null($this->container['IncludeRuleItemGroups'])) {
             return null;
         }
-        if ((is_object($this->container['CategoryOperator']) || is_string($this->container['CategoryOperator'])) && method_exists($this->container['CategoryOperator'], 'getValue')) {
-            return $this->container['CategoryOperator']->getValue();
-        }
-        return $this->container['CategoryOperator'];
+        return $this->container['IncludeRuleItemGroups'];
     }
 
     /**
-     * Sets CategoryOperator
+     * Sets IncludeRuleItemGroups
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null $CategoryOperator CategoryOperator
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null $IncludeRuleItemGroups IncludeRuleItemGroups
      *
      * @return self
      */
-    public function setCategoryOperator($CategoryOperator)
+    public function setIncludeRuleItemGroups($IncludeRuleItemGroups)
     {
-        if (is_null($CategoryOperator)) {
-            throw new \InvalidArgumentException('non-nullable CategoryOperator cannot be null');
-        }
-        if (!$CategoryOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator) {
-            $CategoryOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator($CategoryOperator);
-        }
-        $this->container['CategoryOperator'] = $CategoryOperator;
-
-        return $this;
-    }
-
-    /**
-     * Gets Category
-     *
-     * @return string|null
-     */
-    public function getCategory()
-    {
-        if (!isset($this->container['Category']) || is_null($this->container['Category'])) {
-            return null;
-        }
-        return $this->container['Category'];
-    }
-
-    /**
-     * Sets Category
-     *
-     * @param string|null $Category Category
-     *
-     * @return self
-     */
-    public function setCategory($Category)
-    {
-        if (is_null($Category)) {
-            array_push($this->openAPINullablesSetToNull, 'Category');
+        if (is_null($IncludeRuleItemGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'IncludeRuleItemGroups');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Category', $nullablesSetToNull);
+            $index = array_search('IncludeRuleItemGroups', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Category'] = $Category;
-
-        return $this;
-    }
-
-    /**
-     * Gets ActionOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null
-     */
-    public function getActionOperator()
-    {
-        if (!isset($this->container['ActionOperator']) || is_null($this->container['ActionOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['ActionOperator']) || is_string($this->container['ActionOperator'])) && method_exists($this->container['ActionOperator'], 'getValue')) {
-            return $this->container['ActionOperator']->getValue();
-        }
-        return $this->container['ActionOperator'];
-    }
-
-    /**
-     * Sets ActionOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null $ActionOperator ActionOperator
-     *
-     * @return self
-     */
-    public function setActionOperator($ActionOperator)
-    {
-        if (is_null($ActionOperator)) {
-            throw new \InvalidArgumentException('non-nullable ActionOperator cannot be null');
-        }
-        if (!$ActionOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator) {
-            $ActionOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator($ActionOperator);
-        }
-        $this->container['ActionOperator'] = $ActionOperator;
+        $this->container['IncludeRuleItemGroups'] = $IncludeRuleItemGroups;
 
         return $this;
     }
@@ -739,37 +637,110 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets LabelOperator
+     * Gets ActionOperator
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null
      */
-    public function getLabelOperator()
+    public function getActionOperator()
     {
-        if (!isset($this->container['LabelOperator']) || is_null($this->container['LabelOperator'])) {
+        if (!isset($this->container['ActionOperator']) || is_null($this->container['ActionOperator'])) {
             return null;
         }
-        if ((is_object($this->container['LabelOperator']) || is_string($this->container['LabelOperator'])) && method_exists($this->container['LabelOperator'], 'getValue')) {
-            return $this->container['LabelOperator']->getValue();
+        if ((is_object($this->container['ActionOperator']) || is_string($this->container['ActionOperator'])) && method_exists($this->container['ActionOperator'], 'getValue')) {
+            return $this->container['ActionOperator']->getValue();
         }
-        return $this->container['LabelOperator'];
+        return $this->container['ActionOperator'];
     }
 
     /**
-     * Sets LabelOperator
+     * Sets ActionOperator
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null $LabelOperator LabelOperator
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null $ActionOperator ActionOperator
      *
      * @return self
      */
-    public function setLabelOperator($LabelOperator)
+    public function setActionOperator($ActionOperator)
     {
-        if (is_null($LabelOperator)) {
-            throw new \InvalidArgumentException('non-nullable LabelOperator cannot be null');
+        if (is_null($ActionOperator)) {
+            throw new \InvalidArgumentException('non-nullable ActionOperator cannot be null');
         }
-        if (!$LabelOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator) {
-            $LabelOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator($LabelOperator);
+        if (!is_null($ActionOperator) && !$ActionOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator) {
+            $ActionOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator($ActionOperator);
         }
-        $this->container['LabelOperator'] = $LabelOperator;
+        $this->container['ActionOperator'] = $ActionOperator;
+
+        return $this;
+    }
+
+    /**
+     * Gets Category
+     *
+     * @return string|null
+     */
+    public function getCategory()
+    {
+        if (!isset($this->container['Category']) || is_null($this->container['Category'])) {
+            return null;
+        }
+        return $this->container['Category'];
+    }
+
+    /**
+     * Sets Category
+     *
+     * @param string|null $Category Category
+     *
+     * @return self
+     */
+    public function setCategory($Category)
+    {
+        if (is_null($Category)) {
+            array_push($this->openAPINullablesSetToNull, 'Category');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Category', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Category'] = $Category;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategoryOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null
+     */
+    public function getCategoryOperator()
+    {
+        if (!isset($this->container['CategoryOperator']) || is_null($this->container['CategoryOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['CategoryOperator']) || is_string($this->container['CategoryOperator'])) && method_exists($this->container['CategoryOperator'], 'getValue')) {
+            return $this->container['CategoryOperator']->getValue();
+        }
+        return $this->container['CategoryOperator'];
+    }
+
+    /**
+     * Sets CategoryOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null $CategoryOperator CategoryOperator
+     *
+     * @return self
+     */
+    public function setCategoryOperator($CategoryOperator)
+    {
+        if (is_null($CategoryOperator)) {
+            throw new \InvalidArgumentException('non-nullable CategoryOperator cannot be null');
+        }
+        if (!is_null($CategoryOperator) && !$CategoryOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator) {
+            $CategoryOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator($CategoryOperator);
+        }
+        $this->container['CategoryOperator'] = $CategoryOperator;
 
         return $this;
     }
@@ -812,37 +783,37 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ValueOperator
+     * Gets LabelOperator
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator|mixed|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null
      */
-    public function getValueOperator()
+    public function getLabelOperator()
     {
-        if (!isset($this->container['ValueOperator']) || is_null($this->container['ValueOperator'])) {
+        if (!isset($this->container['LabelOperator']) || is_null($this->container['LabelOperator'])) {
             return null;
         }
-        if ((is_object($this->container['ValueOperator']) || is_string($this->container['ValueOperator'])) && method_exists($this->container['ValueOperator'], 'getValue')) {
-            return $this->container['ValueOperator']->getValue();
+        if ((is_object($this->container['LabelOperator']) || is_string($this->container['LabelOperator'])) && method_exists($this->container['LabelOperator'], 'getValue')) {
+            return $this->container['LabelOperator']->getValue();
         }
-        return $this->container['ValueOperator'];
+        return $this->container['LabelOperator'];
     }
 
     /**
-     * Sets ValueOperator
+     * Sets LabelOperator
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator|mixed|null $ValueOperator ValueOperator
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator|mixed|null $LabelOperator LabelOperator
      *
      * @return self
      */
-    public function setValueOperator($ValueOperator)
+    public function setLabelOperator($LabelOperator)
     {
-        if (is_null($ValueOperator)) {
-            throw new \InvalidArgumentException('non-nullable ValueOperator cannot be null');
+        if (is_null($LabelOperator)) {
+            throw new \InvalidArgumentException('non-nullable LabelOperator cannot be null');
         }
-        if (!$ValueOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator) {
-            $ValueOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator($ValueOperator);
+        if (!is_null($LabelOperator) && !$LabelOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator) {
+            $LabelOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\StringOperator($LabelOperator);
         }
-        $this->container['ValueOperator'] = $ValueOperator;
+        $this->container['LabelOperator'] = $LabelOperator;
 
         return $this;
     }
@@ -880,6 +851,42 @@ class RemarketingRule implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Value'] = $Value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ValueOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator|mixed|null
+     */
+    public function getValueOperator()
+    {
+        if (!isset($this->container['ValueOperator']) || is_null($this->container['ValueOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['ValueOperator']) || is_string($this->container['ValueOperator'])) && method_exists($this->container['ValueOperator'], 'getValue')) {
+            return $this->container['ValueOperator']->getValue();
+        }
+        return $this->container['ValueOperator'];
+    }
+
+    /**
+     * Sets ValueOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator|mixed|null $ValueOperator ValueOperator
+     *
+     * @return self
+     */
+    public function setValueOperator($ValueOperator)
+    {
+        if (is_null($ValueOperator)) {
+            throw new \InvalidArgumentException('non-nullable ValueOperator cannot be null');
+        }
+        if (!is_null($ValueOperator) && !$ValueOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator) {
+            $ValueOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NumberOperator($ValueOperator);
+        }
+        $this->container['ValueOperator'] = $ValueOperator;
 
         return $this;
     }

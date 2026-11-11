@@ -33,11 +33,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Image' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Image',
-        'ImageUrl' => 'string',
         'AssetLink' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink',
+        'Image' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Image',
         'ImageMetadata' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdRecommendationImageSuggestionMetadata',
-        'InternalTemplate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RecommendationTemplate'
+        'ImageUrl' => 'string'
     ];
 
     /**
@@ -48,11 +47,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Image' => null,
-        'ImageUrl' => null,
         'AssetLink' => null,
+        'Image' => null,
         'ImageMetadata' => null,
-        'InternalTemplate' => null
+        'ImageUrl' => null
     ];
 
     /**
@@ -61,11 +59,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Image' => true,
-        'ImageUrl' => true,
         'AssetLink' => true,
+        'Image' => true,
         'ImageMetadata' => true,
-        'InternalTemplate' => true
+        'ImageUrl' => true
     ];
 
     /**
@@ -154,11 +151,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Image' => 'Image',
-        'ImageUrl' => 'ImageUrl',
         'AssetLink' => 'AssetLink',
+        'Image' => 'Image',
         'ImageMetadata' => 'ImageMetadata',
-        'InternalTemplate' => 'Internal_Template'
+        'ImageUrl' => 'ImageUrl'
     ];
 
     /**
@@ -167,11 +163,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $setters = [
-        'Image' => 'setImage',
-        'ImageUrl' => 'setImageUrl',
         'AssetLink' => 'setAssetLink',
+        'Image' => 'setImage',
         'ImageMetadata' => 'setImageMetadata',
-        'InternalTemplate' => 'setInternalTemplate'
+        'ImageUrl' => 'setImageUrl'
     ];
 
     /**
@@ -180,11 +175,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static array $getters = [
-        'Image' => 'getImage',
-        'ImageUrl' => 'getImageUrl',
         'AssetLink' => 'getAssetLink',
+        'Image' => 'getImage',
         'ImageMetadata' => 'getImageMetadata',
-        'InternalTemplate' => 'getInternalTemplate'
+        'ImageUrl' => 'getImageUrl'
     ];
 
     /**
@@ -244,11 +238,10 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Image', $data ?? [], null);
-        $this->setIfExists('ImageUrl', $data ?? [], null);
         $this->setIfExists('AssetLink', $data ?? [], null);
+        $this->setIfExists('Image', $data ?? [], null);
         $this->setIfExists('ImageMetadata', $data ?? [], null);
-        $this->setIfExists('InternalTemplate', $data ?? [], null);
+        $this->setIfExists('ImageUrl', $data ?? [], null);
     }
 
     /**
@@ -294,80 +287,6 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets Image
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Image|null
-     */
-    public function getImage()
-    {
-        if (!isset($this->container['Image']) || is_null($this->container['Image'])) {
-            return null;
-        }
-        return $this->container['Image'];
-    }
-
-    /**
-     * Sets Image
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Image|null $Image Image
-     *
-     * @return self
-     */
-    public function setImage($Image)
-    {
-        if (is_null($Image)) {
-            array_push($this->openAPINullablesSetToNull, 'Image');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Image', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Image'] = $Image;
-
-        return $this;
-    }
-
-    /**
-     * Gets ImageUrl
-     *
-     * @return string|null
-     */
-    public function getImageUrl()
-    {
-        if (!isset($this->container['ImageUrl']) || is_null($this->container['ImageUrl'])) {
-            return null;
-        }
-        return $this->container['ImageUrl'];
-    }
-
-    /**
-     * Sets ImageUrl
-     *
-     * @param string|null $ImageUrl ImageUrl
-     *
-     * @return self
-     */
-    public function setImageUrl($ImageUrl)
-    {
-        if (is_null($ImageUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'ImageUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ImageUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ImageUrl'] = $ImageUrl;
-
-        return $this;
-    }
-
-    /**
      * Gets AssetLink
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AssetLink|null
@@ -400,6 +319,43 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['AssetLink'] = $AssetLink;
+
+        return $this;
+    }
+
+    /**
+     * Gets Image
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Image|null
+     */
+    public function getImage()
+    {
+        if (!isset($this->container['Image']) || is_null($this->container['Image'])) {
+            return null;
+        }
+        return $this->container['Image'];
+    }
+
+    /**
+     * Sets Image
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Image|null $Image Image
+     *
+     * @return self
+     */
+    public function setImage($Image)
+    {
+        if (is_null($Image)) {
+            array_push($this->openAPINullablesSetToNull, 'Image');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Image', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Image'] = $Image;
 
         return $this;
     }
@@ -442,38 +398,38 @@ class AdRecommendationImageSuggestion implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets InternalTemplate
+     * Gets ImageUrl
      *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RecommendationTemplate|null
+     * @return string|null
      */
-    public function getInternalTemplate()
+    public function getImageUrl()
     {
-        if (!isset($this->container['InternalTemplate']) || is_null($this->container['InternalTemplate'])) {
+        if (!isset($this->container['ImageUrl']) || is_null($this->container['ImageUrl'])) {
             return null;
         }
-        return $this->container['InternalTemplate'];
+        return $this->container['ImageUrl'];
     }
 
     /**
-     * Sets InternalTemplate
+     * Sets ImageUrl
      *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RecommendationTemplate|null $InternalTemplate InternalTemplate
+     * @param string|null $ImageUrl ImageUrl
      *
      * @return self
      */
-    public function setInternalTemplate($InternalTemplate)
+    public function setImageUrl($ImageUrl)
     {
-        if (is_null($InternalTemplate)) {
-            array_push($this->openAPINullablesSetToNull, 'InternalTemplate');
+        if (is_null($ImageUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'ImageUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('InternalTemplate', $nullablesSetToNull);
+            $index = array_search('ImageUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['InternalTemplate'] = $InternalTemplate;
+        $this->container['ImageUrl'] = $ImageUrl;
 
         return $this;
     }

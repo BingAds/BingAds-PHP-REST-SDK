@@ -34,8 +34,8 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'RuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
-        'NormalForm' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm'
+        'NormalForm' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm',
+        'RuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]'
     ];
 
     /**
@@ -47,8 +47,8 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'RuleItemGroups' => null,
-        'NormalForm' => null
+        'NormalForm' => null,
+        'RuleItemGroups' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'RuleItemGroups' => true,
-        'NormalForm' => false
+        'NormalForm' => true,
+        'RuleItemGroups' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'RuleItemGroups' => 'RuleItemGroups',
-        'NormalForm' => 'NormalForm'
+        'NormalForm' => 'NormalForm',
+        'RuleItemGroups' => 'RuleItemGroups'
     ];
 
     /**
@@ -160,8 +160,8 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'RuleItemGroups' => 'setRuleItemGroups',
-        'NormalForm' => 'setNormalForm'
+        'NormalForm' => 'setNormalForm',
+        'RuleItemGroups' => 'setRuleItemGroups'
     ];
 
     /**
@@ -171,8 +171,8 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'RuleItemGroups' => 'getRuleItemGroups',
-        'NormalForm' => 'getNormalForm'
+        'NormalForm' => 'getNormalForm',
+        'RuleItemGroups' => 'getRuleItemGroups'
     ];
 
     /**
@@ -233,8 +233,13 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('NormalForm', $data ?? [], null);
+        $this->setIfExists('RuleItemGroups', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,6 +322,49 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
     }
 
     /**
+     * Gets NormalForm
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null
+     */
+    public function getNormalForm()
+    {
+        if (!isset($this->container['NormalForm']) || is_null($this->container['NormalForm'])) {
+            return null;
+        }
+        if ((is_object($this->container['NormalForm']) || is_string($this->container['NormalForm'])) && method_exists($this->container['NormalForm'], 'getValue')) {
+            return $this->container['NormalForm']->getValue();
+        }
+        return $this->container['NormalForm'];
+    }
+
+    /**
+     * Sets NormalForm
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null $NormalForm NormalForm
+     *
+     * @return self
+     */
+    public function setNormalForm($NormalForm)
+    {
+        if (is_null($NormalForm)) {
+            array_push($this->openAPINullablesSetToNull, 'NormalForm');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('NormalForm', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($NormalForm) && !$NormalForm instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm) {
+            $NormalForm = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm($NormalForm);
+        }
+        $this->container['NormalForm'] = $NormalForm;
+
+        return $this;
+    }
+
+    /**
      * Gets RuleItemGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
@@ -349,42 +397,6 @@ class PageVisitorsRule extends RemarketingRule implements ModelInterface, ArrayA
             }
         }
         $this->container['RuleItemGroups'] = $RuleItemGroups;
-
-        return $this;
-    }
-
-    /**
-     * Gets NormalForm
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null
-     */
-    public function getNormalForm()
-    {
-        if (!isset($this->container['NormalForm']) || is_null($this->container['NormalForm'])) {
-            return null;
-        }
-        if ((is_object($this->container['NormalForm']) || is_string($this->container['NormalForm'])) && method_exists($this->container['NormalForm'], 'getValue')) {
-            return $this->container['NormalForm']->getValue();
-        }
-        return $this->container['NormalForm'];
-    }
-
-    /**
-     * Sets NormalForm
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm|mixed|null $NormalForm NormalForm
-     *
-     * @return self
-     */
-    public function setNormalForm($NormalForm)
-    {
-        if (is_null($NormalForm)) {
-            throw new \InvalidArgumentException('non-nullable NormalForm cannot be null');
-        }
-        if (!$NormalForm instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm) {
-            $NormalForm = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\NormalForm($NormalForm);
-        }
-        $this->container['NormalForm'] = $NormalForm;
 
         return $this;
     }

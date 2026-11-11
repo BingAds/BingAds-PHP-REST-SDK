@@ -33,12 +33,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'SharedEntityId' => 'string',
-        'SharedEntityType' => 'string',
         'EntityId' => 'string',
         'EntityType' => 'string',
-        'SharedEntityCustomerId' => 'string',
         'IsExclusion' => 'bool',
+        'SharedEntityCustomerId' => 'string',
+        'SharedEntityId' => 'string',
+        'SharedEntityType' => 'string',
         'Status' => 'string'
     ];
 
@@ -50,12 +50,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'SharedEntityId' => 'int64',
-        'SharedEntityType' => null,
         'EntityId' => 'int64',
         'EntityType' => null,
-        'SharedEntityCustomerId' => 'int64',
         'IsExclusion' => null,
+        'SharedEntityCustomerId' => 'int64',
+        'SharedEntityId' => 'int64',
+        'SharedEntityType' => null,
         'Status' => null
     ];
 
@@ -65,12 +65,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'SharedEntityId' => false,
-        'SharedEntityType' => true,
         'EntityId' => false,
         'EntityType' => true,
-        'SharedEntityCustomerId' => true,
         'IsExclusion' => true,
+        'SharedEntityCustomerId' => true,
+        'SharedEntityId' => false,
+        'SharedEntityType' => true,
         'Status' => true
     ];
 
@@ -160,12 +160,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $attributeMap = [
-        'SharedEntityId' => 'SharedEntityId',
-        'SharedEntityType' => 'SharedEntityType',
         'EntityId' => 'EntityId',
         'EntityType' => 'EntityType',
-        'SharedEntityCustomerId' => 'SharedEntityCustomerId',
         'IsExclusion' => 'IsExclusion',
+        'SharedEntityCustomerId' => 'SharedEntityCustomerId',
+        'SharedEntityId' => 'SharedEntityId',
+        'SharedEntityType' => 'SharedEntityType',
         'Status' => 'Status'
     ];
 
@@ -175,12 +175,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $setters = [
-        'SharedEntityId' => 'setSharedEntityId',
-        'SharedEntityType' => 'setSharedEntityType',
         'EntityId' => 'setEntityId',
         'EntityType' => 'setEntityType',
-        'SharedEntityCustomerId' => 'setSharedEntityCustomerId',
         'IsExclusion' => 'setIsExclusion',
+        'SharedEntityCustomerId' => 'setSharedEntityCustomerId',
+        'SharedEntityId' => 'setSharedEntityId',
+        'SharedEntityType' => 'setSharedEntityType',
         'Status' => 'setStatus'
     ];
 
@@ -190,12 +190,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static array $getters = [
-        'SharedEntityId' => 'getSharedEntityId',
-        'SharedEntityType' => 'getSharedEntityType',
         'EntityId' => 'getEntityId',
         'EntityType' => 'getEntityType',
-        'SharedEntityCustomerId' => 'getSharedEntityCustomerId',
         'IsExclusion' => 'getIsExclusion',
+        'SharedEntityCustomerId' => 'getSharedEntityCustomerId',
+        'SharedEntityId' => 'getSharedEntityId',
+        'SharedEntityType' => 'getSharedEntityType',
         'Status' => 'getStatus'
     ];
 
@@ -256,12 +256,12 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('SharedEntityId', $data ?? [], null);
-        $this->setIfExists('SharedEntityType', $data ?? [], null);
         $this->setIfExists('EntityId', $data ?? [], null);
         $this->setIfExists('EntityType', $data ?? [], null);
-        $this->setIfExists('SharedEntityCustomerId', $data ?? [], null);
         $this->setIfExists('IsExclusion', $data ?? [], null);
+        $this->setIfExists('SharedEntityCustomerId', $data ?? [], null);
+        $this->setIfExists('SharedEntityId', $data ?? [], null);
+        $this->setIfExists('SharedEntityType', $data ?? [], null);
         $this->setIfExists('Status', $data ?? [], null);
     }
 
@@ -306,73 +306,6 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets SharedEntityId
-     *
-     * @return string|null
-     */
-    public function getSharedEntityId()
-    {
-        if (!isset($this->container['SharedEntityId']) || is_null($this->container['SharedEntityId'])) {
-            return null;
-        }
-        return $this->container['SharedEntityId'];
-    }
-
-    /**
-     * Sets SharedEntityId
-     *
-     * @param string|null $SharedEntityId SharedEntityId
-     *
-     * @return self
-     */
-    public function setSharedEntityId($SharedEntityId)
-    {
-        if (is_null($SharedEntityId)) {
-            throw new \InvalidArgumentException('non-nullable SharedEntityId cannot be null');
-        }
-        $this->container['SharedEntityId'] = $SharedEntityId;
-
-        return $this;
-    }
-
-    /**
-     * Gets SharedEntityType
-     *
-     * @return string|null
-     */
-    public function getSharedEntityType()
-    {
-        if (!isset($this->container['SharedEntityType']) || is_null($this->container['SharedEntityType'])) {
-            return null;
-        }
-        return $this->container['SharedEntityType'];
-    }
-
-    /**
-     * Sets SharedEntityType
-     *
-     * @param string|null $SharedEntityType SharedEntityType
-     *
-     * @return self
-     */
-    public function setSharedEntityType($SharedEntityType)
-    {
-        if (is_null($SharedEntityType)) {
-            array_push($this->openAPINullablesSetToNull, 'SharedEntityType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SharedEntityType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SharedEntityType'] = $SharedEntityType;
-
-        return $this;
-    }
 
     /**
      * Gets EntityId
@@ -442,6 +375,43 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets IsExclusion
+     *
+     * @return bool|null
+     */
+    public function getIsExclusion()
+    {
+        if (!isset($this->container['IsExclusion']) || is_null($this->container['IsExclusion'])) {
+            return null;
+        }
+        return $this->container['IsExclusion'];
+    }
+
+    /**
+     * Sets IsExclusion
+     *
+     * @param bool|null $IsExclusion IsExclusion
+     *
+     * @return self
+     */
+    public function setIsExclusion($IsExclusion)
+    {
+        if (is_null($IsExclusion)) {
+            array_push($this->openAPINullablesSetToNull, 'IsExclusion');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsExclusion', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsExclusion'] = $IsExclusion;
+
+        return $this;
+    }
+
+    /**
      * Gets SharedEntityCustomerId
      *
      * @return string|null
@@ -479,38 +449,68 @@ class SharedEntityAssociation implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets IsExclusion
+     * Gets SharedEntityId
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getIsExclusion()
+    public function getSharedEntityId()
     {
-        if (!isset($this->container['IsExclusion']) || is_null($this->container['IsExclusion'])) {
+        if (!isset($this->container['SharedEntityId']) || is_null($this->container['SharedEntityId'])) {
             return null;
         }
-        return $this->container['IsExclusion'];
+        return $this->container['SharedEntityId'];
     }
 
     /**
-     * Sets IsExclusion
+     * Sets SharedEntityId
      *
-     * @param bool|null $IsExclusion IsExclusion
+     * @param string|null $SharedEntityId SharedEntityId
      *
      * @return self
      */
-    public function setIsExclusion($IsExclusion)
+    public function setSharedEntityId($SharedEntityId)
     {
-        if (is_null($IsExclusion)) {
-            array_push($this->openAPINullablesSetToNull, 'IsExclusion');
+        if (is_null($SharedEntityId)) {
+            throw new \InvalidArgumentException('non-nullable SharedEntityId cannot be null');
+        }
+        $this->container['SharedEntityId'] = $SharedEntityId;
+
+        return $this;
+    }
+
+    /**
+     * Gets SharedEntityType
+     *
+     * @return string|null
+     */
+    public function getSharedEntityType()
+    {
+        if (!isset($this->container['SharedEntityType']) || is_null($this->container['SharedEntityType'])) {
+            return null;
+        }
+        return $this->container['SharedEntityType'];
+    }
+
+    /**
+     * Sets SharedEntityType
+     *
+     * @param string|null $SharedEntityType SharedEntityType
+     *
+     * @return self
+     */
+    public function setSharedEntityType($SharedEntityType)
+    {
+        if (is_null($SharedEntityType)) {
+            array_push($this->openAPINullablesSetToNull, 'SharedEntityType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsExclusion', $nullablesSetToNull);
+            $index = array_search('SharedEntityType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['IsExclusion'] = $IsExclusion;
+        $this->container['SharedEntityType'] = $SharedEntityType;
 
         return $this;
     }

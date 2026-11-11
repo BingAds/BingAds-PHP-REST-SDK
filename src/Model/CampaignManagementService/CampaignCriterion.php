@@ -46,8 +46,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         'CampaignId' => 'string',
         'Criterion' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Criterion',
         'ForwardCompatibilityMap' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\KeyValuePairOfstringAndstring[]',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus',
         'Id' => 'string',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus',
         'Type' => 'string',
         'CriterionBid' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionBid',
         'CriterionCashback' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\CriterionCashback'
@@ -64,8 +64,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         'CampaignId' => 'int64',
         'Criterion' => null,
         'ForwardCompatibilityMap' => null,
-        'Status' => null,
         'Id' => 'int64',
+        'Status' => null,
         'Type' => null,
         'CriterionBid' => null,
         'CriterionCashback' => null
@@ -80,8 +80,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         'CampaignId' => false,
         'Criterion' => true,
         'ForwardCompatibilityMap' => true,
-        'Status' => false,
         'Id' => true,
+        'Status' => true,
         'Type' => true,
         'CriterionBid' => true,
         'CriterionCashback' => true
@@ -176,8 +176,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         'CampaignId' => 'CampaignId',
         'Criterion' => 'Criterion',
         'ForwardCompatibilityMap' => 'ForwardCompatibilityMap',
-        'Status' => 'Status',
         'Id' => 'Id',
+        'Status' => 'Status',
         'Type' => 'Type',
         'CriterionBid' => 'CriterionBid',
         'CriterionCashback' => 'CriterionCashback'
@@ -192,8 +192,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         'CampaignId' => 'setCampaignId',
         'Criterion' => 'setCriterion',
         'ForwardCompatibilityMap' => 'setForwardCompatibilityMap',
-        'Status' => 'setStatus',
         'Id' => 'setId',
+        'Status' => 'setStatus',
         'Type' => 'setType',
         'CriterionBid' => 'setCriterionBid',
         'CriterionCashback' => 'setCriterionCashback'
@@ -208,8 +208,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         'CampaignId' => 'getCampaignId',
         'Criterion' => 'getCriterion',
         'ForwardCompatibilityMap' => 'getForwardCompatibilityMap',
-        'Status' => 'getStatus',
         'Id' => 'getId',
+        'Status' => 'getStatus',
         'Type' => 'getType',
         'CriterionBid' => 'getCriterionBid',
         'CriterionCashback' => 'getCriterionCashback'
@@ -275,8 +275,8 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('CampaignId', $data ?? [], null);
         $this->setIfExists('Criterion', $data ?? [], null);
         $this->setIfExists('ForwardCompatibilityMap', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('CriterionBid', $data ?? [], null);
         $this->setIfExists('CriterionCashback', $data ?? [], null);
@@ -432,42 +432,6 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -500,6 +464,49 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CampaignCriterionStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }

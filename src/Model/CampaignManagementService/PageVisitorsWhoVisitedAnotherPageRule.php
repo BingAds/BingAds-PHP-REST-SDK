@@ -34,8 +34,8 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
       */
     protected static array $openAPITypes = [
         'Type' => 'string',
-        'RuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
-        'AnotherRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]'
+        'AnotherRuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]',
+        'RuleItemGroups' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]'
     ];
 
     /**
@@ -47,8 +47,8 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
       */
     protected static array $openAPIFormats = [
         'Type' => null,
-        'RuleItemGroups' => null,
-        'AnotherRuleItemGroups' => null
+        'AnotherRuleItemGroups' => null,
+        'RuleItemGroups' => null
     ];
 
     /**
@@ -58,8 +58,8 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'RuleItemGroups' => true,
-        'AnotherRuleItemGroups' => true
+        'AnotherRuleItemGroups' => true,
+        'RuleItemGroups' => true
     ];
 
     /**
@@ -149,8 +149,8 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
      */
     protected static array $attributeMap = [
         'Type' => 'Type',
-        'RuleItemGroups' => 'RuleItemGroups',
-        'AnotherRuleItemGroups' => 'AnotherRuleItemGroups'
+        'AnotherRuleItemGroups' => 'AnotherRuleItemGroups',
+        'RuleItemGroups' => 'RuleItemGroups'
     ];
 
     /**
@@ -160,8 +160,8 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
      */
     protected static array $setters = [
         'Type' => 'setType',
-        'RuleItemGroups' => 'setRuleItemGroups',
-        'AnotherRuleItemGroups' => 'setAnotherRuleItemGroups'
+        'AnotherRuleItemGroups' => 'setAnotherRuleItemGroups',
+        'RuleItemGroups' => 'setRuleItemGroups'
     ];
 
     /**
@@ -171,8 +171,8 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
      */
     protected static array $getters = [
         'Type' => 'getType',
-        'RuleItemGroups' => 'getRuleItemGroups',
-        'AnotherRuleItemGroups' => 'getAnotherRuleItemGroups'
+        'AnotherRuleItemGroups' => 'getAnotherRuleItemGroups',
+        'RuleItemGroups' => 'getRuleItemGroups'
     ];
 
     /**
@@ -233,8 +233,13 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
     public function __construct(?array $data = null)
     {
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('RuleItemGroups', $data ?? [], null);
         $this->setIfExists('AnotherRuleItemGroups', $data ?? [], null);
+        $this->setIfExists('RuleItemGroups', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -317,43 +322,6 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
     }
 
     /**
-     * Gets RuleItemGroups
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
-     */
-    public function getRuleItemGroups()
-    {
-        if (!isset($this->container['RuleItemGroups']) || is_null($this->container['RuleItemGroups'])) {
-            return null;
-        }
-        return $this->container['RuleItemGroups'];
-    }
-
-    /**
-     * Sets RuleItemGroups
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null $RuleItemGroups RuleItemGroups
-     *
-     * @return self
-     */
-    public function setRuleItemGroups($RuleItemGroups)
-    {
-        if (is_null($RuleItemGroups)) {
-            array_push($this->openAPINullablesSetToNull, 'RuleItemGroups');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('RuleItemGroups', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['RuleItemGroups'] = $RuleItemGroups;
-
-        return $this;
-    }
-
-    /**
      * Gets AnotherRuleItemGroups
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
@@ -386,6 +354,43 @@ class PageVisitorsWhoVisitedAnotherPageRule extends RemarketingRule implements M
             }
         }
         $this->container['AnotherRuleItemGroups'] = $AnotherRuleItemGroups;
+
+        return $this;
+    }
+
+    /**
+     * Gets RuleItemGroups
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null
+     */
+    public function getRuleItemGroups()
+    {
+        if (!isset($this->container['RuleItemGroups']) || is_null($this->container['RuleItemGroups'])) {
+            return null;
+        }
+        return $this->container['RuleItemGroups'];
+    }
+
+    /**
+     * Sets RuleItemGroups
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\RuleItemGroup[]|null $RuleItemGroups RuleItemGroups
+     *
+     * @return self
+     */
+    public function setRuleItemGroups($RuleItemGroups)
+    {
+        if (is_null($RuleItemGroups)) {
+            array_push($this->openAPINullablesSetToNull, 'RuleItemGroups');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('RuleItemGroups', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['RuleItemGroups'] = $RuleItemGroups;
 
         return $this;
     }

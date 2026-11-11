@@ -40,6 +40,7 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxRoasBiddingScheme' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\MaxRoasBiddingScheme',
         'PercentCpcBiddingScheme' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\PercentCpcBiddingScheme',
         'TargetCpa' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\TargetCpaBiddingScheme',
+        'TargetCpm' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\TargetCpmBiddingScheme',
         'TargetImpressionShareBiddingScheme' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\TargetImpressionShareBiddingScheme',
         'TargetRoasBiddingScheme' => 'Microsoft\MsAds\Rest\Model\CampaignManagementService\TargetRoasBiddingScheme',
     ];
@@ -64,8 +65,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpm' => 'float',
         'InheritedBidStrategyType' => 'string',
         'TargetRoas' => 'float',
-        'TargetImpressionShare' => 'float',
         'TargetAdPosition' => 'string',
+        'TargetImpressionShare' => 'float',
         'MaxPercentCpc' => 'float',
         'CommissionRate' => 'float',
         'ManualCpi' => 'float',
@@ -87,8 +88,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpm' => 'double',
         'InheritedBidStrategyType' => null,
         'TargetRoas' => 'double',
-        'TargetImpressionShare' => 'double',
         'TargetAdPosition' => null,
+        'TargetImpressionShare' => 'double',
         'MaxPercentCpc' => 'double',
         'CommissionRate' => 'double',
         'ManualCpi' => 'double',
@@ -108,8 +109,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpm' => true,
         'InheritedBidStrategyType' => true,
         'TargetRoas' => true,
-        'TargetImpressionShare' => true,
         'TargetAdPosition' => true,
+        'TargetImpressionShare' => true,
         'MaxPercentCpc' => true,
         'CommissionRate' => true,
         'ManualCpi' => true,
@@ -209,8 +210,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpm' => 'MaxCpm',
         'InheritedBidStrategyType' => 'InheritedBidStrategyType',
         'TargetRoas' => 'TargetRoas',
-        'TargetImpressionShare' => 'TargetImpressionShare',
         'TargetAdPosition' => 'TargetAdPosition',
+        'TargetImpressionShare' => 'TargetImpressionShare',
         'MaxPercentCpc' => 'MaxPercentCpc',
         'CommissionRate' => 'CommissionRate',
         'ManualCpi' => 'ManualCpi',
@@ -230,8 +231,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpm' => 'setMaxCpm',
         'InheritedBidStrategyType' => 'setInheritedBidStrategyType',
         'TargetRoas' => 'setTargetRoas',
-        'TargetImpressionShare' => 'setTargetImpressionShare',
         'TargetAdPosition' => 'setTargetAdPosition',
+        'TargetImpressionShare' => 'setTargetImpressionShare',
         'MaxPercentCpc' => 'setMaxPercentCpc',
         'CommissionRate' => 'setCommissionRate',
         'ManualCpi' => 'setManualCpi',
@@ -251,8 +252,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         'MaxCpm' => 'getMaxCpm',
         'InheritedBidStrategyType' => 'getInheritedBidStrategyType',
         'TargetRoas' => 'getTargetRoas',
-        'TargetImpressionShare' => 'getTargetImpressionShare',
         'TargetAdPosition' => 'getTargetAdPosition',
+        'TargetImpressionShare' => 'getTargetImpressionShare',
         'MaxPercentCpc' => 'getMaxPercentCpc',
         'CommissionRate' => 'getCommissionRate',
         'ManualCpi' => 'getManualCpi',
@@ -323,8 +324,8 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('MaxCpm', $data ?? [], null);
         $this->setIfExists('InheritedBidStrategyType', $data ?? [], null);
         $this->setIfExists('TargetRoas', $data ?? [], null);
-        $this->setIfExists('TargetImpressionShare', $data ?? [], null);
         $this->setIfExists('TargetAdPosition', $data ?? [], null);
+        $this->setIfExists('TargetImpressionShare', $data ?? [], null);
         $this->setIfExists('MaxPercentCpc', $data ?? [], null);
         $this->setIfExists('CommissionRate', $data ?? [], null);
         $this->setIfExists('ManualCpi', $data ?? [], null);
@@ -636,43 +637,6 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets TargetImpressionShare
-     *
-     * @return float|null
-     */
-    public function getTargetImpressionShare()
-    {
-        if (!isset($this->container['TargetImpressionShare']) || is_null($this->container['TargetImpressionShare'])) {
-            return null;
-        }
-        return $this->container['TargetImpressionShare'];
-    }
-
-    /**
-     * Sets TargetImpressionShare
-     *
-     * @param float|null $TargetImpressionShare TargetImpressionShare
-     *
-     * @return self
-     */
-    public function setTargetImpressionShare($TargetImpressionShare)
-    {
-        if (is_null($TargetImpressionShare)) {
-            array_push($this->openAPINullablesSetToNull, 'TargetImpressionShare');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TargetImpressionShare', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TargetImpressionShare'] = $TargetImpressionShare;
-
-        return $this;
-    }
-
-    /**
      * Gets TargetAdPosition
      *
      * @return string|null
@@ -705,6 +669,43 @@ class BiddingScheme implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['TargetAdPosition'] = $TargetAdPosition;
+
+        return $this;
+    }
+
+    /**
+     * Gets TargetImpressionShare
+     *
+     * @return float|null
+     */
+    public function getTargetImpressionShare()
+    {
+        if (!isset($this->container['TargetImpressionShare']) || is_null($this->container['TargetImpressionShare'])) {
+            return null;
+        }
+        return $this->container['TargetImpressionShare'];
+    }
+
+    /**
+     * Sets TargetImpressionShare
+     *
+     * @param float|null $TargetImpressionShare TargetImpressionShare
+     *
+     * @return self
+     */
+    public function setTargetImpressionShare($TargetImpressionShare)
+    {
+        if (is_null($TargetImpressionShare)) {
+            array_push($this->openAPINullablesSetToNull, 'TargetImpressionShare');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TargetImpressionShare', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TargetImpressionShare'] = $TargetImpressionShare;
 
         return $this;
     }

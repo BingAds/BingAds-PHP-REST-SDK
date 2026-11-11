@@ -300,7 +300,7 @@ class KeywordPerformanceReportSort implements ModelInterface, ArrayAccess, \Json
         if (is_null($SortColumn)) {
             throw new \InvalidArgumentException('non-nullable SortColumn cannot be null');
         }
-        if (!$SortColumn instanceof \Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportColumn) {
+        if (!is_null($SortColumn) && !$SortColumn instanceof \Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportColumn) {
             $SortColumn = new \Microsoft\MsAds\Rest\Model\ReportingService\KeywordPerformanceReportColumn($SortColumn);
         }
         $this->container['SortColumn'] = $SortColumn;
@@ -336,7 +336,7 @@ class KeywordPerformanceReportSort implements ModelInterface, ArrayAccess, \Json
         if (is_null($SortOrder)) {
             throw new \InvalidArgumentException('non-nullable SortOrder cannot be null');
         }
-        if (!$SortOrder instanceof \Microsoft\MsAds\Rest\Model\ReportingService\SortOrder) {
+        if (!is_null($SortOrder) && !$SortOrder instanceof \Microsoft\MsAds\Rest\Model\ReportingService\SortOrder) {
             $SortOrder = new \Microsoft\MsAds\Rest\Model\ReportingService\SortOrder($SortOrder);
         }
         $this->container['SortOrder'] = $SortOrder;

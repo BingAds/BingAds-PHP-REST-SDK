@@ -34,8 +34,8 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
       */
     protected static array $openAPITypes = [
         'TrackingId' => 'string',
-        'EditorialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]',
         'BatchErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]',
+        'EditorialErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]',
         'OperationErrors' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\OperationError[]',
         'Type' => 'string'
     ];
@@ -49,8 +49,8 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
       */
     protected static array $openAPIFormats = [
         'TrackingId' => null,
-        'EditorialErrors' => null,
         'BatchErrors' => null,
+        'EditorialErrors' => null,
         'OperationErrors' => null,
         'Type' => null
     ];
@@ -62,8 +62,8 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
       */
     protected static array $openAPINullables = [
         'TrackingId' => true,
-        'EditorialErrors' => true,
         'BatchErrors' => true,
+        'EditorialErrors' => true,
         'OperationErrors' => true,
         'Type' => true
     ];
@@ -155,8 +155,8 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
      */
     protected static array $attributeMap = [
         'TrackingId' => 'TrackingId',
-        'EditorialErrors' => 'EditorialErrors',
         'BatchErrors' => 'BatchErrors',
+        'EditorialErrors' => 'EditorialErrors',
         'OperationErrors' => 'OperationErrors',
         'Type' => 'Type'
     ];
@@ -168,8 +168,8 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
      */
     protected static array $setters = [
         'TrackingId' => 'setTrackingId',
-        'EditorialErrors' => 'setEditorialErrors',
         'BatchErrors' => 'setBatchErrors',
+        'EditorialErrors' => 'setEditorialErrors',
         'OperationErrors' => 'setOperationErrors',
         'Type' => 'setType'
     ];
@@ -181,8 +181,8 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
      */
     protected static array $getters = [
         'TrackingId' => 'getTrackingId',
-        'EditorialErrors' => 'getEditorialErrors',
         'BatchErrors' => 'getBatchErrors',
+        'EditorialErrors' => 'getEditorialErrors',
         'OperationErrors' => 'getOperationErrors',
         'Type' => 'getType'
     ];
@@ -245,10 +245,15 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
     public function __construct(?array $data = null)
     {
         $this->setIfExists('TrackingId', $data ?? [], null);
-        $this->setIfExists('EditorialErrors', $data ?? [], null);
         $this->setIfExists('BatchErrors', $data ?? [], null);
+        $this->setIfExists('EditorialErrors', $data ?? [], null);
         $this->setIfExists('OperationErrors', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], 'EditorialApiFaultDetail');
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -331,43 +336,6 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
     }
 
     /**
-     * Gets EditorialErrors
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null
-     */
-    public function getEditorialErrors()
-    {
-        if (!isset($this->container['EditorialErrors']) || is_null($this->container['EditorialErrors'])) {
-            return null;
-        }
-        return $this->container['EditorialErrors'];
-    }
-
-    /**
-     * Sets EditorialErrors
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null $EditorialErrors EditorialErrors
-     *
-     * @return self
-     */
-    public function setEditorialErrors($EditorialErrors)
-    {
-        if (is_null($EditorialErrors)) {
-            array_push($this->openAPINullablesSetToNull, 'EditorialErrors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('EditorialErrors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['EditorialErrors'] = $EditorialErrors;
-
-        return $this;
-    }
-
-    /**
      * Gets BatchErrors
      *
      * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BatchError[]|null
@@ -400,6 +368,43 @@ class EditorialApiFaultDetail extends ApplicationFault implements ModelInterface
             }
         }
         $this->container['BatchErrors'] = $BatchErrors;
+
+        return $this;
+    }
+
+    /**
+     * Gets EditorialErrors
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null
+     */
+    public function getEditorialErrors()
+    {
+        if (!isset($this->container['EditorialErrors']) || is_null($this->container['EditorialErrors'])) {
+            return null;
+        }
+        return $this->container['EditorialErrors'];
+    }
+
+    /**
+     * Sets EditorialErrors
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EditorialError[]|null $EditorialErrors EditorialErrors
+     *
+     * @return self
+     */
+    public function setEditorialErrors($EditorialErrors)
+    {
+        if (is_null($EditorialErrors)) {
+            array_push($this->openAPINullablesSetToNull, 'EditorialErrors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('EditorialErrors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['EditorialErrors'] = $EditorialErrors;
 
         return $this;
     }

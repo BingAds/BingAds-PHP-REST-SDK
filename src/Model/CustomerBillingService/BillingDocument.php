@@ -381,7 +381,7 @@ class BillingDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($Type)) {
             throw new \InvalidArgumentException('non-nullable Type cannot be null');
         }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\DataType) {
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CustomerBillingService\DataType) {
             $Type = new \Microsoft\MsAds\Rest\Model\CustomerBillingService\DataType($Type);
         }
         $this->container['Type'] = $Type;

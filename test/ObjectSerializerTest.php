@@ -147,7 +147,7 @@ class ObjectSerializerTest extends TestCase
         $httpBody = Utils::jsonEncode($sanitized);
         print("\r\nSerialized and sanitized object:\r\n");
         print_r($httpBody);
-        self::assertEquals($jsonValue, $httpBody);
+        self::assertJsonStringEqualsJsonString($jsonValue, $httpBody);
     }
 
 }

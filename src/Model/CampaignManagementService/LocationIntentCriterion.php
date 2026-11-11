@@ -56,7 +56,7 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'IntentOption' => false
+        'IntentOption' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('IntentOption', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class LocationIntentCriterion extends Criterion implements ModelInterface, Array
     public function setIntentOption($IntentOption)
     {
         if (is_null($IntentOption)) {
-            throw new \InvalidArgumentException('non-nullable IntentOption cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'IntentOption');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IntentOption', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$IntentOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
+        if (!is_null($IntentOption) && !$IntentOption instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption) {
             $IntentOption = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\IntentOption($IntentOption);
         }
         $this->container['IntentOption'] = $IntentOption;

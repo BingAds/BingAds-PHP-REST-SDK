@@ -56,7 +56,7 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'Type' => true,
-        'GenderType' => false
+        'GenderType' => true
     ];
 
     /**
@@ -228,6 +228,11 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
     {
         $this->setIfExists('Type', $data ?? [], null);
         $this->setIfExists('GenderType', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -335,9 +340,16 @@ class GenderCriterion extends Criterion implements ModelInterface, ArrayAccess, 
     public function setGenderType($GenderType)
     {
         if (is_null($GenderType)) {
-            throw new \InvalidArgumentException('non-nullable GenderType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'GenderType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GenderType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$GenderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType) {
+        if (!is_null($GenderType) && !$GenderType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType) {
             $GenderType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\GenderType($GenderType);
         }
         $this->container['GenderType'] = $GenderType;

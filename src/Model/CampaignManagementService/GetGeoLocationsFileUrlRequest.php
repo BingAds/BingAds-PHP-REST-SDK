@@ -59,7 +59,7 @@ class GetGeoLocationsFileUrlRequest implements ModelInterface, ArrayAccess, \Jso
     protected static array $openAPINullables = [
         'Version' => true,
         'LanguageLocale' => true,
-        'CompressionType' => false
+        'CompressionType' => true
     ];
 
     /**
@@ -379,9 +379,16 @@ class GetGeoLocationsFileUrlRequest implements ModelInterface, ArrayAccess, \Jso
     public function setCompressionType($CompressionType)
     {
         if (is_null($CompressionType)) {
-            throw new \InvalidArgumentException('non-nullable CompressionType cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'CompressionType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CompressionType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$CompressionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompressionType) {
+        if (!is_null($CompressionType) && !$CompressionType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompressionType) {
             $CompressionType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\CompressionType($CompressionType);
         }
         $this->container['CompressionType'] = $CompressionType;

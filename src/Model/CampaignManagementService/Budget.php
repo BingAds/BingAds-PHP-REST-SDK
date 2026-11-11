@@ -33,11 +33,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
         'Amount' => 'float',
-        'BudgetType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType',
         'AssociationCount' => 'int',
-        'Id' => 'string'
+        'BudgetType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType',
+        'Id' => 'string',
+        'Name' => 'string'
     ];
 
     /**
@@ -48,11 +48,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
         'Amount' => 'double',
-        'BudgetType' => null,
         'AssociationCount' => 'int32',
-        'Id' => 'int64'
+        'BudgetType' => null,
+        'Id' => 'int64',
+        'Name' => null
     ];
 
     /**
@@ -61,11 +61,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
         'Amount' => true,
-        'BudgetType' => false,
         'AssociationCount' => true,
-        'Id' => true
+        'BudgetType' => true,
+        'Id' => true,
+        'Name' => true
     ];
 
     /**
@@ -154,11 +154,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
         'Amount' => 'Amount',
-        'BudgetType' => 'BudgetType',
         'AssociationCount' => 'AssociationCount',
-        'Id' => 'Id'
+        'BudgetType' => 'BudgetType',
+        'Id' => 'Id',
+        'Name' => 'Name'
     ];
 
     /**
@@ -167,11 +167,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
         'Amount' => 'setAmount',
-        'BudgetType' => 'setBudgetType',
         'AssociationCount' => 'setAssociationCount',
-        'Id' => 'setId'
+        'BudgetType' => 'setBudgetType',
+        'Id' => 'setId',
+        'Name' => 'setName'
     ];
 
     /**
@@ -180,11 +180,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
         'Amount' => 'getAmount',
-        'BudgetType' => 'getBudgetType',
         'AssociationCount' => 'getAssociationCount',
-        'Id' => 'getId'
+        'BudgetType' => 'getBudgetType',
+        'Id' => 'getId',
+        'Name' => 'getName'
     ];
 
     /**
@@ -244,11 +244,11 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('Amount', $data ?? [], null);
-        $this->setIfExists('BudgetType', $data ?? [], null);
         $this->setIfExists('AssociationCount', $data ?? [], null);
+        $this->setIfExists('BudgetType', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
     }
 
     /**
@@ -294,43 +294,6 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
      * Gets Amount
      *
      * @return float|null
@@ -363,42 +326,6 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Amount'] = $Amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets BudgetType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null
-     */
-    public function getBudgetType()
-    {
-        if (!isset($this->container['BudgetType']) || is_null($this->container['BudgetType'])) {
-            return null;
-        }
-        if ((is_object($this->container['BudgetType']) || is_string($this->container['BudgetType'])) && method_exists($this->container['BudgetType'], 'getValue')) {
-            return $this->container['BudgetType']->getValue();
-        }
-        return $this->container['BudgetType'];
-    }
-
-    /**
-     * Sets BudgetType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null $BudgetType BudgetType
-     *
-     * @return self
-     */
-    public function setBudgetType($BudgetType)
-    {
-        if (is_null($BudgetType)) {
-            throw new \InvalidArgumentException('non-nullable BudgetType cannot be null');
-        }
-        if (!$BudgetType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType) {
-            $BudgetType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType($BudgetType);
-        }
-        $this->container['BudgetType'] = $BudgetType;
 
         return $this;
     }
@@ -441,6 +368,49 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets BudgetType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null
+     */
+    public function getBudgetType()
+    {
+        if (!isset($this->container['BudgetType']) || is_null($this->container['BudgetType'])) {
+            return null;
+        }
+        if ((is_object($this->container['BudgetType']) || is_string($this->container['BudgetType'])) && method_exists($this->container['BudgetType'], 'getValue')) {
+            return $this->container['BudgetType']->getValue();
+        }
+        return $this->container['BudgetType'];
+    }
+
+    /**
+     * Sets BudgetType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType|mixed|null $BudgetType BudgetType
+     *
+     * @return self
+     */
+    public function setBudgetType($BudgetType)
+    {
+        if (is_null($BudgetType)) {
+            array_push($this->openAPINullablesSetToNull, 'BudgetType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('BudgetType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($BudgetType) && !$BudgetType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType) {
+            $BudgetType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\BudgetLimitType($BudgetType);
+        }
+        $this->container['BudgetType'] = $BudgetType;
+
+        return $this;
+    }
+
+    /**
      * Gets Id
      *
      * @return string|null
@@ -473,6 +443,43 @@ class Budget implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
 
         return $this;
     }

@@ -33,19 +33,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Description' => 'string',
-        'ThumbnailUrl' => 'string',
-        'SourceUrl' => 'string',
-        'Url' => 'string',
-        'AspectRatio' => 'string',
-        'DurationInMilliseconds' => 'int',
-        'Status' => 'string',
-        'CreatedDateTimeInUTC' => '\DateTime',
-        'ModifiedDateTimeInUTC' => '\DateTime',
-        'FailureCode' => 'string',
         'AdvertiserAILabel' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel',
+        'AspectRatio' => 'string',
+        'CreatedDateTimeInUTC' => '\DateTime',
+        'Description' => 'string',
+        'DurationInMilliseconds' => 'int',
+        'FailureCode' => 'string',
+        'Id' => 'string',
+        'ModifiedDateTimeInUTC' => '\DateTime',
+        'SourceUrl' => 'string',
+        'Status' => 'string',
         'SystemAIDetectionSignal' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal',
-        'Id' => 'string'
+        'ThumbnailUrl' => 'string',
+        'Url' => 'string'
     ];
 
     /**
@@ -56,19 +56,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Description' => null,
-        'ThumbnailUrl' => null,
-        'SourceUrl' => null,
-        'Url' => null,
-        'AspectRatio' => null,
-        'DurationInMilliseconds' => 'int32',
-        'Status' => null,
-        'CreatedDateTimeInUTC' => 'date-time',
-        'ModifiedDateTimeInUTC' => 'date-time',
-        'FailureCode' => null,
         'AdvertiserAILabel' => null,
+        'AspectRatio' => null,
+        'CreatedDateTimeInUTC' => 'date-time',
+        'Description' => null,
+        'DurationInMilliseconds' => 'int32',
+        'FailureCode' => null,
+        'Id' => 'int64',
+        'ModifiedDateTimeInUTC' => 'date-time',
+        'SourceUrl' => null,
+        'Status' => null,
         'SystemAIDetectionSignal' => null,
-        'Id' => 'int64'
+        'ThumbnailUrl' => null,
+        'Url' => null
     ];
 
     /**
@@ -77,19 +77,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Description' => true,
-        'ThumbnailUrl' => true,
-        'SourceUrl' => true,
-        'Url' => true,
+        'AdvertiserAILabel' => true,
         'AspectRatio' => true,
-        'DurationInMilliseconds' => true,
-        'Status' => true,
         'CreatedDateTimeInUTC' => true,
-        'ModifiedDateTimeInUTC' => true,
+        'Description' => true,
+        'DurationInMilliseconds' => true,
         'FailureCode' => true,
-        'AdvertiserAILabel' => false,
-        'SystemAIDetectionSignal' => false,
-        'Id' => true
+        'Id' => true,
+        'ModifiedDateTimeInUTC' => true,
+        'SourceUrl' => true,
+        'Status' => true,
+        'SystemAIDetectionSignal' => true,
+        'ThumbnailUrl' => true,
+        'Url' => true
     ];
 
     /**
@@ -178,19 +178,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Description' => 'Description',
-        'ThumbnailUrl' => 'ThumbnailUrl',
-        'SourceUrl' => 'SourceUrl',
-        'Url' => 'Url',
-        'AspectRatio' => 'AspectRatio',
-        'DurationInMilliseconds' => 'DurationInMilliseconds',
-        'Status' => 'Status',
-        'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
-        'ModifiedDateTimeInUTC' => 'ModifiedDateTimeInUTC',
-        'FailureCode' => 'FailureCode',
         'AdvertiserAILabel' => 'AdvertiserAILabel',
+        'AspectRatio' => 'AspectRatio',
+        'CreatedDateTimeInUTC' => 'CreatedDateTimeInUTC',
+        'Description' => 'Description',
+        'DurationInMilliseconds' => 'DurationInMilliseconds',
+        'FailureCode' => 'FailureCode',
+        'Id' => 'Id',
+        'ModifiedDateTimeInUTC' => 'ModifiedDateTimeInUTC',
+        'SourceUrl' => 'SourceUrl',
+        'Status' => 'Status',
         'SystemAIDetectionSignal' => 'SystemAIDetectionSignal',
-        'Id' => 'Id'
+        'ThumbnailUrl' => 'ThumbnailUrl',
+        'Url' => 'Url'
     ];
 
     /**
@@ -199,19 +199,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Description' => 'setDescription',
-        'ThumbnailUrl' => 'setThumbnailUrl',
-        'SourceUrl' => 'setSourceUrl',
-        'Url' => 'setUrl',
-        'AspectRatio' => 'setAspectRatio',
-        'DurationInMilliseconds' => 'setDurationInMilliseconds',
-        'Status' => 'setStatus',
-        'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
-        'ModifiedDateTimeInUTC' => 'setModifiedDateTimeInUTC',
-        'FailureCode' => 'setFailureCode',
         'AdvertiserAILabel' => 'setAdvertiserAILabel',
+        'AspectRatio' => 'setAspectRatio',
+        'CreatedDateTimeInUTC' => 'setCreatedDateTimeInUTC',
+        'Description' => 'setDescription',
+        'DurationInMilliseconds' => 'setDurationInMilliseconds',
+        'FailureCode' => 'setFailureCode',
+        'Id' => 'setId',
+        'ModifiedDateTimeInUTC' => 'setModifiedDateTimeInUTC',
+        'SourceUrl' => 'setSourceUrl',
+        'Status' => 'setStatus',
         'SystemAIDetectionSignal' => 'setSystemAIDetectionSignal',
-        'Id' => 'setId'
+        'ThumbnailUrl' => 'setThumbnailUrl',
+        'Url' => 'setUrl'
     ];
 
     /**
@@ -220,19 +220,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Description' => 'getDescription',
-        'ThumbnailUrl' => 'getThumbnailUrl',
-        'SourceUrl' => 'getSourceUrl',
-        'Url' => 'getUrl',
-        'AspectRatio' => 'getAspectRatio',
-        'DurationInMilliseconds' => 'getDurationInMilliseconds',
-        'Status' => 'getStatus',
-        'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
-        'ModifiedDateTimeInUTC' => 'getModifiedDateTimeInUTC',
-        'FailureCode' => 'getFailureCode',
         'AdvertiserAILabel' => 'getAdvertiserAILabel',
+        'AspectRatio' => 'getAspectRatio',
+        'CreatedDateTimeInUTC' => 'getCreatedDateTimeInUTC',
+        'Description' => 'getDescription',
+        'DurationInMilliseconds' => 'getDurationInMilliseconds',
+        'FailureCode' => 'getFailureCode',
+        'Id' => 'getId',
+        'ModifiedDateTimeInUTC' => 'getModifiedDateTimeInUTC',
+        'SourceUrl' => 'getSourceUrl',
+        'Status' => 'getStatus',
         'SystemAIDetectionSignal' => 'getSystemAIDetectionSignal',
-        'Id' => 'getId'
+        'ThumbnailUrl' => 'getThumbnailUrl',
+        'Url' => 'getUrl'
     ];
 
     /**
@@ -292,19 +292,19 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Description', $data ?? [], null);
-        $this->setIfExists('ThumbnailUrl', $data ?? [], null);
-        $this->setIfExists('SourceUrl', $data ?? [], null);
-        $this->setIfExists('Url', $data ?? [], null);
-        $this->setIfExists('AspectRatio', $data ?? [], null);
-        $this->setIfExists('DurationInMilliseconds', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
-        $this->setIfExists('ModifiedDateTimeInUTC', $data ?? [], null);
-        $this->setIfExists('FailureCode', $data ?? [], null);
         $this->setIfExists('AdvertiserAILabel', $data ?? [], null);
-        $this->setIfExists('SystemAIDetectionSignal', $data ?? [], null);
+        $this->setIfExists('AspectRatio', $data ?? [], null);
+        $this->setIfExists('CreatedDateTimeInUTC', $data ?? [], null);
+        $this->setIfExists('Description', $data ?? [], null);
+        $this->setIfExists('DurationInMilliseconds', $data ?? [], null);
+        $this->setIfExists('FailureCode', $data ?? [], null);
         $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('ModifiedDateTimeInUTC', $data ?? [], null);
+        $this->setIfExists('SourceUrl', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
+        $this->setIfExists('SystemAIDetectionSignal', $data ?? [], null);
+        $this->setIfExists('ThumbnailUrl', $data ?? [], null);
+        $this->setIfExists('Url', $data ?? [], null);
     }
 
     /**
@@ -350,149 +350,44 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Description
+     * Gets AdvertiserAILabel
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
      */
-    public function getDescription()
+    public function getAdvertiserAILabel()
     {
-        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
+        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
             return null;
         }
-        return $this->container['Description'];
+        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
+            return $this->container['AdvertiserAILabel']->getValue();
+        }
+        return $this->container['AdvertiserAILabel'];
     }
 
     /**
-     * Sets Description
+     * Sets AdvertiserAILabel
      *
-     * @param string|null $Description Description
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
      *
      * @return self
      */
-    public function setDescription($Description)
+    public function setAdvertiserAILabel($AdvertiserAILabel)
     {
-        if (is_null($Description)) {
-            array_push($this->openAPINullablesSetToNull, 'Description');
+        if (is_null($AdvertiserAILabel)) {
+            array_push($this->openAPINullablesSetToNull, 'AdvertiserAILabel');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Description', $nullablesSetToNull);
+            $index = array_search('AdvertiserAILabel', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['Description'] = $Description;
-
-        return $this;
-    }
-
-    /**
-     * Gets ThumbnailUrl
-     *
-     * @return string|null
-     */
-    public function getThumbnailUrl()
-    {
-        if (!isset($this->container['ThumbnailUrl']) || is_null($this->container['ThumbnailUrl'])) {
-            return null;
+        if (!is_null($AdvertiserAILabel) && !$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
+            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
         }
-        return $this->container['ThumbnailUrl'];
-    }
-
-    /**
-     * Sets ThumbnailUrl
-     *
-     * @param string|null $ThumbnailUrl ThumbnailUrl
-     *
-     * @return self
-     */
-    public function setThumbnailUrl($ThumbnailUrl)
-    {
-        if (is_null($ThumbnailUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'ThumbnailUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ThumbnailUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ThumbnailUrl'] = $ThumbnailUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets SourceUrl
-     *
-     * @return string|null
-     */
-    public function getSourceUrl()
-    {
-        if (!isset($this->container['SourceUrl']) || is_null($this->container['SourceUrl'])) {
-            return null;
-        }
-        return $this->container['SourceUrl'];
-    }
-
-    /**
-     * Sets SourceUrl
-     *
-     * @param string|null $SourceUrl SourceUrl
-     *
-     * @return self
-     */
-    public function setSourceUrl($SourceUrl)
-    {
-        if (is_null($SourceUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'SourceUrl');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('SourceUrl', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['SourceUrl'] = $SourceUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets Url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
-            return null;
-        }
-        return $this->container['Url'];
-    }
-
-    /**
-     * Sets Url
-     *
-     * @param string|null $Url Url
-     *
-     * @return self
-     */
-    public function setUrl($Url)
-    {
-        if (is_null($Url)) {
-            array_push($this->openAPINullablesSetToNull, 'Url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Url', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Url'] = $Url;
+        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
 
         return $this;
     }
@@ -535,80 +430,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets DurationInMilliseconds
-     *
-     * @return int|null
-     */
-    public function getDurationInMilliseconds()
-    {
-        if (!isset($this->container['DurationInMilliseconds']) || is_null($this->container['DurationInMilliseconds'])) {
-            return null;
-        }
-        return $this->container['DurationInMilliseconds'];
-    }
-
-    /**
-     * Sets DurationInMilliseconds
-     *
-     * @param int|null $DurationInMilliseconds DurationInMilliseconds
-     *
-     * @return self
-     */
-    public function setDurationInMilliseconds($DurationInMilliseconds)
-    {
-        if (is_null($DurationInMilliseconds)) {
-            array_push($this->openAPINullablesSetToNull, 'DurationInMilliseconds');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('DurationInMilliseconds', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['DurationInMilliseconds'] = $DurationInMilliseconds;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param string|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            array_push($this->openAPINullablesSetToNull, 'Status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Status', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
      * Gets CreatedDateTimeInUTC
      *
      * @return \DateTime|null
@@ -646,38 +467,75 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ModifiedDateTimeInUTC
+     * Gets Description
      *
-     * @return \DateTime|null
+     * @return string|null
      */
-    public function getModifiedDateTimeInUTC()
+    public function getDescription()
     {
-        if (!isset($this->container['ModifiedDateTimeInUTC']) || is_null($this->container['ModifiedDateTimeInUTC'])) {
+        if (!isset($this->container['Description']) || is_null($this->container['Description'])) {
             return null;
         }
-        return $this->container['ModifiedDateTimeInUTC'];
+        return $this->container['Description'];
     }
 
     /**
-     * Sets ModifiedDateTimeInUTC
+     * Sets Description
      *
-     * @param \DateTime|null $ModifiedDateTimeInUTC ModifiedDateTimeInUTC
+     * @param string|null $Description Description
      *
      * @return self
      */
-    public function setModifiedDateTimeInUTC($ModifiedDateTimeInUTC)
+    public function setDescription($Description)
     {
-        if (is_null($ModifiedDateTimeInUTC)) {
-            array_push($this->openAPINullablesSetToNull, 'ModifiedDateTimeInUTC');
+        if (is_null($Description)) {
+            array_push($this->openAPINullablesSetToNull, 'Description');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ModifiedDateTimeInUTC', $nullablesSetToNull);
+            $index = array_search('Description', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ModifiedDateTimeInUTC'] = $ModifiedDateTimeInUTC;
+        $this->container['Description'] = $Description;
+
+        return $this;
+    }
+
+    /**
+     * Gets DurationInMilliseconds
+     *
+     * @return int|null
+     */
+    public function getDurationInMilliseconds()
+    {
+        if (!isset($this->container['DurationInMilliseconds']) || is_null($this->container['DurationInMilliseconds'])) {
+            return null;
+        }
+        return $this->container['DurationInMilliseconds'];
+    }
+
+    /**
+     * Sets DurationInMilliseconds
+     *
+     * @param int|null $DurationInMilliseconds DurationInMilliseconds
+     *
+     * @return self
+     */
+    public function setDurationInMilliseconds($DurationInMilliseconds)
+    {
+        if (is_null($DurationInMilliseconds)) {
+            array_push($this->openAPINullablesSetToNull, 'DurationInMilliseconds');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('DurationInMilliseconds', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['DurationInMilliseconds'] = $DurationInMilliseconds;
 
         return $this;
     }
@@ -720,78 +578,6 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets AdvertiserAILabel
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null
-     */
-    public function getAdvertiserAILabel()
-    {
-        if (!isset($this->container['AdvertiserAILabel']) || is_null($this->container['AdvertiserAILabel'])) {
-            return null;
-        }
-        if ((is_object($this->container['AdvertiserAILabel']) || is_string($this->container['AdvertiserAILabel'])) && method_exists($this->container['AdvertiserAILabel'], 'getValue')) {
-            return $this->container['AdvertiserAILabel']->getValue();
-        }
-        return $this->container['AdvertiserAILabel'];
-    }
-
-    /**
-     * Sets AdvertiserAILabel
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel|mixed|null $AdvertiserAILabel AdvertiserAILabel
-     *
-     * @return self
-     */
-    public function setAdvertiserAILabel($AdvertiserAILabel)
-    {
-        if (is_null($AdvertiserAILabel)) {
-            throw new \InvalidArgumentException('non-nullable AdvertiserAILabel cannot be null');
-        }
-        if (!$AdvertiserAILabel instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel) {
-            $AdvertiserAILabel = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AdvertiserAILabel($AdvertiserAILabel);
-        }
-        $this->container['AdvertiserAILabel'] = $AdvertiserAILabel;
-
-        return $this;
-    }
-
-    /**
-     * Gets SystemAIDetectionSignal
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null
-     */
-    public function getSystemAIDetectionSignal()
-    {
-        if (!isset($this->container['SystemAIDetectionSignal']) || is_null($this->container['SystemAIDetectionSignal'])) {
-            return null;
-        }
-        if ((is_object($this->container['SystemAIDetectionSignal']) || is_string($this->container['SystemAIDetectionSignal'])) && method_exists($this->container['SystemAIDetectionSignal'], 'getValue')) {
-            return $this->container['SystemAIDetectionSignal']->getValue();
-        }
-        return $this->container['SystemAIDetectionSignal'];
-    }
-
-    /**
-     * Sets SystemAIDetectionSignal
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null $SystemAIDetectionSignal SystemAIDetectionSignal
-     *
-     * @return self
-     */
-    public function setSystemAIDetectionSignal($SystemAIDetectionSignal)
-    {
-        if (is_null($SystemAIDetectionSignal)) {
-            throw new \InvalidArgumentException('non-nullable SystemAIDetectionSignal cannot be null');
-        }
-        if (!$SystemAIDetectionSignal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal) {
-            $SystemAIDetectionSignal = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal($SystemAIDetectionSignal);
-        }
-        $this->container['SystemAIDetectionSignal'] = $SystemAIDetectionSignal;
-
-        return $this;
-    }
-
-    /**
      * Gets Id
      *
      * @return string|null
@@ -824,6 +610,234 @@ class Video implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets ModifiedDateTimeInUTC
+     *
+     * @return \DateTime|null
+     */
+    public function getModifiedDateTimeInUTC()
+    {
+        if (!isset($this->container['ModifiedDateTimeInUTC']) || is_null($this->container['ModifiedDateTimeInUTC'])) {
+            return null;
+        }
+        return $this->container['ModifiedDateTimeInUTC'];
+    }
+
+    /**
+     * Sets ModifiedDateTimeInUTC
+     *
+     * @param \DateTime|null $ModifiedDateTimeInUTC ModifiedDateTimeInUTC
+     *
+     * @return self
+     */
+    public function setModifiedDateTimeInUTC($ModifiedDateTimeInUTC)
+    {
+        if (is_null($ModifiedDateTimeInUTC)) {
+            array_push($this->openAPINullablesSetToNull, 'ModifiedDateTimeInUTC');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ModifiedDateTimeInUTC', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ModifiedDateTimeInUTC'] = $ModifiedDateTimeInUTC;
+
+        return $this;
+    }
+
+    /**
+     * Gets SourceUrl
+     *
+     * @return string|null
+     */
+    public function getSourceUrl()
+    {
+        if (!isset($this->container['SourceUrl']) || is_null($this->container['SourceUrl'])) {
+            return null;
+        }
+        return $this->container['SourceUrl'];
+    }
+
+    /**
+     * Sets SourceUrl
+     *
+     * @param string|null $SourceUrl SourceUrl
+     *
+     * @return self
+     */
+    public function setSourceUrl($SourceUrl)
+    {
+        if (is_null($SourceUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'SourceUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SourceUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['SourceUrl'] = $SourceUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param string|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Status'] = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets SystemAIDetectionSignal
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null
+     */
+    public function getSystemAIDetectionSignal()
+    {
+        if (!isset($this->container['SystemAIDetectionSignal']) || is_null($this->container['SystemAIDetectionSignal'])) {
+            return null;
+        }
+        if ((is_object($this->container['SystemAIDetectionSignal']) || is_string($this->container['SystemAIDetectionSignal'])) && method_exists($this->container['SystemAIDetectionSignal'], 'getValue')) {
+            return $this->container['SystemAIDetectionSignal']->getValue();
+        }
+        return $this->container['SystemAIDetectionSignal'];
+    }
+
+    /**
+     * Sets SystemAIDetectionSignal
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal|mixed|null $SystemAIDetectionSignal SystemAIDetectionSignal
+     *
+     * @return self
+     */
+    public function setSystemAIDetectionSignal($SystemAIDetectionSignal)
+    {
+        if (is_null($SystemAIDetectionSignal)) {
+            array_push($this->openAPINullablesSetToNull, 'SystemAIDetectionSignal');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('SystemAIDetectionSignal', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($SystemAIDetectionSignal) && !$SystemAIDetectionSignal instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal) {
+            $SystemAIDetectionSignal = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\SystemAIDetectionSignal($SystemAIDetectionSignal);
+        }
+        $this->container['SystemAIDetectionSignal'] = $SystemAIDetectionSignal;
+
+        return $this;
+    }
+
+    /**
+     * Gets ThumbnailUrl
+     *
+     * @return string|null
+     */
+    public function getThumbnailUrl()
+    {
+        if (!isset($this->container['ThumbnailUrl']) || is_null($this->container['ThumbnailUrl'])) {
+            return null;
+        }
+        return $this->container['ThumbnailUrl'];
+    }
+
+    /**
+     * Sets ThumbnailUrl
+     *
+     * @param string|null $ThumbnailUrl ThumbnailUrl
+     *
+     * @return self
+     */
+    public function setThumbnailUrl($ThumbnailUrl)
+    {
+        if (is_null($ThumbnailUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'ThumbnailUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ThumbnailUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ThumbnailUrl'] = $ThumbnailUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets Url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        if (!isset($this->container['Url']) || is_null($this->container['Url'])) {
+            return null;
+        }
+        return $this->container['Url'];
+    }
+
+    /**
+     * Sets Url
+     *
+     * @param string|null $Url Url
+     *
+     * @return self
+     */
+    public function setUrl($Url)
+    {
+        if (is_null($Url)) {
+            array_push($this->openAPINullablesSetToNull, 'Url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Url'] = $Url;
 
         return $this;
     }

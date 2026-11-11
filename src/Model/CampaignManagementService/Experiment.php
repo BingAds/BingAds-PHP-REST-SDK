@@ -33,19 +33,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Id' => 'string',
-        'Name' => 'string',
         'BaseCampaignId' => 'string',
-        'ExperimentCampaignId' => 'string',
-        'TrafficSplitPercent' => 'int',
-        'ExperimentArms' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]',
-        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
         'EndDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
-        'ExperimentStatus' => 'string',
-        'ExperimentType' => 'string',
-        'ExperimentSubType' => 'string',
+        'ExperimentArms' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]',
+        'ExperimentCampaignId' => 'string',
         'ExperimentCampaignType' => 'string',
-        'MarketingObjective' => 'string'
+        'ExperimentStatus' => 'string',
+        'ExperimentSubType' => 'string',
+        'ExperimentType' => 'string',
+        'Id' => 'string',
+        'MarketingObjective' => 'string',
+        'Name' => 'string',
+        'StartDate' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\Date',
+        'TrafficSplitPercent' => 'int'
     ];
 
     /**
@@ -56,19 +56,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Id' => 'int64',
-        'Name' => null,
         'BaseCampaignId' => 'int64',
-        'ExperimentCampaignId' => 'int64',
-        'TrafficSplitPercent' => 'int32',
-        'ExperimentArms' => null,
-        'StartDate' => null,
         'EndDate' => null,
-        'ExperimentStatus' => null,
-        'ExperimentType' => null,
-        'ExperimentSubType' => null,
+        'ExperimentArms' => null,
+        'ExperimentCampaignId' => 'int64',
         'ExperimentCampaignType' => null,
-        'MarketingObjective' => null
+        'ExperimentStatus' => null,
+        'ExperimentSubType' => null,
+        'ExperimentType' => null,
+        'Id' => 'int64',
+        'MarketingObjective' => null,
+        'Name' => null,
+        'StartDate' => null,
+        'TrafficSplitPercent' => 'int32'
     ];
 
     /**
@@ -77,19 +77,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Id' => true,
-        'Name' => true,
         'BaseCampaignId' => true,
-        'ExperimentCampaignId' => true,
-        'TrafficSplitPercent' => true,
-        'ExperimentArms' => true,
-        'StartDate' => true,
         'EndDate' => true,
-        'ExperimentStatus' => true,
-        'ExperimentType' => true,
-        'ExperimentSubType' => true,
+        'ExperimentArms' => true,
+        'ExperimentCampaignId' => true,
         'ExperimentCampaignType' => true,
-        'MarketingObjective' => true
+        'ExperimentStatus' => true,
+        'ExperimentSubType' => true,
+        'ExperimentType' => true,
+        'Id' => true,
+        'MarketingObjective' => true,
+        'Name' => true,
+        'StartDate' => true,
+        'TrafficSplitPercent' => true
     ];
 
     /**
@@ -178,19 +178,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Id' => 'Id',
-        'Name' => 'Name',
         'BaseCampaignId' => 'BaseCampaignId',
-        'ExperimentCampaignId' => 'ExperimentCampaignId',
-        'TrafficSplitPercent' => 'TrafficSplitPercent',
-        'ExperimentArms' => 'ExperimentArms',
-        'StartDate' => 'StartDate',
         'EndDate' => 'EndDate',
-        'ExperimentStatus' => 'ExperimentStatus',
-        'ExperimentType' => 'ExperimentType',
-        'ExperimentSubType' => 'ExperimentSubType',
+        'ExperimentArms' => 'ExperimentArms',
+        'ExperimentCampaignId' => 'ExperimentCampaignId',
         'ExperimentCampaignType' => 'ExperimentCampaignType',
-        'MarketingObjective' => 'MarketingObjective'
+        'ExperimentStatus' => 'ExperimentStatus',
+        'ExperimentSubType' => 'ExperimentSubType',
+        'ExperimentType' => 'ExperimentType',
+        'Id' => 'Id',
+        'MarketingObjective' => 'MarketingObjective',
+        'Name' => 'Name',
+        'StartDate' => 'StartDate',
+        'TrafficSplitPercent' => 'TrafficSplitPercent'
     ];
 
     /**
@@ -199,19 +199,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'Id' => 'setId',
-        'Name' => 'setName',
         'BaseCampaignId' => 'setBaseCampaignId',
-        'ExperimentCampaignId' => 'setExperimentCampaignId',
-        'TrafficSplitPercent' => 'setTrafficSplitPercent',
-        'ExperimentArms' => 'setExperimentArms',
-        'StartDate' => 'setStartDate',
         'EndDate' => 'setEndDate',
-        'ExperimentStatus' => 'setExperimentStatus',
-        'ExperimentType' => 'setExperimentType',
-        'ExperimentSubType' => 'setExperimentSubType',
+        'ExperimentArms' => 'setExperimentArms',
+        'ExperimentCampaignId' => 'setExperimentCampaignId',
         'ExperimentCampaignType' => 'setExperimentCampaignType',
-        'MarketingObjective' => 'setMarketingObjective'
+        'ExperimentStatus' => 'setExperimentStatus',
+        'ExperimentSubType' => 'setExperimentSubType',
+        'ExperimentType' => 'setExperimentType',
+        'Id' => 'setId',
+        'MarketingObjective' => 'setMarketingObjective',
+        'Name' => 'setName',
+        'StartDate' => 'setStartDate',
+        'TrafficSplitPercent' => 'setTrafficSplitPercent'
     ];
 
     /**
@@ -220,19 +220,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'Id' => 'getId',
-        'Name' => 'getName',
         'BaseCampaignId' => 'getBaseCampaignId',
-        'ExperimentCampaignId' => 'getExperimentCampaignId',
-        'TrafficSplitPercent' => 'getTrafficSplitPercent',
-        'ExperimentArms' => 'getExperimentArms',
-        'StartDate' => 'getStartDate',
         'EndDate' => 'getEndDate',
-        'ExperimentStatus' => 'getExperimentStatus',
-        'ExperimentType' => 'getExperimentType',
-        'ExperimentSubType' => 'getExperimentSubType',
+        'ExperimentArms' => 'getExperimentArms',
+        'ExperimentCampaignId' => 'getExperimentCampaignId',
         'ExperimentCampaignType' => 'getExperimentCampaignType',
-        'MarketingObjective' => 'getMarketingObjective'
+        'ExperimentStatus' => 'getExperimentStatus',
+        'ExperimentSubType' => 'getExperimentSubType',
+        'ExperimentType' => 'getExperimentType',
+        'Id' => 'getId',
+        'MarketingObjective' => 'getMarketingObjective',
+        'Name' => 'getName',
+        'StartDate' => 'getStartDate',
+        'TrafficSplitPercent' => 'getTrafficSplitPercent'
     ];
 
     /**
@@ -292,19 +292,19 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Id', $data ?? [], null);
-        $this->setIfExists('Name', $data ?? [], null);
         $this->setIfExists('BaseCampaignId', $data ?? [], null);
-        $this->setIfExists('ExperimentCampaignId', $data ?? [], null);
-        $this->setIfExists('TrafficSplitPercent', $data ?? [], null);
-        $this->setIfExists('ExperimentArms', $data ?? [], null);
-        $this->setIfExists('StartDate', $data ?? [], null);
         $this->setIfExists('EndDate', $data ?? [], null);
-        $this->setIfExists('ExperimentStatus', $data ?? [], null);
-        $this->setIfExists('ExperimentType', $data ?? [], null);
-        $this->setIfExists('ExperimentSubType', $data ?? [], null);
+        $this->setIfExists('ExperimentArms', $data ?? [], null);
+        $this->setIfExists('ExperimentCampaignId', $data ?? [], null);
         $this->setIfExists('ExperimentCampaignType', $data ?? [], null);
+        $this->setIfExists('ExperimentStatus', $data ?? [], null);
+        $this->setIfExists('ExperimentSubType', $data ?? [], null);
+        $this->setIfExists('ExperimentType', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('MarketingObjective', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('StartDate', $data ?? [], null);
+        $this->setIfExists('TrafficSplitPercent', $data ?? [], null);
     }
 
     /**
@@ -350,80 +350,6 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
-            return null;
-        }
-        return $this->container['Name'];
-    }
-
-    /**
-     * Sets Name
-     *
-     * @param string|null $Name Name
-     *
-     * @return self
-     */
-    public function setName($Name)
-    {
-        if (is_null($Name)) {
-            array_push($this->openAPINullablesSetToNull, 'Name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
      * Gets BaseCampaignId
      *
      * @return string|null
@@ -456,154 +382,6 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['BaseCampaignId'] = $BaseCampaignId;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExperimentCampaignId
-     *
-     * @return string|null
-     */
-    public function getExperimentCampaignId()
-    {
-        if (!isset($this->container['ExperimentCampaignId']) || is_null($this->container['ExperimentCampaignId'])) {
-            return null;
-        }
-        return $this->container['ExperimentCampaignId'];
-    }
-
-    /**
-     * Sets ExperimentCampaignId
-     *
-     * @param string|null $ExperimentCampaignId ExperimentCampaignId
-     *
-     * @return self
-     */
-    public function setExperimentCampaignId($ExperimentCampaignId)
-    {
-        if (is_null($ExperimentCampaignId)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentCampaignId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentCampaignId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExperimentCampaignId'] = $ExperimentCampaignId;
-
-        return $this;
-    }
-
-    /**
-     * Gets TrafficSplitPercent
-     *
-     * @return int|null
-     */
-    public function getTrafficSplitPercent()
-    {
-        if (!isset($this->container['TrafficSplitPercent']) || is_null($this->container['TrafficSplitPercent'])) {
-            return null;
-        }
-        return $this->container['TrafficSplitPercent'];
-    }
-
-    /**
-     * Sets TrafficSplitPercent
-     *
-     * @param int|null $TrafficSplitPercent TrafficSplitPercent
-     *
-     * @return self
-     */
-    public function setTrafficSplitPercent($TrafficSplitPercent)
-    {
-        if (is_null($TrafficSplitPercent)) {
-            array_push($this->openAPINullablesSetToNull, 'TrafficSplitPercent');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('TrafficSplitPercent', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['TrafficSplitPercent'] = $TrafficSplitPercent;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExperimentArms
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null
-     */
-    public function getExperimentArms()
-    {
-        if (!isset($this->container['ExperimentArms']) || is_null($this->container['ExperimentArms'])) {
-            return null;
-        }
-        return $this->container['ExperimentArms'];
-    }
-
-    /**
-     * Sets ExperimentArms
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null $ExperimentArms ExperimentArms
-     *
-     * @return self
-     */
-    public function setExperimentArms($ExperimentArms)
-    {
-        if (is_null($ExperimentArms)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentArms');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentArms', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExperimentArms'] = $ExperimentArms;
-
-        return $this;
-    }
-
-    /**
-     * Gets StartDate
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
-     */
-    public function getStartDate()
-    {
-        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
-            return null;
-        }
-        return $this->container['StartDate'];
-    }
-
-    /**
-     * Sets StartDate
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
-     *
-     * @return self
-     */
-    public function setStartDate($StartDate)
-    {
-        if (is_null($StartDate)) {
-            array_push($this->openAPINullablesSetToNull, 'StartDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('StartDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['StartDate'] = $StartDate;
 
         return $this;
     }
@@ -646,112 +424,75 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ExperimentStatus
+     * Gets ExperimentArms
      *
-     * @return string|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null
      */
-    public function getExperimentStatus()
+    public function getExperimentArms()
     {
-        if (!isset($this->container['ExperimentStatus']) || is_null($this->container['ExperimentStatus'])) {
+        if (!isset($this->container['ExperimentArms']) || is_null($this->container['ExperimentArms'])) {
             return null;
         }
-        return $this->container['ExperimentStatus'];
+        return $this->container['ExperimentArms'];
     }
 
     /**
-     * Sets ExperimentStatus
+     * Sets ExperimentArms
      *
-     * @param string|null $ExperimentStatus ExperimentStatus
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExperimentArm[]|null $ExperimentArms ExperimentArms
      *
      * @return self
      */
-    public function setExperimentStatus($ExperimentStatus)
+    public function setExperimentArms($ExperimentArms)
     {
-        if (is_null($ExperimentStatus)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentStatus');
+        if (is_null($ExperimentArms)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentArms');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentStatus', $nullablesSetToNull);
+            $index = array_search('ExperimentArms', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ExperimentStatus'] = $ExperimentStatus;
+        $this->container['ExperimentArms'] = $ExperimentArms;
 
         return $this;
     }
 
     /**
-     * Gets ExperimentType
+     * Gets ExperimentCampaignId
      *
      * @return string|null
      */
-    public function getExperimentType()
+    public function getExperimentCampaignId()
     {
-        if (!isset($this->container['ExperimentType']) || is_null($this->container['ExperimentType'])) {
+        if (!isset($this->container['ExperimentCampaignId']) || is_null($this->container['ExperimentCampaignId'])) {
             return null;
         }
-        return $this->container['ExperimentType'];
+        return $this->container['ExperimentCampaignId'];
     }
 
     /**
-     * Sets ExperimentType
+     * Sets ExperimentCampaignId
      *
-     * @param string|null $ExperimentType ExperimentType
+     * @param string|null $ExperimentCampaignId ExperimentCampaignId
      *
      * @return self
      */
-    public function setExperimentType($ExperimentType)
+    public function setExperimentCampaignId($ExperimentCampaignId)
     {
-        if (is_null($ExperimentType)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentType');
+        if (is_null($ExperimentCampaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentCampaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentType', $nullablesSetToNull);
+            $index = array_search('ExperimentCampaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ExperimentType'] = $ExperimentType;
-
-        return $this;
-    }
-
-    /**
-     * Gets ExperimentSubType
-     *
-     * @return string|null
-     */
-    public function getExperimentSubType()
-    {
-        if (!isset($this->container['ExperimentSubType']) || is_null($this->container['ExperimentSubType'])) {
-            return null;
-        }
-        return $this->container['ExperimentSubType'];
-    }
-
-    /**
-     * Sets ExperimentSubType
-     *
-     * @param string|null $ExperimentSubType ExperimentSubType
-     *
-     * @return self
-     */
-    public function setExperimentSubType($ExperimentSubType)
-    {
-        if (is_null($ExperimentSubType)) {
-            array_push($this->openAPINullablesSetToNull, 'ExperimentSubType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExperimentSubType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ExperimentSubType'] = $ExperimentSubType;
+        $this->container['ExperimentCampaignId'] = $ExperimentCampaignId;
 
         return $this;
     }
@@ -794,6 +535,154 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ExperimentStatus
+     *
+     * @return string|null
+     */
+    public function getExperimentStatus()
+    {
+        if (!isset($this->container['ExperimentStatus']) || is_null($this->container['ExperimentStatus'])) {
+            return null;
+        }
+        return $this->container['ExperimentStatus'];
+    }
+
+    /**
+     * Sets ExperimentStatus
+     *
+     * @param string|null $ExperimentStatus ExperimentStatus
+     *
+     * @return self
+     */
+    public function setExperimentStatus($ExperimentStatus)
+    {
+        if (is_null($ExperimentStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExperimentStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExperimentStatus'] = $ExperimentStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExperimentSubType
+     *
+     * @return string|null
+     */
+    public function getExperimentSubType()
+    {
+        if (!isset($this->container['ExperimentSubType']) || is_null($this->container['ExperimentSubType'])) {
+            return null;
+        }
+        return $this->container['ExperimentSubType'];
+    }
+
+    /**
+     * Sets ExperimentSubType
+     *
+     * @param string|null $ExperimentSubType ExperimentSubType
+     *
+     * @return self
+     */
+    public function setExperimentSubType($ExperimentSubType)
+    {
+        if (is_null($ExperimentSubType)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentSubType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExperimentSubType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExperimentSubType'] = $ExperimentSubType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExperimentType
+     *
+     * @return string|null
+     */
+    public function getExperimentType()
+    {
+        if (!isset($this->container['ExperimentType']) || is_null($this->container['ExperimentType'])) {
+            return null;
+        }
+        return $this->container['ExperimentType'];
+    }
+
+    /**
+     * Sets ExperimentType
+     *
+     * @param string|null $ExperimentType ExperimentType
+     *
+     * @return self
+     */
+    public function setExperimentType($ExperimentType)
+    {
+        if (is_null($ExperimentType)) {
+            array_push($this->openAPINullablesSetToNull, 'ExperimentType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExperimentType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExperimentType'] = $ExperimentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
      * Gets MarketingObjective
      *
      * @return string|null
@@ -826,6 +715,117 @@ class Experiment implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['MarketingObjective'] = $MarketingObjective;
+
+        return $this;
+    }
+
+    /**
+     * Gets Name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        if (!isset($this->container['Name']) || is_null($this->container['Name'])) {
+            return null;
+        }
+        return $this->container['Name'];
+    }
+
+    /**
+     * Sets Name
+     *
+     * @param string|null $Name Name
+     *
+     * @return self
+     */
+    public function setName($Name)
+    {
+        if (is_null($Name)) {
+            array_push($this->openAPINullablesSetToNull, 'Name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Name'] = $Name;
+
+        return $this;
+    }
+
+    /**
+     * Gets StartDate
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null
+     */
+    public function getStartDate()
+    {
+        if (!isset($this->container['StartDate']) || is_null($this->container['StartDate'])) {
+            return null;
+        }
+        return $this->container['StartDate'];
+    }
+
+    /**
+     * Sets StartDate
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\Date|null $StartDate StartDate
+     *
+     * @return self
+     */
+    public function setStartDate($StartDate)
+    {
+        if (is_null($StartDate)) {
+            array_push($this->openAPINullablesSetToNull, 'StartDate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('StartDate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['StartDate'] = $StartDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrafficSplitPercent
+     *
+     * @return int|null
+     */
+    public function getTrafficSplitPercent()
+    {
+        if (!isset($this->container['TrafficSplitPercent']) || is_null($this->container['TrafficSplitPercent'])) {
+            return null;
+        }
+        return $this->container['TrafficSplitPercent'];
+    }
+
+    /**
+     * Sets TrafficSplitPercent
+     *
+     * @param int|null $TrafficSplitPercent TrafficSplitPercent
+     *
+     * @return self
+     */
+    public function setTrafficSplitPercent($TrafficSplitPercent)
+    {
+        if (is_null($TrafficSplitPercent)) {
+            array_push($this->openAPINullablesSetToNull, 'TrafficSplitPercent');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrafficSplitPercent', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['TrafficSplitPercent'] = $TrafficSplitPercent;
 
         return $this;
     }

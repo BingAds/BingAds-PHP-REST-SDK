@@ -33,30 +33,30 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'Name' => 'string',
-        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
-        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
-        'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
-        'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
+        'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
         'ConversionWindowInMinutes' => 'int',
+        'CountType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType',
+        'ExcludeFromBidding' => 'bool',
+        'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
+        'Id' => 'string',
+        'IsAutoGoal' => 'bool',
+        'IsEnhancedConversionsEnabled' => 'bool',
+        'Name' => 'string',
+        'Revenue' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalRevenue',
+        'Scope' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope',
+        'Status' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus',
         'TagId' => 'string',
         'TrackingStatus' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalTrackingStatus',
-        'ExcludeFromBidding' => 'bool',
-        'ViewThroughConversionWindowInMinutes' => 'int',
-        'GoalCategory' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory',
-        'AttributionModelType' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'bool',
-        'IsAutoGoal' => 'bool',
-        'Id' => 'string',
         'Type' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType',
-        'CategoryExpression' => 'string',
-        'CategoryOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
+        'ViewThroughConversionWindowInMinutes' => 'int',
         'ActionExpression' => 'string',
         'ActionOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
+        'CategoryExpression' => 'string',
+        'CategoryOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
         'LabelExpression' => 'string',
         'LabelOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator',
-        'ValueOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator',
-        'Value' => 'float'
+        'Value' => 'float',
+        'ValueOperator' => '\Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator'
     ];
 
     /**
@@ -67,30 +67,30 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'Name' => null,
-        'Status' => null,
-        'Scope' => null,
-        'CountType' => null,
-        'Revenue' => null,
+        'AttributionModelType' => null,
         'ConversionWindowInMinutes' => 'int32',
+        'CountType' => null,
+        'ExcludeFromBidding' => null,
+        'GoalCategory' => null,
+        'Id' => 'int64',
+        'IsAutoGoal' => null,
+        'IsEnhancedConversionsEnabled' => null,
+        'Name' => null,
+        'Revenue' => null,
+        'Scope' => null,
+        'Status' => null,
         'TagId' => 'int64',
         'TrackingStatus' => null,
-        'ExcludeFromBidding' => null,
-        'ViewThroughConversionWindowInMinutes' => 'int32',
-        'GoalCategory' => null,
-        'AttributionModelType' => null,
-        'IsEnhancedConversionsEnabled' => null,
-        'IsAutoGoal' => null,
-        'Id' => 'int64',
         'Type' => null,
-        'CategoryExpression' => null,
-        'CategoryOperator' => null,
+        'ViewThroughConversionWindowInMinutes' => 'int32',
         'ActionExpression' => null,
         'ActionOperator' => null,
+        'CategoryExpression' => null,
+        'CategoryOperator' => null,
         'LabelExpression' => null,
         'LabelOperator' => null,
-        'ValueOperator' => null,
-        'Value' => 'double'
+        'Value' => 'double',
+        'ValueOperator' => null
     ];
 
     /**
@@ -99,30 +99,30 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'Name' => true,
-        'Status' => false,
-        'Scope' => false,
-        'CountType' => false,
-        'Revenue' => true,
+        'AttributionModelType' => true,
         'ConversionWindowInMinutes' => true,
-        'TagId' => true,
-        'TrackingStatus' => false,
+        'CountType' => true,
         'ExcludeFromBidding' => true,
-        'ViewThroughConversionWindowInMinutes' => true,
-        'GoalCategory' => false,
-        'AttributionModelType' => false,
-        'IsEnhancedConversionsEnabled' => true,
-        'IsAutoGoal' => true,
+        'GoalCategory' => true,
         'Id' => true,
-        'Type' => false,
-        'CategoryExpression' => true,
-        'CategoryOperator' => false,
+        'IsAutoGoal' => true,
+        'IsEnhancedConversionsEnabled' => true,
+        'Name' => true,
+        'Revenue' => true,
+        'Scope' => true,
+        'Status' => true,
+        'TagId' => true,
+        'TrackingStatus' => true,
+        'Type' => true,
+        'ViewThroughConversionWindowInMinutes' => true,
         'ActionExpression' => true,
-        'ActionOperator' => false,
+        'ActionOperator' => true,
+        'CategoryExpression' => true,
+        'CategoryOperator' => true,
         'LabelExpression' => true,
-        'LabelOperator' => false,
-        'ValueOperator' => false,
-        'Value' => true
+        'LabelOperator' => true,
+        'Value' => true,
+        'ValueOperator' => true
     ];
 
     /**
@@ -211,30 +211,30 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $attributeMap = [
-        'Name' => 'Name',
-        'Status' => 'Status',
-        'Scope' => 'Scope',
-        'CountType' => 'CountType',
-        'Revenue' => 'Revenue',
+        'AttributionModelType' => 'AttributionModelType',
         'ConversionWindowInMinutes' => 'ConversionWindowInMinutes',
+        'CountType' => 'CountType',
+        'ExcludeFromBidding' => 'ExcludeFromBidding',
+        'GoalCategory' => 'GoalCategory',
+        'Id' => 'Id',
+        'IsAutoGoal' => 'IsAutoGoal',
+        'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
+        'Name' => 'Name',
+        'Revenue' => 'Revenue',
+        'Scope' => 'Scope',
+        'Status' => 'Status',
         'TagId' => 'TagId',
         'TrackingStatus' => 'TrackingStatus',
-        'ExcludeFromBidding' => 'ExcludeFromBidding',
-        'ViewThroughConversionWindowInMinutes' => 'ViewThroughConversionWindowInMinutes',
-        'GoalCategory' => 'GoalCategory',
-        'AttributionModelType' => 'AttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'IsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'IsAutoGoal',
-        'Id' => 'Id',
         'Type' => 'Type',
-        'CategoryExpression' => 'CategoryExpression',
-        'CategoryOperator' => 'CategoryOperator',
+        'ViewThroughConversionWindowInMinutes' => 'ViewThroughConversionWindowInMinutes',
         'ActionExpression' => 'ActionExpression',
         'ActionOperator' => 'ActionOperator',
+        'CategoryExpression' => 'CategoryExpression',
+        'CategoryOperator' => 'CategoryOperator',
         'LabelExpression' => 'LabelExpression',
         'LabelOperator' => 'LabelOperator',
-        'ValueOperator' => 'ValueOperator',
-        'Value' => 'Value'
+        'Value' => 'Value',
+        'ValueOperator' => 'ValueOperator'
     ];
 
     /**
@@ -243,30 +243,30 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $setters = [
-        'Name' => 'setName',
-        'Status' => 'setStatus',
-        'Scope' => 'setScope',
-        'CountType' => 'setCountType',
-        'Revenue' => 'setRevenue',
+        'AttributionModelType' => 'setAttributionModelType',
         'ConversionWindowInMinutes' => 'setConversionWindowInMinutes',
+        'CountType' => 'setCountType',
+        'ExcludeFromBidding' => 'setExcludeFromBidding',
+        'GoalCategory' => 'setGoalCategory',
+        'Id' => 'setId',
+        'IsAutoGoal' => 'setIsAutoGoal',
+        'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
+        'Name' => 'setName',
+        'Revenue' => 'setRevenue',
+        'Scope' => 'setScope',
+        'Status' => 'setStatus',
         'TagId' => 'setTagId',
         'TrackingStatus' => 'setTrackingStatus',
-        'ExcludeFromBidding' => 'setExcludeFromBidding',
-        'ViewThroughConversionWindowInMinutes' => 'setViewThroughConversionWindowInMinutes',
-        'GoalCategory' => 'setGoalCategory',
-        'AttributionModelType' => 'setAttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'setIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'setIsAutoGoal',
-        'Id' => 'setId',
         'Type' => 'setType',
-        'CategoryExpression' => 'setCategoryExpression',
-        'CategoryOperator' => 'setCategoryOperator',
+        'ViewThroughConversionWindowInMinutes' => 'setViewThroughConversionWindowInMinutes',
         'ActionExpression' => 'setActionExpression',
         'ActionOperator' => 'setActionOperator',
+        'CategoryExpression' => 'setCategoryExpression',
+        'CategoryOperator' => 'setCategoryOperator',
         'LabelExpression' => 'setLabelExpression',
         'LabelOperator' => 'setLabelOperator',
-        'ValueOperator' => 'setValueOperator',
-        'Value' => 'setValue'
+        'Value' => 'setValue',
+        'ValueOperator' => 'setValueOperator'
     ];
 
     /**
@@ -275,30 +275,30 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static array $getters = [
-        'Name' => 'getName',
-        'Status' => 'getStatus',
-        'Scope' => 'getScope',
-        'CountType' => 'getCountType',
-        'Revenue' => 'getRevenue',
+        'AttributionModelType' => 'getAttributionModelType',
         'ConversionWindowInMinutes' => 'getConversionWindowInMinutes',
+        'CountType' => 'getCountType',
+        'ExcludeFromBidding' => 'getExcludeFromBidding',
+        'GoalCategory' => 'getGoalCategory',
+        'Id' => 'getId',
+        'IsAutoGoal' => 'getIsAutoGoal',
+        'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
+        'Name' => 'getName',
+        'Revenue' => 'getRevenue',
+        'Scope' => 'getScope',
+        'Status' => 'getStatus',
         'TagId' => 'getTagId',
         'TrackingStatus' => 'getTrackingStatus',
-        'ExcludeFromBidding' => 'getExcludeFromBidding',
-        'ViewThroughConversionWindowInMinutes' => 'getViewThroughConversionWindowInMinutes',
-        'GoalCategory' => 'getGoalCategory',
-        'AttributionModelType' => 'getAttributionModelType',
-        'IsEnhancedConversionsEnabled' => 'getIsEnhancedConversionsEnabled',
-        'IsAutoGoal' => 'getIsAutoGoal',
-        'Id' => 'getId',
         'Type' => 'getType',
-        'CategoryExpression' => 'getCategoryExpression',
-        'CategoryOperator' => 'getCategoryOperator',
+        'ViewThroughConversionWindowInMinutes' => 'getViewThroughConversionWindowInMinutes',
         'ActionExpression' => 'getActionExpression',
         'ActionOperator' => 'getActionOperator',
+        'CategoryExpression' => 'getCategoryExpression',
+        'CategoryOperator' => 'getCategoryOperator',
         'LabelExpression' => 'getLabelExpression',
         'LabelOperator' => 'getLabelOperator',
-        'ValueOperator' => 'getValueOperator',
-        'Value' => 'getValue'
+        'Value' => 'getValue',
+        'ValueOperator' => 'getValueOperator'
     ];
 
     /**
@@ -358,30 +358,35 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('Name', $data ?? [], null);
-        $this->setIfExists('Status', $data ?? [], null);
-        $this->setIfExists('Scope', $data ?? [], null);
-        $this->setIfExists('CountType', $data ?? [], null);
-        $this->setIfExists('Revenue', $data ?? [], null);
+        $this->setIfExists('AttributionModelType', $data ?? [], null);
         $this->setIfExists('ConversionWindowInMinutes', $data ?? [], null);
+        $this->setIfExists('CountType', $data ?? [], null);
+        $this->setIfExists('ExcludeFromBidding', $data ?? [], null);
+        $this->setIfExists('GoalCategory', $data ?? [], null);
+        $this->setIfExists('Id', $data ?? [], null);
+        $this->setIfExists('IsAutoGoal', $data ?? [], null);
+        $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
+        $this->setIfExists('Name', $data ?? [], null);
+        $this->setIfExists('Revenue', $data ?? [], null);
+        $this->setIfExists('Scope', $data ?? [], null);
+        $this->setIfExists('Status', $data ?? [], null);
         $this->setIfExists('TagId', $data ?? [], null);
         $this->setIfExists('TrackingStatus', $data ?? [], null);
-        $this->setIfExists('ExcludeFromBidding', $data ?? [], null);
-        $this->setIfExists('ViewThroughConversionWindowInMinutes', $data ?? [], null);
-        $this->setIfExists('GoalCategory', $data ?? [], null);
-        $this->setIfExists('AttributionModelType', $data ?? [], null);
-        $this->setIfExists('IsEnhancedConversionsEnabled', $data ?? [], null);
-        $this->setIfExists('IsAutoGoal', $data ?? [], null);
-        $this->setIfExists('Id', $data ?? [], null);
         $this->setIfExists('Type', $data ?? [], null);
-        $this->setIfExists('CategoryExpression', $data ?? [], null);
-        $this->setIfExists('CategoryOperator', $data ?? [], null);
+        $this->setIfExists('ViewThroughConversionWindowInMinutes', $data ?? [], null);
         $this->setIfExists('ActionExpression', $data ?? [], null);
         $this->setIfExists('ActionOperator', $data ?? [], null);
+        $this->setIfExists('CategoryExpression', $data ?? [], null);
+        $this->setIfExists('CategoryOperator', $data ?? [], null);
         $this->setIfExists('LabelExpression', $data ?? [], null);
         $this->setIfExists('LabelOperator', $data ?? [], null);
-        $this->setIfExists('ValueOperator', $data ?? [], null);
         $this->setIfExists('Value', $data ?? [], null);
+        $this->setIfExists('ValueOperator', $data ?? [], null);
+
+        // Initialize the discriminator with this subtype's wire value from the base type's mappings.
+        if (!isset($this->container['Type']) && ($type = array_search(static::class, static::MAPPINGS, true)) !== false) {
+            $this->container['Type'] = $type;
+        }
     }
 
     /**
@@ -427,6 +432,320 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
 
 
     /**
+     * Gets AttributionModelType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType|mixed|null
+     */
+    public function getAttributionModelType()
+    {
+        if (!isset($this->container['AttributionModelType']) || is_null($this->container['AttributionModelType'])) {
+            return null;
+        }
+        if ((is_object($this->container['AttributionModelType']) || is_string($this->container['AttributionModelType'])) && method_exists($this->container['AttributionModelType'], 'getValue')) {
+            return $this->container['AttributionModelType']->getValue();
+        }
+        return $this->container['AttributionModelType'];
+    }
+
+    /**
+     * Sets AttributionModelType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType|mixed|null $AttributionModelType AttributionModelType
+     *
+     * @return self
+     */
+    public function setAttributionModelType($AttributionModelType)
+    {
+        if (is_null($AttributionModelType)) {
+            array_push($this->openAPINullablesSetToNull, 'AttributionModelType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('AttributionModelType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($AttributionModelType) && !$AttributionModelType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType) {
+            $AttributionModelType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType($AttributionModelType);
+        }
+        $this->container['AttributionModelType'] = $AttributionModelType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ConversionWindowInMinutes
+     *
+     * @return int|null
+     */
+    public function getConversionWindowInMinutes()
+    {
+        if (!isset($this->container['ConversionWindowInMinutes']) || is_null($this->container['ConversionWindowInMinutes'])) {
+            return null;
+        }
+        return $this->container['ConversionWindowInMinutes'];
+    }
+
+    /**
+     * Sets ConversionWindowInMinutes
+     *
+     * @param int|null $ConversionWindowInMinutes ConversionWindowInMinutes
+     *
+     * @return self
+     */
+    public function setConversionWindowInMinutes($ConversionWindowInMinutes)
+    {
+        if (is_null($ConversionWindowInMinutes)) {
+            array_push($this->openAPINullablesSetToNull, 'ConversionWindowInMinutes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ConversionWindowInMinutes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ConversionWindowInMinutes'] = $ConversionWindowInMinutes;
+
+        return $this;
+    }
+
+    /**
+     * Gets CountType
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType|mixed|null
+     */
+    public function getCountType()
+    {
+        if (!isset($this->container['CountType']) || is_null($this->container['CountType'])) {
+            return null;
+        }
+        if ((is_object($this->container['CountType']) || is_string($this->container['CountType'])) && method_exists($this->container['CountType'], 'getValue')) {
+            return $this->container['CountType']->getValue();
+        }
+        return $this->container['CountType'];
+    }
+
+    /**
+     * Sets CountType
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType|mixed|null $CountType CountType
+     *
+     * @return self
+     */
+    public function setCountType($CountType)
+    {
+        if (is_null($CountType)) {
+            array_push($this->openAPINullablesSetToNull, 'CountType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CountType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CountType) && !$CountType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType) {
+            $CountType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType($CountType);
+        }
+        $this->container['CountType'] = $CountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ExcludeFromBidding
+     *
+     * @return bool|null
+     */
+    public function getExcludeFromBidding()
+    {
+        if (!isset($this->container['ExcludeFromBidding']) || is_null($this->container['ExcludeFromBidding'])) {
+            return null;
+        }
+        return $this->container['ExcludeFromBidding'];
+    }
+
+    /**
+     * Sets ExcludeFromBidding
+     *
+     * @param bool|null $ExcludeFromBidding ExcludeFromBidding
+     *
+     * @return self
+     */
+    public function setExcludeFromBidding($ExcludeFromBidding)
+    {
+        if (is_null($ExcludeFromBidding)) {
+            array_push($this->openAPINullablesSetToNull, 'ExcludeFromBidding');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ExcludeFromBidding', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ExcludeFromBidding'] = $ExcludeFromBidding;
+
+        return $this;
+    }
+
+    /**
+     * Gets GoalCategory
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory|mixed|null
+     */
+    public function getGoalCategory()
+    {
+        if (!isset($this->container['GoalCategory']) || is_null($this->container['GoalCategory'])) {
+            return null;
+        }
+        if ((is_object($this->container['GoalCategory']) || is_string($this->container['GoalCategory'])) && method_exists($this->container['GoalCategory'], 'getValue')) {
+            return $this->container['GoalCategory']->getValue();
+        }
+        return $this->container['GoalCategory'];
+    }
+
+    /**
+     * Sets GoalCategory
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory|mixed|null $GoalCategory GoalCategory
+     *
+     * @return self
+     */
+    public function setGoalCategory($GoalCategory)
+    {
+        if (is_null($GoalCategory)) {
+            array_push($this->openAPINullablesSetToNull, 'GoalCategory');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('GoalCategory', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($GoalCategory) && !$GoalCategory instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory) {
+            $GoalCategory = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory($GoalCategory);
+        }
+        $this->container['GoalCategory'] = $GoalCategory;
+
+        return $this;
+    }
+
+    /**
+     * Gets Id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
+            return null;
+        }
+        return $this->container['Id'];
+    }
+
+    /**
+     * Sets Id
+     *
+     * @param string|null $Id Id
+     *
+     * @return self
+     */
+    public function setId($Id)
+    {
+        if (is_null($Id)) {
+            array_push($this->openAPINullablesSetToNull, 'Id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['Id'] = $Id;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsAutoGoal
+     *
+     * @return bool|null
+     */
+    public function getIsAutoGoal()
+    {
+        if (!isset($this->container['IsAutoGoal']) || is_null($this->container['IsAutoGoal'])) {
+            return null;
+        }
+        return $this->container['IsAutoGoal'];
+    }
+
+    /**
+     * Sets IsAutoGoal
+     *
+     * @param bool|null $IsAutoGoal IsAutoGoal
+     *
+     * @return self
+     */
+    public function setIsAutoGoal($IsAutoGoal)
+    {
+        if (is_null($IsAutoGoal)) {
+            array_push($this->openAPINullablesSetToNull, 'IsAutoGoal');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsAutoGoal', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsAutoGoal'] = $IsAutoGoal;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsEnhancedConversionsEnabled
+     *
+     * @return bool|null
+     */
+    public function getIsEnhancedConversionsEnabled()
+    {
+        if (!isset($this->container['IsEnhancedConversionsEnabled']) || is_null($this->container['IsEnhancedConversionsEnabled'])) {
+            return null;
+        }
+        return $this->container['IsEnhancedConversionsEnabled'];
+    }
+
+    /**
+     * Sets IsEnhancedConversionsEnabled
+     *
+     * @param bool|null $IsEnhancedConversionsEnabled IsEnhancedConversionsEnabled
+     *
+     * @return self
+     */
+    public function setIsEnhancedConversionsEnabled($IsEnhancedConversionsEnabled)
+    {
+        if (is_null($IsEnhancedConversionsEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'IsEnhancedConversionsEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('IsEnhancedConversionsEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['IsEnhancedConversionsEnabled'] = $IsEnhancedConversionsEnabled;
+
+        return $this;
+    }
+
+    /**
      * Gets Name
      *
      * @return string|null
@@ -459,114 +778,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['Name'] = $Name;
-
-        return $this;
-    }
-
-    /**
-     * Gets Status
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus|mixed|null
-     */
-    public function getStatus()
-    {
-        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
-            return null;
-        }
-        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
-            return $this->container['Status']->getValue();
-        }
-        return $this->container['Status'];
-    }
-
-    /**
-     * Sets Status
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus|mixed|null $Status Status
-     *
-     * @return self
-     */
-    public function setStatus($Status)
-    {
-        if (is_null($Status)) {
-            throw new \InvalidArgumentException('non-nullable Status cannot be null');
-        }
-        if (!$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus) {
-            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus($Status);
-        }
-        $this->container['Status'] = $Status;
-
-        return $this;
-    }
-
-    /**
-     * Gets Scope
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
-     */
-    public function getScope()
-    {
-        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
-            return null;
-        }
-        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
-            return $this->container['Scope']->getValue();
-        }
-        return $this->container['Scope'];
-    }
-
-    /**
-     * Sets Scope
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
-     *
-     * @return self
-     */
-    public function setScope($Scope)
-    {
-        if (is_null($Scope)) {
-            throw new \InvalidArgumentException('non-nullable Scope cannot be null');
-        }
-        if (!$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
-            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
-        }
-        $this->container['Scope'] = $Scope;
-
-        return $this;
-    }
-
-    /**
-     * Gets CountType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType|mixed|null
-     */
-    public function getCountType()
-    {
-        if (!isset($this->container['CountType']) || is_null($this->container['CountType'])) {
-            return null;
-        }
-        if ((is_object($this->container['CountType']) || is_string($this->container['CountType'])) && method_exists($this->container['CountType'], 'getValue')) {
-            return $this->container['CountType']->getValue();
-        }
-        return $this->container['CountType'];
-    }
-
-    /**
-     * Sets CountType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType|mixed|null $CountType CountType
-     *
-     * @return self
-     */
-    public function setCountType($CountType)
-    {
-        if (is_null($CountType)) {
-            throw new \InvalidArgumentException('non-nullable CountType cannot be null');
-        }
-        if (!$CountType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType) {
-            $CountType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCountType($CountType);
-        }
-        $this->container['CountType'] = $CountType;
 
         return $this;
     }
@@ -609,38 +820,87 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets ConversionWindowInMinutes
+     * Gets Scope
      *
-     * @return int|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null
      */
-    public function getConversionWindowInMinutes()
+    public function getScope()
     {
-        if (!isset($this->container['ConversionWindowInMinutes']) || is_null($this->container['ConversionWindowInMinutes'])) {
+        if (!isset($this->container['Scope']) || is_null($this->container['Scope'])) {
             return null;
         }
-        return $this->container['ConversionWindowInMinutes'];
+        if ((is_object($this->container['Scope']) || is_string($this->container['Scope'])) && method_exists($this->container['Scope'], 'getValue')) {
+            return $this->container['Scope']->getValue();
+        }
+        return $this->container['Scope'];
     }
 
     /**
-     * Sets ConversionWindowInMinutes
+     * Sets Scope
      *
-     * @param int|null $ConversionWindowInMinutes ConversionWindowInMinutes
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope|mixed|null $Scope Scope
      *
      * @return self
      */
-    public function setConversionWindowInMinutes($ConversionWindowInMinutes)
+    public function setScope($Scope)
     {
-        if (is_null($ConversionWindowInMinutes)) {
-            array_push($this->openAPINullablesSetToNull, 'ConversionWindowInMinutes');
+        if (is_null($Scope)) {
+            array_push($this->openAPINullablesSetToNull, 'Scope');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ConversionWindowInMinutes', $nullablesSetToNull);
+            $index = array_search('Scope', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ConversionWindowInMinutes'] = $ConversionWindowInMinutes;
+        if (!is_null($Scope) && !$Scope instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope) {
+            $Scope = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\EntityScope($Scope);
+        }
+        $this->container['Scope'] = $Scope;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus|mixed|null
+     */
+    public function getStatus()
+    {
+        if (!isset($this->container['Status']) || is_null($this->container['Status'])) {
+            return null;
+        }
+        if ((is_object($this->container['Status']) || is_string($this->container['Status'])) && method_exists($this->container['Status'], 'getValue')) {
+            return $this->container['Status']->getValue();
+        }
+        return $this->container['Status'];
+    }
+
+    /**
+     * Sets Status
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus|mixed|null $Status Status
+     *
+     * @return self
+     */
+    public function setStatus($Status)
+    {
+        if (is_null($Status)) {
+            array_push($this->openAPINullablesSetToNull, 'Status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('Status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($Status) && !$Status instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus) {
+            $Status = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalStatus($Status);
+        }
+        $this->container['Status'] = $Status;
 
         return $this;
     }
@@ -708,9 +968,16 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     public function setTrackingStatus($TrackingStatus)
     {
         if (is_null($TrackingStatus)) {
-            throw new \InvalidArgumentException('non-nullable TrackingStatus cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'TrackingStatus');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('TrackingStatus', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$TrackingStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalTrackingStatus) {
+        if (!is_null($TrackingStatus) && !$TrackingStatus instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalTrackingStatus) {
             $TrackingStatus = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalTrackingStatus($TrackingStatus);
         }
         $this->container['TrackingStatus'] = $TrackingStatus;
@@ -719,38 +986,44 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets ExcludeFromBidding
+     * Gets Type
      *
-     * @return bool|null
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
      */
-    public function getExcludeFromBidding()
+    public function getType()
     {
-        if (!isset($this->container['ExcludeFromBidding']) || is_null($this->container['ExcludeFromBidding'])) {
+        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
             return null;
         }
-        return $this->container['ExcludeFromBidding'];
+        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
+            return $this->container['Type']->getValue();
+        }
+        return $this->container['Type'];
     }
 
     /**
-     * Sets ExcludeFromBidding
+     * Sets Type
      *
-     * @param bool|null $ExcludeFromBidding ExcludeFromBidding
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
      *
      * @return self
      */
-    public function setExcludeFromBidding($ExcludeFromBidding)
+    public function setType($Type)
     {
-        if (is_null($ExcludeFromBidding)) {
-            array_push($this->openAPINullablesSetToNull, 'ExcludeFromBidding');
+        if (is_null($Type)) {
+            array_push($this->openAPINullablesSetToNull, 'Type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ExcludeFromBidding', $nullablesSetToNull);
+            $index = array_search('Type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ExcludeFromBidding'] = $ExcludeFromBidding;
+        if (!is_null($Type) && !$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
+            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
+        }
+        $this->container['Type'] = $Type;
 
         return $this;
     }
@@ -788,298 +1061,6 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['ViewThroughConversionWindowInMinutes'] = $ViewThroughConversionWindowInMinutes;
-
-        return $this;
-    }
-
-    /**
-     * Gets GoalCategory
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory|mixed|null
-     */
-    public function getGoalCategory()
-    {
-        if (!isset($this->container['GoalCategory']) || is_null($this->container['GoalCategory'])) {
-            return null;
-        }
-        if ((is_object($this->container['GoalCategory']) || is_string($this->container['GoalCategory'])) && method_exists($this->container['GoalCategory'], 'getValue')) {
-            return $this->container['GoalCategory']->getValue();
-        }
-        return $this->container['GoalCategory'];
-    }
-
-    /**
-     * Sets GoalCategory
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory|mixed|null $GoalCategory GoalCategory
-     *
-     * @return self
-     */
-    public function setGoalCategory($GoalCategory)
-    {
-        if (is_null($GoalCategory)) {
-            throw new \InvalidArgumentException('non-nullable GoalCategory cannot be null');
-        }
-        if (!$GoalCategory instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory) {
-            $GoalCategory = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalCategory($GoalCategory);
-        }
-        $this->container['GoalCategory'] = $GoalCategory;
-
-        return $this;
-    }
-
-    /**
-     * Gets AttributionModelType
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType|mixed|null
-     */
-    public function getAttributionModelType()
-    {
-        if (!isset($this->container['AttributionModelType']) || is_null($this->container['AttributionModelType'])) {
-            return null;
-        }
-        if ((is_object($this->container['AttributionModelType']) || is_string($this->container['AttributionModelType'])) && method_exists($this->container['AttributionModelType'], 'getValue')) {
-            return $this->container['AttributionModelType']->getValue();
-        }
-        return $this->container['AttributionModelType'];
-    }
-
-    /**
-     * Sets AttributionModelType
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType|mixed|null $AttributionModelType AttributionModelType
-     *
-     * @return self
-     */
-    public function setAttributionModelType($AttributionModelType)
-    {
-        if (is_null($AttributionModelType)) {
-            throw new \InvalidArgumentException('non-nullable AttributionModelType cannot be null');
-        }
-        if (!$AttributionModelType instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType) {
-            $AttributionModelType = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\AttributionModelType($AttributionModelType);
-        }
-        $this->container['AttributionModelType'] = $AttributionModelType;
-
-        return $this;
-    }
-
-    /**
-     * Gets IsEnhancedConversionsEnabled
-     *
-     * @return bool|null
-     */
-    public function getIsEnhancedConversionsEnabled()
-    {
-        if (!isset($this->container['IsEnhancedConversionsEnabled']) || is_null($this->container['IsEnhancedConversionsEnabled'])) {
-            return null;
-        }
-        return $this->container['IsEnhancedConversionsEnabled'];
-    }
-
-    /**
-     * Sets IsEnhancedConversionsEnabled
-     *
-     * @param bool|null $IsEnhancedConversionsEnabled IsEnhancedConversionsEnabled
-     *
-     * @return self
-     */
-    public function setIsEnhancedConversionsEnabled($IsEnhancedConversionsEnabled)
-    {
-        if (is_null($IsEnhancedConversionsEnabled)) {
-            array_push($this->openAPINullablesSetToNull, 'IsEnhancedConversionsEnabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsEnhancedConversionsEnabled', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IsEnhancedConversionsEnabled'] = $IsEnhancedConversionsEnabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets IsAutoGoal
-     *
-     * @return bool|null
-     */
-    public function getIsAutoGoal()
-    {
-        if (!isset($this->container['IsAutoGoal']) || is_null($this->container['IsAutoGoal'])) {
-            return null;
-        }
-        return $this->container['IsAutoGoal'];
-    }
-
-    /**
-     * Sets IsAutoGoal
-     *
-     * @param bool|null $IsAutoGoal IsAutoGoal
-     *
-     * @return self
-     */
-    public function setIsAutoGoal($IsAutoGoal)
-    {
-        if (is_null($IsAutoGoal)) {
-            array_push($this->openAPINullablesSetToNull, 'IsAutoGoal');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('IsAutoGoal', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['IsAutoGoal'] = $IsAutoGoal;
-
-        return $this;
-    }
-
-    /**
-     * Gets Id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        if (!isset($this->container['Id']) || is_null($this->container['Id'])) {
-            return null;
-        }
-        return $this->container['Id'];
-    }
-
-    /**
-     * Sets Id
-     *
-     * @param string|null $Id Id
-     *
-     * @return self
-     */
-    public function setId($Id)
-    {
-        if (is_null($Id)) {
-            array_push($this->openAPINullablesSetToNull, 'Id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('Id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['Id'] = $Id;
-
-        return $this;
-    }
-
-    /**
-     * Gets Type
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null
-     */
-    public function getType()
-    {
-        if (!isset($this->container['Type']) || is_null($this->container['Type'])) {
-            return null;
-        }
-        if ((is_object($this->container['Type']) || is_string($this->container['Type'])) && method_exists($this->container['Type'], 'getValue')) {
-            return $this->container['Type']->getValue();
-        }
-        return $this->container['Type'];
-    }
-
-    /**
-     * Sets Type
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType|mixed|null $Type Type
-     *
-     * @return self
-     */
-    public function setType($Type)
-    {
-        if (is_null($Type)) {
-            throw new \InvalidArgumentException('non-nullable Type cannot be null');
-        }
-        if (!$Type instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType) {
-            $Type = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ConversionGoalType($Type);
-        }
-        $this->container['Type'] = $Type;
-
-        return $this;
-    }
-
-    /**
-     * Gets CategoryExpression
-     *
-     * @return string|null
-     */
-    public function getCategoryExpression()
-    {
-        if (!isset($this->container['CategoryExpression']) || is_null($this->container['CategoryExpression'])) {
-            return null;
-        }
-        return $this->container['CategoryExpression'];
-    }
-
-    /**
-     * Sets CategoryExpression
-     *
-     * @param string|null $CategoryExpression CategoryExpression
-     *
-     * @return self
-     */
-    public function setCategoryExpression($CategoryExpression)
-    {
-        if (is_null($CategoryExpression)) {
-            array_push($this->openAPINullablesSetToNull, 'CategoryExpression');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('CategoryExpression', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['CategoryExpression'] = $CategoryExpression;
-
-        return $this;
-    }
-
-    /**
-     * Gets CategoryOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
-     */
-    public function getCategoryOperator()
-    {
-        if (!isset($this->container['CategoryOperator']) || is_null($this->container['CategoryOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['CategoryOperator']) || is_string($this->container['CategoryOperator'])) && method_exists($this->container['CategoryOperator'], 'getValue')) {
-            return $this->container['CategoryOperator']->getValue();
-        }
-        return $this->container['CategoryOperator'];
-    }
-
-    /**
-     * Sets CategoryOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $CategoryOperator CategoryOperator
-     *
-     * @return self
-     */
-    public function setCategoryOperator($CategoryOperator)
-    {
-        if (is_null($CategoryOperator)) {
-            throw new \InvalidArgumentException('non-nullable CategoryOperator cannot be null');
-        }
-        if (!$CategoryOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
-            $CategoryOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($CategoryOperator);
-        }
-        $this->container['CategoryOperator'] = $CategoryOperator;
 
         return $this;
     }
@@ -1147,12 +1128,99 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     public function setActionOperator($ActionOperator)
     {
         if (is_null($ActionOperator)) {
-            throw new \InvalidArgumentException('non-nullable ActionOperator cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'ActionOperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ActionOperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$ActionOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+        if (!is_null($ActionOperator) && !$ActionOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
             $ActionOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($ActionOperator);
         }
         $this->container['ActionOperator'] = $ActionOperator;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategoryExpression
+     *
+     * @return string|null
+     */
+    public function getCategoryExpression()
+    {
+        if (!isset($this->container['CategoryExpression']) || is_null($this->container['CategoryExpression'])) {
+            return null;
+        }
+        return $this->container['CategoryExpression'];
+    }
+
+    /**
+     * Sets CategoryExpression
+     *
+     * @param string|null $CategoryExpression CategoryExpression
+     *
+     * @return self
+     */
+    public function setCategoryExpression($CategoryExpression)
+    {
+        if (is_null($CategoryExpression)) {
+            array_push($this->openAPINullablesSetToNull, 'CategoryExpression');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategoryExpression', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['CategoryExpression'] = $CategoryExpression;
+
+        return $this;
+    }
+
+    /**
+     * Gets CategoryOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null
+     */
+    public function getCategoryOperator()
+    {
+        if (!isset($this->container['CategoryOperator']) || is_null($this->container['CategoryOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['CategoryOperator']) || is_string($this->container['CategoryOperator'])) && method_exists($this->container['CategoryOperator'], 'getValue')) {
+            return $this->container['CategoryOperator']->getValue();
+        }
+        return $this->container['CategoryOperator'];
+    }
+
+    /**
+     * Sets CategoryOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator|mixed|null $CategoryOperator CategoryOperator
+     *
+     * @return self
+     */
+    public function setCategoryOperator($CategoryOperator)
+    {
+        if (is_null($CategoryOperator)) {
+            array_push($this->openAPINullablesSetToNull, 'CategoryOperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('CategoryOperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($CategoryOperator) && !$CategoryOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+            $CategoryOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($CategoryOperator);
+        }
+        $this->container['CategoryOperator'] = $CategoryOperator;
 
         return $this;
     }
@@ -1220,48 +1288,19 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
     public function setLabelOperator($LabelOperator)
     {
         if (is_null($LabelOperator)) {
-            throw new \InvalidArgumentException('non-nullable LabelOperator cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'LabelOperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('LabelOperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if (!$LabelOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
+        if (!is_null($LabelOperator) && !$LabelOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator) {
             $LabelOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ExpressionOperator($LabelOperator);
         }
         $this->container['LabelOperator'] = $LabelOperator;
-
-        return $this;
-    }
-
-    /**
-     * Gets ValueOperator
-     *
-     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null
-     */
-    public function getValueOperator()
-    {
-        if (!isset($this->container['ValueOperator']) || is_null($this->container['ValueOperator'])) {
-            return null;
-        }
-        if ((is_object($this->container['ValueOperator']) || is_string($this->container['ValueOperator'])) && method_exists($this->container['ValueOperator'], 'getValue')) {
-            return $this->container['ValueOperator']->getValue();
-        }
-        return $this->container['ValueOperator'];
-    }
-
-    /**
-     * Sets ValueOperator
-     *
-     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null $ValueOperator ValueOperator
-     *
-     * @return self
-     */
-    public function setValueOperator($ValueOperator)
-    {
-        if (is_null($ValueOperator)) {
-            throw new \InvalidArgumentException('non-nullable ValueOperator cannot be null');
-        }
-        if (!$ValueOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator) {
-            $ValueOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator($ValueOperator);
-        }
-        $this->container['ValueOperator'] = $ValueOperator;
 
         return $this;
     }
@@ -1299,6 +1338,49 @@ class EventGoal extends ConversionGoal implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['Value'] = $Value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ValueOperator
+     *
+     * @return \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null
+     */
+    public function getValueOperator()
+    {
+        if (!isset($this->container['ValueOperator']) || is_null($this->container['ValueOperator'])) {
+            return null;
+        }
+        if ((is_object($this->container['ValueOperator']) || is_string($this->container['ValueOperator'])) && method_exists($this->container['ValueOperator'], 'getValue')) {
+            return $this->container['ValueOperator']->getValue();
+        }
+        return $this->container['ValueOperator'];
+    }
+
+    /**
+     * Sets ValueOperator
+     *
+     * @param \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator|mixed|null $ValueOperator ValueOperator
+     *
+     * @return self
+     */
+    public function setValueOperator($ValueOperator)
+    {
+        if (is_null($ValueOperator)) {
+            array_push($this->openAPINullablesSetToNull, 'ValueOperator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ValueOperator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($ValueOperator) && !$ValueOperator instanceof \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator) {
+            $ValueOperator = new \Microsoft\MsAds\Rest\Model\CampaignManagementService\ValueOperator($ValueOperator);
+        }
+        $this->container['ValueOperator'] = $ValueOperator;
 
         return $this;
     }
